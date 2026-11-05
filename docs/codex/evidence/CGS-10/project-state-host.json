@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "task": "CGS-10",
+  "context": "Host-side independent read-only helper executions; not native skill execution.",
+  "command": "node scripts/codex/helper.mjs project-state --root <absolute-fixture>",
+  "cases": [
+    {"fixture":".scratch/native-smoke/cgs10-start-clean-4bce1ace","exit_code":0,"observed":{"engine":"unset","code_root":"src","source_files":0,"concept":"absent","stage":"unset"}},
+    {"fixture":".scratch/native-smoke/cgs10-stage-d880237e","exit_code":0,"observed":{"engine":"Godot","code_root":"src","source_files":1,"concept":"absent","stage":"unset"}}
+  ],
+  "note": "The start skill intentionally ignores project-state phase_inferred. Stage detection uses its own documented heuristic."
+}

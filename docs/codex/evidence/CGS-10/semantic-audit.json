@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "description": "Independent review of completed native traces. A harness PASS or a user-provided claim alone is not proof of a successful read or full behavior.",
+  "results": [
+    {
+      "case": "start-clean",
+      "successful_command_mentions_project_config": true,
+      "successful_command_count": 3,
+      "model_reported_pending": false,
+      "no_fixture_writes": true
+    },
+    {
+      "case": "help",
+      "successful_command_mentions_project_config": true,
+      "successful_command_count": 9,
+      "model_reported_pending": true,
+      "no_fixture_writes": true
+    },
+    {
+      "case": "stage",
+      "successful_command_mentions_project_config": true,
+      "successful_command_count": 15,
+      "model_reported_pending": true,
+      "no_fixture_writes": true
+    },
+    {
+      "case": "engine-decline",
+      "successful_command_mentions_project_config": false,
+      "successful_command_count": 0,
+      "model_reported_pending": true,
+      "no_fixture_writes": true
+    },
+    {
+      "case": "adopt",
+      "successful_command_mentions_project_config": true,
+      "successful_command_count": 28,
+      "model_reported_pending": true,
+      "no_fixture_writes": true
+    },
+    {
+      "case": "settings",
+      "successful_command_mentions_project_config": false,
+      "successful_command_count": 0,
+      "model_reported_pending": true,
+      "no_fixture_writes": true
+    },
+    {
+      "case": "settings-write",
+      "successful_command_mentions_project_config": false,
+      "successful_command_count": 0,
+      "model_reported_pending": true,
+      "no_fixture_writes": true
+    }
+  ]
+}

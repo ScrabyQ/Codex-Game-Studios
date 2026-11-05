@@ -1,0 +1,13 @@
+{
+  "source_sha256": "5741b2ef90d60ee3ee350b908d106c10fcd037ad280d2a9ee4cb8f8a7fcc506e",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-10 runtime and consent contract:** Treat subsequent Claude-specific tool syntax as source procedure, not automatic execution. Resolve the selected project root explicitly; use the registered helper dispatcher with `--root <project-root>` when available. Observe real files and diagnostics; never turn a failed probe or unknown code root into an empty project. If a required helper cannot run, use an explicitly documented factual fallback only where the needed facts and precedence can be established; otherwise report NOT ASSESSED and stop that dependent step. Use native question support when available or ask in plain text and wait. A skipped or dismissed required decision is not consent; preserve prior explicit user authorization and active host permissions. Never auto-run another skill or phase after a recommendation.\n\nUse the helper dispatcher with explicit root for `yaml-helper` lookups (`resolve_setting`, `get_yaml_key`, `validate_yaml_enum`, `validate_enum_value`, `is_locally_overridable`) and `config-set` where appropriate; preserve exit codes. Project local values apply only to whitelist keys. Respect the existing source validation, unknown-key and reserved-setting warnings and user decision gates; no write on declined or unanswered confirmation. Read back rigor-derived values and provenance, do not persist derived knobs. If validation/whitelist helpers cannot run, report NOT ASSESSED and do not write an unvalidated setting.\n\n"
+    },
+    {
+      "find": "bash \"${resolved skill directory}/../../hooks/yaml-helper.sh\" <helper call>",
+      "replace": "node scripts/codex/helper.mjs yaml-helper --root <absolute-project-root> <helper call>"
+    }
+  ]
+}

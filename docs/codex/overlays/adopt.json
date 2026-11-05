@@ -1,0 +1,14 @@
+{
+  "source_sha256": "79547d656e76fde14f1761a6840cb3a6fbb058f69f33d7829d5e073390f46b98",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-10 runtime and consent contract:** Treat subsequent Claude-specific tool syntax as source procedure, not automatic execution. Resolve the selected project root explicitly; use the registered helper dispatcher with `--root <project-root>` when available. Observe real files and diagnostics; never turn a failed probe or unknown code root into an empty project. If a required helper cannot run, use an explicitly documented factual fallback only where the needed facts and precedence can be established; otherwise report NOT ASSESSED and stop that dependent step. Use native question support when available or ask in plain text and wait. A skipped or dismissed required decision is not consent; preserve prior explicit user authorization and active host permissions. Never auto-run another skill or phase after a recommendation.\n\nPreserve all seven audit and planning phases and tier-based severity; at minimal do not treat absent GDDs or ADRs as required gaps. Plan creation, moves, converter execution and any edits require the applicable user authorization and explicit required decisions. Offer the next action without executing a new skill; do not silently move, delete, overwrite or finalize legacy files. If an audit helper cannot run, report the specific portion NOT ASSESSED, rather than declaring compliance.\n\n"
+    },
+    {
+      "target": "references/7-first-action.md",
+      "find": "# $adopt — Phase 7: Offer First Action\n",
+      "replace": "# $adopt — Phase 7: Offer First Action\n\n**Codex handoff:** Offer one action to the user, but do not invoke another skill automatically. A separately authorized converter run stays within its own reviewed write scope.\n\n"
+    }
+  ]
+}

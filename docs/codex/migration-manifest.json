@@ -4049,8 +4049,16 @@
       ],
       "proposed_target": ".agents/skills/adopt/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six scoped workflow smokes: native observations/declined saves, actual sandboxed settings write/readback, and Codex-host Godot4.7.2 configuration plus real import. Nested full setup, legacy mirror parity and unrun branches remain PENDING as recorded.",
+      "status": "EQUIVALENT",
+      "task": "CGS-10",
+      "target": ".agents/skills/adopt/SKILL.md",
+      "target_sha256": "2f03339b7c566c9c2dd69acbe0187857cfd6af2014053ad9ebd67f5a943ca3d4",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-10/README.md",
+        "docs/codex/evidence/CGS-10/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/adopt/references/1-detect.md",
@@ -4063,8 +4071,16 @@
       ],
       "proposed_target": ".agents/skills/adopt/references/1-detect.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six scoped workflow smokes: native observations/declined saves, actual sandboxed settings write/readback, and Codex-host Godot4.7.2 configuration plus real import. Nested full setup, legacy mirror parity and unrun branches remain PENDING as recorded.",
+      "status": "EQUIVALENT",
+      "task": "CGS-10",
+      "target": ".agents/skills/adopt/references/1-detect.md",
+      "target_sha256": "e34a45e6e94d542b22abc3e980cd7af535150a28a10a52a7ea0cd46a088fc346",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-10/README.md",
+        "docs/codex/evidence/CGS-10/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/adopt/references/2-format-audit.md",
@@ -4077,8 +4093,16 @@
       ],
       "proposed_target": ".agents/skills/adopt/references/2-format-audit.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six scoped workflow smokes: native observations/declined saves, actual sandboxed settings write/readback, and Codex-host Godot4.7.2 configuration plus real import. Nested full setup, legacy mirror parity and unrun branches remain PENDING as recorded.",
+      "status": "EQUIVALENT",
+      "task": "CGS-10",
+      "target": ".agents/skills/adopt/references/2-format-audit.md",
+      "target_sha256": "79809bcbbdf8ca0c6112b117c4f23c68f51b65333109d287977d75cebd139069",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-10/README.md",
+        "docs/codex/evidence/CGS-10/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/adopt/references/3-classify.md",
@@ -4091,8 +4115,16 @@
       ],
       "proposed_target": ".agents/skills/adopt/references/3-classify.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six scoped workflow smokes: native observations/declined saves, actual sandboxed settings write/readback, and Codex-host Godot4.7.2 configuration plus real import. Nested full setup, legacy mirror parity and unrun branches remain PENDING as recorded.",
+      "status": "EQUIVALENT",
+      "task": "CGS-10",
+      "target": ".agents/skills/adopt/references/3-classify.md",
+      "target_sha256": "216c3631fb31fe114e740851d7c0fe2eeac7a8f9c79fe6afaf27de294010edca",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-10/README.md",
+        "docs/codex/evidence/CGS-10/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/adopt/references/4-migration-plan.md",
@@ -4105,8 +4137,16 @@
       ],
       "proposed_target": ".agents/skills/adopt/references/4-migration-plan.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six scoped workflow smokes: native observations/declined saves, actual sandboxed settings write/readback, and Codex-host Godot4.7.2 configuration plus real import. Nested full setup, legacy mirror parity and unrun branches remain PENDING as recorded.",
+      "status": "EQUIVALENT",
+      "task": "CGS-10",
+      "target": ".agents/skills/adopt/references/4-migration-plan.md",
+      "target_sha256": "e03ff9c8d171458234f5276f901da6e9b73ceba729eb0fddafe9cce472d58a7b",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-10/README.md",
+        "docs/codex/evidence/CGS-10/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/adopt/references/5-summary.md",
@@ -4119,8 +4159,16 @@
       ],
       "proposed_target": ".agents/skills/adopt/references/5-summary.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six scoped workflow smokes: native observations/declined saves, actual sandboxed settings write/readback, and Codex-host Godot4.7.2 configuration plus real import. Nested full setup, legacy mirror parity and unrun branches remain PENDING as recorded.",
+      "status": "EQUIVALENT",
+      "task": "CGS-10",
+      "target": ".agents/skills/adopt/references/5-summary.md",
+      "target_sha256": "d1a929f5cc202392468c0b7544687467d517f0bf2de344820ae43f254c4e97ff",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-10/README.md",
+        "docs/codex/evidence/CGS-10/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/adopt/references/6-write.md",
@@ -4133,8 +4181,16 @@
       ],
       "proposed_target": ".agents/skills/adopt/references/6-write.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six scoped workflow smokes: native observations/declined saves, actual sandboxed settings write/readback, and Codex-host Godot4.7.2 configuration plus real import. Nested full setup, legacy mirror parity and unrun branches remain PENDING as recorded.",
+      "status": "EQUIVALENT",
+      "task": "CGS-10",
+      "target": ".agents/skills/adopt/references/6-write.md",
+      "target_sha256": "341b5d05dc649ffbba38823599105aaa28c8475a0cc09c9f8839198563996773",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-10/README.md",
+        "docs/codex/evidence/CGS-10/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/adopt/references/7-first-action.md",
@@ -4147,8 +4203,16 @@
       ],
       "proposed_target": ".agents/skills/adopt/references/7-first-action.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six scoped workflow smokes: native observations/declined saves, actual sandboxed settings write/readback, and Codex-host Godot4.7.2 configuration plus real import. Nested full setup, legacy mirror parity and unrun branches remain PENDING as recorded.",
+      "status": "EQUIVALENT",
+      "task": "CGS-10",
+      "target": ".agents/skills/adopt/references/7-first-action.md",
+      "target_sha256": "15dae564a1c82fdf8b21e6d955dd5e85cc3b502cea5181a95f542ea1b5be4c07",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-10/README.md",
+        "docs/codex/evidence/CGS-10/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/architecture-decision/CONTRACT.md",
@@ -5518,8 +5582,16 @@
       ],
       "proposed_target": ".agents/skills/help/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six scoped workflow smokes: native observations/declined saves, actual sandboxed settings write/readback, and Codex-host Godot4.7.2 configuration plus real import. Nested full setup, legacy mirror parity and unrun branches remain PENDING as recorded.",
+      "status": "EQUIVALENT",
+      "task": "CGS-10",
+      "target": ".agents/skills/help/SKILL.md",
+      "target_sha256": "b5288439e129705ffd9b9049d10f960a62aa5d489be69597570effa3f7ea492a",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-10/README.md",
+        "docs/codex/evidence/CGS-10/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/hotfix/SKILL.md",
@@ -5697,8 +5769,16 @@
       ],
       "proposed_target": ".agents/skills/project-stage-detect/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six scoped workflow smokes: native observations/declined saves, actual sandboxed settings write/readback, and Codex-host Godot4.7.2 configuration plus real import. Nested full setup, legacy mirror parity and unrun branches remain PENDING as recorded.",
+      "status": "EQUIVALENT",
+      "task": "CGS-10",
+      "target": ".agents/skills/project-stage-detect/SKILL.md",
+      "target_sha256": "31012e720699352d8c52d39f3a3b41aa9fc36f3e39c50b3dd80c0ce3d758095b",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-10/README.md",
+        "docs/codex/evidence/CGS-10/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/propagate-design-change/SKILL.md",
@@ -6155,8 +6235,16 @@
       ],
       "proposed_target": ".agents/skills/settings/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six scoped workflow smokes: native observations/declined saves, actual sandboxed settings write/readback, and Codex-host Godot4.7.2 configuration plus real import. Nested full setup, legacy mirror parity and unrun branches remain PENDING as recorded.",
+      "status": "EQUIVALENT",
+      "task": "CGS-10",
+      "target": ".agents/skills/settings/SKILL.md",
+      "target_sha256": "a82d72efa7c147debd27328f6b4287eb95f4ba76a7999ab247c8869474e1a1b2",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-10/README.md",
+        "docs/codex/evidence/CGS-10/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/setup-engine/SKILL.md",
@@ -6173,8 +6261,16 @@
       ],
       "proposed_target": ".agents/skills/setup-engine/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six scoped workflow smokes: native observations/declined saves, actual sandboxed settings write/readback, and Codex-host Godot4.7.2 configuration plus real import. Nested full setup, legacy mirror parity and unrun branches remain PENDING as recorded.",
+      "status": "EQUIVALENT",
+      "task": "CGS-10",
+      "target": ".agents/skills/setup-engine/SKILL.md",
+      "target_sha256": "b35af4435c31400fc6cdb64e7dcfaf7576b9337de736cfb8345beff9654cda34",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-10/README.md",
+        "docs/codex/evidence/CGS-10/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/setup-engine/references/11-upgrade.md",
@@ -6187,8 +6283,16 @@
       ],
       "proposed_target": ".agents/skills/setup-engine/references/11-upgrade.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six scoped workflow smokes: native observations/declined saves, actual sandboxed settings write/readback, and Codex-host Godot4.7.2 configuration plus real import. Nested full setup, legacy mirror parity and unrun branches remain PENDING as recorded.",
+      "status": "EQUIVALENT",
+      "task": "CGS-10",
+      "target": ".agents/skills/setup-engine/references/11-upgrade.md",
+      "target_sha256": "a163a6e87851bd0ac78aa75c3f0500c7da8a674c1b384ac90f5f9e9fc559b9de",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-10/README.md",
+        "docs/codex/evidence/CGS-10/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/setup-engine/references/12-output-summary.md",
@@ -6201,8 +6305,16 @@
       ],
       "proposed_target": ".agents/skills/setup-engine/references/12-output-summary.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six scoped workflow smokes: native observations/declined saves, actual sandboxed settings write/readback, and Codex-host Godot4.7.2 configuration plus real import. Nested full setup, legacy mirror parity and unrun branches remain PENDING as recorded.",
+      "status": "EQUIVALENT",
+      "task": "CGS-10",
+      "target": ".agents/skills/setup-engine/references/12-output-summary.md",
+      "target_sha256": "2591cb77bc440bb1a973868b8d55752edb6573b848c26b02bdc1b9eb8645c49d",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-10/README.md",
+        "docs/codex/evidence/CGS-10/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/setup-engine/references/2-guided-mode.md",
@@ -6215,8 +6327,16 @@
       ],
       "proposed_target": ".agents/skills/setup-engine/references/2-guided-mode.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six scoped workflow smokes: native observations/declined saves, actual sandboxed settings write/readback, and Codex-host Godot4.7.2 configuration plus real import. Nested full setup, legacy mirror parity and unrun branches remain PENDING as recorded.",
+      "status": "EQUIVALENT",
+      "task": "CGS-10",
+      "target": ".agents/skills/setup-engine/references/2-guided-mode.md",
+      "target_sha256": "be176f2d4f14eef70299b56f9e4245386a26d5af447f038589a139c233a12ba4",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-10/README.md",
+        "docs/codex/evidence/CGS-10/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/setup-engine/references/3-version.md",
@@ -6229,8 +6349,16 @@
       ],
       "proposed_target": ".agents/skills/setup-engine/references/3-version.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six scoped workflow smokes: native observations/declined saves, actual sandboxed settings write/readback, and Codex-host Godot4.7.2 configuration plus real import. Nested full setup, legacy mirror parity and unrun branches remain PENDING as recorded.",
+      "status": "EQUIVALENT",
+      "task": "CGS-10",
+      "target": ".agents/skills/setup-engine/references/3-version.md",
+      "target_sha256": "f2fa9fbde63ae4c4644cde3435d693c64e7a6c86f1d535f6db8ace9c66a9167c",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-10/README.md",
+        "docs/codex/evidence/CGS-10/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/setup-engine/references/4-claude-md-stack.md",
@@ -6243,8 +6371,16 @@
       ],
       "proposed_target": ".agents/skills/setup-engine/references/4-claude-md-stack.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six scoped workflow smokes: native observations/declined saves, actual sandboxed settings write/readback, and Codex-host Godot4.7.2 configuration plus real import. Nested full setup, legacy mirror parity and unrun branches remain PENDING as recorded.",
+      "status": "EQUIVALENT",
+      "task": "CGS-10",
+      "target": ".agents/skills/setup-engine/references/4-claude-md-stack.md",
+      "target_sha256": "37b0cfc9757c5490c6c5c18d287c0f6425d10695aa857c6d9897691a3ef83f67",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-10/README.md",
+        "docs/codex/evidence/CGS-10/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/setup-engine/references/5-technical-preferences.md",
@@ -6257,8 +6393,16 @@
       ],
       "proposed_target": ".agents/skills/setup-engine/references/5-technical-preferences.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six scoped workflow smokes: native observations/declined saves, actual sandboxed settings write/readback, and Codex-host Godot4.7.2 configuration plus real import. Nested full setup, legacy mirror parity and unrun branches remain PENDING as recorded.",
+      "status": "EQUIVALENT",
+      "task": "CGS-10",
+      "target": ".agents/skills/setup-engine/references/5-technical-preferences.md",
+      "target_sha256": "ce4126528cc6a5a13e34e61b73a89a6c7c670c6d9a0129a373c2b039532dead5",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-10/README.md",
+        "docs/codex/evidence/CGS-10/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/setup-engine/references/5.5-project-yaml.md",
@@ -6271,8 +6415,16 @@
       ],
       "proposed_target": ".agents/skills/setup-engine/references/5.5-project-yaml.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six scoped workflow smokes: native observations/declined saves, actual sandboxed settings write/readback, and Codex-host Godot4.7.2 configuration plus real import. Nested full setup, legacy mirror parity and unrun branches remain PENDING as recorded.",
+      "status": "EQUIVALENT",
+      "task": "CGS-10",
+      "target": ".agents/skills/setup-engine/references/5.5-project-yaml.md",
+      "target_sha256": "19992651e8f12a3d70575b8869d7269c88ddeab40bd5018527c0048e2471b366",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-10/README.md",
+        "docs/codex/evidence/CGS-10/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/setup-engine/references/6-knowledge-gap.md",
@@ -6285,8 +6437,16 @@
       ],
       "proposed_target": ".agents/skills/setup-engine/references/6-knowledge-gap.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six scoped workflow smokes: native observations/declined saves, actual sandboxed settings write/readback, and Codex-host Godot4.7.2 configuration plus real import. Nested full setup, legacy mirror parity and unrun branches remain PENDING as recorded.",
+      "status": "EQUIVALENT",
+      "task": "CGS-10",
+      "target": ".agents/skills/setup-engine/references/6-knowledge-gap.md",
+      "target_sha256": "348b3c8b251d9cca6a046dfefd81cd2ff5dae27bc409e58a36994f0c575412e2",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-10/README.md",
+        "docs/codex/evidence/CGS-10/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/setup-engine/references/7-reference-docs.md",
@@ -6299,8 +6459,16 @@
       ],
       "proposed_target": ".agents/skills/setup-engine/references/7-reference-docs.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six scoped workflow smokes: native observations/declined saves, actual sandboxed settings write/readback, and Codex-host Godot4.7.2 configuration plus real import. Nested full setup, legacy mirror parity and unrun branches remain PENDING as recorded.",
+      "status": "EQUIVALENT",
+      "task": "CGS-10",
+      "target": ".agents/skills/setup-engine/references/7-reference-docs.md",
+      "target_sha256": "bd5086867333cafe26d6dc4c6f595c58f383b0c40b1394ab4db2e006984959cc",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-10/README.md",
+        "docs/codex/evidence/CGS-10/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/setup-engine/references/7.5-scaffold.md",
@@ -6313,8 +6481,16 @@
       ],
       "proposed_target": ".agents/skills/setup-engine/references/7.5-scaffold.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six scoped workflow smokes: native observations/declined saves, actual sandboxed settings write/readback, and Codex-host Godot4.7.2 configuration plus real import. Nested full setup, legacy mirror parity and unrun branches remain PENDING as recorded.",
+      "status": "EQUIVALENT",
+      "task": "CGS-10",
+      "target": ".agents/skills/setup-engine/references/7.5-scaffold.md",
+      "target_sha256": "8f9d54e91734aaabc3e61e2eff20a6f55994149965657a0d86b190cd5b2bdd8e",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-10/README.md",
+        "docs/codex/evidence/CGS-10/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/setup-engine/references/8-verify.md",
@@ -6327,8 +6503,16 @@
       ],
       "proposed_target": ".agents/skills/setup-engine/references/8-verify.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six scoped workflow smokes: native observations/declined saves, actual sandboxed settings write/readback, and Codex-host Godot4.7.2 configuration plus real import. Nested full setup, legacy mirror parity and unrun branches remain PENDING as recorded.",
+      "status": "EQUIVALENT",
+      "task": "CGS-10",
+      "target": ".agents/skills/setup-engine/references/8-verify.md",
+      "target_sha256": "5746434b12525b23b014396f07784cfa81fd090be94f73497215997d8c7a1790",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-10/README.md",
+        "docs/codex/evidence/CGS-10/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/setup-engine/references/godot-language-config.md",
@@ -6341,8 +6525,16 @@
       ],
       "proposed_target": ".agents/skills/setup-engine/references/godot-language-config.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six scoped workflow smokes: native observations/declined saves, actual sandboxed settings write/readback, and Codex-host Godot4.7.2 configuration plus real import. Nested full setup, legacy mirror parity and unrun branches remain PENDING as recorded.",
+      "status": "EQUIVALENT",
+      "task": "CGS-10",
+      "target": ".agents/skills/setup-engine/references/godot-language-config.md",
+      "target_sha256": "a6e89fa50a2cb1422723e0ba8d99e80674a3c4cfea4b64c0e9b376a00d5ea128",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-10/README.md",
+        "docs/codex/evidence/CGS-10/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/skill-improve/SKILL.md",
@@ -6548,8 +6740,16 @@
       ],
       "proposed_target": ".agents/skills/start/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six scoped workflow smokes: native observations/declined saves, actual sandboxed settings write/readback, and Codex-host Godot4.7.2 configuration plus real import. Nested full setup, legacy mirror parity and unrun branches remain PENDING as recorded.",
+      "status": "EQUIVALENT",
+      "task": "CGS-10",
+      "target": ".agents/skills/start/SKILL.md",
+      "target_sha256": "8c405fa3d73737309352c5f4a22e3e27067c681a9047ff051e19ad6c49293b20",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-10/README.md",
+        "docs/codex/evidence/CGS-10/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/story-done/CONTRACT.md",

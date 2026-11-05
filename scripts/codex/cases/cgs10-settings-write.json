@@ -1,0 +1,18 @@
+{
+  "id": "cgs10-settings-write",
+  "components": [
+    "file:.claude/skills/settings/SKILL.md"
+  ],
+  "files": {
+    "project.yaml": "schema_version: 1\nframework:\n  version: 1.2.0\nmodes:\n  rigor: minimal\n  automation: collaborative\nengine:\n  name: Godot\n  version: \"4.4\"\n  language: GDScript\n"
+  },
+  "prompt": "Invoke $settings to set modes.rigor=standard in project.yaml and set the personal local override modes.automation=guided in project.local.yaml. I explicitly authorize both writes for this fixture, and approve each. Preserve engine configuration, do not add any rigor-fronted knobs, and do not write any other file. Read back actual values and report results.",
+  "expect_content": {
+    "project.yaml": "rigor:\\s*standard",
+    "project.local.yaml": "automation:\\s*guided"
+  },
+  "scope": "Authorized settings writes for rigor and local override; verify target files and review change list.",
+  "expect_commands": [
+    "project\\.yaml"
+  ]
+}

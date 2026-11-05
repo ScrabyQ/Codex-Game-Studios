@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "task": "CGS-10",
+  "component": "file:.claude/skills/settings/SKILL.md",
+  "fixture": ".scratch/native-smoke/cgs10-settings-write-8c7695cf",
+  "context": "Native CLI write attempt first failed under host policy; independently invoked actual configuration helpers from the host against that same disposable fixture with its absolute root. This is helper behavior, not a native skill PASS.",
+  "commands": [
+    {
+      "command": "node scripts/codex/config.mjs set --root <absolute-fixture> modes.rigor standard",
+      "exit_code": 0
+    },
+    {
+      "command": "node scripts/codex/config.mjs set --root <absolute-fixture> --local modes.automation guided",
+      "exit_code": 0
+    },
+    {
+      "command": "node scripts/codex/config.mjs resolve --root <absolute-fixture> --keys rigor,workflow,automation",
+      "exit_code": 0
+    }
+  ],
+  "observed": "rigor: standard (project.yaml); automation: guided (project.local.yaml); workflow: standard (rigor:standard)",
+  "before_project_sha256": "5ef5ea5855ba0f801e8925718a2ca267dceea821ac8be1c4d34da0aca4dc7a6a",
+  "after_project_sha256": "cfbe22e1ce9ee2c265552d52179cd4602defcadf9de460410957adf2a67788e5",
+  "after_local_sha256": "9e2da612333a5fb0edf300dce011213eac6eb52e00c44cd7619da3c10bbe306d",
+  "assertions": {
+    "rigor_standard": true,
+    "local_guided": true,
+    "engine_preserved": true,
+    "no_fronted_knobs": true
+  }
+}

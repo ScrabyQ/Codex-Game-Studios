@@ -1,0 +1,38 @@
+{
+  "source_sha256": "37c08d68ed58b70e6880e269e711e2617b89f2f165d9bba5d966e326e73e9a17",
+  "edits": [
+    {
+      "find": "description: \"Configure engine and version. Pins it in CLAUDE.md; WebSearch fills reference docs when the version is beyond LLM training data.\"",
+      "replace": "description: \"Configure an engine and version in project settings, verify installed version, and maintain sourced engine references with user consent.\""
+    },
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-10 runtime and consent contract:** Treat subsequent Claude-specific tool syntax as source procedure, not automatic execution. Resolve the selected project root explicitly; use the registered helper dispatcher with `--root <project-root>` when available. Observe real files and diagnostics; never turn a failed probe or unknown code root into an empty project. If a required helper cannot run, use an explicitly documented factual fallback only where the needed facts and precedence can be established; otherwise report NOT ASSESSED and stop that dependent step. Use native question support when available or ask in plain text and wait. A skipped or dismissed required decision is not consent; preserve prior explicit user authorization and active host permissions. Never auto-run another skill or phase after a recommendation.\n\nThis adaptation preserves upstream sources: do not edit CLAUDE.md, .claude files, generated .agents reference mirrors, or generated role files as project configuration. The original CLAUDE stack/import and agent-file steps below are historical Claude procedures: replace them with resolving engine/version/language and specialist routing from project.yaml and reading the appropriate pinned VERSION.md on demand. Record the actual editor version, executable or probe method and time in the user-owned docs/project/engine-version.md when authorized; this record complements the pinned reference and does not assert that its documentation was refreshed. Keep the guided user choices, confirmation, version/installation checks, scoped authorized project.yaml and project artifact writes, reference-update safeguards and coherence reporting. If the original legacy technical-preferences dual-write cannot be performed without modifying a generated/source-owned file, do not modify the legacy mirror; project.yaml and the user-owned version probe record are the Codex equivalent, with legacy mirror parity explicitly PENDING. Do not propose or claim a mirror update unless an independently user-owned writable destination is established. Never overwrite an existing Godot project, never fabricate Unity/Unreal projects, and do not execute a suggested next skill. Verify current release/licensing claims against official sources rather than presenting historical prices as current.\n\n"
+    },
+    {
+      "target": "references/4-claude-md-stack.md",
+      "find": "# $setup-engine — Section 4: Update CLAUDE.md Technology Stack\n",
+      "replace": "# $setup-engine — Section 4: Update CLAUDE.md Technology Stack\n\n**Codex substitution:** This section is retained as historical upstream guidance. Ask language and engine questions, but do not edit CLAUDE.md or write an @import. Record approved choices in project.yaml under the later configuration step; load the chosen engine VERSION.md dynamically.\n\n"
+    },
+    {
+      "target": "references/5-technical-preferences.md",
+      "find": "# $setup-engine — Section 5: Populate Technical Preferences\n",
+      "replace": "# $setup-engine — Section 5: Populate Technical Preferences\n\n**Codex substitution:** The mirrored technical-preferences file is generated and upstream sources are preserved. Do not edit either merely to satisfy the historical dual-write; maintain approved project.yaml values and mark legacy mirror synchronization PENDING if no independently user-owned mirror is available.\n\n"
+    },
+    {
+      "target": "references/8-verify.md",
+      "find": "# $setup-engine — Sections 8 and 8.5: Verify and Read Back\n",
+      "replace": "# $setup-engine — Sections 8 and 8.5: Verify and Read Back\n\n**Codex substitution:** Do not verify a CLAUDE.md @import as Codex context. Verify the selected engine and version in project.yaml against its pinned VERSION.md, and execute the coherence check only when available; report NOT CHECKED for anything not verified.\n\n"
+    },
+    {
+      "target": "references/12-output-summary.md",
+      "find": "# $setup-engine — Section 12: Output Summary\n",
+      "replace": "# $setup-engine — Section 12: Output Summary\n\n**Codex substitution:** Do not claim CLAUDE.md, generated agent files, or the legacy mirror were updated when they were not. Report project.yaml, pinned references, scaffold and verification accurately; present the next skill using native $skill syntax and do not invoke it.\n\n"
+    },
+    {
+      "target": "references/5.5-project-yaml.md",
+      "find": "# $setup-engine — Section 5.5: Populate project.yaml\n",
+      "replace": "# $setup-engine — Section 5.5: Populate project.yaml\n\n**Codex substitution:** Do not require an upstream or generated legacy-mirror write before preparing the four project.yaml blocks. Preserve choices, project-shape questions, approval and existing unrelated config. Read back the primary settings and compare only with independently maintained mirrors; when no writable user-owned legacy mirror exists, report mirror parity PENDING rather than modifying generated or upstream source files.\n"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "cgs10-help",
+  "components": [
+    "file:.claude/skills/help/SKILL.md"
+  ],
+  "read_only": false,
+  "no_writes": true,
+  "files": {
+    "project.yaml": "schema_version: 1\nframework:\n  version: 1.2.0\nmodes:\n  rigor: minimal\n  automation: collaborative\nengine:\n  name: Godot\n  version: \"4.4\"\n  language: GDScript\n",
+    "design/game-brief.md": "# Brief\nA puzzle game.\n"
+  },
+  "prompt": "Invoke $help. Determine the next minimal-path step from actual fixture files. Do not write or run another skill; if a helper cannot run, report it and use the documented factual fallback.",
+  "expect_report": [
+    "create-stories"
+  ],
+  "scope": "Minimal-path orientation for a configured project with brief and no stories.",
+  "expect_commands": [
+    "project\\.yaml"
+  ]
+}

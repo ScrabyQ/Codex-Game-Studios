@@ -1,0 +1,21 @@
+{
+  "id": "cgs10-adopt",
+  "components": [
+    "file:.claude/skills/adopt/SKILL.md"
+  ],
+  "read_only": false,
+  "no_writes": true,
+  "files": {
+    "project.yaml": "schema_version: 1\nframework:\n  version: 1.2.0\nmodes:\n  rigor: minimal\n  automation: collaborative\nengine:\n  name: Godot\n  version: \"4.4\"\n  language: GDScript\n",
+    "project.godot": "config_version=5\n",
+    "design/game-brief.md": "# Game brief\n## Core loop\nSolve puzzles.\n## MVP\nOne level.\n"
+  },
+  "prompt": "Invoke $adopt for this existing Godot project. Audit the available brief and configuration at minimal rigor. I decline saving an adoption plan or making any changes; tell me actual findings and any portions not assessed. Do not start another skill.",
+  "expect_report": [
+    "brief"
+  ],
+  "scope": "Brownfield minimal-tier audit with plan write declined.",
+  "expect_commands": [
+    "project\\.yaml"
+  ]
+}

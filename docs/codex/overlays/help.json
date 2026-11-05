@@ -1,0 +1,9 @@
+{
+  "source_sha256": "3a5fd66a1e29fd86133ef3085e764cf0f8e15ce935ed06e9000580a577ddbeb6",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-10 runtime and consent contract:** Treat subsequent Claude-specific tool syntax as source procedure, not automatic execution. Resolve the selected project root explicitly; use the registered helper dispatcher with `--root <project-root>` when available. Observe real files and diagnostics; never turn a failed probe or unknown code root into an empty project. If a required helper cannot run, use an explicitly documented factual fallback only where the needed facts and precedence can be established; otherwise report NOT ASSESSED and stop that dependent step. Use native question support when available or ask in plain text and wait. A skipped or dismissed required decision is not consent; preserve prior explicit user authorization and active host permissions. Never auto-run another skill or phase after a recommendation.\n\nThis is read-only. When helpers are unavailable use the documented factual fallback: resolve config precedence from actual project files, examine the applicable catalog and existing artifacts, and label unresolved facts NOT ASSESSED. Do not claim a helper executed, treat NO_CHECK as complete, or recommend a phase gate at minimal rigor.\n\n"
+    }
+  ]
+}

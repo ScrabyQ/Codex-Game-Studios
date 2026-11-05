@@ -1,0 +1,9 @@
+{
+  "source_sha256": "ab6e079a48c99479ac71deca11b9143a4b87874b6589e39c3e0a81422d9d1f32",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-10 runtime and consent contract:** Treat subsequent Claude-specific tool syntax as source procedure, not automatic execution. Resolve the selected project root explicitly; use the registered helper dispatcher with `--root <project-root>` when available. Observe real files and diagnostics; never turn a failed probe or unknown code root into an empty project. If a required helper cannot run, use an explicitly documented factual fallback only where the needed facts and precedence can be established; otherwise report NOT ASSESSED and stop that dependent step. Use native question support when available or ask in plain text and wait. A skipped or dismissed required decision is not consent; preserve prior explicit user authorization and active host permissions. Never auto-run another skill or phase after a recommendation.\n\nFor this skill, preserve all seven phases and its returning-user short path. Do not write stage, rigor or automation before their required consent; a declined save leaves all three unchanged. Do not persist any of the six rigor-fronted knobs or the review-mode mirror. Show the stage and rigor card and hand off by naming the next skill, without executing it. If project-state cannot run, follow its source-specified direct-read fallback, including unknown root and origin handling.\n\n"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "cgs10-settings",
+  "components": [
+    "file:.claude/skills/settings/SKILL.md"
+  ],
+  "read_only": false,
+  "no_writes": true,
+  "files": {
+    "project.yaml": "schema_version: 1\nframework:\n  version: 1.2.0\nmodes:\n  rigor: minimal\n  automation: collaborative\nengine:\n  name: Godot\n  version: \"4.4\"\n  language: GDScript\n",
+    "project.local.yaml": "modes:\n  automation: autonomous\n"
+  },
+  "prompt": "Invoke $settings as a read-only view. Report effective rigor and automation, identifying where the local override comes from. Do not edit either configuration file.",
+  "expect_report": [
+    "autonomous",
+    "minimal"
+  ],
+  "scope": "Read-only settings resolution with a local override and rigor.",
+  "expect_commands": [
+    "project\\.yaml",
+    "project\\.local\\.yaml"
+  ]
+}

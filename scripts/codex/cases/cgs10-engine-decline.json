@@ -1,0 +1,19 @@
+{
+  "id": "cgs10-engine-decline",
+  "components": [
+    "file:.claude/skills/setup-engine/SKILL.md"
+  ],
+  "read_only": false,
+  "no_writes": true,
+  "files": {
+    "project.yaml": "schema_version: 1\nframework:\n  version: 1.2.0\nmodes:\n  rigor: minimal\n  automation: collaborative\n"
+  },
+  "prompt": "Invoke $setup-engine. I choose Godot 4.4 with GDScript, but I decline all file writes and do not consent to saving or scaffolding. Give me a proposed path only, then stop; do not start another skill.",
+  "expect_report": [
+    "godot"
+  ],
+  "scope": "Engine setup choice with explicit denial of all writes.",
+  "expect_commands": [
+    "project\\.yaml"
+  ]
+}

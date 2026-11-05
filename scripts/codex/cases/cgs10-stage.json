@@ -1,0 +1,21 @@
+{
+  "id": "cgs10-stage",
+  "components": [
+    "file:.claude/skills/project-stage-detect/SKILL.md"
+  ],
+  "read_only": false,
+  "no_writes": true,
+  "files": {
+    "project.yaml": "schema_version: 1\nframework:\n  version: 1.2.0\nmodes:\n  rigor: minimal\n  automation: collaborative\nengine:\n  name: Godot\n  version: \"4.4\"\n  language: GDScript\n",
+    "project.godot": "config_version=5\n",
+    "src/player.gd": "extends Node\n"
+  },
+  "prompt": "Invoke $project-stage-detect on this existing Godot game. Inspect actual files, report engine, stage evidence and uncertainty honestly; do not write a report or launch another skill.",
+  "expect_report": [
+    "godot"
+  ],
+  "scope": "Read-only stage assessment for existing Godot code.",
+  "expect_commands": [
+    "project\\.yaml"
+  ]
+}

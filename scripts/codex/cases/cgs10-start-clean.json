@@ -1,0 +1,19 @@
+{
+  "id": "cgs10-start-clean",
+  "components": [
+    "file:.claude/skills/start/SKILL.md"
+  ],
+  "read_only": false,
+  "no_writes": true,
+  "files": {
+    "project.yaml": "schema_version: 1\nframework:\n  version: 1.2.0\nmodes:\n  rigor: minimal\n  automation: collaborative\n"
+  },
+  "prompt": "Invoke $start. This fixture is new: no engine and no game idea. My answer is A, no idea yet. I decline saving any settings and do not authorize file writes. Show what you would set, state nothing was saved, name the next step without running it.",
+  "expect_report": [
+    "minimal"
+  ],
+  "scope": "Clean-project onboarding with declined config save; no writes or subsequent skill execution.",
+  "expect_commands": [
+    "project\\.yaml"
+  ]
+}

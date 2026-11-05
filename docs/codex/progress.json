@@ -5,9 +5,9 @@
   "upstream_sha": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
   "owner": "ScrabyQ",
   "repository": "Codex-Game-Studios",
-  "last_completed": "CGS-13",
-  "current_task": "CGS-14",
-  "next_safe_step": "Architecture lifecycle and guard scenarios verified; proceed to production planning. Active control-manifest publication remains gated by real review concerns.",
+  "last_completed": "CGS-10",
+  "current_task": "CGS-11",
+  "next_safe_step": "Onboarding/settings scoped behaviors verified. Continue design workflows; preserve all partial native and engine limitations.",
   "decisions": [
     "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED.",
     "Generated content-preserving .agents mirror retains helper root math; native roles use .codex/agents/*.toml; all generation is hash-guarded; no new agent runtime."
@@ -129,9 +129,14 @@
       "key": "CGS-10",
       "singularity_id": "T-91fd8938-4f13-46a8-944a-6da494474db7",
       "title": "CGS-10 · Skills · вход в студию и настройки (6)",
-      "status": "PENDING",
+      "status": "COMPLETE",
       "commit": null,
-      "evidence": []
+      "evidence": [
+        "docs/codex/evidence/CGS-10/README.md",
+        "docs/codex/evidence/CGS-10/traceability.json"
+      ],
+      "note": "Onboarding/settings scoped behaviors verified. Continue design workflows; preserve all partial native and engine limitations.",
+      "updated_at": "2026-11-05T11:20:05.918Z"
     },
     {
       "key": "CGS-11",
