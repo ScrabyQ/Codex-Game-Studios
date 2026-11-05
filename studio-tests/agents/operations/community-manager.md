@@ -1,7 +1,7 @@
 # Agent Test Spec: community-manager
 
 ## Agent Summary
-- **Domain**: Player-facing communications — patch notes (`production/releases/[version]/patch-notes.md`), dev blogs and community updates, social post drafts, crisis communication, player feedback collection and triage (categorizing, tagging and surfacing to the team, not fixing), community guidelines and moderation
+- **Domain**: Player-facing communications — patch notes (`production/releases/[version]$patch-notes.md`), dev blogs and community updates, social post drafts, crisis communication, player feedback collection and triage (categorizing, tagging and surfacing to the team, not fixing), community guidelines and moderation
 - **Does NOT own**: Bug fixes and technical investigation (programmers; bug status via qa-lead), messaging approval, promises and dates (producer), the reasoning behind gameplay changes and whether to revert them (game-designer)
 - **Gate IDs**: None; messaging approval and timing go to producer
 
@@ -14,7 +14,7 @@
 - [ ] Native TOML has nonempty `name`, domain-specific `description` and `developer_instructions`; model selection follows supported session policy, with runtime verification separate
 - [ ] Agent definition does not claim authority over technical content, QA strategy, or bug fixing
 - [ ] Tone and Voice states that a brand-voice or style guide the project supplies overrides its defaults (tone, person, glossary terms)
-- [ ] For a release, it works from the patch notes release-manager produces with `/patch-notes` rather than regenerating them
+- [ ] For a release, it works from the patch notes release-manager produces with `$patch-notes` rather than regenerating them
 
 ---
 
@@ -28,7 +28,7 @@
 - Conveys the player impact without implementation detail: e.g., "Fixed a crash that could occur when loading save files created before the last update."
 - Places the entry under Bug Fixes, grouped by system, in its Patch Notes structure
 - States the fix because the QA record confirms it — "Never state that a fix, feature, or content exists without evidence you have seen"; without such a record it would say so and ask, not write or soften the claim
-- Checks existing authorization before writing and asks if unresolved to `production/releases/[version]/patch-notes.md`
+- Checks existing authorization before writing and asks if unresolved to `production/releases/[version]$patch-notes.md`
 
 ### Case 2: Out-of-domain request — fixing a reported bug
 **Input**: "A player reported that their save file is corrupted. Can you fix the save system?"
@@ -83,4 +83,4 @@
 - Case 3 (crisis communication) is a brand-safety test — verify the agent de-escalates rather than inflames
 - Case 4 requires a brand voice document to be in context; test is incomplete without it
 - Case 5 is the most important context-awareness test for tone consistency and for sourcing every claim
-- No automated runner; review manually or via `/skill-test`
+- No automated runner; review manually or via `$skill-test`

@@ -8,19 +8,19 @@ you are expected to customize — edit a skill, add your own, retune an agent. T
 folder is how you check that what you changed still holds up: `catalog.yaml`
 tracks all 74 skills and 49 agents, `quality-rubric.md` defines per-category
 pass/fail metrics, and `templates/` gives you the spec format for anything new
-you write. Driven by `/skill-test` and `/skill-improve`.
+you write. Driven by `$skill-test` and `$skill-improve`.
 
-> **If you remove it, two of the four `/skill-test` modes stop working.**
+> **If you remove it, two of the four `$skill-test` modes stop working.**
 >
 > | Mode | Without this folder |
 > |------|---------------------|
-> | `/skill-test static` | **Works** — the 7 structural checks read only the skill's own files |
-> | `/skill-test audit` | **Degrades** — reports that no catalog exists |
-> | `/skill-test spec` | **Breaks** — the behavioral specs live here |
-> | `/skill-test category` | **Breaks** — reads `quality-rubric.md` from here |
-> | `/skill-improve` | **Degrades** — its test-fix-retest loop loses the category pass |
+> | `$skill-test static` | **Works** — the 7 structural checks read only the skill's own files |
+> | `$skill-test audit` | **Degrades** — reports that no catalog exists |
+> | `$skill-test spec` | **Breaks** — the behavioral specs live here |
+> | `$skill-test category` | **Breaks** — reads `quality-rubric.md` from here |
+> | `$skill-improve` | **Degrades** — its test-fix-retest loop loses the category pass |
 >
-> `/skill-test` and `/skill-improve` read this folder by path, so removing it is a
+> `$skill-test` and `$skill-improve` read this folder by path, so removing it is a
 > real trade, not a free cleanup — the table above states the actual cost.
 
 ---
@@ -32,7 +32,7 @@ studio-tests/
 ├── README.md              ← you are here
 ├── AGENTS.md              ← tells the assistant how to use this framework
 ├── catalog.yaml           ← master registry: all 74 skills + 49 agents, coverage tracking
-├── quality-rubric.md      ← category-specific pass/fail metrics for /skill-test category
+├── quality-rubric.md      ← category-specific pass/fail metrics for $skill-test category
 │
 ├── skills/                ← behavioral spec files for all 74 skills
 │   ├── gate/              ← gate category specs
@@ -72,36 +72,36 @@ All testing is driven by two skills already in the framework:
 ### Check structural compliance
 
 ```
-/skill-test static [skill-name]     # Check one skill (7 checks)
-/skill-test static all              # Check all 74 skills
+$skill-test static [skill-name]     # Check one skill (7 checks)
+$skill-test static all              # Check all 74 skills
 ```
 
 ### Run a behavioral spec test
 
 ```
-/skill-test spec gate-check         # Evaluate a skill against its written spec
-/skill-test spec design-review
-/skill-test spec creative-director  # Agents too: evaluates agents/directors/creative-director.md
+$skill-test spec gate-check         # Evaluate a skill against its written spec
+$skill-test spec design-review
+$skill-test spec creative-director  # Agents too: evaluates agents/directors/creative-director.md
 ```
 
 ### Check against category rubric
 
 ```
-/skill-test category gate-check     # Evaluate one skill against its category metrics
-/skill-test category art-director   # Or one agent, against its agent category
-/skill-test category all            # Run rubric checks across every categorized skill and agent
+$skill-test category gate-check     # Evaluate one skill against its category metrics
+$skill-test category art-director   # Or one agent, against its agent category
+$skill-test category all            # Run rubric checks across every categorized skill and agent
 ```
 
 ### See full coverage picture
 
 ```
-/skill-test audit                   # Skills + agents: has-spec, last tested, result
+$skill-test audit                   # Skills + agents: has-spec, last tested, result
 ```
 
 ### Improve a failing skill
 
 ```
-/skill-improve gate-check           # Test → diagnose → propose fix → retest loop
+$skill-improve gate-check           # Test → diagnose → propose fix → retest loop
 ```
 
 ---
@@ -150,11 +150,11 @@ Record observed assessment history in ignored `production/session-logs/studio-te
 1. Find the spec template at `templates/skill-test-spec.md`
 2. Copy it to `skills/[category]/[skill-name].md`
 3. Update the `spec:` field in `catalog.yaml` to point to the new file
-4. Run `/skill-test spec [skill-name]` to validate it
+4. Run `$skill-test spec [skill-name]` to validate it
 
 For an agent, copy `templates/agent-test-spec.md` to `agents/[tier]/[agent-name].md`,
 set the `spec:` field on its entry under `agents:` in `catalog.yaml`, and run
-`/skill-test spec [agent-name]`.
+`$skill-test spec [agent-name]`.
 
 ---
 

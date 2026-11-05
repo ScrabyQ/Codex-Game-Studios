@@ -19,7 +19,7 @@ This is a customization example, not an installed Git hook. Adapt commands to th
 This is a workflow hook, not a git hook. It is invoked by running:
 
 ```
-Invoke /retrospective sprint [N] or an authorized producer role
+Invoke $retrospective sprint [N] or an authorized producer role
 ```
 
 The producer agent should:

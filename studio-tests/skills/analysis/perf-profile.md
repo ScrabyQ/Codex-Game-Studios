@@ -1,8 +1,8 @@
-# Skill Test Spec: /perf-profile
+# Skill Test Spec: $perf-profile
 
 ## Skill Summary
 
-`/perf-profile` is a static-analysis performance profiler. It takes a system
+`$perf-profile` is a static-analysis performance profiler. It takes a system
 name or `full` as its scope, records every input it needs as `FOUND` or
 `ABSENT` before producing anything, resolves `performance.enforce` from the
 config block injected at its top (Phase 0; the block also carries
@@ -17,23 +17,23 @@ committed budget is `NOT ASSESSED`, and the summary gives headroom only against 
 budget that is set (`no budget set — headroom not assessed` otherwise). The skill asks "May I write this profiling
 report to `production/polish/[scope]-report-[date].md`?" before writing (Phase
 4), offers implement / cut scope / defer / escalate choices for M- or L-effort
-hotspots (Phase 5), and hands off to `/architecture-decision`, `/scope-check`
-or `/sprint-plan update` (Phase 6). No director gates are invoked. Verdicts:
+hotspots (Phase 5), and hands off to `$architecture-decision`, `$scope-check`
+or `$sprint-plan update` (Phase 6). No director gates are invoked. Verdicts:
 COMPLETE, or NOT ASSESSED — NO DATA when every required input is absent. At
 `workflow: minimal`, which has no sprints, an accepted optimization goes to the
-brief's build order and Phase 6 does not point to `/sprint-plan update`.
+brief's build order and Phase 6 does not point to `$sprint-plan update`.
 
 ---
 
 ## Static Assertions (Structural)
 
-Checked against the SKILL.md by `/skill-test spec` — no fixture needed.
+Checked against the SKILL.md by `$skill-test spec` — no fixture needed.
 
 - [ ] Skill frontmatter has nonempty `name` and `description`; optional invocation policy is checked in `agents/openai.yaml` when present, without assuming source-only fields
 - [ ] Has ≥2 phase headings
 - [ ] Contains verdict keywords: COMPLETE, NOT ASSESSED — NO DATA, and the per-metric statuses OK / WARNING / OVER
 - [ ] Contains "May I write" language naming `production/polish/[scope]-report-[date].md`
-- [ ] Has a next-step handoff (Phase 6: `/architecture-decision`, `/scope-check`, `/sprint-plan update`)
+- [ ] Has a next-step handoff (Phase 6: `$architecture-decision`, `$scope-check`, `$sprint-plan update`)
 
 ---
 
@@ -68,7 +68,7 @@ Fixture defaults.
   enemy every frame
 - Reworking the nested loop into a spatial partition is a multi-day change
 
-**Input:** `/perf-profile combat`
+**Input:** `$perf-profile combat`
 
 **Expected behavior:**
 1. Skill records its inputs: source code FOUND, committed budgets FOUND
@@ -78,7 +78,7 @@ Fixture defaults.
 5. Phase 4: the report's Performance Budgets table uses 16.6 ms, 2048 MB and 200 draw calls as budgets, each of those three rows with an OK / WARNING / OVER status; the Load time row has no committed budget and is `NOT ASSESSED`; hotspots and recommendations cite `enemy_manager.gd` with a line number
 6. Summary gives the top 3 hotspots, estimated headroom against the three set budgets, `no budget set — headroom not assessed` for load time, and a recommended next action
 7. Skill asks "May I write this profiling report to `production/polish/combat-report-[date].md`?"
-8. The nested-loop hotspot is rated Fix Effort M or L, so Phase 5 offers: implement, reduce scope via `/scope-check`, defer to Polish, or escalate via `/architecture-decision`
+8. The nested-loop hotspot is rated Fix Effort M or L, so Phase 5 offers: implement, reduce scope via `$scope-check`, defer to Polish, or escalate via `$architecture-decision`
 9. Verdict: COMPLETE
 
 **Assertions:**
@@ -88,7 +88,7 @@ Fixture defaults.
 - [ ] The frame time, memory and draw call rows carry an OK / WARNING / OVER status; the Load time row is `NOT ASSESSED`, not OK
 - [ ] No headroom is claimed for load time; the summary says `no budget set — headroom not assessed`
 - [ ] "May I write" names `production/polish/combat-report-[date].md` and precedes any write
-- [ ] The M/L-effort hotspot triggers the Phase 5 choice (implement / `/scope-check` / defer to Polish / `/architecture-decision`)
+- [ ] The M/L-effort hotspot triggers the Phase 5 choice (implement / `$scope-check` / defer to Polish / `$architecture-decision`)
 - [ ] Verdict is COMPLETE
 
 ---
@@ -100,7 +100,7 @@ Fixture defaults.
 - No design doc and no `AGENTS.md` section states a frame-rate, memory, load-time or draw-call target
 - `src/` contains gameplay scripts with `_process()` functions
 
-**Input:** `/perf-profile full`
+**Input:** `$perf-profile full`
 
 **Expected behavior:**
 1. `get_effective_yaml_key` returns nothing for the four budget keys; the design-doc and `AGENTS.md` fallback finds no target either
@@ -124,7 +124,7 @@ Fixture defaults.
 - No design docs exist
 - No profiler output exists anywhere
 
-**Input:** `/perf-profile full`
+**Input:** `$perf-profile full`
 
 **Expected behavior:**
 1. Skill lists its inputs and records each: source code ABSENT, budgets ABSENT, profiler output ABSENT
@@ -148,19 +148,19 @@ Fixture defaults.
 - `src/levels/forest/forest_builder.gd` instantiates 600 individual foliage `MeshInstance3D` nodes, each with its own material and no instancing
 - `modes.automation` unset (collaborative)
 
-**Input:** `/perf-profile forest`
+**Input:** `$perf-profile forest`
 
 **Expected behavior:**
 1. Phase 0 uses `block` from the resolved config block at the top of the skill, not the `warn` a fresh read of `project.yaml` would give
 2. The draw-call estimate for the forest scope exceeds 200; the Draw calls row is OVER
-3. The report states explicitly that the violation is a blocker — release-stopping — and that `/gate-check` will FAIL the Polish gate on it
+3. The report states explicitly that the violation is a blocker — release-stopping — and that `$gate-check` will FAIL the Polish gate on it
 4. A recommendation (e.g., batching or instancing the foliage) is given with its expected gain
 5. Skill asks "May I write" before writing `production/polish/forest-report-[date].md`
 
 **Assertions:**
 - [ ] The local `block` applies, not the committed `warn` — `performance.enforce` comes from the resolved block
 - [ ] The Draw calls row is OVER against the 200 budget
-- [ ] The report states the violation is a blocker and that `/gate-check` will FAIL the Polish gate on it
+- [ ] The report states the violation is a blocker and that `$gate-check` will FAIL the Polish gate on it
 - [ ] "May I write" precedes any write
 
 ---
@@ -168,24 +168,24 @@ Fixture defaults.
 ### Case 5: Enforcement Level `off` in Full Review Mode — Informational only, no gates
 
 **Fixture:**
-- `project.yaml`: `engine.name: godot`, `modes.review_mode: full`, `modes.workflow: standard` (pinned: unset resolves to `minimal`, which has no sprints, so Phase 6 would name the brief's build order instead of `/sprint-plan update`), `performance.enforce: off`, all four budgets set
+- `project.yaml`: `engine.name: godot`, `modes.review_mode: full`, `modes.workflow: standard` (pinned: unset resolves to `minimal`, which has no sprints, so Phase 6 would name the brief's build order instead of `$sprint-plan update`), `performance.enforce: off`, all four budgets set
 - `src/` contains a `_process()` whose estimated frame cost exceeds `performance.frame_budget_ms`
 
-**Input:** `/perf-profile full`
+**Input:** `$perf-profile full`
 
 **Expected behavior:**
 1. No director gate is invoked, whatever the review mode
 2. The estimated frame time is still reported in the Performance Budgets table
 3. Because budgets are informational under `off`, the over-budget frame time is not raised as a violation finding or as a recommendation to fix
 4. Skill asks "May I write" before writing the report
-5. Output ends with the Phase 6 next steps: `/architecture-decision`, `/scope-check [feature]`, `/sprint-plan update`
+5. Output ends with the Phase 6 next steps: `$architecture-decision`, `$scope-check [feature]`, `$sprint-plan update`
 
 **Assertions:**
 - [ ] No director gate is invoked in any review mode
 - [ ] The estimated frame time still appears in the budget table
 - [ ] The over-budget metric is not raised as a violation finding or a fix recommendation
 - [ ] "May I write" precedes any write
-- [ ] Next steps name `/architecture-decision`, `/scope-check` and `/sprint-plan update`
+- [ ] Next steps name `$architecture-decision`, `$scope-check` and `$sprint-plan update`
 
 ---
 
@@ -198,7 +198,7 @@ Fixture defaults.
 - The user picks A for the nested-loop hotspot
 - Variant: `modes.workflow: standard` (pinned: it is the tier that has sprints)
 
-**Input:** `/perf-profile combat`
+**Input:** `$perf-profile combat`
 
 **Expected behavior:**
 1. Phase 5 runs because a hotspot is M or L, and option A reads "Implement the
@@ -207,17 +207,17 @@ Fixture defaults.
 2. After the user picks A at `minimal`, the optimization is directed to the
    brief's build order, not to a sprint
 3. Phase 6's scheduling line says to add the optimizations to the brief's build
-   order instead of running `/sprint-plan update`; `/sprint-plan` is not named
+   order instead of running `$sprint-plan update`; `$sprint-plan` is not named
    as the way to schedule
 4. Variant at `standard`: option A offers to proceed with the fix now or
-   schedule it, and Phase 6 names `/sprint-plan update`
+   schedule it, and Phase 6 names `$sprint-plan update`
 5. Verdict: COMPLETE in both runs
 
 **Assertions:**
 - [ ] At `minimal`, option A and Phase 6 both point to the brief's build order
-- [ ] At `minimal`, `/sprint-plan update` is not recommended
-- [ ] Variant at `standard`: Phase 6 names `/sprint-plan update` and option A does not mention the build order
-- [ ] The other Phase 5 options (`/scope-check`, defer to Polish, `/architecture-decision`) and the Phase 6 lines for `/architecture-decision` and `/scope-check [feature]` are the same in both runs
+- [ ] At `minimal`, `$sprint-plan update` is not recommended
+- [ ] Variant at `standard`: Phase 6 names `$sprint-plan update` and option A does not mention the build order
+- [ ] The other Phase 5 options (`$scope-check`, defer to Polish, `$architecture-decision`) and the Phase 6 lines for `$architecture-decision` and `$scope-check [feature]` are the same in both runs
 - [ ] Verdict is COMPLETE
 
 ---
@@ -231,7 +231,7 @@ Fixture defaults.
 - The session's working directory is `src/gameplay/` (a subfolder), not the root
 - `src/gameplay/combat/enemy_manager.gd` has a `_process()` with a nested loop
 
-**Input:** `/perf-profile combat`
+**Input:** `$perf-profile combat`
 
 **Expected behavior:**
 1. Phase 2 runs the four `get_effective_yaml_key` reads as one command that
@@ -258,7 +258,7 @@ Fixture defaults.
 - [ ] Applies `performance.enforce` from the resolved block: `warn` → findings, `block` → blockers, `off` → informational
 - [ ] Asks "May I write" naming `production/polish/[scope]-report-[date].md` before writing, and keeps `NOT ASSESSED` sections in the written file
 - [ ] No director gates are invoked
-- [ ] Ends with the Phase 6 next-step handoff; the scheduling line depends on `workflow` (`/sprint-plan update` at `standard`/`full`, the brief's build order at `minimal`)
+- [ ] Ends with the Phase 6 next-step handoff; the scheduling line depends on `workflow` (`$sprint-plan update` at `standard`/`full`, the brief's build order at `minimal`)
 
 ---
 

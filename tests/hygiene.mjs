@@ -16,6 +16,9 @@ put('scripts/codex/import-source.mjs','const sourcePath=".claude/skills/example/
 put('.agents/skills/detector/SKILL.md','Reject .claude/ paths and do not invoke AskUserQuestion().\n');
 put('.agents/docs/legacy-exclusion.md','Skip .claude/ tooling when scanning an imported game.\n');
 put('.agents/docs/negative-clause.md','Do not invoke AskUserQuestion(); use the native question facility.\n');
+put('.agents/skills/help/SKILL.md','---\nname: help\ndescription: Read project state.\n---\n# Help\n');
+put('.agents/docs/negative-client.md','Do not launch Claude Code; use Codex instead.\n');
+put('.agents/docs/skill-spec-path.md','Copy to `skills/[category]/[skill-name].md`; read `.agents/skills/help/SKILL.md`.\n');
 put('.codex/agents/native.toml','# Generated from .claude/agents/native.md; provenance only\nname = "native"\n');
 assert.deepEqual(inspect(root),[]);
 put('.claude/old.md','legacy client source');
@@ -26,6 +29,10 @@ put('.agents/docs/old-question.md','Use AskUserQuestion to capture the decision.
 put('.agents/docs/mixed-path.md','Read .claude/rules/test-standards.md; never overwrite user edits.\n');
 put('.agents/docs/mixed-question.md','Do not delete files; use AskUserQuestion to capture the decision.\n');
 put('.agents/docs/mixed-sentence.md','Read .claude/rules/test-standards.md. Do not delete files.\n');
+put('.agents/docs/old-session.md','Open a fresh Claude Code session for an independent review.\n');
+put('.agents/docs/old-client-command.md','Run `claude --worktree` to start implementation.\n');
+put('.agents/docs/old-skill-command.md','Invoke `/help` to inspect state.\n');
+put('.agents/docs/old-command-template.md','Invoke `/[name]` for this workflow.\n');
 put('docs/codex/evidence/result.json','{}');
 put('debug.log','test output');
 put('docs/codex/screenshot.png','fake image bytes');
@@ -41,7 +48,8 @@ let linked=false;
 try { symlinkSync(path.join(root,'credentials.txt'),path.join(root,'linked.txt')); linked=true; } catch(e) { if (!['EPERM','EACCES','ENOSYS'].includes(e.code)) throw e; }
 execFileSync('git',['-C',root,'add','-f','debug.log']);
 const findings=inspect(root);
+assert(findings.some(([file])=>file==='.agents/docs/old-command-template.md'));
 assert.deepEqual(new Set(findings.map(x=>x[1])),new Set(['generated report','personal path','credential','environment file','legacy client file','active legacy instruction',...(linked?['symbolic link']:[])]));
-for(const name of ['.claude/old.md','docs/CLAUDE.md','.agents/skills/old/SKILL.md','.agents/docs/old-delegation.md','.agents/docs/old-question.md','.agents/docs/mixed-path.md','.agents/docs/mixed-question.md','.agents/docs/mixed-sentence.md'])assert(findings.some(([file])=>file===name),name);
+for(const name of ['.claude/old.md','docs/CLAUDE.md','.agents/skills/old/SKILL.md','.agents/docs/old-delegation.md','.agents/docs/old-question.md','.agents/docs/mixed-path.md','.agents/docs/mixed-question.md','.agents/docs/mixed-sentence.md','.agents/docs/old-session.md','.agents/docs/old-client-command.md','.agents/docs/old-skill-command.md'])assert(findings.some(([file])=>file===name),name);
 for(const name of ['docs/codex/evidence/result.json','docs/codex/screenshot.png','debug.log','local.txt','credentials.txt','large.txt','.env.local','.envrc','docs/codex/progress.json','docs/codex/fork.json','docs/codex/audit.md',...(linked?['linked.txt']:[])])assert(findings.some(([file])=>file===name),name);
 console.log('PASS hygiene detects reports, personal paths, credentials, env and legacy instructions; attribution, mappings and negative fixtures remain allowed');

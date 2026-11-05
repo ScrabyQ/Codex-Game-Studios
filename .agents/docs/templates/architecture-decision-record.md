@@ -54,10 +54,10 @@ chosen approach.]
 
 > **`Layer` is the ADR's own layer, not the referencing epic's — and it is a
 > different taxonomy from `Domain`.** Several sites branch on whether an ADR is
-> *critical (Foundation-layer)*: `/create-stories`, `/create-epics`,
-> `/architecture-decision`, `/story-readiness`, `/propagate-design-change` and
+> *critical (Foundation-layer)*: `$create-stories`, `$create-epics`,
+> `$architecture-decision`, `$story-readiness`, `$propagate-design-change` and
 > `gate-pre-production.md`; a missing row counts as critical. At `standard`,
-> `/create-stories` **stops** for a missing critical ADR and only **warns** for a
+> `$create-stories` **stops** for a missing critical ADR and only **warns** for a
 > non-critical one, so this row decides whether a run halts. Do not infer the
 > layer from the referencing epic: a Foundation-layer ADR is commonly referenced
 > by a Core-layer epic, which would give the wrong answer.
@@ -108,7 +108,7 @@ to implement it.]
 
 ### Implementation Guidelines
 [Specific guidance for the programmer implementing this decision — the rules a
-`/create-control-manifest` or `/dev-story` run should follow. State mandates as
+`$create-control-manifest` or `$dev-story` run should follow. State mandates as
 "must / must never" so they extract cleanly.]
 
 ## Alternatives Considered
@@ -146,7 +146,7 @@ to implement it.]
 
 <!-- This section is MANDATORY. Every ADR must trace back to at least one GDD
      requirement, or explicitly state it is a foundational decision with no GDD
-     dependency. Traceability is audited by /architecture-review. -->
+     dependency. Traceability is audited by $architecture-review. -->
 
 | GDD System | Requirement | How This ADR Addresses It |
 |------------|-------------|--------------------------|

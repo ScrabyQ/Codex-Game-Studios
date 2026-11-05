@@ -4,20 +4,20 @@
      engine, specialists, naming, performance, platform, and testing.framework.
      This file is the human-readable LEGACY FALLBACK: agents and skills resolve
      each key from project.yaml first and fall back here only when the
-     project.yaml key is absent. /setup-engine dual-writes both.
+     project.yaml key is absent. $setup-engine dual-writes both.
      Forbidden patterns and allowed libraries are NOT migrated — they live only
-     in this file. Populated by /setup-engine; updated as decisions are made. -->
+     in this file. Populated by $setup-engine; updated as decisions are made. -->
 
 ## Engine & Language
 
-- **Engine**: [TO BE CONFIGURED — run /setup-engine]
+- **Engine**: [TO BE CONFIGURED — run $setup-engine]
 - **Language**: [TO BE CONFIGURED]
 - **Rendering**: [TO BE CONFIGURED]
 - **Physics**: [TO BE CONFIGURED]
 
 ## Input & Platform
 
-<!-- Written by /setup-engine. Read by /ux-design, /ux-review, /test-setup, /team-ui, and /dev-story -->
+<!-- Written by $setup-engine. Read by $ux-design, $ux-review, $test-setup, $team-ui, and $dev-story -->
 <!-- to scope interaction specs, test helpers, and implementation to the correct input methods. -->
 
 - **Target Platforms**: [TO BE CONFIGURED — e.g., PC, Console, Mobile, Web]
@@ -62,15 +62,15 @@
 ## Architecture Decisions Log
 
 <!-- Quick reference linking to full ADRs in docs/architecture/ -->
-- [No ADRs yet — use /architecture-decision to create one]
+- [No ADRs yet — use $architecture-decision to create one]
 
 ## Engine Specialists
 
-<!-- Written by /setup-engine when engine is configured. -->
-<!-- Read by /code-review, /architecture-decision, /architecture-review, and team skills -->
+<!-- Written by $setup-engine when engine is configured. -->
+<!-- Read by $code-review, $architecture-decision, $architecture-review, and team skills -->
 <!-- to know which specialist to spawn for engine-specific validation. -->
 
-- **Primary**: [TO BE CONFIGURED — run /setup-engine]
+- **Primary**: [TO BE CONFIGURED — run $setup-engine]
 - **Language/Code Specialist**: [TO BE CONFIGURED]
 - **Shader Specialist**: [TO BE CONFIGURED]
 - **UI Specialist**: [TO BE CONFIGURED]

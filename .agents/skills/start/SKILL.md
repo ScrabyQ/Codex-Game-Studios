@@ -205,11 +205,12 @@ At `standard` and `full`, steps 1 to 3, then `$design-system retrofit [path]`,
 Present `minimal` as the documented floor, not a lesser mode, and name its trade once: no GDDs, so
 design problems show up in code.
 
-If `origin_url` pointed at the template repo, add: "Your clone's `origin` still points at the
-CCGS template repo, so a push or pull request would go there. When you're ready, run
-`git remote rename origin template`, then `git remote add origin <your repo URL>`. `UPGRADING.md`
-pulls updates from `template`; skip its own `git remote add template` step, since that remote now
-exists." Suggest it; do not run it.
+If `origin_url` points at the toolkit or its original source, add once: "Your clone's `origin`
+still points at the toolkit/source repository. Before publishing game-specific content, create
+or select your own game repository. For toolkit contributions, follow `CONTRIBUTING.md`.
+`UPGRADING.md` describes reviewed product updates; it does not require a `template` remote."
+Report the actual remote URL and suggest reviewing the intended destination. Do not change
+remotes, create a repository or push as part of onboarding.
 
 Ask: "Would you like to start with [first step]?" Options: `Yes, start with [first step]` /
 `Something else first`. Either answer leads to Phase 7, never to running the step.

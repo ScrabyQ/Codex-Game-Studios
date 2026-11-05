@@ -296,7 +296,7 @@ fi
 
 # base check: local overrides need a base, and /settings never creates project.yaml.
 if [ ! -f project.yaml ]; then
-  echo "config-set: project.yaml is missing, so there is nothing to set or override. Run /start to create one first." >&2
+  echo "config-set: project.yaml is missing, so there is nothing to set or override. Run \$start to create one first." >&2
   exit 6
 fi
 

@@ -86,7 +86,7 @@ Verified by reading the agent's `.codex/agents/art-director.toml` metadata:
 ---
 
 ## Coverage Notes
-- AD-PHASE-GATE (full visual phase advancement) is not covered — deferred to integration with /gate-check skill.
+- AD-PHASE-GATE (full visual phase advancement) is not covered — deferred to integration with $gate-check skill.
 - Asset pipeline standards (file format, resolution, naming conventions) compliance checks are not covered here.
 - Shader visual output review is not covered — that interaction with the engine specialist is deferred.
 - UI component visual review (as distinct from UX flow review) could benefit from additional cases.

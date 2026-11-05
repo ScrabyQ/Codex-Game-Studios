@@ -1,4 +1,4 @@
-# Skill Test Spec: /[skill-name]
+# Skill Test Spec: $[skill-name]
 
 ## Skill Summary
 
@@ -8,11 +8,11 @@
 
 ## Static Assertions (Structural)
 
-Checked against the SKILL.md by `/skill-test spec` — no fixture needed.
+Checked against the SKILL.md by `$skill-test spec` — no fixture needed.
 
 - [ ] Skill frontmatter has nonempty `name` and `description`; optional invocation policy is checked in `agents/openai.yaml` when present, without assuming source-only fields
 - [ ] 2+ phase headings found
-- [ ] Contains the skill's verdict keywords — any that `/skill-test static` Check 3 accepts (gate or review verdicts, go/no-go verdicts, or a severity scale), plus `NOT ASSESSED` when anything depends on the verdict; none needed when the skill outputs an artifact rather than a judgement
+- [ ] Contains the skill's verdict keywords — any that `$skill-test static` Check 3 accepts (gate or review verdicts, go/no-go verdicts, or a severity scale), plus `NOT ASSESSED` when anything depends on the verdict; none needed when the skill outputs an artifact rather than a judgement
 - [ ] Native Skill instructions preserve scope, authorized write boundaries and argument handling; unsupported metadata is not treated as a runtime control
 - [ ] Next-step handoff section present at end
 
@@ -23,7 +23,7 @@ Checked against the SKILL.md by `/skill-test spec` — no fixture needed.
 [Describe which director gates this skill triggers (if any), and under what review mode conditions.]
 
 - **Full mode**: [gates triggered — e.g., CD-PHASE-GATE, TD-PHASE-GATE, PR-PHASE-GATE, AD-PHASE-GATE]
-- **Lean mode**: [phase gates only — for `/gate-check`, the panel `modes.workflow` sets (PR only at `minimal`, TD + PR at `standard`, all four at `full`); other skills skip their non-phase gates, each noted `[GATE-ID] skipped — Lean mode`]
+- **Lean mode**: [phase gates only — for `$gate-check`, the panel `modes.workflow` sets (PR only at `minimal`, TD + PR at `standard`, all four at `full`); other skills skip their non-phase gates, each noted `[GATE-ID] skipped — Lean mode`]
 - **Solo mode**: [no gates — skill runs without director review; each skip is noted, e.g. `[GATE-ID] skipped — Solo mode`]
 - **N/A**: [if this skill never triggers gates, explain why]
 

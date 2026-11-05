@@ -52,7 +52,7 @@ fi
 # again with source `compact`, and PostCompact output never reaches the
 # conversation, so a checkpoint seen after /compact came from this script.
 
-echo "=== Claude Code Game Studios — Session Context ==="
+echo "=== Codex Game Studios — Session Context ==="
 
 # Current branch
 BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
@@ -149,7 +149,7 @@ if [ -n "$STAGE_YAML" ] && [ -n "$STAGE_TXT" ] && [ "$STAGE_YAML" != "$STAGE_TXT
     echo "      project.yaml  project.stage : $STAGE_YAML   (authoritative)"
     echo "      production/stage.txt        : $STAGE_TXT   (legacy mirror)"
     echo "    Twelve consumers read the mirror, so part of the system is acting on"
-    echo "    each value. Only /gate-check should change a stage (on a PASS, or a"
+    echo "    each value. Only \$gate-check should change a stage (on a PASS, or a"
     echo "    CONCERNS whose risks you accepted) — do not hand-edit either file to"
     echo "    silence this."
 fi

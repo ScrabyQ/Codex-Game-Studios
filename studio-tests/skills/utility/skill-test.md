@@ -1,8 +1,8 @@
-# Skill Test Spec: /skill-test
+# Skill Test Spec: $skill-test
 
 ## Skill Summary
 
-`/skill-test` validates skills (`.agents/skills/*/SKILL.md`) and agents
+`$skill-test` validates skills (`.agents/skills/*/SKILL.md`) and agents
 (`.codex/agents/*.toml`). It has four modes:
 
 - **static** `[name | all]`: runs 7 structural checks on a skill (frontmatter,
@@ -36,7 +36,7 @@ No director gates apply.
 
 ## Static Assertions (Structural)
 
-Checked against the SKILL.md by `/skill-test spec` — no fixture needed.
+Checked against the SKILL.md by `$skill-test spec` — no fixture needed.
 
 - [ ] Skill frontmatter has nonempty `name` and `description`; optional invocation policy is checked in `agents/openai.yaml` when present, without assuming source-only fields
 - [ ] Has ≥2 phase headings
@@ -48,7 +48,7 @@ Checked against the SKILL.md by `/skill-test spec` — no fixture needed.
 
 ## Director Gate Checks
 
-None. `/skill-test` is a meta-utility skill. No director gates apply.
+None. `$skill-test` is a meta-utility skill. No director gates apply.
 
 ---
 
@@ -75,15 +75,15 @@ Fixture defaults.
   - Uses justified native delegation/fallback
   - Invocation behavior matches documented arguments and optional policy
 
-**Input:** `/skill-test static brainstorm`
+**Input:** `$skill-test static brainstorm`
 
 **Expected behavior:**
 1. Skill reads `.agents/skills/brainstorm/SKILL.md` fully
 2. Skill runs all 7 structural checks
-3. Output is the single-skill block `=== Skill Static Check: /brainstorm ===`
+3. Output is the single-skill block `=== Skill Static Check: $brainstorm ===`
    listing Check 1 – Check 7, each PASS
 4. Verdict is COMPLIANT
-5. Phase 3 follow-up suggests `/skill-test spec brainstorm`
+5. Phase 3 follow-up suggests `$skill-test spec brainstorm`
 
 **Assertions:**
 - [ ] Exactly 7 structural checks are reported
@@ -97,7 +97,7 @@ Fixture defaults.
 
 **Fixture:** A sandbox Skill instructs writes and external publication outside unresolved authorization. No permission boundary covers its writing; the other six checks are valid.
 
-**Input:** `/skill-test static some-skill`
+**Input:** `$skill-test static some-skill`
 
 **Expected behavior:** Read the Skill/references. Check 4 FAILS on the actual unauthorized-writing instruction. Report all other checks and NON-COMPLIANT with a concrete fix.
 
@@ -124,7 +124,7 @@ Fixture defaults.
   (6 phase files, 6 gate files)
 - The user declines the results write
 
-**Input:** `/skill-test spec gate-check`
+**Input:** `$skill-test spec gate-check`
 
 **Expected behavior:**
 1. Skill resolves `gate-check` as a skill via the catalog and takes the spec
@@ -162,7 +162,7 @@ Fixture defaults.
   emptied and its spec file removed — every live skill has a spec)
 - `catalog.yaml` has an `agents:` section with 49 entries, all with specs
 
-**Input:** `/skill-test audit` (and, separately, `/skill-test` with no argument)
+**Input:** `$skill-test audit` (and, separately, `$skill-test` with no argument)
 
 **Expected behavior:**
 1. Both inputs run audit mode — no argument is the audit default, not a usage
@@ -178,7 +178,7 @@ Fixture defaults.
    `category all` or `spec [name]`
 
 **Assertions:**
-- [ ] `/skill-test` with no argument produces this audit, not usage text
+- [ ] `$skill-test` with no argument produces this audit, not usage text
 - [ ] All skill directories are enumerated (not just a sample)
 - [ ] "Has Spec" column is accurate for each entry
 - [ ] Summary coverage counts are correct for skills and for agents
@@ -196,7 +196,7 @@ Fixture defaults.
   panel width (only CD-PHASE-GATE is spawned at `workflow: full`)
 - The user approves the ignored runtime results overlay update
 
-**Input:** `/skill-test category gate-check`
+**Input:** `$skill-test category gate-check`
 
 **Expected behavior:**
 1. Skill reads the `category:` from the catalog, then the `### gate` section of the rubric
@@ -222,7 +222,7 @@ Fixture defaults.
 - A static assertion requires the exact name. Run B changes it to `creative-director-other`.
 - A redirect asks this role to choose the engine; its domain limit and coordination guidance assign that decision to technical-director.
 
-**Input:** `/skill-test spec creative-director`
+**Input:** `$skill-test spec creative-director`
 
 **Expected behavior:** Resolve the catalog agent entry. Read TOML instructions and written spec. Exact name comparison passes Run A and fails Run B. Assess redirect from both role and coordination context. Record actual host/model if behavior runs; document review alone never establishes independent role loading.
 
@@ -244,7 +244,7 @@ Fixture defaults.
   start. (A file that is read but whose frontmatter does not parse is a
   different case: Check 1 fails and it is NON-COMPLIANT.)
 
-**Input:** `/skill-test static all`
+**Input:** `$skill-test static all`
 
 **Expected behavior:**
 1. The 73 readable skills are checked and listed with their Result
@@ -268,7 +268,7 @@ Fixture defaults.
   the spec never defines
 - The user approves the results write
 
-**Input:** `/skill-test spec brainstorm`
+**Input:** `$skill-test spec brainstorm`
 
 **Expected behavior:**
 1. That assertion is NOT ASSESSED, with a Reason — never resolved to PASS
@@ -291,7 +291,7 @@ Fixture defaults.
   the catalog before its rubric section was written
 - `studio-tests/quality-rubric.md` has no `tooling` section
 
-**Input:** `/skill-test category some-skill`
+**Input:** `$skill-test category some-skill`
 
 **Expected behavior:**
 1. Skill reads the category, then looks for its rubric section and finds none
@@ -314,12 +314,12 @@ Fixture defaults.
   keyword, no contextual authorization boundary and no next-step handoff itself
 - `.agents/skills/split-skill/references/2-report.md` holds `Verdict: **COMPLETE**`,
   the line "May I write this report to `production/qa/report.md`?" and a closing
-  "Next step: `/gate-check`"; `references/1-gather.md` holds only instructions
+  "Next step: `$gate-check`"; `references/1-gather.md` holds only instructions
 - Run A: as above. Run B: the same skill, except `description:` is missing from
   `SKILL.md` and appears only in a metadata-like example block at the top of
   `references/1-gather.md`
 
-**Input:** `/skill-test static split-skill`
+**Input:** `$skill-test static split-skill`
 
 **Expected behavior:**
 1. Skill reads `SKILL.md` and every file in `references/` and runs the 7 checks on

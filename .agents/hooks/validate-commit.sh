@@ -776,7 +776,7 @@ fi
 # docs-only or config-only commit stays quiet and the notice keeps its meaning.
 if [ -z "$CODE_ROOT" ]; then
     if echo "$STAGED" | grep -qiE '\.(gd|cs|cpp|cc|hpp|h|c|py|js|ts|rs|java|kt|lua|gdshader|shader|hlsl)$'; then
-        WARNINGS="$WARNINGS\nSKIPPED: source files are staged but no code root could be resolved (engine.name unset, and the tree does not name one unambiguously). The hardcoded-value and TODO-owner scans did NOT run. Run /setup-engine, or set engine.name in project.yaml."
+        WARNINGS="$WARNINGS\nSKIPPED: source files are staged but no code root could be resolved (engine.name unset, and the tree does not name one unambiguously). The hardcoded-value and TODO-owner scans did NOT run. Run \$setup-engine, or set engine.name in project.yaml."
     fi
 fi
 

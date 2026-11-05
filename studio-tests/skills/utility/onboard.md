@@ -1,8 +1,8 @@
-# Skill Test Spec: /onboard
+# Skill Test Spec: $onboard
 
 ## Skill Summary
 
-`/onboard [role|area]` generates an onboarding document for a new contributor or
+`$onboard [role|area]` generates an onboarding document for a new contributor or
 agent. It reads `AGENTS.md`, the matching agent definition in `.codex/agents/`
 when a role is given, scans the area that role works in (the code root for
 programmers, `design/` for designers, `design/narrative/` for narrative, `tests/`
@@ -16,26 +16,26 @@ design doc). If every input is ABSENT
 the whole verdict is `NOT ASSESSED — NO DATA`, naming what was missing. Otherwise
 it fills the `# Onboarding: [Role/Area]` template, presents it, and asks "May I
 write this to `production/onboarding/onboard-[role]-[date].md`?". The verdict is
-**COMPLETE**, followed by next steps pointing to `/sprint-status` and `/help`. No
+**COMPLETE**, followed by next steps pointing to `$sprint-status` and `$help`. No
 director gates apply.
 
 ---
 
 ## Static Assertions (Structural)
 
-Checked against the SKILL.md by `/skill-test spec` — no fixture needed.
+Checked against the SKILL.md by `$skill-test spec` — no fixture needed.
 
 - [ ] Skill frontmatter has nonempty `name` and `description`; optional invocation policy is checked in `agents/openai.yaml` when present, without assuming source-only fields
 - [ ] Has ≥2 phase headings
 - [ ] Contains verdict keywords: COMPLETE, NOT ASSESSED
 - [ ] Contains "May I write" language before saving the onboarding document
-- [ ] Has a next-step handoff suggesting `/sprint-status` and `/help`
+- [ ] Has a next-step handoff suggesting `$sprint-status` and `$help`
 
 ---
 
 ## Director Gate Checks
 
-None. `/onboard` is an orientation utility. It spawns no agents (its procedure requests no delegation) and no director gates apply.
+None. `$onboard` is an orientation utility. It spawns no agents (its procedure requests no delegation) and no director gates apply.
 
 ---
 
@@ -59,7 +59,7 @@ Fixture defaults.
 - `production/sprints/sprint-005.md` exists; git log has recent commits
 - `modes.automation` is unset (defaults to `collaborative`)
 
-**Input:** `/onboard gameplay-programmer`
+**Input:** `$onboard gameplay-programmer`
 
 **Expected behavior:**
 1. Skill reads `AGENTS.md` and `.codex/agents/gameplay-programmer.toml`
@@ -72,14 +72,14 @@ Fixture defaults.
 4. Skill presents the document, then asks "May I write this to
    `production/onboarding/onboard-gameplay-programmer-[date].md`?"
 5. On approval it writes the file (creating the directory if needed); verdict is
-   COMPLETE, with `/sprint-status` and `/help` as next steps
+   COMPLETE, with `$sprint-status` and `$help` as next steps
 
 **Assertions:**
 - [ ] The agent definition for the named role is read
 - [ ] The code root `src/` is scanned for this programmer role
 - [ ] The document uses the `# Onboarding: [Role/Area]` template sections
 - [ ] The document is presented before the "May I write" ask naming `production/onboarding/onboard-gameplay-programmer-[date].md`
-- [ ] Verdict is COMPLETE and next steps name `/sprint-status` and `/help`
+- [ ] Verdict is COMPLETE and next steps name `$sprint-status` and `$help`
 
 ---
 
@@ -90,7 +90,7 @@ Fixture defaults.
 - `design/gdd/` holds three system GDDs
 - `src/` also holds code
 
-**Input:** `/onboard game-designer`
+**Input:** `$onboard game-designer`
 
 **Expected behavior:**
 1. Skill reads `AGENTS.md` and `.codex/agents/game-designer.toml`
@@ -115,13 +115,13 @@ Fixture defaults.
 - `.codex/agents/` does not exist, so no agent definition can be read
 - `tests/` does not exist; the directory is not a git repository
 
-**Input:** `/onboard qa-tester`
+**Input:** `$onboard qa-tester`
 
 **Expected behavior:**
 1. Skill lists its inputs and records each as ABSENT
 2. Because every required input is ABSENT, it stops and reports
    `NOT ASSESSED — NO DATA` as the whole verdict
-3. The report names what was missing and what produces it: `/test-setup` for
+3. The report names what was missing and what produces it: `$test-setup` for
    `tests/`; `AGENTS.md` and `.codex/agents/` come with the framework itself —
    no skill creates them — so they are reported as missing from the install,
    not attributed to a skill
@@ -130,7 +130,7 @@ Fixture defaults.
 **Assertions:**
 - [ ] Inputs are recorded as FOUND or ABSENT before any report is produced
 - [ ] Verdict is `NOT ASSESSED — NO DATA`, not COMPLETE
-- [ ] The missing inputs are named; `tests/` points to `/test-setup`
+- [ ] The missing inputs are named; `tests/` points to `$test-setup`
 - [ ] No skill is named as the producer of `AGENTS.md` or `.codex/agents/` — none creates them
 - [ ] No template is filled in and no "May I write" ask appears
 
@@ -143,7 +143,7 @@ Fixture defaults.
 - `project.yaml` has no `engine.name`, technical-preferences has
   `[TO BE CONFIGURED]`, and both `src/` and `Assets/` exist (ambiguous tree)
 
-**Input:** `/onboard gameplay-programmer`
+**Input:** `$onboard gameplay-programmer`
 
 **Expected behavior:**
 1. Skill tries to resolve the code root and finds it unresolved (two candidate
@@ -170,7 +170,7 @@ Fixture defaults.
 - Any project state with `AGENTS.md` present
 - Any review mode
 
-**Input:** `/onboard producer`
+**Input:** `$onboard producer`
 
 **Expected behavior:**
 1. Skill scans `production/` for the current sprint and milestone
@@ -193,13 +193,13 @@ Fixture defaults.
 - [ ] Scans only the area that matches the role
 - [ ] Records each input as FOUND or ABSENT; ABSENT-backed sections read `NOT ASSESSED — NO DATA`
 - [ ] Presents the document before asking "May I write" to `production/onboarding/onboard-[role]-[date].md`
-- [ ] Ends with verdict COMPLETE and the `/sprint-status` / `/help` next steps — or, when every input is absent, stops at `NOT ASSESSED — NO DATA` naming what produces each missing input
+- [ ] Ends with verdict COMPLETE and the `$sprint-status` / `$help` next steps — or, when every input is absent, stops at `NOT ASSESSED — NO DATA` naming what produces each missing input
 
 ---
 
 ## Coverage Notes
 
-- A call with no role argument (`/onboard`) takes Phase 2's general-orientation
+- A call with no role argument (`$onboard`) takes Phase 2's general-orientation
   branch (the top level of `design/`, `docs/architecture/`, `production/` and
   the code root, plus `active.md`, and a note that a role would focus the next
   pass); it is not separately tested.

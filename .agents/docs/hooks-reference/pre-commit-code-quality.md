@@ -10,7 +10,7 @@ Inspect staged source and relevant working bytes included by the proposed comman
 
 These scans are observations, not a complete correctness, style, documentation or complexity review. Advisory exit-0 warnings do not prohibit a commit. Missing interpreters, inputs or root resolution must be surfaced rather than represented as zero findings.
 
-Use `/code-review` for architectural/domain assessment and the real engine parse/build/test commands for executable evidence. Apply selected path rules and pinned engine references before corrections.
+Use `$code-review` for architectural/domain assessment and the real engine parse/build/test commands for executable evidence. Apply selected path rules and pinned engine references before corrections.
 
 ## Handoff
 

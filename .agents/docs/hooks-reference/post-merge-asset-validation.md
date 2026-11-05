@@ -19,7 +19,7 @@ Preserve these dimensions in the review:
 - File sizes against the art bible. Example budgets such as 4 MB textures, 10 MB music and 512 KB SFX illustrate category-specific limits; they are not automatic project settings.
 - Audio format/sample rates, orphaned assets and missing source references where the helper supports assessment.
 
-The helper emits observations, check status and hits. An unrun check uses a missing result, never zero hits. `/asset-audit` applies policy and produces its verdict. No changed assets means that scope is N/A, not a claim that all project assets passed.
+The helper emits observations, check status and hits. An unrun check uses a missing result, never zero hits. `$asset-audit` applies policy and produces its verdict. No changed assets means that scope is N/A, not a claim that all project assets passed.
 
 ## Handoff
 

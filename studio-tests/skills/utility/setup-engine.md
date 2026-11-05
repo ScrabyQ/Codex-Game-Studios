@@ -1,8 +1,8 @@
-# Skill Test Spec: /setup-engine
+# Skill Test Spec: $setup-engine
 
 ## Skill Summary
 
-`/setup-engine` pins the project's engine, version and language. It accepts
+`$setup-engine` pins the project's engine, version and language. It accepts
 `[engine]`, `[engine] [version]`, `refresh`, `upgrade [old] [new]`, or no
 argument for guided selection. For Godot it asks which language (GDScript, C#
 or Both) before showing the Technology Stack. It then:
@@ -27,19 +27,19 @@ engine is configured.
 
 ## Static Assertions (Structural)
 
-Checked against the SKILL.md by `/skill-test spec` — no fixture needed.
+Checked against the SKILL.md by `$skill-test spec` — no fixture needed.
 
 - [ ] Skill frontmatter has nonempty `name` and `description`; optional invocation policy is checked in `agents/openai.yaml` when present, without assuming source-only fields
 - [ ] Has ≥2 phase headings
 - [ ] Contains verdict keyword: COMPLETE
 - [ ] Contains "May I write" language before writing `AGENTS.md` and before writing the `project.yaml` blocks
-- [ ] Has a next-step handoff (Section 12 prints one tier-matched Next-Steps list, e.g. `/brainstorm` at `minimal`)
+- [ ] Has a next-step handoff (Section 12 prints one tier-matched Next-Steps list, e.g. `$brainstorm` at `minimal`)
 
 ---
 
 ## Director Gate Checks
 
-None. `/setup-engine` is a technical configuration skill. No director gates apply.
+None. `$setup-engine` is a technical configuration skill. No director gates apply.
 
 ---
 
@@ -62,7 +62,7 @@ Fixture defaults.
 - `docs/engine-reference/godot/VERSION.md` already pins 4.7
 - No `project.godot` at the repo root; the user approves every write
 
-**Input:** `/setup-engine godot 4.7`
+**Input:** `$setup-engine godot 4.7`
 
 **Expected behavior:**
 1. Full-spec mode: Section 2's guided selection is skipped
@@ -100,7 +100,7 @@ Fixture defaults.
 - Placeholders only in `technical-preferences.md`; no `engine` block in `project.yaml`
 - The user supplies the version and the build target when asked
 
-**Input:** `/setup-engine unity`
+**Input:** `$setup-engine unity`
 
 **Expected behavior:**
 1. Engine-only mode: version looked up and confirmed with the user
@@ -129,7 +129,7 @@ Fixture defaults.
 - Placeholders only; the user never states that the project is Blueprint-primary
 - The session runs on Windows (`uname -s` is neither `Linux` nor `Darwin`), so the Windows `commands` block applies
 
-**Input:** `/setup-engine unreal 5.8`
+**Input:** `$setup-engine unreal 5.8`
 
 **Expected behavior:**
 1. The primary-language question defaults to C++, so AGENTS.md Language reads
@@ -162,7 +162,7 @@ Fixture defaults.
 - `project.godot` exists at the repo root
 - `docs/engine-reference/godot/VERSION.md` pins 4.7
 
-**Input:** `/setup-engine godot 4.7`
+**Input:** `$setup-engine godot 4.7`
 
 **Expected behavior:**
 1. Skill reads `project.yaml` before editing it
@@ -189,7 +189,7 @@ Fixture defaults.
 **Fixture:**
 - Fresh project with no engine configured
 
-**Input:** `/setup-engine godot`
+**Input:** `$setup-engine godot`
 
 **Expected behavior:**
 1. Skill completes full engine configuration
@@ -210,7 +210,7 @@ Fixture defaults.
 - `godot --version` reports `4.5.1.stable`
 - The user picks "pin the newer one and upgrade later"
 
-**Input:** `/setup-engine godot 4.7`
+**Input:** `$setup-engine godot 4.7`
 
 **Expected behavior:**
 1. Section 3 probes the installed editor and finds 4.5.1 — a mismatch
@@ -237,7 +237,7 @@ Fixture defaults.
 - The probe finds `C:/Program Files/Godot/Godot_v4.7.2-stable_win64.exe`, which reports `4.7.2.stable`
 - The user names the export preset `Windows Desktop`
 
-**Input:** `/setup-engine godot 4.7`
+**Input:** `$setup-engine godot 4.7`
 
 **Expected behavior:**
 1. Section 3 reads the version from the executable it found — it does not report "no engine installed"
@@ -263,11 +263,11 @@ Fixture defaults.
   returns every question as skipped
 - The sandbox carries the framework's `AGENTS.md`. The rule this case checks is
   stated there ("A skipped or dismissed question is not an answer") and in
-  `.agents/docs/automation-modes.md`, not in `/setup-engine`'s own files; a rule
-  `AGENTS.md` loads counts as the skill's own (`/skill-test` spec mode, Step 3),
+  `.agents/docs/automation-modes.md`, not in `$setup-engine`'s own files; a rule
+  `AGENTS.md` loads counts as the skill's own (`$skill-test` spec mode, Step 3),
   so a sandbox without it is set up wrong, not a skill FAIL
 
-**Input:** `/setup-engine`
+**Input:** `$setup-engine`
 
 **Expected behavior:**
 1. The skill does not choose an engine, language or version itself

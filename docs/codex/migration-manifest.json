@@ -900,7 +900,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/config-resolution.md",
-      "target_sha256": "150ba8a2b9b5c03a20720f0a837f07da458ab53cf80ecbb8d77c2451ca74358c",
+      "target_sha256": "1136333371ac6c05b9ccc1827ccde762cfb53849787477cf8fc384d4aeb33226",
       "related_targets": []
     },
     {
@@ -954,7 +954,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/automation-modes.md",
-      "target_sha256": "8f0aa412b878b3911c582fc070dbaea16bada9bfd3c95df9e3457dbc859edc31",
+      "target_sha256": "c3338ab99fc42bac06508545897b2e80e2334e5a6f0d6551c8e18e946a1f5e1d",
       "related_targets": []
     },
     {
@@ -990,7 +990,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/coding-standards.md",
-      "target_sha256": "822c75ee868c4bd81eb534fb3dbd6b97606aaefd84caf6178bbf9ad1e8f23af4",
+      "target_sha256": "c45a1e463f62badda4e85b5f872a80f721b6b9c1df385a9e58c21984718ec7ff",
       "related_targets": []
     },
     {
@@ -1010,7 +1010,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/config-resolution.md",
-      "target_sha256": "150ba8a2b9b5c03a20720f0a837f07da458ab53cf80ecbb8d77c2451ca74358c",
+      "target_sha256": "1136333371ac6c05b9ccc1827ccde762cfb53849787477cf8fc384d4aeb33226",
       "related_targets": []
     },
     {
@@ -1028,7 +1028,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/context-management.md",
-      "target_sha256": "d47b8b687052a2e17478361d525a0bdb9539190cf71c19a95259b33e492acc2f",
+      "target_sha256": "4862085e17bd2e44663f5633a5ed7a3fb3d0f336c7175d513bdc55fbdc44c434",
       "related_targets": []
     },
     {
@@ -1066,7 +1066,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates.md",
-      "target_sha256": "efac0fb95ab54efcd61cb55faede6a3226bcb67a74c69c9e09e7af17d66c1758",
+      "target_sha256": "7c69a5073c660a652694791191a7133cfd85d08b806588c0c3e2c49868ccec84",
       "related_targets": []
     },
     {
@@ -1084,7 +1084,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/ad-art-bible.md",
-      "target_sha256": "a85f0d17daf86f92c938cec04b69d397241ab97f97a730ca493b4b982657e325",
+      "target_sha256": "a1e7531a69b836c838a0da19b88781ed0c55ce283636c317c761c1519e27ce84",
       "related_targets": []
     },
     {
@@ -1120,7 +1120,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/ad-phase-gate.md",
-      "target_sha256": "cbb4d9fd0098bf92688b223cfbf00d0737df0ef661429f3cc2dc4c8bc41098e6",
+      "target_sha256": "7d924e498dfbb3d78525084389ad45ee44064e893bde75ac5515aea8d2a53047",
       "related_targets": []
     },
     {
@@ -1174,7 +1174,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/cd-narrative.md",
-      "target_sha256": "f1f613c8ae6e47ef1368c08f7e4596b8244fb99bd57dba35b6b95f6417cc295a",
+      "target_sha256": "d62448d79c8a2544f0f28afdb5882dcffed469eb757555bddd47c0e7e1d73641",
       "related_targets": []
     },
     {
@@ -1192,7 +1192,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/cd-phase-gate.md",
-      "target_sha256": "259966a166d14f4b6fdc923a9c3dc985c3ba4ade4faa7ac149fe1d26cbc922e6",
+      "target_sha256": "0b6e4d7c12e4995c5ecbdf1af173d6dfb7f175b8125014e2c88e38c05af59fbd",
       "related_targets": []
     },
     {
@@ -1228,7 +1228,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/cd-playtest.md",
-      "target_sha256": "3bd0853b707740299d2d8a31e36d48a5d2099388cd07c4b8c5fb7c5a80b3a4c9",
+      "target_sha256": "6b47b47b8746308ad6930b45c04320d977e13db26c1812d95309a56b62b1e25a",
       "related_targets": []
     },
     {
@@ -1246,7 +1246,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/cd-systems.md",
-      "target_sha256": "6a90bdda5a2f690f2fe56c286b373e2022691594fcc84df1bfe6f38a43d39b64",
+      "target_sha256": "ac836f41548225e9b4aca04bcd776806ddf8211e81b3a6077a4aa8df0517697d",
       "related_targets": []
     },
     {
@@ -1264,7 +1264,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/lp-code-review.md",
-      "target_sha256": "c5d2b3277af27c7e63e78a6dec94496c6edf5a560983c82f093fdfedc26567f1",
+      "target_sha256": "287a04d9debdf83180748d411ccb09452514054ce87e0964db9737bc8146f5c1",
       "related_targets": []
     },
     {
@@ -1282,7 +1282,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/lp-feasibility.md",
-      "target_sha256": "f2f95cc2a38264c1efe20a0b12c874252b9c5264a8fa308765173a2bf812b918",
+      "target_sha256": "9dda653b6cdbab66b97aa7210917b0b1d0cbc2ecb19e3d8721a48dbd49bbded5",
       "related_targets": []
     },
     {
@@ -1318,7 +1318,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/pr-epic.md",
-      "target_sha256": "59bff2be7adf0aa3ec6e554933404435dab887af4b29c52030b6a6d4d57d8885",
+      "target_sha256": "a0eb9a8b648656b3edac36e7ec36b48573ce91a387c5b8671f69fefbedc776d1",
       "related_targets": []
     },
     {
@@ -1336,7 +1336,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/pr-milestone.md",
-      "target_sha256": "ab2d1ad247f8770efd8c7a612e63a288433590452f24ea8d5818fb7bcc40cd62",
+      "target_sha256": "f1cbe997188b57b18fff2b19f213427d5c72e1562ae43c9c9ff21f914a4db1ce",
       "related_targets": []
     },
     {
@@ -1354,7 +1354,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/pr-phase-gate.md",
-      "target_sha256": "ec519515fc02fd323f35cc22a22b87469b443f4a67ee63d2bb32692977ab2ec0",
+      "target_sha256": "41a75c50e9cd08bcddb97ea48e99d9245fb7f5111aab3717745182a2ab66af06",
       "related_targets": []
     },
     {
@@ -1390,7 +1390,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/pr-sprint.md",
-      "target_sha256": "a94e8706c18a917f209b1d004c7759cd5e2382eb921713cc3245bc88721ad778",
+      "target_sha256": "e1c7c445f82f729b8b34994ecfd87079b7bc8398ac3aff5f8646eef425eb6fdf",
       "related_targets": []
     },
     {
@@ -1408,7 +1408,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/ql-story-ready.md",
-      "target_sha256": "82b9bb06ca879524f55b3420c8a777c4fe620357d0080ec70d06fdb688f82e00",
+      "target_sha256": "2d1e9717c41263efeacba53967988cad8cbdeb040297c8e920a21d515bd495ed",
       "related_targets": []
     },
     {
@@ -1426,7 +1426,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/ql-test-coverage.md",
-      "target_sha256": "6dd697186e2fd6b428042c8da2eeef791891e9b7b8fd7a9a926879d2a20227c7",
+      "target_sha256": "be0c22cb5acf086f7fe66b4c7e6db37a824aab64665179e589f7090dbfb02275",
       "related_targets": []
     },
     {
@@ -1444,7 +1444,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/td-adr.md",
-      "target_sha256": "24d47096d64602d9d1e86789d7d3b42e2335630a10b8e378731fe5ee9d0f67c1",
+      "target_sha256": "6f4f46110b14e10a7cc9b3ecdf7a303298f182b1d8acfe0990991f211f2666ca",
       "related_targets": []
     },
     {
@@ -1462,7 +1462,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/td-architecture.md",
-      "target_sha256": "63bed280dd558d9481a7835e2c648e52c89de2ea70eab1cd8c9dd2f5c5651dd8",
+      "target_sha256": "465dc3f1079df55ec561a5584d3dce7bbb3bafc03952af0b359c4d48d39786df",
       "related_targets": []
     },
     {
@@ -1480,7 +1480,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/td-change-impact.md",
-      "target_sha256": "e6b104b56f29c09cdb9092db0d794d6b7b4a341521e635aea976e3724330f3d3",
+      "target_sha256": "1df998eda8e5f8601871595a1dfa3898c9a367a5741f8c0a749c2b6e3debc95d",
       "related_targets": []
     },
     {
@@ -1534,7 +1534,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/td-manifest.md",
-      "target_sha256": "9f4dbfdaeb93062441e06b1d4e3c2a600d420893803d6a2640246635ec8343d7",
+      "target_sha256": "6dee52bf7a3bcec3c54905953b5fb1a574d16590af6b538960471096110cb92a",
       "related_targets": []
     },
     {
@@ -1552,7 +1552,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/td-phase-gate.md",
-      "target_sha256": "eb6eefb72c982a2d6a2688d13e7311e144c29c31d7f3b8ded33c9b3232e73c58",
+      "target_sha256": "a99d04d2b684d5cf7c6cc2299cf6402e93ebf6c655d95c28838cd1c06ff2f7ef",
       "related_targets": []
     },
     {
@@ -1570,7 +1570,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/td-system-boundary.md",
-      "target_sha256": "675078b4e5bfe20bb227f74dd7111821b4bdad78c4f8f289008d9fb8e1e0292a",
+      "target_sha256": "fd93ddc8d25b0a7c5c8c166d82a5d612d09cf87d5ab4acab6c8abdb107fc3776",
       "related_targets": []
     },
     {
@@ -1588,7 +1588,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/directory-structure.md",
-      "target_sha256": "55c6ce61ce9135b375904ee26d96c61f55498706fa7ec99f5822622c04ee4711",
+      "target_sha256": "3606a0a779f68a82bbbd71d068ba6e0ca745e005698459cbf902768ac42823e2",
       "related_targets": []
     },
     {
@@ -1606,7 +1606,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/effects-map.md",
-      "target_sha256": "0a9f26daa12ec61940a337c1e223a98e06dc284239b4e7c4c9d3ac89aa8f1d1c",
+      "target_sha256": "abdd82c8ba301a5b5b1e15e260404a60781c16a0f2d62a0d17e6047fcd0d090a",
       "related_targets": []
     },
     {
@@ -1642,7 +1642,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/hooks-reference.md",
-      "target_sha256": "dc0146d05b80f5a1087a2fba2f61e12cb714df3bef35e90ec37601d52e9d05f1",
+      "target_sha256": "7ca7f1b5ba15b1372474795027dbdf000d7734787b041f8df6e41c4a60438d15",
       "related_targets": []
     },
     {
@@ -1678,7 +1678,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/hooks-reference/post-merge-asset-validation.md",
-      "target_sha256": "201ada6e1e30086c01940bce96beb39c1b76216ee377bf440aa4d5412030e5c7",
+      "target_sha256": "2cf4ee8c2525a64ecde4b8c1eaa86343c90fa5d84b85c95ec4b570cbdf2c775a",
       "related_targets": []
     },
     {
@@ -1696,7 +1696,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/hooks-reference/post-sprint-retrospective.md",
-      "target_sha256": "c5de6d82b0e24600bf6f87a2d4eb8dcc1981c3f077f3649bbd41ab28131b8d3c",
+      "target_sha256": "193109896e96f13bfde2ed955e2d8395351fcd1aeed44dfe03b53ce0663c164a",
       "related_targets": []
     },
     {
@@ -1714,7 +1714,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/hooks-reference/pre-commit-code-quality.md",
-      "target_sha256": "cebf2f832cbf6aa26bd04c74aa833602a1c6dbf51b47d183b9aebb996f6e6f9e",
+      "target_sha256": "228a6127d1a069e7751ff4dde9bd80b7154406b6d357ece5d40874acbafc6a55",
       "related_targets": []
     },
     {
@@ -1750,7 +1750,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/hooks-reference/pre-push-test-gate.md",
-      "target_sha256": "ac064e887311b49c85ab2c0930f840773d0d3d0aaebcb2ce301bb5bff9222051",
+      "target_sha256": "ecfdaaa4cf42755279d8d28e45447a581c105fe3a2c3238514868ef78844a661",
       "related_targets": []
     },
     {
@@ -1786,7 +1786,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/quick-start.md",
-      "target_sha256": "b1c9dac685c8683ef06b78d4b28b120436cc9c3a66b1e38681daf267f8251890",
+      "target_sha256": "47fef05102d3434773333a55c0b4545fb0d5df6285c281ef6defef343749385b",
       "related_targets": []
     },
     {
@@ -1822,7 +1822,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/run-and-observe.md",
-      "target_sha256": "066da3b361e1a38b29ed2a4a1d807276b299cd373918abadf0ec2fa3bef14578",
+      "target_sha256": "a9d36f5b463ae48676aa69f9470368a1d220834405501b21adf54e71e2b0ae93",
       "related_targets": []
     },
     {
@@ -1840,7 +1840,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/settings-guidance.md",
-      "target_sha256": "41dc64c8ce74d59a8b6327aa868534a4731339c768ac7e5050f70fff660bd52a",
+      "target_sha256": "4360754d0839d0bdc620e4a74c7717effe251f67db9c94e67a33371d06ad94c8",
       "related_targets": []
     },
     {
@@ -1894,7 +1894,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/skills-reference.md",
-      "target_sha256": "8219c4e1af638fb79799ba10dc785cc6cce834eb145a4547afdd4ea6e3215d2a",
+      "target_sha256": "d5bb7a772665604d793459f7dc2bb7007f79e201325ecc7db4113d82e838e4c1",
       "related_targets": []
     },
     {
@@ -1912,7 +1912,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/technical-preferences.md",
-      "target_sha256": "1701ea6e2a853f299ce687b5efe18fbd860feecc3b23ca4cc616e8572a1e1dc3",
+      "target_sha256": "f286ba8cc951b61f6f9426caf830bebea88e0082aa04e39f74844445a9ef00ee",
       "related_targets": []
     },
     {
@@ -1953,7 +1953,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/accessibility-requirements.md",
-      "target_sha256": "ff3efe009021f5cc9180bc3b8a7d391ca558fa567477fcc7fdd8fdc248f84c9e",
+      "target_sha256": "be652bc2daae52564116e31520fc0fdf8dd8ef46f931e83dbcb26f8341e91734",
       "related_targets": []
     },
     {
@@ -1971,7 +1971,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/adoption-plan.md",
-      "target_sha256": "6c93f6a4be3ab97aa1d63a340c102db3aae25ae0c26aa09f0aae8cf5fad5bd09",
+      "target_sha256": "da579d02cf699040fbaa0ff01b425dce062e1be2fbd352864604e7a1390915a2",
       "related_targets": []
     },
     {
@@ -1989,7 +1989,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/adoption-summary.md",
-      "target_sha256": "c8aa0cadc36c0526f340e228a2351d4e4af93bc53fccf20d3ed823150d6ac1c5",
+      "target_sha256": "880c31668a0d7bf6a19fb3e2a0d73b9e00941dedf40e8429642957357dbc09d2",
       "related_targets": []
     },
     {
@@ -2007,7 +2007,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/architecture-decision-record.md",
-      "target_sha256": "6a951a46a0b06f98b8e89d8ddeb04c27b9f5f29a9c85d25d74ced6bda1016467",
+      "target_sha256": "a9847f73f655a01d77e1ad95cdf8188c67fe7c6b061417224cfd5c5665a0caaf",
       "related_targets": []
     },
     {
@@ -2025,7 +2025,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/architecture-doc-from-code.md",
-      "target_sha256": "c74e26bb76c7dd0e4744699f88f48282bbb82bce4d3c22fd67c768f2f0e76400",
+      "target_sha256": "8151c4ae4f50d271d0d0740d9b450915cc700f93ae1d9052a4ac2b58c9b2956b",
       "related_targets": []
     },
     {
@@ -2043,7 +2043,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/architecture-traceability.md",
-      "target_sha256": "060c6a11cbd543acd384e327f83940bc87d00620bc5a5b88c2816bbe0170d6ac",
+      "target_sha256": "1517a309ff0098cc306bc8612bdf7c9211941017306f68638c8286069ce26910",
       "related_targets": []
     },
     {
@@ -2061,7 +2061,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/art-bible.md",
-      "target_sha256": "a28c30415db944f38fb08c27c05543cc79f207ccfd9b5343680b15ab7665e6f6",
+      "target_sha256": "b6e1d99c91819a1d79cd7ff6327bf2303071cea3206f9923166625e3fb1d3777",
       "related_targets": []
     },
     {
@@ -2241,7 +2241,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/concept-doc-from-prototype.md",
-      "target_sha256": "19e60f42e72ca20e929cfca09e47f539828c3cae50a624ee83cac4801600e68b",
+      "target_sha256": "48d6bc0012cdf00fbb7faf953bd45c643e1045ef3550461e915308d7eaf56cdf",
       "related_targets": []
     },
     {
@@ -2259,7 +2259,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/design-doc-from-implementation.md",
-      "target_sha256": "8df5b9c2ab5ad5b9709d209dc9996699f432ae0b8fa4dc3f83e5c681b8db2363",
+      "target_sha256": "fcb9526a54477c3173e98f33ad0ee72f1e74a8ef6605bf768246e52ff7515238",
       "related_targets": []
     },
     {
@@ -2331,7 +2331,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/game-brief.md",
-      "target_sha256": "70d49670b663619843301aa9a1e105f892d6db715f3e0a552b5241632e212b60",
+      "target_sha256": "a4e1ce308f77e08e08a1228e5e123bfeb2f6a45878e342febbff83ac247732b2",
       "related_targets": []
     },
     {
@@ -2349,7 +2349,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/game-concept.md",
-      "target_sha256": "d200bc1fa047ffa68a2df53bb6d1bdec3fd80631d0ce2fce0978de0047fec91d",
+      "target_sha256": "43b060df34d7b7a489f8c89bd698620fd1d3b305de046a2f149eab4b6afc5e5d",
       "related_targets": []
     },
     {
@@ -2421,7 +2421,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/guidance/game-design-document-guide.md",
-      "target_sha256": "107a32667a114dbb6cd49d48bf14491899fbd8a77f34bb592011beef2615624a",
+      "target_sha256": "f6431f3d65ad54f20db1234ef7890a6d461f2c1f52cb438ba157e40364b6cfa1",
       "related_targets": []
     },
     {
@@ -2547,7 +2547,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/help-escalation.md",
-      "target_sha256": "9fc2f9d6d2cb8d1f942f9d650cdbf830af4c00137d4f7d73de9b7d3dcd394364",
+      "target_sha256": "cb868bfc68547b27f300299a70917e66f4b0a972db0873da6834b094facf0546",
       "related_targets": []
     },
     {
@@ -2565,7 +2565,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/help-where-you-are-minimal.md",
-      "target_sha256": "e273a39857981cd2b7cb1bf5344c315130a0bab7e5faae7931a31e0f50fd759d",
+      "target_sha256": "2093849e749ba32d845ba9d9acb4e708c3e7580ff5f71ff242411df550522f7d",
       "related_targets": []
     },
     {
@@ -2583,7 +2583,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/help-where-you-are.md",
-      "target_sha256": "1b972e22678d0527acc38c52b5f1bbb930dad81c3e3c0ece5f34fb7f9142586a",
+      "target_sha256": "cc539879b8d2ac71d499b775f36e01c3c61a3faa9f6c617b9062263ddcf167ed",
       "related_targets": []
     },
     {
@@ -2655,7 +2655,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/launch-checklist.md",
-      "target_sha256": "f855bf09a82c228212a091e02980cb8d736be2f92ce922e35b71997cd31de53a",
+      "target_sha256": "5d9954386661a0886d0df7d14de6be08eb0288efecff079b3b298f746d789c71",
       "related_targets": []
     },
     {
@@ -2822,7 +2822,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/project-stage-report.md",
-      "target_sha256": "1b69bbf848758f639bec2579fb5e5e8c46b4b4c4d1191e7947614c0b9a4a26bb",
+      "target_sha256": "957b8c043e14ee985ab75f0e4e679c0df85ad69d6a02625932e5711071972d2c",
       "related_targets": []
     },
     {
@@ -2840,7 +2840,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/prototype-report.md",
-      "target_sha256": "2228475bd6122e826affd20039ab117acaea064872893a21b2b70e7f8d510145",
+      "target_sha256": "fca00987274a6e1a4c9c2218d0588f0a44245bce9e6d8f9c7286173e388e7e09",
       "related_targets": []
     },
     {
@@ -2912,7 +2912,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/release-checklist-template.md",
-      "target_sha256": "c8493708c0a47cd38062cdae6dbc1cf379d7e9a6cacd9c50850dcd2bc556fe63",
+      "target_sha256": "a37b41f2b373ad3effdd73c154aabc9e3eb3d350234b005f984d25ffbadbd713",
       "related_targets": []
     },
     {
@@ -2984,7 +2984,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/session-state.md",
-      "target_sha256": "40e22efa8bb7d61921c94cc496904590a6b985a1819c02763fcc567249a28cbf",
+      "target_sha256": "58ce2f7b5379a37fe98a97813d6690336908d0336d7ef464808437aa54e6a64e",
       "related_targets": []
     },
     {
@@ -3002,7 +3002,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/soak-test-protocol.md",
-      "target_sha256": "30d1fae457a73c93b35642c5eab7956df14cd8494b174092189e329c0fc8f9ed",
+      "target_sha256": "9562832a4a9794f6753d4160cfb2fd93cee1dccf61b4ddaac0d1e6fa8220d4f7",
       "related_targets": []
     },
     {
@@ -3038,7 +3038,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/sprint-plan.md",
-      "target_sha256": "95348349ebc0eeeb88016fb8cabeade73da866b3645b2e9a5071476e2710d17c",
+      "target_sha256": "a9eb0a7908947aae1dcf9c03acc44ea44e7b45bff96c818b8855ed44d78616b7",
       "related_targets": []
     },
     {
@@ -3056,7 +3056,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/sprint-status.yaml",
-      "target_sha256": "1fcf3b4e661d39777c383ea5e54597f6de164ade50a6bcee066f13c1512763d4",
+      "target_sha256": "3f2c35f10d2d16cd05e5135dee2a1a4166df0ff189dbf992c8b0ab85ba7ed5ea",
       "related_targets": []
     },
     {
@@ -3074,7 +3074,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/start-paths.md",
-      "target_sha256": "3a845831f454c483e04654f6f0f0af7d5a3b2611b56d31084ad8a6516cc6e788",
+      "target_sha256": "45dd14df65d358f583a25ff631a7ccf43f2927b90c9365bcb3bb106850afbd10",
       "related_targets": []
     },
     {
@@ -3092,7 +3092,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/story.md",
-      "target_sha256": "312132c53a67d903609fe33644ea342feeaff47fecffb07851cb20a44e66644f",
+      "target_sha256": "ac80d9a46b88f78eaa414282dfb849708cdd2093dbb5d3cbde1c5fdbabbbccb5",
       "related_targets": []
     },
     {
@@ -3110,7 +3110,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/systems-index.md",
-      "target_sha256": "a40a9957676be4adc79d36f654d17e98badb59bd12480dfa67bc47ac51e11d38",
+      "target_sha256": "757abd3c742f3a12fe778013309c20a9570c75e50c08865b600e67d38f591b32",
       "related_targets": []
     },
     {
@@ -3146,7 +3146,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/test-evidence.md",
-      "target_sha256": "b023467e53bf5d1b790e5f7af347a7747a4324111bd65c45c99fe2a06432738e",
+      "target_sha256": "7b30b0b167617966f63e1574c10a916a88d61d45279080eef2eb92d5ad8e4584",
       "related_targets": []
     },
     {
@@ -3164,7 +3164,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/test-plan.md",
-      "target_sha256": "63c76428e12e8976a4135cb20fbfb90d4c392f31b7a80057f0f2a09e6ae46206",
+      "target_sha256": "c1e165dcc73d5e206a09a758e20a6f846637d845602e05f914b6afd19d957301",
       "related_targets": []
     },
     {
@@ -3200,7 +3200,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/vertical-slice-report.md",
-      "target_sha256": "fec321cce5380d3bd99a90175b6457ef22e7ca199fa0f04ff2636c344ff2ce47",
+      "target_sha256": "3aa3b37b68d4372a6681d13cb6ff5686e1df358635c2878d5abfaf708c0c2914",
       "related_targets": []
     },
     {
@@ -3218,7 +3218,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/workflow-catalog.yaml",
-      "target_sha256": "c0ced6c40b7a105d38a51055b273c31b28ce014091ee4c9126a064470842325c",
+      "target_sha256": "59f4b3da3cd14c48226b5a83916bbb906a9cc2cee894ebda3ad5dabca0a61f4e",
       "related_targets": []
     },
     {
@@ -3236,7 +3236,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/workflow-modes.md",
-      "target_sha256": "bc74c5e996b518f41de2c7e4aef1972ca5be0f095f6b8fe7aaaf12c77753ed5e",
+      "target_sha256": "97f2d64226ad80098dd99baf91c9a082e0386ae14ea16c4583226f317c9e9ec8",
       "related_targets": []
     },
     {
@@ -3254,7 +3254,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": ".agents/hooks/detect-gaps.sh",
-      "target_sha256": "572bea4d79391b7de68631e028373d89b89284996a8834cdef2321cdd17a7df5"
+      "target_sha256": "142a3aa9fecf39cbeb5d2d423146bcfad7b02961404b73f30ae02b76456bde31"
     },
     {
       "id": "file:.claude/hooks/log-agent-stop.sh",
@@ -3322,7 +3322,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": ".agents/hooks/notify.sh",
-      "target_sha256": "4cf91ab0faa3e2f0f39e88d1dbe425e372e7fe76b78453366826b129e70841bd"
+      "target_sha256": "c59b5903c9c69ecdf61034b92c3a0b74249ab667d26daeaa142a17a470412cee"
     },
     {
       "id": "file:.claude/hooks/pre-compact.sh",
@@ -3357,7 +3357,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": ".agents/hooks/session-start.sh",
-      "target_sha256": "146df6b0e8794263b76be48fedd5dfcbcb8ae5eb0537bf6e16c2b30d84c544a6"
+      "target_sha256": "a7a67b233750daddee72e88babd2f513d3594d0f67b40c2d93de06a76b9b92b5"
     },
     {
       "id": "file:.claude/hooks/session-stop.sh",
@@ -3374,7 +3374,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": ".agents/hooks/session-stop.sh",
-      "target_sha256": "2c73ff7669c710bf7215666664d7685cf6c3d20792d5c1324c78160355e32472"
+      "target_sha256": "837c0a7a53dc0b50cc365efbd28ef19f3086c55491fac53c412c65906e96776a"
     },
     {
       "id": "file:.claude/hooks/update-check.sh",
@@ -3462,7 +3462,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": ".agents/hooks/validate-commit.sh",
-      "target_sha256": "064869ec92b96b2f06e68364687cb1dc391b7422ce4591b5358565b6fdb35f97"
+      "target_sha256": "fa7c07c0a45825d0d60ccb6f948c4d8535562d997b6bbe8a5c328f546b68ac67"
     },
     {
       "id": "file:.claude/hooks/validate-push.sh",
@@ -3480,7 +3480,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": ".agents/hooks/validate-push.sh",
-      "target_sha256": "5416e5fe6a114d795c101d993bfec90042f82e361ea17db87a0726cb34cf7330"
+      "target_sha256": "e0a0a863b9f8d11b52326746d90ef59a8c108891dbef4dc80ed160a8ed7d5713"
     },
     {
       "id": "file:.claude/hooks/validate-read.sh",
@@ -3534,7 +3534,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": ".agents/hooks/validate-skill-change.sh",
-      "target_sha256": "794ff08276749dd8f0b82d2d14aa0f4cb634e37d5428e0916e80d47160e7be02"
+      "target_sha256": "0191eeb1e6f72987775346b99af7c1d87b8b7a421a195d87a867aa0348f5a44e"
     },
     {
       "id": "file:.claude/hooks/validate-write.sh",
@@ -3552,7 +3552,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": ".agents/hooks/validate-write.sh",
-      "target_sha256": "277474dbcf56bd1ece89dea9d63d1798f88acadcc29066cb48209bd0fc6881cc"
+      "target_sha256": "c8e2070c1e659bcc7b633477d680f95b09865065441be350e3adb673378f239d"
     },
     {
       "id": "file:.claude/hooks/yaml-helper.sh",
@@ -3571,7 +3571,7 @@
       "verification": "Preserved source-bound backend and tested adapter equivalent; see per-declaration protocol/limits in parity matrix. Native activation and Linux remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".agents/hooks/yaml-helper.sh",
-      "target_sha256": "25fdaa330cbb94fe99365d54793f838b5fb412eac86abc4ffffad8a775cb00fe",
+      "target_sha256": "0aa911cde4d98fbbbb439ec6e0384734b6c70684deb1a26bc5295660aff0e177",
       "task": "CGS-24"
     },
     {
@@ -3636,7 +3636,7 @@
       "verification": "14 positive and negative path cases, overlaps, globstar, braces, Windows normalization and traversal guards verified. On-demand CLI selection; native automatic enforcement is not claimed.",
       "status": "EQUIVALENT",
       "target": ".agents/rules/design-docs.md",
-      "target_sha256": "54701f75458c6ac6f7aeac2d923013cb3072e95000c8d8a12cc34799e846b154"
+      "target_sha256": "43202edf44ad55833bec687ee6275c24d6954416a1f85d047bdd4a0812427754"
     },
     {
       "id": "file:.claude/rules/engine-code.md",
@@ -3780,7 +3780,7 @@
       "verification": "14 positive and negative path cases, overlaps, globstar, braces, Windows normalization and traversal guards verified. On-demand CLI selection; native automatic enforcement is not claimed.",
       "status": "EQUIVALENT",
       "target": ".agents/rules/test-standards.md",
-      "target_sha256": "658a2ba02baa3983c8b4096dd1829865e1dac763a6376673062a450409b247ef"
+      "target_sha256": "36a4cf97ddf2ba38877e2928dd39041699565f6eb3bbadaf511b34957f2b269c"
     },
     {
       "id": "file:.claude/rules/ui-code.md",
@@ -3957,7 +3957,7 @@
       "verification": "Actual focused helper fixtures and source-preserving adaptations checked. test-run ladder fixtures are synthetic, not engine execution; all other limits are explicit in helper inventory.",
       "status": "PORTED",
       "target": ".agents/scripts/config-set.sh",
-      "target_sha256": "895a2040b66b2f020a6f301a5298a7ebdf6b59302ee6fa5483ad5eb638221ed4"
+      "target_sha256": "2643ca0fd0886585c6ea747e9fb345ccd304458e85cb5fad8697581b2bb2e903"
     },
     {
       "id": "file:.claude/scripts/content-count.sh",
@@ -4118,7 +4118,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-28",
       "target": ".agents/scripts/migrate-v1-config.sh",
-      "target_sha256": "9b4cba8ac6068b3ddf8175cb1c5ab5e20984eeccc0aa4c63c90f854240caf528",
+      "target_sha256": "1d6d0a0bd6caa910578373ccaa25af428b68c390f4a92bbd17b572511d1f0bee",
       "related_targets": []
     },
     {
@@ -4154,7 +4154,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-28",
       "target": ".agents/scripts/project-coherence.sh",
-      "target_sha256": "a026ed4643116f81c67d248f0e2c17af5c7559bb2c23d2b41cff6fdbf0f07462",
+      "target_sha256": "abfc266cdc2999ca05fb81209741571596652be8f35838749b514fbb188ac57b",
       "related_targets": []
     },
     {
@@ -4370,7 +4370,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-28",
       "target": ".agents/scripts/test-scaffold.sh",
-      "target_sha256": "85752e9b356c2de66b6a6c0a15175a3f2f2220d1803adb77afc711524b8183fc",
+      "target_sha256": "ebda84b85cc08913acaf9d24794a33a1b575e58b66144e2c4791ce46dd343294",
       "related_targets": []
     },
     {
@@ -4387,7 +4387,7 @@
       "verification": "Actual focused helper fixtures and source-preserving adaptations checked. test-run ladder fixtures are synthetic, not engine execution; all other limits are explicit in helper inventory.",
       "status": "PORTED",
       "target": ".agents/scripts/write-guard.sh",
-      "target_sha256": "97fcda499e2c5ad38c3a01632e6228fd803792d95c1728694a08faa62c3ba6d0"
+      "target_sha256": "880035eff3df80325a67210d2035ddaca67ab5ee9d923626fff8cecaca71a421"
     },
     {
       "id": "file:.claude/scripts/yaml-get.awk",
@@ -4443,7 +4443,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-10",
       "target": ".agents/skills/adopt/SKILL.md",
-      "target_sha256": "2f03339b7c566c9c2dd69acbe0187857cfd6af2014053ad9ebd67f5a943ca3d4",
+      "target_sha256": "44f495f59fa0ce1e856e02ff54d1ce6665aeb1dfd60168f35be974ad4000d3af",
       "related_targets": []
     },
     {
@@ -4923,7 +4923,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-12",
       "target": ".agents/skills/art-bible/SKILL.md",
-      "target_sha256": "a06c0968c1be041f0b33a43c975256f48088d1ca0ed1366867f39edde18b9f00",
+      "target_sha256": "50c487c01ccf7925981da6e18f4b7c8aa113ff740c79cbe5fca9cf43e66be1c5",
       "related_targets": []
     },
     {
@@ -5550,7 +5550,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-11",
       "target": ".agents/skills/design-system/SKILL.md",
-      "target_sha256": "5ccee432359f6fa07fe79b9f0c657fe94db2260dbe5c56bccd3cd7efaa66d7a8",
+      "target_sha256": "d47bd1745b6d0acc3f7d5737e3afa764394ca1ed5a032d1cae3522f910591031",
       "related_targets": []
     },
     {
@@ -5641,7 +5641,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-11",
       "target": ".agents/skills/design-system/references/5-post-design.md",
-      "target_sha256": "6aa6980a501eb3ff79686c67c9bc5d2ef92d858aaf2acef0e16b6bf80ce3bd64",
+      "target_sha256": "4c9e9308711687d1d4da19c8f97fa45925c89d32245048a413108804f94e93c9",
       "related_targets": []
     },
     {
@@ -6018,7 +6018,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-10",
       "target": ".agents/skills/help/SKILL.md",
-      "target_sha256": "b5288439e129705ffd9b9049d10f960a62aa5d489be69597570effa3f7ea492a",
+      "target_sha256": "360b209bb7823e313a60628466ae356d255bafc0eaec98ff70cc3576efef7562",
       "related_targets": []
     },
     {
@@ -6115,7 +6115,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-11",
       "target": ".agents/skills/map-systems/SKILL.md",
-      "target_sha256": "43db08814ac165baa6cac0dec799f9eea3e0448cc69a9566621b166ea89b9aa8",
+      "target_sha256": "d17731d00cb5534f0b47a623c7743aa11a8763fdc814f5f4e492faa82f4c8841",
       "related_targets": []
     },
     {
@@ -6291,7 +6291,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-12",
       "target": ".agents/skills/prototype/SKILL.md",
-      "target_sha256": "659931e18f2f5ce7b8e6c7e05d667fef339e769389b2f42889e658d1df7a93ad",
+      "target_sha256": "e0a35e460504c7f14e0358d7e14e6fab9ab169eea531cd2b9a40e4e3575c5a57",
       "related_targets": []
     },
     {
@@ -7095,7 +7095,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-18",
       "target": ".agents/skills/skill-test/SKILL.md",
-      "target_sha256": "06e1fc8681063b79adf5740eeaa5e99a37eef1f1ca5083a442ab7ab187119918",
+      "target_sha256": "f3ff47b2c39c0d8e3aa3b549c8ba3e82770a4b5954d58489e5d81307880a4eb1",
       "related_targets": []
     },
     {
@@ -7310,7 +7310,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-10",
       "target": ".agents/skills/start/SKILL.md",
-      "target_sha256": "e8900db4172f3a57fdf7bcec88eae8c01df5b3b5b8991f37bd926b5c6722dcac",
+      "target_sha256": "a71101662d81056bc0e07b7f756923a146345bdd6e833941c2acdf8a7f8806ba",
       "related_targets": []
     },
     {
@@ -7665,7 +7665,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-21",
       "target": ".agents/skills/team-ui/SKILL.md",
-      "target_sha256": "c4991afeaf2907f09d4e834199a0c403287f4d83306c2a35be0e18cdd3dad89a",
+      "target_sha256": "93281d08f8304f1c095b61dfd1a523b40b041e79922b0a88754e390dfc9f1216",
       "related_targets": []
     },
     {

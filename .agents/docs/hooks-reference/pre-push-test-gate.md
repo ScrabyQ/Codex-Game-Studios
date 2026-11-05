@@ -22,7 +22,7 @@ Inspect the project's `commands.test` and the test-run adapter interface. For ex
 node scripts/codex/helper.mjs test-run --root . godot --dry-run
 ```
 
-This previews a Godot command; it runs no test and is not PASS. Remove `--dry-run` only for an authorized actual run with its dependencies available. Unity and Unreal use their selected runner and editor/build prerequisites. The helper reports observations: command, timeout, exit code, count/zero-test markers and engine-specific ladder row. `/smoke-check` applies the actual gate verdict.
+This previews a Godot command; it runs no test and is not PASS. Remove `--dry-run` only for an authorized actual run with its dependencies available. Unity and Unreal use their selected runner and editor/build prerequisites. The helper reports observations: command, timeout, exit code, count/zero-test markers and engine-specific ladder row. `$smoke-check` applies the actual gate verdict.
 
 Keep logs in ignored/temporary storage or CI artifacts. Report failed, skipped and unassessed checks by name. Never print “all gates passed” when a command is only a placeholder.
 

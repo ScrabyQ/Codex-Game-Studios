@@ -1,6 +1,6 @@
 ---
 name: adopt
-description: "Brownfield audit — do existing artifacts actually work? Numbered migration plan. Unlike /project-stage-detect, checks compliance not existence."
+description: "Brownfield audit — do existing artifacts actually work? Numbered migration plan. Unlike $project-stage-detect, checks compliance not existence."
 ---
 
 ## Codex execution contract

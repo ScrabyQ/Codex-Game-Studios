@@ -1,10 +1,10 @@
-# Skill Test Spec: /test-setup
+# Skill Test Spec: $test-setup
 
 ## Skill Summary
 
-`/test-setup [force]` scaffolds the test framework for the configured engine.
+`$test-setup [force]` scaffolds the test framework for the configured engine.
 It reads `engine.name` from `project.yaml` (falling back to
-`technical-preferences.md`) and stops with a `/setup-engine` redirect when
+`technical-preferences.md`) and stops with a `$setup-engine` redirect when
 neither names an engine. It checks for existing infrastructure, presents a plan,
 and asks "May I create these files? I will not overwrite any test files that
 already exist at these paths." before writing.
@@ -23,19 +23,19 @@ apply. The verdict is COMPLETE when the scaffold is in place.
 
 ## Static Assertions (Structural)
 
-Checked against the SKILL.md by `/skill-test spec` — no fixture needed.
+Checked against the SKILL.md by `$skill-test spec` — no fixture needed.
 
 - [ ] Skill frontmatter has nonempty `name` and `description`; optional invocation policy is checked in `agents/openai.yaml` when present, without assuming source-only fields
 - [ ] Has ≥2 phase headings
 - [ ] Contains verdict keyword: COMPLETE
 - [ ] Contains ask-before-write language before creating files ("May I create these files?")
-- [ ] Has a next-step handoff (Phase 6 Next steps: `/qa-plan sprint`, `/smoke-check`)
+- [ ] Has a next-step handoff (Phase 6 Next steps: `$qa-plan sprint`, `$smoke-check`)
 
 ---
 
 ## Director Gate Checks
 
-None. `/test-setup` is a scaffolding utility. No director gates apply.
+None. `$test-setup` is a scaffolding utility. No director gates apply.
 
 ---
 
@@ -57,7 +57,7 @@ Fixture defaults.
 - `tests/` does not exist; `addons/gdUnit4/` is not installed; no CI workflow
 - The user approves the plan
 
-**Input:** `/test-setup`
+**Input:** `$test-setup`
 
 **Expected behavior:**
 1. Phase 1 reports "Engine: Godot. Test directory: not found. CI workflow: not found."
@@ -92,7 +92,7 @@ Fixture defaults.
 - `Packages/manifest.json` lists `com.unity.test-framework`
 - No `Assets/Tests/`; the user approves the plan
 
-**Input:** `/test-setup`
+**Input:** `$test-setup`
 
 **Expected behavior:**
 1. Skill reads engine → Unity; the Test Framework package check passes
@@ -124,37 +124,37 @@ Fixture defaults.
   and `addons/gdUnit4/bin/GdUnitCmdTool.gd` all exist
 - No `force` argument
 
-**Input:** `/test-setup`
+**Input:** `$test-setup`
 
 **Expected behavior:**
 1. Phase 1 reports "Engine: Godot. Test directory: found. CI workflow: found."
 2. Skill says: "Test infrastructure appears to be in place. Re-run with
-   `/test-setup force` to regenerate. Proceeding will not overwrite existing test files."
+   `$test-setup force` to regenerate. Proceeding will not overwrite existing test files."
 3. No plan approval is requested and no file is written
 
 **Assertions:**
 - [ ] Skill does NOT re-initialize when the infrastructure exists
-- [ ] The message points to `/test-setup force`
+- [ ] The message points to `$test-setup force`
 - [ ] No existing file is modified and no new file is written
 
 ---
 
-### Case 4: No Engine Configured — Redirects to /setup-engine
+### Case 4: No Engine Configured — Redirects to $setup-engine
 
 **Fixture:**
 - `project.yaml` has no `engine.name`; `technical-preferences.md` shows
   `[TO BE CONFIGURED]` for Engine
 
-**Input:** `/test-setup`
+**Input:** `$test-setup`
 
 **Expected behavior:**
 1. Skill checks `project.yaml`, then `technical-preferences.md` — no engine
-2. Skill stops: "Engine not configured. Run `/setup-engine` first, then re-run `/test-setup`."
+2. Skill stops: "Engine not configured. Run `$setup-engine` first, then re-run `$test-setup`."
 3. No directories or files are created
 
 **Assertions:**
 - [ ] Error message explicitly states engine is not configured
-- [ ] `/setup-engine` is suggested as the next step
+- [ ] `$setup-engine` is suggested as the next step
 - [ ] No write tool is called
 - [ ] Verdict is not COMPLETE (blocked state)
 
@@ -165,7 +165,7 @@ Fixture defaults.
 **Fixture:**
 - Engine configured, tests/ does not exist
 
-**Input:** `/test-setup`
+**Input:** `$test-setup`
 
 **Expected behavior:**
 1. Skill scaffolds and writes all test framework files

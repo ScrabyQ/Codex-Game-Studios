@@ -113,7 +113,7 @@ if [ ! -f "project.yaml" ]; then
     FRESH_PROJECT=false
     echo ""
     echo "⬆️  v1.0 PROJECT: legacy config ($LEGACY_FILES) but no project.yaml."
-    echo "   Run: /adopt — it detects this and drives the migration (non-destructive)."
+    echo "   Run: \$adopt — it detects this and drives the migration (non-destructive)."
     echo "   Preview first: bash .agents/scripts/migrate-v1-config.sh --dry-run"
   fi
 fi
@@ -121,9 +121,9 @@ fi
 if [ "$FRESH_PROJECT" = true ]; then
   echo ""
   echo "🚀 NEW PROJECT: No engine configured, no game concept, no source code."
-  echo "   This looks like a fresh start! Run: /start"
+  echo "   This looks like a fresh start! Run: \$start"
   echo ""
-  echo "💡 To get a comprehensive project analysis, run: /project-stage-detect"
+  echo "💡 To get a comprehensive project analysis, run: \$project-stage-detect"
   echo "==================================="
   exit 0
 fi
@@ -189,7 +189,7 @@ if [ "$DOC_CHECKS" = true ] && [ -z "$CODE_ROOT" ]; then
   if [ -d src ] || [ -d Assets ] || [ -d Source ]; then
     echo "ℹ️  NOT CHECKED: code exists but the code root is ambiguous (engine.name unset, and the tree does not name one unambiguously)."
     echo "    Checks 1, 3 and 4 (design and architecture docs for existing code) did NOT run."
-    echo "    Suggested action: /setup-engine, or set engine.name in project.yaml"
+    echo "    Suggested action: \$setup-engine, or set engine.name in project.yaml"
   fi
 fi
 
@@ -219,8 +219,8 @@ SUB_DESIGN_FILES=$(echo "$SUB_DESIGN_FILES" | tr -d ' ')
 if [ "$DOC_CHECKS" = true ] && [ "$SRC_FILES" -gt 50 ] && [ "$DESIGN_FILES" -lt 5 ]; then
   echo "⚠️  GAP: Substantial codebase ($SRC_FILES source files) but sparse design docs ($DESIGN_FILES files)"
   [ "$SUB_DESIGN_FILES" -gt 0 ] && echo "    Not counted: $SUB_DESIGN_FILES .md file(s) in design/gdd/ subfolders (such as archive/)"
-  echo "    Suggested action: /reverse-document design ${CODE_ROOT:-<code root>}/[system]"
-  echo "    Or run: /project-stage-detect to get full analysis"
+  echo "    Suggested action: \$reverse-document design ${CODE_ROOT:-<code root>}/[system]"
+  echo "    Or run: \$project-stage-detect to get full analysis"
 fi
 
 # --- Check 2: Prototypes without documentation ---
@@ -245,7 +245,7 @@ if [ -d "prototypes" ]; then
       for proto in "${UNDOCUMENTED_PROTOS[@]}"; do
         echo "    - prototypes/$proto/ (no README or CONCEPT doc)"
       done
-      echo "    Suggested action: /reverse-document concept prototypes/[name]"
+      echo "    Suggested action: \$reverse-document concept prototypes/[name]"
     fi
   fi
 fi
@@ -254,14 +254,14 @@ fi
 if [ "$DOC_CHECKS" = true ] && [ -n "$CODE_ROOT" ] && { [ -d "$CODE_ROOT/core" ] || [ -d "$CODE_ROOT/engine" ]; }; then
   if [ ! -d "docs/architecture" ]; then
     echo "⚠️  GAP: Core engine/systems exist but no docs/architecture/ directory"
-    echo "    Suggested action: Create docs/architecture/ and run /architecture-decision"
+    echo "    Suggested action: Create docs/architecture/ and run \$architecture-decision"
   else
     ADR_COUNT=$(find docs/architecture -type f -name "*.md" 2>/dev/null | wc -l)
     ADR_COUNT=$(echo "$ADR_COUNT" | tr -d ' ')
 
     if [ "$ADR_COUNT" -lt 3 ]; then
       echo "⚠️  GAP: Core systems exist but only $ADR_COUNT ADR(s) documented"
-      echo "    Suggested action: /reverse-document architecture $CODE_ROOT/core/[system]"
+      echo "    Suggested action: \$reverse-document architecture $CODE_ROOT/core/[system]"
     fi
   fi
 fi
@@ -287,7 +287,7 @@ if [ "$DOC_CHECKS" = true ] && [ -n "$CODE_ROOT" ] && [ -d "$CODE_ROOT/gameplay"
         if [ ! -f "$design_doc_1" ] && [ ! -f "$design_doc_2" ]; then
           echo "⚠️  GAP: Gameplay system '$CODE_ROOT/gameplay/$system_name/' ($file_count files) has no design doc"
           echo "    Expected: design/gdd/${system_name}-system.md or design/gdd/${system_name}.md"
-          echo "    Suggested action: /reverse-document design $CODE_ROOT/gameplay/$system_name"
+          echo "    Suggested action: \$reverse-document design $CODE_ROOT/gameplay/$system_name"
         fi
       fi
     done <<< "$GAMEPLAY_SYSTEMS"
@@ -299,7 +299,7 @@ if [ "$SRC_FILES" -gt 100 ]; then
   # For projects with substantial code, check for production planning
   if [ ! -d "production/sprints" ] && [ ! -d "production/milestones" ]; then
     echo "⚠️  GAP: Large codebase ($SRC_FILES files) but no production planning found"
-    echo "    Suggested action: /sprint-plan or create production/ directory"
+    echo "    Suggested action: \$sprint-plan or create production/ directory"
   fi
 fi
 
@@ -335,9 +335,9 @@ if [ -n "$STAGE" ]; then
       Concept|concept|Pre-Production|"Pre-Production")
         if [ "$STORY_COUNT" -gt 0 ] && [ "$SRC_FILES" -gt 0 ]; then
             echo "⚠️  GAP: project.stage says '$STAGE', but $STORY_COUNT stories and $SRC_FILES source files exist"
-            echo "    The stage only advances on a /gate-check PASS (or a CONCERNS whose risks you accepted),"
+            echo "    The stage only advances on a \$gate-check PASS (or a CONCERNS whose risks you accepted),"
             echo "    and none has moved it yet -- so the status line can sit at '$STAGE' indefinitely."
-            echo "    Suggested action: /gate-check  (it asks before advancing; this hook never writes the stage)"
+            echo "    Suggested action: \$gate-check  (it asks before advancing; this hook never writes the stage)"
         fi
         ;;
     esac
@@ -345,7 +345,7 @@ fi
 
 # --- Summary ---
 echo ""
-echo "💡 To get a comprehensive project analysis, run: /project-stage-detect"
+echo "💡 To get a comprehensive project analysis, run: \$project-stage-detect"
 echo "==================================="
 
 exit 0

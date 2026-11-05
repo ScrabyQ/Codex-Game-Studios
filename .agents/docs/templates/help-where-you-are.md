@@ -8,15 +8,15 @@
 
 ### → Next up (REQUIRED)
 **[Step name]** — [description]
-Command: `[/command]`
+Command: `[$command]`
 
 ### ~ Also available (OPTIONAL)
-- **[Step name]** — [description] → `/command`
-- **[Step name]** — [description] → `/command`
+- **[Step name]** — [description] → `$command`
+- **[Step name]** — [description] → `$command`
 
 ### Coming up after that
-- [Next required step name] (`/command`)
-- [Next required step name] (`/command`)
+- [Next required step name] (`$command`)
+- [Next required step name] (`$command`)
 
 ---
-Approaching **[next phase]** gate → run `/gate-check` when ready.
+Approaching **[next phase]** gate → run `$gate-check` when ready.

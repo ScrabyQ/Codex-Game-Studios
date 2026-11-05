@@ -4,7 +4,7 @@
 
 Agent: `technical-director` | Model: native session policy | Domain: Architecture, engine risk, performance
 
-**Trigger**: After an individual ADR is authored (`/architecture-decision`), before
+**Trigger**: After an individual ADR is authored (`$architecture-decision`), before
 it is marked Accepted
 
 **Context to pass**:

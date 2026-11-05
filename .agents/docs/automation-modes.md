@@ -61,7 +61,7 @@ the right rule.
 
 **Default**: `collaborative`. New projects start here.
 
-**Set by**: `/start`, `/settings`.
+**Set by**: `$start`, `$settings`.
 
 ---
 
