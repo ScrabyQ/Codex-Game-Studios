@@ -1,0 +1,10 @@
+{
+  "ui.welcome": {
+    "text": "Welcome, {player_name}!\nPress \"Start\".",
+    "context": "Welcome screen; {player_name} is the display name."
+  },
+  "ui.score": {
+    "text": "Score: {score}",
+    "context": "HUD score; {score} is a number."
+  }
+}

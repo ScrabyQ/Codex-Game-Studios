@@ -5,9 +5,9 @@
   "upstream_sha": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
   "owner": "ScrabyQ",
   "repository": "Codex-Game-Studios",
-  "last_completed": "CGS-15",
-  "current_task": "CGS-19",
-  "next_safe_step": "Reference matrix now records verified content/link preservation; runtime limits remain distinct. Active18/19/22, release20 and final engine/CI/sync/documentation/audit pending.",
+  "last_completed": "CGS-19",
+  "current_task": "CGS-20",
+  "next_safe_step": "Production/content scoped acceptance verified; release20 active, framework18 seven-check interpretation and orchestration22 in final verification.",
   "decisions": [
     "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED.",
     "Generated content-preserving .agents mirror retains helper root math; native roles use .codex/agents/*.toml; all generation is hash-guarded; no new agent runtime."
@@ -281,11 +281,14 @@
       "key": "CGS-19",
       "singularity_id": "T-2a17b586-5733-4989-923f-d71663c47e6f",
       "title": "CGS-19 · Skills · production review и пользовательский контент (4)",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "commit": null,
-      "evidence": [],
-      "note": "Production workflows generated; preserve source contributor onboarding and explicitly route player tutorial scope to UX. Do not fabricate metrics or reviewed translations.",
-      "updated_at": "2026-11-05T12:03:29.410Z"
+      "evidence": [
+        "docs/codex/evidence/CGS-19/README.md",
+        "docs/codex/evidence/CGS-19/traceability.json"
+      ],
+      "note": "Production/content scoped acceptance verified; release20 active, framework18 seven-check interpretation and orchestration22 in final verification.",
+      "updated_at": "2026-11-05T12:08:35.624Z"
     },
     {
       "key": "CGS-20",

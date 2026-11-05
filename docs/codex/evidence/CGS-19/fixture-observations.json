@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "task": "CGS-19",
+  "mode": "in-session Codex host evaluation of actual retained fixture files; no independent role, player playtest or linguistic review",
+  "fixture": ".scratch/cgs19-production-B4A4DP",
+  "source_commit": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
+  "inputs": {
+    "milestone_sha256": "9b401ed7d3b0a220da360126885963c80c976f9448fc178895c4b402e0491f9f",
+    "log_sha256": "1488c75d56edc62782faf479f2277fd79c22f6e9777c5a2456301452593f9ce0",
+    "actual_prior_test_sha256": "cd97ab5f9e76ef7c9e556fd4f29fec81c30ee713f59f9c7c12000d78bcefe6c9",
+    "english_sha256": "5493c68426a113a769e50152ebc5653b26f1ddfad3d5d184805f7ffbe1a99e1e",
+    "pseudo_locale_sha256": "158bed6a938ade7ae138595009aef56552d2e18cc346b96c1e2598837d84ad03"
+  },
+  "outputs": {
+    "milestone_review": "production/milestones/fixture-review.md",
+    "retrospective": "production/retrospectives/retro-sprint-001-fixture.md",
+    "contributor_onboarding": "production/onboarding/onboard-gameplay-programmer-fixture.md"
+  },
+  "localization": {
+    "source_locale": "en",
+    "target_locale": "qps (synthetic pseudo-locale; not a reviewed translation)",
+    "ids": [
+      "ui.score",
+      "ui.welcome"
+    ],
+    "structure": {
+      "ids_preserved": true,
+      "entry_fields_preserved": true,
+      "welcome_placeholder_preserved": true,
+      "welcome_newline_preserved": true,
+      "welcome_quotes_preserved": true,
+      "mismatches": [
+        {
+          "key": "ui.score",
+          "source": [
+            "{score}"
+          ],
+          "candidate": [
+            "{value}"
+          ]
+        }
+      ]
+    },
+    "unverified_translations": [
+      "ui.score",
+      "ui.welcome"
+    ],
+    "linguistic_cultural_font_rtl_in_game": "NOT ASSESSED"
+  },
+  "assertions": {
+    "gate_report_absent": true,
+    "milestone_no_go": true,
+    "actual_log_unchanged": true,
+    "actual_three_exit_zero": true,
+    "retro_names_actual_log": true,
+    "contributor_role_documented": true,
+    "player_observation_unassessed": true,
+    "ids_preserved": true,
+    "entry_fields_preserved": true,
+    "escapes_preserved": true,
+    "expected_placeholder_mismatch": true,
+    "all_candidate_strings_unverified": true,
+    "stage_unchanged": true
+  }
+}

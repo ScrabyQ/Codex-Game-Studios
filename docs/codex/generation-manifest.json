@@ -3791,6 +3791,23 @@
       "ownership": "generated"
     },
     {
+      "id": "file:.claude/skills/localize/SKILL.md=>.agents/skills/localize/SKILL.md",
+      "source": ".claude/skills/localize/SKILL.md",
+      "source_sha256": "321672db96810276c52b6630119d38bfeee8010cf6cd4a4f39511737ed450144",
+      "target": ".agents/skills/localize/SKILL.md",
+      "target_sha256": "f17b300b72005550d31c0182b712247afd969589165be9ff2897158021202778",
+      "transform_version": 1,
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:87b604556163dd7ec679bb72da4a28e9aaa0ad9e20e9437af738fa4d6ca5257b"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
       "id": "file:.claude/skills/map-systems/SKILL.md=>.agents/skills/map-systems/SKILL.md",
       "source": ".claude/skills/map-systems/SKILL.md",
       "source_sha256": "d27959d0043bd8c9f08c0f3fb56aa66de8e6ce84812a7e43d5f2d2c43cae01dd",
@@ -3803,6 +3820,40 @@
         "codex-question-delegation-v1",
         "native-skill-invocation-v1",
         "overlay-sha256:4f541fc4ae1043bb046e124ebea9810659328a418478b6beb11ef9b80ba9b742"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/milestone-review/SKILL.md=>.agents/skills/milestone-review/SKILL.md",
+      "source": ".claude/skills/milestone-review/SKILL.md",
+      "source_sha256": "1028ff3cc2f0f1ad609efb5c91d62b40be9644a0d39cc1fb3bb8c0fd42ca29df",
+      "target": ".agents/skills/milestone-review/SKILL.md",
+      "target_sha256": "0d77921fccd827d53f1f51c7f2cded67d660784528d91476d08b503ac2d7b80a",
+      "transform_version": 1,
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:dba2f497f1d6c509672a1fb641c7fa994a780ab35a52b34abc88b663b338425f"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/onboard/SKILL.md=>.agents/skills/onboard/SKILL.md",
+      "source": ".claude/skills/onboard/SKILL.md",
+      "source_sha256": "e10acba4b4cac6b95471b3b5b11c524dfea578e030029b87a55407ac129c756c",
+      "target": ".agents/skills/onboard/SKILL.md",
+      "target_sha256": "577f947de855cf5cede29f03bf9332bb11d712488a1dcfdc4b9c54085ea331bd",
+      "transform_version": 1,
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:b24e4490972b94d8e310dcfb72b6514d40c75aed3171e758e0f11ebb6c9dce24"
       ],
       "owner": "CGS-05",
       "ownership": "generated"
@@ -4062,6 +4113,23 @@
         "codex-question-delegation-v1",
         "native-skill-invocation-v1",
         "overlay-sha256:7c9cf197b954b8eb1e5ccbd26cdf78a2292ef86b8a83e783e9218d63ed4b53b5"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/retrospective/SKILL.md=>.agents/skills/retrospective/SKILL.md",
+      "source": ".claude/skills/retrospective/SKILL.md",
+      "source_sha256": "29b136a0f3ea57c09acbc6e97e18df413444305f26e2eeac35c7c99de9f9dc61",
+      "target": ".agents/skills/retrospective/SKILL.md",
+      "target_sha256": "6b8bb975a936733d0ed7f6175643cf80ecc4d59c485cf169b34932e59ef07f07",
+      "transform_version": 1,
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:004785429735d9921768a1c3b269ebcf39678075e07cdc9eac9420efbd218ccc"
       ],
       "owner": "CGS-05",
       "ownership": "generated"

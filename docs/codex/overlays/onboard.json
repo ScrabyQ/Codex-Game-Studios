@@ -1,0 +1,21 @@
+{
+  "source_sha256": "e10acba4b4cac6b95471b3b5b11c524dfea578e030029b87a55407ac129c756c",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-19 execution contract:** Work from the explicitly selected project root and real source artifacts. A missing, unreadable, incomplete or unrun input is NOT ASSESSED for the affected claim; never turn unknown into zero, approval or a measurement. Use supported user-question facilities or ask in plain text and wait; prior authorization and host permissions remain authoritative. Do not automatically start another workflow. An in-session role review is not independent; disclose it and leave any required independent review NOT ASSESSED.\n\nThis skill onboards a new project contributor or agent, not a game player. Resolve project instructions from AGENTS.md/project.yaml and applicable native role definitions; report missing role/context as NOT ASSESSED. Describe only observed role-relevant files and conventions. A request for player tutorial/onboarding is a separate UX/player-journey workflow and remains unassessed here unless separately performed; never claim a playtest or invent player observations.\n\n"
+    },
+    {
+      "find": "Read CLAUDE.md for project overview and standards.",
+      "replace": "Read AGENTS.md and project.yaml for project overview and standards; select relevant path policies on demand."
+    },
+    {
+      "find": "Read the relevant agent definition from `.claude/agents/` if a specific role is specified.",
+      "replace": "Read the relevant native role definition from `.codex/agents/<role>.toml` if a specific role is specified; if unavailable, report that role input NOT ASSESSED."
+    },
+    {
+      "find": "`CLAUDE.md` and `.claude/agents/` ship with the framework — no skill creates them. If either is missing, report it as missing from the install.",
+      "replace": "If AGENTS.md, project.yaml, or the requested native role definition is missing, report that input as missing rather than inferring it."
+    }
+  ]
+}

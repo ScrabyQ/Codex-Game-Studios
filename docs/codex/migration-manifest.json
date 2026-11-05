@@ -7079,8 +7079,17 @@
       ],
       "proposed_target": ".agents/skills/localize/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Four actual in-session scoped smokes: required missing gate NO-GO, retrospective grounded in actual retained test logs, source contributor onboarding with explicit player-scope boundary, pseudo-locale detects placeholder mismatch and preserves IDs/escapes; translations unverified.",
+      "status": "EQUIVALENT",
+      "task": "CGS-19",
+      "target": ".agents/skills/localize/SKILL.md",
+      "target_sha256": "f17b300b72005550d31c0182b712247afd969589165be9ff2897158021202778",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-19/README.md",
+        "docs/codex/evidence/CGS-19/fixture-observations.json",
+        "docs/codex/evidence/CGS-19/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/map-systems/SKILL.md",
@@ -7124,8 +7133,17 @@
       ],
       "proposed_target": ".agents/skills/milestone-review/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Four actual in-session scoped smokes: required missing gate NO-GO, retrospective grounded in actual retained test logs, source contributor onboarding with explicit player-scope boundary, pseudo-locale detects placeholder mismatch and preserves IDs/escapes; translations unverified.",
+      "status": "EQUIVALENT",
+      "task": "CGS-19",
+      "target": ".agents/skills/milestone-review/SKILL.md",
+      "target_sha256": "0d77921fccd827d53f1f51c7f2cded67d660784528d91476d08b503ac2d7b80a",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-19/README.md",
+        "docs/codex/evidence/CGS-19/fixture-observations.json",
+        "docs/codex/evidence/CGS-19/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/onboard/SKILL.md",
@@ -7142,8 +7160,17 @@
       ],
       "proposed_target": ".agents/skills/onboard/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Four actual in-session scoped smokes: required missing gate NO-GO, retrospective grounded in actual retained test logs, source contributor onboarding with explicit player-scope boundary, pseudo-locale detects placeholder mismatch and preserves IDs/escapes; translations unverified.",
+      "status": "EQUIVALENT",
+      "task": "CGS-19",
+      "target": ".agents/skills/onboard/SKILL.md",
+      "target_sha256": "577f947de855cf5cede29f03bf9332bb11d712488a1dcfdc4b9c54085ea331bd",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-19/README.md",
+        "docs/codex/evidence/CGS-19/fixture-observations.json",
+        "docs/codex/evidence/CGS-19/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/patch-notes/SKILL.md",
@@ -7631,8 +7658,17 @@
       ],
       "proposed_target": ".agents/skills/retrospective/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Four actual in-session scoped smokes: required missing gate NO-GO, retrospective grounded in actual retained test logs, source contributor onboarding with explicit player-scope boundary, pseudo-locale detects placeholder mismatch and preserves IDs/escapes; translations unverified.",
+      "status": "EQUIVALENT",
+      "task": "CGS-19",
+      "target": ".agents/skills/retrospective/SKILL.md",
+      "target_sha256": "6b8bb975a936733d0ed7f6175643cf80ecc4d59c485cf169b34932e59ef07f07",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-19/README.md",
+        "docs/codex/evidence/CGS-19/fixture-observations.json",
+        "docs/codex/evidence/CGS-19/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/reverse-document/SKILL.md",

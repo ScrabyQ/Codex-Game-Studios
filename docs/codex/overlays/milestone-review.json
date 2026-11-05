@@ -1,0 +1,9 @@
+{
+  "source_sha256": "1028ff3cc2f0f1ad609efb5c91d62b40be9644a0d39cc1fb3bb8c0fd42ca29df",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-19 execution contract:** Work from the explicitly selected project root and real source artifacts. A missing, unreadable, incomplete or unrun input is NOT ASSESSED for the affected claim; never turn unknown into zero, approval or a measurement. Use supported user-question facilities or ask in plain text and wait; prior authorization and host permissions remain authoritative. Do not automatically start another workflow. An in-session role review is not independent; disclose it and leave any required independent review NOT ASSESSED.\n\nCheck the actual milestone definition, status and every required formal gate: an absent or unassessed required gate blocks a GO recommendation. No files or no bug/velocity evidence is NOT ASSESSED, not zero; quote real evidence and preserve per-feature denominators. In full review, a missing producer return is NOT ASSESSED, not ON TRACK. Stage never advances from this report.\n\n"
+    }
+  ]
+}

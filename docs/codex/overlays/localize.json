@@ -1,0 +1,9 @@
+{
+  "source_sha256": "321672db96810276c52b6630119d38bfeee8010cf6cd4a4f39511737ed450144",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-19 execution contract:** Work from the explicitly selected project root and real source artifacts. A missing, unreadable, incomplete or unrun input is NOT ASSESSED for the affected claim; never turn unknown into zero, approval or a measurement. Use supported user-question facilities or ask in plain text and wait; prior authorization and host permissions remain authoritative. Do not automatically start another workflow. An in-session role review is not independent; disclose it and leave any required independent review NOT ASSESSED.\n\nEnglish source is authoritative; preserve every stable string ID, JSON object structure, placeholders, format tokens, escaped newlines and other escapes. Compare locale structures and exact token multisets, identify missing/extra tokens by key, and keep a list of translations needing human linguistic and in-game review. Structural validation alone is not linguistic, cultural, RTL, font or in-game QA. Do not translate, contact vendors, publish, or modify returned locale files without the applicable authorization.\n\n"
+    }
+  ]
+}

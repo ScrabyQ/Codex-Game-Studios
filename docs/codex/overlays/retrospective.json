@@ -1,0 +1,9 @@
+{
+  "source_sha256": "29b136a0f3ea57c09acbc6e97e18df413444305f26e2eeac35c7c99de9f9dc61",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-19 execution contract:** Work from the explicitly selected project root and real source artifacts. A missing, unreadable, incomplete or unrun input is NOT ASSESSED for the affected claim; never turn unknown into zero, approval or a measurement. Use supported user-question facilities or ask in plain text and wait; prior authorization and host permissions remain authoritative. Do not automatically start another workflow. An in-session role review is not independent; disclose it and leave any required independent review NOT ASSESSED.\n\nUse retained actual sprint plans, status, logs and any verified history as sources. Distinguish the fixture events from player research and real-world measurements; do not invent blockers, dates, duration, velocity, success or prior actions. Missing sections/trends are NOT ASSESSED. At minimal without sprint history, assess only actual completed stories and mark sprint metrics unassessed. Never archive or rewrite existing records without applicable authorization.\n\n"
+    }
+  ]
+}
