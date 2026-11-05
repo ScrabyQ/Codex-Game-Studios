@@ -394,14 +394,14 @@
       "singularity_id": "T-490f4c8b-4256-452d-90e6-7a4ceefd574d",
       "title": "CGS-27 · Проверить Godot, Unity, Unreal и run-and-observe",
       "status": "COMPLETE",
-      "commit": null,
+      "commit": "92f052b9f7817b2cdc4cec773434bea8355158c7",
       "evidence": [
         "docs/codex/evidence/CGS-27/README.md",
         "docs/codex/evidence/CGS-27/engine-matrix.json",
         "docs/codex/evidence/CGS-27/checks.json",
         "docs/codex/evidence/CGS-27/integrator-acceptance.md"
       ],
-      "updated_at": "2026-11-05T13:01:18.109Z",
+      "updated_at": "2026-11-05T13:03:05.755Z",
       "note": "Engine27accepted:actualGodotimport/parse/test/render+3independentlyviewedPNGs;UnityeditorabsentandUE SDKmissingremainBlocked/PENDING. 28actualLinuxCIpassed. 29centralreviewedreconcileinprogress, then30docs/31freshindependentaudit."
     },
     {
