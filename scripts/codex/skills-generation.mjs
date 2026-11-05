@@ -70,29 +70,3 @@ export function skillTargets(root,names){
  }
  return plans;
 }
-/* Inert duplicate fragment retained after interrupted transformation.
-+name:whole);
-   const cap=fields['allowed-tools'].replaceAll('`',"'").replace(/\bAskUserQuestion\b/g,'user-question facility').replace(/CLAUDE_[A-Z_]+/g,'project path');
-   const fallback=fields.name==='help' ? `\n\n**Read-only fallback when a bootstrap or artifact helper cannot run:** Read the actual project.yaml and allowed project.local.yaml settings, the config-resolution defaults and rigor expansion, stage mirror, workflow catalog, checkpoint and relevant project artifacts directly. Report each observed fact and its source; apply the catalog's minimal-path checks in order. Do not claim a helper ran or infer an unknown value. If a required fact cannot be established, report it as unknown and stop that recommendation. This explicit fallback overrides source instructions below that assume preprocessing already ran or prohibit re-derivation.` : '';
-   const bridge=`## Codex execution contract\n\nResolve the intended project root before executing relative paths: prefer the nearest project containing project.yaml or project.local.yaml, including a nested project; do not silently borrow a parent project. Execute the explicit bootstrap steps in this document before consuming their output. Native Codex does not perform shell preprocessing. Original tool capability scope: \`${cap}\`. Treat this as a ceiling for this skill, not a permission grant; preserve any narrower read-only restriction in the body and the active host permissions. Use a user-question facility when available, otherwise ask in plain text and wait; unanswered required decisions are not consent. Use native subagents only when available and authorized; otherwise read the relevant role and work in-session, disclosing lack of independent review. Upstream slash-command references mean invoke the corresponding installed Codex skill using its $name; do not assume all skills have been migrated. Source argument guidance: ${fields['argument-hint']||'none'}. ${fields['disable-model-invocation']==='true'?'Run only on explicit user invocation.':''}${fallback}\n\n`;
-   bytes=Buffer.from(`---\nname: ${fields.name}\ndescription: ${fields.description}\n---\n\n${bridge}${body}`,'utf8');ids=['frontmatter-scope-v1','explicit-bootstrap-v1','codex-question-delegation-v1','native-skill-invocation-v1'];
-  }
-  else {
-   let body=utf(bytes);
-   body=body.replace(/!`([^`\n]+)`/g,(_,command)=>`**Explicit bootstrap (from the resolved project root):** \`${command.replaceAll('${CLAUDE_SKILL_DIR}/../../','.agents/')}\`. If unavailable, report the dependency and do not invent results.`);
-   body=body.replace(/\bAskUserQuestion\b/g,'available user-question tool (or ask in plain text and wait)').replace(/\bCLAUDE_SKILL_DIR\b/g,'resolved skill directory').replace(/\bCLAUDE_PROJECT_DIR\b/g,'resolved project root').replace(/\bAgent tool\b/g,'native delegation facility').replace(/\bAgent\(/g,'native delegation (');
-   body=body.replace(/(?<![\w./])\/([a-z][a-z0-9-]*)/g,(whole,name)=>available.includes(name)?String.fromCharCode(36)+name:whole);
-   bytes=Buffer.from(body,'utf8');ids=['resource-runtime-adaptation-v1'];
-  }
-  plans.push({source:src.path,source_sha256:src.sha256,target,content:bytes,transform_ids:ids,owner:'CGS-05',ownership:'generated'});
- }
- return plans;
-}
-+name:whole);
-   bytes=Buffer.from(body,'utf8');ids=['resource-runtime-adaptation-v1'];
-  }
-  plans.push({source:src.path,source_sha256:src.sha256,target,content:bytes,transform_ids:ids,owner:'CGS-05',ownership:'generated'});
- }
- return plans;
-}
-*/

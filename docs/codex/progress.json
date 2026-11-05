@@ -5,9 +5,9 @@
   "upstream_sha": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
   "owner": "ScrabyQ",
   "repository": "Codex-Game-Studios",
-  "last_completed": "CGS-05",
-  "current_task": "CGS-07",
-  "next_safe_step": "CGS05 infrastructure verified; 74 Skill migration entries still PENDING. Proceed with roles and per-group adaptation/behavioral checks.",
+  "last_completed": "CGS-07",
+  "current_task": "CGS-08",
+  "next_safe_step": "11 leadership roles verified with explicit in-session fallback; native custom-role spawning remains PENDING. Proceed with 23 specialist roles.",
   "decisions": [
     "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED.",
     "Generated content-preserving .agents mirror retains helper root math; native roles use .codex/agents/*.toml; all generation is hash-guarded; no new agent runtime."
@@ -69,14 +69,15 @@
       "singularity_id": "T-2f8d63d5-a2a7-4b6d-838f-206fc33ccbdb",
       "title": "CGS-05 · Настроить каталог Skills, адаптер и валидатор миграции",
       "status": "COMPLETE",
-      "commit": null,
+      "commit": "ef295bd5d98ace0346ab7978e6b7ea33cb1ad8b7",
       "evidence": [
         "docs/codex/evidence/CGS-05/README.md",
         "docs/codex/evidence/CGS-05/negative-results.json",
-        "docs/codex/evidence/CGS-05/native-help-fallback.json"
+        "docs/codex/evidence/CGS-05/native-help-fallback.json",
+        "docs/codex/evidence/CGS-05/clean-clone.json"
       ],
       "note": "CGS05 infrastructure verified; 74 Skill migration entries still PENDING. Proceed with roles and per-group adaptation/behavioral checks.",
-      "updated_at": "2026-11-05T10:09:25.718Z"
+      "updated_at": "2026-11-05T10:27:22.505Z"
     },
     {
       "key": "CGS-06",
@@ -94,9 +95,14 @@
       "key": "CGS-07",
       "singularity_id": "T-d036622f-1d69-4649-bad1-529b03af14d2",
       "title": "CGS-07 · Перенести 11 директоров и руководителей отделов",
-      "status": "PENDING",
+      "status": "COMPLETE",
       "commit": null,
-      "evidence": []
+      "evidence": [
+        "docs/codex/evidence/CGS-07/structural.json",
+        "docs/codex/evidence/CGS-07/behavior-checks.json"
+      ],
+      "note": "11 leadership roles verified with explicit in-session fallback; native custom-role spawning remains PENDING. Proceed with 23 specialist roles.",
+      "updated_at": "2026-11-05T10:27:22.579Z"
     },
     {
       "key": "CGS-08",

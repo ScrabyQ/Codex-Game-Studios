@@ -2348,6 +2348,187 @@
       ],
       "owner": "CGS-05",
       "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/agents/art-director.md=>.codex/agents/art-director.toml",
+      "source": ".claude/agents/art-director.md",
+      "source_sha256": "36fecf445d9bfac1af6702ca9ef229013f101bcf0626dcb273886397c975e1dd",
+      "target": ".codex/agents/art-director.toml",
+      "target_sha256": "e4547b2cb93e5ec6ff5345683638197a4baca4f7e40c0da5ebcfa032a2b449bb",
+      "transform_version": 1,
+      "transform_ids": [
+        "role-frontmatter-to-toml-v1",
+        "role-execution-contract-v1",
+        "role-question-routing-v1",
+        "role-file-tools-v1",
+        "role-disable-shell-v1"
+      ],
+      "owner": "CGS-07",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/agents/audio-director.md=>.codex/agents/audio-director.toml",
+      "source": ".claude/agents/audio-director.md",
+      "source_sha256": "d04bd4129db4670df9c4241b900aff691478d5241278f350e812a414a540dda0",
+      "target": ".codex/agents/audio-director.toml",
+      "target_sha256": "593324c6410970a965e968af42f82fb2c3e2bafdd9b3359795d0cd25964cd27a",
+      "transform_version": 1,
+      "transform_ids": [
+        "role-frontmatter-to-toml-v1",
+        "role-execution-contract-v1",
+        "role-question-routing-v1",
+        "role-file-tools-v1",
+        "role-disable-shell-v1"
+      ],
+      "owner": "CGS-07",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/agents/creative-director.md=>.codex/agents/creative-director.toml",
+      "source": ".claude/agents/creative-director.md",
+      "source_sha256": "cb19bd1d93745f7b648fc9eff8aaaadd33d704aa9014819afdeeca963fc89804",
+      "target": ".codex/agents/creative-director.toml",
+      "target_sha256": "a3bd142f7a13c56e8160f35c5e36fc06e8b2ab94f184c384dd2f37ae9496d2c9",
+      "transform_version": 1,
+      "transform_ids": [
+        "role-frontmatter-to-toml-v1",
+        "role-execution-contract-v1",
+        "role-question-routing-v1",
+        "role-file-tools-v1",
+        "role-disable-shell-v1"
+      ],
+      "owner": "CGS-07",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/agents/game-designer.md=>.codex/agents/game-designer.toml",
+      "source": ".claude/agents/game-designer.md",
+      "source_sha256": "757a7bee8608fbd1fa741c83ac2621f78322f6141736527c73205a81075ce11b",
+      "target": ".codex/agents/game-designer.toml",
+      "target_sha256": "33c1f680acd87781a02554f86469509a20ff3605616b6149b3a9440ef7eb018d",
+      "transform_version": 1,
+      "transform_ids": [
+        "role-frontmatter-to-toml-v1",
+        "role-execution-contract-v1",
+        "role-question-routing-v1",
+        "role-file-tools-v1",
+        "role-disable-shell-v1"
+      ],
+      "owner": "CGS-07",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/agents/lead-programmer.md=>.codex/agents/lead-programmer.toml",
+      "source": ".claude/agents/lead-programmer.md",
+      "source_sha256": "040cd3f0f4d310a0490a67bf75835d21dd589050cb1c6c5fa2837df9eb7a0c43",
+      "target": ".codex/agents/lead-programmer.toml",
+      "target_sha256": "b173249c2ee8527d8e9758ce568db7398d2d6378cd036de7f1f0d70ed520e50f",
+      "transform_version": 1,
+      "transform_ids": [
+        "role-frontmatter-to-toml-v1",
+        "role-execution-contract-v1",
+        "role-file-tools-v1",
+        "role-native-skill-invocation-v1"
+      ],
+      "owner": "CGS-07",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/agents/localization-lead.md=>.codex/agents/localization-lead.toml",
+      "source": ".claude/agents/localization-lead.md",
+      "source_sha256": "1fe9b6840dec1992104f2268d773543c523ce0c0cf8d6b0fb6d23f57707fd36a",
+      "target": ".codex/agents/localization-lead.toml",
+      "target_sha256": "83c3d4878ec0bbaa3c925dda6ffdb42233964fb4895db5b207077843d1f9ddac",
+      "transform_version": 1,
+      "transform_ids": [
+        "role-frontmatter-to-toml-v1",
+        "role-execution-contract-v1",
+        "role-file-tools-v1",
+        "role-native-skill-invocation-v1"
+      ],
+      "owner": "CGS-07",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/agents/narrative-director.md=>.codex/agents/narrative-director.toml",
+      "source": ".claude/agents/narrative-director.md",
+      "source_sha256": "4f67fc41741b6bc24c468edeb2209703f910fe56e780f3537eb90529cff06cfa",
+      "target": ".codex/agents/narrative-director.toml",
+      "target_sha256": "bdf4d2a472f1353b3ac034574c321c207ec245e2edae9e7e55412f569380f447",
+      "transform_version": 1,
+      "transform_ids": [
+        "role-frontmatter-to-toml-v1",
+        "role-execution-contract-v1",
+        "role-question-routing-v1",
+        "role-file-tools-v1",
+        "role-disable-shell-v1"
+      ],
+      "owner": "CGS-07",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/agents/producer.md=>.codex/agents/producer.toml",
+      "source": ".claude/agents/producer.md",
+      "source_sha256": "da0f24cc4255ef7ad64439c855fbe24c7a0bb4d602974579132b6c34e90d4e7f",
+      "target": ".codex/agents/producer.toml",
+      "target_sha256": "fc06cd1084e35bef0b05d4fd6d901a162e040a22be5654f049aad3a7038496fe",
+      "transform_version": 1,
+      "transform_ids": [
+        "role-frontmatter-to-toml-v1",
+        "role-execution-contract-v1",
+        "role-question-routing-v1",
+        "role-file-tools-v1"
+      ],
+      "owner": "CGS-07",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/agents/qa-lead.md=>.codex/agents/qa-lead.toml",
+      "source": ".claude/agents/qa-lead.md",
+      "source_sha256": "c47e5b8e6c1c815c1e47be70a3f91ba83352eee0d3470907dfa8537cfdbf2d4e",
+      "target": ".codex/agents/qa-lead.toml",
+      "target_sha256": "690d048f760e977b7a151e2af0730a60664474dfaa3577dffd153c117b000a80",
+      "transform_version": 1,
+      "transform_ids": [
+        "role-frontmatter-to-toml-v1",
+        "role-execution-contract-v1",
+        "role-file-tools-v1",
+        "role-native-skill-invocation-v1"
+      ],
+      "owner": "CGS-07",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/agents/release-manager.md=>.codex/agents/release-manager.toml",
+      "source": ".claude/agents/release-manager.md",
+      "source_sha256": "a22fcf8fbbca3cfcf9393343be2d9f76a3656ed301236e6172a5d816a3417fa3",
+      "target": ".codex/agents/release-manager.toml",
+      "target_sha256": "68c4aea011488146adff319c0bdfd697db679a91429855cd8505a79f19628ff4",
+      "transform_version": 1,
+      "transform_ids": [
+        "role-frontmatter-to-toml-v1",
+        "role-execution-contract-v1",
+        "role-file-tools-v1",
+        "role-native-skill-invocation-v1"
+      ],
+      "owner": "CGS-07",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/agents/technical-director.md=>.codex/agents/technical-director.toml",
+      "source": ".claude/agents/technical-director.md",
+      "source_sha256": "38a497947bd398f87acacbdc2a042ba54fa836722db589f6bbcdfa80a6f2773c",
+      "target": ".codex/agents/technical-director.toml",
+      "target_sha256": "2222e61da86b360e85914b34bd323e8023af2dfe528a66cfa526894a7f5b4080",
+      "transform_version": 1,
+      "transform_ids": [
+        "role-frontmatter-to-toml-v1",
+        "role-execution-contract-v1",
+        "role-question-routing-v1",
+        "role-file-tools-v1"
+      ],
+      "owner": "CGS-07",
+      "ownership": "generated"
     }
   ]
 }

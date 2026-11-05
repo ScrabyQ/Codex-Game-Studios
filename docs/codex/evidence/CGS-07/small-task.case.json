@@ -1,0 +1,9 @@
+{
+  "id": "cgs07-small-task",
+  "components": ["file:.claude/agents/producer.md"],
+  "read_only": true,
+  "no_writes": true,
+  "prompt": "Read .codex/agents/producer.toml and use its developer_instructions as an explicit in-session role review, not independent. Do not spawn any agents. This tiny read-only task is to identify the scheduling owner for a one-line typo correction in a sprint note; no scope or milestone change is involved. Explain briefly why no delegation is needed and name the relevant owner. No writes or decisions beyond this explanation are authorized. Include the words 'in-session role review; not independent' and 'no delegation' in your report.",
+  "expect_report": ["in-session role review; not independent", "no delegation", "producer"],
+  "scope": "Actual native CLI executes explicit role-reading fallback on a small task; verifies disclosure and no writes. Does not prove independent delegation."
+}

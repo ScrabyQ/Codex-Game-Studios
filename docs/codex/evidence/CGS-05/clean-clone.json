@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "commit": "ef295bd5d98ace0346ab7978e6b7ea33cb1ad8b7",
+  "fixture": ".scratch/cgs05-commit-check-ef295bd",
+  "creation": "git clone --local --no-hardlinks --quiet . .scratch/cgs05-commit-check-ef295bd",
+  "checks": [
+    {"command": "node <fixture>/scripts/codex/generate.mjs --family support --check", "exit_code": 0},
+    {"command": "node <fixture>/scripts/codex/validate.mjs", "exit_code": 0}
+  ],
+  "result": "PASS",
+  "scope": "Fresh checkout of the committed CGS-05 snapshot; later uncommitted helper recipes are excluded. All 74 migration statuses remained PENDING."
+}
