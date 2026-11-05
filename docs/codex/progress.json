@@ -5,9 +5,9 @@
   "upstream_sha": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
   "owner": "ScrabyQ",
   "repository": "Codex-Game-Studios",
-  "last_completed": "CGS-27",
-  "current_task": "CGS-29",
-  "next_safe_step": "CGS29 peerP2 fixes implemented: exact pendingstate, derivedindexrecorder, enum+schema-beforeactivation, staleallrowmapping guards; Terra finalfullCIrunning. RootfinalprepeerCIpassed, realpinHIST unchanged. Aftergreen: maplastupdate-checksource,commit29,push/observeCI,30README/UPGRADING,31freshindependentaudit/draftPR. All01–28complete.",
+  "last_completed": "CGS-29",
+  "current_task": "CGS-30",
+  "next_safe_step": "CGS29 accepted: real GitHub quick and linux-backend SUCCESS at 9baaf056; all653 migration rows accounted,0PENDING,4explicitUNSUPPORTED. Docs30 acceptance and freshindependent31audit remain. Sync additions/deletions require explicit onboarding; nativeactivation/Unity/UE/human checks remain separate PENDING.",
   "decisions": [
     "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED.",
     "Generated content-preserving .agents mirror retains helper root math; native roles use .codex/agents/*.toml; all generation is hash-guarded; no new agent runtime."
@@ -446,11 +446,15 @@
       "key": "CGS-29",
       "singularity_id": "T-d875908a-8eed-48c5-963d-9102ee9a8bd4",
       "title": "CGS-29 · Сделать безопасный sync upstream через fetch/merge/PR",
-      "status": "IN_PROGRESS",
-      "commit": null,
-      "evidence": [],
-      "note": "CGS29 peerP2 fixes implemented: exact pendingstate, derivedindexrecorder, enum+schema-beforeactivation, staleallrowmapping guards; Terra finalfullCIrunning. RootfinalprepeerCIpassed, realpinHIST unchanged. Aftergreen: maplastupdate-checksource,commit29,push/observeCI,30README/UPGRADING,31freshindependentaudit/draftPR. All01–28complete.",
-      "updated_at": "2026-11-05T13:43:30.271Z"
+      "status": "COMPLETE",
+      "commit": "9baaf056150cb573eefb17e86b0c25191550e3bd",
+      "evidence": [
+        "docs/codex/evidence/CGS-29/integrator-acceptance.md",
+        "docs/codex/evidence/CGS-29/remote-ci.json",
+        "docs/codex/evidence/CGS-29/tests.json"
+      ],
+      "note": "CGS29 accepted: real GitHub quick and linux-backend SUCCESS at 9baaf056; all653 migration rows accounted,0PENDING,4explicitUNSUPPORTED. Docs30 acceptance and freshindependent31audit remain. Sync additions/deletions require explicit onboarding; nativeactivation/Unity/UE/human checks remain separate PENDING.",
+      "updated_at": "2026-11-05T14:18:41.456Z"
     },
     {
       "key": "CGS-30",
