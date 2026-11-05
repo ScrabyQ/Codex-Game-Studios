@@ -7,7 +7,7 @@
   "repository": "Codex-Game-Studios",
   "last_completed": "CGS-18",
   "current_task": "CGS-20",
-  "next_safe_step": "Framework QA scoped acceptance verified, with explicit native interpretation of source static/spec/category modes. Release20 and orchestration22 final checks next.",
+  "next_safe_step": "Generator regression harness repaired for the installed catalog; no recursive deletion, expected five refusals and valid overlay verified. Remaining20/22 finalacceptance, then27/28/29/30/31.",
   "decisions": [
     "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED.",
     "Generated content-preserving .agents mirror retains helper root math; native roles use .codex/agents/*.toml; all generation is hash-guarded; no new agent runtime."
@@ -99,10 +99,11 @@
         "docs/codex/evidence/CGS-05/README.md",
         "docs/codex/evidence/CGS-05/negative-results.json",
         "docs/codex/evidence/CGS-05/native-help-fallback.json",
-        "docs/codex/evidence/CGS-05/clean-clone.json"
+        "docs/codex/evidence/CGS-05/clean-clone.json",
+        "docs/codex/evidence/CGS-05/negative-results-current.json"
       ],
-      "note": "CGS05 infrastructure verified; 74 Skill migration entries still PENDING. Proceed with roles and per-group adaptation/behavioral checks.",
-      "updated_at": "2026-11-05T10:27:22.505Z"
+      "note": "Generator regression harness repaired for the installed catalog; no recursive deletion, expected five refusals and valid overlay verified. Remaining20/22 finalacceptance, then27/28/29/30/31.",
+      "updated_at": "2026-11-05T12:15:45.502Z"
     },
     {
       "key": "CGS-06",
@@ -272,14 +273,14 @@
       "singularity_id": "T-0250fa16-61df-4ddb-bb40-b21f03250b8d",
       "title": "CGS-18 · Skills · тестирование самой студии, playtest, bugs (5)",
       "status": "COMPLETE",
-      "commit": null,
+      "commit": "570a0fee3cc49b92dc8edd51d68d16ac5d818a27",
       "evidence": [
         "docs/codex/evidence/CGS-18/README.md",
         "docs/codex/evidence/CGS-18/static-spec-category.md",
         "docs/codex/evidence/CGS-18/traceability.json"
       ],
       "note": "Framework QA scoped acceptance verified, with explicit native interpretation of source static/spec/category modes. Release20 and orchestration22 final checks next.",
-      "updated_at": "2026-11-05T12:14:31.738Z"
+      "updated_at": "2026-11-05T12:15:16.316Z"
     },
     {
       "key": "CGS-19",

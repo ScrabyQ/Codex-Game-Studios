@@ -1,0 +1,40 @@
+{
+  "suite_exit": 0,
+  "fixture": "temporary disposable Git repository",
+  "command": "node docs/codex/evidence/CGS-05/negative-tests.mjs",
+  "baseline_exit": 0,
+  "cases": [
+    {
+      "name": "unmapped source skill",
+      "exit": 1,
+      "reason": true
+    },
+    {
+      "name": "malformed source frontmatter",
+      "exit": 1,
+      "reason": true
+    },
+    {
+      "name": "manual target drift",
+      "exit": 1,
+      "reason": true,
+      "preserved": true
+    },
+    {
+      "name": "overlay source drift",
+      "exit": 1,
+      "reason": true
+    },
+    {
+      "name": "overlay anchor mismatch",
+      "exit": 1,
+      "reason": true
+    },
+    {
+      "name": "valid anchored overlay",
+      "exit": 0,
+      "reason": true,
+      "success": true
+    }
+  ]
+}
