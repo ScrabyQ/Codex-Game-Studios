@@ -20,8 +20,14 @@
       ],
       "proposed_target": ".codex/agents/accessibility-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
+      "status": "EQUIVALENT",
+      "target": ".codex/agents/accessibility-specialist.toml",
+      "target_sha256": "99bd1ff1a519672da63d969f1977b7c9225b9b0f2a1f9e7d92492515bb5994b7",
+      "evidence": [
+        "docs/codex/evidence/CGS-08/structural.json",
+        "docs/codex/evidence/CGS-08/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/ai-programmer.md",
@@ -35,8 +41,14 @@
       ],
       "proposed_target": ".codex/agents/ai-programmer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
+      "status": "EQUIVALENT",
+      "target": ".codex/agents/ai-programmer.toml",
+      "target_sha256": "16cea4f2bee0cb025544f4d5fbdfb711960e9ddb08d19469e638ee89025c91f0",
+      "evidence": [
+        "docs/codex/evidence/CGS-08/structural.json",
+        "docs/codex/evidence/CGS-08/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/analytics-engineer.md",
@@ -50,8 +62,14 @@
       ],
       "proposed_target": ".codex/agents/analytics-engineer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
+      "status": "EQUIVALENT",
+      "target": ".codex/agents/analytics-engineer.toml",
+      "target_sha256": "242766f8e15273b9522013858b55af428e0c8508524ad4bb28282194c1b79c56",
+      "evidence": [
+        "docs/codex/evidence/CGS-08/structural.json",
+        "docs/codex/evidence/CGS-08/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/art-director.md",
@@ -109,8 +127,14 @@
       ],
       "proposed_target": ".codex/agents/community-manager.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
+      "status": "EQUIVALENT",
+      "target": ".codex/agents/community-manager.toml",
+      "target_sha256": "846b6ba02f71cf9f15dcb0b9fc164fc7605a4347d74bb97cf651d48efb90e727",
+      "evidence": [
+        "docs/codex/evidence/CGS-08/structural.json",
+        "docs/codex/evidence/CGS-08/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/creative-director.md",
@@ -146,8 +170,14 @@
       ],
       "proposed_target": ".codex/agents/devops-engineer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
+      "status": "EQUIVALENT",
+      "target": ".codex/agents/devops-engineer.toml",
+      "target_sha256": "85f0678690d9d7cd97e8f5f5005d6491755c753bf5872adcab508196472637a7",
+      "evidence": [
+        "docs/codex/evidence/CGS-08/structural.json",
+        "docs/codex/evidence/CGS-08/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/economy-designer.md",
@@ -162,8 +192,14 @@
       ],
       "proposed_target": ".codex/agents/economy-designer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
+      "status": "EQUIVALENT",
+      "target": ".codex/agents/economy-designer.toml",
+      "target_sha256": "1cddc82f22dbda52265746407a8003b3ccdc7589fa4e139e4fa9b2e08f11d571",
+      "evidence": [
+        "docs/codex/evidence/CGS-08/structural.json",
+        "docs/codex/evidence/CGS-08/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/engine-programmer.md",
@@ -177,8 +213,14 @@
       ],
       "proposed_target": ".codex/agents/engine-programmer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
+      "status": "EQUIVALENT",
+      "target": ".codex/agents/engine-programmer.toml",
+      "target_sha256": "59f4071a3b800776917ed2989ad8e3f2afc83d5210102791fb683348e3ea1f34",
+      "evidence": [
+        "docs/codex/evidence/CGS-08/structural.json",
+        "docs/codex/evidence/CGS-08/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/game-designer.md",
@@ -214,8 +256,14 @@
       ],
       "proposed_target": ".codex/agents/gameplay-programmer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
+      "status": "EQUIVALENT",
+      "target": ".codex/agents/gameplay-programmer.toml",
+      "target_sha256": "cd3299e61edb68b082b5d60565012a6226f5fba3dbb8b993eba5c94da61e3b47",
+      "evidence": [
+        "docs/codex/evidence/CGS-08/structural.json",
+        "docs/codex/evidence/CGS-08/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/godot-csharp-specialist.md",
@@ -326,8 +374,14 @@
       ],
       "proposed_target": ".codex/agents/level-designer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
+      "status": "EQUIVALENT",
+      "target": ".codex/agents/level-designer.toml",
+      "target_sha256": "7f19132ebb9b526d4491fea7c55f957d76511b4a176965817def3c63c47e849a",
+      "evidence": [
+        "docs/codex/evidence/CGS-08/structural.json",
+        "docs/codex/evidence/CGS-08/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/live-ops-designer.md",
@@ -342,8 +396,14 @@
       ],
       "proposed_target": ".codex/agents/live-ops-designer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
+      "status": "EQUIVALENT",
+      "target": ".codex/agents/live-ops-designer.toml",
+      "target_sha256": "1d406c262b8d94901939a14729ffdcfdfc519321f8cfe0f2eed1967d51a9da02",
+      "evidence": [
+        "docs/codex/evidence/CGS-08/structural.json",
+        "docs/codex/evidence/CGS-08/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/localization-lead.md",
@@ -400,8 +460,14 @@
       ],
       "proposed_target": ".codex/agents/network-programmer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
+      "status": "EQUIVALENT",
+      "target": ".codex/agents/network-programmer.toml",
+      "target_sha256": "6a28815842cb8cc90c09d1e76aa56df870d143afc5ac1d527e910a6fcf2893a5",
+      "evidence": [
+        "docs/codex/evidence/CGS-08/structural.json",
+        "docs/codex/evidence/CGS-08/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/performance-analyst.md",
@@ -415,8 +481,14 @@
       ],
       "proposed_target": ".codex/agents/performance-analyst.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
+      "status": "EQUIVALENT",
+      "target": ".codex/agents/performance-analyst.toml",
+      "target_sha256": "279e34df7269997b4e2837d41a692a7ba7814a03b06b9891058859ac9fd9e392",
+      "evidence": [
+        "docs/codex/evidence/CGS-08/structural.json",
+        "docs/codex/evidence/CGS-08/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/producer.md",
@@ -452,8 +524,14 @@
       ],
       "proposed_target": ".codex/agents/prototyper.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
+      "status": "EQUIVALENT",
+      "target": ".codex/agents/prototyper.toml",
+      "target_sha256": "ce2b02be5809738a7af68734fd3ed142dce6acc94296711aa46629290abb2e5b",
+      "evidence": [
+        "docs/codex/evidence/CGS-08/structural.json",
+        "docs/codex/evidence/CGS-08/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/qa-lead.md",
@@ -488,8 +566,14 @@
       ],
       "proposed_target": ".codex/agents/qa-tester.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
+      "status": "EQUIVALENT",
+      "target": ".codex/agents/qa-tester.toml",
+      "target_sha256": "4bccaf67232a57da7a8db0d0abebe009026255b5a3086bd729203dbaf4681a9d",
+      "evidence": [
+        "docs/codex/evidence/CGS-08/structural.json",
+        "docs/codex/evidence/CGS-08/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/release-manager.md",
@@ -524,8 +608,14 @@
       ],
       "proposed_target": ".codex/agents/security-engineer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
+      "status": "EQUIVALENT",
+      "target": ".codex/agents/security-engineer.toml",
+      "target_sha256": "7fc4c46832fc481c7d30fe5c76e3fde288a18900be6da863083d489154a1d597",
+      "evidence": [
+        "docs/codex/evidence/CGS-08/structural.json",
+        "docs/codex/evidence/CGS-08/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/sound-designer.md",
@@ -539,8 +629,14 @@
       ],
       "proposed_target": ".codex/agents/sound-designer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
+      "status": "EQUIVALENT",
+      "target": ".codex/agents/sound-designer.toml",
+      "target_sha256": "bcd715ee8aa6d0c6620a2c743c01ccf769af2d9924ffa5407cb739da07c62161",
+      "evidence": [
+        "docs/codex/evidence/CGS-08/structural.json",
+        "docs/codex/evidence/CGS-08/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/systems-designer.md",
@@ -555,8 +651,14 @@
       ],
       "proposed_target": ".codex/agents/systems-designer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
+      "status": "EQUIVALENT",
+      "target": ".codex/agents/systems-designer.toml",
+      "target_sha256": "4f1e6d1517c83888420e80700bd31b8ce471c541e15fb1df526848aa150a575e",
+      "evidence": [
+        "docs/codex/evidence/CGS-08/structural.json",
+        "docs/codex/evidence/CGS-08/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/technical-artist.md",
@@ -570,8 +672,14 @@
       ],
       "proposed_target": ".codex/agents/technical-artist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
+      "status": "EQUIVALENT",
+      "target": ".codex/agents/technical-artist.toml",
+      "target_sha256": "557554a2f7eca279fffed4f42d4e97c6061142a8d2144bdfb24d407f72382559",
+      "evidence": [
+        "docs/codex/evidence/CGS-08/structural.json",
+        "docs/codex/evidence/CGS-08/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/technical-director.md",
@@ -607,8 +715,14 @@
       ],
       "proposed_target": ".codex/agents/tools-programmer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
+      "status": "EQUIVALENT",
+      "target": ".codex/agents/tools-programmer.toml",
+      "target_sha256": "27dad13dccc47e69866ebf06df9af9c2f6dfac0fe418c319ad453e55f1331e5d",
+      "evidence": [
+        "docs/codex/evidence/CGS-08/structural.json",
+        "docs/codex/evidence/CGS-08/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/ue-blueprint-specialist.md",
@@ -682,8 +796,14 @@
       ],
       "proposed_target": ".codex/agents/ui-programmer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
+      "status": "EQUIVALENT",
+      "target": ".codex/agents/ui-programmer.toml",
+      "target_sha256": "5f4c815439e49d941658d8c03111e6db39681ba1e72fde3d8e5caf268c74b735",
+      "evidence": [
+        "docs/codex/evidence/CGS-08/structural.json",
+        "docs/codex/evidence/CGS-08/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/unity-addressables-specialist.md",
@@ -788,8 +908,14 @@
       ],
       "proposed_target": ".codex/agents/ux-designer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
+      "status": "EQUIVALENT",
+      "target": ".codex/agents/ux-designer.toml",
+      "target_sha256": "6dcc74b46020c5d8b21fb437b1d0f9b73fa8edf0c405b7f59152bd9a08dc6e6c",
+      "evidence": [
+        "docs/codex/evidence/CGS-08/structural.json",
+        "docs/codex/evidence/CGS-08/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/world-builder.md",
@@ -804,8 +930,14 @@
       ],
       "proposed_target": ".codex/agents/world-builder.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
+      "status": "EQUIVALENT",
+      "target": ".codex/agents/world-builder.toml",
+      "target_sha256": "bf4d64ea2253e06b3f91a476b74fe0e604d7d1b7693fb9194072b83893b403ae",
+      "evidence": [
+        "docs/codex/evidence/CGS-08/structural.json",
+        "docs/codex/evidence/CGS-08/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/writer.md",
@@ -820,8 +952,14 @@
       ],
       "proposed_target": ".codex/agents/writer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
+      "status": "EQUIVALENT",
+      "target": ".codex/agents/writer.toml",
+      "target_sha256": "388733d64b93b97efd50b01d137a0a5d8d080e58054fb4207a780e64e316ea09",
+      "evidence": [
+        "docs/codex/evidence/CGS-08/structural.json",
+        "docs/codex/evidence/CGS-08/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/docs/CLAUDE-local-template.md",

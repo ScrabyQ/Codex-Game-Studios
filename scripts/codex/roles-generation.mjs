@@ -19,7 +19,7 @@ export function parseRoleSource(text, source) {
   const match = /^---\n([\s\S]*?)\n---\n/.exec(text);
   if (!match) throw Error(`Malformed role frontmatter: ${source}`);
   const fields = {};
-  const allowed = new Set(['name', 'description', 'tools', 'model', 'maxTurns', 'memory', 'skills', 'disallowedTools', 'effort']);
+  const allowed = new Set(['name', 'description', 'tools', 'model', 'maxTurns', 'memory', 'skills', 'disallowedTools', 'effort', 'isolation']);
   for (const line of match[1].split('\n')) {
     if (/^\s*#/.test(line)) continue;
     const m = /^([\w-]+):\s*(.*)$/.exec(line);
@@ -28,6 +28,7 @@ export function parseRoleSource(text, source) {
   }
   if (!fields.name || !fields.description || !fields.tools) throw Error(`Missing required source role metadata: ${source}`);
   if (fields.maxTurns && !/^\d+$/.test(fields.maxTurns)) throw Error(`Invalid source turn budget: ${source}`);
+  if (fields.isolation && fields.isolation !== 'worktree') throw Error(`Unsupported source isolation: ${source}`);
   return { fields, body: text.slice(match[0].length) };
 }
 
@@ -64,6 +65,7 @@ function roleBridge(fields) {
     `Return findings, evidence and its limits, changed paths if any, unresolved decisions, and a concrete handoff. Preserve the source gate-specific first-line verdict when applicable; NOT ASSESSED is required where necessary evidence could not be assessed. Do not silently approve missing evidence or change domain ownership.\n\n` +
     `${fields.maxTurns ? `The source suggests a ${fields.maxTurns}-turn work budget. This is advisory planning guidance, not an enforced Codex maxTurns setting; checkpoint and report unfinished scope instead of claiming completion at a limit.\n\n` : ''}` +
     `${fields.memory ? `Source project memory maps to .agents/agent-memory/${fields.name}/ as optional ignored file persistence, not automatic Codex memory. Recover from production/session-state/active.md when present. Write memory/checkpoints only within authorized scope; a read-only task writes neither.\n\n` : ''}` +
+    `${fields.isolation ? 'The source requests worktree isolation. Use an isolated worktree when supported and authorized, verify the actual workspace before writing, and report any inability to obtain isolation to the caller. Do not claim that this role automatically creates or enforces a worktree.\n\n' : ''}` +
     `${skills.length ? `Source skill dependencies: ${skills.map(name => `.agents/skills/${name}/SKILL.md`).join(', ')}. Read only those needed for the task; no automatic preload is assumed. If a dependency is not installed or verified, report that limitation rather than claiming it ran.\n\n` : ''}` +
     `## Adapted source role\n\n`;
 }
