@@ -1,5 +1,5 @@
 import { spawnSync } from 'node:child_process';
-import { existsSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -9,6 +9,9 @@ export function runHelper(name, args = [], root = process.cwd(), stdio = 'inheri
   const candidates = ['scripts', 'hooks'].map(d => resolve(repo, '.agents', d, name + '.sh'));
   const script = candidates.find(existsSync);
   if (!script) throw new Error(`Unknown helper: ${name}`);
+  // Most upstream helpers default to the directory containing the script,
+  // not cwd. Forward the selected project root when the helper supports it.
+  if (name !== 'yaml-helper' && readFileSync(script, 'utf8').includes('--root') && !args.some(a => a === '--root' || a.startsWith('--root='))) args = [...args, '--root', resolve(root)];
   const shell = process.env.CGS_BASH || (process.platform === 'win32' ? 'C:\\Program Files\\Git\\bin\\bash.exe' : 'bash');
   const out = spawnSync(shell, [script, ...args], { cwd: resolve(root), env: { ...process.env, CGS_PROJECT_DIR: resolve(root) }, stdio, encoding: 'utf8' });
   if (out.error) throw out.error;

@@ -1,0 +1,536 @@
+{
+  "schema": 1,
+  "scope": "53 source helpers; structural mirrors do not imply execution parity",
+  "helpers": [
+    {
+      "source": ".claude/scripts/adr-dep-graph.sh",
+      "target": ".agents/scripts/adr-dep-graph.sh",
+      "usage": "Usage: bash .agents/scripts/adr-dep-graph.sh [adr-dir]",
+      "purpose": "#!/usr/bin/env bash # adr-dep-graph.sh — build the ADR dependency graph, detect cycles, and give # the order to implement the ADRs in.",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/scripts/adr-status.sh",
+      "target": ".agents/scripts/adr-status.sh",
+      "usage": "Usage: bash .agents/scripts/adr-status.sh [--root DIR] [ID|PATH ...]",
+      "purpose": "#!/usr/bin/env bash # adr-status.sh — each ADR's status, layer, dates, dependencies and missing # sections, in one pass, so a skill reads a table instead of opening every ADR",
+      "reason": "Focused fixture or CGS-06 config test; not exhaustive",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PASS"
+    },
+    {
+      "source": ".claude/scripts/agent-check.sh",
+      "target": ".agents/scripts/agent-check.sh",
+      "usage": "bash .agents/scripts/agent-check.sh [--agent NAME] [--root DIR]",
+      "purpose": "#!/usr/bin/env bash # agent-check.sh — observations about the agents and about every place a skill # hands work to one.",
+      "reason": "Focused fixture or CGS-06 config test; not exhaustive",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PASS"
+    },
+    {
+      "source": ".claude/scripts/artifact-check.sh",
+      "target": ".agents/scripts/artifact-check.sh",
+      "usage": "Usage: bash .agents/scripts/artifact-check.sh [--phase <id> | --path <id>] [project-root]",
+      "purpose": "#!/usr/bin/env bash # artifact-check.sh — evaluate every workflow-catalog step's artifact spec # against what is actually on disk.",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/scripts/asset-scan.sh",
+      "target": ".agents/scripts/asset-scan.sh",
+      "usage": "Usage: bash .agents/scripts/asset-scan.sh [--root DIR] [--engine E] [--category C]",
+      "purpose": "#!/usr/bin/env bash # asset-scan.sh — the measurements /asset-audit takes by hand: asset names # against the naming rule, PNG power-of-two dimensions, file sizes against the",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/scripts/bug-stats.sh",
+      "target": ".agents/scripts/bug-stats.sh",
+      "usage": "Usage: bash .agents/scripts/bug-stats.sh [--root DIR] [--today YYYY-MM-DD] [DIR ...]",
+      "purpose": "#!/usr/bin/env bash # bug-stats.sh — bug counts by severity, status and system, with each bug's # age, read from the bug files /bug-report writes, so a skill reads one table",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/scripts/code-markers.sh",
+      "target": ".agents/scripts/code-markers.sh",
+      "usage": "Usage: bash .agents/scripts/code-markers.sh [--root DIR] [--long N] [--exclude PATTERN ...] [PATH ...]",
+      "purpose": "#!/usr/bin/env bash # code-markers.sh — TODO, FIXME and HACK markers, debug output calls, # placeholder names and long files in the game's source, with how many files",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/scripts/compat-inventory.sh",
+      "target": ".agents/scripts/compat-inventory.sh",
+      "usage": "Usage: bash .agents/scripts/compat-inventory.sh [--skill <name> | --agent <name>] [project-root]",
+      "purpose": "#!/usr/bin/env bash # compat-inventory.sh — every place the framework depends on something only # Claude Code provides, listed per file with the feature it belongs to.",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/scripts/config-set.sh",
+      "target": ".agents/scripts/config-set.sh",
+      "usage": "Usage: bash .agents/scripts/config-set.sh [--local] KEY VALUE [--dry-run] [--root DIR]",
+      "purpose": "#!/usr/bin/env bash # config-set.sh — set one key in project.yaml or project.local.yaml, after the # checks /settings makes before a write, and read the value back.",
+      "reason": "Focused fixture or CGS-06 config test; not exhaustive",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PASS"
+    },
+    {
+      "source": ".claude/scripts/content-count.sh",
+      "target": ".agents/scripts/content-count.sh",
+      "usage": "Usage: bash .agents/scripts/content-count.sh [--root DIR] COMMAND [ARGS]",
+      "purpose": "#!/usr/bin/env bash # content-count.sh — the counts /content-audit works out by hand: the named # content the entity registry plans (entries, deprecated ones left out), the",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/scripts/debt-register.sh",
+      "target": ".agents/scripts/debt-register.sh",
+      "usage": "Usage: bash .agents/scripts/debt-register.sh [--root DIR] COMMAND [ARGS]",
+      "purpose": "#!/usr/bin/env bash # debt-register.sh — the technical-debt register's arithmetic: the next TD ID, # the impact / effort score, open items per category, items added and resolved",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/scripts/flaky-stats.sh",
+      "target": ".agents/scripts/flaky-stats.sh",
+      "usage": "Usage: bash .agents/scripts/flaky-stats.sh [--root DIR] [--format F] [--runs] [--all] [FILE ...]",
+      "purpose": "#!/usr/bin/env bash # flaky-stats.sh — per-test runs, passes, fails, skips, fail percentage and # pass/fail pattern across several test runs, with the threshold row each",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/scripts/gdd-structure-check.sh",
+      "target": ".agents/scripts/gdd-structure-check.sh",
+      "usage": "Usage:",
+      "purpose": "#!/usr/bin/env bash # gdd-structure-check.sh — deterministic section-presence check for system GDDs. #",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/scripts/godot-parse-check.gd",
+      "target": ".agents/scripts/godot-parse-check.gd",
+      "usage": "Godot engine required: .agents/scripts/godot-parse-check.gd",
+      "purpose": "## Parse-checks Godot scripts the way the game loads them.\r ##\r ## Usage, from the project root, after `godot --headless --path . --import`\r",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PENDING: requires Godot runtime",
+      "syntax_status": "PENDING",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/scripts/hook-input.sh",
+      "target": ".agents/scripts/hook-input.sh",
+      "usage": "Usage: bash .agents/scripts/hook-input.sh [--root DIR] [--new FILE] < payload.json",
+      "purpose": "#!/usr/bin/env bash # hook-input.sh — what a PreToolUse payload for Write or Edit says, read one # way: the tool, the file it writes (made project-relative), the subagent that",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/scripts/inputs-check.sh",
+      "target": ".agents/scripts/inputs-check.sh",
+      "usage": "Usage: bash .agents/scripts/inputs-check.sh [--root DIR] [--from FILE|-] [SPEC...]",
+      "purpose": "#!/usr/bin/env bash # inputs-check.sh — FOUND / EMPTY / ABSENT for each input a skill declares, # so \"Insufficient input — check this before producing any report\" is one",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/scripts/md-section.sh",
+      "target": ".agents/scripts/md-section.sh",
+      "usage": "Usage: bash .agents/scripts/md-section.sh <command> FILE [args]",
+      "purpose": "#!/usr/bin/env bash # md-section.sh — find, read and edit sections of a Markdown file by heading, # so a skill hands over a heading and the words instead of grepping a fixed",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/scripts/migrate-v1-config.sh",
+      "target": ".agents/scripts/migrate-v1-config.sh",
+      "usage": "Godot engine required: .agents/scripts/migrate-v1-config.sh",
+      "purpose": "#!/usr/bin/env bash # # migrate-v1-config.sh — convert a v1.0 CCGS project to v1.1 `project.yaml`.",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/scripts/plan-math.sh",
+      "target": ".agents/scripts/plan-math.sh",
+      "usage": "Usage: bash .agents/scripts/plan-math.sh <command> [args] [--root DIR] [--today YYYY-MM-DD]",
+      "purpose": "#!/usr/bin/env bash # plan-math.sh — the date and percentage arithmetic planning skills do by # hand: days between two dates, a percentage with a zero guard, the sprint file",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/scripts/project-coherence.sh",
+      "target": ".agents/scripts/project-coherence.sh",
+      "usage": "Godot engine required: .agents/scripts/project-coherence.sh",
+      "purpose": "#!/usr/bin/env bash # # project-coherence.sh — compare what `project.yaml` DECLARES against what the",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/scripts/project-state.sh",
+      "target": ".agents/scripts/project-state.sh",
+      "usage": "Usage: bash .agents/scripts/project-state.sh [--stage] [--root DIR]",
+      "purpose": "#!/usr/bin/env bash # project-state.sh — the project facts several skills work out by hand: is an # engine set, is there a concept, where is the code root, how many design,",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/scripts/read-guard.sh",
+      "target": ".agents/scripts/read-guard.sh",
+      "usage": "Usage: bash .agents/scripts/read-guard.sh [--root DIR] <command> <path> [options]",
+      "purpose": "#!/usr/bin/env bash # read-guard.sh -- whether a Read is a whole-file read of a large design doc, # and that doc's headings, so it can be read by section instead. The hook",
+      "reason": "Focused fixture or CGS-06 config test; not exhaustive",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PASS"
+    },
+    {
+      "source": ".claude/scripts/registry.sh",
+      "target": ".agents/scripts/registry.sh",
+      "usage": "Usage: bash .agents/scripts/registry.sh [--root DIR] COMMAND [ARGS]",
+      "purpose": "#!/usr/bin/env bash # registry.sh — the three registries read one way, and the next ID of every # kind the skills number: the entity registry (design/registry/entities.yaml),",
+      "reason": "Focused fixture or CGS-06 config test; not exhaustive",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PASS"
+    },
+    {
+      "source": ".claude/scripts/review-receipts.sh",
+      "target": ".agents/scripts/review-receipts.sh",
+      "usage": "Usage:",
+      "purpose": "#!/usr/bin/env bash # review-receipts.sh — content-hash change detection for review skills. #",
+      "reason": "Focused fixture or CGS-06 config test; not exhaustive",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PASS"
+    },
+    {
+      "source": ".claude/scripts/review-scope.sh",
+      "target": ".agents/scripts/review-scope.sh",
+      "usage": "Usage: bash .agents/scripts/review-scope.sh",
+      "purpose": "#!/usr/bin/env bash # review-scope.sh — compute the GDD scope for an incremental cross-GDD review. #",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/scripts/rotate-session-state.sh",
+      "target": ".agents/scripts/rotate-session-state.sh",
+      "usage": "Usage:",
+      "purpose": "#!/bin/bash # rotate-session-state.sh — move active.md's narrative into the session log, # leaving the checkpoint behind.",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/scripts/session-state.sh",
+      "target": ".agents/scripts/session-state.sh",
+      "usage": "Usage: bash .agents/scripts/session-state.sh <command> [--root DIR]",
+      "purpose": "#!/usr/bin/env bash # session-state.sh — read and write production/session-state/active.md in the # layout .claude/docs/templates/session-state.md defines, so a skill hands",
+      "reason": "Focused fixture or CGS-06 config test; not exhaustive",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PASS"
+    },
+    {
+      "source": ".claude/scripts/set-stage.sh",
+      "target": ".agents/scripts/set-stage.sh",
+      "usage": "Usage: bash .agents/scripts/set-stage.sh <Stage> [--dry-run] [--root DIR]",
+      "purpose": "#!/usr/bin/env bash # set-stage.sh — write the project stage to project.yaml and the legacy # production/stage.txt, read both back, and say whether they agree.",
+      "reason": "Focused fixture or CGS-06 config test; not exhaustive",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PASS"
+    },
+    {
+      "source": ".claude/scripts/skill-lint.sh",
+      "target": ".agents/scripts/skill-lint.sh",
+      "usage": "bash .agents/scripts/skill-lint.sh NAME|all [--root DIR]",
+      "purpose": "#!/usr/bin/env bash # skill-lint.sh — the facts a static skill check reads off a skill by eye: which # frontmatter fields are there, how many phase headings, which verdict words,",
+      "reason": "Focused fixture or CGS-06 config test; not exhaustive",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PASS"
+    },
+    {
+      "source": ".claude/scripts/story-facts.sh",
+      "target": ".agents/scripts/story-facts.sh",
+      "usage": "Usage: bash .agents/scripts/story-facts.sh [--root DIR] [--all | --sprint | PATH ...] [--lint]",
+      "purpose": "#!/usr/bin/env bash # story-facts.sh — the facts skills read off story files by hand, one row per # story, and with --lint the story-readiness rules each story trips.",
+      "reason": "Focused fixture or CGS-06 config test; not exhaustive",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PASS"
+    },
+    {
+      "source": ".claude/scripts/story-status.sh",
+      "target": ".agents/scripts/story-status.sh",
+      "usage": "Godot engine required: .agents/scripts/story-status.sh",
+      "purpose": "#!/bin/bash # story-status.sh -- the story files' Status lines, in the order the minimal # route takes them. Injected into /help and /sprint-status before the model reads",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/scripts/test-run.sh",
+      "target": ".agents/scripts/test-run.sh",
+      "usage": "Usage: bash .agents/scripts/test-run.sh <engine> [options]",
+      "purpose": "#!/usr/bin/env bash # test-run.sh — run a project's automated tests the way /smoke-check Phase 2 # does, under a timeout, and read the result with that phase's exit-code ladder",
+      "reason": "Focused fixture or CGS-06 config test; not exhaustive",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PASS"
+    },
+    {
+      "source": ".claude/scripts/test-scaffold.sh",
+      "target": ".agents/scripts/test-scaffold.sh",
+      "usage": "Usage: bash .agents/scripts/test-scaffold.sh ENGINE [--dry-run | --list] [--root DIR]",
+      "purpose": "#!/usr/bin/env bash # test-scaffold.sh — creates the files /test-setup scaffolds for one engine, # never overwriting one that exists, and prints per path whether it was",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/scripts/write-guard.sh",
+      "target": ".agents/scripts/write-guard.sh",
+      "usage": "Usage: bash .agents/scripts/write-guard.sh [--root DIR] COMMAND [ARGS]",
+      "purpose": "#!/usr/bin/env bash # write-guard.sh — the rules that must hold on every write, read as # observations: the files skills never overwrite, the config guard, the",
+      "reason": "Focused fixture or CGS-06 config test; not exhaustive",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PASS"
+    },
+    {
+      "source": ".claude/scripts/yaml-get.awk",
+      "target": ".agents/scripts/yaml-get.awk",
+      "usage": "YG_PATH=project.stage awk -f .agents/scripts/yaml-get.awk project.yaml",
+      "purpose": "# yaml-get.awk — print the scalar at one dotted path of a YAML file, or nothing. # The one YAML reader the bash/awk helpers share (project-state.sh, # config-set.sh), so they read a file the same way:",
+      "reason": "Used by config-set in nine-mode and BOM/CRLF fixtures; not exhaustive",
+      "static_check": "PASS: exercised by config-set fixtures",
+      "syntax_status": "PASS",
+      "behavior_status": "PASS"
+    },
+    {
+      "source": ".claude/hooks/detect-gaps.sh",
+      "target": ".agents/hooks/detect-gaps.sh",
+      "usage": "Event handler: native event/payload registration pending",
+      "purpose": "#!/bin/bash # --- work from the project root ---------------------------------------------- # Every path below is repo-relative, so a hook invoked with a working directory",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/hooks/log-agent-stop.sh",
+      "target": ".agents/hooks/log-agent-stop.sh",
+      "usage": "Event handler: native event/payload registration pending",
+      "purpose": "#!/bin/bash # --- work from the project root ---------------------------------------------- # Every path below is repo-relative, so a hook invoked with a working directory",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/hooks/log-agent.sh",
+      "target": ".agents/hooks/log-agent.sh",
+      "usage": "Event handler: native event/payload registration pending",
+      "purpose": "#!/bin/bash # --- work from the project root ---------------------------------------------- # Every path below is repo-relative, so a hook invoked with a working directory",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/hooks/log-instructions.sh",
+      "target": ".agents/hooks/log-instructions.sh",
+      "usage": "Event handler: native event/payload registration pending",
+      "purpose": "#!/bin/bash # --- work from the project root ---------------------------------------------- # Every path below is repo-relative, so a hook invoked with a working directory",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/hooks/notify.sh",
+      "target": ".agents/hooks/notify.sh",
+      "usage": "Event handler: native event/payload registration pending",
+      "purpose": "#!/usr/bin/env bash # --- work from the project root ---------------------------------------------- # Every path below is repo-relative, so a hook invoked with a working directory",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/hooks/pre-compact.sh",
+      "target": ".agents/hooks/pre-compact.sh",
+      "usage": "Event handler: native event/payload registration pending",
+      "purpose": "#!/bin/bash # --- work from the project root ---------------------------------------------- # Every path below is repo-relative, so a hook invoked with a working directory",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/hooks/session-start.sh",
+      "target": ".agents/hooks/session-start.sh",
+      "usage": "Event handler: native event/payload registration pending",
+      "purpose": "#!/bin/bash # --- work from the project root ---------------------------------------------- # Every path below is repo-relative, so a hook invoked with a working directory",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/hooks/session-stop.sh",
+      "target": ".agents/hooks/session-stop.sh",
+      "usage": "Event handler: native event/payload registration pending",
+      "purpose": "#!/bin/bash # --- work from the project root ---------------------------------------------- # Every path below is repo-relative, so a hook invoked with a working directory",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/hooks/update-check.sh",
+      "target": ".agents/hooks/update-check.sh",
+      "usage": "Event handler: native event/payload registration pending",
+      "purpose": "#!/bin/bash # Hook helper: update-check.sh # Purpose: one line at session start when a newer Claude Code Game Studios",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/hooks/validate-agent-artifact.sh",
+      "target": ".agents/hooks/validate-agent-artifact.sh",
+      "usage": "Event handler: native event/payload registration pending",
+      "purpose": "#!/bin/bash # --- work from the project root ---------------------------------------------- # Every path below is repo-relative, so a hook invoked with a working directory",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/hooks/validate-assets.sh",
+      "target": ".agents/hooks/validate-assets.sh",
+      "usage": "Event handler: native event/payload registration pending",
+      "purpose": "#!/bin/bash # --- work from the project root ---------------------------------------------- # Every path below is repo-relative, so a hook invoked with a working directory",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/hooks/validate-commit.sh",
+      "target": ".agents/hooks/validate-commit.sh",
+      "usage": "Event handler: native event/payload registration pending",
+      "purpose": "#!/bin/bash # --- work from the project root ---------------------------------------------- # Every path below is repo-relative, so a hook invoked with a working directory",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/hooks/validate-push.sh",
+      "target": ".agents/hooks/validate-push.sh",
+      "usage": "Event handler: native event/payload registration pending",
+      "purpose": "#!/bin/bash # --- work from the project root ---------------------------------------------- # Every path below is repo-relative, so a hook invoked with a working directory",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/hooks/validate-read.sh",
+      "target": ".agents/hooks/validate-read.sh",
+      "usage": "Event handler: native event/payload registration pending",
+      "purpose": "#!/bin/bash # --- work from the project root ---------------------------------------------- # Same precedence as validate-write.sh (see there for why): a cwd that is a",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/hooks/validate-registry.sh",
+      "target": ".agents/hooks/validate-registry.sh",
+      "usage": "Event handler: native event/payload registration pending",
+      "purpose": "#!/bin/bash # --- work from the project root ---------------------------------------------- # Every path below is repo-relative, so a hook invoked with a working directory",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/hooks/validate-skill-change.sh",
+      "target": ".agents/hooks/validate-skill-change.sh",
+      "usage": "Event handler: native event/payload registration pending",
+      "purpose": "#!/bin/bash # --- work from the project root ---------------------------------------------- # Every path below is repo-relative, so a hook invoked with a working directory",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/hooks/validate-write.sh",
+      "target": ".agents/hooks/validate-write.sh",
+      "usage": "Event handler: native event/payload registration pending",
+      "purpose": "#!/bin/bash # --- work from the project root ---------------------------------------------- # Every path below is repo-relative, so a hook invoked with a working directory",
+      "reason": "No dedicated behavioral fixture or native event protocol verification.",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PENDING"
+    },
+    {
+      "source": ".claude/hooks/yaml-helper.sh",
+      "target": ".agents/hooks/yaml-helper.sh",
+      "usage": "Usage:",
+      "purpose": "#!/bin/bash # Hook helper: yaml-helper.sh # Purpose: Shared YAML reading helper for CCGS hooks and skill orchestrators.",
+      "reason": "Focused fixture or CGS-06 config test; not exhaustive",
+      "static_check": "PASS: bash -n; behavior not established",
+      "syntax_status": "PASS",
+      "behavior_status": "PASS"
+    }
+  ]
+}

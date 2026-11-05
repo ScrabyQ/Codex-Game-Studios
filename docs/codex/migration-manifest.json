@@ -2907,8 +2907,14 @@
       ],
       "proposed_target": ".agents/hooks/yaml-helper.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual focused helper fixtures and source-preserving adaptations checked. test-run ladder fixtures are synthetic, not engine execution; all other limits are explicit in helper inventory.",
+      "status": "PORTED",
+      "target": ".agents/hooks/yaml-helper.sh",
+      "target_sha256": "8df42ef8e26e1e1ffd8e145800d8e3fb06ca4a8da0fa7a29013721e705c96268",
+      "evidence": [
+        "docs/codex/evidence/CGS-25/checks.json",
+        "docs/codex/evidence/CGS-25/helper-inventory.json"
+      ]
     },
     {
       "id": "file:.claude/rules/agent-memory.md",
@@ -3201,8 +3207,14 @@
       ],
       "proposed_target": ".agents/scripts/adr-status.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual focused helper fixtures and source-preserving adaptations checked. test-run ladder fixtures are synthetic, not engine execution; all other limits are explicit in helper inventory.",
+      "status": "PORTED",
+      "target": ".agents/scripts/adr-status.sh",
+      "target_sha256": "6a1f44e5d483464fa69349a4c5da750cca656d918e0a87e25a6e1afa51464b85",
+      "evidence": [
+        "docs/codex/evidence/CGS-25/checks.json",
+        "docs/codex/evidence/CGS-25/helper-inventory.json"
+      ]
     },
     {
       "id": "file:.claude/scripts/agent-check.sh",
@@ -3216,8 +3228,14 @@
       ],
       "proposed_target": ".agents/scripts/agent-check.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual focused helper fixtures and source-preserving adaptations checked. test-run ladder fixtures are synthetic, not engine execution; all other limits are explicit in helper inventory.",
+      "status": "EQUIVALENT",
+      "target": ".agents/scripts/agent-check.sh",
+      "target_sha256": "8a1470f42bac67f2a11b4dd07d1f05f63ce1cfd2ff5f5205c1b9cf6df3d39895",
+      "evidence": [
+        "docs/codex/evidence/CGS-25/checks.json",
+        "docs/codex/evidence/CGS-25/helper-inventory.json"
+      ]
     },
     {
       "id": "file:.claude/scripts/artifact-check.sh",
@@ -3304,8 +3322,14 @@
       ],
       "proposed_target": ".agents/scripts/config-set.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual focused helper fixtures and source-preserving adaptations checked. test-run ladder fixtures are synthetic, not engine execution; all other limits are explicit in helper inventory.",
+      "status": "PORTED",
+      "target": ".agents/scripts/config-set.sh",
+      "target_sha256": "895a2040b66b2f020a6f301a5298a7ebdf6b59302ee6fa5483ad5eb638221ed4",
+      "evidence": [
+        "docs/codex/evidence/CGS-25/checks.json",
+        "docs/codex/evidence/CGS-25/helper-inventory.json"
+      ]
     },
     {
       "id": "file:.claude/scripts/content-count.sh",
@@ -3472,8 +3496,14 @@
       ],
       "proposed_target": ".agents/scripts/project-state.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual focused helper fixtures and source-preserving adaptations checked. test-run ladder fixtures are synthetic, not engine execution; all other limits are explicit in helper inventory.",
+      "status": "PORTED",
+      "target": ".agents/scripts/project-state.sh",
+      "target_sha256": "b6e48a3c1d53d2e8321d94fa425db88bf5da3695530073593d8f7c06e6865b21",
+      "evidence": [
+        "docs/codex/evidence/CGS-25/checks.json",
+        "docs/codex/evidence/CGS-25/helper-inventory.json"
+      ]
     },
     {
       "id": "file:.claude/scripts/read-guard.sh",
@@ -3486,8 +3516,14 @@
       ],
       "proposed_target": ".agents/scripts/read-guard.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual focused helper fixtures and source-preserving adaptations checked. test-run ladder fixtures are synthetic, not engine execution; all other limits are explicit in helper inventory.",
+      "status": "PORTED",
+      "target": ".agents/scripts/read-guard.sh",
+      "target_sha256": "d80f30ec3e7342ca3b6f28d6f6ed8decfaead40db3e37eaeebb3f01038545333",
+      "evidence": [
+        "docs/codex/evidence/CGS-25/checks.json",
+        "docs/codex/evidence/CGS-25/helper-inventory.json"
+      ]
     },
     {
       "id": "file:.claude/scripts/registry.sh",
@@ -3500,8 +3536,14 @@
       ],
       "proposed_target": ".agents/scripts/registry.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual focused helper fixtures and source-preserving adaptations checked. test-run ladder fixtures are synthetic, not engine execution; all other limits are explicit in helper inventory.",
+      "status": "PORTED",
+      "target": ".agents/scripts/registry.sh",
+      "target_sha256": "0225782ee63aafc23170aad280c733697ed8904337cb4aa5217b2d18e014d3a8",
+      "evidence": [
+        "docs/codex/evidence/CGS-25/checks.json",
+        "docs/codex/evidence/CGS-25/helper-inventory.json"
+      ]
     },
     {
       "id": "file:.claude/scripts/review-receipts.sh",
@@ -3514,8 +3556,14 @@
       ],
       "proposed_target": ".agents/scripts/review-receipts.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual focused helper fixtures and source-preserving adaptations checked. test-run ladder fixtures are synthetic, not engine execution; all other limits are explicit in helper inventory.",
+      "status": "PORTED",
+      "target": ".agents/scripts/review-receipts.sh",
+      "target_sha256": "4035bd1d4d9e94de52be666d0c7dc85807dd54cb98b9eba30eaeeb1d0a111c89",
+      "evidence": [
+        "docs/codex/evidence/CGS-25/checks.json",
+        "docs/codex/evidence/CGS-25/helper-inventory.json"
+      ]
     },
     {
       "id": "file:.claude/scripts/review-scope.sh",
@@ -3556,8 +3604,14 @@
       ],
       "proposed_target": ".agents/scripts/session-state.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual focused helper fixtures and source-preserving adaptations checked. test-run ladder fixtures are synthetic, not engine execution; all other limits are explicit in helper inventory.",
+      "status": "PORTED",
+      "target": ".agents/scripts/session-state.sh",
+      "target_sha256": "8e87bfcfcb7cbffe9fed1409164eb0dbcb6e488fd9e539d5336879c14444af49",
+      "evidence": [
+        "docs/codex/evidence/CGS-25/checks.json",
+        "docs/codex/evidence/CGS-25/helper-inventory.json"
+      ]
     },
     {
       "id": "file:.claude/scripts/set-stage.sh",
@@ -3570,8 +3624,14 @@
       ],
       "proposed_target": ".agents/scripts/set-stage.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual focused helper fixtures and source-preserving adaptations checked. test-run ladder fixtures are synthetic, not engine execution; all other limits are explicit in helper inventory.",
+      "status": "PORTED",
+      "target": ".agents/scripts/set-stage.sh",
+      "target_sha256": "16db0a6076a2382b90506a883a575bce6d01d1d7a7e388008fea3453b5792e58",
+      "evidence": [
+        "docs/codex/evidence/CGS-25/checks.json",
+        "docs/codex/evidence/CGS-25/helper-inventory.json"
+      ]
     },
     {
       "id": "file:.claude/scripts/skill-lint.sh",
@@ -3584,8 +3644,14 @@
       ],
       "proposed_target": ".agents/scripts/skill-lint.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual focused helper fixtures and source-preserving adaptations checked. test-run ladder fixtures are synthetic, not engine execution; all other limits are explicit in helper inventory.",
+      "status": "EQUIVALENT",
+      "target": ".agents/scripts/skill-lint.sh",
+      "target_sha256": "865226075d2537b2143d7dc0e16ccccdcff9f2f261694ed46a4397673dc2816a",
+      "evidence": [
+        "docs/codex/evidence/CGS-25/checks.json",
+        "docs/codex/evidence/CGS-25/helper-inventory.json"
+      ]
     },
     {
       "id": "file:.claude/scripts/story-facts.sh",
@@ -3598,8 +3664,14 @@
       ],
       "proposed_target": ".agents/scripts/story-facts.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual focused helper fixtures and source-preserving adaptations checked. test-run ladder fixtures are synthetic, not engine execution; all other limits are explicit in helper inventory.",
+      "status": "PORTED",
+      "target": ".agents/scripts/story-facts.sh",
+      "target_sha256": "fca97d3c0732e83bbe53974c9b09ccfe1981244a3ad08b4fef141a1a3da4528c",
+      "evidence": [
+        "docs/codex/evidence/CGS-25/checks.json",
+        "docs/codex/evidence/CGS-25/helper-inventory.json"
+      ]
     },
     {
       "id": "file:.claude/scripts/story-status.sh",
@@ -3627,8 +3699,14 @@
       ],
       "proposed_target": ".agents/scripts/test-run.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual focused helper fixtures and source-preserving adaptations checked. test-run ladder fixtures are synthetic, not engine execution; all other limits are explicit in helper inventory.",
+      "status": "PORTED",
+      "target": ".agents/scripts/test-run.sh",
+      "target_sha256": "1a0db3af80a8a998733e9f30d7fc599a65a6296e1cf5624f7ccf0caea6053ce4",
+      "evidence": [
+        "docs/codex/evidence/CGS-25/checks.json",
+        "docs/codex/evidence/CGS-25/helper-inventory.json"
+      ]
     },
     {
       "id": "file:.claude/scripts/test-scaffold.sh",
@@ -3655,8 +3733,14 @@
       ],
       "proposed_target": ".agents/scripts/write-guard.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual focused helper fixtures and source-preserving adaptations checked. test-run ladder fixtures are synthetic, not engine execution; all other limits are explicit in helper inventory.",
+      "status": "PORTED",
+      "target": ".agents/scripts/write-guard.sh",
+      "target_sha256": "97fcda499e2c5ad38c3a01632e6228fd803792d95c1728694a08faa62c3ba6d0",
+      "evidence": [
+        "docs/codex/evidence/CGS-25/checks.json",
+        "docs/codex/evidence/CGS-25/helper-inventory.json"
+      ]
     },
     {
       "id": "file:.claude/scripts/yaml-get.awk",
@@ -3669,8 +3753,14 @@
       ],
       "proposed_target": ".agents/scripts/yaml-get.awk",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual focused helper fixtures and source-preserving adaptations checked. test-run ladder fixtures are synthetic, not engine execution; all other limits are explicit in helper inventory.",
+      "status": "PORTED",
+      "target": ".agents/scripts/yaml-get.awk",
+      "target_sha256": "7539d6ab9d93393c493ac001237b1860a821e484a2ec57f96e926fb6db1f995a",
+      "evidence": [
+        "docs/codex/evidence/CGS-25/checks.json",
+        "docs/codex/evidence/CGS-25/helper-inventory.json"
+      ]
     },
     {
       "id": "file:.claude/settings.json",

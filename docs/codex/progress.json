@@ -5,9 +5,9 @@
   "upstream_sha": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
   "owner": "ScrabyQ",
   "repository": "Codex-Game-Studios",
-  "last_completed": "CGS-23",
-  "current_task": "CGS-25",
-  "next_safe_step": "14 path rules verified through on-demand selector; native nested CLI execution remains PENDING, no automatic host enforcement claim.",
+  "last_completed": "CGS-25",
+  "current_task": "CGS-08",
+  "next_safe_step": "Helpers/config/dispatcher verified on Windows with explicit per-file evidence; real engine, Linux and hook event protocol checks remain separate.",
   "decisions": [
     "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED.",
     "Generated content-preserving .agents mirror retains helper root math; native roles use .codex/agents/*.toml; all generation is hash-guarded; no new agent runtime."
@@ -229,12 +229,12 @@
       "singularity_id": "T-5028fa8c-67a4-4cee-8df1-540865c072f2",
       "title": "CGS-23 · Перенести все 14 path-scoped rules",
       "status": "COMPLETE",
-      "commit": null,
+      "commit": "f58621dd119b02d1692f0be7a984d3d51ecbad7e",
       "evidence": [
         "docs/codex/evidence/CGS-23/rules.json"
       ],
       "note": "14 path rules verified through on-demand selector; native nested CLI execution remains PENDING, no automatic host enforcement claim.",
-      "updated_at": "2026-11-05T10:31:24.272Z"
+      "updated_at": "2026-11-05T10:37:38.973Z"
     },
     {
       "key": "CGS-24",
@@ -248,9 +248,15 @@
       "key": "CGS-25",
       "singularity_id": "T-3940570d-3bda-42dc-81eb-f32d277f11c5",
       "title": "CGS-25 · Адаптировать project.yaml, config resolution и вспомогательные скрипты",
-      "status": "PENDING",
+      "status": "COMPLETE",
       "commit": null,
-      "evidence": []
+      "evidence": [
+        "docs/codex/evidence/CGS-25/README.md",
+        "docs/codex/evidence/CGS-25/checks.json",
+        "docs/codex/evidence/CGS-25/helper-inventory.json"
+      ],
+      "note": "Helpers/config/dispatcher verified on Windows with explicit per-file evidence; real engine, Linux and hook event protocol checks remain separate.",
+      "updated_at": "2026-11-05T10:37:39.041Z"
     },
     {
       "key": "CGS-26",

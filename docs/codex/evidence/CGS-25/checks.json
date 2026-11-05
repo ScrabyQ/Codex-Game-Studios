@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "task": "CGS-25",
+  "upstream": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
+  "environment": "Windows, Node 22.19.0, Git Bash",
+  "checks": [
+    {"command": "node scripts/codex/helper-tests.mjs", "exit_code": 0, "status": "PASS", "scope": "Focused fixtures, including actual regenerated native wrappers, bad and good native files, explicit relative root and synthetic test-run exit codes"},
+    {"command": "node scripts/codex/helper-tests.mjs --syntax", "exit_code": 0, "status": "PASS", "scope": "51 Bash scripts parse; does not establish behavior"},
+    {"command": "node scripts/codex/config-tests.mjs", "exit_code": 0, "status": "PASS", "scope": "Nine rigor/automation combinations, config precedence, enum fallthrough, local lock, BOM/CRLF and checkpoint"},
+    {"command": "node scripts/codex/cgs.mjs helper skill-lint help", "exit_code": 0, "status": "PASS", "scope": "Installed native skill structural subset only"},
+    {"command": "node scripts/codex/cgs.mjs helper agent-check --agent creative-director", "exit_code": 0, "status": "PASS", "scope": "Installed native role structural subset only"}
+  ],
+  "observations": [
+    "One intermediate adr-status fixture returned exit 1 with no diagnostic; immediate and later complete retries passed. This intermittent observation is not claimed fixed.",
+    "Actual engine integration, Linux and untested individual helper behaviors remain PENDING; see helper-inventory.json for each path.",
+    "Bash syntax checks do not validate native event payloads, hook registration, semantic correctness or security enforcement."
+  ]
+}
