@@ -35,3 +35,11 @@
 /docs/codex/** text eol=lf
 /AGENTS.md text eol=lf
 /**/AGENTS.md text eol=lf
+
+# Evidence media must retain their original bytes beneath the text-stable docs tree.
+/docs/codex/**/*.png binary
+/docs/codex/**/*.jpg binary
+/docs/codex/**/*.jpeg binary
+/docs/codex/**/*.webp binary
+/docs/codex/**/*.mp4 binary
+/docs/codex/**/*.wav binary
