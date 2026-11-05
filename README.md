@@ -2,6 +2,8 @@
 > This is an independent Codex adaptation. The original [MIT license and copyright](LICENSE) are retained.
 > Migration and verification progress: [Codex progress](docs/codex/progress.json). The upstream documentation below is preserved during migration.
 
+**Codex entrypoint:** open this repository root and run `codex`. See [Codex onboarding](docs/codex/onboarding.md) for instruction scopes and current verification limits.
+
 <p align="center">
   <h1 align="center">Claude Code Game Studios</h1>
   <p align="center">

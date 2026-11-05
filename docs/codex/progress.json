@@ -5,9 +5,9 @@
   "upstream_sha": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
   "owner": "ScrabyQ",
   "repository": "Codex-Game-Studios",
-  "last_completed": "CGS-03",
-  "current_task": "CGS-04",
-  "next_safe_step": "Create root/scoped AGENTS; then disjoint CGS05/06/23/26 infrastructure.",
+  "last_completed": "CGS-04",
+  "current_task": "CGS-05",
+  "next_safe_step": "Implement guarded Skill generator, config/model policy, rules and reference mirror with disjoint ownership.",
   "decisions": [
     "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED.",
     "Generated content-preserving .agents mirror retains helper root math; native roles use .codex/agents/*.toml; all generation is hash-guarded; no new agent runtime."
@@ -44,7 +44,7 @@
       "singularity_id": "T-b5884c08-3321-4f59-93b4-e27d54feb18a",
       "title": "CGS-03 · Спроектировать Codex-native архитектуру и стратегию конфликтов upstream",
       "status": "COMPLETE",
-      "commit": null,
+      "commit": "73b9cbf5bc7f21a53f3ac0a691ce46716bbad5ac",
       "evidence": [
         "docs/codex/architecture.md",
         "docs/codex/ownership.json",
@@ -55,9 +55,12 @@
       "key": "CGS-04",
       "singularity_id": "T-742d5725-0e4c-4085-8db2-9a997503a9af",
       "title": "CGS-04 · Сделать AGENTS.md, scoped instructions и Codex onboarding",
-      "status": "PENDING",
+      "status": "COMPLETE",
       "commit": null,
-      "evidence": []
+      "evidence": [
+        "docs/codex/evidence/CGS-04/native-probes.json",
+        "Actual Codex CLI0.148.0 gpt-5.6-luna root/src/design/docs read-only probes => exit0; instruction assertions PASS"
+      ]
     },
     {
       "key": "CGS-05",
