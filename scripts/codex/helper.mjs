@@ -3,6 +3,7 @@ import {bashPath} from './shell.mjs';
 import { existsSync, readFileSync, realpathSync, statSync } from 'node:fs';
 import { resolve, dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { isMainEntry } from './main-entry.mjs';
 
 const repo = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const samePath = (a, b) => process.platform === 'win32' ? a.toLowerCase() === b.toLowerCase() : a === b;
@@ -45,7 +46,7 @@ export function runHelper(name, args = [], root = process.cwd(), stdio = 'inheri
   if (out.error) throw out.error;
   return out;
 }
-if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+if (isMainEntry(import.meta.url)) {
   try {
     const args = process.argv.slice(2); const name = args.shift();
     if (!name) throw new Error('Usage: helper.mjs HELPER [--root DIR] [arguments]');

@@ -9,6 +9,7 @@ const tasks=[
  ['hygiene regression',['tests/hygiene.mjs']],
  ['engine CLI regression',['tests/engine-cli.mjs']],
  ['code-root configuration regression',['tests/code-root.mjs']],
+ ['CLI filesystem alias regression',['scripts/codex/tests/cli-alias.mjs']],
  ['repository hygiene',['scripts/codex/hygiene.mjs']],
  ['Git source fixture',['scripts/codex/tests/source-fixture.mjs']],
  ['source transform fixture',['scripts/codex/tests/importer-fixture.mjs']],

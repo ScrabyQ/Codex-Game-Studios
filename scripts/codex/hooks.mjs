@@ -1,5 +1,6 @@
 import { existsSync, readFileSync, realpathSync } from 'node:fs';
 import {bashPath} from './shell.mjs';
+import {isMainEntry} from './main-entry.mjs';
 import { dirname, resolve, relative, isAbsolute } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
@@ -188,7 +189,7 @@ export function handle(event, payload, options = {}) {
     return { code: 2, root, observations, calls, reason, output: event === 'PreToolUse' ? { hookSpecificOutput: { hookEventName: event, permissionDecision: 'deny', permissionDecisionReason: reason } } : { systemMessage: reason } };
   }
 }
-if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+if (isMainEntry(import.meta.url)) {
   const args = process.argv.slice(2); let event = args.shift(), root, inputFile;
   const execute = event === 'run'; if (execute) event = 'PreToolUse';
   try {

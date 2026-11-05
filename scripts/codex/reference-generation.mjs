@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /** Deterministic, non-destructive Codex mirror for upstream reference documents. */
 import { execFileSync } from 'node:child_process';
+import { isMainEntry } from './main-entry.mjs';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -139,7 +140,7 @@ async function main() {
   process.exitCode = 2;
 }
 
-if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+if (isMainEntry(import.meta.url)) {
   main().catch((error) => {
     process.stderr.write(`${error.message}\n`);
     process.exitCode = 1;

@@ -147,6 +147,7 @@ test('registration-supported-fields-and-windows-launcher', () => {
     assert.equal(h.type, 'command'); assert.equal(typeof h.commandWindows, 'string'); assert(h.timeout > 0);
   }
   put('scripts/codex/hooks.mjs', readFileSync(resolve(repo, 'scripts/codex/hooks.mjs')));
+  put('scripts/codex/main-entry.mjs', readFileSync(resolve(repo, 'scripts/codex/main-entry.mjs')));
   put('scripts/codex/shell.mjs', readFileSync(resolve(repo, 'scripts/codex/shell.mjs')));
   const command = config.hooks.PreToolUse[0].hooks[0][process.platform === 'win32' ? 'commandWindows' : 'command'];
   // This is the static reviewed hook command, intentionally executed by a shell.

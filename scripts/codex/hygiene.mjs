@@ -1,6 +1,7 @@
 import {execFileSync} from 'node:child_process';
 import {lstatSync, readFileSync} from 'node:fs';
 import path from 'node:path';
+import {isMainEntry} from './main-entry.mjs';
 import {fileURLToPath} from 'node:url';
 
 function activeLegacyInstruction(name, content) {
@@ -58,7 +59,7 @@ export function inspect(root) {
   }
   return findings;
 }
-if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+if (isMainEntry(import.meta.url)) {
   const findings = inspect(path.resolve(process.argv[2] || '.'));
   for (const [name, reason] of findings) console.error(reason + ': ' + name);
   if (findings.length) process.exitCode = 1;

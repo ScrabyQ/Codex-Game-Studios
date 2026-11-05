@@ -11687,7 +11687,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "22f8da41e3afbc9490f32b8cdc397b0746867fc683cc72bd2cb596cf231f2a5f"
+      "target_sha256": "68874a0750ceb97e896096719480d1540f8bab2bf9b9567b5ee5fefdd4730881"
     },
     {
       "id": "hook:SessionStart:0:1",
@@ -11705,7 +11705,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "22f8da41e3afbc9490f32b8cdc397b0746867fc683cc72bd2cb596cf231f2a5f"
+      "target_sha256": "68874a0750ceb97e896096719480d1540f8bab2bf9b9567b5ee5fefdd4730881"
     },
     {
       "id": "hook:PreToolUse:0:0",
@@ -11723,7 +11723,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "22f8da41e3afbc9490f32b8cdc397b0746867fc683cc72bd2cb596cf231f2a5f"
+      "target_sha256": "68874a0750ceb97e896096719480d1540f8bab2bf9b9567b5ee5fefdd4730881"
     },
     {
       "id": "hook:PreToolUse:0:1",
@@ -11741,7 +11741,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "22f8da41e3afbc9490f32b8cdc397b0746867fc683cc72bd2cb596cf231f2a5f"
+      "target_sha256": "68874a0750ceb97e896096719480d1540f8bab2bf9b9567b5ee5fefdd4730881"
     },
     {
       "id": "hook:PreToolUse:1:0",
@@ -11759,7 +11759,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "22f8da41e3afbc9490f32b8cdc397b0746867fc683cc72bd2cb596cf231f2a5f"
+      "target_sha256": "68874a0750ceb97e896096719480d1540f8bab2bf9b9567b5ee5fefdd4730881"
     },
     {
       "id": "hook:PreToolUse:1:1",
@@ -11777,7 +11777,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "22f8da41e3afbc9490f32b8cdc397b0746867fc683cc72bd2cb596cf231f2a5f"
+      "target_sha256": "68874a0750ceb97e896096719480d1540f8bab2bf9b9567b5ee5fefdd4730881"
     },
     {
       "id": "hook:PreToolUse:2:0",
@@ -11795,7 +11795,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "22f8da41e3afbc9490f32b8cdc397b0746867fc683cc72bd2cb596cf231f2a5f"
+      "target_sha256": "68874a0750ceb97e896096719480d1540f8bab2bf9b9567b5ee5fefdd4730881"
     },
     {
       "id": "hook:PostToolUse:0:0",
@@ -11813,7 +11813,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "22f8da41e3afbc9490f32b8cdc397b0746867fc683cc72bd2cb596cf231f2a5f"
+      "target_sha256": "68874a0750ceb97e896096719480d1540f8bab2bf9b9567b5ee5fefdd4730881"
     },
     {
       "id": "hook:PostToolUse:0:1",
@@ -11831,7 +11831,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "22f8da41e3afbc9490f32b8cdc397b0746867fc683cc72bd2cb596cf231f2a5f"
+      "target_sha256": "68874a0750ceb97e896096719480d1540f8bab2bf9b9567b5ee5fefdd4730881"
     },
     {
       "id": "hook:Notification:0:0",
@@ -11849,7 +11849,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "22f8da41e3afbc9490f32b8cdc397b0746867fc683cc72bd2cb596cf231f2a5f"
+      "target_sha256": "68874a0750ceb97e896096719480d1540f8bab2bf9b9567b5ee5fefdd4730881"
     },
     {
       "id": "hook:PreCompact:0:0",
@@ -11867,7 +11867,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "22f8da41e3afbc9490f32b8cdc397b0746867fc683cc72bd2cb596cf231f2a5f"
+      "target_sha256": "68874a0750ceb97e896096719480d1540f8bab2bf9b9567b5ee5fefdd4730881"
     },
     {
       "id": "hook:Stop:0:0",
@@ -11885,7 +11885,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "22f8da41e3afbc9490f32b8cdc397b0746867fc683cc72bd2cb596cf231f2a5f"
+      "target_sha256": "68874a0750ceb97e896096719480d1540f8bab2bf9b9567b5ee5fefdd4730881"
     },
     {
       "id": "hook:SubagentStart:0:0",
@@ -11903,7 +11903,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "22f8da41e3afbc9490f32b8cdc397b0746867fc683cc72bd2cb596cf231f2a5f"
+      "target_sha256": "68874a0750ceb97e896096719480d1540f8bab2bf9b9567b5ee5fefdd4730881"
     },
     {
       "id": "hook:SubagentStop:0:0",
@@ -11921,7 +11921,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "22f8da41e3afbc9490f32b8cdc397b0746867fc683cc72bd2cb596cf231f2a5f"
+      "target_sha256": "68874a0750ceb97e896096719480d1540f8bab2bf9b9567b5ee5fefdd4730881"
     },
     {
       "id": "hook:SubagentStop:0:1",
@@ -11939,7 +11939,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "22f8da41e3afbc9490f32b8cdc397b0746867fc683cc72bd2cb596cf231f2a5f"
+      "target_sha256": "68874a0750ceb97e896096719480d1540f8bab2bf9b9567b5ee5fefdd4730881"
     }
   ]
 }

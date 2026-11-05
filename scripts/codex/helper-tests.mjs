@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import {bashPath} from './shell.mjs';
-import { mkdtempSync, mkdirSync, writeFileSync, readFileSync, copyFileSync, readdirSync } from 'node:fs';
+import { mkdtempSync, mkdirSync, writeFileSync, readFileSync, copyFileSync, readdirSync, symlinkSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve, relative } from 'node:path';
 import { spawnSync } from 'node:child_process';
@@ -105,7 +105,7 @@ assert.equal(helper('agent-check', ['--agent', 'demo']).status, 0);
 // On Git Bash this may be spelled /tmp even when Node needs a Windows path.
 writeFileSync(join(skillDir, 'SKILL.md'), '---\nname: demo\ndescription: "valid"\n---\n# Example\n');
 const mountedRepo=mkdtempSync(join(tmpdir(),'cgs wrapper [native] '));
-for(const file of ['.agents/scripts/skill-lint.sh','.agents/scripts/agent-check.sh','scripts/codex/native-helper-check.mjs','scripts/codex/helper.mjs','scripts/codex/shell.mjs']){mkdirSync(resolve(mountedRepo,file,'..'),{recursive:true});copyFileSync(join(repo,file),join(mountedRepo,file))}
+for(const file of ['.agents/scripts/skill-lint.sh','.agents/scripts/agent-check.sh','scripts/codex/native-helper-check.mjs','scripts/codex/helper.mjs','scripts/codex/main-entry.mjs','scripts/codex/shell.mjs']){mkdirSync(resolve(mountedRepo,file,'..'),{recursive:true});copyFileSync(join(repo,file),join(mountedRepo,file))}
 for(const [name,args] of [['skill-lint',['demo']],['agent-check',['--agent','demo']]]){
  const result=spawnSync(process.execPath,[join(mountedRepo,'scripts/codex/helper.mjs'),name,'--root',root,...args],{cwd:mountedRepo,encoding:'utf8'});
  assert.equal(result.status,0,`${name} temporary installation: ${result.stderr||result.stdout}`);
@@ -118,6 +118,16 @@ for(const [name,args] of [['skill-lint',['demo']],['agent-check',['--agent','dem
  assert.notEqual(result.status,0,`${name} must reject invalid content in selected root`);
  assert.match(result.stdout,/NOT_ASSESSED_OR_INVALID/);
 }
+// A symlinked installation reproduces macOS /var -> /private/var aliases.
+const alias=mountedRepo+'-alias';
+try {
+ symlinkSync(mountedRepo,alias,process.platform==='win32'?'junction':'dir');
+ for(const [name,args] of [['skill-lint',['demo']],['agent-check',['--agent','demo']]]){
+  const result=spawnSync(process.execPath,[join(alias,'scripts/codex/helper.mjs'),name,'--root',invalidRoot,...args],{cwd:mountedRepo,encoding:'utf8'});
+  assert.notEqual(result.status,0,`${name} must execute and reject invalid content through an installation alias`);
+  assert.match(result.stdout,/NOT_ASSESSED_OR_INVALID/);
+ }
+} catch(error) {if(!['EPERM','EACCES','ENOTSUP'].includes(error.code))throw error;console.log('PENDING installation alias creation unavailable')}
 if(process.platform==='win32'){
  const posix=spawnSync(bash,['-c','cygpath -u "$1"','fixture',root],{encoding:'utf8'});assert.equal(posix.status,0,posix.stderr);
  for(const [name,args] of [['skill-lint',['demo']],['agent-check',['--agent','demo']]]){

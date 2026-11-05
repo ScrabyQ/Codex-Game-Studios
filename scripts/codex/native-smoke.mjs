@@ -1,4 +1,5 @@
 import { spawnSync, execFileSync } from 'node:child_process';
+import { isMainEntry } from './main-entry.mjs';
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, lstatSync, copyFileSync, openSync, closeSync, unlinkSync } from 'node:fs';
 import { resolve, dirname, relative, isAbsolute, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -140,7 +141,7 @@ export function runNativeSmoke(spec, { model, output, timeout = 300000 } = {}) {
   writeFileSync(target, JSON.stringify(evidence, null, 2) + '\n');
   return { result: evidence.result, evidence: relative(root, target).replaceAll('\\', '/'), fixture: evidence.fixture, exit_code: run.status, assertions };
 }
-if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+if (isMainEntry(import.meta.url)) {
   try {
     const { values } = parseArgs({ options: { case: { type: 'string' }, model: { type: 'string' }, output: { type: 'string' }, timeout: { type: 'string' } } });
     if (!values.case) throw new Error('Usage: native-smoke.mjs --case PATH --model VERIFIED_MODEL [--output PATH]');
