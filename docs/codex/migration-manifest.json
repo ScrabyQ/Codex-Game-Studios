@@ -3847,7 +3847,7 @@
       "verification": "Actual focused helper fixtures and source-preserving adaptations checked. test-run ladder fixtures are synthetic, not engine execution; all other limits are explicit in helper inventory.",
       "status": "EQUIVALENT",
       "target": ".agents/scripts/agent-check.sh",
-      "target_sha256": "8a1470f42bac67f2a11b4dd07d1f05f63ce1cfd2ff5f5205c1b9cf6df3d39895"
+      "target_sha256": "04ca124a4b1241d15abac9603b2b4ac6a43ad094c02f73d24ebaf5b1ee11c508"
     },
     {
       "id": "file:.claude/scripts/artifact-check.sh",
@@ -4303,7 +4303,7 @@
       "verification": "Actual focused helper fixtures and source-preserving adaptations checked. test-run ladder fixtures are synthetic, not engine execution; all other limits are explicit in helper inventory.",
       "status": "EQUIVALENT",
       "target": ".agents/scripts/skill-lint.sh",
-      "target_sha256": "865226075d2537b2143d7dc0e16ccccdcff9f2f261694ed46a4397673dc2816a"
+      "target_sha256": "f9a86ff5a979c7a395f6195f35993280881f83ac2eebe75eb72e51319e847fa2"
     },
     {
       "id": "file:.claude/scripts/story-facts.sh",

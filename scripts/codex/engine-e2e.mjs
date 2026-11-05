@@ -32,5 +32,17 @@ exe=options.get('--exe')||process.env[envKey]||exe;
 const before={};for(const file of ['src/charge_model.gd','src/charge_beacon.gd','tests/unit/charge_model_test.gd','assets/data/charge.json','localization/en.json','scenes/charge_beacon.tscn','Source/TP_Blank/ChargeModel.h','Source/TP_Blank/ChargeModelTest.cpp'])if(fs.existsSync(path.join(root,file)))before[file]=sha(path.join(root,file));
 const bundledDotnet=process.env.CGS_UE_DOTNET_ROOT;
 const runtimeEnv=engine==='unreal'?{...(bundledDotnet?{DOTNET_ROOT:bundledDotnet}:{}),DOTNET_MULTILEVEL_LOOKUP:'0',DOTNET_ROLL_FORWARD:'LatestMajor',DOTNET_CLI_HOME:path.join(root,'.runtime'),DOTNET_SKIP_FIRST_TIME_EXPERIENCE:'1',DOTNET_CLI_TELEMETRY_OPTOUT:'1'}:{};
-const r=command(exe,argv,root,timeout,runtimeEnv);const errors=/SCRIPT ERROR:|PARSE FAIL:|ERROR:|Result: Failed|error C[0-9]/i.test(r.stdout+r.stderr);const result={engine,phase,...r,executable_selection:executableSelection,runtime_env:runtimeEnv,source_hashes:before,error_lines_detected:errors,status:r.error?'PENDING':r.exit_code===0&&!errors?'PASS':'FAIL',scope:phase==='run'?'Non-headless rendering and synthetic engine-event input; not physical input or human playtest.':'Actual engine/tool process only; no visual claim.',cache_caveat:engine==='unreal'?'UBT may write its default user cache even with redirected environment.':null};
+const hasErrors=r=>/SCRIPT ERROR:|PARSE FAIL:|ERROR:|Result: Failed|error C[0-9]/i.test(r.stdout+r.stderr);
+const status=r=>r.error?'PENDING':r.exit_code===0&&!hasErrors(r)?'PASS':'FAIL';
+// Each invocation copies a fresh project. Import in that same fixture before
+// phases that can depend on the editor's generated global-class metadata.
+let preparation=null;
+if(engine==='godot'&&['parse','test','run'].includes(phase)){
+ const imported=command(exe,['--headless','--path',root,'--import'],root,timeout,runtimeEnv);
+ preparation={...imported,status:status(imported)};
+}
+const phaseExecuted=!preparation||preparation.status==='PASS';
+const r=phaseExecuted?command(exe,argv,root,timeout,runtimeEnv):preparation;
+const errors=hasErrors(r);
+const result={engine,phase,...r,preparation,phase_executed:phaseExecuted,executable_selection:executableSelection,runtime_env:runtimeEnv,source_hashes:before,error_lines_detected:errors,status:status(r),scope:phase==='run'?'Non-headless rendering and synthetic engine-event input; not physical input or human playtest.':'Actual engine/tool process only; no visual claim.',cache_caveat:engine==='unreal'?'UBT may write its default user cache even with redirected environment.':null};
 put(path.join(evidence,engine+'-'+phase+'.json'),result);console.log(JSON.stringify(result));process.exitCode=result.status==='PASS'?0:1;

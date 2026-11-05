@@ -101,6 +101,30 @@ writeFileSync(join(roles, 'demo.toml'), 'name = "demo"\ndescription = "role"\nde
 assert.equal(node('native-helper-check.mjs', ['role', '--agent', 'demo', '--root', root]).status, 0);
 assert.equal(wrapper('agent-check', ['--agent', 'demo']).status, 0);
 assert.equal(helper('agent-check', ['--agent', 'demo']).status, 0);
+// Run the dispatcher from a separate installation beneath the OS temporary mount.
+// On Git Bash this may be spelled /tmp even when Node needs a Windows path.
+writeFileSync(join(skillDir, 'SKILL.md'), '---\nname: demo\ndescription: "valid"\n---\n# Example\n');
+const mountedRepo=mkdtempSync(join(tmpdir(),'cgs wrapper [native] '));
+for(const file of ['.agents/scripts/skill-lint.sh','.agents/scripts/agent-check.sh','scripts/codex/native-helper-check.mjs','scripts/codex/helper.mjs','scripts/codex/shell.mjs']){mkdirSync(resolve(mountedRepo,file,'..'),{recursive:true});copyFileSync(join(repo,file),join(mountedRepo,file))}
+for(const [name,args] of [['skill-lint',['demo']],['agent-check',['--agent','demo']]]){
+ const result=spawnSync(process.execPath,[join(mountedRepo,'scripts/codex/helper.mjs'),name,'--root',root,...args],{cwd:mountedRepo,encoding:'utf8'});
+ assert.equal(result.status,0,`${name} temporary installation: ${result.stderr||result.stdout}`);
+}
+const invalidRoot=mkdtempSync(join(tmpdir(),'cgs selected [native] '));
+mkdirSync(join(invalidRoot,'.agents/skills/demo'),{recursive:true});writeFileSync(join(invalidRoot,'.agents/skills/demo/SKILL.md'),'invalid skill\n');
+mkdirSync(join(invalidRoot,'.codex/agents'),{recursive:true});writeFileSync(join(invalidRoot,'.codex/agents/demo.toml'),'invalid role\n');
+for(const [name,args] of [['skill-lint',['demo']],['agent-check',['--agent','demo']]]){
+ const result=spawnSync(process.execPath,[join(mountedRepo,'scripts/codex/helper.mjs'),name,'--root',invalidRoot,...args],{cwd:mountedRepo,encoding:'utf8'});
+ assert.notEqual(result.status,0,`${name} must reject invalid content in selected root`);
+ assert.match(result.stdout,/NOT_ASSESSED_OR_INVALID/);
+}
+if(process.platform==='win32'){
+ const posix=spawnSync(bash,['-c','cygpath -u "$1"','fixture',root],{encoding:'utf8'});assert.equal(posix.status,0,posix.stderr);
+ for(const [name,args] of [['skill-lint',['demo']],['agent-check',['--agent','demo']]]){
+  const result=spawnSync(bash,[join(mountedRepo,'.agents/scripts',name+'.sh'),...args,'--root',posix.stdout.trim()],{cwd:mountedRepo,encoding:'utf8'});
+  assert.equal(result.status,0,`${name} POSIX root: ${result.stderr||result.stdout}`);
+ }
+}
 writeFileSync(join(roles, 'demo.toml'), 'name = "demo"\ndescription = "broken\n');
 assert.notEqual(node('native-helper-check.mjs', ['role', '--agent', 'demo', '--root', root]).status, 0);
 assert.notEqual(wrapper('agent-check', ['--agent', 'demo']).status, 0);

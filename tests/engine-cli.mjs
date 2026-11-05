@@ -32,4 +32,13 @@ for(const mode of ['explicit','environment']) {
   assert.equal(record.status,'PENDING');
   assert.equal(record.error.code,'ENOENT');
 }
+// A cold parse must not proceed if the prerequisite import cannot run or fails.
+for (const [executable,expected] of [[missing,'PENDING'],[process.execPath,'FAIL']]) {
+  const result=run(['--engine','godot','--phase','parse','--exe',executable]);
+  assert.equal(result.status,1,result.stderr);
+  const record=JSON.parse(result.stdout);
+  assert.equal(record.status,expected);
+  assert.equal(record.preparation.status,expected);
+  assert.equal(record.phase_executed,false);
+}
 console.log('PASS engine CLI rejects invalid flags without output and reports missing executables as PENDING');
