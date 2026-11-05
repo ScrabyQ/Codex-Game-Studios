@@ -7,36 +7,58 @@
   "repository": "Codex-Game-Studios",
   "last_completed": "CGS-27",
   "current_task": "CGS-29",
-  "next_safe_step": "Engine27accepted:actualGodotimport/parse/test/render+3independentlyviewedPNGs;UnityeditorabsentandUE SDKmissingremainBlocked/PENDING. 28actualLinuxCIpassed. 29centralreviewedreconcileinprogress, then30docs/31freshindependentaudit.",
+  "next_safe_step": "CGS29 peerP2 fixes implemented: exact pendingstate, derivedindexrecorder, enum+schema-beforeactivation, staleallrowmapping guards; Terra finalfullCIrunning. RootfinalprepeerCIpassed, realpinHIST unchanged. Aftergreen: maplastupdate-checksource,commit29,push/observeCI,30README/UPGRADING,31freshindependentaudit/draftPR. All01–28complete.",
   "decisions": [
     "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED.",
     "Generated content-preserving .agents mirror retains helper root math; native roles use .codex/agents/*.toml; all generation is hash-guarded; no new agent runtime."
   ],
-  "checks": [],
+  "checks": [
+    {
+      "name": "Committed Linux CI",
+      "status": "PASS",
+      "commit": "07459ca8738174167bd0c13444139443a8c40645",
+      "evidence": "docs/codex/evidence/CGS-28/remote-ci-initial.json"
+    },
+    {
+      "name": "Linux six backend suites",
+      "status": "PASS",
+      "evidence": "docs/codex/evidence/CGS-28/linux/CGS-28/backend-results.json"
+    },
+    {
+      "name": "Godot import/parse/test/render",
+      "status": "PASS",
+      "evidence": "docs/codex/evidence/CGS-27/engine-matrix.json"
+    },
+    {
+      "name": "Source preservation",
+      "status": "PASS for content retention",
+      "evidence": "docs/codex/evidence/CGS-28/preservation/source-integrity.json"
+    }
+  ],
   "issues": [
     {
       "id": "native-custom-roles",
       "status": "PENDING",
       "evidence": "docs/codex/evidence/CGS-07/native-v2-diagnostic.md",
-      "fallback": "Verified scoped in-session role equivalents; no native spawn or shell restriction enforcement claimed"
+      "fallback": "Scoped in-session role equivalents tested; native loader and per-role tool enforcement unverified"
     },
     {
       "id": "windows-nested-command-startup",
       "status": "PENDING",
       "evidence": "docs/codex/evidence/CGS-11/README.md",
-      "fallback": "Authorized host execution works; preserve failed native traces and distinguish unavailable reads from absent inputs"
+      "fallback": "Authorized host execution works; native failures preserved"
     },
     {
-      "id": "native-hooks-and-linux",
+      "id": "native-hook-activation",
       "status": "PENDING",
       "evidence": "docs/codex/evidence/CGS-24/README.md",
-      "fallback": "15/15 explicit CLI fallbacks tested on Windows; Linux CI still to run"
+      "fallback": "Explicit CLI backends verified on Windows and Linux; trusted native event activation remains opt-in/unverified"
     },
     {
-      "id": "human-playtest-and-other-engines",
+      "id": "unity-unreal-human-playtest",
       "status": "PENDING",
-      "evidence": "docs/codex/evidence/CGS-12/workflows.md",
-      "fallback": "Actual Godot renders and programmatic transition observed; user input/playtest and CGS27 engine matrix remain separate"
+      "evidence": "docs/codex/evidence/CGS-27/engine-matrix.json",
+      "fallback": "Unity standard editor probe absent; Unreal required SDK absent and patch mismatch; Godot visual render/synthetic input observed, human playtest unassessed"
     }
   ],
   "tasks": [
@@ -427,8 +449,8 @@
       "status": "IN_PROGRESS",
       "commit": null,
       "evidence": [],
-      "note": "Astra29 owns safe sync tools/tests and proposes activebaseline/reconcile interface; rootownscentralmetadata. ActualUbuntu CI28passed; engine27portablepackaging and independent image review pending.",
-      "updated_at": "2026-11-05T12:50:12.571Z"
+      "note": "CGS29 peerP2 fixes implemented: exact pendingstate, derivedindexrecorder, enum+schema-beforeactivation, staleallrowmapping guards; Terra finalfullCIrunning. RootfinalprepeerCIpassed, realpinHIST unchanged. Aftergreen: maplastupdate-checksource,commit29,push/observeCI,30README/UPGRADING,31freshindependentaudit/draftPR. All01–28complete.",
+      "updated_at": "2026-11-05T13:43:30.271Z"
     },
     {
       "key": "CGS-30",

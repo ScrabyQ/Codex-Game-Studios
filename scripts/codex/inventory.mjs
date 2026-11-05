@@ -2,9 +2,22 @@ import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { basename } from 'node:path';
+import { baseline, HISTORICAL } from './baseline.mjs';
+import pathModule from 'node:path';
+import { mkdirSync, mkdtempSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 
-// Fixed source: working tree and current HEAD are deliberately not inputs.
-const sha = '05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418';
+// Git object contents, never the working tree, are authoritative.
+const arg=process.argv.slice(2),seen=new Set();
+for(let i=0;i<arg.length;i++){const key=arg[i];if(seen.has(key)||!['--check','--verify-pending','--manifest','--candidate','--output-dir'].includes(key))throw Error('Unknown or duplicate inventory argument: '+key);seen.add(key);if(!['--check','--verify-pending'].includes(key)){if(!arg[i+1]||arg[i+1].startsWith('--'))throw Error('Incomplete inventory argument: '+key);i++}}
+if(seen.has('--verify-pending')&&!seen.has('--check'))throw Error('--verify-pending requires --check');
+if(seen.has('--candidate')&&(seen.has('--check')||seen.has('--manifest')))throw Error('--candidate cannot be combined with --check or --manifest');
+const candidateIndex=arg.indexOf('--candidate'), outIndex=arg.indexOf('--output-dir');
+if((candidateIndex<0)!==(outIndex<0))throw Error('--candidate requires --output-dir');
+const active=candidateIndex<0?baseline(process.cwd(),{allowPending:seen.has('--verify-pending')}):null;
+if(seen.has('--verify-pending')&&active?.state!=='pending')throw Error('--verify-pending requires pending baseline');
+const sha=candidateIndex<0?active.source_commit:arg[candidateIndex+1];
+if(!/^[a-f0-9]{40}$/.test(sha||''))throw Error('Expected full source commit SHA');
 const git = (...args) => execFileSync('git', args, { maxBuffer: 128 * 1024 * 1024 });
 const hash = b => createHash('sha256').update(b).digest('hex');
 const tree = git('ls-tree', '-r', '-z', '--full-tree', sha).toString().split('\0').filter(Boolean).map(line => {
@@ -60,6 +73,7 @@ for (const h of hooks) matrix.push({ id: h.id, source: `.claude/settings.json#${
 const manifest = { schema: 1, source_commit: sha, statuses: ['PENDING', 'PORTED', 'EQUIVALENT', 'UNSUPPORTED'], entries: matrix };
 const json = o => JSON.stringify(o, null, 2) + '\n';
 const outputs = [['docs/codex/upstream-snapshot.json', snapshot], ['docs/codex/upstream-inventory.json', inventory], ['docs/codex/migration-manifest.json', manifest]];
+if(candidateIndex>=0){const out=pathModule.resolve(arg[outIndex+1]);mkdirSync(out,{recursive:true});for(const [name,data] of outputs)writeFileSync(pathModule.join(out,pathModule.basename(name)),json(data),{flag:'wx'});console.log('Prepared candidate inventory at '+sha);process.exit(0)}
 const check = process.argv.includes('--check');
 const index = process.argv.indexOf('--manifest');
 if (index !== -1 && (!check || !process.argv[index + 1])) throw new Error('--manifest requires --check and a path');
@@ -75,9 +89,14 @@ if (check) {
         if (!a || a.source !== e.source || a.source_sha256 !== e.source_sha256 || a.category !== e.category || !manifest.statuses.includes(a.status) || !a.purpose || !Array.isArray(a.claude_dependencies) || !a.proposed_target || !a.proposed_equivalent || !a.verification) throw new Error(`Incomplete or drifted manifest entry: ${e.id}`);
         if (a.status !== 'PENDING' && !a.evidence) throw new Error(`Non-pending entry lacks evidence: ${e.id}`);
       }
-    } else if (json(actual) !== json(expected)) throw new Error(`Snapshot or inventory drift: ${path}`);
+    } else if (path.endsWith('upstream-snapshot.json') && sha!==HISTORICAL) {
+      const temporary=mkdtempSync(pathModule.join(tmpdir(),'cgs-historical-inventory-'));
+      execFileSync(process.execPath,[pathModule.join(process.cwd(),'scripts/codex/inventory.mjs'),'--candidate',HISTORICAL,'--output-dir',temporary]);
+      if(json(actual)!==json(JSON.parse(readFileSync(pathModule.join(temporary,'upstream-snapshot.json')))))throw Error('Historical snapshot changed');
+    }
+    else if (json(actual) !== json(expected)) throw new Error(`Snapshot or inventory drift: ${path}`);
   }
-  console.log(`PASS: ${files.length} tracked files and ${hooks.length} hook declarations accounted for at ${sha}`);
+  console.log(`${seen.has('--verify-pending')?'PENDING verification only':'PASS'}: ${files.length} tracked files and ${hooks.length} hook declarations accounted for at ${sha}`);
 } else {
   for (const [path, data] of outputs) writeFileSync(path, json(data), { flag: 'wx' });
   console.log(`Generated ${files.length} files and ${hooks.length} hook declarations at ${sha}`);

@@ -1,0 +1,16 @@
+{
+  "command": "node scripts/codex/ci.mjs",
+  "exit": 0,
+  "platform": "win32",
+  "node": "v22.19.0",
+  "workspace_head_at_assignment": "07459ca8738174167bd0c13444139443a8c40645",
+  "workspace_head_at_final_ci": "b9019d8d5688333fccddb1afc02a4c69ee9f1584",
+  "real_active_source_commit": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
+  "fixture": "C:/Users/scrab/AppData/Local/Temp/cgs-reconcile-test-gYIxTz/work",
+  "synthetic_upstream_commit": "1ef9e649810b1e6dd540015087dfa9f96b625f45",
+  "fixture_changed_sources": [".claude/skills/help/SKILL.md", ".claude/hooks/session-start.sh"],
+  "fixture_affected_hook": "hook:SessionStart:0:0",
+  "checks": ["no-op", "added and deleted source fail-closed", "unintegrated source refusal and actual no-commit merge", "stale-plan refusal", "manual-drift refusal before and after prepare", "pending-CI refusal", "pending-finalize refusal", "archived-plan mutation refusal", "unreviewed target refusal", "missing auxiliary target refusal", "stale overlay refusal and reviewed rebase", "reviewed selected target regeneration", "stale migration mapping refusal", "exact source recorder and fresh-evidence finalize", "active validation and inventory", "historical snapshot tamper refusal"],
+  "review_records": "Synthetic operator fixture only; not a behavioral certification.",
+  "engine_integration": "PENDING"
+}

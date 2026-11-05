@@ -4013,15 +4013,37 @@
       ],
       "proposed_target": ".agents/hooks/update-check.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Cached update notice preserved; no background refresh installed. Actual upstream update workflow verification belongs to CGS-29.",
-      "status": "PENDING",
-      "task": "CGS-24",
-      "target": ".agents/hooks/update-check.sh",
-      "target_sha256": "ddbbd7600d6b06645bedbd5890d102828473d6c5a0b1e4f9b968eddfd21408ff",
+      "verification": "Tested explicit on-demand upstream detection and safe isolated sync replace the cached/background update notice; real fetch has no drift, synthetic Skill/hook changes and conflict recovery pass. No automatic updater or native activation is claimed.",
+      "status": "EQUIVALENT",
+      "task": "CGS-29",
+      "target": "scripts/codex/check-upstream.mjs",
+      "target_sha256": "7c1a8bc2fc49ec881ed407d5bd3f669c2a680be23b73071ea5391ba56d0b9ce8",
       "evidence": [
         "docs/codex/evidence/CGS-24/checks.json",
         "docs/codex/evidence/CGS-24/parity.json",
-        "docs/codex/hooks.md"
+        "docs/codex/hooks.md",
+        "docs/codex/evidence/CGS-29/tests.json",
+        "docs/codex/evidence/CGS-29/reconcile/README.md",
+        "docs/codex/evidence/CGS-29/integrator-acceptance.md",
+        "docs/codex/evidence/CGS-29/real-upstream-final.json"
+      ],
+      "related_targets": [
+        {
+          "target": "scripts/codex/upstream-common.mjs",
+          "sha256": "675bb971e09844fd601ebc360c1f28d3bd236417345cdbc7e94650c4029a9a57"
+        },
+        {
+          "target": "scripts/codex/sync-upstream.mjs",
+          "sha256": "b9057e98decc4dbe21b93b0a0669ef7740a05178a75679e3b6210dcacab48e57"
+        },
+        {
+          "target": "scripts/codex/baseline.mjs",
+          "sha256": "378497a845ba95ae6fb8a57974af22104cb7de23efe2c1be403f9f593b0fc8a8"
+        },
+        {
+          "target": ".agents/hooks/update-check.sh",
+          "sha256": "ddbbd7600d6b06645bedbd5890d102828473d6c5a0b1e4f9b968eddfd21408ff"
+        }
       ]
     },
     {

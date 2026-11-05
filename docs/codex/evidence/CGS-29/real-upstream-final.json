@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "baseline_sha": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
+  "upstream_sha": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
+  "head_sha": "b9019d8d5688333fccddb1afc02a4c69ee9f1584",
+  "reconciliation": {
+    "state": "active",
+    "pending": false,
+    "metadata": {
+      "schema": 1,
+      "historical_source_commit": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
+      "source_commit": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
+      "reconciliation_evidence": [],
+      "state": "active"
+    },
+    "pending_entries": [
+      "file:.claude/hooks/update-check.sh"
+    ]
+  },
+  "status": "NO_UPSTREAM_CHANGES",
+  "groups": {
+    "agent": 0,
+    "skill": 0,
+    "hook": 0,
+    "rule": 0,
+    "template": 0,
+    "hook-declarations": 0,
+    "other": 0
+  },
+  "changes": [],
+  "target_drift": [],
+  "working_tree": " M AGENTS.md\n M README.md\n M UPGRADING.md\n M docs/AGENTS.md\n M docs/codex/evidence/CGS-05/negative-tests.mjs\n M docs/codex/onboarding.md\n M docs/codex/progress.json\n M scripts/codex/ci.mjs\n M scripts/codex/generate.mjs\n M scripts/codex/inventory.mjs\n M scripts/codex/record-migration.mjs\n M scripts/codex/tests/clean-clone.mjs\n M scripts/codex/tests/negative.mjs\n M scripts/codex/validate.mjs\n?? docs/codex/active-baseline.json\n?? docs/codex/evidence/CGS-29/\n?? docs/codex/evidence/CGS-30/\n?? docs/codex/upstream-sync.md\n?? scripts/codex/baseline.mjs\n?? scripts/codex/check-upstream.mjs\n?? scripts/codex/reconcile-upstream.mjs\n?? scripts/codex/sync-upstream.mjs\n?? scripts/codex/tests/reconcile-fixture.mjs\n?? scripts/codex/upstream-common.mjs\n?? scripts/codex/upstream-tests.mjs",
+  "checklist": [
+    "Review every changed/new/deleted source and declaration; all affected coverage is PENDING.",
+    "Resolve merge conflicts explicitly in the isolated worktree.",
+    "Rebase source-bound overlays explicitly; preserve generated target hash guards.",
+    "Reconcile active inventory and migration evidence; retain historical baseline.",
+    "Run inventory, generator check, validation and affected behavioral tests.",
+    "Review diff, commit locally and open a draft PR only with authorization; never auto-merge."
+  ]
+}

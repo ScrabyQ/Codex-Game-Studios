@@ -4,7 +4,7 @@ import path from 'node:path';
 import {spawnSync,execFileSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 const root=process.cwd(), fixture=mkdtempSync(path.join(tmpdir(),'cgs05-negative-'));
-for(const p of ['.claude/skills','.agents/skills/help','docs/codex/upstream-inventory.json','docs/codex/generation-manifest.json','docs/codex/overlays/help.json']) {const to=path.join(fixture,p);mkdirSync(path.dirname(to),{recursive:true});cpSync(path.join(root,p),to,{recursive:true})}
+for(const p of ['.claude/skills','.agents/skills/help','docs/codex/upstream-inventory.json','docs/codex/generation-manifest.json','docs/codex/active-baseline.json','docs/codex/overlays/help.json']) {const to=path.join(fixture,p);mkdirSync(path.dirname(to),{recursive:true});cpSync(path.join(root,p),to,{recursive:true})}
 const regpath=path.join(fixture,'docs/codex/generation-manifest.json');const reg=JSON.parse(readFileSync(regpath,'utf8'));reg.entries=reg.entries.filter(e=>e.target.startsWith('.agents/skills/help/'));if(!reg.entries.length)throw Error('No help targets registered');writeFileSync(regpath,JSON.stringify(reg));
 execFileSync('git',['init','--quiet',fixture]);execFileSync('git',['-C',fixture,'-c','core.autocrlf=false','add','.claude/skills']);
 const gen=path.join(root,'scripts/codex/generate.mjs');const run=(...a)=>spawnSync(process.execPath,[gen,'--root',fixture,'--names','help',...a],{encoding:'utf8'});
