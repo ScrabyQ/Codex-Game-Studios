@@ -1,0 +1,250 @@
+{
+  "schema": 1,
+  "observed_at": "2026-11-05T11:40:00.478Z",
+  "runs": [
+    {
+      "command": [
+        "codex",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "codex-cli 0.148.0\n",
+      "stderr": "WARNING: failed to clean up stale arg0 temp dirs: Access is denied. (os error 5)\nWARNING: proceeding, even though we could not create PATH aliases: Access is denied. (os error 5) at path \"C:\\\\Users\\\\scrab\\\\.codex\\\\tmp\\\\arg0\\\\codex-arg0aUw6nd\"\n"
+    },
+    {
+      "command": [
+        "codex",
+        "features",
+        "list"
+      ],
+      "exit_code": 0,
+      "stdout": "multi_agent                              stable             true\nmulti_agent_mode                         removed            false\nmulti_agent_v2                           stable             false",
+      "stderr": "WARNING: failed to clean up stale arg0 temp dirs: Access is denied. (os error 5)\nWARNING: proceeding, even though we could not create PATH aliases: Access is denied. (os error 5) at path \"C:\\\\Users\\\\scrab\\\\.codex\\\\tmp\\\\arg0\\\\codex-arg0VkVI7N\"\n"
+    },
+    {
+      "command": [
+        "codex",
+        "--enable",
+        "multi_agent_v2",
+        "features",
+        "list"
+      ],
+      "exit_code": 0,
+      "stdout": "multi_agent                              stable             true\nmulti_agent_mode                         removed            false\nmulti_agent_v2                           stable             true",
+      "stderr": "WARNING: failed to clean up stale arg0 temp dirs: Access is denied. (os error 5)\nWARNING: proceeding, even though we could not create PATH aliases: Access is denied. (os error 5) at path \"C:\\\\Users\\\\scrab\\\\.codex\\\\tmp\\\\arg0\\\\codex-arg0tdK5jS\"\n"
+    }
+  ],
+  "original_role_count": 49,
+  "roles": [
+    {
+      "path": ".codex/agents/accessibility-specialist.toml",
+      "sha256": "99bd1ff1a519672da63d969f1977b7c9225b9b0f2a1f9e7d92492515bb5994b7"
+    },
+    {
+      "path": ".codex/agents/ai-programmer.toml",
+      "sha256": "16cea4f2bee0cb025544f4d5fbdfb711960e9ddb08d19469e638ee89025c91f0"
+    },
+    {
+      "path": ".codex/agents/analytics-engineer.toml",
+      "sha256": "242766f8e15273b9522013858b55af428e0c8508524ad4bb28282194c1b79c56"
+    },
+    {
+      "path": ".codex/agents/art-director.toml",
+      "sha256": "e4547b2cb93e5ec6ff5345683638197a4baca4f7e40c0da5ebcfa032a2b449bb"
+    },
+    {
+      "path": ".codex/agents/audio-director.toml",
+      "sha256": "593324c6410970a965e968af42f82fb2c3e2bafdd9b3359795d0cd25964cd27a"
+    },
+    {
+      "path": ".codex/agents/community-manager.toml",
+      "sha256": "846b6ba02f71cf9f15dcb0b9fc164fc7605a4347d74bb97cf651d48efb90e727"
+    },
+    {
+      "path": ".codex/agents/creative-director.toml",
+      "sha256": "a3bd142f7a13c56e8160f35c5e36fc06e8b2ab94f184c384dd2f37ae9496d2c9"
+    },
+    {
+      "path": ".codex/agents/devops-engineer.toml",
+      "sha256": "85f0678690d9d7cd97e8f5f5005d6491755c753bf5872adcab508196472637a7"
+    },
+    {
+      "path": ".codex/agents/economy-designer.toml",
+      "sha256": "1cddc82f22dbda52265746407a8003b3ccdc7589fa4e139e4fa9b2e08f11d571"
+    },
+    {
+      "path": ".codex/agents/engine-programmer.toml",
+      "sha256": "59f4071a3b800776917ed2989ad8e3f2afc83d5210102791fb683348e3ea1f34"
+    },
+    {
+      "path": ".codex/agents/game-designer.toml",
+      "sha256": "33c1f680acd87781a02554f86469509a20ff3605616b6149b3a9440ef7eb018d"
+    },
+    {
+      "path": ".codex/agents/gameplay-programmer.toml",
+      "sha256": "cd3299e61edb68b082b5d60565012a6226f5fba3dbb8b993eba5c94da61e3b47"
+    },
+    {
+      "path": ".codex/agents/godot-csharp-specialist.toml",
+      "sha256": "39803ea17db68b46ee030e4388cc332ec9a9fa7c82fd92b9187295daa6649615"
+    },
+    {
+      "path": ".codex/agents/godot-gdextension-specialist.toml",
+      "sha256": "7ec14ecf18e535f698facf4698de0524dbd7861e6db41ddbdf426c188f7a57e5"
+    },
+    {
+      "path": ".codex/agents/godot-gdscript-specialist.toml",
+      "sha256": "681ffffe394ea2e89ade2290dd96dcccebbdd34959f1ce61c4c0c86b7adc006e"
+    },
+    {
+      "path": ".codex/agents/godot-shader-specialist.toml",
+      "sha256": "78c2f6111431ac394934dc28a81ecd82df930cfc6e39c265a091c94c9ed37eb9"
+    },
+    {
+      "path": ".codex/agents/godot-specialist.toml",
+      "sha256": "47af614a3e7b95f275f638f226b003e9bd31f20f581bbff43a565d354f6aa581"
+    },
+    {
+      "path": ".codex/agents/lead-programmer.toml",
+      "sha256": "b173249c2ee8527d8e9758ce568db7398d2d6378cd036de7f1f0d70ed520e50f"
+    },
+    {
+      "path": ".codex/agents/level-designer.toml",
+      "sha256": "7f19132ebb9b526d4491fea7c55f957d76511b4a176965817def3c63c47e849a"
+    },
+    {
+      "path": ".codex/agents/live-ops-designer.toml",
+      "sha256": "1d406c262b8d94901939a14729ffdcfdfc519321f8cfe0f2eed1967d51a9da02"
+    },
+    {
+      "path": ".codex/agents/localization-lead.toml",
+      "sha256": "83c3d4878ec0bbaa3c925dda6ffdb42233964fb4895db5b207077843d1f9ddac"
+    },
+    {
+      "path": ".codex/agents/narrative-director.toml",
+      "sha256": "bdf4d2a472f1353b3ac034574c321c207ec245e2edae9e7e55412f569380f447"
+    },
+    {
+      "path": ".codex/agents/network-programmer.toml",
+      "sha256": "6a28815842cb8cc90c09d1e76aa56df870d143afc5ac1d527e910a6fcf2893a5"
+    },
+    {
+      "path": ".codex/agents/performance-analyst.toml",
+      "sha256": "279e34df7269997b4e2837d41a692a7ba7814a03b06b9891058859ac9fd9e392"
+    },
+    {
+      "path": ".codex/agents/producer.toml",
+      "sha256": "fc06cd1084e35bef0b05d4fd6d901a162e040a22be5654f049aad3a7038496fe"
+    },
+    {
+      "path": ".codex/agents/prototyper.toml",
+      "sha256": "ce2b02be5809738a7af68734fd3ed142dce6acc94296711aa46629290abb2e5b"
+    },
+    {
+      "path": ".codex/agents/qa-lead.toml",
+      "sha256": "690d048f760e977b7a151e2af0730a60664474dfaa3577dffd153c117b000a80"
+    },
+    {
+      "path": ".codex/agents/qa-tester.toml",
+      "sha256": "4bccaf67232a57da7a8db0d0abebe009026255b5a3086bd729203dbaf4681a9d"
+    },
+    {
+      "path": ".codex/agents/release-manager.toml",
+      "sha256": "68c4aea011488146adff319c0bdfd697db679a91429855cd8505a79f19628ff4"
+    },
+    {
+      "path": ".codex/agents/security-engineer.toml",
+      "sha256": "7fc4c46832fc481c7d30fe5c76e3fde288a18900be6da863083d489154a1d597"
+    },
+    {
+      "path": ".codex/agents/sound-designer.toml",
+      "sha256": "bcd715ee8aa6d0c6620a2c743c01ccf769af2d9924ffa5407cb739da07c62161"
+    },
+    {
+      "path": ".codex/agents/systems-designer.toml",
+      "sha256": "4f1e6d1517c83888420e80700bd31b8ce471c541e15fb1df526848aa150a575e"
+    },
+    {
+      "path": ".codex/agents/technical-artist.toml",
+      "sha256": "557554a2f7eca279fffed4f42d4e97c6061142a8d2144bdfb24d407f72382559"
+    },
+    {
+      "path": ".codex/agents/technical-director.toml",
+      "sha256": "2222e61da86b360e85914b34bd323e8023af2dfe528a66cfa526894a7f5b4080"
+    },
+    {
+      "path": ".codex/agents/tools-programmer.toml",
+      "sha256": "27dad13dccc47e69866ebf06df9af9c2f6dfac0fe418c319ad453e55f1331e5d"
+    },
+    {
+      "path": ".codex/agents/ue-blueprint-specialist.toml",
+      "sha256": "31a1760a2cb0781d7d2c4d7e8d690ae2cad3acfe59a89b9de6cfb39b7e13c71e"
+    },
+    {
+      "path": ".codex/agents/ue-gas-specialist.toml",
+      "sha256": "548cfd3a464ba199ae72f8d1e2b2eeced2c25730f086ac830eb1fb48ae34ff4b"
+    },
+    {
+      "path": ".codex/agents/ue-replication-specialist.toml",
+      "sha256": "b897f44ebb955f7e6fba8bbba64e306c83ea95027015e86f6024fefb605c9846"
+    },
+    {
+      "path": ".codex/agents/ue-umg-specialist.toml",
+      "sha256": "72732400db1d122d02eec259bf124083ffb5d3dd9ee5295831024c9aef297bae"
+    },
+    {
+      "path": ".codex/agents/ui-programmer.toml",
+      "sha256": "5f4c815439e49d941658d8c03111e6db39681ba1e72fde3d8e5caf268c74b735"
+    },
+    {
+      "path": ".codex/agents/unity-addressables-specialist.toml",
+      "sha256": "d4d211f33256efc2339ba85d0685fa221a3cacd553509e16daa2b7219c4b1538"
+    },
+    {
+      "path": ".codex/agents/unity-dots-specialist.toml",
+      "sha256": "83b7131ece0cd50dc34ad6755fe442fdc4c5e18fbbb4e75b027424e69b275ac0"
+    },
+    {
+      "path": ".codex/agents/unity-shader-specialist.toml",
+      "sha256": "053f12beed64ae2ce2b629dbe3a3859d64d44cc0e8815786d01172fdd09bd843"
+    },
+    {
+      "path": ".codex/agents/unity-specialist.toml",
+      "sha256": "c9e366de73c27022e5de4faca66fef157d051777dbd3ae84855781f97150dd39"
+    },
+    {
+      "path": ".codex/agents/unity-ui-specialist.toml",
+      "sha256": "11524d9dfbc85f4ad0904998b4f9f2c8c48f8dff67937099794400e4741f7213"
+    },
+    {
+      "path": ".codex/agents/unreal-specialist.toml",
+      "sha256": "ad6d9f5bef61682929074cd7bcbaa07343c350815435969776d2d6bd7847f823"
+    },
+    {
+      "path": ".codex/agents/ux-designer.toml",
+      "sha256": "6dcc74b46020c5d8b21fb437b1d0f9b73fa8edf0c405b7f59152bd9a08dc6e6c"
+    },
+    {
+      "path": ".codex/agents/world-builder.toml",
+      "sha256": "bf4d64ea2253e06b3f91a476b74fe0e604d7d1b7693fb9194072b83893b403ae"
+    },
+    {
+      "path": ".codex/agents/writer.toml",
+      "sha256": "388733d64b93b97efd50b01d137a0a5d8d080e58054fb4207a780e64e316ea09"
+    }
+  ],
+  "official_sources": [
+    {
+      "url": "https://learn.chatgpt.com/docs/agent-configuration/subagents",
+      "finding": "Standalone custom files use name, description and developer_instructions; inherit permissions; supported capability keys can be disabled. No multi_agent_v2 prerequisite stated on the fetched page."
+    },
+    {
+      "url": "https://learn.chatgpt.com/docs/config-file/config-basic",
+      "finding": "Project .codex layers require project trust; CLI flags have higher configuration precedence. This diagnostic makes no trust change."
+    }
+  ],
+  "hypotheses_not_verified": [
+    "Project custom-role discovery may differ under --ignore-user-config because user configuration is not loaded.",
+    "The CLI flag may not activate every standalone-file discovery prerequisite."
+  ]
+}

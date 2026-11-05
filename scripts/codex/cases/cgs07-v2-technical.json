@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "id": "cgs07-v2-technical",
+  "components": ["file:.claude/agents/technical-director.md"],
+  "files": {},
+  "features": ["multi_agent_v2"],
+  "read_only": true,
+  "no_writes": true,
+  "windows_sandbox": "elevated",
+  "scope": "Only actual custom technical-director discovery/spawn/child response under CLI 0.148.0 with multi_agent_v2 enabled. No generic fallback, independent game review, or all-role parity claim.",
+  "prompt": "This diagnostic explicitly authorizes exactly one custom-role child consultation to test native role loading, even though the question is small. The fixture contains all 49 unchanged project .codex/agents/*.toml files. Use the actual native delegation tool to spawn exactly one child whose custom agent type/name is technical-director (hyphenated, from its TOML name), not default, worker, explorer, or an in-session imitation. Give that child this complete bounded brief: 'No files, commands, network, external actions or further delegation. In one sentence prefixed CGS_V2_TECHNICAL_CHILD, answer whether an ADR review recommendation alone permits changing Proposed to Accepted, based on your loaded role authority. This is a consultation only; do not accept any ADR.' Wait for the real child result and report its actual handle/type and returned text. If the tool is absent, the custom type is not exposed, validation fails, or trust is rejected, report PENDING with the exact capability/error and stop. Do not rename roles, edit configuration/trust, substitute a generic child, read role text into yourself as a workaround, or claim success from file existence. No shell is required for this probe. Return a concise record explicitly naming technical-director and distinguishing an actual child tool call from a hypothesis.",
+  "expect_report": ["technical-director"]
+}

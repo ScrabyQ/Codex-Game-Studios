@@ -7,7 +7,7 @@
   "repository": "Codex-Game-Studios",
   "last_completed": "CGS-16",
   "current_task": "CGS-15",
-  "next_safe_step": "Six read-only review smokes accepted; implementation lifecycle, QA and team workflows remain active.",
+  "next_safe_step": "Native custom-role diagnostics remain PENDING; in-session equivalents are documented. CGS15/17/21 active; continue remaining Skill groups.",
   "decisions": [
     "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED.",
     "Generated content-preserving .agents mirror retains helper root math; native roles use .codex/agents/*.toml; all generation is hash-guarded; no new agent runtime."
@@ -99,10 +99,12 @@
       "commit": "dd2ac1d74551792af0b8cdeef8f107ce9037794a",
       "evidence": [
         "docs/codex/evidence/CGS-07/structural.json",
-        "docs/codex/evidence/CGS-07/behavior-checks.json"
+        "docs/codex/evidence/CGS-07/behavior-checks.json",
+        "docs/codex/evidence/CGS-07/native-v2-diagnostic.md",
+        "docs/codex/evidence/CGS-07/native-v2-assessment.json"
       ],
-      "note": "11 leadership roles verified with explicit in-session fallback; native custom-role spawning remains PENDING. Proceed with 23 specialist roles.",
-      "updated_at": "2026-11-05T10:31:24.183Z"
+      "note": "Native custom-role diagnostics remain PENDING; in-session equivalents are documented. CGS15/17/21 active; continue remaining Skill groups.",
+      "updated_at": "2026-11-05T11:55:54.787Z"
     },
     {
       "key": "CGS-08",
@@ -210,14 +212,14 @@
       "singularity_id": "T-139d68ec-7f90-4768-85c9-669740f38c17",
       "title": "CGS-16 · Skills · качество дизайна, безопасность и аудит (6)",
       "status": "COMPLETE",
-      "commit": null,
+      "commit": "b27c3bd2e6ed35c3a141cd0c4fb68059049574d5",
       "evidence": [
         "docs/codex/evidence/CGS-16/README.md",
         "docs/codex/evidence/CGS-16/checks.json",
         "docs/codex/evidence/CGS-16/traceability.json"
       ],
       "note": "Six read-only review smokes accepted; implementation lifecycle, QA and team workflows remain active.",
-      "updated_at": "2026-11-05T11:54:28.030Z"
+      "updated_at": "2026-11-05T11:55:54.719Z"
     },
     {
       "key": "CGS-17",

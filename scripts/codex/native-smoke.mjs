@@ -77,8 +77,12 @@ export function createNativeFixture(spec) {
   // Local clone preserves the actual baseline history; no network or shared object store.
   execFileSync('git', ['clone', '--local', '--no-hardlinks', '--quiet', root, fixture], { stdio: 'pipe' });
   execFileSync('git', ['remote', 'remove', 'origin'], { cwd: fixture });
-  execFileSync('git', ['config', '--local', 'user.name', 'ScrabyQ'], { cwd: fixture });
-  execFileSync('git', ['config', '--local', 'user.email', 'scraby2016@yandex.ru'], { cwd: fixture });
+  // A cloned fixture has no local identity. Preserve this checkout's choice;
+  // never ship a maintainer identity that impersonates them on another machine.
+  for (const key of ['user.name', 'user.email']) {
+    const identity = spawnSync('git', ['config', '--get', key], { cwd: root, encoding: 'utf8' });
+    if (identity.status === 0 && identity.stdout.trim()) execFileSync('git', ['config', '--local', key, identity.stdout.trim()], { cwd: fixture });
+  }
   for (const path of ['.agents', '.codex/agents', '.codex/model-policy.json', 'scripts/codex', 'AGENTS.md', 'src/AGENTS.md', 'design/AGENTS.md', 'docs/AGENTS.md', 'studio-tests/AGENTS.md', 'docs/codex/generation-manifest.json', 'docs/codex/upstream-inventory.json', 'docs/codex/migration-manifest.json']) copyTree(join(root, path), join(fixture, path));
   // Hook registration is deliberately absent: hook behavior has a separate trusted test.
   // Clone may contain it once the hook task is committed, so refuse rather than silently disable.
@@ -98,6 +102,10 @@ export function runNativeSmoke(spec, { model, output, timeout = 300000 } = {}) {
   if (spec.auto_review && spec.read_only) throw new Error('Automatic review uses workspace-write; use no_writes assertions for a read-only task intent.');
   const permissions = spec.auto_review ? ['--approve-for-me'] : ['--sandbox', spec.read_only ? 'read-only' : 'workspace-write'];
   const args = ['exec', '--ignore-user-config', '--ephemeral', '--strict-config', ...permissions, '--cd', fixture, '--model', model, '--json', '-'];
+  for (const feature of spec.features || []) {
+    if (!['multi_agent', 'multi_agent_v2'].includes(feature)) throw new Error('Unsupported native smoke feature override');
+    args.splice(1, 0, '--enable', feature);
+  }
   if (process.platform === 'win32' && spec.windows_sandbox) {
     if (!['elevated', 'unelevated', 'mxc'].includes(spec.windows_sandbox)) throw new Error('Invalid requested Windows sandbox');
     args.splice(1, 0, '-c', `windows.sandbox="${spec.windows_sandbox}"`);
