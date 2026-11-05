@@ -6,9 +6,6 @@ import {spawnSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 import {tmpdir} from 'node:os';
 const repo=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
-const evidence=fs.mkdtempSync(path.join(tmpdir(),'cgs-engine-'));
-const fixtures=path.join(evidence,'fixtures');
-fs.cpSync(path.join(repo,'tests/fixtures/engines'),fixtures,{recursive:true});
 const sha=file=>createHash('sha256').update(fs.readFileSync(file)).digest('hex');
 const put=(file,data)=>fs.writeFileSync(file,JSON.stringify(data,null,2)+'\n');
 function command(exe,args,cwd,timeout,extra){const r=spawnSync(exe,args,{cwd,encoding:'utf8',windowsHide:true,timeout,maxBuffer:10*1024*1024,env:{...process.env,...extra}});return {exit_code:r.status,signal:r.signal,error:r.error?{code:r.error.code,message:r.error.message}:null,stdout:r.stdout||'',stderr:r.stderr||''};}
@@ -18,6 +15,9 @@ if(args.length===1&&args[0]==='--help'){console.log(usage);process.exit(0);}
 for(let i=0;i<args.length;i+=2){const key=args[i],value=args[i+1];if(!['--engine','--phase','--exe','--fixture','--project','--target','--platform'].includes(key)||options.has(key)||!value||value.startsWith('--')){console.error('Invalid, duplicate or incomplete argument: '+key+'\n'+usage);process.exit(2);}options.set(key,value);}
 const engine=options.get('--engine'),phase=options.get('--phase');
 if(!['godot','unity','unreal'].includes(engine)||!phase){console.error(usage);process.exit(2);}
+const evidence=fs.mkdtempSync(path.join(tmpdir(),'cgs-engine-'));
+const fixtures=path.join(evidence,'fixtures');
+fs.cpSync(path.join(repo,'tests/fixtures/engines'),fixtures,{recursive:true});
 const root=path.join(fixtures,engine);
 if(options.has('--fixture'))fs.cpSync(path.resolve(options.get('--fixture')),root,{recursive:true});
 if(engine==='unreal' && phase==='build' && ['--fixture','--project','--target','--platform'].some(x=>!options.has(x)))throw Error('Unreal builds require --fixture, --project (relative to fixture), --target and --platform');

@@ -20,6 +20,34 @@ if (process.argv.includes('--syntax')) {
 const node = (entry, args, input) => spawnSync(process.execPath, [join(repo, 'scripts/codex', entry), ...args], { cwd: repo, input, encoding: 'utf8', env: process.env });
 const helper = (name, args = [], input) => node('helper.mjs', [name, '--root', root, ...args], input);
 const ok = r => { assert.equal(r.status, 0, `${r.stdout}\n${r.stderr}`); return r.stdout; };
+// Exercise planning, catalog observations, and ID allocation in a separate project.
+const planning=mkdtempSync(join(tmpdir(),'cgs planning regression '));
+const fixtureWrite=(p,s)=>{const target=join(planning,p);mkdirSync(resolve(target,'..'),{recursive:true});writeFileSync(target,s);};
+fixtureWrite('project.yaml','project:\n  stage: Concept\nmodes:\n  automation: autonomous\n');
+fixtureWrite('production/stage.txt','Concept\n');
+copyFileSync(join(repo,'.agents/docs/workflow-catalog.yaml'),(mkdirSync(join(planning,'.agents/docs'),{recursive:true}),join(planning,'.agents/docs/workflow-catalog.yaml')));
+fixtureWrite('production/epics/demo/story-001.md','# First\n\nStatus: Blocked\n\n## Acceptance Criteria\n- [ ] one\n');
+fixtureWrite('production/epics/demo/story-002.md','# Second\n\nStatus: Ready\n\n## Acceptance Criteria\n- [ ] two\n');
+fixtureWrite('production/sprint-status.yaml','stories:\n  - file: production/epics/demo/story-001.md\n    status: Blocked\n  - file: production/epics/demo/story-002.md\n    status: Ready\n');
+const planningHelper=(name,args=[])=>node('helper.mjs',[name,'--root',planning,...args]);
+const stageYaml=readFileSync(join(planning,'project.yaml')),stageMirror=readFileSync(join(planning,'production/stage.txt'));
+for(const scope of ['--all','--sprint']) {
+  const output=ok(planningHelper('story-facts',['--lint','--granularity','coarse',scope]));
+  assert.match(output,/stories\s+2\s/);assert.match(output,/complete\s+0/);assert.match(output,/blocked\s+1/);
+  assert.match(output,/story-001\.md/);assert.match(output,/story-002\.md/);
+}
+const catalog=ok(planningHelper('artifact-check',['--path','minimal']));assert.match(catalog,/NO_CHECK: 2/);
+const status=ok(planningHelper('story-status'));assert.match(status,/COMPLETE\s+0 of 2/);assert.match(status,/BLOCKED/);
+assert.deepEqual(readFileSync(join(planning,'project.yaml')),stageYaml);assert.deepEqual(readFileSync(join(planning,'production/stage.txt')),stageMirror);
+const registry='requirements:\n- id: TR-health-001\n  status: active\n- id: TR-health-002\n  status: deprecated\n';
+fixtureWrite('docs/architecture/tr-registry.yaml',registry);
+assert.match(ok(planningHelper('registry',['next-id','tr','health'])),/TR-health-003\s+TR-health-002/);
+assert.equal(readFileSync(join(planning,'docs/architecture/tr-registry.yaml'),'utf8'),registry);
+const decision=spawnSync(bashPath(),['-c','source "$1"; log_decision "$2" "$3" "$4" "$5" "$6" "$7"','fixture',join(repo,'.agents/hooks/yaml-helper.sh'),'team-release','Stage guard','Stop; explicit user override','Stop: no override','Automation grants no permission','stage-guard'],{cwd:planning,env:{...process.env,CGS_PROJECT_DIR:planning},encoding:'utf8'});
+assert.equal(decision.status,0,decision.stderr);
+const decisionLog=readFileSync(join(planning,'production/session-logs/decision-log.md'),'utf8');
+assert.match(decisionLog,/\*\*Chosen:\*\* Stop: no override/);assert.match(decisionLog,/\*\*Reason:\*\* Automation grants no permission/);
+assert.deepEqual(readFileSync(join(planning,'project.yaml')),stageYaml);assert.deepEqual(readFileSync(join(planning,'production/stage.txt')),stageMirror);
 mkdirSync(join(root, '.agents/docs/templates'), { recursive: true });
 mkdirSync(join(root, 'production'), { recursive: true });
 writeFileSync(join(root, 'project.yaml'), 'project:\n  stage: Concept\nmodes:\n  rigor: standard\n');

@@ -7,6 +7,7 @@ if(roles.length!==inv.counts.agent||new Set(roles).size!==roles.length)throw Err
 const tasks=[
  ['validator',['scripts/codex/validate.mjs']],
  ['hygiene regression',['tests/hygiene.mjs']],
+ ['engine CLI regression',['tests/engine-cli.mjs']],
  ['repository hygiene',['scripts/codex/hygiene.mjs']],
  ['pinned inventory',['scripts/codex/inventory.mjs','--check']],
  ...['skills','references','support','rules'].map(f=>['generator '+f,['scripts/codex/generate.mjs','--family',f,'--check','--complete']]),
