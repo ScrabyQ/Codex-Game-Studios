@@ -1,0 +1,10 @@
+{
+  "id": "harness-readonly",
+  "components": [],
+  "scope": "Native smoke harness transport and real read-only file observation only; no Skill or engine parity claim.",
+  "read_only": true,
+  "no_writes": true,
+  "files": {"qa/harness-marker.txt": "CGS-HARNESS-OBSERVED-4c29\n"},
+  "prompt": "Read qa/harness-marker.txt using a real read-only file operation and return its exact marker. Do not infer the marker from this prompt and do not write files.",
+  "expect_report": ["CGS-HARNESS-OBSERVED-4c29"]
+}

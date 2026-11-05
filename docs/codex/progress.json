@@ -5,9 +5,9 @@
   "upstream_sha": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
   "owner": "ScrabyQ",
   "repository": "Codex-Game-Studios",
-  "last_completed": "CGS-26",
-  "current_task": "CGS-05",
-  "next_safe_step": "Reference preservation verified (62 templates,8guidance,130sources); finish CGS05 generator then Skill groups. CGS07 leadership is in progress.",
+  "last_completed": "CGS-05",
+  "current_task": "CGS-07",
+  "next_safe_step": "CGS05 infrastructure verified; 74 Skill migration entries still PENDING. Proceed with roles and per-group adaptation/behavioral checks.",
   "decisions": [
     "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED.",
     "Generated content-preserving .agents mirror retains helper root math; native roles use .codex/agents/*.toml; all generation is hash-guarded; no new agent runtime."
@@ -68,9 +68,15 @@
       "key": "CGS-05",
       "singularity_id": "T-2f8d63d5-a2a7-4b6d-838f-206fc33ccbdb",
       "title": "CGS-05 · Настроить каталог Skills, адаптер и валидатор миграции",
-      "status": "PENDING",
+      "status": "COMPLETE",
       "commit": null,
-      "evidence": []
+      "evidence": [
+        "docs/codex/evidence/CGS-05/README.md",
+        "docs/codex/evidence/CGS-05/negative-results.json",
+        "docs/codex/evidence/CGS-05/native-help-fallback.json"
+      ],
+      "note": "CGS05 infrastructure verified; 74 Skill migration entries still PENDING. Proceed with roles and per-group adaptation/behavioral checks.",
+      "updated_at": "2026-11-05T10:09:25.718Z"
     },
     {
       "key": "CGS-06",
@@ -241,12 +247,12 @@
       "singularity_id": "T-437c3628-08da-400f-8ec6-9ab6ffd87e9e",
       "title": "CGS-26 · Сохранить 62 шаблона, guidance и всю справочную базу",
       "status": "COMPLETE",
-      "commit": null,
+      "commit": "5ee871b152c6faa3cc61390fc8ce7183eb67ccb8",
       "evidence": [
         "docs/codex/evidence/CGS-26/references.json"
       ],
       "note": "Reference preservation verified (62 templates,8guidance,130sources); finish CGS05 generator then Skill groups. CGS07 leadership is in progress.",
-      "updated_at": "2026-11-05T10:01:47.492Z"
+      "updated_at": "2026-11-05T10:03:37.002Z"
     },
     {
       "key": "CGS-27",

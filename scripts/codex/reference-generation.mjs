@@ -90,6 +90,7 @@ export async function referenceTargets({ root = ROOT } = {}) {
 
 async function writeAbsent(plans) {
   const divergent = [];
+  const missing = [];
   let created = 0;
   for (const plan of plans) {
     const targetPath = path.join(ROOT, plan.target);
@@ -103,12 +104,15 @@ async function writeAbsent(plans) {
       if (normalizeLf(existing) !== plan.content) divergent.push(plan.target);
       continue;
     }
-    await mkdir(path.dirname(targetPath), { recursive: true });
-    await writeFile(targetPath, plan.content, { encoding: 'utf8', flag: 'wx' });
-    created++;
+    missing.push({ plan, targetPath });
   }
   if (divergent.length) {
     throw new Error(`Refusing to overwrite ${divergent.length} existing divergent target(s):\n${divergent.join('\n')}`);
+  }
+  for (const { plan, targetPath } of missing) {
+    await mkdir(path.dirname(targetPath), { recursive: true });
+    await writeFile(targetPath, plan.content, { encoding: 'utf8', flag: 'wx' });
+    created++;
   }
   return created;
 }

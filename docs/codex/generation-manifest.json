@@ -1,0 +1,2353 @@
+{
+  "schema": 1,
+  "source_commit": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
+  "entries": [
+    {
+      "id": "file:.claude/docs/agent-roster.md=>.agents/docs/agent-roster.md",
+      "source": ".claude/docs/agent-roster.md",
+      "source_sha256": "d1625dbd35a2d57936cc818d31989bbf6bd22398bfd8b43993181fd18cf75a2d",
+      "target": ".agents/docs/agent-roster.md",
+      "target_sha256": "d1625dbd35a2d57936cc818d31989bbf6bd22398bfd8b43993181fd18cf75a2d",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/agent-teams.md=>.agents/docs/agent-teams.md",
+      "source": ".claude/docs/agent-teams.md",
+      "source_sha256": "a47a929581e22b9e45d131df21055ee1aebc40854d55f5f66b783b7331682638",
+      "target": ".agents/docs/agent-teams.md",
+      "target_sha256": "c009059d9b36a0047998675d5c1b838329020d88164554220a04590324394fd8",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-runtime-bridge-agent-teams-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/automation-modes.md=>.agents/docs/automation-modes.md",
+      "source": ".claude/docs/automation-modes.md",
+      "source_sha256": "dee6d368627c081dd0c224acca21d9e1a6bc76575451e69e5f25aba52040d9e8",
+      "target": ".agents/docs/automation-modes.md",
+      "target_sha256": "426363a2452b6829657e15f9efc6b0c3d4f99c615c4dcdc3f99b0afe9658abcb",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-doc-reference-paths-v1",
+        "codex-runtime-bridge-automation-modes-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/CLAUDE-local-template.md=>.agents/docs/CLAUDE-local-template.md",
+      "source": ".claude/docs/CLAUDE-local-template.md",
+      "source_sha256": "18158b03f609cafb3abdef3f70f21f3ee4aefc2c8d5c7df623d9f46c7f9db435",
+      "target": ".agents/docs/CLAUDE-local-template.md",
+      "target_sha256": "c8b4b6406ccb3dc5c5926c7000ce1075d7e0a74c6c8840326756944b6680ad18",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-doc-reference-paths-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/code-root-resolution.md=>.agents/docs/code-root-resolution.md",
+      "source": ".claude/docs/code-root-resolution.md",
+      "source_sha256": "c992bb8e40822dbdb638b000c79a9313dca07d492c248072cac967b73351d4fc",
+      "target": ".agents/docs/code-root-resolution.md",
+      "target_sha256": "6b4412f26631463a701012f83889d62bf1d1fc96c1c331503d214fc033715aaf",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-doc-reference-paths-v1",
+        "codex-runtime-path-bridge-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/coding-standards.md=>.agents/docs/coding-standards.md",
+      "source": ".claude/docs/coding-standards.md",
+      "source_sha256": "d481dcd85afa98d4c19d4af18c5bb296d56e6677612a68da4ef2077d72eaaf90",
+      "target": ".agents/docs/coding-standards.md",
+      "target_sha256": "e42660048fb896cf186e9fdfdaad87239e44147ad60dbd114e26798bf30fd6bd",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-doc-reference-paths-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/config-resolution.md=>.agents/docs/config-resolution.md",
+      "source": ".claude/docs/config-resolution.md",
+      "source_sha256": "2881c5db839c5b65acea8378d3810a1a80d8883226cb3e830b2199877faba3a1",
+      "target": ".agents/docs/config-resolution.md",
+      "target_sha256": "b01a536b95996b924efaf28da069b90f5412ed8760299bebdea45ecc7b2433b0",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-doc-reference-paths-v1",
+        "codex-runtime-bridge-config-resolution-v1",
+        "codex-runtime-path-bridge-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/context-management.md=>.agents/docs/context-management.md",
+      "source": ".claude/docs/context-management.md",
+      "source_sha256": "5ee14ebc9aeb7b130bab5607e70e1dd9520e86827778635e09f94a2e57206f22",
+      "target": ".agents/docs/context-management.md",
+      "target_sha256": "2a1444b38a318b1479f4c3df360ecb83a6a9ab90a7ba08770386d7da75c047df",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-doc-reference-paths-v1",
+        "codex-runtime-bridge-context-management-v1",
+        "codex-runtime-path-bridge-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/coordination-rules.md=>.agents/docs/coordination-rules.md",
+      "source": ".claude/docs/coordination-rules.md",
+      "source_sha256": "188ff1e8b93355af4a578253e637dd7926b804919c68eeae9c9f47a987d73792",
+      "target": ".agents/docs/coordination-rules.md",
+      "target_sha256": "e6a99fed89a225e207ee0754c8cac10e6c1bf1f84d4a776982169de6e8e53b68",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-doc-reference-paths-v1",
+        "codex-runtime-bridge-coordination-rules-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/director-gates.md=>.agents/docs/director-gates.md",
+      "source": ".claude/docs/director-gates.md",
+      "source_sha256": "a7af3491f86db4c9a2430512f56aa0073d32db5ed759b3a7c4213527caf93745",
+      "target": ".agents/docs/director-gates.md",
+      "target_sha256": "e6e63c645cbf0158c7408a37432832765a02de6b42bda959f2731a5c72f7a128",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-doc-reference-paths-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/director-gates/ad-art-bible.md=>.agents/docs/director-gates/ad-art-bible.md",
+      "source": ".claude/docs/director-gates/ad-art-bible.md",
+      "source_sha256": "443ef0fd490c50db0ffc9ffb6f1c6e8632fb7426b9cb93c8d8f0ed1b8c78e3f3",
+      "target": ".agents/docs/director-gates/ad-art-bible.md",
+      "target_sha256": "ad78114979aec8cc2fa491d4bcc4e5c0ffbfbece2716e77d9c2da6c3aec36186",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-doc-reference-paths-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/director-gates/ad-concept-visual.md=>.agents/docs/director-gates/ad-concept-visual.md",
+      "source": ".claude/docs/director-gates/ad-concept-visual.md",
+      "source_sha256": "cc27b36bf0b0d4592c39873f18d04bfe8ca92fabc0c2642887bbfe8389e6ec2c",
+      "target": ".agents/docs/director-gates/ad-concept-visual.md",
+      "target_sha256": "cc27b36bf0b0d4592c39873f18d04bfe8ca92fabc0c2642887bbfe8389e6ec2c",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/director-gates/ad-phase-gate.md=>.agents/docs/director-gates/ad-phase-gate.md",
+      "source": ".claude/docs/director-gates/ad-phase-gate.md",
+      "source_sha256": "8427a273639a1b732821706fcbeba2d0206bbd791304720551344313c3b61919",
+      "target": ".agents/docs/director-gates/ad-phase-gate.md",
+      "target_sha256": "8427a273639a1b732821706fcbeba2d0206bbd791304720551344313c3b61919",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/director-gates/ad-visual.md=>.agents/docs/director-gates/ad-visual.md",
+      "source": ".claude/docs/director-gates/ad-visual.md",
+      "source_sha256": "09801e2ed6b23576fb7aa4f256ee30abf922386011a40ddaf61171a796e43205",
+      "target": ".agents/docs/director-gates/ad-visual.md",
+      "target_sha256": "09801e2ed6b23576fb7aa4f256ee30abf922386011a40ddaf61171a796e43205",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/director-gates/cd-gdd-align.md=>.agents/docs/director-gates/cd-gdd-align.md",
+      "source": ".claude/docs/director-gates/cd-gdd-align.md",
+      "source_sha256": "04dca340d431770dcafa3849f5a4acf0852de70aa462d6b52780614ca9aff3f0",
+      "target": ".agents/docs/director-gates/cd-gdd-align.md",
+      "target_sha256": "04dca340d431770dcafa3849f5a4acf0852de70aa462d6b52780614ca9aff3f0",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/director-gates/cd-narrative.md=>.agents/docs/director-gates/cd-narrative.md",
+      "source": ".claude/docs/director-gates/cd-narrative.md",
+      "source_sha256": "2b3653b0dad85f750547be363bd7f04b48041cd6e52918be7603c559662791c7",
+      "target": ".agents/docs/director-gates/cd-narrative.md",
+      "target_sha256": "2b3653b0dad85f750547be363bd7f04b48041cd6e52918be7603c559662791c7",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/director-gates/cd-phase-gate.md=>.agents/docs/director-gates/cd-phase-gate.md",
+      "source": ".claude/docs/director-gates/cd-phase-gate.md",
+      "source_sha256": "e5643d6838cb0169b38dfafdfbdd025ca7f87723b03c1922daa1c1e5b993d345",
+      "target": ".agents/docs/director-gates/cd-phase-gate.md",
+      "target_sha256": "e5643d6838cb0169b38dfafdfbdd025ca7f87723b03c1922daa1c1e5b993d345",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/director-gates/cd-pillars.md=>.agents/docs/director-gates/cd-pillars.md",
+      "source": ".claude/docs/director-gates/cd-pillars.md",
+      "source_sha256": "c3d89c7639b51d947845d202fb73f2a6d5d9dc0b1f2494c8a59e479d9167d7d4",
+      "target": ".agents/docs/director-gates/cd-pillars.md",
+      "target_sha256": "c3d89c7639b51d947845d202fb73f2a6d5d9dc0b1f2494c8a59e479d9167d7d4",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/director-gates/cd-playtest.md=>.agents/docs/director-gates/cd-playtest.md",
+      "source": ".claude/docs/director-gates/cd-playtest.md",
+      "source_sha256": "c06460005440c2659dc7615bb9b408f240ec80d4415e0f6e90631d532d548cdc",
+      "target": ".agents/docs/director-gates/cd-playtest.md",
+      "target_sha256": "c06460005440c2659dc7615bb9b408f240ec80d4415e0f6e90631d532d548cdc",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/director-gates/cd-systems.md=>.agents/docs/director-gates/cd-systems.md",
+      "source": ".claude/docs/director-gates/cd-systems.md",
+      "source_sha256": "6ffe572cf8269854e9cdc13c3154107eaa05fe0f2b6b89c08f5ebb5b0a33c89a",
+      "target": ".agents/docs/director-gates/cd-systems.md",
+      "target_sha256": "6ffe572cf8269854e9cdc13c3154107eaa05fe0f2b6b89c08f5ebb5b0a33c89a",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/director-gates/lp-code-review.md=>.agents/docs/director-gates/lp-code-review.md",
+      "source": ".claude/docs/director-gates/lp-code-review.md",
+      "source_sha256": "015e05c374db311f4c97d1bf9c5745aa09e7cb66bb3da076ec975f7444a0c3bb",
+      "target": ".agents/docs/director-gates/lp-code-review.md",
+      "target_sha256": "015e05c374db311f4c97d1bf9c5745aa09e7cb66bb3da076ec975f7444a0c3bb",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/director-gates/lp-feasibility.md=>.agents/docs/director-gates/lp-feasibility.md",
+      "source": ".claude/docs/director-gates/lp-feasibility.md",
+      "source_sha256": "a4d67c7e79087eceed0375e7c4c3fc8794515da0acbc6faf45305238c3f78684",
+      "target": ".agents/docs/director-gates/lp-feasibility.md",
+      "target_sha256": "a4d67c7e79087eceed0375e7c4c3fc8794515da0acbc6faf45305238c3f78684",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/director-gates/nd-consistency.md=>.agents/docs/director-gates/nd-consistency.md",
+      "source": ".claude/docs/director-gates/nd-consistency.md",
+      "source_sha256": "b2fcbfbf66a392d3c8fc2d89391b0f00e8ed02830a5e80a37c706d2739cb8bf7",
+      "target": ".agents/docs/director-gates/nd-consistency.md",
+      "target_sha256": "b2fcbfbf66a392d3c8fc2d89391b0f00e8ed02830a5e80a37c706d2739cb8bf7",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/director-gates/pr-epic.md=>.agents/docs/director-gates/pr-epic.md",
+      "source": ".claude/docs/director-gates/pr-epic.md",
+      "source_sha256": "250bf9fb1d22c119c9f90716ffee6774d1a1f97c9128239448c438213686a02f",
+      "target": ".agents/docs/director-gates/pr-epic.md",
+      "target_sha256": "250bf9fb1d22c119c9f90716ffee6774d1a1f97c9128239448c438213686a02f",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/director-gates/pr-milestone.md=>.agents/docs/director-gates/pr-milestone.md",
+      "source": ".claude/docs/director-gates/pr-milestone.md",
+      "source_sha256": "6951266c747f8991ab053dd083ed8bceb4ae759d5ecb5c8451d37d69d6754dc6",
+      "target": ".agents/docs/director-gates/pr-milestone.md",
+      "target_sha256": "6951266c747f8991ab053dd083ed8bceb4ae759d5ecb5c8451d37d69d6754dc6",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/director-gates/pr-phase-gate.md=>.agents/docs/director-gates/pr-phase-gate.md",
+      "source": ".claude/docs/director-gates/pr-phase-gate.md",
+      "source_sha256": "799ad36dcc4e37eb230f82ec8ae38468da8116737c12783322d823b7a36deb7a",
+      "target": ".agents/docs/director-gates/pr-phase-gate.md",
+      "target_sha256": "799ad36dcc4e37eb230f82ec8ae38468da8116737c12783322d823b7a36deb7a",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/director-gates/pr-scope.md=>.agents/docs/director-gates/pr-scope.md",
+      "source": ".claude/docs/director-gates/pr-scope.md",
+      "source_sha256": "8c48f9903804ef1a1eba266aa68da69804752045c2d3b1b60525a07db5ee2a5a",
+      "target": ".agents/docs/director-gates/pr-scope.md",
+      "target_sha256": "8c48f9903804ef1a1eba266aa68da69804752045c2d3b1b60525a07db5ee2a5a",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/director-gates/pr-sprint.md=>.agents/docs/director-gates/pr-sprint.md",
+      "source": ".claude/docs/director-gates/pr-sprint.md",
+      "source_sha256": "855c719828f92d3788a22761b5cd2a9b2d008ffd0645e81b64fd78da6e374bf1",
+      "target": ".agents/docs/director-gates/pr-sprint.md",
+      "target_sha256": "855c719828f92d3788a22761b5cd2a9b2d008ffd0645e81b64fd78da6e374bf1",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/director-gates/ql-story-ready.md=>.agents/docs/director-gates/ql-story-ready.md",
+      "source": ".claude/docs/director-gates/ql-story-ready.md",
+      "source_sha256": "80d9b1c0de13915c4107beb32bb2cf21357bda01fefbf43f8ddbde9622846f11",
+      "target": ".agents/docs/director-gates/ql-story-ready.md",
+      "target_sha256": "80d9b1c0de13915c4107beb32bb2cf21357bda01fefbf43f8ddbde9622846f11",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/director-gates/ql-test-coverage.md=>.agents/docs/director-gates/ql-test-coverage.md",
+      "source": ".claude/docs/director-gates/ql-test-coverage.md",
+      "source_sha256": "70f04f2cccfb96d698b5f9e94c855ed08dd4a28e978ced3d26a901a5d9afe75f",
+      "target": ".agents/docs/director-gates/ql-test-coverage.md",
+      "target_sha256": "70f04f2cccfb96d698b5f9e94c855ed08dd4a28e978ced3d26a901a5d9afe75f",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/director-gates/td-adr.md=>.agents/docs/director-gates/td-adr.md",
+      "source": ".claude/docs/director-gates/td-adr.md",
+      "source_sha256": "a793f3b29a82e3ac7c11254456125f66c181161b762c18e80bc6c793597ebc34",
+      "target": ".agents/docs/director-gates/td-adr.md",
+      "target_sha256": "a793f3b29a82e3ac7c11254456125f66c181161b762c18e80bc6c793597ebc34",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/director-gates/td-architecture.md=>.agents/docs/director-gates/td-architecture.md",
+      "source": ".claude/docs/director-gates/td-architecture.md",
+      "source_sha256": "059bdb845813471e397e65d95722a848628339870fe5e7174ece44b530918da8",
+      "target": ".agents/docs/director-gates/td-architecture.md",
+      "target_sha256": "059bdb845813471e397e65d95722a848628339870fe5e7174ece44b530918da8",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/director-gates/td-change-impact.md=>.agents/docs/director-gates/td-change-impact.md",
+      "source": ".claude/docs/director-gates/td-change-impact.md",
+      "source_sha256": "f5cd7a8bc3c03dd024a8e2480347f78f3d7947ab9083e8c1cc095562202691e3",
+      "target": ".agents/docs/director-gates/td-change-impact.md",
+      "target_sha256": "f5cd7a8bc3c03dd024a8e2480347f78f3d7947ab9083e8c1cc095562202691e3",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/director-gates/td-engine-risk.md=>.agents/docs/director-gates/td-engine-risk.md",
+      "source": ".claude/docs/director-gates/td-engine-risk.md",
+      "source_sha256": "f529389fe90cf5c2dc19bb8647266fef3dc0d2c86f2b983ac58eada37e3afb66",
+      "target": ".agents/docs/director-gates/td-engine-risk.md",
+      "target_sha256": "f529389fe90cf5c2dc19bb8647266fef3dc0d2c86f2b983ac58eada37e3afb66",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/director-gates/td-feasibility.md=>.agents/docs/director-gates/td-feasibility.md",
+      "source": ".claude/docs/director-gates/td-feasibility.md",
+      "source_sha256": "a9fc59b79406daa233c5e03acc4731569441cccf9310e3184ed162e484154070",
+      "target": ".agents/docs/director-gates/td-feasibility.md",
+      "target_sha256": "a9fc59b79406daa233c5e03acc4731569441cccf9310e3184ed162e484154070",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/director-gates/td-manifest.md=>.agents/docs/director-gates/td-manifest.md",
+      "source": ".claude/docs/director-gates/td-manifest.md",
+      "source_sha256": "4f5415bdbefa53e615ae233e02a125a9133c1c926d839dad6dad02070f0fd97d",
+      "target": ".agents/docs/director-gates/td-manifest.md",
+      "target_sha256": "4f5415bdbefa53e615ae233e02a125a9133c1c926d839dad6dad02070f0fd97d",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/director-gates/td-phase-gate.md=>.agents/docs/director-gates/td-phase-gate.md",
+      "source": ".claude/docs/director-gates/td-phase-gate.md",
+      "source_sha256": "564aaecfc69f5265a4eabf4da52a55425a2abf6495f89677169e74f5f9437cdb",
+      "target": ".agents/docs/director-gates/td-phase-gate.md",
+      "target_sha256": "564aaecfc69f5265a4eabf4da52a55425a2abf6495f89677169e74f5f9437cdb",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/director-gates/td-system-boundary.md=>.agents/docs/director-gates/td-system-boundary.md",
+      "source": ".claude/docs/director-gates/td-system-boundary.md",
+      "source_sha256": "1829a37b6eb780ca64b842708c50f0ed24628c5eec6bac23151c9916129663f5",
+      "target": ".agents/docs/director-gates/td-system-boundary.md",
+      "target_sha256": "1829a37b6eb780ca64b842708c50f0ed24628c5eec6bac23151c9916129663f5",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/directory-structure.md=>.agents/docs/directory-structure.md",
+      "source": ".claude/docs/directory-structure.md",
+      "source_sha256": "b7a84db3f2ee1ef57ea2a0ef1adfa53bb7b88b024c621a3661237e2ca4a2c31c",
+      "target": ".agents/docs/directory-structure.md",
+      "target_sha256": "b7a84db3f2ee1ef57ea2a0ef1adfa53bb7b88b024c621a3661237e2ca4a2c31c",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/effects-map.md=>.agents/docs/effects-map.md",
+      "source": ".claude/docs/effects-map.md",
+      "source_sha256": "18aa505d7decdf16b8d25d07a6c1cb8d41411a89bc5f3a86e0c06d0da730273e",
+      "target": ".agents/docs/effects-map.md",
+      "target_sha256": "f61f2577b81a39cb0753f97fb2e1ea305ec5df2b5fc2176ff46a8f92807af59d",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-doc-reference-paths-v1",
+        "codex-runtime-path-bridge-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/error-recovery-protocol.md=>.agents/docs/error-recovery-protocol.md",
+      "source": ".claude/docs/error-recovery-protocol.md",
+      "source_sha256": "e98a3b47f921e9c83f3ef586e564382a15aaf34e8cf8648938ba6443eea1c1c9",
+      "target": ".agents/docs/error-recovery-protocol.md",
+      "target_sha256": "3bcb9a16fd300dcd2c7919202f1f7f2c595273f2770bd11b2a5c2ee864184963",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-runtime-bridge-error-recovery-protocol-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/hooks-reference.md=>.agents/docs/hooks-reference.md",
+      "source": ".claude/docs/hooks-reference.md",
+      "source_sha256": "004d7442ba5376470f0f60f840151fe4b9282583a596dad39de2267924eea0bc",
+      "target": ".agents/docs/hooks-reference.md",
+      "target_sha256": "4b4c7d6ee95e952bd0211d85d5f9546f708ab75cc8775bfadd146828743e9dde",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-doc-reference-paths-v1",
+        "codex-runtime-bridge-hooks-reference-v1",
+        "codex-runtime-path-bridge-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/hooks-reference/hook-input-schemas.md=>.agents/docs/hooks-reference/hook-input-schemas.md",
+      "source": ".claude/docs/hooks-reference/hook-input-schemas.md",
+      "source_sha256": "9a5c9942043791e2437a6a2274b92c7835c6c984975d845363c80faacc868db8",
+      "target": ".agents/docs/hooks-reference/hook-input-schemas.md",
+      "target_sha256": "2c467f821ffe130ce66eb09c756ef2ee2967ddb9a420831512bfaf0322ea81e2",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-runtime-path-bridge-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/hooks-reference/post-merge-asset-validation.md=>.agents/docs/hooks-reference/post-merge-asset-validation.md",
+      "source": ".claude/docs/hooks-reference/post-merge-asset-validation.md",
+      "source_sha256": "ccf0caa75339ec1b9a1b0528adfb0a5dc04f08ae045cef3a3b903e439973fcd2",
+      "target": ".agents/docs/hooks-reference/post-merge-asset-validation.md",
+      "target_sha256": "ccf0caa75339ec1b9a1b0528adfb0a5dc04f08ae045cef3a3b903e439973fcd2",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/hooks-reference/post-sprint-retrospective.md=>.agents/docs/hooks-reference/post-sprint-retrospective.md",
+      "source": ".claude/docs/hooks-reference/post-sprint-retrospective.md",
+      "source_sha256": "022cecf8189033ea3b1c3b9e7518ad26a89ea2791b7c91186300536497afd14a",
+      "target": ".agents/docs/hooks-reference/post-sprint-retrospective.md",
+      "target_sha256": "022cecf8189033ea3b1c3b9e7518ad26a89ea2791b7c91186300536497afd14a",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/hooks-reference/pre-commit-code-quality.md=>.agents/docs/hooks-reference/pre-commit-code-quality.md",
+      "source": ".claude/docs/hooks-reference/pre-commit-code-quality.md",
+      "source_sha256": "c6e63366e6a172161dde45b6556e5b2985de640db0cb4d8d52af3675cb380b1c",
+      "target": ".agents/docs/hooks-reference/pre-commit-code-quality.md",
+      "target_sha256": "3fc480e1a57b4de698dea58df5d8a6a715c589fcc5c5aecaf640292782ea624b",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-doc-reference-paths-v1",
+        "codex-runtime-path-bridge-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/hooks-reference/pre-commit-design-check.md=>.agents/docs/hooks-reference/pre-commit-design-check.md",
+      "source": ".claude/docs/hooks-reference/pre-commit-design-check.md",
+      "source_sha256": "6b1e955cf730fec7790e1f0e90c364f92903a58bf1cc9236f34256113235cb84",
+      "target": ".agents/docs/hooks-reference/pre-commit-design-check.md",
+      "target_sha256": "6b1e955cf730fec7790e1f0e90c364f92903a58bf1cc9236f34256113235cb84",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/hooks-reference/pre-push-test-gate.md=>.agents/docs/hooks-reference/pre-push-test-gate.md",
+      "source": ".claude/docs/hooks-reference/pre-push-test-gate.md",
+      "source_sha256": "d38d29a7267c3bd2eda3e3a5c2f7d8581ed8cb916e629ac0c59e47fb1d6b4d1a",
+      "target": ".agents/docs/hooks-reference/pre-push-test-gate.md",
+      "target_sha256": "d38d29a7267c3bd2eda3e3a5c2f7d8581ed8cb916e629ac0c59e47fb1d6b4d1a",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/model-tiers.md=>.agents/docs/model-tiers.md",
+      "source": ".claude/docs/model-tiers.md",
+      "source_sha256": "d0195dfd21964f4ee173a3fa63e973c73e9fd6ffbd5fc0d0eb11ced7c94080a1",
+      "target": ".agents/docs/model-tiers.md",
+      "target_sha256": "39562e274450d32539dc83fa6c2f1ecfd49ee0d7f65a786e785729b096f2d0de",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-runtime-bridge-model-tiers-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/quick-start.md=>.agents/docs/quick-start.md",
+      "source": ".claude/docs/quick-start.md",
+      "source_sha256": "c099b40d5016719af01eb0e398b6b2bc65aa4321abe1bf284e8fc1a4a5c67560",
+      "target": ".agents/docs/quick-start.md",
+      "target_sha256": "f4d043774e510ea0f4e5973b30853b5ad7f35cbdf899842b6a35728592abfe17",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-doc-reference-paths-v1",
+        "codex-runtime-bridge-quick-start-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/rules-reference.md=>.agents/docs/rules-reference.md",
+      "source": ".claude/docs/rules-reference.md",
+      "source_sha256": "6cc54f31c2f7bfa1213ae221888dd0464c8fba9a62ea03ec7538917175133ac8",
+      "target": ".agents/docs/rules-reference.md",
+      "target_sha256": "6ecacc6fbf826f161cf422d68da8570b9af94f62f256d51760bb483b48193087",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-runtime-path-bridge-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/run-and-observe.md=>.agents/docs/run-and-observe.md",
+      "source": ".claude/docs/run-and-observe.md",
+      "source_sha256": "d84bf2ceb4b532fbc1a741ecd05cb50b1a463df54ef3e7faa6d79eaf6b7e1364",
+      "target": ".agents/docs/run-and-observe.md",
+      "target_sha256": "1343fe1d38cef6d6c20321707f52f3134e1d026a60654ebb00aa3d632b1973c0",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-doc-reference-paths-v1",
+        "codex-runtime-path-bridge-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/settings-guidance.md=>.agents/docs/settings-guidance.md",
+      "source": ".claude/docs/settings-guidance.md",
+      "source_sha256": "6b6b030f555e5512b6717ae7cfd1acd42a7c48e4794c7335f829c27d344d9fc4",
+      "target": ".agents/docs/settings-guidance.md",
+      "target_sha256": "6b6b030f555e5512b6717ae7cfd1acd42a7c48e4794c7335f829c27d344d9fc4",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/settings-local-template.md=>.agents/docs/settings-local-template.md",
+      "source": ".claude/docs/settings-local-template.md",
+      "source_sha256": "d2301fed67b7443f10426306fa4523c7d66f5fdbf685a3d731ec67108ad2d72b",
+      "target": ".agents/docs/settings-local-template.md",
+      "target_sha256": "d2301fed67b7443f10426306fa4523c7d66f5fdbf685a3d731ec67108ad2d72b",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/setup-requirements.md=>.agents/docs/setup-requirements.md",
+      "source": ".claude/docs/setup-requirements.md",
+      "source_sha256": "f9bfbf70a6389e737599cfe695cbac07de70071e7bccc2e0613f335cd2ec48dc",
+      "target": ".agents/docs/setup-requirements.md",
+      "target_sha256": "e165413efed83119c130da96d43d16d6be99d55b91b2c9f66bbfbdddb3ca2905",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-runtime-bridge-setup-requirements-v1",
+        "codex-runtime-path-bridge-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/skills-reference.md=>.agents/docs/skills-reference.md",
+      "source": ".claude/docs/skills-reference.md",
+      "source_sha256": "3ec77ab2e7b06f86c7f4585f3cd123fb12b562480cef854c0364cee615bc4ed6",
+      "target": ".agents/docs/skills-reference.md",
+      "target_sha256": "3ec77ab2e7b06f86c7f4585f3cd123fb12b562480cef854c0364cee615bc4ed6",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/technical-preferences.md=>.agents/docs/technical-preferences.md",
+      "source": ".claude/docs/technical-preferences.md",
+      "source_sha256": "1701ea6e2a853f299ce687b5efe18fbd860feecc3b23ca4cc616e8572a1e1dc3",
+      "target": ".agents/docs/technical-preferences.md",
+      "target_sha256": "1701ea6e2a853f299ce687b5efe18fbd860feecc3b23ca4cc616e8572a1e1dc3",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/accessibility-requirements.md=>.agents/docs/templates/accessibility-requirements.md",
+      "source": ".claude/docs/templates/accessibility-requirements.md",
+      "source_sha256": "cc0ca46ab59d6aeb9d59166b8da3ef094053808f5e7d2e8bf240934077c0455f",
+      "target": ".agents/docs/templates/accessibility-requirements.md",
+      "target_sha256": "ff3efe009021f5cc9180bc3b8a7d391ca558fa567477fcc7fdd8fdc248f84c9e",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-doc-reference-paths-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/adoption-plan.md=>.agents/docs/templates/adoption-plan.md",
+      "source": ".claude/docs/templates/adoption-plan.md",
+      "source_sha256": "6c93f6a4be3ab97aa1d63a340c102db3aae25ae0c26aa09f0aae8cf5fad5bd09",
+      "target": ".agents/docs/templates/adoption-plan.md",
+      "target_sha256": "6c93f6a4be3ab97aa1d63a340c102db3aae25ae0c26aa09f0aae8cf5fad5bd09",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/adoption-summary.md=>.agents/docs/templates/adoption-summary.md",
+      "source": ".claude/docs/templates/adoption-summary.md",
+      "source_sha256": "c8aa0cadc36c0526f340e228a2351d4e4af93bc53fccf20d3ed823150d6ac1c5",
+      "target": ".agents/docs/templates/adoption-summary.md",
+      "target_sha256": "c8aa0cadc36c0526f340e228a2351d4e4af93bc53fccf20d3ed823150d6ac1c5",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/architecture-decision-record.md=>.agents/docs/templates/architecture-decision-record.md",
+      "source": ".claude/docs/templates/architecture-decision-record.md",
+      "source_sha256": "6a951a46a0b06f98b8e89d8ddeb04c27b9f5f29a9c85d25d74ced6bda1016467",
+      "target": ".agents/docs/templates/architecture-decision-record.md",
+      "target_sha256": "6a951a46a0b06f98b8e89d8ddeb04c27b9f5f29a9c85d25d74ced6bda1016467",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/architecture-doc-from-code.md=>.agents/docs/templates/architecture-doc-from-code.md",
+      "source": ".claude/docs/templates/architecture-doc-from-code.md",
+      "source_sha256": "120a052b06f0f687fd3e5d2fb9fbe796cae81626dd0d6bcfc3fd341f67abf982",
+      "target": ".agents/docs/templates/architecture-doc-from-code.md",
+      "target_sha256": "120a052b06f0f687fd3e5d2fb9fbe796cae81626dd0d6bcfc3fd341f67abf982",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/architecture-traceability.md=>.agents/docs/templates/architecture-traceability.md",
+      "source": ".claude/docs/templates/architecture-traceability.md",
+      "source_sha256": "ab11b121a108af6c9f4e5cd232189318fafb2105fd00589c7ea695e79f02b00e",
+      "target": ".agents/docs/templates/architecture-traceability.md",
+      "target_sha256": "ab11b121a108af6c9f4e5cd232189318fafb2105fd00589c7ea695e79f02b00e",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/art-bible.md=>.agents/docs/templates/art-bible.md",
+      "source": ".claude/docs/templates/art-bible.md",
+      "source_sha256": "a28c30415db944f38fb08c27c05543cc79f207ccfd9b5343680b15ab7665e6f6",
+      "target": ".agents/docs/templates/art-bible.md",
+      "target_sha256": "a28c30415db944f38fb08c27c05543cc79f207ccfd9b5343680b15ab7665e6f6",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/bug-closure-record.md=>.agents/docs/templates/bug-closure-record.md",
+      "source": ".claude/docs/templates/bug-closure-record.md",
+      "source_sha256": "a07cde04ca837053fe611171c81b88399f38ee95ceb3b476353f1147700febcb",
+      "target": ".agents/docs/templates/bug-closure-record.md",
+      "target_sha256": "a07cde04ca837053fe611171c81b88399f38ee95ceb3b476353f1147700febcb",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/bug-report.md=>.agents/docs/templates/bug-report.md",
+      "source": ".claude/docs/templates/bug-report.md",
+      "source_sha256": "ed115a7509082066bb4e059dac21183b674c0251979c9ca43e1aa7a717e8fd83",
+      "target": ".agents/docs/templates/bug-report.md",
+      "target_sha256": "ed115a7509082066bb4e059dac21183b674c0251979c9ca43e1aa7a717e8fd83",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/certification-console.md=>.agents/docs/templates/certification-console.md",
+      "source": ".claude/docs/templates/certification-console.md",
+      "source_sha256": "f635142588ec4d53ed863f4e4032c35db56f465f3d74ded493d12d33d19a51af",
+      "target": ".agents/docs/templates/certification-console.md",
+      "target_sha256": "f635142588ec4d53ed863f4e4032c35db56f465f3d74ded493d12d33d19a51af",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/certification-itch.md=>.agents/docs/templates/certification-itch.md",
+      "source": ".claude/docs/templates/certification-itch.md",
+      "source_sha256": "bc1ffb11cc7f69bbb0ec7956d6a2a4c32baac10981c106705c6da7fffa8fa033",
+      "target": ".agents/docs/templates/certification-itch.md",
+      "target_sha256": "bc1ffb11cc7f69bbb0ec7956d6a2a4c32baac10981c106705c6da7fffa8fa033",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/certification-none.md=>.agents/docs/templates/certification-none.md",
+      "source": ".claude/docs/templates/certification-none.md",
+      "source_sha256": "705bbdb75a0d416a9b423bc887d667796f406aaec68a3776625e9b4392d4751f",
+      "target": ".agents/docs/templates/certification-none.md",
+      "target_sha256": "705bbdb75a0d416a9b423bc887d667796f406aaec68a3776625e9b4392d4751f",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/certification-steam.md=>.agents/docs/templates/certification-steam.md",
+      "source": ".claude/docs/templates/certification-steam.md",
+      "source_sha256": "f07458b6f77820c557bb6ba29ae031db2d5754c3aebe48a09011007e4c93f521",
+      "target": ".agents/docs/templates/certification-steam.md",
+      "target_sha256": "f07458b6f77820c557bb6ba29ae031db2d5754c3aebe48a09011007e4c93f521",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/certification-unknown.md=>.agents/docs/templates/certification-unknown.md",
+      "source": ".claude/docs/templates/certification-unknown.md",
+      "source_sha256": "e845aa4171a019e82c0322ac0137fc627b5d68f1a7159e2691cabc066cc1ecdc",
+      "target": ".agents/docs/templates/certification-unknown.md",
+      "target_sha256": "e845aa4171a019e82c0322ac0137fc627b5d68f1a7159e2691cabc066cc1ecdc",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/changelog-internal.md=>.agents/docs/templates/changelog-internal.md",
+      "source": ".claude/docs/templates/changelog-internal.md",
+      "source_sha256": "c49595e5fac70f0920f3753b6c3c315a9fa0c94e107444095b9a336e938c8210",
+      "target": ".agents/docs/templates/changelog-internal.md",
+      "target_sha256": "c49595e5fac70f0920f3753b6c3c315a9fa0c94e107444095b9a336e938c8210",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/changelog-template.md=>.agents/docs/templates/changelog-template.md",
+      "source": ".claude/docs/templates/changelog-template.md",
+      "source_sha256": "cc9a45f7b0dbede27fba78745c754f5fe29b7c90e4ea641a346191daba9457a1",
+      "target": ".agents/docs/templates/changelog-template.md",
+      "target_sha256": "cc9a45f7b0dbede27fba78745c754f5fe29b7c90e4ea641a346191daba9457a1",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/concept-doc-from-prototype.md=>.agents/docs/templates/concept-doc-from-prototype.md",
+      "source": ".claude/docs/templates/concept-doc-from-prototype.md",
+      "source_sha256": "f42d764e92891b1f98774a1501a5368c7fcf46b1c4ad4e87757ef2101633f135",
+      "target": ".agents/docs/templates/concept-doc-from-prototype.md",
+      "target_sha256": "f42d764e92891b1f98774a1501a5368c7fcf46b1c4ad4e87757ef2101633f135",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/design-doc-from-implementation.md=>.agents/docs/templates/design-doc-from-implementation.md",
+      "source": ".claude/docs/templates/design-doc-from-implementation.md",
+      "source_sha256": "cdb12f8909534e8491cbe8d7920a8d54e6df49685df39c1dda0c8731a8993c7a",
+      "target": ".agents/docs/templates/design-doc-from-implementation.md",
+      "target_sha256": "cdb12f8909534e8491cbe8d7920a8d54e6df49685df39c1dda0c8731a8993c7a",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/difficulty-curve.md=>.agents/docs/templates/difficulty-curve.md",
+      "source": ".claude/docs/templates/difficulty-curve.md",
+      "source_sha256": "4aa7b30c66c2882110c3b1cd794594a52d8fd98666bf6c491921515993290279",
+      "target": ".agents/docs/templates/difficulty-curve.md",
+      "target_sha256": "4aa7b30c66c2882110c3b1cd794594a52d8fd98666bf6c491921515993290279",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/economy-model.md=>.agents/docs/templates/economy-model.md",
+      "source": ".claude/docs/templates/economy-model.md",
+      "source_sha256": "22af6a9df657a17e8155a6130d04a8ce04c095e5dcb7ad5c2648449013b35a58",
+      "target": ".agents/docs/templates/economy-model.md",
+      "target_sha256": "22af6a9df657a17e8155a6130d04a8ce04c095e5dcb7ad5c2648449013b35a58",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/faction-design.md=>.agents/docs/templates/faction-design.md",
+      "source": ".claude/docs/templates/faction-design.md",
+      "source_sha256": "abe1d5720e68169e349156bbcb42db135ecca25bf1510dda5ddd1deb3980f257",
+      "target": ".agents/docs/templates/faction-design.md",
+      "target_sha256": "abe1d5720e68169e349156bbcb42db135ecca25bf1510dda5ddd1deb3980f257",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/game-brief.md=>.agents/docs/templates/game-brief.md",
+      "source": ".claude/docs/templates/game-brief.md",
+      "source_sha256": "70d49670b663619843301aa9a1e105f892d6db715f3e0a552b5241632e212b60",
+      "target": ".agents/docs/templates/game-brief.md",
+      "target_sha256": "70d49670b663619843301aa9a1e105f892d6db715f3e0a552b5241632e212b60",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/game-concept.md=>.agents/docs/templates/game-concept.md",
+      "source": ".claude/docs/templates/game-concept.md",
+      "source_sha256": "fa94f05c71decac7183be449c87767acd99db822f05701121f45f5a5e2251156",
+      "target": ".agents/docs/templates/game-concept.md",
+      "target_sha256": "fa94f05c71decac7183be449c87767acd99db822f05701121f45f5a5e2251156",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/game-design-document.md=>.agents/docs/templates/game-design-document.md",
+      "source": ".claude/docs/templates/game-design-document.md",
+      "source_sha256": "8631250debc1b322f6ae3795296ea7fdf18aba14b9430cfa21abd18e92629f43",
+      "target": ".agents/docs/templates/game-design-document.md",
+      "target_sha256": "5f57516a1d1994d9236a1fadc809462fbc55097c3f21a884293bc475b62ab16b",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-doc-reference-paths-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/game-pillars.md=>.agents/docs/templates/game-pillars.md",
+      "source": ".claude/docs/templates/game-pillars.md",
+      "source_sha256": "3603610be7704cdee1c421813cd248ce07a410969dc3416aa2b9e4959801d3c8",
+      "target": ".agents/docs/templates/game-pillars.md",
+      "target_sha256": "3603610be7704cdee1c421813cd248ce07a410969dc3416aa2b9e4959801d3c8",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/guidance/accessibility-requirements-guide.md=>.agents/docs/templates/guidance/accessibility-requirements-guide.md",
+      "source": ".claude/docs/templates/guidance/accessibility-requirements-guide.md",
+      "source_sha256": "9e86f4bbd8d3b5d4dda65fa7a719af2c448f3037137b9742fcc39d1914518233",
+      "target": ".agents/docs/templates/guidance/accessibility-requirements-guide.md",
+      "target_sha256": "9e86f4bbd8d3b5d4dda65fa7a719af2c448f3037137b9742fcc39d1914518233",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/guidance/game-design-document-guide.md=>.agents/docs/templates/guidance/game-design-document-guide.md",
+      "source": ".claude/docs/templates/guidance/game-design-document-guide.md",
+      "source_sha256": "107a32667a114dbb6cd49d48bf14491899fbd8a77f34bb592011beef2615624a",
+      "target": ".agents/docs/templates/guidance/game-design-document-guide.md",
+      "target_sha256": "107a32667a114dbb6cd49d48bf14491899fbd8a77f34bb592011beef2615624a",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/guidance/hud-design-guide.md=>.agents/docs/templates/guidance/hud-design-guide.md",
+      "source": ".claude/docs/templates/guidance/hud-design-guide.md",
+      "source_sha256": "68c7c3871c959408b5dbcd8a73a4c906f674f7e8d17c03f735f29e9549613e9a",
+      "target": ".agents/docs/templates/guidance/hud-design-guide.md",
+      "target_sha256": "68c7c3871c959408b5dbcd8a73a4c906f674f7e8d17c03f735f29e9549613e9a",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/guidance/interaction-pattern-library-guide-game-specific.md=>.agents/docs/templates/guidance/interaction-pattern-library-guide-game-specific.md",
+      "source": ".claude/docs/templates/guidance/interaction-pattern-library-guide-game-specific.md",
+      "source_sha256": "2298ecf4a701a14e8ee861e3ce1787c2394221b36a9a410a993a232b6b0bc149",
+      "target": ".agents/docs/templates/guidance/interaction-pattern-library-guide-game-specific.md",
+      "target_sha256": "2298ecf4a701a14e8ee861e3ce1787c2394221b36a9a410a993a232b6b0bc149",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/guidance/interaction-pattern-library-guide-navigation-feedback.md=>.agents/docs/templates/guidance/interaction-pattern-library-guide-navigation-feedback.md",
+      "source": ".claude/docs/templates/guidance/interaction-pattern-library-guide-navigation-feedback.md",
+      "source_sha256": "72f3e8f3e5a9347b171cb76d18ce9ae57478bdd61a9c9fcbbf1ae4aff83b0ebd",
+      "target": ".agents/docs/templates/guidance/interaction-pattern-library-guide-navigation-feedback.md",
+      "target_sha256": "72f3e8f3e5a9347b171cb76d18ce9ae57478bdd61a9c9fcbbf1ae4aff83b0ebd",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/guidance/interaction-pattern-library-guide-standard-controls.md=>.agents/docs/templates/guidance/interaction-pattern-library-guide-standard-controls.md",
+      "source": ".claude/docs/templates/guidance/interaction-pattern-library-guide-standard-controls.md",
+      "source_sha256": "635ea81444d00fca02a17f9a0d4fef75149a9f0f103ebdf21f62ef313d3af55d",
+      "target": ".agents/docs/templates/guidance/interaction-pattern-library-guide-standard-controls.md",
+      "target_sha256": "635ea81444d00fca02a17f9a0d4fef75149a9f0f103ebdf21f62ef313d3af55d",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/guidance/interaction-pattern-library-guide.md=>.agents/docs/templates/guidance/interaction-pattern-library-guide.md",
+      "source": ".claude/docs/templates/guidance/interaction-pattern-library-guide.md",
+      "source_sha256": "3acc7d239ff79e2ea642790b053cad4302002c1202b8577b9cc0c554722c1d6c",
+      "target": ".agents/docs/templates/guidance/interaction-pattern-library-guide.md",
+      "target_sha256": "066a6cae7884013dd16f49c02afe54d9cfa54e624ec864d4ed5ad61d529a7d40",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-doc-reference-paths-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/guidance/ux-spec-guide.md=>.agents/docs/templates/guidance/ux-spec-guide.md",
+      "source": ".claude/docs/templates/guidance/ux-spec-guide.md",
+      "source_sha256": "47f72f705ffef14cbf81fba6ebb5d914f992a9f06612ce04ec3e90da05a9dfb2",
+      "target": ".agents/docs/templates/guidance/ux-spec-guide.md",
+      "target_sha256": "47f72f705ffef14cbf81fba6ebb5d914f992a9f06612ce04ec3e90da05a9dfb2",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/help-escalation.md=>.agents/docs/templates/help-escalation.md",
+      "source": ".claude/docs/templates/help-escalation.md",
+      "source_sha256": "76cf8b6fe5eda91de427cf7ca5f8413cd00f60459386569731371b08f8748869",
+      "target": ".agents/docs/templates/help-escalation.md",
+      "target_sha256": "9fc2f9d6d2cb8d1f942f9d650cdbf830af4c00137d4f7d73de9b7d3dcd394364",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-doc-reference-paths-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/help-where-you-are-minimal.md=>.agents/docs/templates/help-where-you-are-minimal.md",
+      "source": ".claude/docs/templates/help-where-you-are-minimal.md",
+      "source_sha256": "e273a39857981cd2b7cb1bf5344c315130a0bab7e5faae7931a31e0f50fd759d",
+      "target": ".agents/docs/templates/help-where-you-are-minimal.md",
+      "target_sha256": "e273a39857981cd2b7cb1bf5344c315130a0bab7e5faae7931a31e0f50fd759d",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/help-where-you-are.md=>.agents/docs/templates/help-where-you-are.md",
+      "source": ".claude/docs/templates/help-where-you-are.md",
+      "source_sha256": "1b972e22678d0527acc38c52b5f1bbb930dad81c3e3c0ece5f34fb7f9142586a",
+      "target": ".agents/docs/templates/help-where-you-are.md",
+      "target_sha256": "1b972e22678d0527acc38c52b5f1bbb930dad81c3e3c0ece5f34fb7f9142586a",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/hud-design.md=>.agents/docs/templates/hud-design.md",
+      "source": ".claude/docs/templates/hud-design.md",
+      "source_sha256": "b98ab81a3c23a473909358240947193ebe99c37a2aeb30524e2fcb200c815c87",
+      "target": ".agents/docs/templates/hud-design.md",
+      "target_sha256": "36bc4c6d4291b2e47d29cbf97ca311e0da171aeb4d3d92cab7ff3b9a6eb0dbde",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-doc-reference-paths-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/incident-response.md=>.agents/docs/templates/incident-response.md",
+      "source": ".claude/docs/templates/incident-response.md",
+      "source_sha256": "a332006b15e79a3e8a40bd20cbd6e3c88e79883c1deda3073be27df14402689e",
+      "target": ".agents/docs/templates/incident-response.md",
+      "target_sha256": "a332006b15e79a3e8a40bd20cbd6e3c88e79883c1deda3073be27df14402689e",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/interaction-pattern-library.md=>.agents/docs/templates/interaction-pattern-library.md",
+      "source": ".claude/docs/templates/interaction-pattern-library.md",
+      "source_sha256": "cb2630df55abc32eeaead9a4a61f9d8135185b39598d051d24b6615e20c50508",
+      "target": ".agents/docs/templates/interaction-pattern-library.md",
+      "target_sha256": "a7f15b362654131f2c649cbf0029f2c16890602acced37b13145dff22f339efe",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-doc-reference-paths-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/launch-checklist.md=>.agents/docs/templates/launch-checklist.md",
+      "source": ".claude/docs/templates/launch-checklist.md",
+      "source_sha256": "f855bf09a82c228212a091e02980cb8d736be2f92ce922e35b71997cd31de53a",
+      "target": ".agents/docs/templates/launch-checklist.md",
+      "target_sha256": "f855bf09a82c228212a091e02980cb8d736be2f92ce922e35b71997cd31de53a",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/level-design-document.md=>.agents/docs/templates/level-design-document.md",
+      "source": ".claude/docs/templates/level-design-document.md",
+      "source_sha256": "61b48448c070490ebb0bb5214cfbfa3a926683f687dc1f74c83d310dc063aacb",
+      "target": ".agents/docs/templates/level-design-document.md",
+      "target_sha256": "61b48448c070490ebb0bb5214cfbfa3a926683f687dc1f74c83d310dc063aacb",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/milestone-definition.md=>.agents/docs/templates/milestone-definition.md",
+      "source": ".claude/docs/templates/milestone-definition.md",
+      "source_sha256": "787462069d14754bb367a63ed41228cf15e78725326c5f4ca6638c1ea2e6932b",
+      "target": ".agents/docs/templates/milestone-definition.md",
+      "target_sha256": "787462069d14754bb367a63ed41228cf15e78725326c5f4ca6638c1ea2e6932b",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/narrative-character-sheet.md=>.agents/docs/templates/narrative-character-sheet.md",
+      "source": ".claude/docs/templates/narrative-character-sheet.md",
+      "source_sha256": "b40bb1cb386727a9c506cbbd76f037990e4461315554e0f78f896f0195cc79e2",
+      "target": ".agents/docs/templates/narrative-character-sheet.md",
+      "target_sha256": "b40bb1cb386727a9c506cbbd76f037990e4461315554e0f78f896f0195cc79e2",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/patch-notes-brief.md=>.agents/docs/templates/patch-notes-brief.md",
+      "source": ".claude/docs/templates/patch-notes-brief.md",
+      "source_sha256": "7d87eda21b344ba1af19314fb22fc90e803d4eac2d64f10694f554e41fcbb998",
+      "target": ".agents/docs/templates/patch-notes-brief.md",
+      "target_sha256": "7d87eda21b344ba1af19314fb22fc90e803d4eac2d64f10694f554e41fcbb998",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/patch-notes-commentary.md=>.agents/docs/templates/patch-notes-commentary.md",
+      "source": ".claude/docs/templates/patch-notes-commentary.md",
+      "source_sha256": "79dd00b7b422780b23df83f8f1d204a3d037be113bc5aa801bbda7f70fbd027e",
+      "target": ".agents/docs/templates/patch-notes-commentary.md",
+      "target_sha256": "79dd00b7b422780b23df83f8f1d204a3d037be113bc5aa801bbda7f70fbd027e",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/patch-notes-brief.md=>.agents/docs/templates/patch-notes-template.md",
+      "source": ".claude/docs/templates/patch-notes-brief.md",
+      "source_sha256": "7d87eda21b344ba1af19314fb22fc90e803d4eac2d64f10694f554e41fcbb998",
+      "target": ".agents/docs/templates/patch-notes-template.md",
+      "target_sha256": "7d87eda21b344ba1af19314fb22fc90e803d4eac2d64f10694f554e41fcbb998",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-conditional-template-alias-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/pitch-document.md=>.agents/docs/templates/pitch-document.md",
+      "source": ".claude/docs/templates/pitch-document.md",
+      "source_sha256": "ed0a544b18032bad4c9dcbe9a79b1154f943e1c5df210d308976f590eb8889b6",
+      "target": ".agents/docs/templates/pitch-document.md",
+      "target_sha256": "ed0a544b18032bad4c9dcbe9a79b1154f943e1c5df210d308976f590eb8889b6",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/player-journey.md=>.agents/docs/templates/player-journey.md",
+      "source": ".claude/docs/templates/player-journey.md",
+      "source_sha256": "fcb350eefe8fd77ce179880beff2e55023ec1e3101e3f48bff32cb8777a05be7",
+      "target": ".agents/docs/templates/player-journey.md",
+      "target_sha256": "fcb350eefe8fd77ce179880beff2e55023ec1e3101e3f48bff32cb8777a05be7",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/post-mortem.md=>.agents/docs/templates/post-mortem.md",
+      "source": ".claude/docs/templates/post-mortem.md",
+      "source_sha256": "e7e2ea73be4295761c2a355ab542be620d5b947ca5749ad8efd43abdd9c16390",
+      "target": ".agents/docs/templates/post-mortem.md",
+      "target_sha256": "e7e2ea73be4295761c2a355ab542be620d5b947ca5749ad8efd43abdd9c16390",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/project-stage-report.md=>.agents/docs/templates/project-stage-report.md",
+      "source": ".claude/docs/templates/project-stage-report.md",
+      "source_sha256": "1b69bbf848758f639bec2579fb5e5e8c46b4b4c4d1191e7947614c0b9a4a26bb",
+      "target": ".agents/docs/templates/project-stage-report.md",
+      "target_sha256": "1b69bbf848758f639bec2579fb5e5e8c46b4b4c4d1191e7947614c0b9a4a26bb",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/prototype-report.md=>.agents/docs/templates/prototype-report.md",
+      "source": ".claude/docs/templates/prototype-report.md",
+      "source_sha256": "2228475bd6122e826affd20039ab117acaea064872893a21b2b70e7f8d510145",
+      "target": ".agents/docs/templates/prototype-report.md",
+      "target_sha256": "2228475bd6122e826affd20039ab117acaea064872893a21b2b70e7f8d510145",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/quick-design-change.md=>.agents/docs/templates/quick-design-change.md",
+      "source": ".claude/docs/templates/quick-design-change.md",
+      "source_sha256": "59e13603547fa738e0ccae595a539e25934bb6769712334858f95ce77f46a038",
+      "target": ".agents/docs/templates/quick-design-change.md",
+      "target_sha256": "59e13603547fa738e0ccae595a539e25934bb6769712334858f95ce77f46a038",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/quick-design-new-system.md=>.agents/docs/templates/quick-design-new-system.md",
+      "source": ".claude/docs/templates/quick-design-new-system.md",
+      "source_sha256": "c3f00e1388040a32fe4de840d97c42677db0ccf825791bd7ff34773f545c8445",
+      "target": ".agents/docs/templates/quick-design-new-system.md",
+      "target_sha256": "c3f00e1388040a32fe4de840d97c42677db0ccf825791bd7ff34773f545c8445",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/quick-design-tuning.md=>.agents/docs/templates/quick-design-tuning.md",
+      "source": ".claude/docs/templates/quick-design-tuning.md",
+      "source_sha256": "148eff6e25710b4d37e71742d80f1471f1ea4f16ce37e89ba3b42e9eb22212f5",
+      "target": ".agents/docs/templates/quick-design-tuning.md",
+      "target_sha256": "148eff6e25710b4d37e71742d80f1471f1ea4f16ce37e89ba3b42e9eb22212f5",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/release-checklist-template.md=>.agents/docs/templates/release-checklist-template.md",
+      "source": ".claude/docs/templates/release-checklist-template.md",
+      "source_sha256": "c8493708c0a47cd38062cdae6dbc1cf379d7e9a6cacd9c50850dcd2bc556fe63",
+      "target": ".agents/docs/templates/release-checklist-template.md",
+      "target_sha256": "c8493708c0a47cd38062cdae6dbc1cf379d7e9a6cacd9c50850dcd2bc556fe63",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/release-notes.md=>.agents/docs/templates/release-notes.md",
+      "source": ".claude/docs/templates/release-notes.md",
+      "source_sha256": "aee845f552de39f60e0febf7262536bc1ff42a180043f43ba5c8cdd03cdc3944",
+      "target": ".agents/docs/templates/release-notes.md",
+      "target_sha256": "aee845f552de39f60e0febf7262536bc1ff42a180043f43ba5c8cdd03cdc3944",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/release-platform-requirements.md=>.agents/docs/templates/release-platform-requirements.md",
+      "source": ".claude/docs/templates/release-platform-requirements.md",
+      "source_sha256": "a0da131cba4eda0a530c042eba6eda589412dfeb09d31bb9d695835fd4637731",
+      "target": ".agents/docs/templates/release-platform-requirements.md",
+      "target_sha256": "a0da131cba4eda0a530c042eba6eda589412dfeb09d31bb9d695835fd4637731",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/risk-register-entry.md=>.agents/docs/templates/risk-register-entry.md",
+      "source": ".claude/docs/templates/risk-register-entry.md",
+      "source_sha256": "0d4460ea5b5a3b2a87506fab8db2344efbffb9cf39b4ece285025038f9e0ff34",
+      "target": ".agents/docs/templates/risk-register-entry.md",
+      "target_sha256": "0d4460ea5b5a3b2a87506fab8db2344efbffb9cf39b4ece285025038f9e0ff34",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/session-state.md=>.agents/docs/templates/session-state.md",
+      "source": ".claude/docs/templates/session-state.md",
+      "source_sha256": "68b8d7ccd6a09f600facc73607bcffd449277633f3a956149b7122419c47487a",
+      "target": ".agents/docs/templates/session-state.md",
+      "target_sha256": "68b8d7ccd6a09f600facc73607bcffd449277633f3a956149b7122419c47487a",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/SKILL-CONTRACT-TEMPLATE.md=>.agents/docs/templates/SKILL-CONTRACT-TEMPLATE-codex.md",
+      "source": ".claude/docs/templates/SKILL-CONTRACT-TEMPLATE.md",
+      "source_sha256": "7f80582f56140cd60c9dcee7da71bac9608b424cb079a5492e378b4482678654",
+      "target": ".agents/docs/templates/SKILL-CONTRACT-TEMPLATE-codex.md",
+      "target_sha256": "4a1bba4a29001c0ede5cf31e41f85d8c86d46a4b7e0c1e3391456137a8f37bd4",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-skill-authoring-template-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/SKILL-CONTRACT-TEMPLATE.md=>.agents/docs/templates/SKILL-CONTRACT-TEMPLATE.md",
+      "source": ".claude/docs/templates/SKILL-CONTRACT-TEMPLATE.md",
+      "source_sha256": "7f80582f56140cd60c9dcee7da71bac9608b424cb079a5492e378b4482678654",
+      "target": ".agents/docs/templates/SKILL-CONTRACT-TEMPLATE.md",
+      "target_sha256": "c55eccd5fa1ab9b5fea9404546de6b3b748fed1dadec072355e45ebee0018f97",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-doc-reference-paths-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/soak-test-protocol.md=>.agents/docs/templates/soak-test-protocol.md",
+      "source": ".claude/docs/templates/soak-test-protocol.md",
+      "source_sha256": "30d1fae457a73c93b35642c5eab7956df14cd8494b174092189e329c0fc8f9ed",
+      "target": ".agents/docs/templates/soak-test-protocol.md",
+      "target_sha256": "30d1fae457a73c93b35642c5eab7956df14cd8494b174092189e329c0fc8f9ed",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/sound-bible.md=>.agents/docs/templates/sound-bible.md",
+      "source": ".claude/docs/templates/sound-bible.md",
+      "source_sha256": "f15d102361545eb93c1e265a50bff958bdba1e276fe03ba701eddc168b99037f",
+      "target": ".agents/docs/templates/sound-bible.md",
+      "target_sha256": "f15d102361545eb93c1e265a50bff958bdba1e276fe03ba701eddc168b99037f",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/sprint-plan.md=>.agents/docs/templates/sprint-plan.md",
+      "source": ".claude/docs/templates/sprint-plan.md",
+      "source_sha256": "95348349ebc0eeeb88016fb8cabeade73da866b3645b2e9a5071476e2710d17c",
+      "target": ".agents/docs/templates/sprint-plan.md",
+      "target_sha256": "95348349ebc0eeeb88016fb8cabeade73da866b3645b2e9a5071476e2710d17c",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/sprint-status.yaml=>.agents/docs/templates/sprint-status.yaml",
+      "source": ".claude/docs/templates/sprint-status.yaml",
+      "source_sha256": "1fcf3b4e661d39777c383ea5e54597f6de164ade50a6bcee066f13c1512763d4",
+      "target": ".agents/docs/templates/sprint-status.yaml",
+      "target_sha256": "1fcf3b4e661d39777c383ea5e54597f6de164ade50a6bcee066f13c1512763d4",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/start-paths.md=>.agents/docs/templates/start-paths.md",
+      "source": ".claude/docs/templates/start-paths.md",
+      "source_sha256": "3a845831f454c483e04654f6f0f0af7d5a3b2611b56d31084ad8a6516cc6e788",
+      "target": ".agents/docs/templates/start-paths.md",
+      "target_sha256": "3a845831f454c483e04654f6f0f0af7d5a3b2611b56d31084ad8a6516cc6e788",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/story.md=>.agents/docs/templates/story.md",
+      "source": ".claude/docs/templates/story.md",
+      "source_sha256": "312132c53a67d903609fe33644ea342feeaff47fecffb07851cb20a44e66644f",
+      "target": ".agents/docs/templates/story.md",
+      "target_sha256": "312132c53a67d903609fe33644ea342feeaff47fecffb07851cb20a44e66644f",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/systems-index.md=>.agents/docs/templates/systems-index.md",
+      "source": ".claude/docs/templates/systems-index.md",
+      "source_sha256": "a40a9957676be4adc79d36f654d17e98badb59bd12480dfa67bc47ac51e11d38",
+      "target": ".agents/docs/templates/systems-index.md",
+      "target_sha256": "a40a9957676be4adc79d36f654d17e98badb59bd12480dfa67bc47ac51e11d38",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/technical-design-document.md=>.agents/docs/templates/technical-design-document.md",
+      "source": ".claude/docs/templates/technical-design-document.md",
+      "source_sha256": "6823816cd83b7adf04dddb42ea34a1fd69b61824972004192f5ca7edda5629b9",
+      "target": ".agents/docs/templates/technical-design-document.md",
+      "target_sha256": "6823816cd83b7adf04dddb42ea34a1fd69b61824972004192f5ca7edda5629b9",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/test-evidence.md=>.agents/docs/templates/test-evidence.md",
+      "source": ".claude/docs/templates/test-evidence.md",
+      "source_sha256": "20974d965d2b57fed99fb94b8f309af852ce879fa6ad9052819840fc645280c8",
+      "target": ".agents/docs/templates/test-evidence.md",
+      "target_sha256": "b023467e53bf5d1b790e5f7af347a7747a4324111bd65c45c99fe2a06432738e",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-doc-reference-paths-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/test-plan.md=>.agents/docs/templates/test-plan.md",
+      "source": ".claude/docs/templates/test-plan.md",
+      "source_sha256": "5342973379ddf4a64fea16861c147a85fd94aa4dcb7b90c9bb1bdec712362a71",
+      "target": ".agents/docs/templates/test-plan.md",
+      "target_sha256": "63c76428e12e8976a4135cb20fbfb90d4c392f31b7a80057f0f2a09e6ae46206",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-doc-reference-paths-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/ux-spec.md=>.agents/docs/templates/ux-spec.md",
+      "source": ".claude/docs/templates/ux-spec.md",
+      "source_sha256": "dc7797c608967844786fd301dea0ba9e01af867feb73f2abd63b46a604150a99",
+      "target": ".agents/docs/templates/ux-spec.md",
+      "target_sha256": "d33832997bb5ba69c265021c1d86997af7d98aee26deae634277d80f7df70ac5",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-doc-reference-paths-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/templates/vertical-slice-report.md=>.agents/docs/templates/vertical-slice-report.md",
+      "source": ".claude/docs/templates/vertical-slice-report.md",
+      "source_sha256": "fec321cce5380d3bd99a90175b6457ef22e7ca199fa0f04ff2636c344ff2ce47",
+      "target": ".agents/docs/templates/vertical-slice-report.md",
+      "target_sha256": "fec321cce5380d3bd99a90175b6457ef22e7ca199fa0f04ff2636c344ff2ce47",
+      "transform_version": 1,
+      "transform_ids": [],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/workflow-catalog.yaml=>.agents/docs/workflow-catalog.yaml",
+      "source": ".claude/docs/workflow-catalog.yaml",
+      "source_sha256": "3e87564320fae7f46f3f5c010b8c9c0b32674b0a8cdd1ab1dc76475020c2739a",
+      "target": ".agents/docs/workflow-catalog.yaml",
+      "target_sha256": "c0ced6c40b7a105d38a51055b273c31b28ce014091ee4c9126a064470842325c",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-doc-reference-paths-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/docs/workflow-modes.md=>.agents/docs/workflow-modes.md",
+      "source": ".claude/docs/workflow-modes.md",
+      "source_sha256": "b5199fe7d1a20a2274936e55b102af780bb37d3fc6875713b017e9fab457bafe",
+      "target": ".agents/docs/workflow-modes.md",
+      "target_sha256": "df68d25bd8297523e85039e68a77d854148c043e9776ca8587ec9a80b7983f59",
+      "transform_version": 1,
+      "transform_ids": [
+        "codex-doc-reference-paths-v1",
+        "codex-runtime-path-bridge-v1"
+      ],
+      "owner": "CGS-26",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/hooks/detect-gaps.sh=>.agents/hooks/detect-gaps.sh",
+      "source": ".claude/hooks/detect-gaps.sh",
+      "source_sha256": "62697c61d72b68d75803f8117709901a8e4ad5a4e27b16de782cfd8d6bd097f1",
+      "target": ".agents/hooks/detect-gaps.sh",
+      "target_sha256": "7df9130b5608e9aa51e6a2a18fad5601a42ca0e1ed9306ae076efd57afcda94a",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/hooks/log-agent-stop.sh=>.agents/hooks/log-agent-stop.sh",
+      "source": ".claude/hooks/log-agent-stop.sh",
+      "source_sha256": "4a08f9fb1cfa228037d312b59a473f93d0a3a595cf24998b492a1b76a8803953",
+      "target": ".agents/hooks/log-agent-stop.sh",
+      "target_sha256": "e96dc3d3d82010a4e5f1bcb8257b0ed107bad540178d9a4c1b22cfa3ba747db1",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/hooks/log-agent.sh=>.agents/hooks/log-agent.sh",
+      "source": ".claude/hooks/log-agent.sh",
+      "source_sha256": "332ef30195ccd17850e0c444e26d77f6b1cbee29a2cbdcd65c211524e775317c",
+      "target": ".agents/hooks/log-agent.sh",
+      "target_sha256": "cee22e9d67b4c9c8d609cea907dd7c0d6e4c74bd37816397ad7af16caef7d6e0",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/hooks/log-instructions.sh=>.agents/hooks/log-instructions.sh",
+      "source": ".claude/hooks/log-instructions.sh",
+      "source_sha256": "997685aabb431126128561cf1dd79002d643e88fa3ef9168c4175bdd025b24b4",
+      "target": ".agents/hooks/log-instructions.sh",
+      "target_sha256": "3c385aedc53d734cdda0d13bfb134cfa5cd5441e65558babb565a16d598f8b31",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/hooks/notify.sh=>.agents/hooks/notify.sh",
+      "source": ".claude/hooks/notify.sh",
+      "source_sha256": "99e412a6d761d692195997c2ee7abb3d0051cb630c68ea38357a1397b5dbdf97",
+      "target": ".agents/hooks/notify.sh",
+      "target_sha256": "abfed1a99056fad18ae4bf19a605f237d6b405019ff133062dbc7af4ccf40687",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/hooks/pre-compact.sh=>.agents/hooks/pre-compact.sh",
+      "source": ".claude/hooks/pre-compact.sh",
+      "source_sha256": "6fa5cb8f7a61f179765cf34a52f8678098d67cf25044695ae50d64ea223c4665",
+      "target": ".agents/hooks/pre-compact.sh",
+      "target_sha256": "6b06d665cb5a01814d76620f9a29434c0e65e6d47174a1199f22f5c4a1956410",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/hooks/session-start.sh=>.agents/hooks/session-start.sh",
+      "source": ".claude/hooks/session-start.sh",
+      "source_sha256": "a80f60a581bcafa6300d7d2a5937b2dce77a5e36b42d9c89fd0e9153f84c4f1d",
+      "target": ".agents/hooks/session-start.sh",
+      "target_sha256": "2f06992732ae29b2291168904e2b9bc2c0d90a47305b726bcd11f63ddec2ee16",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/hooks/session-stop.sh=>.agents/hooks/session-stop.sh",
+      "source": ".claude/hooks/session-stop.sh",
+      "source_sha256": "3f5fa6de2a7dc34b16949f89c550cd239bc677b3d2b1e117d8361814f19619dc",
+      "target": ".agents/hooks/session-stop.sh",
+      "target_sha256": "93764abb8a2c505b6f27614eef0fdc4198abcf93dbdc37b6f326edec9dcc3da4",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/hooks/update-check.sh=>.agents/hooks/update-check.sh",
+      "source": ".claude/hooks/update-check.sh",
+      "source_sha256": "dee572b3310acc4261822815154c2ab56a77805d31117d26f0db8f29ff845ccb",
+      "target": ".agents/hooks/update-check.sh",
+      "target_sha256": "0be5548dc47dfcba4915499b4b7323f9e4c51ee5da4b017a8e8f3a0b264acbb9",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/hooks/validate-agent-artifact.sh=>.agents/hooks/validate-agent-artifact.sh",
+      "source": ".claude/hooks/validate-agent-artifact.sh",
+      "source_sha256": "936660d0f89c03e5d5d5ef1546973f4d5949f65ad6fce0e669d048701888bd1d",
+      "target": ".agents/hooks/validate-agent-artifact.sh",
+      "target_sha256": "b7fd0db348dfa8c3cd6e911cf046be5591e275c1e34635a247ca74cee2c4cccf",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/hooks/validate-assets.sh=>.agents/hooks/validate-assets.sh",
+      "source": ".claude/hooks/validate-assets.sh",
+      "source_sha256": "ad43ca0faaa459bbc0aefddf9a5fa4c5eac28269b515de7cd6d645a4a89f43f3",
+      "target": ".agents/hooks/validate-assets.sh",
+      "target_sha256": "54e557e267ddad401dd6857888cc71076f986f5184fb4bf307bdf37122b2534a",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/hooks/validate-commit.sh=>.agents/hooks/validate-commit.sh",
+      "source": ".claude/hooks/validate-commit.sh",
+      "source_sha256": "eb82e5157144d8f43cdae1e7280ab05ea7c65e598d5c339f95dabb7efac1dc84",
+      "target": ".agents/hooks/validate-commit.sh",
+      "target_sha256": "ad8b31a1cd95d98e3e4483e4d0e9371395199bcf67e79083b01a96f7e21dd66a",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/hooks/validate-push.sh=>.agents/hooks/validate-push.sh",
+      "source": ".claude/hooks/validate-push.sh",
+      "source_sha256": "c110644f59ba8ce86da5b530d32a84d0e5fbb21d7a924d0f5d745aa31445faba",
+      "target": ".agents/hooks/validate-push.sh",
+      "target_sha256": "06e51a5b5d619141df734733b2f7a7189d9b63250676e1fcdb5e7575cc4e2cc1",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/hooks/validate-read.sh=>.agents/hooks/validate-read.sh",
+      "source": ".claude/hooks/validate-read.sh",
+      "source_sha256": "3b5aa4b3528558206d2fd85e580d7ba3fdb22be9bafc2d93ed74910f1fcb6103",
+      "target": ".agents/hooks/validate-read.sh",
+      "target_sha256": "11cb7a1338d4f32ec8c67fc0c22467752a6558a14ed788df13898a8cb40f1df9",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/hooks/validate-registry.sh=>.agents/hooks/validate-registry.sh",
+      "source": ".claude/hooks/validate-registry.sh",
+      "source_sha256": "883062e2015650986894791026d86c4df49cfee0226a2f4fc043c8b07ecba3af",
+      "target": ".agents/hooks/validate-registry.sh",
+      "target_sha256": "57fe47898d28423cf61d557f8350e4c304ede630dcce0cce63da568dc0715e93",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/hooks/validate-skill-change.sh=>.agents/hooks/validate-skill-change.sh",
+      "source": ".claude/hooks/validate-skill-change.sh",
+      "source_sha256": "8773589c26b847f9266ef08813ede31f2b2fb38e5d2e20d6ec85dc69c7455d28",
+      "target": ".agents/hooks/validate-skill-change.sh",
+      "target_sha256": "5793518e038d2a4cc5904194ba13fcbf2f0a89af2a099d58f52edb3aa32f139d",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/hooks/validate-write.sh=>.agents/hooks/validate-write.sh",
+      "source": ".claude/hooks/validate-write.sh",
+      "source_sha256": "1fbb25825748ad7ff49707217ea8b8f842bcaa6fe14725a6c1d07511124726df",
+      "target": ".agents/hooks/validate-write.sh",
+      "target_sha256": "1249cf2a9e6be400d07acaf227e852741f919199726004f0c799ef28a617bcac",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/hooks/yaml-helper.sh=>.agents/hooks/yaml-helper.sh",
+      "source": ".claude/hooks/yaml-helper.sh",
+      "source_sha256": "8299e656cb8afc49ec02b2e17e32b61f3df50b13b93a8544226e30e459f68424",
+      "target": ".agents/hooks/yaml-helper.sh",
+      "target_sha256": "8df42ef8e26e1e1ffd8e145800d8e3fb06ca4a8da0fa7a29013721e705c96268",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env",
+        "explicit-project-root"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/adr-dep-graph.sh=>.agents/scripts/adr-dep-graph.sh",
+      "source": ".claude/scripts/adr-dep-graph.sh",
+      "source_sha256": "f7f4f21c447cc4bd4c87f6f8a9a83f2ab70bb3da1d0613b69f51513f53b808e8",
+      "target": ".agents/scripts/adr-dep-graph.sh",
+      "target_sha256": "bd9a2530d556a31d7319cf72c308a90a0e8dd51febc08e80ff7ab9a3087e6155",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/adr-status.sh=>.agents/scripts/adr-status.sh",
+      "source": ".claude/scripts/adr-status.sh",
+      "source_sha256": "92c2c02283aa4c8a76ba7c2c0cf36dabacc1d3ba2c618878322fde21d4bc13ff",
+      "target": ".agents/scripts/adr-status.sh",
+      "target_sha256": "6a1f44e5d483464fa69349a4c5da750cca656d918e0a87e25a6e1afa51464b85",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/agent-check.sh=>.agents/scripts/agent-check.sh",
+      "source": ".claude/scripts/agent-check.sh",
+      "source_sha256": "b8a1b78415ddc29760f21bb14f0c4502b0d49b8135ff70c7f2377c001cbb24f0",
+      "target": ".agents/scripts/agent-check.sh",
+      "target_sha256": "924666cfe67317f90709240553a5f1209bb43d5520ede9480ff37e0073ce49d2",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/artifact-check.sh=>.agents/scripts/artifact-check.sh",
+      "source": ".claude/scripts/artifact-check.sh",
+      "source_sha256": "53bfb4c03ae52a711755145f1b7fe5dc3218f26f69f78e3a94ecc489f149b540",
+      "target": ".agents/scripts/artifact-check.sh",
+      "target_sha256": "153edb3e4631f1b9a8e9d23c6d5c7c9a8c74952b8c3572321c5ebd16485a801d",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/asset-scan.sh=>.agents/scripts/asset-scan.sh",
+      "source": ".claude/scripts/asset-scan.sh",
+      "source_sha256": "2dd8b5f3f2a29e99c431e7cc1318a3b7ff1fcfc74e4b086583e430ce10fc8e98",
+      "target": ".agents/scripts/asset-scan.sh",
+      "target_sha256": "e43a09cff94fb498e0e0dd1acf695b738cf4510273e418cb9797851a85b3f292",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/bug-stats.sh=>.agents/scripts/bug-stats.sh",
+      "source": ".claude/scripts/bug-stats.sh",
+      "source_sha256": "7502e1824b6df79b39c6a31effe1412bb24dd640eddc076766b48512e381f439",
+      "target": ".agents/scripts/bug-stats.sh",
+      "target_sha256": "c81239a626fdcbc7d6fbab34cefc67a4144d95e78dc2c2449ad2216b41e6671c",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/code-markers.sh=>.agents/scripts/code-markers.sh",
+      "source": ".claude/scripts/code-markers.sh",
+      "source_sha256": "300125e232b00b18bd69696a62f80c6f43411a52872376ef6af435c4564ebf4a",
+      "target": ".agents/scripts/code-markers.sh",
+      "target_sha256": "7bf1d4a4f26dd820b2301faae0842aaaa03d98595cddde68d5047dc5f465ac6a",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/compat-inventory.sh=>.agents/scripts/compat-inventory.sh",
+      "source": ".claude/scripts/compat-inventory.sh",
+      "source_sha256": "4d1f2a7951d8ad54ac5d72a79e4939ec601742792a61d691b87e736e27799cb1",
+      "target": ".agents/scripts/compat-inventory.sh",
+      "target_sha256": "ebb51c096b45739ad59925d058a02a35e3c854ebd6f90f5fd122662fad217eb5",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/config-set.sh=>.agents/scripts/config-set.sh",
+      "source": ".claude/scripts/config-set.sh",
+      "source_sha256": "9bae063fc2405d19feaca97f75d008a0cd3272af953595a5abded6050eb13c4b",
+      "target": ".agents/scripts/config-set.sh",
+      "target_sha256": "895a2040b66b2f020a6f301a5298a7ebdf6b59302ee6fa5483ad5eb638221ed4",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/content-count.sh=>.agents/scripts/content-count.sh",
+      "source": ".claude/scripts/content-count.sh",
+      "source_sha256": "7a13815e90df925a83aea10a8d5db0dc4a82009d93e9753d9bfd9d8a0cd3ce47",
+      "target": ".agents/scripts/content-count.sh",
+      "target_sha256": "73a13b3f51992df9a042ec232e32c3cc0d53eb3b30c921a6b23d5fb285f3558f",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/debt-register.sh=>.agents/scripts/debt-register.sh",
+      "source": ".claude/scripts/debt-register.sh",
+      "source_sha256": "808d60c6072dab3c8f217283a59e43525ced47dd54dffada4af48269c4b85a37",
+      "target": ".agents/scripts/debt-register.sh",
+      "target_sha256": "ccc176cdfdb934e0660eba2bb3deefb954a3e007db83c7deca2db66c658a0a0e",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/flaky-stats.sh=>.agents/scripts/flaky-stats.sh",
+      "source": ".claude/scripts/flaky-stats.sh",
+      "source_sha256": "58dd299af50695589b8c75483ebd58d96d5b0c6bad37d85d7cdc908f1f83d565",
+      "target": ".agents/scripts/flaky-stats.sh",
+      "target_sha256": "318bb61ca3f7232c7b1d078ec6ee5591b8703238dc0221bd91960998ab964d77",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/gdd-structure-check.sh=>.agents/scripts/gdd-structure-check.sh",
+      "source": ".claude/scripts/gdd-structure-check.sh",
+      "source_sha256": "b5c8cf8b50ceb8eff6afe61beb82fec2c9258e87aefbe9a0dfd96f9422996204",
+      "target": ".agents/scripts/gdd-structure-check.sh",
+      "target_sha256": "6715b90b2b5b9099e69c275f0032df07902b92c3550c5b8f2934dc15c16af379",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/godot-parse-check.gd=>.agents/scripts/godot-parse-check.gd",
+      "source": ".claude/scripts/godot-parse-check.gd",
+      "source_sha256": "c009f12256161f64d0eaf031ddbcf177dec4b02eb8ff469ab7e6d12632705c5e",
+      "target": ".agents/scripts/godot-parse-check.gd",
+      "target_sha256": "3de55ef05756b1a8eede944520f8b41d0c6b6e40df5e518e6f03fb49080a155f",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/hook-input.sh=>.agents/scripts/hook-input.sh",
+      "source": ".claude/scripts/hook-input.sh",
+      "source_sha256": "b0fe850dd456f6bd36135565c141fc557f626a11485d8ef4f8909e91c0b1e464",
+      "target": ".agents/scripts/hook-input.sh",
+      "target_sha256": "02259d54b8981988966e4498b2736d88ff5f32af2c270e98fea1443895989a71",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/inputs-check.sh=>.agents/scripts/inputs-check.sh",
+      "source": ".claude/scripts/inputs-check.sh",
+      "source_sha256": "c1528088c3c2a33073eeccffa2d8b316668a8c27306e7d1ec0ab6105e0eae19f",
+      "target": ".agents/scripts/inputs-check.sh",
+      "target_sha256": "1f6eda4945e598b549851f1c84babedcd18965e91cb39cff9fc684f400db393f",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/md-section.sh=>.agents/scripts/md-section.sh",
+      "source": ".claude/scripts/md-section.sh",
+      "source_sha256": "0ffa55a3f7215fda020c4070c160e7992577005b00aad3d7b6d527870dd7cfa8",
+      "target": ".agents/scripts/md-section.sh",
+      "target_sha256": "b6372fc11ede5b1cd87a590554364509ccaea52e6134d5aade1c93871f4bc60a",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/migrate-v1-config.sh=>.agents/scripts/migrate-v1-config.sh",
+      "source": ".claude/scripts/migrate-v1-config.sh",
+      "source_sha256": "8dea94fc7f4b4339c074c9d4f73088bd237382ed7e209c6ddd770930ff1e6323",
+      "target": ".agents/scripts/migrate-v1-config.sh",
+      "target_sha256": "9b4cba8ac6068b3ddf8175cb1c5ab5e20984eeccc0aa4c63c90f854240caf528",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/plan-math.sh=>.agents/scripts/plan-math.sh",
+      "source": ".claude/scripts/plan-math.sh",
+      "source_sha256": "5324f4f48156b36d82eb70cd0c735ae3d57375d791125cae792330e0621657d4",
+      "target": ".agents/scripts/plan-math.sh",
+      "target_sha256": "2cde66e027f7a1eb2eeca42753b9e3bb501bd24fbfe4fd9684709871f3c9a588",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/project-coherence.sh=>.agents/scripts/project-coherence.sh",
+      "source": ".claude/scripts/project-coherence.sh",
+      "source_sha256": "6b4da1aff42a3c653c2c532d4385f923667ec37d01546b57d1459d659ece3c3b",
+      "target": ".agents/scripts/project-coherence.sh",
+      "target_sha256": "a026ed4643116f81c67d248f0e2c17af5c7559bb2c23d2b41cff6fdbf0f07462",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/project-state.sh=>.agents/scripts/project-state.sh",
+      "source": ".claude/scripts/project-state.sh",
+      "source_sha256": "fce992b9762b6c70f549ec21f12e99c8bca3e17c57a49e6ece15c0cefe115d1a",
+      "target": ".agents/scripts/project-state.sh",
+      "target_sha256": "b6e48a3c1d53d2e8321d94fa425db88bf5da3695530073593d8f7c06e6865b21",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/read-guard.sh=>.agents/scripts/read-guard.sh",
+      "source": ".claude/scripts/read-guard.sh",
+      "source_sha256": "04a899c956373c77451e3b44d47f30dbac5860715f3d6d37ace94b47390d3813",
+      "target": ".agents/scripts/read-guard.sh",
+      "target_sha256": "d80f30ec3e7342ca3b6f28d6f6ed8decfaead40db3e37eaeebb3f01038545333",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/registry.sh=>.agents/scripts/registry.sh",
+      "source": ".claude/scripts/registry.sh",
+      "source_sha256": "4b698b1af5ec413da992a459dba2cdb71b505e50fbb1972c80b4e8f33105959e",
+      "target": ".agents/scripts/registry.sh",
+      "target_sha256": "0225782ee63aafc23170aad280c733697ed8904337cb4aa5217b2d18e014d3a8",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/review-receipts.sh=>.agents/scripts/review-receipts.sh",
+      "source": ".claude/scripts/review-receipts.sh",
+      "source_sha256": "e4234095b47a12875179932508874627012ff086e136ff72f8324d2c0e9836db",
+      "target": ".agents/scripts/review-receipts.sh",
+      "target_sha256": "4035bd1d4d9e94de52be666d0c7dc85807dd54cb98b9eba30eaeeb1d0a111c89",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/review-scope.sh=>.agents/scripts/review-scope.sh",
+      "source": ".claude/scripts/review-scope.sh",
+      "source_sha256": "9817c9fa450a20dab05e9922c9840231e8e24786590a7ea49a61ae3d00327704",
+      "target": ".agents/scripts/review-scope.sh",
+      "target_sha256": "cdd6ca9cbf5c4c96d6dd489ec7826424f6b166e3e9c4aa1cfa3fa7660360174c",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/rotate-session-state.sh=>.agents/scripts/rotate-session-state.sh",
+      "source": ".claude/scripts/rotate-session-state.sh",
+      "source_sha256": "5267f72ee556a2fbfe50393459452fdd5740a5f6e975ad9ffa66e76cee33ee42",
+      "target": ".agents/scripts/rotate-session-state.sh",
+      "target_sha256": "8a9aee084a6fac20d692b0b85aa729187c6c12f8108eefdce4e711fdc28dd0c1",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/session-state.sh=>.agents/scripts/session-state.sh",
+      "source": ".claude/scripts/session-state.sh",
+      "source_sha256": "0838a0cc1c2c23240af3ba569a360e6f7959361ab2c16ae91d093cad03874a13",
+      "target": ".agents/scripts/session-state.sh",
+      "target_sha256": "8e87bfcfcb7cbffe9fed1409164eb0dbcb6e488fd9e539d5336879c14444af49",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/set-stage.sh=>.agents/scripts/set-stage.sh",
+      "source": ".claude/scripts/set-stage.sh",
+      "source_sha256": "717aae86e7fa76f8cb7d0b5ba7b451a2f754e6e949cf8add7400be9174d9e346",
+      "target": ".agents/scripts/set-stage.sh",
+      "target_sha256": "16db0a6076a2382b90506a883a575bce6d01d1d7a7e388008fea3453b5792e58",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/skill-lint.sh=>.agents/scripts/skill-lint.sh",
+      "source": ".claude/scripts/skill-lint.sh",
+      "source_sha256": "6a66024bd66908915a76a21ad71fe3590278ef1b420b47aad889c99c243d3c8f",
+      "target": ".agents/scripts/skill-lint.sh",
+      "target_sha256": "4f223f933aaf064595650d4050357f43f55f30e021f5294f73884be2876979ab",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/story-facts.sh=>.agents/scripts/story-facts.sh",
+      "source": ".claude/scripts/story-facts.sh",
+      "source_sha256": "546a4aa73e73192a876a125464848e1378357457ef5cd3e2ab72155bb579736d",
+      "target": ".agents/scripts/story-facts.sh",
+      "target_sha256": "fca97d3c0732e83bbe53974c9b09ccfe1981244a3ad08b4fef141a1a3da4528c",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/story-status.sh=>.agents/scripts/story-status.sh",
+      "source": ".claude/scripts/story-status.sh",
+      "source_sha256": "9fb510e4164909f4704c141f38ca42f0e1eb02e6476f73ab8dc7e9141d54ff4d",
+      "target": ".agents/scripts/story-status.sh",
+      "target_sha256": "9fb510e4164909f4704c141f38ca42f0e1eb02e6476f73ab8dc7e9141d54ff4d",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/test-run.sh=>.agents/scripts/test-run.sh",
+      "source": ".claude/scripts/test-run.sh",
+      "source_sha256": "70d5f44707304f2cba93607f0b52e6747e25d6349d771c928dc1f31884a438b9",
+      "target": ".agents/scripts/test-run.sh",
+      "target_sha256": "1a0db3af80a8a998733e9f30d7fc599a65a6296e1cf5624f7ccf0caea6053ce4",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/test-scaffold.sh=>.agents/scripts/test-scaffold.sh",
+      "source": ".claude/scripts/test-scaffold.sh",
+      "source_sha256": "99b3ff506932ff6cd18d1b13d358c12c0e652df567958435d76de7849b65fcce",
+      "target": ".agents/scripts/test-scaffold.sh",
+      "target_sha256": "85752e9b356c2de66b6a6c0a15175a3f2f2220d1803adb77afc711524b8183fc",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/write-guard.sh=>.agents/scripts/write-guard.sh",
+      "source": ".claude/scripts/write-guard.sh",
+      "source_sha256": "c7ac4ccf0b7f13e2019391697b5933fee324675194bebf15cfe6e41f5e6d86ff",
+      "target": ".agents/scripts/write-guard.sh",
+      "target_sha256": "97fcda499e2c5ad38c3a01632e6228fd803792d95c1728694a08faa62c3ba6d0",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/scripts/yaml-get.awk=>.agents/scripts/yaml-get.awk",
+      "source": ".claude/scripts/yaml-get.awk",
+      "source_sha256": "a8a354eca92398689a28b53554f315b3a87122725bd10a1dfdcaae458f7935ad",
+      "target": ".agents/scripts/yaml-get.awk",
+      "target_sha256": "7539d6ab9d93393c493ac001237b1860a821e484a2ec57f96e926fb6db1f995a",
+      "transform_version": 1,
+      "transform_ids": [
+        "normalize-lf",
+        "mirror-claude-paths",
+        "neutral-project-env"
+      ],
+      "owner": "CGS-25",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/help/SKILL.md=>.agents/skills/help/SKILL.md",
+      "source": ".claude/skills/help/SKILL.md",
+      "source_sha256": "3a5fd66a1e29fd86133ef3085e764cf0f8e15ce935ed06e9000580a577ddbeb6",
+      "target": ".agents/skills/help/SKILL.md",
+      "target_sha256": "754c96396d4f4aa84981f1644977088ac351a7ea078e13f93aa80952c2dc8bfb",
+      "transform_version": 1,
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    }
+  ]
+}
