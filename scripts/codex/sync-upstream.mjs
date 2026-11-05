@@ -1,6 +1,11 @@
-import { existsSync, mkdirSync, writeFileSync, realpathSync } from 'node:fs';
-import { dirname, resolve, relative, isAbsolute, sep } from 'node:path';
-import { git, inspect, options, within } from './upstream-common.mjs';
+import { existsSync, mkdirSync, writeFileSync, realpathSync, statSync } from 'node:fs';
+import { dirname, resolve } from 'node:path';
+import { git, inspect, options } from './upstream-common.mjs';
+function sameDirectory(a,b){const x=statSync(a,{bigint:true}),y=statSync(b,{bigint:true});return x.dev===y.dev&&x.ino===y.ino}
+function physicallyInside(root, existingParent){
+  let current=realpathSync.native(existingParent);
+  while(true){if(sameDirectory(root,current))return true;const next=dirname(current);if(next===current)return false;current=next}
+}
 try {
   const o = options(process.argv.slice(2));
   if (!!o.prepare === !!o['dry-run']) throw new Error('Choose exactly one of --dry-run or --prepare');
@@ -17,11 +22,10 @@ try {
       const worktree = resolve(o.worktree || resolve(o.root, '.codex/worktrees', `sync-${report.upstream_sha.slice(0, 12)}`));
       if (existsSync(worktree)) throw new Error(`Worktree already exists; inspect it instead of overwriting: ${worktree}`);
       let parent=dirname(worktree);while(!existsSync(parent)){const next=dirname(parent);if(next===parent)throw new Error('Worktree has no existing parent');parent=next}
-      const canonical=resolve(realpathSync(parent),relative(parent,worktree)), sourceRoot=realpathSync(report.source_repository), productRoot=realpathSync(o.root);
-      const inside=(base,p)=>{const r=relative(base,p);return !r||(!r.startsWith('..'+sep)&&r!=='..'&&!isAbsolute(r))};
-      if(sourceRoot!==productRoot&&inside(sourceRoot,canonical))throw new Error('Worktree must not be inside the external source repository');
-      if (inside(productRoot, canonical)) {
-        try { git(o.root, 'check-ignore', '-q', canonical); }
+      const sourceRoot=realpathSync.native(report.source_repository), productRoot=realpathSync.native(o.root);
+      if(!sameDirectory(sourceRoot,productRoot)&&physicallyInside(sourceRoot,parent))throw new Error('Worktree must not be inside the external source repository');
+      if (physicallyInside(productRoot,parent)) {
+        try { git(o.root, 'check-ignore', '-q', worktree); }
         catch { throw new Error('Nested worktree must be Git-ignored; choose an external --worktree path'); }
       }
       mkdirSync(dirname(worktree), { recursive: true });

@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import {execFileSync,spawnSync} from 'node:child_process';
-import {mkdtempSync,mkdirSync,writeFileSync,readFileSync,existsSync,realpathSync} from 'node:fs';
+import {mkdtempSync,mkdirSync,writeFileSync,readFileSync,existsSync,realpathSync,symlinkSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import path from 'node:path';
 import {hash} from './upstream-common.mjs';
@@ -40,6 +40,8 @@ write(product,target,content+'local drift\n');const drift=call('sync-upstream',[
 write(product,target,content);write(product,'dirty-user.txt','keep\n');assert.notEqual(call('sync-upstream',['--prepare']).status,0);assert.equal(readFileSync(path.join(product,'dirty-user.txt'),'utf8'),'keep\n');
 git(product,'add','dirty-user.txt');commit(product,'preserve user file');
 const mirrorWorktree=path.join(source,'forbidden-worktree');const denied=call('sync-upstream',['--prepare','--worktree',mirrorWorktree]);assert.equal(denied.status,2);assert.match(denied.stderr,/external source repository/);assert.equal(existsSync(mirrorWorktree),false);
+const alias=path.join(fixture,'source-alias');
+try{symlinkSync(source,alias,process.platform==='win32'?'junction':'dir');const viaAlias=path.join(alias,'forbidden-alias-worktree'),r=call('sync-upstream',['--prepare','--worktree',viaAlias]);assert.equal(r.status,2,r.stderr);assert.match(r.stderr,/external source repository/);assert.equal(existsSync(viaAlias),false)}catch(e){if(!['EPERM','EACCES','ENOTSUP'].includes(e.code))throw e;console.log('PENDING source alias creation unavailable')}
 const checkout=path.join(fixture,'review worktree');const prepared=call('sync-upstream',['--prepare','--branch','codex/fixture-sync','--worktree',checkout]);assert.equal(prepared.status,0,prepared.stderr);assert.equal(JSON.parse(prepared.stdout).preparation,'PROPOSAL_REVIEW_REQUIRED');
 assert.equal(git(checkout,'rev-parse','HEAD'),git(product,'rev-parse','HEAD'));assert.equal(existsSync(path.join(checkout,'.claude')),false);assert.equal(readFileSync(path.join(checkout,target),'utf8'),content);
 assert.notEqual(spawnSync('git',['rev-parse','--verify','MERGE_HEAD'],{cwd:checkout}).status,0);assert.equal(git(product,'status','--porcelain'), '');

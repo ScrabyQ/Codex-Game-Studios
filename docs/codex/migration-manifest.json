@@ -3399,7 +3399,7 @@
         },
         {
           "target": "scripts/codex/sync-upstream.mjs",
-          "sha256": "b49c962cd66cecbd30bddae1bc768def80595dd01b49f042c964c1d03ee328b6"
+          "sha256": "f857ba117527e8e6f2db2aa9fe0ecb1c23d403e8276b69a471bdca416b09144b"
         },
         {
           "target": "scripts/codex/baseline.mjs",
