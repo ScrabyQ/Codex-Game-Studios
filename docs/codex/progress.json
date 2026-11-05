@@ -5,9 +5,9 @@
   "upstream_sha": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
   "owner": "ScrabyQ",
   "repository": "Codex-Game-Studios",
-  "last_completed": "CGS-10",
-  "current_task": "CGS-11",
-  "next_safe_step": "Onboarding/settings scoped behaviors verified. Continue design workflows; preserve all partial native and engine limitations.",
+  "last_completed": "CGS-09",
+  "current_task": "CGS-10",
+  "next_safe_step": "49 roles are mapped; engine selection and 3 static review cases verified. Actual engine builds and native custom spawning remain separate.",
   "decisions": [
     "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED.",
     "Generated content-preserving .agents mirror retains helper root math; native roles use .codex/agents/*.toml; all generation is hash-guarded; no new agent runtime."
@@ -121,9 +121,14 @@
       "key": "CGS-09",
       "singularity_id": "T-28822415-aa75-4ad0-a893-00ecb00fc3fd",
       "title": "CGS-09 · Перенести 15 engine-специалистов: Godot, Unity, Unreal",
-      "status": "PENDING",
+      "status": "COMPLETE",
       "commit": null,
-      "evidence": []
+      "evidence": [
+        "docs/codex/evidence/CGS-09/structural.json",
+        "docs/codex/evidence/CGS-09/in-session-reviews.md"
+      ],
+      "note": "49 roles are mapped; engine selection and 3 static review cases verified. Actual engine builds and native custom spawning remain separate.",
+      "updated_at": "2026-11-05T11:20:16.242Z"
     },
     {
       "key": "CGS-10",
