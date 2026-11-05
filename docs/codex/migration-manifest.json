@@ -5277,8 +5277,17 @@
       ],
       "proposed_target": ".agents/skills/create-epics/CONTRACT.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session planning smokes: brief-derived stories, dependency BLOCKED, repeat without duplication, factual statuses, unknown estimates and unpassed gates do not advance stage. Selected-root regression verified.",
+      "status": "EQUIVALENT",
+      "task": "CGS-14",
+      "target": ".agents/skills/create-epics/CONTRACT.md",
+      "target_sha256": "358d62f8e58da9513c9e6cbe6a96bf75d828c78de245754d2681cd0617bd3a62",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-14/acceptance.md",
+        "docs/codex/evidence/CGS-14/host-fixture.json",
+        "docs/codex/evidence/CGS-14/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/create-epics/SKILL.md",
@@ -5295,8 +5304,17 @@
       ],
       "proposed_target": ".agents/skills/create-epics/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session planning smokes: brief-derived stories, dependency BLOCKED, repeat without duplication, factual statuses, unknown estimates and unpassed gates do not advance stage. Selected-root regression verified.",
+      "status": "EQUIVALENT",
+      "task": "CGS-14",
+      "target": ".agents/skills/create-epics/SKILL.md",
+      "target_sha256": "0ff7cfa679b7ce5ce18dacae025c6d21dcdee047bc485dc9ac8a1f5dbfa95f9b",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-14/acceptance.md",
+        "docs/codex/evidence/CGS-14/host-fixture.json",
+        "docs/codex/evidence/CGS-14/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/create-epics/references/pr-epic-gate.md",
@@ -5309,8 +5327,17 @@
       ],
       "proposed_target": ".agents/skills/create-epics/references/pr-epic-gate.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session planning smokes: brief-derived stories, dependency BLOCKED, repeat without duplication, factual statuses, unknown estimates and unpassed gates do not advance stage. Selected-root regression verified.",
+      "status": "EQUIVALENT",
+      "task": "CGS-14",
+      "target": ".agents/skills/create-epics/references/pr-epic-gate.md",
+      "target_sha256": "990efdfb2d6955ace5c3562e4753a5a8599f63cb39a48e51366124bcbca4f6d3",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-14/acceptance.md",
+        "docs/codex/evidence/CGS-14/host-fixture.json",
+        "docs/codex/evidence/CGS-14/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/create-stories/CONTRACT.md",
@@ -5323,8 +5350,17 @@
       ],
       "proposed_target": ".agents/skills/create-stories/CONTRACT.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session planning smokes: brief-derived stories, dependency BLOCKED, repeat without duplication, factual statuses, unknown estimates and unpassed gates do not advance stage. Selected-root regression verified.",
+      "status": "EQUIVALENT",
+      "task": "CGS-14",
+      "target": ".agents/skills/create-stories/CONTRACT.md",
+      "target_sha256": "d9a2aab16acd78ef43e311e664f65fc0c0246263e07e1b2e8e9ca3c5b4805037",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-14/acceptance.md",
+        "docs/codex/evidence/CGS-14/host-fixture.json",
+        "docs/codex/evidence/CGS-14/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/create-stories/SKILL.md",
@@ -5341,8 +5377,17 @@
       ],
       "proposed_target": ".agents/skills/create-stories/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session planning smokes: brief-derived stories, dependency BLOCKED, repeat without duplication, factual statuses, unknown estimates and unpassed gates do not advance stage. Selected-root regression verified.",
+      "status": "EQUIVALENT",
+      "task": "CGS-14",
+      "target": ".agents/skills/create-stories/SKILL.md",
+      "target_sha256": "2e8733367d0c276f5f0d8801be1d42a65069b478068cc90aaece580f205e7e52",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-14/acceptance.md",
+        "docs/codex/evidence/CGS-14/host-fixture.json",
+        "docs/codex/evidence/CGS-14/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/create-stories/references/qa-lead-gate.md",
@@ -5355,8 +5400,17 @@
       ],
       "proposed_target": ".agents/skills/create-stories/references/qa-lead-gate.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session planning smokes: brief-derived stories, dependency BLOCKED, repeat without duplication, factual statuses, unknown estimates and unpassed gates do not advance stage. Selected-root regression verified.",
+      "status": "EQUIVALENT",
+      "task": "CGS-14",
+      "target": ".agents/skills/create-stories/references/qa-lead-gate.md",
+      "target_sha256": "1c3eb43de23a63894a51038813e0fc63ae3f514f7d743f15cffff1de8fd9d27b",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-14/acceptance.md",
+        "docs/codex/evidence/CGS-14/host-fixture.json",
+        "docs/codex/evidence/CGS-14/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/day-one-patch/SKILL.md",
@@ -5602,8 +5656,17 @@
       ],
       "proposed_target": ".agents/skills/estimate/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session planning smokes: brief-derived stories, dependency BLOCKED, repeat without duplication, factual statuses, unknown estimates and unpassed gates do not advance stage. Selected-root regression verified.",
+      "status": "EQUIVALENT",
+      "task": "CGS-14",
+      "target": ".agents/skills/estimate/SKILL.md",
+      "target_sha256": "9bbfd01349afe7cf259abdd2d4b899bfd17b6089a10597a9e160fa5c9d451781",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-14/acceptance.md",
+        "docs/codex/evidence/CGS-14/host-fixture.json",
+        "docs/codex/evidence/CGS-14/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/gate-check/CONTRACT.md",
@@ -5616,8 +5679,17 @@
       ],
       "proposed_target": ".agents/skills/gate-check/CONTRACT.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session planning smokes: brief-derived stories, dependency BLOCKED, repeat without duplication, factual statuses, unknown estimates and unpassed gates do not advance stage. Selected-root regression verified.",
+      "status": "EQUIVALENT",
+      "task": "CGS-14",
+      "target": ".agents/skills/gate-check/CONTRACT.md",
+      "target_sha256": "910d250f9f7abe7cd1fb1261319283e965132f24bba022066351a23ea3cd1dc6",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-14/acceptance.md",
+        "docs/codex/evidence/CGS-14/host-fixture.json",
+        "docs/codex/evidence/CGS-14/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/gate-check/SKILL.md",
@@ -5634,8 +5706,17 @@
       ],
       "proposed_target": ".agents/skills/gate-check/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session planning smokes: brief-derived stories, dependency BLOCKED, repeat without duplication, factual statuses, unknown estimates and unpassed gates do not advance stage. Selected-root regression verified.",
+      "status": "EQUIVALENT",
+      "task": "CGS-14",
+      "target": ".agents/skills/gate-check/SKILL.md",
+      "target_sha256": "2b66f73a7dc460934f747b67c63743fc74cc2da7b9e414a7680185a6567c9a9e",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-14/acceptance.md",
+        "docs/codex/evidence/CGS-14/host-fixture.json",
+        "docs/codex/evidence/CGS-14/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/gate-check/references/2b-workflow-tier.md",
@@ -5648,8 +5729,17 @@
       ],
       "proposed_target": ".agents/skills/gate-check/references/2b-workflow-tier.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session planning smokes: brief-derived stories, dependency BLOCKED, repeat without duplication, factual statuses, unknown estimates and unpassed gates do not advance stage. Selected-root regression verified.",
+      "status": "EQUIVALENT",
+      "task": "CGS-14",
+      "target": ".agents/skills/gate-check/references/2b-workflow-tier.md",
+      "target_sha256": "c119efbc1474cb060a1a03a48a36b58d46628d0d748a19d6d2f58e16615be0a1",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-14/acceptance.md",
+        "docs/codex/evidence/CGS-14/host-fixture.json",
+        "docs/codex/evidence/CGS-14/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/gate-check/references/3-run-gate-check.md",
@@ -5662,8 +5752,17 @@
       ],
       "proposed_target": ".agents/skills/gate-check/references/3-run-gate-check.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session planning smokes: brief-derived stories, dependency BLOCKED, repeat without duplication, factual statuses, unknown estimates and unpassed gates do not advance stage. Selected-root regression verified.",
+      "status": "EQUIVALENT",
+      "task": "CGS-14",
+      "target": ".agents/skills/gate-check/references/3-run-gate-check.md",
+      "target_sha256": "c6f0421445f91a70bde65ff47d103565ebbdc1bdf5f2088e0968464434f4889c",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-14/acceptance.md",
+        "docs/codex/evidence/CGS-14/host-fixture.json",
+        "docs/codex/evidence/CGS-14/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/gate-check/references/4-assessment.md",
@@ -5676,8 +5775,17 @@
       ],
       "proposed_target": ".agents/skills/gate-check/references/4-assessment.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session planning smokes: brief-derived stories, dependency BLOCKED, repeat without duplication, factual statuses, unknown estimates and unpassed gates do not advance stage. Selected-root regression verified.",
+      "status": "EQUIVALENT",
+      "task": "CGS-14",
+      "target": ".agents/skills/gate-check/references/4-assessment.md",
+      "target_sha256": "e27a5d305c0d13805e931b8bbefd918dc257da2bd18980f88c1849fe7a78be5e",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-14/acceptance.md",
+        "docs/codex/evidence/CGS-14/host-fixture.json",
+        "docs/codex/evidence/CGS-14/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/gate-check/references/5-verdict.md",
@@ -5690,8 +5798,17 @@
       ],
       "proposed_target": ".agents/skills/gate-check/references/5-verdict.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session planning smokes: brief-derived stories, dependency BLOCKED, repeat without duplication, factual statuses, unknown estimates and unpassed gates do not advance stage. Selected-root regression verified.",
+      "status": "EQUIVALENT",
+      "task": "CGS-14",
+      "target": ".agents/skills/gate-check/references/5-verdict.md",
+      "target_sha256": "2713ae90951a491de8118f91c08893c57caa999c2e021a9ada43126659859949",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-14/acceptance.md",
+        "docs/codex/evidence/CGS-14/host-fixture.json",
+        "docs/codex/evidence/CGS-14/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/gate-check/references/6-update-stage.md",
@@ -5704,8 +5821,17 @@
       ],
       "proposed_target": ".agents/skills/gate-check/references/6-update-stage.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session planning smokes: brief-derived stories, dependency BLOCKED, repeat without duplication, factual statuses, unknown estimates and unpassed gates do not advance stage. Selected-root regression verified.",
+      "status": "EQUIVALENT",
+      "task": "CGS-14",
+      "target": ".agents/skills/gate-check/references/6-update-stage.md",
+      "target_sha256": "211a556d46ed5a9bb98be5aba3b966b4e0974c8305854a60c479c2b55634bfea",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-14/acceptance.md",
+        "docs/codex/evidence/CGS-14/host-fixture.json",
+        "docs/codex/evidence/CGS-14/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/gate-check/references/7-next-steps.md",
@@ -5718,8 +5844,17 @@
       ],
       "proposed_target": ".agents/skills/gate-check/references/7-next-steps.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session planning smokes: brief-derived stories, dependency BLOCKED, repeat without duplication, factual statuses, unknown estimates and unpassed gates do not advance stage. Selected-root regression verified.",
+      "status": "EQUIVALENT",
+      "task": "CGS-14",
+      "target": ".agents/skills/gate-check/references/7-next-steps.md",
+      "target_sha256": "3a5271113472a9b36657c7bcc07583354708313ad447dc29365079cc5f1889a1",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-14/acceptance.md",
+        "docs/codex/evidence/CGS-14/host-fixture.json",
+        "docs/codex/evidence/CGS-14/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/gate-check/references/gate-polish.md",
@@ -5732,8 +5867,17 @@
       ],
       "proposed_target": ".agents/skills/gate-check/references/gate-polish.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session planning smokes: brief-derived stories, dependency BLOCKED, repeat without duplication, factual statuses, unknown estimates and unpassed gates do not advance stage. Selected-root regression verified.",
+      "status": "EQUIVALENT",
+      "task": "CGS-14",
+      "target": ".agents/skills/gate-check/references/gate-polish.md",
+      "target_sha256": "6535ae61eeff772e904967426dbd7fa455c68759ea63145dc9edc53db3c9fc1d",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-14/acceptance.md",
+        "docs/codex/evidence/CGS-14/host-fixture.json",
+        "docs/codex/evidence/CGS-14/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/gate-check/references/gate-pre-production.md",
@@ -5746,8 +5890,17 @@
       ],
       "proposed_target": ".agents/skills/gate-check/references/gate-pre-production.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session planning smokes: brief-derived stories, dependency BLOCKED, repeat without duplication, factual statuses, unknown estimates and unpassed gates do not advance stage. Selected-root regression verified.",
+      "status": "EQUIVALENT",
+      "task": "CGS-14",
+      "target": ".agents/skills/gate-check/references/gate-pre-production.md",
+      "target_sha256": "f56b356ddcbd7efc33af139211f39e957989868b178728bab70660b2aa524e41",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-14/acceptance.md",
+        "docs/codex/evidence/CGS-14/host-fixture.json",
+        "docs/codex/evidence/CGS-14/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/gate-check/references/gate-production.md",
@@ -5760,8 +5913,17 @@
       ],
       "proposed_target": ".agents/skills/gate-check/references/gate-production.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session planning smokes: brief-derived stories, dependency BLOCKED, repeat without duplication, factual statuses, unknown estimates and unpassed gates do not advance stage. Selected-root regression verified.",
+      "status": "EQUIVALENT",
+      "task": "CGS-14",
+      "target": ".agents/skills/gate-check/references/gate-production.md",
+      "target_sha256": "4636138ca44e6f882521c904eaf0320ebdf6306a14ca2513f9ef2fc5c121d59c",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-14/acceptance.md",
+        "docs/codex/evidence/CGS-14/host-fixture.json",
+        "docs/codex/evidence/CGS-14/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/gate-check/references/gate-release.md",
@@ -5774,8 +5936,17 @@
       ],
       "proposed_target": ".agents/skills/gate-check/references/gate-release.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session planning smokes: brief-derived stories, dependency BLOCKED, repeat without duplication, factual statuses, unknown estimates and unpassed gates do not advance stage. Selected-root regression verified.",
+      "status": "EQUIVALENT",
+      "task": "CGS-14",
+      "target": ".agents/skills/gate-check/references/gate-release.md",
+      "target_sha256": "4406b040cfc29a80e86b24d994c9db2c5eb777390a3b1c5b4952a8a60b9a689d",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-14/acceptance.md",
+        "docs/codex/evidence/CGS-14/host-fixture.json",
+        "docs/codex/evidence/CGS-14/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/gate-check/references/gate-systems-design.md",
@@ -5788,8 +5959,17 @@
       ],
       "proposed_target": ".agents/skills/gate-check/references/gate-systems-design.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session planning smokes: brief-derived stories, dependency BLOCKED, repeat without duplication, factual statuses, unknown estimates and unpassed gates do not advance stage. Selected-root regression verified.",
+      "status": "EQUIVALENT",
+      "task": "CGS-14",
+      "target": ".agents/skills/gate-check/references/gate-systems-design.md",
+      "target_sha256": "c3734412cb2b47074e13858e4c9ea5ceaa67069edde919741d38ed53c90f544e",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-14/acceptance.md",
+        "docs/codex/evidence/CGS-14/host-fixture.json",
+        "docs/codex/evidence/CGS-14/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/gate-check/references/gate-technical-setup.md",
@@ -5802,8 +5982,17 @@
       ],
       "proposed_target": ".agents/skills/gate-check/references/gate-technical-setup.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session planning smokes: brief-derived stories, dependency BLOCKED, repeat without duplication, factual statuses, unknown estimates and unpassed gates do not advance stage. Selected-root regression verified.",
+      "status": "EQUIVALENT",
+      "task": "CGS-14",
+      "target": ".agents/skills/gate-check/references/gate-technical-setup.md",
+      "target_sha256": "b3aadf060d3231ee1c9ba50a0da0a1ad66bcc42f1b17397718550ccbffee815e",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-14/acceptance.md",
+        "docs/codex/evidence/CGS-14/host-fixture.json",
+        "docs/codex/evidence/CGS-14/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/help/SKILL.md",
@@ -7131,8 +7320,17 @@
       ],
       "proposed_target": ".agents/skills/sprint-plan/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session planning smokes: brief-derived stories, dependency BLOCKED, repeat without duplication, factual statuses, unknown estimates and unpassed gates do not advance stage. Selected-root regression verified.",
+      "status": "EQUIVALENT",
+      "task": "CGS-14",
+      "target": ".agents/skills/sprint-plan/SKILL.md",
+      "target_sha256": "7362be5e17fcfeba53cfb585ac70d9e9eaa7618ef735cc1d945e3919d144c914",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-14/acceptance.md",
+        "docs/codex/evidence/CGS-14/host-fixture.json",
+        "docs/codex/evidence/CGS-14/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/sprint-status/SKILL.md",
@@ -7148,8 +7346,17 @@
       ],
       "proposed_target": ".agents/skills/sprint-status/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session planning smokes: brief-derived stories, dependency BLOCKED, repeat without duplication, factual statuses, unknown estimates and unpassed gates do not advance stage. Selected-root regression verified.",
+      "status": "EQUIVALENT",
+      "task": "CGS-14",
+      "target": ".agents/skills/sprint-status/SKILL.md",
+      "target_sha256": "328b42aefbd2b37e8ef29a18cfb09fa0260d1d1316efa933cfe32573c6153e6e",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-14/acceptance.md",
+        "docs/codex/evidence/CGS-14/host-fixture.json",
+        "docs/codex/evidence/CGS-14/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/start/SKILL.md",
@@ -7260,8 +7467,17 @@
       ],
       "proposed_target": ".agents/skills/story-readiness/CONTRACT.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session planning smokes: brief-derived stories, dependency BLOCKED, repeat without duplication, factual statuses, unknown estimates and unpassed gates do not advance stage. Selected-root regression verified.",
+      "status": "EQUIVALENT",
+      "task": "CGS-14",
+      "target": ".agents/skills/story-readiness/CONTRACT.md",
+      "target_sha256": "729ddd4f06a531e71de7f24eb4693fe452007de1992f2f17eccdaf1c4760b3d5",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-14/acceptance.md",
+        "docs/codex/evidence/CGS-14/host-fixture.json",
+        "docs/codex/evidence/CGS-14/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/story-readiness/SKILL.md",
@@ -7278,8 +7494,17 @@
       ],
       "proposed_target": ".agents/skills/story-readiness/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session planning smokes: brief-derived stories, dependency BLOCKED, repeat without duplication, factual statuses, unknown estimates and unpassed gates do not advance stage. Selected-root regression verified.",
+      "status": "EQUIVALENT",
+      "task": "CGS-14",
+      "target": ".agents/skills/story-readiness/SKILL.md",
+      "target_sha256": "369f283b7832cd63ce743601f1b5dc11493e003d51d9a1399581e1612cfccd34",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-14/acceptance.md",
+        "docs/codex/evidence/CGS-14/host-fixture.json",
+        "docs/codex/evidence/CGS-14/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/story-readiness/references/qa-lead-gate.md",
@@ -7292,8 +7517,17 @@
       ],
       "proposed_target": ".agents/skills/story-readiness/references/qa-lead-gate.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session planning smokes: brief-derived stories, dependency BLOCKED, repeat without duplication, factual statuses, unknown estimates and unpassed gates do not advance stage. Selected-root regression verified.",
+      "status": "EQUIVALENT",
+      "task": "CGS-14",
+      "target": ".agents/skills/story-readiness/references/qa-lead-gate.md",
+      "target_sha256": "f919c5e0cfc94d1caccd0c68c4ab5b97b64fca75c24d1632ab6f2297a534c226",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-14/acceptance.md",
+        "docs/codex/evidence/CGS-14/host-fixture.json",
+        "docs/codex/evidence/CGS-14/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/team-audio/SKILL.md",

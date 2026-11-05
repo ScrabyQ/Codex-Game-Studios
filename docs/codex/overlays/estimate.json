@@ -1,0 +1,13 @@
+{
+  "source_sha256": "61d821627b3db4f4038f60b7ce799599a219b864036023ce15d5fc85348874f0",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-14 execution contract:** Resolve the explicitly selected project root and current project settings; use actual artifact content and status, not file existence as proof of completion. Missing, unreadable, placeholder-only, failed or unrun checks are unknown/NOT ASSESSED when required, never a fabricated pass. Execute explicit bootstrap and helpers through available supported tools with the selected root. Use the dispatcher `--root <selected-root>` once for `story-status`, `story-facts`, and `artifact-check`; never pass a second positional root to the dispatcher. For `artifact-check`, require a catalog inside that root and confirm its emitted ROOT matches the selected project; report an unavailable helper and fall back only to directly verifiable facts. Keep prior user authorization and host permissions; unanswered or skipped required decisions are not consent. Do not invoke a suggested next skill automatically. When native role delegation is unavailable, an in-session review is not independent: disclose it and leave any required independent gate NOT ASSESSED.\n\nRead-only. Report counts only if actually measured, identify unreadable/missing files, distinguish observed history from assumptions, and label uncalibrated ranges when no velocity exists. Never invent measured complexity, durations or team velocity; absent task facts make the affected estimate NOT ASSESSED or low confidence.\n\n"
+    },
+    {
+      "find": "Read CLAUDE.md for project context: tech stack, coding standards, architectural patterns, and any estimation guidelines.",
+      "replace": "Resolve engine and project settings from project.yaml, and read AGENTS.md and applicable on-demand standards for project context; treat unconfigured fields as unknown."
+    }
+  ]
+}

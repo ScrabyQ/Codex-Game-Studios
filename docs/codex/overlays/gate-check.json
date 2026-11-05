@@ -1,0 +1,14 @@
+{
+  "source_sha256": "e2ca66469e396bfd53de98fe3ba9761c24ce76b514cb933e5c5b00f17b36c8de",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-14 execution contract:** Resolve the explicitly selected project root and current project settings; use actual artifact content and status, not file existence as proof of completion. Missing, unreadable, placeholder-only, failed or unrun checks are unknown/NOT ASSESSED when required, never a fabricated pass. Execute explicit bootstrap and helpers through available supported tools with the selected root. Use the dispatcher `--root <selected-root>` once for `story-status`, `story-facts`, and `artifact-check`; never pass a second positional root to the dispatcher. For `artifact-check`, require a catalog inside that root and confirm its emitted ROOT matches the selected project; report an unavailable helper and fall back only to directly verifiable facts. Keep prior user authorization and host permissions; unanswered or skipped required decisions are not consent. Do not invoke a suggested next skill automatically. When native role delegation is unavailable, an in-session review is not independent: disclose it and leave any required independent gate NOT ASSESSED.\n\nPreserve FAIL > CONCERNS > NOT ASSESSED > PASS precedence, while any required unknown prevents advancement even where CONCERNS outranks it in the displayed verdict. Check actual artifact content and quality, not existence alone. Advance only after an actually assessed PASS plus authorization, or the source-defined explicit CONCERNS override with every risk accepted and no required check unassessed; FAIL/NOT ASSESSED never advance. Confirm and read back both project.stage and production/stage.txt through the stage helper; never silently fix a split stage. Minimal has the brief short path; full independent director gates cannot be replaced by claimed independent review in-session.\n\n"
+    },
+    {
+      "target": "references/gate-pre-production.md",
+      "find": "- [ ] Engine chosen (CLAUDE.md Technology Stack is not `[CHOOSE]`)",
+      "replace": "- [ ] Engine chosen: verify engine.name and engine.version in project.yaml and inspect the selected engine reference; missing or unreadable configuration is not a pass."
+    }
+  ]
+}

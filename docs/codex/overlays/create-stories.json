@@ -1,0 +1,9 @@
+{
+  "source_sha256": "6fbbc16b580e90cf219e1bc67aaebeaf5e81e0dbc24c3b419d493dc6362282c3",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-14 execution contract:** Resolve the explicitly selected project root and current project settings; use actual artifact content and status, not file existence as proof of completion. Missing, unreadable, placeholder-only, failed or unrun checks are unknown/NOT ASSESSED when required, never a fabricated pass. Execute explicit bootstrap and helpers through available supported tools with the selected root. Use the dispatcher `--root <selected-root>` once for `story-status`, `story-facts`, and `artifact-check`; never pass a second positional root to the dispatcher. For `artifact-check`, require a catalog inside that root and confirm its emitted ROOT matches the selected project; report an unavailable helper and fall back only to directly verifiable facts. Keep prior user authorization and host permissions; unanswered or skipped required decisions are not consent. Do not invoke a suggested next skill automatically. When native role delegation is unavailable, an in-session review is not independent: disclose it and leave any required independent gate NOT ASSESSED.\n\nAt minimal, derive one story per actual brief MVP item in build order, traced to its numbered feature and supported by its goal/failure facts; preserve coarse/balanced/fine acceptance-criteria rules. On a repeat, inspect existing story coverage and highest ID; add only uncovered work, never overwrite, duplicate, renumber or reset existing records. Name and honor dependency paths and Blocked status, retain real user authorization for the requested changes, and never implement the stories automatically.\n\n"
+    }
+  ]
+}

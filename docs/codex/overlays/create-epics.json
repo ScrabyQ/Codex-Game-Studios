@@ -1,0 +1,9 @@
+{
+  "source_sha256": "a867fed460ac1ad49debf36302da1f1e44d0c9bc08aee2e14119fa09b572abd0",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-14 execution contract:** Resolve the explicitly selected project root and current project settings; use actual artifact content and status, not file existence as proof of completion. Missing, unreadable, placeholder-only, failed or unrun checks are unknown/NOT ASSESSED when required, never a fabricated pass. Execute explicit bootstrap and helpers through available supported tools with the selected root. Use the dispatcher `--root <selected-root>` once for `story-status`, `story-facts`, and `artifact-check`; never pass a second positional root to the dispatcher. For `artifact-check`, require a catalog inside that root and confirm its emitted ROOT matches the selected project; report an unavailable helper and fall back only to directly verifiable facts. Keep prior user authorization and host permissions; unanswered or skipped required decisions are not consent. Do not invoke a suggested next skill automatically. When native role delegation is unavailable, an in-session review is not independent: disclose it and leave any required independent gate NOT ASSESSED.\n\nAt minimal, epics are optional and derived from the brief MVP in build order. Preserve stable slugs and index rows; never overwrite an existing epic or reset its story table. Higher tiers use real GDDs, architecture and accepted ADRs; missing inputs cannot become invented module boundaries. Obtain required per-epic decisions before writing.\n\n"
+    }
+  ]
+}

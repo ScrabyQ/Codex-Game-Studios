@@ -5,9 +5,9 @@
   "upstream_sha": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
   "owner": "ScrabyQ",
   "repository": "Codex-Game-Studios",
-  "last_completed": "CGS-24",
-  "current_task": "CGS-14",
-  "next_safe_step": "15 hook declarations have tested explicit fallback, 18/18 Windows tests PASS. Optional native activation/Linux PENDING; selected-root helper fix integrated before planning.",
+  "last_completed": "CGS-14",
+  "current_task": "CGS-15",
+  "next_safe_step": "Production planning acceptance verified, including repeat/no-duplicate and BLOCKED dependency; implement single-story lifecycle next. CGS17 and21 active.",
   "decisions": [
     "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED.",
     "Generated content-preserving .agents mirror retains helper root math; native roles use .codex/agents/*.toml; all generation is hash-guarded; no new agent runtime."
@@ -187,9 +187,15 @@
       "key": "CGS-14",
       "singularity_id": "T-dbb36980-ab60-4955-8b32-a1d2c445f233",
       "title": "CGS-14 · Skills · эпики, истории, спринты и готовность (7)",
-      "status": "PENDING",
+      "status": "COMPLETE",
       "commit": null,
-      "evidence": []
+      "evidence": [
+        "docs/codex/evidence/CGS-14/acceptance.md",
+        "docs/codex/evidence/CGS-14/README.md",
+        "docs/codex/evidence/CGS-14/traceability.json"
+      ],
+      "note": "Production planning acceptance verified, including repeat/no-duplicate and BLOCKED dependency; implement single-story lifecycle next. CGS17 and21 active.",
+      "updated_at": "2026-11-05T11:52:01.596Z"
     },
     {
       "key": "CGS-15",
@@ -272,7 +278,7 @@
       "singularity_id": "T-8fd64743-6c7e-4f97-849b-9f00fe3dc4f6",
       "title": "CGS-24 · Перенести 15 автоматических hooks с безопасными fallback",
       "status": "COMPLETE",
-      "commit": null,
+      "commit": "3f7f9a18b1ac451e1b5e3177a0097a3b6d706bbe",
       "evidence": [
         "docs/codex/evidence/CGS-24/README.md",
         "docs/codex/evidence/CGS-24/checks.json",
@@ -280,7 +286,7 @@
         "docs/codex/evidence/CGS-25/helper-root-regression.json"
       ],
       "note": "15 hook declarations have tested explicit fallback, 18/18 Windows tests PASS. Optional native activation/Linux PENDING; selected-root helper fix integrated before planning.",
-      "updated_at": "2026-11-05T11:51:01.067Z"
+      "updated_at": "2026-11-05T11:52:01.522Z"
     },
     {
       "key": "CGS-25",

@@ -1,0 +1,9 @@
+{
+  "source_sha256": "0c73e0a2c22b13a711a40ea4682a1d31c3c61cd8ad4a5a5115c41f8270659d12",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-14 execution contract:** Resolve the explicitly selected project root and current project settings; use actual artifact content and status, not file existence as proof of completion. Missing, unreadable, placeholder-only, failed or unrun checks are unknown/NOT ASSESSED when required, never a fabricated pass. Execute explicit bootstrap and helpers through available supported tools with the selected root. Use the dispatcher `--root <selected-root>` once for `story-status`, `story-facts`, and `artifact-check`; never pass a second positional root to the dispatcher. For `artifact-check`, require a catalog inside that root and confirm its emitted ROOT matches the selected project; report an unavailable helper and fall back only to directly verifiable facts. Keep prior user authorization and host permissions; unanswered or skipped required decisions are not consent. Do not invoke a suggested next skill automatically. When native role delegation is unavailable, an in-session review is not independent: disclose it and leave any required independent gate NOT ASSESSED.\n\nRead-only: preserve all checklist groups and source verdict precedence. **Execution dependency requirement:** a required predecessor that is not Complete/Done blocks starting this story; a missing or unreadable predecessor is BLOCKED or NOT ASSESSED as appropriate, never silently treated complete. Report which dependency and its actual status. This stricter implementation-readiness rule supplements the source Draft-only format check. No stories in scope is NOT ASSESSED. Do not claim an independent QA review when an in-session fallback was used.\n\n"
+    }
+  ]
+}

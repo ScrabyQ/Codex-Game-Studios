@@ -1,0 +1,9 @@
+{
+  "source_sha256": "34d09121606a14f6b5c5a82cafe65796f97adb4ed8ed8857554384ae6fe90a14",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-14 execution contract:** Resolve the explicitly selected project root and current project settings; use actual artifact content and status, not file existence as proof of completion. Missing, unreadable, placeholder-only, failed or unrun checks are unknown/NOT ASSESSED when required, never a fabricated pass. Execute explicit bootstrap and helpers through available supported tools with the selected root. Use the dispatcher `--root <selected-root>` once for `story-status`, `story-facts`, and `artifact-check`; never pass a second positional root to the dispatcher. For `artifact-check`, require a catalog inside that root and confirm its emitted ROOT matches the selected project; report an unavailable helper and fall back only to directly verifiable facts. Keep prior user authorization and host permissions; unanswered or skipped required decisions are not consent. Do not invoke a suggested next skill automatically. When native role delegation is unavailable, an in-session review is not independent: disclose it and leave any required independent gate NOT ASSESSED.\n\nThis is read-only. Use actual sprint status or, at minimal with no sprint, actual brief build order and story statuses. Missing files, timestamps or dates are unknown or explicitly missing, not complete; keep blocked and in-progress work distinct.\n\n"
+    }
+  ]
+}

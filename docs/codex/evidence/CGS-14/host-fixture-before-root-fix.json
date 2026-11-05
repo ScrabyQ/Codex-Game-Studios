@@ -1,0 +1,121 @@
+{
+  "schema": 1,
+  "task": "CGS-14",
+  "source_commit": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
+  "mode": "in-session Codex host work with real fixture files and helpers; not native CLI or independent review",
+  "fixture": ".scratch/cgs14-planning-p2ea2o",
+  "fixture_inputs": {
+    "brief_sha256": "3fa0d138470db34134eb108582863b0e6d21baca9fb268353e0616e9c765ee37",
+    "story_hashes": {
+      "story-001-switch.md": "0e4ee352b89c06d17ea14c64f7a28c7bf9e1b092aecf1c604d665ede9f082114",
+      "story-002-exit.md": "4527c2618f286f7ef3a8a7475ecaab39451419c08d7b721c328f0934fcc249af"
+    },
+    "epic_sha256": "aa23780e32ab9b49dfdf0abd6316efe8d7de92a6dd03f182f448cd95ae14a207",
+    "sprint_sha256": "3a5d26a1336880c57a5d18a04c849e6c18cf5811216983530ca069748ba799da"
+  },
+  "repeated_planning": {
+    "description": "Second in-session pass read the same brief and existing numbered stories and made no writes because both MVP features were covered.",
+    "before": [
+      "story-001-switch.md",
+      "story-002-exit.md"
+    ],
+    "after": [
+      "story-001-switch.md",
+      "story-002-exit.md"
+    ],
+    "beforeHashes": {
+      "story-001-switch.md": "0e4ee352b89c06d17ea14c64f7a28c7bf9e1b092aecf1c604d665ede9f082114",
+      "story-002-exit.md": "4527c2618f286f7ef3a8a7475ecaab39451419c08d7b721c328f0934fcc249af"
+    },
+    "afterHashes": {
+      "story-001-switch.md": "0e4ee352b89c06d17ea14c64f7a28c7bf9e1b092aecf1c604d665ede9f082114",
+      "story-002-exit.md": "4527c2618f286f7ef3a8a7475ecaab39451419c08d7b721c328f0934fcc249af"
+    },
+    "coverage": [
+      "1",
+      "2"
+    ],
+    "unchanged": true
+  },
+  "helper_observations": {
+    "all": {
+      "command": [
+        "node",
+        "scripts/codex/helper.mjs",
+        "story-facts",
+        "--root",
+        "<fixture>",
+        "--lint",
+        "--granularity",
+        "coarse",
+        "--all"
+      ],
+      "exit_code": 0,
+      "stdout": "stories\t2\tproduction/epics/**/story-*.md\ncomplete\t0\nin_review\t0\nin_progress\t0\ntodo\t1\nblocked\t1\nother\t0\nno_status\t0\nlint\t2\nSTORY\tproduction/epics/lantern-puzzle/story-001-switch.md\tTODO\tReady\tLogic\tCore\tM (proposal, not calibrated)\t-\tn/a\t6\t0\t-\tNone\t-\nSTORY\tproduction/epics/lantern-puzzle/story-002-exit.md\tBLOCKED\tBlocked — BLOCKED: story 001 is not Complete\tLogic\tCore\tM (proposal, not calibrated)\t-\tn/a\t7\t0\t-\tproduction/epics/lantern-puzzle/story-001-switch.md\t-\nLINT\tproduction/epics/lantern-puzzle/story-001-switch.md\tno_tr_id\t-\nLINT\tproduction/epics/lantern-puzzle/story-002-exit.md\tno_tr_id\t-\n",
+      "stderr": "",
+      "error": null
+    },
+    "sprint": {
+      "command": [
+        "node",
+        "scripts/codex/helper.mjs",
+        "story-facts",
+        "--root",
+        "<fixture>",
+        "--lint",
+        "--granularity",
+        "coarse",
+        "--sprint"
+      ],
+      "exit_code": 0,
+      "stdout": "stories\t1\tproduction/sprint-status.yaml\ncomplete\t0\nin_review\t0\nin_progress\t0\ntodo\t1\nblocked\t0\nother\t0\nno_status\t0\nlint\t1\nSTORY\tproduction/epics/lantern-puzzle/story-001-switch.md\tTODO\tReady\tLogic\tCore\tM (proposal, not calibrated)\t-\tn/a\t6\t0\t-\tNone\tready-for-dev\nLINT\tproduction/epics/lantern-puzzle/story-001-switch.md\tno_tr_id\t-\n",
+      "stderr": "",
+      "error": null
+    },
+    "catalog": {
+      "command": [
+        "node",
+        "scripts/codex/helper.mjs",
+        "artifact-check",
+        "--root",
+        "<fixture>",
+        "--path",
+        "minimal",
+        "<fixture>"
+      ],
+      "exit_code": 0,
+      "stdout": "CATALOG: .agents/docs/workflow-catalog.yaml\r\nROOT: D:/MyProjects/codex-game-studios/.scratch/cgs14-planning-p2ea2o\r\nPATHS: 1\r\nSTEPS: 5\r\nNO_CHECK: 2\r\nPATH: minimal\r\n  STEP: engine-setup required=true repeatable=false check=any_of status=PRESENT alt=1 match=project.yaml\r\n  STEP: game-brief required=true repeatable=false check=glob status=PRESENT count=1\r\n  STEP: create-stories required=true repeatable=false check=glob status=PRESENT count=2\r\n  STEP: implement required=true repeatable=true check=none status=NO_CHECK note=Each story's Status line (Ready / In Progress / Complete) is the record — story files are numbered in build order\r\n  STEP: story-done required=true repeatable=true check=none status=NO_CHECK\r\n",
+      "stderr": "",
+      "error": null
+    }
+  },
+  "gate_inputs": {
+    "missing": {
+      "brief_exists": false,
+      "stage": {
+        "yaml": "Concept",
+        "mirror": "Concept"
+      }
+    },
+    "placeholder": {
+      "brief": "# Game Brief: [Working Title]\n\n[TO BE CONFIGURED]\n",
+      "stage": {
+        "yaml": "Concept",
+        "mirror": "Concept"
+      }
+    },
+    "present": {
+      "brief_sha256": "3fa0d138470db34134eb108582863b0e6d21baca9fb268353e0616e9c765ee37",
+      "stage": {
+        "yaml": "Concept",
+        "mirror": "Concept"
+      }
+    }
+  },
+  "limitations": [
+    "No engine build, gameplay, or visual test",
+    "Required manual gate inputs and independent full-rigor gates are NOT ASSESSED",
+    "Sprint QA plan and historical velocity absent",
+    "Root forwarding defects in story-status and artifact-check reported separately"
+  ]
+}
