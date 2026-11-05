@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "workflow": "start returning-user → separately authorized dev-story validation → story-done",
+  "implementation": "Existing portable source reused, no fresh implementation claim.",
+  "skill_execution": "Explicit in-session documented fallback; no native CLI discovery/end-to-end orchestration claim.",
+  "criteria": {
+    "AC1": "ready 3/3 capture + model test",
+    "AC2": "actual engine-event three clicks + empty 0/3 capture",
+    "AC3": "actual reset event + reset capture",
+    "AC4": "three 800x480 screenshots opened/readable/unclipped",
+    "AC5": "actual disabled engine-event click/no underflow + model test"
+  },
+  "review": "self, no independent native specialist; solo policy skips QL/LP",
+  "pending": [
+    "physical input",
+    "human playtest/feel",
+    "export",
+    "Unity editor",
+    "Unreal SDK/5.8.3 pin"
+  ]
+}

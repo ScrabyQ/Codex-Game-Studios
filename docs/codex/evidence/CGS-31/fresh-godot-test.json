@@ -1,0 +1,18 @@
+{
+  "name": "fresh-godot-test",
+  "exe": "C:/Program Files (x86)/Steam/steamapps/common/Godot Engine/godot.windows.opt.tools.64.exe",
+  "args": [
+    "--headless",
+    "--path",
+    "D:\\MyProjects\\codex-game-studios\\.codex-tmp\\cgs31-godot-scenario",
+    "--script",
+    "res://tests/unit/charge_model_test.gd"
+  ],
+  "cwd": "D:\\MyProjects\\codex-game-studios\\.codex-tmp\\cgs31-godot-scenario",
+  "started": "2026-11-05T14:33:57.822Z",
+  "finished": "2026-11-05T14:33:58.144Z",
+  "exit": 0,
+  "error": null,
+  "stdout": "Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org\r\n\r\nCGS27_MODEL_ASSERTIONS=8 FAILURES=0\r\n",
+  "stderr": ""
+}

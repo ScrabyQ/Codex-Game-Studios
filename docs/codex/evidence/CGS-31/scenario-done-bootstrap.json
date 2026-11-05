@@ -1,0 +1,20 @@
+{
+  "name": "scenario-done-bootstrap",
+  "exe": "node",
+  "args": [
+    "D:\\MyProjects\\codex-game-studios\\scripts\\codex\\helper.mjs",
+    "yaml-helper",
+    "--root",
+    "D:\\MyProjects\\codex-game-studios\\.codex-tmp\\cgs31-godot-scenario",
+    "resolve_config",
+    "--keys",
+    "review_mode,review_gate,automation,automation_always_ask,workflow,qa.level,gate_level,system_overrides"
+  ],
+  "cwd": "D:\\MyProjects\\codex-game-studios\\.codex-tmp\\cgs31-godot-scenario",
+  "started": "2026-11-05T14:34:47.545Z",
+  "finished": "2026-11-05T14:34:54.159Z",
+  "exit": 0,
+  "error": null,
+  "stdout": "=== CCGS Config (resolved: local->yaml->legacy->default; use as-is) ===\nreview_mode: solo (rigor:minimal)\nautomation: guided (project.yaml)\nworkflow: minimal (rigor:minimal)\nqa.level: minimal (rigor:minimal)\nautomation_always_ask: scope_changes, file_deletions, schema_changes (default)\nsystem_overrides: none\ngate_level: logic=blocking(default) integration=blocking(default) visual=blocking(default) ui=blocking(default) config=advisory(default; /smoke-check: blocking)\nreview_gate: skill-gates=skip phase-gates=skip (review_mode solo, rigor:minimal; a --review flag overrides)\n=== end ===\n",
+  "stderr": ""
+}

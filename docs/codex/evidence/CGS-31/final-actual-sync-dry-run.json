@@ -1,0 +1,15 @@
+{
+  "name": "actual-sync-dry-run",
+  "exe": "node",
+  "args": [
+    "scripts/codex/sync-upstream.mjs",
+    "--dry-run"
+  ],
+  "cwd": "D:\\MyProjects\\codex-game-studios\\.codex-tmp\\cgs31-final-20261105",
+  "started": "2026-11-05T14:41:06.941Z",
+  "finished": "2026-11-05T14:41:07.401Z",
+  "exit": 0,
+  "error": null,
+  "stdout": "{\n  \"schema\": 1,\n  \"baseline_sha\": \"05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418\",\n  \"upstream_sha\": \"05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418\",\n  \"head_sha\": \"3670ab803998ce43e2cfd42a627954880206ff5a\",\n  \"reconciliation\": {\n    \"state\": \"active\",\n    \"pending\": false,\n    \"metadata\": {\n      \"schema\": 1,\n      \"historical_source_commit\": \"05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418\",\n      \"source_commit\": \"05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418\",\n      \"reconciliation_evidence\": [],\n      \"state\": \"active\"\n    },\n    \"pending_entries\": []\n  },\n  \"status\": \"NO_UPSTREAM_CHANGES\",\n  \"groups\": {\n    \"agent\": 0,\n    \"skill\": 0,\n    \"hook\": 0,\n    \"rule\": 0,\n    \"template\": 0,\n    \"hook-declarations\": 0,\n    \"other\": 0\n  },\n  \"changes\": [],\n  \"target_drift\": [],\n  \"working_tree\": \" M docs/codex/evidence/CGS-29/tests.json\",\n  \"checklist\": [\n    \"Review every changed/new/deleted source and declaration; all affected coverage is PENDING.\",\n    \"Resolve merge conflicts explicitly in the isolated worktree.\",\n    \"Rebase source-bound overlays explicitly; preserve generated target hash guards.\",\n    \"Reconcile active inventory and migration evidence; retain historical baseline.\",\n    \"Run inventory, generator check, validation and affected behavioral tests.\",\n    \"Review diff, commit locally and open a draft PR only with authorization; never auto-merge.\"\n  ]\n}\n",
+  "stderr": ""
+}

@@ -1,0 +1,22 @@
+{
+  "name": "fresh-godot-parse",
+  "exe": "C:/Program Files (x86)/Steam/steamapps/common/Godot Engine/godot.windows.opt.tools.64.exe",
+  "args": [
+    "--headless",
+    "--path",
+    "D:\\MyProjects\\codex-game-studios\\.codex-tmp\\cgs31-godot-scenario",
+    "--script",
+    "D:\\MyProjects\\codex-game-studios\\.agents\\scripts\\godot-parse-check.gd",
+    "--",
+    "res://src/charge_model.gd",
+    "res://src/charge_beacon.gd",
+    "res://tests/unit/charge_model_test.gd"
+  ],
+  "cwd": "D:\\MyProjects\\codex-game-studios\\.codex-tmp\\cgs31-godot-scenario",
+  "started": "2026-11-05T14:33:55.984Z",
+  "finished": "2026-11-05T14:33:56.334Z",
+  "exit": 0,
+  "error": null,
+  "stdout": "Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org\r\n\r\nok: res://src/charge_model.gd\r\nok: res://src/charge_beacon.gd\r\nok: res://tests/unit/charge_model_test.gd\r\n",
+  "stderr": ""
+}

@@ -1,0 +1,20 @@
+{
+  "name": "scenario-dev-bootstrap",
+  "exe": "node",
+  "args": [
+    "D:\\MyProjects\\codex-game-studios\\scripts\\codex\\helper.mjs",
+    "yaml-helper",
+    "--root",
+    "D:\\MyProjects\\codex-game-studios\\.codex-tmp\\cgs31-godot-scenario",
+    "resolve_config",
+    "--keys",
+    "automation,workflow,qa.level,gate_level,engine_values,specialists,perf_budgets,system_overrides"
+  ],
+  "cwd": "D:\\MyProjects\\codex-game-studios\\.codex-tmp\\cgs31-godot-scenario",
+  "started": "2026-11-05T14:33:20.845Z",
+  "finished": "2026-11-05T14:33:42.480Z",
+  "exit": 0,
+  "error": null,
+  "stdout": "=== CCGS Config (resolved: local->yaml->legacy->default; use as-is) ===\nautomation: guided (project.yaml)\nworkflow: minimal (rigor:minimal)\nqa.level: minimal (rigor:minimal)\nsystem_overrides: none\ngate_level: logic=blocking(default) integration=blocking(default) visual=blocking(default) ui=blocking(default) config=advisory(default; /smoke-check: blocking)\nengine_values: name=Godot(project.yaml) version=4.7.2(project.yaml) language=GDScript(project.yaml)\nspecialists: primary=godot-specialist(engine.name) code=godot-gdscript-specialist shader=godot-shader-specialist ui=godot-specialist additional=godot-gdextension-specialist (project.yaml; unset = skip that specialist)\nperf_budgets: target_framerate=unset frame_budget_ms=unset draw_call_limit=unset memory_ceiling_mb=unset (project.yaml)\n=== end ===\n",
+  "stderr": ""
+}

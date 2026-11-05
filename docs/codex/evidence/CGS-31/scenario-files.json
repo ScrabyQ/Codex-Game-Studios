@@ -1,0 +1,41 @@
+{
+  "project": "D:\\MyProjects\\codex-game-studios\\.codex-tmp\\cgs31-godot-scenario",
+  "source": "D:\\MyProjects\\codex-game-studios\\docs\\codex\\fixtures\\cgs27\\godot",
+  "implementation_hashes": [
+    {
+      "path": "src/charge_model.gd",
+      "source_sha256": "1719be29cce7c759647fde0238bd2e59bfa192663213f9705f67fde42edd201a",
+      "scenario_sha256": "1719be29cce7c759647fde0238bd2e59bfa192663213f9705f67fde42edd201a"
+    },
+    {
+      "path": "src/charge_beacon.gd",
+      "source_sha256": "34146c6bcbd677eab4de19b8d5670180df612de2ca13d4525f937bfd0c314ad3",
+      "scenario_sha256": "34146c6bcbd677eab4de19b8d5670180df612de2ca13d4525f937bfd0c314ad3"
+    },
+    {
+      "path": "tests/unit/charge_model_test.gd",
+      "source_sha256": "81dbb0b9cf5cec347bec802b249cfeff5b19d8d5ecd3e918f3cb6bc223301ee4",
+      "scenario_sha256": "81dbb0b9cf5cec347bec802b249cfeff5b19d8d5ecd3e918f3cb6bc223301ee4"
+    },
+    {
+      "path": "scenes/charge_beacon.tscn",
+      "source_sha256": "8cc3ee069013bb9837def01fa0c628c7c4b42e76ff5e5b9626e66ff948e2bebf",
+      "scenario_sha256": "8cc3ee069013bb9837def01fa0c628c7c4b42e76ff5e5b9626e66ff948e2bebf"
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "screenshots/01-ready.png",
+      "sha256": "4a1b6814bc0ee64c00725a6a0b98a5f1bd539aa8d5e9239b6d191e2333838c04"
+    },
+    {
+      "path": "screenshots/02-empty.png",
+      "sha256": "0bec8767e7df47c657914bc71d1904d3f30e4f04e2eba258876a13c6290ac1e7"
+    },
+    {
+      "path": "screenshots/03-reset.png",
+      "sha256": "5259e9af8e31a6f9895b40f00b0b5d1fe990b32f0c5ed5b203d490654e363df5"
+    }
+  ],
+  "closure": "PENDING images must be opened and assessed before finish"
+}

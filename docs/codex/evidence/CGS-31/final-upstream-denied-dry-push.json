@@ -1,0 +1,17 @@
+{
+  "name": "upstream-denied-dry-push",
+  "exe": "node",
+  "args": [
+    "scripts/codex/hooks.mjs",
+    "PreToolUse",
+    "--root",
+    "."
+  ],
+  "cwd": "D:\\MyProjects\\codex-game-studios\\.codex-tmp\\cgs31-final-20261105",
+  "started": "2026-11-05T14:41:08.723Z",
+  "finished": "2026-11-05T14:41:08.811Z",
+  "exit": 2,
+  "error": null,
+  "stdout": "{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"deny\",\"permissionDecisionReason\":\"Push to upstream denied\"}}\n",
+  "stderr": "Push to upstream denied\n"
+}

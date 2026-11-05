@@ -7,7 +7,7 @@
   "repository": "Codex-Game-Studios",
   "last_completed": "CGS-30",
   "current_task": "CGS-31",
-  "next_safe_step": "CGS01–30accepted. Published cleanclone7facb4b setup and explicitreadonlySkillfallback verified,actualLinuxquick/backendSUCCESS.31freshindependentSolaudit active(Astra capacitytwice); runtimewaivers explicit. Next: finalauditfindings,Godotreceipt,releasechecklist,draftPR,finalidentity/history/CI/Singularitychecks.",
+  "next_safe_step": "Freshindependent31technicalPASSwithwaiversat3670ab8;RootreviewedchecklistandexplicitSubagentStopartifactpresent. All638blobs+15declarations,440targets,historicalancestry/license/authorship,currentupstream,finalpurecloneCI,freshGodot8assertions+3PNG+scopedstoryclosure verified. Remaining: publish31evidence,draftPRtoownmain,finalcheckpoint/latestCIandSingularity31.",
   "decisions": [
     "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED.",
     "Generated content-preserving .agents mirror retains helper root math; native roles use .codex/agents/*.toml; all generation is hash-guarded; no new agent runtime."
@@ -475,9 +475,14 @@
       "key": "CGS-31",
       "singularity_id": "T-19e97c9c-2fe1-480e-ac23-91d9a4b132c1",
       "title": "CGS-31 · Финальная приёмка parity и подготовка релизного PR",
-      "status": "PENDING",
+      "status": "IN_PROGRESS",
       "commit": null,
-      "evidence": []
+      "evidence": [
+        "docs/codex/evidence/CGS-31/release-checklist.md",
+        "docs/codex/evidence/CGS-31/artifact-index.json"
+      ],
+      "note": "Freshindependent31technicalPASSwithwaiversat3670ab8;RootreviewedchecklistandexplicitSubagentStopartifactpresent. All638blobs+15declarations,440targets,historicalancestry/license/authorship,currentupstream,finalpurecloneCI,freshGodot8assertions+3PNG+scopedstoryclosure verified. Remaining: publish31evidence,draftPRtoownmain,finalcheckpoint/latestCIandSingularity31.",
+      "updated_at": "2026-11-05T14:48:00.257Z"
     }
   ],
   "git_identity": {

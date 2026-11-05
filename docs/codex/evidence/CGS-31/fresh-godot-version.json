@@ -1,0 +1,14 @@
+{
+  "name": "fresh-godot-version",
+  "exe": "C:/Program Files (x86)/Steam/steamapps/common/Godot Engine/godot.windows.opt.tools.64.exe",
+  "args": [
+    "--version"
+  ],
+  "cwd": "D:\\MyProjects\\codex-game-studios\\.codex-tmp\\cgs31-godot-scenario",
+  "started": "2026-11-05T14:33:46.877Z",
+  "finished": "2026-11-05T14:33:47.280Z",
+  "exit": 0,
+  "error": null,
+  "stdout": "4.7.2.stable.steam.ed1daf0bf\r\n",
+  "stderr": ""
+}

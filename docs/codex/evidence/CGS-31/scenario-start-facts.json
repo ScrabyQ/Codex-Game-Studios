@@ -1,0 +1,17 @@
+{
+  "name": "scenario-start-facts",
+  "exe": "node",
+  "args": [
+    "D:\\MyProjects\\codex-game-studios\\scripts\\codex\\helper.mjs",
+    "project-state",
+    "--root",
+    "D:\\MyProjects\\codex-game-studios\\.codex-tmp\\cgs31-godot-scenario"
+  ],
+  "cwd": "D:\\MyProjects\\codex-game-studios\\.codex-tmp\\cgs31-godot-scenario",
+  "started": "2026-11-05T14:33:17.164Z",
+  "finished": "2026-11-05T14:33:17.891Z",
+  "exit": 0,
+  "error": null,
+  "stdout": "root\tD:/MyProjects/codex-game-studios/.codex-tmp/cgs31-godot-scenario\t-\nengine\tGodot\tproject.yaml\ncode_root\tsrc\tengine.name\nsource_files\t2\tsrc\nconcept\tdesign/game-brief.md\tfound\nsystems_index\t-\tabsent\ngdd_files\t0\tdesign/gdd/*.md\nadr\t0\tdocs/architecture/adr-*.md\nstory\t1\tproduction/epics/**/story-*.md\nprototype\t0\tprototypes/*/\nsprint\t0\tproduction/sprints/*.md\nmilestone\t0\tproduction/milestones/*.md\norigin_url\t-\tabsent\nstage_yaml\tConcept\tproject.yaml\nstage_txt\tConcept\tproduction/stage.txt\nstage\tConcept\tproject.yaml\nphase\tconcept\tstage\nphase_inferred\tpre-production\tstory>=1\n",
+  "stderr": ""
+}
