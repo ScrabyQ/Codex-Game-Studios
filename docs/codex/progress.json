@@ -1,0 +1,268 @@
+{
+  "schema_version": 1,
+  "goal": "Implement all CGS-01–CGS-31",
+  "requirements": "docs/codex/requirements/singularity.json",
+  "upstream_sha": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
+  "owner": "ScrabyQ",
+  "repository": "Codex-Game-Studios",
+  "last_completed": "CGS-01",
+  "current_task": "CGS-02",
+  "next_safe_step": "Create actual GitHub fork ScrabyQ/Codex-Game-Studios; verify parent/history/remotes/license.",
+  "decisions": [],
+  "checks": [],
+  "issues": [],
+  "tasks": [
+    {
+      "key": "CGS-01",
+      "singularity_id": "T-cad35b24-4601-4db1-9385-f9d2274d79df",
+      "title": "CGS-01 · Снять baseline upstream и инвентаризировать 49/74/15/14/62",
+      "status": "COMPLETE",
+      "commit": null,
+      "evidence": [
+        "docs/codex/audit.md",
+        "node scripts/codex/inventory.mjs --check => 0",
+        "Omitted-entry negative fixture => 1 (expected)"
+      ]
+    },
+    {
+      "key": "CGS-02",
+      "singularity_id": "T-81189664-e546-4266-a3a6-85a12d84ecaa",
+      "title": "CGS-02 · Создать GitHub fork с историей и upstream; сохранить MIT и атрибуцию",
+      "status": "PENDING",
+      "commit": null,
+      "evidence": []
+    },
+    {
+      "key": "CGS-03",
+      "singularity_id": "T-b5884c08-3321-4f59-93b4-e27d54feb18a",
+      "title": "CGS-03 · Спроектировать Codex-native архитектуру и стратегию конфликтов upstream",
+      "status": "PENDING",
+      "commit": null,
+      "evidence": []
+    },
+    {
+      "key": "CGS-04",
+      "singularity_id": "T-742d5725-0e4c-4085-8db2-9a997503a9af",
+      "title": "CGS-04 · Сделать AGENTS.md, scoped instructions и Codex onboarding",
+      "status": "PENDING",
+      "commit": null,
+      "evidence": []
+    },
+    {
+      "key": "CGS-05",
+      "singularity_id": "T-2f8d63d5-a2a7-4b6d-838f-206fc33ccbdb",
+      "title": "CGS-05 · Настроить каталог Skills, адаптер и валидатор миграции",
+      "status": "PENDING",
+      "commit": null,
+      "evidence": []
+    },
+    {
+      "key": "CGS-06",
+      "singularity_id": "T-d80c6ecd-b5e6-4176-a1ee-58aebf33697b",
+      "title": "CGS-06 · Вынести выбор моделей и режимы rigor из Claude frontmatter",
+      "status": "PENDING",
+      "commit": null,
+      "evidence": []
+    },
+    {
+      "key": "CGS-07",
+      "singularity_id": "T-d036622f-1d69-4649-bad1-529b03af14d2",
+      "title": "CGS-07 · Перенести 11 директоров и руководителей отделов",
+      "status": "PENDING",
+      "commit": null,
+      "evidence": []
+    },
+    {
+      "key": "CGS-08",
+      "singularity_id": "T-fa4315ed-c654-4502-9ed8-d4f0680e1011",
+      "title": "CGS-08 · Перенести 23 общих специалиста и domain boundaries",
+      "status": "PENDING",
+      "commit": null,
+      "evidence": []
+    },
+    {
+      "key": "CGS-09",
+      "singularity_id": "T-28822415-aa75-4ad0-a893-00ecb00fc3fd",
+      "title": "CGS-09 · Перенести 15 engine-специалистов: Godot, Unity, Unreal",
+      "status": "PENDING",
+      "commit": null,
+      "evidence": []
+    },
+    {
+      "key": "CGS-10",
+      "singularity_id": "T-91fd8938-4f13-46a8-944a-6da494474db7",
+      "title": "CGS-10 · Skills · вход в студию и настройки (6)",
+      "status": "PENDING",
+      "commit": null,
+      "evidence": []
+    },
+    {
+      "key": "CGS-11",
+      "singularity_id": "T-e2ba597c-4de6-4b41-9400-f422e76b279f",
+      "title": "CGS-11 · Skills · геймдизайн и согласованность систем (6)",
+      "status": "PENDING",
+      "commit": null,
+      "evidence": []
+    },
+    {
+      "key": "CGS-12",
+      "singularity_id": "T-37ac23d8-127a-4775-a8a0-08217f5dd8e9",
+      "title": "CGS-12 · Skills · арт, ресурсы, UX и быстрые прототипы (7)",
+      "status": "PENDING",
+      "commit": null,
+      "evidence": []
+    },
+    {
+      "key": "CGS-13",
+      "singularity_id": "T-a5a720f9-fef1-410b-8d37-90db9fd113f2",
+      "title": "CGS-13 · Skills · архитектура, ADR, manifest и reverse-docs (5)",
+      "status": "PENDING",
+      "commit": null,
+      "evidence": []
+    },
+    {
+      "key": "CGS-14",
+      "singularity_id": "T-dbb36980-ab60-4955-8b32-a1d2c445f233",
+      "title": "CGS-14 · Skills · эпики, истории, спринты и готовность (7)",
+      "status": "PENDING",
+      "commit": null,
+      "evidence": []
+    },
+    {
+      "key": "CGS-15",
+      "singularity_id": "T-c781e5a2-2378-4b46-b7c9-638ebfdb12e7",
+      "title": "CGS-15 · Skills · реализация одной story и code-review (5)",
+      "status": "PENDING",
+      "commit": null,
+      "evidence": []
+    },
+    {
+      "key": "CGS-16",
+      "singularity_id": "T-139d68ec-7f90-4768-85c9-669740f38c17",
+      "title": "CGS-16 · Skills · качество дизайна, безопасность и аудит (6)",
+      "status": "PENDING",
+      "commit": null,
+      "evidence": []
+    },
+    {
+      "key": "CGS-17",
+      "singularity_id": "T-7a31b7a2-3a57-4ced-aeac-87de5afc14d1",
+      "title": "CGS-17 · Skills · QA-тесты, доказательства, flakiness (8)",
+      "status": "PENDING",
+      "commit": null,
+      "evidence": []
+    },
+    {
+      "key": "CGS-18",
+      "singularity_id": "T-0250fa16-61df-4ddb-bb40-b21f03250b8d",
+      "title": "CGS-18 · Skills · тестирование самой студии, playtest, bugs (5)",
+      "status": "PENDING",
+      "commit": null,
+      "evidence": []
+    },
+    {
+      "key": "CGS-19",
+      "singularity_id": "T-2a17b586-5733-4989-923f-d71663c47e6f",
+      "title": "CGS-19 · Skills · production review и пользовательский контент (4)",
+      "status": "PENDING",
+      "commit": null,
+      "evidence": []
+    },
+    {
+      "key": "CGS-20",
+      "singularity_id": "T-706b2c6b-eba5-4a87-a1d7-ee21bd1e9cde",
+      "title": "CGS-20 · Skills · релиз, hotfix, заметки об изменениях (6)",
+      "status": "PENDING",
+      "commit": null,
+      "evidence": []
+    },
+    {
+      "key": "CGS-21",
+      "singularity_id": "T-637327b4-b712-47a0-8639-a5b687c51105",
+      "title": "CGS-21 · Skills · командные процессы gameplay/visual (5)",
+      "status": "PENDING",
+      "commit": null,
+      "evidence": []
+    },
+    {
+      "key": "CGS-22",
+      "singularity_id": "T-fa24c03d-fd42-4baa-9c21-26093d5d611c",
+      "title": "CGS-22 · Skills · командные процессы narrative/release/QA (4)",
+      "status": "PENDING",
+      "commit": null,
+      "evidence": []
+    },
+    {
+      "key": "CGS-23",
+      "singularity_id": "T-5028fa8c-67a4-4cee-8df1-540865c072f2",
+      "title": "CGS-23 · Перенести все 14 path-scoped rules",
+      "status": "PENDING",
+      "commit": null,
+      "evidence": []
+    },
+    {
+      "key": "CGS-24",
+      "singularity_id": "T-8fd64743-6c7e-4f97-849b-9f00fe3dc4f6",
+      "title": "CGS-24 · Перенести 15 автоматических hooks с безопасными fallback",
+      "status": "PENDING",
+      "commit": null,
+      "evidence": []
+    },
+    {
+      "key": "CGS-25",
+      "singularity_id": "T-3940570d-3bda-42dc-81eb-f32d277f11c5",
+      "title": "CGS-25 · Адаптировать project.yaml, config resolution и вспомогательные скрипты",
+      "status": "PENDING",
+      "commit": null,
+      "evidence": []
+    },
+    {
+      "key": "CGS-26",
+      "singularity_id": "T-437c3628-08da-400f-8ec6-9ab6ffd87e9e",
+      "title": "CGS-26 · Сохранить 62 шаблона, guidance и всю справочную базу",
+      "status": "PENDING",
+      "commit": null,
+      "evidence": []
+    },
+    {
+      "key": "CGS-27",
+      "singularity_id": "T-490f4c8b-4256-452d-90e6-7a4ceefd574d",
+      "title": "CGS-27 · Проверить Godot, Unity, Unreal и run-and-observe",
+      "status": "PENDING",
+      "commit": null,
+      "evidence": []
+    },
+    {
+      "key": "CGS-28",
+      "singularity_id": "T-0485a7c2-d479-4ec8-ac03-47a1a59bd438",
+      "title": "CGS-28 · Внедрить CI, статический аудит и поведенческие регрессии",
+      "status": "PENDING",
+      "commit": null,
+      "evidence": []
+    },
+    {
+      "key": "CGS-29",
+      "singularity_id": "T-d875908a-8eed-48c5-963d-9102ee9a8bd4",
+      "title": "CGS-29 · Сделать безопасный sync upstream через fetch/merge/PR",
+      "status": "PENDING",
+      "commit": null,
+      "evidence": []
+    },
+    {
+      "key": "CGS-30",
+      "singularity_id": "T-0d289aac-7d48-4c29-9e7c-17ed3761476d",
+      "title": "CGS-30 · Подготовить README, миграционный гайд и корректную атрибуцию",
+      "status": "PENDING",
+      "commit": null,
+      "evidence": []
+    },
+    {
+      "key": "CGS-31",
+      "singularity_id": "T-19e97c9c-2fe1-480e-ac23-91d9a4b132c1",
+      "title": "CGS-31 · Финальная приёмка parity и подготовка релизного PR",
+      "status": "PENDING",
+      "commit": null,
+      "evidence": []
+    }
+  ]
+}
