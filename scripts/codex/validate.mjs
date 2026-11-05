@@ -32,7 +32,13 @@ unique(retired.map(e=>`${e.source_commit}\0${e.source}\0${e.target}`),'retired m
 for(const e of retired){if(!e||e.decision!=='retained'||!/^[a-f0-9]{40}$/.test(e.source_commit||'')||!/^[a-f0-9]{64}$/.test(e.source_sha256||'')||!/^[a-f0-9]{64}$/.test(e.target_sha256||''))fail('Invalid retired manual provenance');safe(e.source);if(hash(readManualTarget(root,e.target))!==e.target_sha256)fail('Retired manual target drift: '+e.target)}
 const walk=d=>existsSync(d)?readdirSync(d,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(path.join(d,e.name)):[path.join(d,e.name)]):[];
 const tracked=new Set(reg.entries.map(e=>e.target));
-for(const p of walk(path.join(root,'.agents/skills'))){const rel=path.relative(root,p).split(path.sep).join('/');if(!tracked.has(rel))fail('Unregistered skill target: '+rel)}
+let external={targets:[],states:[]};
+if(existsSync(safeProjectPath(root,'.codex/external-engine-skills.json'))){
+ const {inspectInstalled}=await import('./engine-skills.mjs');
+ external=inspectInstalled(root,{nativeTargets:tracked,strict:true});
+}
+const skillTargets=new Set([...tracked,...external.targets]);
+for(const p of walk(path.join(root,'.agents/skills'))){const rel=path.relative(root,p).split(path.sep).join('/');if(!skillTargets.has(rel))fail('Unregistered skill target: '+rel)}
 for(const p of walk(path.join(root,'.codex/agents'))){const rel=path.relative(root,p).split(path.sep).join('/');if(!tracked.has(rel))fail('Unregistered role target: '+rel)}
 const nativeSkillNames=reg.entries.filter(e=>/^\.agents\/skills\/[^/]+\/SKILL\.md$/.test(e.target)).map(e=>e.target.split('/')[2]).sort();
 const nativeRoleNames=reg.entries.filter(e=>/^\.codex\/agents\/[^/]+\.toml$/.test(e.target)).map(e=>path.posix.basename(e.target,'.toml')).sort();
@@ -66,3 +72,4 @@ if(JSON.stringify(rows.map(x=>x[1]).sort())!==JSON.stringify([...nativeSkillName
 for(const [,name,p] of rows)if(!existsSync(path.join(root,safe(p))))fail('Missing catalog spec: '+name+': '+p);
 console.log((opts.has('--verify-pending')?'PENDING structural verification: ':'PASS manifests: ')+JSON.stringify({roles:nativeRoleNames.length,skills:nativeSkillNames.length,source_hooks:inv.hooks.length,rules:ruleIndex.rules.length,targets:reg.entries.length,catalog:rows.length}));
 console.log('Structural observations do not establish behavior or unrun engine tests.');
+if(external.states.length)console.log('External documentation Skills: '+external.states.length+'; separate provenance and hashes checked; no behavior or permission grant established.');

@@ -20,6 +20,7 @@ const tasks=[
  ['negative fixtures',['scripts/codex/tests/negative.mjs']],
  ['generator negative fixtures',['tests/generator-negative.mjs']],
  ['native authoring registration',['tests/native-registration.mjs']],
+ ['external engine Skills safety',['tests/engine-skills.mjs']],
  ['upstream synchronization fixture',['scripts/codex/upstream-tests.mjs']],
  ...(args.includes('--skip-reconcile')?[]:[['reviewed reconciliation fixture',['scripts/codex/tests/reconcile-fixture.mjs']]])
 ];

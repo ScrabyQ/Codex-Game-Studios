@@ -4656,7 +4656,7 @@
       "source": ".claude/skills/setup-engine/SKILL.md",
       "source_sha256": "37c08d68ed58b70e6880e269e711e2617b89f2f165d9bba5d966e326e73e9a17",
       "target": ".agents/skills/setup-engine/SKILL.md",
-      "target_sha256": "7df74dc6adc963eacca9120226cafa4f408322c9b423810f8128706dbe47273d",
+      "target_sha256": "fe54b384f4fc0edeab3fa7f9b697a28041b138996b741007c415b152ccf597b4",
       "transform_version": 1,
       "transform_ids": [
         "frontmatter-scope-v1",
