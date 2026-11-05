@@ -9,9 +9,9 @@ A game development toolkit for OpenAI Codex.<br>
 
 [![CI](https://github.com/ScrabyQ/Codex-Game-Studios/actions/workflows/codex-ci.yml/badge.svg?branch=main)](https://github.com/ScrabyQ/Codex-Game-Studios/actions/workflows/codex-ci.yml)
 [![MIT license](https://img.shields.io/badge/license-MIT-3b82f6)](LICENSE)
-[![Built for Codex](https://img.shields.io/badge/built_for-Codex-111827)](https://learn.chatgpt.com/docs/build-skills)
-[![74 Skills](https://img.shields.io/badge/Skills-74-22c55e)](.agents/skills)
-[![49 roles](https://img.shields.io/badge/specialist_roles-49-8b5cf6)](.codex/agents)
+[![Built for Codex](.github/badges/codex.svg)](https://learn.chatgpt.com/docs/build-skills)
+[![74 Skills](.github/badges/skills.svg)](.agents/skills)
+[![49 roles](.github/badges/roles.svg)](.codex/agents)
 [![3 engines](https://img.shields.io/badge/engines-Godot_%7C_Unity_%7C_Unreal-0891b2)](#engine-support)
 
 **[Get started](#quick-start) · [Explore the workflow](docs/WORKFLOW-GUIDE.md) · [Contribute](CONTRIBUTING.md)**
