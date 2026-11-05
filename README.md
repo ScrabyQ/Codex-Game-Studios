@@ -87,7 +87,7 @@ More process does not guarantee a better game. Modes never grant permissions. Se
 ## How the studio works
 
 ```mermaid
-flowchart LR
+flowchart TD
     Brief["Idea & brief"] --> Engine["Engine setup"]
     Engine --> Story["Bounded story"]
     Story --> Build["Implement & build"]
