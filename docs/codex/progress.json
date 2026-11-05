@@ -5,9 +5,9 @@
   "upstream_sha": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
   "owner": "ScrabyQ",
   "repository": "Codex-Game-Studios",
-  "last_completed": "CGS-06",
-  "current_task": "CGS-07",
-  "next_safe_step": "CGS05 generator nearing completion; CGS07 leadership roles may proceed after verified CGS06. CGS25 all-helper fidelity still pending.",
+  "last_completed": "CGS-26",
+  "current_task": "CGS-05",
+  "next_safe_step": "Reference preservation verified (62 templates,8guidance,130sources); finish CGS05 generator then Skill groups. CGS07 leadership is in progress.",
   "decisions": [
     "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED.",
     "Generated content-preserving .agents mirror retains helper root math; native roles use .codex/agents/*.toml; all generation is hash-guarded; no new agent runtime."
@@ -77,12 +77,12 @@
       "singularity_id": "T-d80c6ecd-b5e6-4176-a1ee-58aebf33697b",
       "title": "CGS-06 · Вынести выбор моделей и режимы rigor из Claude frontmatter",
       "status": "COMPLETE",
-      "commit": null,
+      "commit": "3da8e1b1a6ddf10fccfedb5ef2a0c7e935492f7b",
       "evidence": [
         "docs/codex/evidence/CGS-06/config-policy.json"
       ],
       "note": "CGS05 generator nearing completion; CGS07 leadership roles may proceed after verified CGS06. CGS25 all-helper fidelity still pending.",
-      "updated_at": "2026-11-05T09:59:35.976Z"
+      "updated_at": "2026-11-05T10:00:12.469Z"
     },
     {
       "key": "CGS-07",
@@ -240,9 +240,13 @@
       "key": "CGS-26",
       "singularity_id": "T-437c3628-08da-400f-8ec6-9ab6ffd87e9e",
       "title": "CGS-26 · Сохранить 62 шаблона, guidance и всю справочную базу",
-      "status": "PENDING",
+      "status": "COMPLETE",
       "commit": null,
-      "evidence": []
+      "evidence": [
+        "docs/codex/evidence/CGS-26/references.json"
+      ],
+      "note": "Reference preservation verified (62 templates,8guidance,130sources); finish CGS05 generator then Skill groups. CGS07 leadership is in progress.",
+      "updated_at": "2026-11-05T10:01:47.492Z"
     },
     {
       "key": "CGS-27",
