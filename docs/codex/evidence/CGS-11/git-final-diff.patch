@@ -1,0 +1,49 @@
+diff --git a/design/gdd/repair.md b/design/gdd/repair.md
+index 1c8620b..2ae905b 100644
+--- a/design/gdd/repair.md
++++ b/design/gdd/repair.md
+@@ -7,26 +7,26 @@
+ > **Implements Pillar**: readable tactile repair puzzle
+ 
+ ## Summary
+-The player spends one part to repair the lighthouse lamp.
++The player spends two parts to repair the lighthouse lamp.
+ 
+ > **Quick reference** — Layer: `Core` · Priority: `MVP` · Key deps: `Parts`
+ 
+ ## Overview
+-Inspect the faulty lamp, spend a part, then test the beacon before the storm expires.
++Inspect the faulty lamp, spend two parts, then test the beacon before the storm expires.
+ 
+ ## Detailed Design
+ ### Core Rules
+-A repair consumes exactly one part and restores one fault; a working lamp cannot consume parts.
++A repair consumes exactly two parts and restores one fault; a working lamp cannot consume parts.
+ ### States and Transitions
+ Faulty -> repaired after a successful repair; repaired -> tested after the beacon test.
+ ### Interactions with Other Systems
+ Parts supplies the resource and must refuse a repair if none is available.
+ 
+ ## Formulas
+-parts_after = parts_before - 1 when a valid repair occurs. parts_before is an integer >= 1; parts_after is an integer >= 0. Example: 3 becomes 2.
++parts_after = parts_before - 2 when a valid repair occurs. parts_before is an integer >= 2; parts_after is an integer >= 0. Example: 3 becomes 1.
+ 
+ ## Edge Cases
+-No parts: do not change state or count. Already repaired: do not spend a part.
++Fewer than two parts: do not change state or count. Already repaired: do not spend a part.
+ 
+ ## Dependencies
+ Depends on Parts; Parts lists Repair as a dependent.
+@@ -44,9 +44,10 @@ Show a readable count and whether the lamp is repaired.
+ Parts: parts.md (resource count and consumption).
+ 
+ ## Acceptance Criteria
+-- With 3 parts and a fault, repair leaves 2 parts and the lamp repaired.
+-- With 0 parts, repair leaves the count and lamp state unchanged.
++- With 3 parts and a fault, repair leaves 1 part and the lamp repaired.
++- With fewer than 2 parts, repair leaves the count and lamp state unchanged.
+ - A second repair on a repaired lamp spends no parts.
+ 
+ ## Open Questions
+ Animation duration awaits user design choice.
++

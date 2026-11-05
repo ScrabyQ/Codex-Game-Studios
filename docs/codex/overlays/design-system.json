@@ -1,0 +1,9 @@
+{
+  "source_sha256": "9c4e7d1f1594e062c50f96e60a06d5a0fbaae1f90a7f4f9762f0952b7248d396",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-11 design and consent contract:** Treat source task APIs and automatic hooks as optional; if unavailable, keep a transparent in-session checklist and do not claim task creation or hook execution. Use available file tools and preserve their permission limits. At standard or full resolve the selected system tier, read only the needed reference phases and governing documents, then preserve question, decision, section review and authorized incremental writes. At minimal prefer the brief/story design path where applicable. Do not silently alter dependency GDDs, the entity registry or systems index; preserve approval and escalation. Establish the actual context, pillars, registry and dependency inputs before drawing conclusions. An unreadable or unverified path is unknown, not absent. When a required input is unknown, report PENDING and stop the dependent section rather than manufacture an approval or conclusion.\n\n"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "cgs11-context",
+  "components": ["file:.claude/skills/map-systems/SKILL.md"],
+  "auto_review": true,
+  "windows_sandbox": "elevated",
+  "no_writes": true,
+  "files": {
+    "project.yaml": "schema_version: 1\nmodes:\n  rigor: standard\n  automation: collaborative\n",
+    "design/gdd/game-concept.md": "# Game Concept\n\nA lighthouse puzzle with one repair system.\n",
+    "design/gdd/game-pillars.md": "# Pillars\n\n- Sentinel pine: clear repairs with visible feedback.\n",
+    "design/registry/entities.yaml": "entities: []\nitems: []\nformulas: []\nconstants:\n  - name: sentinel_cost\n    status: active\n    source: design/gdd/repair.md\n    referenced_by: []\n    value: 1\n"
+  },
+  "prompt": "Invoke the installed $map-systems skill to inspect the actual fixture only. Read its translated instructions, project settings, concept, pillars and registry before reporting what you actually found. Report distinctive content from the pillar and registry so their existence is evidence-backed. If any required input cannot be read, call it unknown or PENDING, never absent; do not invent progress, approval or review. Stop after the context report. No writes are authorized.",
+  "expect_commands": ["map-systems"],
+  "expect_report": ["sentinel pine", "sentinel_cost"],
+  "scope": "A no-write check that map-systems actually reads fixture context; missing process access must remain PENDING, not absence."
+}

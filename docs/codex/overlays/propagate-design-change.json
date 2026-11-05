@@ -1,0 +1,9 @@
+{
+  "source_sha256": "bf110550ddd1ca9c8bbd266cda2808b40aec02646b6ff9886d850ab9f1f1d7c9",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-11 design and consent contract:** Treat source task APIs and automatic hooks as optional; if unavailable, keep a transparent in-session checklist and do not claim task creation or hook execution. Use available file tools and preserve their permission limits. Establish the changed sections from actual available version-control evidence, scan the entity registry and in-scope ADR references, and present the impact report before action. Preserve per-ADR resolution decisions and authorization for every actual write; do not silently rewrite dependent GDDs, ADRs, or traceability. No traceability is NOT ASSESSED, not no impact.\n\n"
+    }
+  ]
+}

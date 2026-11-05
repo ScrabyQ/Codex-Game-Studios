@@ -1,0 +1,17 @@
+{
+  "id": "cgs11-standard",
+  "components": ["file:.claude/skills/map-systems/SKILL.md", "file:.claude/skills/design-system/SKILL.md", "file:.claude/skills/review-all-gdds/SKILL.md"],
+  "auto_review": true,
+  "windows_sandbox": "elevated",
+  "files": {
+    "project.yaml": "schema_version: 1\nframework:\n  version: 1.2.0\nmodes:\n  rigor: standard\n  automation: collaborative\n",
+    "design/gdd/game-concept.md": "# Game Concept: Beacon Keeper\n\n## Summary\nRepair a coastal lighthouse before a storm closes the harbor.\n\n## Core Loop\nInspect damage, gather parts, repair a mechanism, and test the beacon.\n\n## Scope\nSingle-player, one lighthouse, no multiplayer.\n",
+    "design/gdd/game-pillars.md": "# Pillars\n\n- A clear, tactile repair puzzle under visible time pressure.\n- A quiet coastal atmosphere; choices must remain readable.\n"
+  },
+  "prompt": "This is a scripted fixture exercise of installed $map-systems, $design-system and $review-all-gdds. Read the actual translated SKILL.md and relevant referenced phases before each stage and resolve standard workflow from project.yaml. In this fixture the scripted player's approved scope is a single Repair system: inspect the lamp, spend one part to repair one fault, and test whether the lamp is operational. There is one lamp, no multiplayer, no inventory persistence, and exactly one part per repair. Present the system list and dependencies, then the scripted player approves the Repair system and explicitly authorizes creation of design/gdd/systems-index.md. Use $design-system for Repair, discuss the required standard sections and the numeric rule (1 part per repair); the scripted player explicitly approves each proposed section and creation/update of design/gdd/repair.md within this fixture. Include measurable acceptance criteria and any unresolved concerns; do not invent dependencies or engine APIs. Then use $review-all-gdds on actual created documents, record review findings and coverage in your response; independent specialist delegation is unavailable, so disclose an in-session review is not independent, and do not mark missing evidence PASS. The scripted player declines writing the cross-review report and declines all revisions to existing GDDs. Do not edit files outside this disposable fixture. If a required phase cannot be executed, report PENDING and identify it rather than manufacturing a result.",
+  "expect_files": ["design/gdd/systems-index.md", "design/gdd/repair.md"],
+  "expect_content": {"design/gdd/systems-index.md": "repair", "design/gdd/repair.md": "acceptance criteria"},
+  "expect_report": ["review", "not independent"],
+  "expect_commands": ["map-systems", "design-system", "review-all-gdds"],
+  "scope": "One scripted standard system map, GDD and in-session review; not evidence of independent director gates or engine execution."
+}

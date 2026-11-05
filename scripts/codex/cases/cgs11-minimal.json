@@ -1,0 +1,15 @@
+{
+  "id": "cgs11-minimal",
+  "components": ["file:.claude/skills/brainstorm/SKILL.md"],
+  "auto_review": true,
+  "windows_sandbox": "elevated",
+  "files": {
+    "project.yaml": "schema_version: 1\nframework:\n  version: 1.2.0\nmodes:\n  rigor: minimal\n  automation: collaborative\n"
+  },
+  "prompt": "Execute the installed $brainstorm skill using .agents/skills/brainstorm/SKILL.md and the actual minimal configuration, in this disposable fixture only. The scripted player's idea is a calm single-player game about repairing an old lighthouse during a storm. Offer the skill's two or three concise concept options and select a lighthouse-repair version as the scripted answer. The player explicitly approves the resulting brief and explicitly says yes to writing exactly design/game-brief.md. Use this fixture's choices: working title Beacon Keeper; pitch repair a lighthouse before the storm blocks the harbor; loop inspect damage, gather parts, repair a mechanism, test the beam; goal restore the beacon before the storm expires; failure is time expiring; MVP is inspection, parts, repair, storm clock and beacon test; out of scope multiplayer and procedural worlds; build order repair interaction first; audience cozy puzzle players; art ink silhouettes and rain; reference The Long Dark for weather pressure only. Show the completed substantive brief, write only the approved brief and report actual steps and verdict. Do not create any full GDD. No project files outside the fixture are authorized.",
+  "expect_files": ["design/game-brief.md"],
+  "expect_content": {"design/game-brief.md": "beacon"},
+  "expect_report": ["brief"],
+  "expect_commands": ["brainstorm"],
+  "scope": "One scripted minimal concept-to-brief fixture; does not establish all choices, modes or independent specialist behavior."
+}

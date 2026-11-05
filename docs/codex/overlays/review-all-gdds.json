@@ -1,0 +1,9 @@
+{
+  "source_sha256": "2b5bae8837d3b47bee678ab78aa23f0e177326b4655f22d5c16470089a25241b",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-11 design and consent contract:** Treat source task APIs and automatic hooks as optional; if unavailable, keep a transparent in-session checklist and do not claim task creation or hook execution. Use available file tools and preserve their permission limits. Assess each selected GDD at its own resolved workflow tier, cross-check real registry and dependencies, and preserve domain boundaries. A single in-session review is not an independent specialist review. Missing evidence or skipped gates must remain NOT ASSESSED or CONCERNS where applicable; do not promote an incomplete review to PASS. Report first and write only when authorized. Establish the document denominator and actually read the relevant files; report unreadable paths as NOT ASSESSED. Do not label a GDD reviewed or approved when its review did not occur, even if a draft or system index exists.\n\n"
+    }
+  ]
+}

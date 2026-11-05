@@ -1,0 +1,9 @@
+{
+  "source_sha256": "d27959d0043bd8c9f08c0f3fb56aa66de8e6ce84812a7e43d5f2d2c43cae01dd",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-11 design and consent contract:** Treat source task APIs and automatic hooks as optional; if unavailable, keep a transparent in-session checklist and do not claim task creation or hook execution. Use available file tools and preserve their permission limits. Read the approved concept or minimal brief, present system enumeration, dependencies, cycles and ordering, and obtain the relevant decisions and write authorization. Retain the tier-specific optional index; no unrequested project-wide writes. Cite the actual sources of dependencies. Before enumerating, inspect the actual concept, pillars, registry and existing GDD/index paths as applicable. A failed read or unavailable file listing is unknown, not proof a file is absent; stop dependent decisions with PENDING. Initialize progress from observed documents and review evidence; never mark a GDD reviewed or approved without the corresponding evidence.\n\n"
+    }
+  ]
+}

@@ -5,9 +5,9 @@
   "upstream_sha": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
   "owner": "ScrabyQ",
   "repository": "Codex-Game-Studios",
-  "last_completed": "CGS-09",
-  "current_task": "CGS-10",
-  "next_safe_step": "49 roles are mapped; engine selection and 3 static review cases verified. Actual engine builds and native custom spawning remain separate.",
+  "last_completed": "CGS-11",
+  "current_task": "CGS-12",
+  "next_safe_step": "CGS11 bounded minimal/standard/impact acceptance reviewed; integrate creative workflows and real isolated Godot prototype next.",
   "decisions": [
     "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED.",
     "Generated content-preserving .agents mirror retains helper root math; native roles use .codex/agents/*.toml; all generation is hash-guarded; no new agent runtime."
@@ -122,34 +122,40 @@
       "singularity_id": "T-28822415-aa75-4ad0-a893-00ecb00fc3fd",
       "title": "CGS-09 · Перенести 15 engine-специалистов: Godot, Unity, Unreal",
       "status": "COMPLETE",
-      "commit": null,
+      "commit": "c0d5c82d560ed07f807ad557281874ddeaf4fe83",
       "evidence": [
         "docs/codex/evidence/CGS-09/structural.json",
         "docs/codex/evidence/CGS-09/in-session-reviews.md"
       ],
       "note": "49 roles are mapped; engine selection and 3 static review cases verified. Actual engine builds and native custom spawning remain separate.",
-      "updated_at": "2026-11-05T11:20:16.242Z"
+      "updated_at": "2026-11-05T11:46:02.657Z"
     },
     {
       "key": "CGS-10",
       "singularity_id": "T-91fd8938-4f13-46a8-944a-6da494474db7",
       "title": "CGS-10 · Skills · вход в студию и настройки (6)",
       "status": "COMPLETE",
-      "commit": null,
+      "commit": "1955c04be4e680a0bfaaae8a7a6b19d69f206dd3",
       "evidence": [
         "docs/codex/evidence/CGS-10/README.md",
         "docs/codex/evidence/CGS-10/traceability.json"
       ],
       "note": "Onboarding/settings scoped behaviors verified. Continue design workflows; preserve all partial native and engine limitations.",
-      "updated_at": "2026-11-05T11:20:05.918Z"
+      "updated_at": "2026-11-05T11:46:02.745Z"
     },
     {
       "key": "CGS-11",
       "singularity_id": "T-e2ba597c-4de6-4b41-9400-f422e76b279f",
       "title": "CGS-11 · Skills · геймдизайн и согласованность систем (6)",
-      "status": "PENDING",
+      "status": "COMPLETE",
       "commit": null,
-      "evidence": []
+      "evidence": [
+        "docs/codex/evidence/CGS-11/acceptance.md",
+        "docs/codex/evidence/CGS-11/README.md",
+        "docs/codex/evidence/CGS-11/traceability.json"
+      ],
+      "note": "CGS11 bounded minimal/standard/impact acceptance reviewed; integrate creative workflows and real isolated Godot prototype next.",
+      "updated_at": "2026-11-05T11:46:39.751Z"
     },
     {
       "key": "CGS-12",
@@ -164,13 +170,13 @@
       "singularity_id": "T-a5a720f9-fef1-410b-8d37-90db9fd113f2",
       "title": "CGS-13 · Skills · архитектура, ADR, manifest и reverse-docs (5)",
       "status": "COMPLETE",
-      "commit": null,
+      "commit": "ee8e3cd49a61e6804ac8dbca1eb14088b46dc735",
       "evidence": [
         "docs/codex/evidence/CGS-13/README.md",
         "docs/codex/evidence/CGS-13/traceability.json"
       ],
-      "note": "Architecture lifecycle and guard scenarios verified; proceed to production planning. Active control-manifest publication remains gated by real review concerns.",
-      "updated_at": "2026-11-05T11:16:59.078Z"
+      "note": "Review and integrate design, creative, planning and hook fixtures; CGS16 and21 active with disjoint ownership.",
+      "updated_at": "2026-11-05T11:46:02.835Z"
     },
     {
       "key": "CGS-14",

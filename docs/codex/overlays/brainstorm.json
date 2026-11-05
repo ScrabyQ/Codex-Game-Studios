@@ -1,0 +1,9 @@
+{
+  "source_sha256": "fa665de84aea3834111c981e919ac166f0a8400764c4c23d579d9a929c0539b6",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-11 design and consent contract:** Treat source task APIs and automatic hooks as optional; if unavailable, keep a transparent in-session checklist and do not claim task creation or hook execution. Use available file tools and preserve their permission limits. For minimal workflow, propose two or three concepts, wait for the user choice, and create the substantive one-page brief only after authorization for that exact write. Keep the brief to the required fields and at most seven MVP items; do not create a full GDD or discovery gates. Treat scripted fixture answers only as authorization inside that fixture.\n\n"
+    }
+  ]
+}

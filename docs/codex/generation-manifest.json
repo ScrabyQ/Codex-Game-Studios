@@ -2962,6 +2962,37 @@
       "ownership": "generated"
     },
     {
+      "id": "file:.claude/skills/brainstorm/references/full-concept.md=>.agents/skills/brainstorm/references/full-concept.md",
+      "source": ".claude/skills/brainstorm/references/full-concept.md",
+      "source_sha256": "ce34add9f9eb81de45a955d47bda252091a3d8fd6a6c390ee2c09d277f0e1dfa",
+      "target": ".agents/skills/brainstorm/references/full-concept.md",
+      "target_sha256": "f9d1efec33fd1bce055724e144d5112f4ba87ac9a6a372654de36aa4eeb807b4",
+      "transform_version": 1,
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:b0b38a0270ed9d4b9d200eb8437394f77b36d2ab3eeadb31e5104abcd3a293ec"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/brainstorm/SKILL.md=>.agents/skills/brainstorm/SKILL.md",
+      "source": ".claude/skills/brainstorm/SKILL.md",
+      "source_sha256": "fa665de84aea3834111c981e919ac166f0a8400764c4c23d579d9a929c0539b6",
+      "target": ".agents/skills/brainstorm/SKILL.md",
+      "target_sha256": "e5365afbba3a2a3e126bd3d28bcef666c864968eb4c8a93264bbfed3c234cec1",
+      "transform_version": 1,
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:b0b38a0270ed9d4b9d200eb8437394f77b36d2ab3eeadb31e5104abcd3a293ec"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
       "id": "file:.claude/skills/create-architecture/references/0-load-context.md=>.agents/skills/create-architecture/references/0-load-context.md",
       "source": ".claude/skills/create-architecture/references/0-load-context.md",
       "source_sha256": "2083798d7784c597ca8b9c0933f13d3fd2161936c0fc6771a351f98ab0b56481",
@@ -3122,6 +3153,93 @@
       "ownership": "generated"
     },
     {
+      "id": "file:.claude/skills/design-system/references/1-parse-arguments.md=>.agents/skills/design-system/references/1-parse-arguments.md",
+      "source": ".claude/skills/design-system/references/1-parse-arguments.md",
+      "source_sha256": "5a0ad57af5d5d3b4d225c6a81f1d21d5e6e709c723ab48d115829d2531175329",
+      "target": ".agents/skills/design-system/references/1-parse-arguments.md",
+      "target_sha256": "bc39081c759d81359b98a47e245ed9d580cea678d6dad2ef2a3faee5166f133c",
+      "transform_version": 1,
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:446b27a4312231a0b5073a65a7a979ed1ec4c6bae2cdf75eba83a34be10133c1"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/design-system/references/2-gather-context.md=>.agents/skills/design-system/references/2-gather-context.md",
+      "source": ".claude/skills/design-system/references/2-gather-context.md",
+      "source_sha256": "149f349250ed5c49c8fbe9cba92f4f1f750b9d5dce96c9a98267cfe29d8a0040",
+      "target": ".agents/skills/design-system/references/2-gather-context.md",
+      "target_sha256": "1b9d1d121693abc1a92203650ee8ab136ec77df1e1a84dcc2df507b8fd960786",
+      "transform_version": 1,
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:446b27a4312231a0b5073a65a7a979ed1ec4c6bae2cdf75eba83a34be10133c1"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/design-system/references/3-file-skeleton.md=>.agents/skills/design-system/references/3-file-skeleton.md",
+      "source": ".claude/skills/design-system/references/3-file-skeleton.md",
+      "source_sha256": "95dc956f90e443d15f4cd0ff4f7709f70c9068d5da5b163c9226220ac7d89e52",
+      "target": ".agents/skills/design-system/references/3-file-skeleton.md",
+      "target_sha256": "d9dfda4386126b76a7ecdd705eed19901d2c11e0773871201214423d4f1eeee6",
+      "transform_version": 1,
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:446b27a4312231a0b5073a65a7a979ed1ec4c6bae2cdf75eba83a34be10133c1"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/design-system/references/4-section-design.md=>.agents/skills/design-system/references/4-section-design.md",
+      "source": ".claude/skills/design-system/references/4-section-design.md",
+      "source_sha256": "56ad86f7973a67284731c7ff02e5b740a5e1738e95fe7f8bb2b72d736ac3d29d",
+      "target": ".agents/skills/design-system/references/4-section-design.md",
+      "target_sha256": "b0c1513eede573517693047ee1ad91238f564a138c7b2a65b642e95e6b6c09b9",
+      "transform_version": 1,
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:446b27a4312231a0b5073a65a7a979ed1ec4c6bae2cdf75eba83a34be10133c1"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/design-system/references/5-post-design.md=>.agents/skills/design-system/references/5-post-design.md",
+      "source": ".claude/skills/design-system/references/5-post-design.md",
+      "source_sha256": "ea90124e8c6caa5e9cdbd61480f4e94ac540c058e709dd1cac4b2c46a32f86df",
+      "target": ".agents/skills/design-system/references/5-post-design.md",
+      "target_sha256": "38073e46a994dab6919bc47ecf7763bd453c049f70208138bc4c735d1572fd81",
+      "transform_version": 1,
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:446b27a4312231a0b5073a65a7a979ed1ec4c6bae2cdf75eba83a34be10133c1"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/design-system/SKILL.md=>.agents/skills/design-system/SKILL.md",
+      "source": ".claude/skills/design-system/SKILL.md",
+      "source_sha256": "9c4e7d1f1594e062c50f96e60a06d5a0fbaae1f90a7f4f9762f0952b7248d396",
+      "target": ".agents/skills/design-system/SKILL.md",
+      "target_sha256": "9ccbb7478091b9b7ab4b25aca60d7bd1cf99d4110e067368649f3425acc6d98b",
+      "transform_version": 1,
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:446b27a4312231a0b5073a65a7a979ed1ec4c6bae2cdf75eba83a34be10133c1"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
       "id": "file:.claude/skills/help/SKILL.md=>.agents/skills/help/SKILL.md",
       "source": ".claude/skills/help/SKILL.md",
       "source_sha256": "3a5fd66a1e29fd86133ef3085e764cf0f8e15ce935ed06e9000580a577ddbeb6",
@@ -3134,6 +3252,23 @@
         "codex-question-delegation-v1",
         "native-skill-invocation-v1",
         "overlay-sha256:bc22ee23c378c5f40eeafc9eae1c644cf0fab4c10570223fb6cdc4f4b93bf7e8"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/map-systems/SKILL.md=>.agents/skills/map-systems/SKILL.md",
+      "source": ".claude/skills/map-systems/SKILL.md",
+      "source_sha256": "d27959d0043bd8c9f08c0f3fb56aa66de8e6ce84812a7e43d5f2d2c43cae01dd",
+      "target": ".agents/skills/map-systems/SKILL.md",
+      "target_sha256": "b3dda9a296c15b12ca02ade61343a82b1c1a3aa42d8c54c3ef2b7f528329e8a1",
+      "transform_version": 1,
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:4f541fc4ae1043bb046e124ebea9810659328a418478b6beb11ef9b80ba9b742"
       ],
       "owner": "CGS-05",
       "ownership": "generated"
@@ -3156,6 +3291,40 @@
       "ownership": "generated"
     },
     {
+      "id": "file:.claude/skills/propagate-design-change/SKILL.md=>.agents/skills/propagate-design-change/SKILL.md",
+      "source": ".claude/skills/propagate-design-change/SKILL.md",
+      "source_sha256": "bf110550ddd1ca9c8bbd266cda2808b40aec02646b6ff9886d850ab9f1f1d7c9",
+      "target": ".agents/skills/propagate-design-change/SKILL.md",
+      "target_sha256": "0e18670c34f5579bd099db0aac36f1990656ffa2f4d85a216ece8eca4e1c35ea",
+      "transform_version": 1,
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:6872dc0a7198a503c98894d45818777929d96f7b23735384288c4f3495dc9478"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/quick-design/SKILL.md=>.agents/skills/quick-design/SKILL.md",
+      "source": ".claude/skills/quick-design/SKILL.md",
+      "source_sha256": "32a4521f5290f459b84cf3500f86487d63b03d192281c392b7a023dcede03fb3",
+      "target": ".agents/skills/quick-design/SKILL.md",
+      "target_sha256": "c8cba093a5959252e2608354d3c5ebefcaa4f71f12cc67eb30a17011bbb5df08",
+      "transform_version": 1,
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:10defe7f0e901e117a21665e9e4ad5355dcf706219031b2f6253dd137bc21676"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
       "id": "file:.claude/skills/reverse-document/SKILL.md=>.agents/skills/reverse-document/SKILL.md",
       "source": ".claude/skills/reverse-document/SKILL.md",
       "source_sha256": "c498c673b8f1b8d5634e33839b6117b17a827c2f41207acb115eb276f716189a",
@@ -3168,6 +3337,121 @@
         "codex-question-delegation-v1",
         "native-skill-invocation-v1",
         "overlay-sha256:1d6920e142bb0bf9caa4ef45c8912da0ffd7f34dce79adef0953b2e606e934f6"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/review-all-gdds/references/1-load.md=>.agents/skills/review-all-gdds/references/1-load.md",
+      "source": ".claude/skills/review-all-gdds/references/1-load.md",
+      "source_sha256": "1bafd370ec7fa114b23e1d109eff3c1f9dfadca2c432427f214521d197a27ddd",
+      "target": ".agents/skills/review-all-gdds/references/1-load.md",
+      "target_sha256": "9faadd520144d2852b0336a505b3b9f689ff0104e8ec797323e1949fbd7556d6",
+      "transform_version": 1,
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:3dbd7970a5061ab3823b99d606903111eaa099d2dda586dc38ed0b216cddc274"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/review-all-gdds/references/2-consistency.md=>.agents/skills/review-all-gdds/references/2-consistency.md",
+      "source": ".claude/skills/review-all-gdds/references/2-consistency.md",
+      "source_sha256": "38596caeb557efbca1ecb7b767f558865453b2266a35a59f7e34f173b44a2351",
+      "target": ".agents/skills/review-all-gdds/references/2-consistency.md",
+      "target_sha256": "7460f9f660dce6e9f51e28ce2ce192aadc281828696ac026b71719c90dc26389",
+      "transform_version": 1,
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:3dbd7970a5061ab3823b99d606903111eaa099d2dda586dc38ed0b216cddc274"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/review-all-gdds/references/3-design-holism.md=>.agents/skills/review-all-gdds/references/3-design-holism.md",
+      "source": ".claude/skills/review-all-gdds/references/3-design-holism.md",
+      "source_sha256": "8855ba326fc36a2406c15afbcbdb22f01875ed079e4cd1446d8ffed668e819ee",
+      "target": ".agents/skills/review-all-gdds/references/3-design-holism.md",
+      "target_sha256": "6c00a834c1f38348bdc8fda6c2573c9790557616b71b0ad2046773835cc5d2a3",
+      "transform_version": 1,
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:3dbd7970a5061ab3823b99d606903111eaa099d2dda586dc38ed0b216cddc274"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/review-all-gdds/references/4-scenarios.md=>.agents/skills/review-all-gdds/references/4-scenarios.md",
+      "source": ".claude/skills/review-all-gdds/references/4-scenarios.md",
+      "source_sha256": "6cbabdb03c253ab2c2fe384ae075d68fbeeef705fc5acd60fcb60f9784ae286d",
+      "target": ".agents/skills/review-all-gdds/references/4-scenarios.md",
+      "target_sha256": "d047503556c710fc47bd7eb33562e59c10807eb417c4b8639a45f11c6bd32fa6",
+      "transform_version": 1,
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:3dbd7970a5061ab3823b99d606903111eaa099d2dda586dc38ed0b216cddc274"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/review-all-gdds/references/5-report.md=>.agents/skills/review-all-gdds/references/5-report.md",
+      "source": ".claude/skills/review-all-gdds/references/5-report.md",
+      "source_sha256": "ae51d4b943c57dbedb5f08a78ec7b4608324c0a9bb97b509c40bb1772e4040cb",
+      "target": ".agents/skills/review-all-gdds/references/5-report.md",
+      "target_sha256": "5627de2493b435aa561832f268c57c2b092d6c3b9a62bc62c2db66a43993e03f",
+      "transform_version": 1,
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:3dbd7970a5061ab3823b99d606903111eaa099d2dda586dc38ed0b216cddc274"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/review-all-gdds/references/6-write.md=>.agents/skills/review-all-gdds/references/6-write.md",
+      "source": ".claude/skills/review-all-gdds/references/6-write.md",
+      "source_sha256": "e4f3a48fd218f010138b5ef0453178dc7d4617db93044a1c57b7f2d35cbd2942",
+      "target": ".agents/skills/review-all-gdds/references/6-write.md",
+      "target_sha256": "42be17d657475834e00c6f4ce8b77acd36a56e90ba83b2fe765d47581db74a36",
+      "transform_version": 1,
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:3dbd7970a5061ab3823b99d606903111eaa099d2dda586dc38ed0b216cddc274"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/review-all-gdds/references/7-handoff.md=>.agents/skills/review-all-gdds/references/7-handoff.md",
+      "source": ".claude/skills/review-all-gdds/references/7-handoff.md",
+      "source_sha256": "76a11e26daef756825db1aabf6380c3781a1ac479eea38a63104ad697163b4c6",
+      "target": ".agents/skills/review-all-gdds/references/7-handoff.md",
+      "target_sha256": "69f7260e914fd911aef48d074380af8842714f75f88cce1747d21528b4c972c6",
+      "transform_version": 1,
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:3dbd7970a5061ab3823b99d606903111eaa099d2dda586dc38ed0b216cddc274"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/review-all-gdds/SKILL.md=>.agents/skills/review-all-gdds/SKILL.md",
+      "source": ".claude/skills/review-all-gdds/SKILL.md",
+      "source_sha256": "2b5bae8837d3b47bee678ab78aa23f0e177326b4655f22d5c16470089a25241b",
+      "target": ".agents/skills/review-all-gdds/SKILL.md",
+      "target_sha256": "cb846b8478dcd9401af60f2b8b711e893b1e9590a61491d7c5fe34b6fb2c7a48",
+      "transform_version": 1,
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:3dbd7970a5061ab3823b99d606903111eaa099d2dda586dc38ed0b216cddc274"
       ],
       "owner": "CGS-05",
       "ownership": "generated"

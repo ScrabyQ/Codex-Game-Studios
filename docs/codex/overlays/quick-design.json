@@ -1,0 +1,9 @@
+{
+  "source_sha256": "32a4521f5290f459b84cf3500f86487d63b03d192281c392b7a023dcede03fb3",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-11 design and consent contract:** Treat source task APIs and automatic hooks as optional; if unavailable, keep a transparent in-session checklist and do not claim task creation or hook execution. Use available file tools and preserve their permission limits. Classify and explain the change with actual context; retain the minimal-brief fallback when no GDD is expected. Obtain the required classification and filing decisions, and do not update a GDD without authorization for that change.\n\n"
+    }
+  ]
+}
