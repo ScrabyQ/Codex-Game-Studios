@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "contract": "docs/codex/architecture.md",
+  "source_commit": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
+  "rules": {
+    "matching": "Most-specific path pattern owns a file; exact paths override directory patterns. Existing upstream files remain upstream-owned unless explicitly listed as integration seams.",
+    "parallel_work": "Workers own disjoint assigned component families; do not overwrite another worker's changes. Shared files have one integrator.",
+    "generation": "Generated targets require matching recorded target hashes before replacement; manual targets require explicit reconciliation.",
+    "runtime_state": "Runtime project data is user-owned and not generator output."
+  },
+  "areas": [
+    {"paths": [".claude/**", "CLAUDE.md", "src/CLAUDE.md", "design/CLAUDE.md", "docs/CLAUDE.md", "studio-tests/**", "LICENSE", "docs/engine-reference/**"], "owner": "upstream", "mode": "preserve"},
+    {"paths": ["project.yaml", "project.local.yaml", "production/**", "src/**", "design/**"], "owner": "project-user", "mode": "authorized-project-operation", "note": "Do not seed config defaults during adaptation; existing upstream content remains source-tracked."},
+    {"paths": ["AGENTS.md", "src/AGENTS.md", "design/AGENTS.md", "docs/AGENTS.md", "studio-tests/AGENTS.md"], "owner": "CGS-04", "mode": "manual-overlay"},
+    {"paths": ["docs/codex/architecture.md", "docs/codex/ownership.json"], "owner": "CGS-03", "mode": "manual-contract"},
+    {"paths": ["docs/codex/upstream-snapshot.json", "docs/codex/upstream-inventory.json", "docs/codex/migration-manifest.json", "docs/codex/progress.json", "docs/codex/requirements/**"], "owner": "integrator", "mode": "single-writer"},
+    {"paths": ["scripts/codex/generate.mjs", "docs/codex/generation-manifest.json", "docs/codex/overlays/**"], "owner": "CGS-05", "mode": "generator-infrastructure", "note": "Per-component overlay patches may be delegated by explicit family assignment; central generation metadata remains single-writer."},
+    {"paths": [".agents/skills/**"], "owner": "CGS-10-through-CGS-22", "mode": "generated-component-families", "note": "Assign nonoverlapping skill names; generator infrastructure is CGS-05-owned."},
+    {"paths": [".codex/agents/**"], "owner": "CGS-07-through-CGS-09", "mode": "generated-component-families", "note": "Native TOML; 11 leadership, 23 general, 15 engine roles respectively."},
+    {"paths": [".codex/model-policy.json", "scripts/codex/models.mjs"], "owner": "CGS-06", "mode": "manual-overlay"},
+    {"paths": [".agents/rules/**", "scripts/codex/rules.mjs"], "owner": "CGS-23", "mode": "adapted-rules-and-selector"},
+    {"paths": [".codex/hooks.json", "scripts/codex/hooks.mjs"], "owner": "CGS-24", "mode": "native-hook-integration"},
+    {"paths": [".agents/hooks/**", ".agents/scripts/**", "scripts/codex/helper.mjs", "scripts/codex/cgs.mjs"], "owner": "CGS-25", "mode": "adapted-helper-backend", "note": "CGS-24 proposes handler protocol changes through this owner; do not independently edit the same handler."},
+    {"paths": [".agents/docs/**"], "owner": "CGS-26", "mode": "adapted-reference-mirror", "note": "CGS-05 generation and CGS-25 helpers consume this mirror; early required references may be generated under explicit owner coordination."},
+    {"paths": [".agents/agent-memory/**", "production/session-state/**", "production/session-logs/**"], "owner": "runtime-session", "mode": "ignored-runtime-data"},
+    {"paths": ["scripts/codex/validate.mjs", "scripts/codex/tests/**", ".github/workflows/codex*.yml"], "owner": "CGS-28", "mode": "validation-integration", "note": "Early per-component checks belong to their component owner; shared runner integration is single-writer."},
+    {"paths": ["scripts/codex/sync-upstream.mjs", "scripts/codex/check-upstream.mjs"], "owner": "CGS-29", "mode": "sync-tooling"},
+    {"paths": ["docs/codex/evidence/**"], "owner": "task-owner", "mode": "disjoint-task-directories", "note": "Evidence directory uses the task ID; no upgrading unrun verification to PASS."},
+    {"paths": ["README.md", "UPGRADING.md", ".gitignore", ".github/CODEOWNERS"], "owner": "integrator", "mode": "reviewed-integration-seam", "note": "Coordinate CGS-02/30 attribution and setup, CGS-29 sync docs, and necessary ignore/ownership additions; preserve upstream material."},
+    {"paths": ["scripts/codex/**", "docs/codex/**", ".agents/**", ".codex/**"], "owner": "integrator", "mode": "unassigned-overlay-review", "note": "Fallback for a new overlay path: assign a task owner before writing; does not permit conflicting parallel edits."}
+  ]
+}

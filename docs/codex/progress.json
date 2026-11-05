@@ -5,11 +5,12 @@
   "upstream_sha": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
   "owner": "ScrabyQ",
   "repository": "Codex-Game-Studios",
-  "last_completed": "CGS-02",
-  "current_task": "CGS-03",
-  "next_safe_step": "Finalize architecture contract, then implement onboarding and skill/config infrastructure.",
+  "last_completed": "CGS-03",
+  "current_task": "CGS-04",
+  "next_safe_step": "Create root/scoped AGENTS; then disjoint CGS05/06/23/26 infrastructure.",
   "decisions": [
-    "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED."
+    "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED.",
+    "Generated content-preserving .agents mirror retains helper root math; native roles use .codex/agents/*.toml; all generation is hash-guarded; no new agent runtime."
   ],
   "checks": [],
   "issues": [],
@@ -31,7 +32,7 @@
       "singularity_id": "T-81189664-e546-4266-a3a6-85a12d84ecaa",
       "title": "CGS-02 · Создать GitHub fork с историей и upstream; сохранить MIT и атрибуцию",
       "status": "COMPLETE",
-      "commit": null,
+      "commit": "cfd7accffd86470981c11269ae4e1ed0b9cf9a56",
       "evidence": [
         "docs/codex/fork.json",
         "gh repo view: isFork=true, parent Donchitos/Claude-Code-Game-Studios, permission ADMIN",
@@ -42,9 +43,13 @@
       "key": "CGS-03",
       "singularity_id": "T-b5884c08-3321-4f59-93b4-e27d54feb18a",
       "title": "CGS-03 · Спроектировать Codex-native архитектуру и стратегию конфликтов upstream",
-      "status": "PENDING",
+      "status": "COMPLETE",
       "commit": null,
-      "evidence": []
+      "evidence": [
+        "docs/codex/architecture.md",
+        "docs/codex/ownership.json",
+        "Ownership/interface validation exit0; git diff --check exit0"
+      ]
     },
     {
       "key": "CGS-04",

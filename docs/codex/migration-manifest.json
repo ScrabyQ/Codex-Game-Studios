@@ -18,7 +18,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/accessibility-specialist.md",
+      "proposed_target": ".codex/agents/accessibility-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -33,7 +33,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/ai-programmer.md",
+      "proposed_target": ".codex/agents/ai-programmer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -48,7 +48,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/analytics-engineer.md",
+      "proposed_target": ".codex/agents/analytics-engineer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -64,7 +64,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/art-director.md",
+      "proposed_target": ".codex/agents/art-director.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -80,7 +80,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/audio-director.md",
+      "proposed_target": ".codex/agents/audio-director.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -95,7 +95,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/community-manager.md",
+      "proposed_target": ".codex/agents/community-manager.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -111,7 +111,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/creative-director.md",
+      "proposed_target": ".codex/agents/creative-director.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -126,7 +126,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/devops-engineer.md",
+      "proposed_target": ".codex/agents/devops-engineer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -142,7 +142,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/economy-designer.md",
+      "proposed_target": ".codex/agents/economy-designer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -157,7 +157,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/engine-programmer.md",
+      "proposed_target": ".codex/agents/engine-programmer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -173,7 +173,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/game-designer.md",
+      "proposed_target": ".codex/agents/game-designer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -188,7 +188,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/gameplay-programmer.md",
+      "proposed_target": ".codex/agents/gameplay-programmer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -203,7 +203,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/godot-csharp-specialist.md",
+      "proposed_target": ".codex/agents/godot-csharp-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -218,7 +218,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/godot-gdextension-specialist.md",
+      "proposed_target": ".codex/agents/godot-gdextension-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -233,7 +233,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/godot-gdscript-specialist.md",
+      "proposed_target": ".codex/agents/godot-gdscript-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -248,7 +248,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/godot-shader-specialist.md",
+      "proposed_target": ".codex/agents/godot-shader-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -263,7 +263,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/godot-specialist.md",
+      "proposed_target": ".codex/agents/godot-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -278,7 +278,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/lead-programmer.md",
+      "proposed_target": ".codex/agents/lead-programmer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -294,7 +294,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/level-designer.md",
+      "proposed_target": ".codex/agents/level-designer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -310,7 +310,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/live-ops-designer.md",
+      "proposed_target": ".codex/agents/live-ops-designer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -325,7 +325,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/localization-lead.md",
+      "proposed_target": ".codex/agents/localization-lead.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -341,7 +341,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/narrative-director.md",
+      "proposed_target": ".codex/agents/narrative-director.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -356,7 +356,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/network-programmer.md",
+      "proposed_target": ".codex/agents/network-programmer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -371,7 +371,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/performance-analyst.md",
+      "proposed_target": ".codex/agents/performance-analyst.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -387,7 +387,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/producer.md",
+      "proposed_target": ".codex/agents/producer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -402,7 +402,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/prototyper.md",
+      "proposed_target": ".codex/agents/prototyper.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -417,7 +417,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/qa-lead.md",
+      "proposed_target": ".codex/agents/qa-lead.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -432,7 +432,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/qa-tester.md",
+      "proposed_target": ".codex/agents/qa-tester.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -447,7 +447,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/release-manager.md",
+      "proposed_target": ".codex/agents/release-manager.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -462,7 +462,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/security-engineer.md",
+      "proposed_target": ".codex/agents/security-engineer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -477,7 +477,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/sound-designer.md",
+      "proposed_target": ".codex/agents/sound-designer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -493,7 +493,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/systems-designer.md",
+      "proposed_target": ".codex/agents/systems-designer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -508,7 +508,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/technical-artist.md",
+      "proposed_target": ".codex/agents/technical-artist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -524,7 +524,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/technical-director.md",
+      "proposed_target": ".codex/agents/technical-director.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -539,7 +539,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/tools-programmer.md",
+      "proposed_target": ".codex/agents/tools-programmer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -554,7 +554,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/ue-blueprint-specialist.md",
+      "proposed_target": ".codex/agents/ue-blueprint-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -569,7 +569,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/ue-gas-specialist.md",
+      "proposed_target": ".codex/agents/ue-gas-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -584,7 +584,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/ue-replication-specialist.md",
+      "proposed_target": ".codex/agents/ue-replication-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -599,7 +599,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/ue-umg-specialist.md",
+      "proposed_target": ".codex/agents/ue-umg-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -614,7 +614,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/ui-programmer.md",
+      "proposed_target": ".codex/agents/ui-programmer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -629,7 +629,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/unity-addressables-specialist.md",
+      "proposed_target": ".codex/agents/unity-addressables-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -644,7 +644,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/unity-dots-specialist.md",
+      "proposed_target": ".codex/agents/unity-dots-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -659,7 +659,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/unity-shader-specialist.md",
+      "proposed_target": ".codex/agents/unity-shader-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -674,7 +674,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/unity-specialist.md",
+      "proposed_target": ".codex/agents/unity-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -689,7 +689,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/unity-ui-specialist.md",
+      "proposed_target": ".codex/agents/unity-ui-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -704,7 +704,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/unreal-specialist.md",
+      "proposed_target": ".codex/agents/unreal-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -720,7 +720,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/ux-designer.md",
+      "proposed_target": ".codex/agents/ux-designer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -736,7 +736,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/world-builder.md",
+      "proposed_target": ".codex/agents/world-builder.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -752,7 +752,7 @@
         "Claude model metadata",
         "Claude tool metadata"
       ],
-      "proposed_target": ".codex/agents/writer.md",
+      "proposed_target": ".codex/agents/writer.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -766,7 +766,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/CLAUDE-local-template.md",
+      "proposed_target": ".agents/docs/CLAUDE-local-template.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -780,7 +780,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/agent-roster.md",
+      "proposed_target": ".agents/docs/agent-roster.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -794,7 +794,7 @@
       "claude_dependencies": [
         "CLAUDE_* environment"
       ],
-      "proposed_target": "docs/codex/upstream-reference/agent-teams.md",
+      "proposed_target": ".agents/docs/agent-teams.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -808,7 +808,7 @@
       "claude_dependencies": [
         "AskUserQuestion"
       ],
-      "proposed_target": "docs/codex/upstream-reference/automation-modes.md",
+      "proposed_target": ".agents/docs/automation-modes.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -822,7 +822,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/code-root-resolution.md",
+      "proposed_target": ".agents/docs/code-root-resolution.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -836,7 +836,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/coding-standards.md",
+      "proposed_target": ".agents/docs/coding-standards.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -852,7 +852,7 @@
         "CLAUDE_* environment",
         "Claude tool metadata"
       ],
-      "proposed_target": "docs/codex/upstream-reference/config-resolution.md",
+      "proposed_target": ".agents/docs/config-resolution.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -866,7 +866,7 @@
       "claude_dependencies": [
         "dynamic shell expansion !`"
       ],
-      "proposed_target": "docs/codex/upstream-reference/context-management.md",
+      "proposed_target": ".agents/docs/context-management.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -880,7 +880,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/coordination-rules.md",
+      "proposed_target": ".agents/docs/coordination-rules.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -896,7 +896,7 @@
         "dynamic shell expansion !`",
         "CLAUDE_* environment"
       ],
-      "proposed_target": "docs/codex/upstream-reference/director-gates.md",
+      "proposed_target": ".agents/docs/director-gates.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -910,7 +910,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/director-gates/ad-art-bible.md",
+      "proposed_target": ".agents/docs/director-gates/ad-art-bible.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -924,7 +924,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/director-gates/ad-concept-visual.md",
+      "proposed_target": ".agents/docs/director-gates/ad-concept-visual.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -938,7 +938,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/director-gates/ad-phase-gate.md",
+      "proposed_target": ".agents/docs/director-gates/ad-phase-gate.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -952,7 +952,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/director-gates/ad-visual.md",
+      "proposed_target": ".agents/docs/director-gates/ad-visual.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -966,7 +966,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/director-gates/cd-gdd-align.md",
+      "proposed_target": ".agents/docs/director-gates/cd-gdd-align.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -980,7 +980,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/director-gates/cd-narrative.md",
+      "proposed_target": ".agents/docs/director-gates/cd-narrative.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -994,7 +994,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/director-gates/cd-phase-gate.md",
+      "proposed_target": ".agents/docs/director-gates/cd-phase-gate.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1008,7 +1008,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/director-gates/cd-pillars.md",
+      "proposed_target": ".agents/docs/director-gates/cd-pillars.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1022,7 +1022,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/director-gates/cd-playtest.md",
+      "proposed_target": ".agents/docs/director-gates/cd-playtest.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1036,7 +1036,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/director-gates/cd-systems.md",
+      "proposed_target": ".agents/docs/director-gates/cd-systems.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1050,7 +1050,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/director-gates/lp-code-review.md",
+      "proposed_target": ".agents/docs/director-gates/lp-code-review.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1064,7 +1064,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/director-gates/lp-feasibility.md",
+      "proposed_target": ".agents/docs/director-gates/lp-feasibility.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1078,7 +1078,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/director-gates/nd-consistency.md",
+      "proposed_target": ".agents/docs/director-gates/nd-consistency.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1092,7 +1092,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/director-gates/pr-epic.md",
+      "proposed_target": ".agents/docs/director-gates/pr-epic.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1106,7 +1106,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/director-gates/pr-milestone.md",
+      "proposed_target": ".agents/docs/director-gates/pr-milestone.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1120,7 +1120,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/director-gates/pr-phase-gate.md",
+      "proposed_target": ".agents/docs/director-gates/pr-phase-gate.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1134,7 +1134,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/director-gates/pr-scope.md",
+      "proposed_target": ".agents/docs/director-gates/pr-scope.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1148,7 +1148,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/director-gates/pr-sprint.md",
+      "proposed_target": ".agents/docs/director-gates/pr-sprint.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1162,7 +1162,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/director-gates/ql-story-ready.md",
+      "proposed_target": ".agents/docs/director-gates/ql-story-ready.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1176,7 +1176,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/director-gates/ql-test-coverage.md",
+      "proposed_target": ".agents/docs/director-gates/ql-test-coverage.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1190,7 +1190,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/director-gates/td-adr.md",
+      "proposed_target": ".agents/docs/director-gates/td-adr.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1204,7 +1204,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/director-gates/td-architecture.md",
+      "proposed_target": ".agents/docs/director-gates/td-architecture.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1218,7 +1218,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/director-gates/td-change-impact.md",
+      "proposed_target": ".agents/docs/director-gates/td-change-impact.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1232,7 +1232,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/director-gates/td-engine-risk.md",
+      "proposed_target": ".agents/docs/director-gates/td-engine-risk.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1246,7 +1246,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/director-gates/td-feasibility.md",
+      "proposed_target": ".agents/docs/director-gates/td-feasibility.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1260,7 +1260,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/director-gates/td-manifest.md",
+      "proposed_target": ".agents/docs/director-gates/td-manifest.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1274,7 +1274,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/director-gates/td-phase-gate.md",
+      "proposed_target": ".agents/docs/director-gates/td-phase-gate.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1288,7 +1288,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/director-gates/td-system-boundary.md",
+      "proposed_target": ".agents/docs/director-gates/td-system-boundary.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1302,7 +1302,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/directory-structure.md",
+      "proposed_target": ".agents/docs/directory-structure.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1316,7 +1316,7 @@
       "claude_dependencies": [
         "AskUserQuestion"
       ],
-      "proposed_target": "docs/codex/upstream-reference/effects-map.md",
+      "proposed_target": ".agents/docs/effects-map.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1330,7 +1330,7 @@
       "claude_dependencies": [
         "AskUserQuestion"
       ],
-      "proposed_target": "docs/codex/upstream-reference/error-recovery-protocol.md",
+      "proposed_target": ".agents/docs/error-recovery-protocol.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1344,7 +1344,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/hooks-reference.md",
+      "proposed_target": ".agents/docs/hooks-reference.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1358,7 +1358,7 @@
       "claude_dependencies": [
         "Claude hook protocol"
       ],
-      "proposed_target": "docs/codex/upstream-reference/hooks-reference/hook-input-schemas.md",
+      "proposed_target": ".agents/docs/hooks-reference/hook-input-schemas.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1372,7 +1372,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/hooks-reference/post-merge-asset-validation.md",
+      "proposed_target": ".agents/docs/hooks-reference/post-merge-asset-validation.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1386,7 +1386,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/hooks-reference/post-sprint-retrospective.md",
+      "proposed_target": ".agents/docs/hooks-reference/post-sprint-retrospective.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1400,7 +1400,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/hooks-reference/pre-commit-code-quality.md",
+      "proposed_target": ".agents/docs/hooks-reference/pre-commit-code-quality.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1414,7 +1414,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/hooks-reference/pre-commit-design-check.md",
+      "proposed_target": ".agents/docs/hooks-reference/pre-commit-design-check.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1428,7 +1428,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/hooks-reference/pre-push-test-gate.md",
+      "proposed_target": ".agents/docs/hooks-reference/pre-push-test-gate.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1442,7 +1442,7 @@
       "claude_dependencies": [
         "CLAUDE_* environment"
       ],
-      "proposed_target": "docs/codex/upstream-reference/model-tiers.md",
+      "proposed_target": ".agents/docs/model-tiers.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1456,7 +1456,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/quick-start.md",
+      "proposed_target": ".agents/docs/quick-start.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1470,7 +1470,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/rules-reference.md",
+      "proposed_target": ".agents/docs/rules-reference.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1484,7 +1484,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/run-and-observe.md",
+      "proposed_target": ".agents/docs/run-and-observe.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1498,7 +1498,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/settings-guidance.md",
+      "proposed_target": ".agents/docs/settings-guidance.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1512,7 +1512,7 @@
       "claude_dependencies": [
         "CLAUDE_* environment"
       ],
-      "proposed_target": "docs/codex/upstream-reference/settings-local-template.md",
+      "proposed_target": ".agents/docs/settings-local-template.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1526,7 +1526,7 @@
       "claude_dependencies": [
         "CLAUDE_* environment"
       ],
-      "proposed_target": "docs/codex/upstream-reference/setup-requirements.md",
+      "proposed_target": ".agents/docs/setup-requirements.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1540,7 +1540,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/skills-reference.md",
+      "proposed_target": ".agents/docs/skills-reference.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1554,7 +1554,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/technical-preferences.md",
+      "proposed_target": ".agents/docs/technical-preferences.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1568,7 +1568,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/SKILL-CONTRACT-TEMPLATE.md",
+      "proposed_target": ".agents/docs/templates/SKILL-CONTRACT-TEMPLATE.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1582,7 +1582,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/accessibility-requirements.md",
+      "proposed_target": ".agents/docs/templates/accessibility-requirements.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1596,7 +1596,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/adoption-plan.md",
+      "proposed_target": ".agents/docs/templates/adoption-plan.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1610,7 +1610,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/adoption-summary.md",
+      "proposed_target": ".agents/docs/templates/adoption-summary.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1624,7 +1624,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/architecture-decision-record.md",
+      "proposed_target": ".agents/docs/templates/architecture-decision-record.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1638,7 +1638,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/architecture-doc-from-code.md",
+      "proposed_target": ".agents/docs/templates/architecture-doc-from-code.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1652,7 +1652,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/architecture-traceability.md",
+      "proposed_target": ".agents/docs/templates/architecture-traceability.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1666,7 +1666,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/art-bible.md",
+      "proposed_target": ".agents/docs/templates/art-bible.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1680,7 +1680,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/bug-closure-record.md",
+      "proposed_target": ".agents/docs/templates/bug-closure-record.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1694,7 +1694,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/bug-report.md",
+      "proposed_target": ".agents/docs/templates/bug-report.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1708,7 +1708,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/certification-console.md",
+      "proposed_target": ".agents/docs/templates/certification-console.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1722,7 +1722,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/certification-itch.md",
+      "proposed_target": ".agents/docs/templates/certification-itch.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1736,7 +1736,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/certification-none.md",
+      "proposed_target": ".agents/docs/templates/certification-none.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1750,7 +1750,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/certification-steam.md",
+      "proposed_target": ".agents/docs/templates/certification-steam.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1764,7 +1764,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/certification-unknown.md",
+      "proposed_target": ".agents/docs/templates/certification-unknown.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1778,7 +1778,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/changelog-internal.md",
+      "proposed_target": ".agents/docs/templates/changelog-internal.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1792,7 +1792,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/changelog-template.md",
+      "proposed_target": ".agents/docs/templates/changelog-template.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1806,7 +1806,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/concept-doc-from-prototype.md",
+      "proposed_target": ".agents/docs/templates/concept-doc-from-prototype.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1820,7 +1820,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/design-doc-from-implementation.md",
+      "proposed_target": ".agents/docs/templates/design-doc-from-implementation.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1834,7 +1834,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/difficulty-curve.md",
+      "proposed_target": ".agents/docs/templates/difficulty-curve.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1848,7 +1848,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/economy-model.md",
+      "proposed_target": ".agents/docs/templates/economy-model.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1862,7 +1862,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/faction-design.md",
+      "proposed_target": ".agents/docs/templates/faction-design.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1876,7 +1876,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/game-brief.md",
+      "proposed_target": ".agents/docs/templates/game-brief.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1890,7 +1890,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/game-concept.md",
+      "proposed_target": ".agents/docs/templates/game-concept.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1904,7 +1904,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/game-design-document.md",
+      "proposed_target": ".agents/docs/templates/game-design-document.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1918,7 +1918,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/game-pillars.md",
+      "proposed_target": ".agents/docs/templates/game-pillars.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1932,7 +1932,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/guidance/accessibility-requirements-guide.md",
+      "proposed_target": ".agents/docs/templates/guidance/accessibility-requirements-guide.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1946,7 +1946,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/guidance/game-design-document-guide.md",
+      "proposed_target": ".agents/docs/templates/guidance/game-design-document-guide.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1960,7 +1960,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/guidance/hud-design-guide.md",
+      "proposed_target": ".agents/docs/templates/guidance/hud-design-guide.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1974,7 +1974,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/guidance/interaction-pattern-library-guide-game-specific.md",
+      "proposed_target": ".agents/docs/templates/guidance/interaction-pattern-library-guide-game-specific.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -1988,7 +1988,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/guidance/interaction-pattern-library-guide-navigation-feedback.md",
+      "proposed_target": ".agents/docs/templates/guidance/interaction-pattern-library-guide-navigation-feedback.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2002,7 +2002,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/guidance/interaction-pattern-library-guide-standard-controls.md",
+      "proposed_target": ".agents/docs/templates/guidance/interaction-pattern-library-guide-standard-controls.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2016,7 +2016,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/guidance/interaction-pattern-library-guide.md",
+      "proposed_target": ".agents/docs/templates/guidance/interaction-pattern-library-guide.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2030,7 +2030,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/guidance/ux-spec-guide.md",
+      "proposed_target": ".agents/docs/templates/guidance/ux-spec-guide.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2044,7 +2044,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/help-escalation.md",
+      "proposed_target": ".agents/docs/templates/help-escalation.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2058,7 +2058,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/help-where-you-are-minimal.md",
+      "proposed_target": ".agents/docs/templates/help-where-you-are-minimal.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2072,7 +2072,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/help-where-you-are.md",
+      "proposed_target": ".agents/docs/templates/help-where-you-are.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2086,7 +2086,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/hud-design.md",
+      "proposed_target": ".agents/docs/templates/hud-design.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2100,7 +2100,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/incident-response.md",
+      "proposed_target": ".agents/docs/templates/incident-response.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2114,7 +2114,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/interaction-pattern-library.md",
+      "proposed_target": ".agents/docs/templates/interaction-pattern-library.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2128,7 +2128,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/launch-checklist.md",
+      "proposed_target": ".agents/docs/templates/launch-checklist.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2142,7 +2142,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/level-design-document.md",
+      "proposed_target": ".agents/docs/templates/level-design-document.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2156,7 +2156,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/milestone-definition.md",
+      "proposed_target": ".agents/docs/templates/milestone-definition.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2170,7 +2170,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/narrative-character-sheet.md",
+      "proposed_target": ".agents/docs/templates/narrative-character-sheet.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2184,7 +2184,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/patch-notes-brief.md",
+      "proposed_target": ".agents/docs/templates/patch-notes-brief.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2198,7 +2198,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/patch-notes-commentary.md",
+      "proposed_target": ".agents/docs/templates/patch-notes-commentary.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2212,7 +2212,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/pitch-document.md",
+      "proposed_target": ".agents/docs/templates/pitch-document.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2226,7 +2226,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/player-journey.md",
+      "proposed_target": ".agents/docs/templates/player-journey.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2240,7 +2240,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/post-mortem.md",
+      "proposed_target": ".agents/docs/templates/post-mortem.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2254,7 +2254,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/project-stage-report.md",
+      "proposed_target": ".agents/docs/templates/project-stage-report.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2268,7 +2268,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/prototype-report.md",
+      "proposed_target": ".agents/docs/templates/prototype-report.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2282,7 +2282,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/quick-design-change.md",
+      "proposed_target": ".agents/docs/templates/quick-design-change.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2296,7 +2296,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/quick-design-new-system.md",
+      "proposed_target": ".agents/docs/templates/quick-design-new-system.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2310,7 +2310,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/quick-design-tuning.md",
+      "proposed_target": ".agents/docs/templates/quick-design-tuning.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2324,7 +2324,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/release-checklist-template.md",
+      "proposed_target": ".agents/docs/templates/release-checklist-template.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2338,7 +2338,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/release-notes.md",
+      "proposed_target": ".agents/docs/templates/release-notes.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2352,7 +2352,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/release-platform-requirements.md",
+      "proposed_target": ".agents/docs/templates/release-platform-requirements.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2366,7 +2366,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/risk-register-entry.md",
+      "proposed_target": ".agents/docs/templates/risk-register-entry.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2380,7 +2380,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/session-state.md",
+      "proposed_target": ".agents/docs/templates/session-state.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2394,7 +2394,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/soak-test-protocol.md",
+      "proposed_target": ".agents/docs/templates/soak-test-protocol.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2408,7 +2408,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/sound-bible.md",
+      "proposed_target": ".agents/docs/templates/sound-bible.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2422,7 +2422,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/sprint-plan.md",
+      "proposed_target": ".agents/docs/templates/sprint-plan.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2436,7 +2436,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/sprint-status.yaml",
+      "proposed_target": ".agents/docs/templates/sprint-status.yaml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2450,7 +2450,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/start-paths.md",
+      "proposed_target": ".agents/docs/templates/start-paths.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2464,7 +2464,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/story.md",
+      "proposed_target": ".agents/docs/templates/story.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2478,7 +2478,7 @@
       "claude_dependencies": [
         "Agent tool"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/systems-index.md",
+      "proposed_target": ".agents/docs/templates/systems-index.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2492,7 +2492,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/technical-design-document.md",
+      "proposed_target": ".agents/docs/templates/technical-design-document.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2506,7 +2506,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/test-evidence.md",
+      "proposed_target": ".agents/docs/templates/test-evidence.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2520,7 +2520,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/test-plan.md",
+      "proposed_target": ".agents/docs/templates/test-plan.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2534,7 +2534,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/ux-spec.md",
+      "proposed_target": ".agents/docs/templates/ux-spec.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2548,7 +2548,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/templates/vertical-slice-report.md",
+      "proposed_target": ".agents/docs/templates/vertical-slice-report.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2562,7 +2562,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/workflow-catalog.yaml",
+      "proposed_target": ".agents/docs/workflow-catalog.yaml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2576,7 +2576,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/upstream-reference/workflow-modes.md",
+      "proposed_target": ".agents/docs/workflow-modes.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2590,7 +2590,7 @@
       "claude_dependencies": [
         "CLAUDE_* environment"
       ],
-      "proposed_target": "scripts/codex/hooks/detect-gaps.sh (event integration or documented manual fallback)",
+      "proposed_target": ".agents/hooks/detect-gaps.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2604,7 +2604,7 @@
       "claude_dependencies": [
         "CLAUDE_* environment"
       ],
-      "proposed_target": "scripts/codex/hooks/log-agent-stop.sh (event integration or documented manual fallback)",
+      "proposed_target": ".agents/hooks/log-agent-stop.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2618,7 +2618,7 @@
       "claude_dependencies": [
         "CLAUDE_* environment"
       ],
-      "proposed_target": "scripts/codex/hooks/log-agent.sh (event integration or documented manual fallback)",
+      "proposed_target": ".agents/hooks/log-agent.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2632,7 +2632,7 @@
       "claude_dependencies": [
         "CLAUDE_* environment"
       ],
-      "proposed_target": "scripts/codex/hooks/log-instructions.sh (event integration or documented manual fallback)",
+      "proposed_target": ".agents/hooks/log-instructions.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2646,7 +2646,7 @@
       "claude_dependencies": [
         "CLAUDE_* environment"
       ],
-      "proposed_target": "scripts/codex/hooks/notify.sh (event integration or documented manual fallback)",
+      "proposed_target": ".agents/hooks/notify.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2660,7 +2660,7 @@
       "claude_dependencies": [
         "CLAUDE_* environment"
       ],
-      "proposed_target": "scripts/codex/hooks/pre-compact.sh (event integration or documented manual fallback)",
+      "proposed_target": ".agents/hooks/pre-compact.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2675,7 +2675,7 @@
         "CLAUDE_* environment",
         "Claude hook protocol"
       ],
-      "proposed_target": "scripts/codex/hooks/session-start.sh (event integration or documented manual fallback)",
+      "proposed_target": ".agents/hooks/session-start.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2689,7 +2689,7 @@
       "claude_dependencies": [
         "CLAUDE_* environment"
       ],
-      "proposed_target": "scripts/codex/hooks/session-stop.sh (event integration or documented manual fallback)",
+      "proposed_target": ".agents/hooks/session-stop.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2703,7 +2703,7 @@
       "claude_dependencies": [
         "CLAUDE_* environment"
       ],
-      "proposed_target": "scripts/codex/hooks/update-check.sh (event integration or documented manual fallback)",
+      "proposed_target": ".agents/hooks/update-check.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2717,7 +2717,7 @@
       "claude_dependencies": [
         "CLAUDE_* environment"
       ],
-      "proposed_target": "scripts/codex/hooks/validate-agent-artifact.sh (event integration or documented manual fallback)",
+      "proposed_target": ".agents/hooks/validate-agent-artifact.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2732,7 +2732,7 @@
         "CLAUDE_* environment",
         "Claude hook protocol"
       ],
-      "proposed_target": "scripts/codex/hooks/validate-assets.sh (event integration or documented manual fallback)",
+      "proposed_target": ".agents/hooks/validate-assets.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2747,7 +2747,7 @@
         "CLAUDE_* environment",
         "Claude hook protocol"
       ],
-      "proposed_target": "scripts/codex/hooks/validate-commit.sh (event integration or documented manual fallback)",
+      "proposed_target": ".agents/hooks/validate-commit.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2762,7 +2762,7 @@
         "CLAUDE_* environment",
         "Claude hook protocol"
       ],
-      "proposed_target": "scripts/codex/hooks/validate-push.sh (event integration or documented manual fallback)",
+      "proposed_target": ".agents/hooks/validate-push.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2777,7 +2777,7 @@
         "CLAUDE_* environment",
         "Claude hook protocol"
       ],
-      "proposed_target": "scripts/codex/hooks/validate-read.sh (event integration or documented manual fallback)",
+      "proposed_target": ".agents/hooks/validate-read.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2792,7 +2792,7 @@
         "CLAUDE_* environment",
         "Claude hook protocol"
       ],
-      "proposed_target": "scripts/codex/hooks/validate-registry.sh (event integration or documented manual fallback)",
+      "proposed_target": ".agents/hooks/validate-registry.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2807,7 +2807,7 @@
         "CLAUDE_* environment",
         "Claude hook protocol"
       ],
-      "proposed_target": "scripts/codex/hooks/validate-skill-change.sh (event integration or documented manual fallback)",
+      "proposed_target": ".agents/hooks/validate-skill-change.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2822,7 +2822,7 @@
         "CLAUDE_* environment",
         "Claude hook protocol"
       ],
-      "proposed_target": "scripts/codex/hooks/validate-write.sh (event integration or documented manual fallback)",
+      "proposed_target": ".agents/hooks/validate-write.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2839,7 +2839,7 @@
         "CLAUDE_* environment",
         "Claude hook protocol"
       ],
-      "proposed_target": "scripts/codex/hooks/yaml-helper.sh (event integration or documented manual fallback)",
+      "proposed_target": ".agents/hooks/yaml-helper.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2853,7 +2853,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/rules/agent-memory.md (scoped AGENTS.md where applicable)",
+      "proposed_target": ".agents/rules/agent-memory.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2867,7 +2867,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/rules/ai-code.md (scoped AGENTS.md where applicable)",
+      "proposed_target": ".agents/rules/ai-code.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2881,7 +2881,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/rules/data-files.md (scoped AGENTS.md where applicable)",
+      "proposed_target": ".agents/rules/data-files.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2895,7 +2895,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/rules/design-docs.md (scoped AGENTS.md where applicable)",
+      "proposed_target": ".agents/rules/design-docs.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2909,7 +2909,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/rules/engine-code.md (scoped AGENTS.md where applicable)",
+      "proposed_target": ".agents/rules/engine-code.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2923,7 +2923,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/rules/gameplay-code.md (scoped AGENTS.md where applicable)",
+      "proposed_target": ".agents/rules/gameplay-code.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2937,7 +2937,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/rules/narrative.md (scoped AGENTS.md where applicable)",
+      "proposed_target": ".agents/rules/narrative.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2951,7 +2951,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/rules/network-code.md (scoped AGENTS.md where applicable)",
+      "proposed_target": ".agents/rules/network-code.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2965,7 +2965,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/rules/prototype-code.md (scoped AGENTS.md where applicable)",
+      "proposed_target": ".agents/rules/prototype-code.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2979,7 +2979,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/rules/scene-files.md (scoped AGENTS.md where applicable)",
+      "proposed_target": ".agents/rules/scene-files.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -2993,7 +2993,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/rules/shader-code.md (scoped AGENTS.md where applicable)",
+      "proposed_target": ".agents/rules/shader-code.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3007,7 +3007,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/rules/skill-authoring.md (scoped AGENTS.md where applicable)",
+      "proposed_target": ".agents/rules/skill-authoring.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3021,7 +3021,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/rules/test-standards.md (scoped AGENTS.md where applicable)",
+      "proposed_target": ".agents/rules/test-standards.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3035,7 +3035,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "docs/codex/rules/ui-code.md (scoped AGENTS.md where applicable)",
+      "proposed_target": ".agents/rules/ui-code.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3049,7 +3049,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "scripts/codex/adr-dep-graph.sh",
+      "proposed_target": ".agents/scripts/adr-dep-graph.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3063,7 +3063,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "scripts/codex/adr-status.sh",
+      "proposed_target": ".agents/scripts/adr-status.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3078,7 +3078,7 @@
         "AskUserQuestion",
         "Agent tool"
       ],
-      "proposed_target": "scripts/codex/agent-check.sh",
+      "proposed_target": ".agents/scripts/agent-check.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3092,7 +3092,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "scripts/codex/artifact-check.sh",
+      "proposed_target": ".agents/scripts/artifact-check.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3106,7 +3106,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "scripts/codex/asset-scan.sh",
+      "proposed_target": ".agents/scripts/asset-scan.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3120,7 +3120,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "scripts/codex/bug-stats.sh",
+      "proposed_target": ".agents/scripts/bug-stats.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3134,7 +3134,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "scripts/codex/code-markers.sh",
+      "proposed_target": ".agents/scripts/code-markers.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3152,7 +3152,7 @@
         "CLAUDE_* environment",
         "Claude hook protocol"
       ],
-      "proposed_target": "scripts/codex/compat-inventory.sh",
+      "proposed_target": ".agents/scripts/compat-inventory.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3166,7 +3166,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "scripts/codex/config-set.sh",
+      "proposed_target": ".agents/scripts/config-set.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3180,7 +3180,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "scripts/codex/content-count.sh",
+      "proposed_target": ".agents/scripts/content-count.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3194,7 +3194,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "scripts/codex/debt-register.sh",
+      "proposed_target": ".agents/scripts/debt-register.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3208,7 +3208,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "scripts/codex/flaky-stats.sh",
+      "proposed_target": ".agents/scripts/flaky-stats.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3222,7 +3222,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "scripts/codex/gdd-structure-check.sh",
+      "proposed_target": ".agents/scripts/gdd-structure-check.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3236,7 +3236,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "scripts/codex/godot-parse-check.gd",
+      "proposed_target": ".agents/scripts/godot-parse-check.gd",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3250,7 +3250,7 @@
       "claude_dependencies": [
         "Claude hook protocol"
       ],
-      "proposed_target": "scripts/codex/hook-input.sh",
+      "proposed_target": ".agents/scripts/hook-input.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3264,7 +3264,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "scripts/codex/inputs-check.sh",
+      "proposed_target": ".agents/scripts/inputs-check.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3278,7 +3278,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "scripts/codex/md-section.sh",
+      "proposed_target": ".agents/scripts/md-section.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3292,7 +3292,7 @@
       "claude_dependencies": [
         "Agent tool"
       ],
-      "proposed_target": "scripts/codex/migrate-v1-config.sh",
+      "proposed_target": ".agents/scripts/migrate-v1-config.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3306,7 +3306,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "scripts/codex/plan-math.sh",
+      "proposed_target": ".agents/scripts/plan-math.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3320,7 +3320,7 @@
       "claude_dependencies": [
         "CLAUDE_* environment"
       ],
-      "proposed_target": "scripts/codex/project-coherence.sh",
+      "proposed_target": ".agents/scripts/project-coherence.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3334,7 +3334,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "scripts/codex/project-state.sh",
+      "proposed_target": ".agents/scripts/project-state.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3348,7 +3348,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "scripts/codex/read-guard.sh",
+      "proposed_target": ".agents/scripts/read-guard.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3362,7 +3362,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "scripts/codex/registry.sh",
+      "proposed_target": ".agents/scripts/registry.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3376,7 +3376,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "scripts/codex/review-receipts.sh",
+      "proposed_target": ".agents/scripts/review-receipts.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3390,7 +3390,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "scripts/codex/review-scope.sh",
+      "proposed_target": ".agents/scripts/review-scope.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3404,7 +3404,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "scripts/codex/rotate-session-state.sh",
+      "proposed_target": ".agents/scripts/rotate-session-state.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3418,7 +3418,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "scripts/codex/session-state.sh",
+      "proposed_target": ".agents/scripts/session-state.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3432,7 +3432,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "scripts/codex/set-stage.sh",
+      "proposed_target": ".agents/scripts/set-stage.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3446,7 +3446,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "scripts/codex/skill-lint.sh",
+      "proposed_target": ".agents/scripts/skill-lint.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3460,7 +3460,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "scripts/codex/story-facts.sh",
+      "proposed_target": ".agents/scripts/story-facts.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3475,7 +3475,7 @@
         "dynamic shell expansion !`",
         "CLAUDE_* environment"
       ],
-      "proposed_target": "scripts/codex/story-status.sh",
+      "proposed_target": ".agents/scripts/story-status.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3489,7 +3489,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "scripts/codex/test-run.sh",
+      "proposed_target": ".agents/scripts/test-run.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3503,7 +3503,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "scripts/codex/test-scaffold.sh",
+      "proposed_target": ".agents/scripts/test-scaffold.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3517,7 +3517,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "scripts/codex/write-guard.sh",
+      "proposed_target": ".agents/scripts/write-guard.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3531,7 +3531,7 @@
       "claude_dependencies": [
         "Claude project layout"
       ],
-      "proposed_target": "scripts/codex/yaml-get.awk",
+      "proposed_target": ".agents/scripts/yaml-get.awk",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -3545,7 +3545,7 @@
       "claude_dependencies": [
         "CLAUDE_* environment"
       ],
-      "proposed_target": ".codex/config.toml and documented permission/event fallbacks",
+      "proposed_target": ".agents/settings.json",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
@@ -6443,7 +6443,7 @@
       "claude_dependencies": [
         "CLAUDE_* environment"
       ],
-      "proposed_target": ".claude/statusline.sh (preserve/review)",
+      "proposed_target": ".agents/statusline.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
       "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
       "status": "PENDING"
