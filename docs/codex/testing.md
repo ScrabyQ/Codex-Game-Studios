@@ -43,6 +43,31 @@ The engine harness copies minimal fixtures to temporary storage. Rendering uses 
 
 Native model probes require an explicitly available model and a disposable fixture. Structural checks, in-session role reviews and synthetic tests must never be presented as native discovery, independent model review or human playtesting.
 
+The opt-in cases in `tests/fixtures/native/` exercise `$help`, returning-user
+`$start`, an unanswered `$settings` confirmation, and one explicitly approved
+configuration change. Select a model actually advertised for your CLI/account:
+
+```powershell
+node scripts/codex/native-smoke.mjs --case tests/fixtures/native/help.json --model MODEL_ID --output native/help.json
+```
+
+Run other cases by replacing the filename. The runner creates a disposable local
+clone without a remote and saves traces under ignored `.scratch/`. These cases
+use the CLI's `--approve-for-me` mode; their read-only intent is checked by
+comparing all fixture bytes. A separate `read_only` case can test the stricter
+sandbox. On Windows that sandbox may reject shell startup even for reads;
+report the failed attempt and use supported per-invocation review where allowed.
+Never change global trust to make a probe pass.
+
+CLI model catalogs can differ from the desktop host. Resolve the repository's
+policy against actual capabilities, then record the selected ID, its source and
+whether effort was overridden. A CLI `--model` argument or catalog default is
+not independent attestation of the serving model or effective reasoning effort.
+Test a custom role with a real separate child and its native role type; reading
+its TOML in the parent is an in-session fallback. Preserve initial FAIL results
+when correcting a fixture assertion and rerunning it. These paid/client checks
+remain opt-in, outside ordinary CI.
+
 ## Contributions
 
 Add regression source and small deterministic inputs. Send execution results to the PR, CI or issue tracker. Do not add task journals, raw traces, screenshots from test runs, credentials or machine-specific dumps to the product tree. Hygiene tests exercise both forbidden artifacts and legitimate configuration/test cases.

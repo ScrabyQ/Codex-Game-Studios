@@ -4690,7 +4690,7 @@
       "source": ".claude/skills/skill-test/SKILL.md",
       "source_sha256": "c4a1775aabdac131a0fde02fa380bd741eaffb380516f4e004ae34cfedb363c9",
       "target": ".agents/skills/skill-test/SKILL.md",
-      "target_sha256": "f3ff47b2c39c0d8e3aa3b549c8ba3e82770a4b5954d58489e5d81307880a4eb1",
+      "target_sha256": "55028f005d258f0df6fea769dcdc14e8c27d642c91a52e56acd90e27ea9042e4",
       "transform_version": 1,
       "transform_ids": [
         "frontmatter-scope-v1",

@@ -1,0 +1,20 @@
+{
+  "id": "start-returning",
+  "components": [
+    "start",
+    "native-discovery"
+  ],
+  "files": {
+    "project.yaml": "project:\n  name: Signal Garden acceptance\n  stage: Concept\nengine:\n  name: Godot\nmodes:\n  rigor: minimal\n  automation: collaborative\nupdates:\n  check: false\n",
+    "design/game-brief.md": "# Signal Garden\nA disposable acceptance fixture. One room: move a courier, press E near a beacon, receive visible confirmation, repeat. No game implementation exists yet.\n",
+    "production/stage.txt": "Concept\n"
+  },
+  "auto_review": true,
+  "no_writes": true,
+  "prompt": "$start\n\nThis is a returning-user acceptance fixture. Apply the installed start Skill to the actual files. Do not change any file or invoke another Skill. Verify the configured engine and existing brief, resolve review mode, and name the documented next Skill only. Do not delegate, install, commit or publish.",
+  "expect_report": [
+    "Godot",
+    "minimal",
+    "$help"
+  ]
+}

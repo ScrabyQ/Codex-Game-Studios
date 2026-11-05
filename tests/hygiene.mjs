@@ -33,6 +33,8 @@ put('.agents/docs/old-session.md','Open a fresh Claude Code session for an indep
 put('.agents/docs/old-client-command.md','Run `claude --worktree` to start implementation.\n');
 put('.agents/docs/old-skill-command.md','Invoke `/help` to inspect state.\n');
 put('.agents/docs/old-command-template.md','Invoke `/[name]` for this workflow.\n');
+put('.agents/docs/broken-spec-path.md','Spec: studio-tests/skills/*$[name].md\n');
+put('.agents/docs/broken-skill-path.md','Read .agents/skills/example$[skill-name]/SKILL.md\n');
 put('docs/codex/evidence/result.json','{}');
 put('debug.log','test output');
 put('docs/codex/screenshot.png','fake image bytes');
@@ -49,7 +51,9 @@ try { symlinkSync(path.join(root,'credentials.txt'),path.join(root,'linked.txt')
 execFileSync('git',['-C',root,'add','-f','debug.log']);
 const findings=inspect(root);
 assert(findings.some(([file])=>file==='.agents/docs/old-command-template.md'));
-assert.deepEqual(new Set(findings.map(x=>x[1])),new Set(['generated report','personal path','credential','environment file','legacy client file','active legacy instruction',...(linked?['symbolic link']:[])]));
+assert(findings.some(([file,reason])=>file==='.agents/docs/broken-spec-path.md'&&reason==='malformed skill path'));
+assert(findings.some(([file,reason])=>file==='.agents/docs/broken-skill-path.md'&&reason==='malformed skill path'));
+assert.deepEqual(new Set(findings.map(x=>x[1])),new Set(['generated report','personal path','credential','environment file','legacy client file','active legacy instruction','malformed skill path',...(linked?['symbolic link']:[])]));
 for(const name of ['.claude/old.md','docs/CLAUDE.md','.agents/skills/old/SKILL.md','.agents/docs/old-delegation.md','.agents/docs/old-question.md','.agents/docs/mixed-path.md','.agents/docs/mixed-question.md','.agents/docs/mixed-sentence.md','.agents/docs/old-session.md','.agents/docs/old-client-command.md','.agents/docs/old-skill-command.md'])assert(findings.some(([file])=>file===name),name);
 for(const name of ['docs/codex/evidence/result.json','docs/codex/screenshot.png','debug.log','local.txt','credentials.txt','large.txt','.env.local','.envrc','docs/codex/progress.json','docs/codex/fork.json','docs/codex/audit.md',...(linked?['linked.txt']:[])])assert(findings.some(([file])=>file===name),name);
 console.log('PASS hygiene detects reports, personal paths, credentials, env and legacy instructions; attribution, mappings and negative fixtures remain allowed');

@@ -340,7 +340,7 @@ the floor, added when the list does not already cover them:
 ```
 === Skill Spec Test: $[name] ===
 Date: [date]
-Spec: studio-tests/skills/[category]$[name].md
+Spec: studio-tests/skills/[category]/[name].md
 
 Static Assertions:
   [PASS] [assertion text]
@@ -480,7 +480,7 @@ missing from the catalog by name, so an uncatalogued one cannot drop out silentl
 ### Step 3 — Build Skill Coverage Table
 
 For each skill:
-- Check if a spec file exists (use the `spec:` path from catalog, or glob `studio-tests/skills/*$[name].md`)
+- Check if a spec file exists (use the `spec:` path from catalog, or glob `studio-tests/skills/*/[name].md`)
 - Look up `last_static`, `last_static_result`, `last_spec`, `last_spec_result`,
   `last_category` and `last_category_result` from the ignored runtime overlay; absent history is unknown / not recorded. Read `category` from the catalog.
 - Priority comes from catalog `priority:` field (critical/high/medium/low)
@@ -488,7 +488,7 @@ For each skill:
 ### Step 3b — Build Agent Coverage Table
 
 For each agent in catalog's `agents:` section:
-- Check if a spec file exists (use the `spec:` path from catalog, or glob `studio-tests/agents/*$[name].md`)
+- Check if a spec file exists (use the `spec:` path from catalog, or glob `studio-tests/agents/*/[name].md`)
 - Look up `last_spec`, `last_spec_result`, `last_category`,
   last_category_result from the runtime overlay and category from the catalog
 

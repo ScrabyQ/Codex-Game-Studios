@@ -1,0 +1,25 @@
+{
+  "id": "help",
+  "components": [
+    "help",
+    "native-discovery",
+    "factual-state"
+  ],
+  "read_only": false,
+  "files": {
+    "project.yaml": "project:\n  name: Signal Garden acceptance\n  stage: Concept\nengine:\n  name: Godot\nmodes:\n  rigor: minimal\n  automation: collaborative\nupdates:\n  check: false\n",
+    "design/game-brief.md": "# Signal Garden\nA disposable acceptance fixture. One room: move a courier, press E near a beacon, receive visible confirmation, repeat. No game implementation exists yet.\n",
+    "production/stage.txt": "Concept\n"
+  },
+  "prompt": "$help\n\nUse the installed help Skill for this fixture. Read actual state. The project is Signal Garden acceptance; engine Godot, minimal rigor, Concept. Treat those as hypotheses to verify from files, not evidence. Report current state and exactly one immediate next Skill. Do not start that next Skill or create, change, log or delete any file. Do not delegate; this is a bounded read-only discovery probe.",
+  "no_writes": true,
+  "expect_report": [
+    "minimal",
+    "$create-stories"
+  ],
+  "scope": "One read-only native help invocation in CLI; does not prove game quality or all Skills.",
+  "auto_review": true,
+  "expect_commands": [
+    "(?:helper\\.mjs|yaml-helper\\.sh).*resolve_config"
+  ]
+}

@@ -62,6 +62,7 @@ export function inspect(root) {
     try { bytes = readFileSync(path.join(root,name)); } catch (e) { if (e.code === 'ENOENT') continue; throw e; }
     if (bytes.includes(0)) continue;
     const content = bytes.toString('utf8');
+    if (/\.(?:md|toml|ya?ml)$/.test(name) && /(?:\bstudio-tests\/(?:skills|agents)|\.agents\/skills)\/[^\s`]*\$\[(?:skill-name|name)\]/.test(content)) findings.push([name, 'malformed skill path']);
     if (activeLegacyInstruction(name, content, slashSkills)) findings.push([name, 'active legacy instruction']);
     if (/(?:[A-Za-z]:[\\/]+Users[\\/]+|\/Users\/|\/home\/)(?!(?:example|user|username|runner|me|shared)(?:[\\/]|$)|\$|\{|<)[\w.-]+[\\/]/i.test(content)) findings.push([name, 'personal path']);
     if (/-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|\bghp_[A-Za-z0-9]{36}\b|\bgithub_pat_[A-Za-z0-9_]{40,}\b|\bsk-(?:proj-)?[A-Za-z0-9_-]{20,}\b/.test(content)) findings.push([name, 'credential']);
