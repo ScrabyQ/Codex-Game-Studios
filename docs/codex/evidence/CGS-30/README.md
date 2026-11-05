@@ -10,3 +10,5 @@ The README, upgrade guide, Codex onboarding and path guidance were revised addit
 - Existing [help fallback evidence](../CGS-05/native-help-fallback.json) exercised a read-only Skill fallback in a fixture with CLI 0.148.0. It is not a new clean-machine test. A fresh clone at the eventual published commit, desktop/IDE discovery, native role and hook activation, Unity/Unreal execution and human playtests remain PENDING.
 
 The documentation reviewer did not commit, push, merge or perform external writes. A final published-branch clean clone remains for the integrator to verify.
+
+The initial review above is superseded for completion by the integrator's [acceptance](acceptance.md), [actual clean installation](clean-install.md), [setup guard regression](hook-fix.md) and [passing remote CI](remote-ci.json). The independent CGS-31 audit remains a separate requirement.

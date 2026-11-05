@@ -9875,14 +9875,16 @@
       "claude_dependencies": [],
       "proposed_target": ".github/CODEOWNERS (preserve/review)",
       "proposed_equivalent": "Preserve content and verify in Codex workflow.",
-      "verification": "Preserved source material; runtime equivalence is a separate claim.",
+      "verification": "Original historical source retained in Git; useful original content preserved in place. Reviewed Codex setup/migration introductions and fork-specific CODEOWNERS routing are explicit integration seams. Actual published-clone installation and read-only help fallback verified; native discovery, role loading and hook activation retain their documented limits.",
       "status": "EQUIVALENT",
-      "task": "CGS-28",
+      "task": "CGS-30",
       "target": ".github/CODEOWNERS",
       "evidence": [
-        "docs/codex/evidence/CGS-28/preservation/source-integrity.json"
+        "docs/codex/evidence/CGS-28/preservation/source-integrity.json",
+        "docs/codex/evidence/CGS-30/acceptance.md",
+        "docs/codex/evidence/CGS-30/clean-install.md"
       ],
-      "verification_scope": "Reference/specification/project content retention; no runtime or model-behavior claim",
+      "verification_scope": "CGS-30 documentation and provenance review; factual clean-install commands and explicit-read fallback, not universal client/runtime parity",
       "preservation_source_commit": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
       "preservation_git_blob": "8b120e8fb0465f1d42ed9589fe49d0c51f5da46c"
     },
@@ -10106,14 +10108,16 @@
       "claude_dependencies": [],
       "proposed_target": "README.md (preserve/review)",
       "proposed_equivalent": "Preserve content and verify in Codex workflow.",
-      "verification": "Preserved source material; runtime equivalence is a separate claim. Working copy includes intentional Codex additions; baseline retained in Git history.",
+      "verification": "Original historical source retained in Git; useful original content preserved in place. Reviewed Codex setup/migration introductions and fork-specific CODEOWNERS routing are explicit integration seams. Actual published-clone installation and read-only help fallback verified; native discovery, role loading and hook activation retain their documented limits.",
       "status": "EQUIVALENT",
-      "task": "CGS-28",
+      "task": "CGS-30",
       "target": "README.md",
       "evidence": [
-        "docs/codex/evidence/CGS-28/preservation/source-integrity.json"
+        "docs/codex/evidence/CGS-28/preservation/source-integrity.json",
+        "docs/codex/evidence/CGS-30/acceptance.md",
+        "docs/codex/evidence/CGS-30/clean-install.md"
       ],
-      "verification_scope": "Reference/specification/project content retention; no runtime or model-behavior claim",
+      "verification_scope": "CGS-30 documentation and provenance review; factual clean-install commands and explicit-read fallback, not universal client/runtime parity",
       "preservation_source_commit": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
       "preservation_git_blob": "d73112eae0042d010d867ea850142e66ffc37f71"
     },
@@ -10151,14 +10155,16 @@
       ],
       "proposed_target": "UPGRADING.md (preserve/review)",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Preserved source material; runtime equivalence is a separate claim.",
+      "verification": "Original historical source retained in Git; useful original content preserved in place. Reviewed Codex setup/migration introductions and fork-specific CODEOWNERS routing are explicit integration seams. Actual published-clone installation and read-only help fallback verified; native discovery, role loading and hook activation retain their documented limits.",
       "status": "EQUIVALENT",
-      "task": "CGS-28",
+      "task": "CGS-30",
       "target": "UPGRADING.md",
       "evidence": [
-        "docs/codex/evidence/CGS-28/preservation/source-integrity.json"
+        "docs/codex/evidence/CGS-28/preservation/source-integrity.json",
+        "docs/codex/evidence/CGS-30/acceptance.md",
+        "docs/codex/evidence/CGS-30/clean-install.md"
       ],
-      "verification_scope": "Reference/specification/project content retention; no runtime or model-behavior claim",
+      "verification_scope": "CGS-30 documentation and provenance review; factual clean-install commands and explicit-read fallback, not universal client/runtime parity",
       "preservation_source_commit": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
       "preservation_git_blob": "c083ad75eb2355d68e7f593f90d26225bc520f84"
     },

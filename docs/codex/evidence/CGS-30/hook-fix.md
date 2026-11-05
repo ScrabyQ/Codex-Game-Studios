@@ -7,3 +7,5 @@ The correction exempts only this complete remote-configuration command (includin
 Actual Windows checks: `node scripts/codex/tests/policy.mjs` exit 0; `node scripts/codex/hook-tests.mjs` exit 0, all 18 cases PASS, adapter SHA256 `4debea0208e2c02558bf630f3e4685554184030f85cce80d71f5c2f59511975e`. The existing staged-JSON/push fixture now checks the exact safe configuration with real origin/upstream remotes and separately denies a chained push. Only init, add and remote configuration are executed in that fixture; no commit or push is executed. The updated [hook report](../CGS-24/checks.json) and [declaration mapping](../CGS-24/parity.json) retain actual results. Native hook activation remains PENDING.
 
 A fresh published-clone retry of the README step is still required before CGS-30 acceptance; its receipt will identify the corrected commit.
+
+Completed follow-up: [the corrected published setup retry](clean-install.md#corrected-published-setup-retry) passed at `7facb4b52d8fd821c725d65560a19a6c24c4dd4f`, with guarded configuration exit 0 and actual push URL `DISABLED`.
