@@ -5852,8 +5852,18 @@
       ],
       "proposed_target": ".agents/skills/bug-report/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Five scoped framework QA equivalents: all7 native static mappings and focused written-spec/category assessment, actual malformed lint rejection, exact candidate rollback preserving unrelated note, real failing game fixture and bug/triage. Human playtest remains unassessed.",
+      "status": "EQUIVALENT",
+      "task": "CGS-18",
+      "target": ".agents/skills/bug-report/SKILL.md",
+      "target_sha256": "7a0b68b7a26c00332a3ef536c2187d30ff64ba4a23e5022ae2873b9bb4cb369d",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-18/README.md",
+        "docs/codex/evidence/CGS-18/static-spec-category.md",
+        "docs/codex/evidence/CGS-18/runner-results.json",
+        "docs/codex/evidence/CGS-18/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/bug-triage/SKILL.md",
@@ -5870,8 +5880,18 @@
       ],
       "proposed_target": ".agents/skills/bug-triage/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Five scoped framework QA equivalents: all7 native static mappings and focused written-spec/category assessment, actual malformed lint rejection, exact candidate rollback preserving unrelated note, real failing game fixture and bug/triage. Human playtest remains unassessed.",
+      "status": "EQUIVALENT",
+      "task": "CGS-18",
+      "target": ".agents/skills/bug-triage/SKILL.md",
+      "target_sha256": "5567b7b15b45ede545e7388924c00f7e091d68d15807747b4508ba24dfe02d44",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-18/README.md",
+        "docs/codex/evidence/CGS-18/static-spec-category.md",
+        "docs/codex/evidence/CGS-18/runner-results.json",
+        "docs/codex/evidence/CGS-18/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/changelog/SKILL.md",
@@ -7233,8 +7253,18 @@
       ],
       "proposed_target": ".agents/skills/playtest-report/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Five scoped framework QA equivalents: all7 native static mappings and focused written-spec/category assessment, actual malformed lint rejection, exact candidate rollback preserving unrelated note, real failing game fixture and bug/triage. Human playtest remains unassessed.",
+      "status": "EQUIVALENT",
+      "task": "CGS-18",
+      "target": ".agents/skills/playtest-report/SKILL.md",
+      "target_sha256": "13517ad261f6e389e897691830a552aba7edc18be2dce1af6361274259c734af",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-18/README.md",
+        "docs/codex/evidence/CGS-18/static-spec-category.md",
+        "docs/codex/evidence/CGS-18/runner-results.json",
+        "docs/codex/evidence/CGS-18/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/project-stage-detect/SKILL.md",
@@ -8257,8 +8287,18 @@
       ],
       "proposed_target": ".agents/skills/skill-improve/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Five scoped framework QA equivalents: all7 native static mappings and focused written-spec/category assessment, actual malformed lint rejection, exact candidate rollback preserving unrelated note, real failing game fixture and bug/triage. Human playtest remains unassessed.",
+      "status": "EQUIVALENT",
+      "task": "CGS-18",
+      "target": ".agents/skills/skill-improve/SKILL.md",
+      "target_sha256": "7661120401c4afe1b3868aff7876d0ef50bc34df4d8bbb6421ee3ee31bf87b5a",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-18/README.md",
+        "docs/codex/evidence/CGS-18/static-spec-category.md",
+        "docs/codex/evidence/CGS-18/runner-results.json",
+        "docs/codex/evidence/CGS-18/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/skill-test/SKILL.md",
@@ -8275,8 +8315,18 @@
       ],
       "proposed_target": ".agents/skills/skill-test/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Five scoped framework QA equivalents: all7 native static mappings and focused written-spec/category assessment, actual malformed lint rejection, exact candidate rollback preserving unrelated note, real failing game fixture and bug/triage. Human playtest remains unassessed.",
+      "status": "EQUIVALENT",
+      "task": "CGS-18",
+      "target": ".agents/skills/skill-test/SKILL.md",
+      "target_sha256": "552bb4bdf276bc79d14256b6be69acc1ae0f3922f1147acfdd6b486350898ba4",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-18/README.md",
+        "docs/codex/evidence/CGS-18/static-spec-category.md",
+        "docs/codex/evidence/CGS-18/runner-results.json",
+        "docs/codex/evidence/CGS-18/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/smoke-check/SKILL.md",

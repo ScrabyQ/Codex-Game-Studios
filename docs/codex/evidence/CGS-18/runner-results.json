@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "task": "CGS-18",
+  "fixture": ".scratch/cgs18-studio-5f4b302a",
+  "checks": [
+    {
+      "id": "valid_skill",
+      "command": "node scripts/codex/native-helper-check.mjs skill demo --root '.scratch/cgs18-studio-5f4b302a'",
+      "exit_code": 0,
+      "output": "skill\tdemo\tstructural=ok\tD:\\MyProjects\\codex-game-studios\\.scratch\\cgs18-studio-5f4b302a\\.agents\\skills\\demo\\SKILL.md\nchecked\t1\tof 1\tstructural subset only; behavioral review not assessed\n"
+    },
+    {
+      "id": "broken_skill",
+      "command": "node scripts/codex/native-helper-check.mjs skill broken --root '.scratch/cgs18-studio-5f4b302a'",
+      "exit_code": 1,
+      "output": "skill\tbroken\tNOT_ASSESSED_OR_INVALID\tUnterminated string in JSON at position 9 (line 1 column 10)\nchecked\t0\tof 1\tstructural subset only; behavioral review not assessed\n"
+    },
+    {
+      "id": "candidate_lint",
+      "command": "node scripts/codex/native-helper-check.mjs skill demo --root '.scratch/cgs18-studio-5f4b302a'",
+      "exit_code": 0,
+      "output": "skill\tdemo\tstructural=ok\tD:\\MyProjects\\codex-game-studios\\.scratch\\cgs18-studio-5f4b302a\\.agents\\skills\\demo\\SKILL.md\nchecked\t1\tof 1\tstructural subset only; behavioral review not assessed\n"
+    },
+    {
+      "id": "candidate_diff",
+      "command": "git diff --no-index -- '.scratch/cgs18-studio-5f4b302a/baseline/demo.txt' '.scratch/cgs18-studio-5f4b302a/.agents/skills/demo/SKILL.md'; exit $LASTEXITCODE",
+      "exit_code": 1,
+      "output": "warning: in the working copy of '.scratch/cgs18-studio-5f4b302a/baseline/demo.txt', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of '.scratch/cgs18-studio-5f4b302a/.agents/skills/demo/SKILL.md', LF will be replaced by CRLF the next time Git touches it\ndiff --git a/.scratch/cgs18-studio-5f4b302a/baseline/demo.txt b/.scratch/cgs18-studio-5f4b302a/.agents/skills/demo/SKILL.md\nindex c8ad7cf..221d14c 100644\n--- a/.scratch/cgs18-studio-5f4b302a/baseline/demo.txt\n+++ b/.scratch/cgs18-studio-5f4b302a/.agents/skills/demo/SKILL.md\n@@ -4,7 +4,7 @@ description: \"Demonstration skill\"\n ---\n \n ## Work\n-Confirm the supplied input.\n+Confirm the supplied input and declare PASS without evidence.\n \n ## Handoff\n Report observed results.\n"
+    },
+    {
+      "id": "rollback",
+      "command": "node --input-type=module -e \"import{readFileSync}from'node:fs';import{createHash}from'node:crypto';let base=readFileSync('.scratch/cgs18-studio-5f4b302a/baseline/demo.txt'),now=readFileSync('.scratch/cgs18-studio-5f4b302a/.agents/skills/demo/SKILL.md'),expected=Buffer.concat([base,Buffer.from('Unrelated fixture note: preserve this line.'+String.fromCharCode(10))]);if(!now.equals(expected))throw Error('rollback did not preserve unrelated edit');console.log('PASS: exact candidate reversed; unrelated fixture note retained; SHA256='+createHash('sha256').update(now).digest('hex'))\"; node scripts/codex/native-helper-check.mjs skill demo --root '.scratch/cgs18-studio-5f4b302a'",
+      "exit_code": 0,
+      "output": "PASS: exact candidate reversed; unrelated fixture note retained; SHA256=f72214fda20c213809769e1f0eb3f56ace71f1ec2f7c2c5c2c6760901ba508fc\nskill\tdemo\tstructural=ok\tD:\\MyProjects\\codex-game-studios\\.scratch\\cgs18-studio-5f4b302a\\.agents\\skills\\demo\\SKILL.md\nchecked\t1\tof 1\tstructural subset only; behavioral review not assessed\n"
+    },
+    {
+      "id": "bug_repro",
+      "command": "node --test tests/health.test.mjs; exit $LASTEXITCODE",
+      "exit_code": 1,
+      "output": "TAP version 13\n# Subtest: ten damage reduces 100 health to 90\nnot ok 1 - ten damage reduces 100 health to 90\n  ---\n  duration_ms: 2.1736\n  type: 'test'\n  location: 'D:\\\\MyProjects\\\\codex-game-studios\\\\.scratch\\\\cgs18-studio-5f4b302a\\\\tests\\\\health.test.mjs:4:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    \n    80 !== 90\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 90\n  actual: 80\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///D:/MyProjects/codex-game-studios/.scratch/cgs18-studio-5f4b302a/tests/health.test.mjs:4:60)\n    Test.runInAsyncScope (node:async_hooks:214:14)\n    Test.run (node:internal/test_runner/test:1047:25)\n    Test.start (node:internal/test_runner/test:944:17)\n    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)\n  ...\n1..1\n# tests 1\n# suites 0\n# pass 0\n# fail 1\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 90.8708\n"
+    },
+    {
+      "id": "bug_stats",
+      "command": "node scripts/codex/helper.mjs bug-stats --root '.scratch/cgs18-studio-5f4b302a' --today 2026-11-05",
+      "exit_code": 0,
+      "output": "bugs\t1\tproduction/qa/bugs/BUG-*.md\nopen\t1\tstatus other than Closed or Verified Fixed\nclosed\t0\nopen_s1\t0\nopen_s2\t1\nopen_s3\t0\nopen_s4\t0\nopen_unrated\t0\nstatus\tOpen\t1\nsystem\tHealth\t1\t1\noldest_open\tBUG-0001\t0\nBUG\tBUG-0001\tproduction/qa/bugs/BUG-0001.md\tS2\tP2\tOPEN\tOpen\t2026-11-05\t0\tHealth\tDamage is subtracted twice\n"
+    }
+  ],
+  "limits": [
+    "Native linter is a structural subset, not behavior.",
+    "The candidate test is deliberately unsafe and fixture-only.",
+    "Bug is reproduced in synthetic Node game logic; no actual game build or human playtest occurred."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "source_sha256": "818f27203a1adfe2f5a6bc3a351a2673d5297d2fd3e69d773c228c98c8a83b01",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-18 studio-testing and evidence contract:** Use available native tools rather than assuming Claude-specific execution. Preserve current host permissions and prior explicit user authorization; unavailable questions use plain conversation and unanswered decisions are not consent. Native delegation is independent only when a child actually runs; otherwise disclose an in-session fallback. Use actual bug records and source severity/priority definitions. Do not invent sprint capacity, assignment, reproducibility or a missing bug. Trend mode remains read-only; propose changes with the relevant authorization rather than silently editing bugs or backlog.\n\n"
+    }
+  ]
+}

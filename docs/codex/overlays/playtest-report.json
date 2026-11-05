@@ -1,0 +1,9 @@
+{
+  "source_sha256": "503d55d2b3a0144dfdc287e6dc3ba8c6da998e2611fe62ef0cd0d546438286fe",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-18 studio-testing and evidence contract:** Use available native tools rather than assuming Claude-specific execution. Preserve current host permissions and prior explicit user authorization; unavailable questions use plain conversation and unanswered decisions are not consent. Native delegation is independent only when a child actually runs; otherwise disclose an in-session fallback. A real human's supplied session observations are the source of playtest findings. New mode returns a blank template and does not fabricate a session. When notes, measured outcomes, duration, build or player feedback are absent, mark them NOT ASSESSED. Distinguish subjective impressions from confirmed defects and never claim a human played based on automated or synthetic tests.\n\n"
+    }
+  ]
+}

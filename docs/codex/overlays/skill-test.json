@@ -1,0 +1,9 @@
+{
+  "source_sha256": "c4a1775aabdac131a0fde02fa380bd741eaffb380516f4e004ae34cfedb363c9",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-18 studio-testing and evidence contract:** Use available native tools rather than assuming Claude-specific execution. Preserve current host permissions and prior explicit user authorization; unavailable questions use plain conversation and unanswered decisions are not consent. Native delegation is independent only when a child actually runs; otherwise disclose an in-session fallback. For native Skills, validate supported Codex frontmatter and the installed SKILL.md, not Claude-only argument-hint, user-invocable or allowed-tools fields; absence of those legacy fields is not a native failure. Read docs/codex/studio-tests/native-criteria.md for the exact native/legacy mapping. Use the native structural helper, state its subset and report malformed or unreadable files accurately. Keep studio-tests catalog names, spec paths and category rubrics as legacy written specifications; spec and category assessments inspect documents and are not observed model execution. Unavailable or inapplicable checks are NOT ASSESSED, never zeros or claimed behavior.\n\n"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "source_sha256": "cf643bf40ba2bfd45d580ecb5dfadb186b779b1152ca650962418bbcb3c8d783",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-18 studio-testing and evidence contract:** Use available native tools rather than assuming Claude-specific execution. Preserve current host permissions and prior explicit user authorization; unavailable questions use plain conversation and unanswered decisions are not consent. Native delegation is independent only when a child actually runs; otherwise disclose an in-session fallback. Separate observed reproduction from a code-level hypothesis. Retain the source template's BUG-ID, severity, priority, status, system, environment, steps and expected/actual evidence. Never declare a fix verified or closed without actual verification, never file externally, and preserve existing user authorization for any report write.\n\n"
+    }
+  ]
+}

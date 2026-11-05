@@ -3081,6 +3081,40 @@
       "ownership": "generated"
     },
     {
+      "id": "file:.claude/skills/bug-report/SKILL.md=>.agents/skills/bug-report/SKILL.md",
+      "source": ".claude/skills/bug-report/SKILL.md",
+      "source_sha256": "cf643bf40ba2bfd45d580ecb5dfadb186b779b1152ca650962418bbcb3c8d783",
+      "target": ".agents/skills/bug-report/SKILL.md",
+      "target_sha256": "7a0b68b7a26c00332a3ef536c2187d30ff64ba4a23e5022ae2873b9bb4cb369d",
+      "transform_version": 1,
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:16acf5a8cd489bec21bc8109da3dd3ecd15e1ff8ef420058a8225c0fea4bf843"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/bug-triage/SKILL.md=>.agents/skills/bug-triage/SKILL.md",
+      "source": ".claude/skills/bug-triage/SKILL.md",
+      "source_sha256": "818f27203a1adfe2f5a6bc3a351a2673d5297d2fd3e69d773c228c98c8a83b01",
+      "target": ".agents/skills/bug-triage/SKILL.md",
+      "target_sha256": "5567b7b15b45ede545e7388924c00f7e091d68d15807747b4508ba24dfe02d44",
+      "transform_version": 1,
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:4714595be885146deed0939c4d4de2c4aa93c391dd2181d1bf2ae59ef277a877"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
       "id": "file:.claude/skills/code-review/SKILL.md=>.agents/skills/code-review/SKILL.md",
       "source": ".claude/skills/code-review/SKILL.md",
       "source_sha256": "3468d605b4627e0568c80d0732d1ab1281652641f3dede555191657c40571b8c",
@@ -3876,6 +3910,23 @@
       "ownership": "generated"
     },
     {
+      "id": "file:.claude/skills/playtest-report/SKILL.md=>.agents/skills/playtest-report/SKILL.md",
+      "source": ".claude/skills/playtest-report/SKILL.md",
+      "source_sha256": "503d55d2b3a0144dfdc287e6dc3ba8c6da998e2611fe62ef0cd0d546438286fe",
+      "target": ".agents/skills/playtest-report/SKILL.md",
+      "target_sha256": "13517ad261f6e389e897691830a552aba7edc18be2dce1af6361274259c734af",
+      "transform_version": 1,
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:a754ddd7db85de2326dc2ad302369bf133f824d8b2f1373f595d3e5f19a2f76c"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
       "id": "file:.claude/skills/project-stage-detect/SKILL.md=>.agents/skills/project-stage-detect/SKILL.md",
       "source": ".claude/skills/project-stage-detect/SKILL.md",
       "source_sha256": "be78698fe68ddc7fa79a0d763a1f5e474b1b4c2947237c4ca741071ac1b8f4b8",
@@ -4498,6 +4549,40 @@
         "codex-question-delegation-v1",
         "native-skill-invocation-v1",
         "overlay-sha256:74d091db91c4d8129aaf60a22392458d6b9b6715d7b4ec0b92da140decf450d1"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/skill-improve/SKILL.md=>.agents/skills/skill-improve/SKILL.md",
+      "source": ".claude/skills/skill-improve/SKILL.md",
+      "source_sha256": "79b9febba255d732e2e722d45be8e2b90f7182b7ce5bdb772195e22c1ad8c65e",
+      "target": ".agents/skills/skill-improve/SKILL.md",
+      "target_sha256": "7661120401c4afe1b3868aff7876d0ef50bc34df4d8bbb6421ee3ee31bf87b5a",
+      "transform_version": 1,
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:768869eea40a9947f7a339759471e300d76110a80da006e84d45f966b2397f3e"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/skill-test/SKILL.md=>.agents/skills/skill-test/SKILL.md",
+      "source": ".claude/skills/skill-test/SKILL.md",
+      "source_sha256": "c4a1775aabdac131a0fde02fa380bd741eaffb380516f4e004ae34cfedb363c9",
+      "target": ".agents/skills/skill-test/SKILL.md",
+      "target_sha256": "552bb4bdf276bc79d14256b6be69acc1ae0f3922f1147acfdd6b486350898ba4",
+      "transform_version": 1,
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:86408df000b76c7b7272245c16894dab54654342501de2bfdb1c850888830b5f"
       ],
       "owner": "CGS-05",
       "ownership": "generated"

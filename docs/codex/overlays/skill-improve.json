@@ -1,0 +1,9 @@
+{
+  "source_sha256": "79b9febba255d732e2e722d45be8e2b90f7182b7ce5bdb772195e22c1ad8c65e",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-18 studio-testing and evidence contract:** Use available native tools rather than assuming Claude-specific execution. Preserve current host permissions and prior explicit user authorization; unavailable questions use plain conversation and unanswered decisions are not consent. Native delegation is independent only when a child actually runs; otherwise disclose an in-session fallback. Work on one bounded candidate and preserve the exact pre-edit bytes, including pre-existing user changes. Show the specific before/after diff and obtain any still-required authorization. Retest actually available checks; unknown is NOT ASSESSED, not a fabricated score. Restore only the exact candidate change when authorized, without git checkout/reset, overwriting unrelated edits or cycling auto-optimization. Structural counts do not prove behavior improved.\n\n"
+    }
+  ]
+}
