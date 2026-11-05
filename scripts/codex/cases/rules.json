@@ -1,0 +1,12 @@
+{
+  "id": "cgs23-rule-selection",
+  "components": ["file:.claude/rules/gameplay-code.md"],
+  "scope": "Real native use of the on-demand rule selector; automatic policy enforcement and other paths are separate.",
+  "read_only": false,
+  "auto_review": true,
+  "windows_sandbox": "elevated",
+  "no_writes": true,
+  "prompt": "Use the applicable repository instructions to determine the path-specific policies for src/gameplay/combat.gd. Execute the documented rule selector and name the rules it actually returns. Do not modify files and do not claim automatic enforcement.",
+  "expect_report": ["gameplay-code"],
+  "expect_commands": ["node.*rules\\.mjs.*--path.*src/gameplay/combat\\.gd"]
+}

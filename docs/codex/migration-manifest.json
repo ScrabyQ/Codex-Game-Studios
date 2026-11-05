@@ -2921,8 +2921,13 @@
       ],
       "proposed_target": ".agents/rules/agent-memory.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "14 positive and negative path cases, overlaps, globstar, braces, Windows normalization and traversal guards verified. On-demand CLI selection; native automatic enforcement is not claimed.",
+      "status": "EQUIVALENT",
+      "target": ".agents/rules/agent-memory.md",
+      "target_sha256": "ae8ad87e5f73d65f62521ac1ed60ad94d309349a44368d6eb68d90d28c853994",
+      "evidence": [
+        "docs/codex/evidence/CGS-23/rules.json"
+      ]
     },
     {
       "id": "file:.claude/rules/ai-code.md",
@@ -2935,8 +2940,13 @@
       ],
       "proposed_target": ".agents/rules/ai-code.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "14 positive and negative path cases, overlaps, globstar, braces, Windows normalization and traversal guards verified. On-demand CLI selection; native automatic enforcement is not claimed.",
+      "status": "EQUIVALENT",
+      "target": ".agents/rules/ai-code.md",
+      "target_sha256": "1a695926f417deba671998ab0f6014f69b2a4897465a047e68ca4a135d4bd2b7",
+      "evidence": [
+        "docs/codex/evidence/CGS-23/rules.json"
+      ]
     },
     {
       "id": "file:.claude/rules/data-files.md",
@@ -2949,8 +2959,13 @@
       ],
       "proposed_target": ".agents/rules/data-files.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "14 positive and negative path cases, overlaps, globstar, braces, Windows normalization and traversal guards verified. On-demand CLI selection; native automatic enforcement is not claimed.",
+      "status": "EQUIVALENT",
+      "target": ".agents/rules/data-files.md",
+      "target_sha256": "95ad987cc96af1db54c51d433ce3603ae9138634e11e39cb79a8fc26dd532428",
+      "evidence": [
+        "docs/codex/evidence/CGS-23/rules.json"
+      ]
     },
     {
       "id": "file:.claude/rules/design-docs.md",
@@ -2963,8 +2978,13 @@
       ],
       "proposed_target": ".agents/rules/design-docs.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "14 positive and negative path cases, overlaps, globstar, braces, Windows normalization and traversal guards verified. On-demand CLI selection; native automatic enforcement is not claimed.",
+      "status": "EQUIVALENT",
+      "target": ".agents/rules/design-docs.md",
+      "target_sha256": "54701f75458c6ac6f7aeac2d923013cb3072e95000c8d8a12cc34799e846b154",
+      "evidence": [
+        "docs/codex/evidence/CGS-23/rules.json"
+      ]
     },
     {
       "id": "file:.claude/rules/engine-code.md",
@@ -2977,8 +2997,13 @@
       ],
       "proposed_target": ".agents/rules/engine-code.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "14 positive and negative path cases, overlaps, globstar, braces, Windows normalization and traversal guards verified. On-demand CLI selection; native automatic enforcement is not claimed.",
+      "status": "EQUIVALENT",
+      "target": ".agents/rules/engine-code.md",
+      "target_sha256": "46f37305b05744ce221743600c3f9412f890111fbb9aee9e07918f8c4afd1db5",
+      "evidence": [
+        "docs/codex/evidence/CGS-23/rules.json"
+      ]
     },
     {
       "id": "file:.claude/rules/gameplay-code.md",
@@ -2991,8 +3016,13 @@
       ],
       "proposed_target": ".agents/rules/gameplay-code.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "14 positive and negative path cases, overlaps, globstar, braces, Windows normalization and traversal guards verified. On-demand CLI selection; native automatic enforcement is not claimed.",
+      "status": "EQUIVALENT",
+      "target": ".agents/rules/gameplay-code.md",
+      "target_sha256": "5ecfb20bf2a349e287e5de72dd0b1888d7be0f513ac17a9b22c149e786c4fc14",
+      "evidence": [
+        "docs/codex/evidence/CGS-23/rules.json"
+      ]
     },
     {
       "id": "file:.claude/rules/narrative.md",
@@ -3005,8 +3035,13 @@
       ],
       "proposed_target": ".agents/rules/narrative.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "14 positive and negative path cases, overlaps, globstar, braces, Windows normalization and traversal guards verified. On-demand CLI selection; native automatic enforcement is not claimed.",
+      "status": "EQUIVALENT",
+      "target": ".agents/rules/narrative.md",
+      "target_sha256": "98bb37091e0c03bf0eca71462a677add90971c81894fc24299a32c562d348cd9",
+      "evidence": [
+        "docs/codex/evidence/CGS-23/rules.json"
+      ]
     },
     {
       "id": "file:.claude/rules/network-code.md",
@@ -3019,8 +3054,13 @@
       ],
       "proposed_target": ".agents/rules/network-code.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "14 positive and negative path cases, overlaps, globstar, braces, Windows normalization and traversal guards verified. On-demand CLI selection; native automatic enforcement is not claimed.",
+      "status": "EQUIVALENT",
+      "target": ".agents/rules/network-code.md",
+      "target_sha256": "8b7e4153c57a4c9e9811bf6d434e8ba18710d5ba6846a8a228acbe454798c945",
+      "evidence": [
+        "docs/codex/evidence/CGS-23/rules.json"
+      ]
     },
     {
       "id": "file:.claude/rules/prototype-code.md",
@@ -3033,8 +3073,13 @@
       ],
       "proposed_target": ".agents/rules/prototype-code.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "14 positive and negative path cases, overlaps, globstar, braces, Windows normalization and traversal guards verified. On-demand CLI selection; native automatic enforcement is not claimed.",
+      "status": "EQUIVALENT",
+      "target": ".agents/rules/prototype-code.md",
+      "target_sha256": "ab0efbecac83d6c459545a72bb19843c59e85a2047503c1b4d29ecf75cc1834a",
+      "evidence": [
+        "docs/codex/evidence/CGS-23/rules.json"
+      ]
     },
     {
       "id": "file:.claude/rules/scene-files.md",
@@ -3047,8 +3092,13 @@
       ],
       "proposed_target": ".agents/rules/scene-files.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "14 positive and negative path cases, overlaps, globstar, braces, Windows normalization and traversal guards verified. On-demand CLI selection; native automatic enforcement is not claimed.",
+      "status": "EQUIVALENT",
+      "target": ".agents/rules/scene-files.md",
+      "target_sha256": "a5b0152048c91799bbe04c7894056b781035c02578967ae2f53aed204ed8e37b",
+      "evidence": [
+        "docs/codex/evidence/CGS-23/rules.json"
+      ]
     },
     {
       "id": "file:.claude/rules/shader-code.md",
@@ -3061,8 +3111,13 @@
       ],
       "proposed_target": ".agents/rules/shader-code.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "14 positive and negative path cases, overlaps, globstar, braces, Windows normalization and traversal guards verified. On-demand CLI selection; native automatic enforcement is not claimed.",
+      "status": "EQUIVALENT",
+      "target": ".agents/rules/shader-code.md",
+      "target_sha256": "bf0fd8489af2531ccf8345adf55b04f064447573f11cc7ed0ef07e3862158c82",
+      "evidence": [
+        "docs/codex/evidence/CGS-23/rules.json"
+      ]
     },
     {
       "id": "file:.claude/rules/skill-authoring.md",
@@ -3075,8 +3130,13 @@
       ],
       "proposed_target": ".agents/rules/skill-authoring.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "14 positive and negative path cases, overlaps, globstar, braces, Windows normalization and traversal guards verified. On-demand CLI selection; native automatic enforcement is not claimed.",
+      "status": "EQUIVALENT",
+      "target": ".agents/rules/skill-authoring.md",
+      "target_sha256": "e27cdc304e843bf4695cb33ce65963daa5b6d52da00fbde7e5be201df9325575",
+      "evidence": [
+        "docs/codex/evidence/CGS-23/rules.json"
+      ]
     },
     {
       "id": "file:.claude/rules/test-standards.md",
@@ -3089,8 +3149,13 @@
       ],
       "proposed_target": ".agents/rules/test-standards.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "14 positive and negative path cases, overlaps, globstar, braces, Windows normalization and traversal guards verified. On-demand CLI selection; native automatic enforcement is not claimed.",
+      "status": "EQUIVALENT",
+      "target": ".agents/rules/test-standards.md",
+      "target_sha256": "658a2ba02baa3983c8b4096dd1829865e1dac763a6376673062a450409b247ef",
+      "evidence": [
+        "docs/codex/evidence/CGS-23/rules.json"
+      ]
     },
     {
       "id": "file:.claude/rules/ui-code.md",
@@ -3103,8 +3168,13 @@
       ],
       "proposed_target": ".agents/rules/ui-code.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "14 positive and negative path cases, overlaps, globstar, braces, Windows normalization and traversal guards verified. On-demand CLI selection; native automatic enforcement is not claimed.",
+      "status": "EQUIVALENT",
+      "target": ".agents/rules/ui-code.md",
+      "target_sha256": "102c909cbbaac424a7ad7a18a3a5faae38dc744e06bd542b1e2e36bc1fe73519",
+      "evidence": [
+        "docs/codex/evidence/CGS-23/rules.json"
+      ]
     },
     {
       "id": "file:.claude/scripts/adr-dep-graph.sh",

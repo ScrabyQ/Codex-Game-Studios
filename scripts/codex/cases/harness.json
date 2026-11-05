@@ -6,5 +6,6 @@
   "no_writes": true,
   "files": {"qa/harness-marker.txt": "CGS-HARNESS-OBSERVED-4c29\n"},
   "prompt": "Read qa/harness-marker.txt using a real read-only file operation and return its exact marker. Do not infer the marker from this prompt and do not write files.",
-  "expect_report": ["CGS-HARNESS-OBSERVED-4c29"]
+  "expect_report": ["CGS-HARNESS-OBSERVED-4c29"],
+  "expect_commands": ["Get-Content.*qa/harness-marker\\.txt"]
 }

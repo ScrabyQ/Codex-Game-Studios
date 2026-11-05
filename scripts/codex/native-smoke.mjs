@@ -1,5 +1,5 @@
 import { spawnSync, execFileSync } from 'node:child_process';
-import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, lstatSync, copyFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, lstatSync, copyFileSync, openSync, closeSync, unlinkSync } from 'node:fs';
 import { resolve, dirname, relative, isAbsolute, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash, randomUUID } from 'node:crypto';
@@ -7,6 +7,33 @@ import { parseArgs } from 'node:util';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const sha256 = data => createHash('sha256').update(data).digest('hex');
+function nativeCliLock() {
+  const directory = resolve(root, '.scratch');
+  mkdirSync(directory, { recursive: true });
+  const file = resolve(directory, 'native-cli.lock'), token = randomUUID(), deadline = Date.now() + 600000;
+  let announced = false;
+  while (true) {
+    try {
+      const fd = openSync(file, 'wx');
+      writeFileSync(fd, JSON.stringify({ schema: 1, purpose: 'cgs-native-smoke', pid: process.pid, token }));
+      closeSync(fd);
+      return () => {
+        const state = JSON.parse(readFileSync(file, 'utf8'));
+        if (state.token !== token) throw new Error('Native CLI lock ownership changed; leaving it untouched');
+        unlinkSync(file);
+      };
+    } catch (error) {
+      if (error.code !== 'EEXIST') throw error;
+      const state = JSON.parse(readFileSync(file, 'utf8'));
+      if (state.purpose !== 'cgs-native-smoke' || !Number.isInteger(state.pid)) throw new Error('Unknown native CLI lock; review it manually');
+      try { process.kill(state.pid, 0); }
+      catch (check) { if (check.code === 'ESRCH') { unlinkSync(file); continue; } }
+      if (Date.now() >= deadline) throw new Error('Another native smoke process still owns the lock; no CLI run attempted');
+      if (!announced) { console.error('Waiting for the active native CLI smoke process.'); announced = true; }
+      Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 1000);
+    }
+  }
+}
 function inside(base, name) {
   const target = resolve(base, name), rel = relative(base, target);
   if (!rel || rel.startsWith('..') || isAbsolute(rel)) throw new Error(`Path must stay within ${base}: ${name}`);
@@ -52,7 +79,7 @@ export function createNativeFixture(spec) {
   execFileSync('git', ['remote', 'remove', 'origin'], { cwd: fixture });
   execFileSync('git', ['config', '--local', 'user.name', 'ScrabyQ'], { cwd: fixture });
   execFileSync('git', ['config', '--local', 'user.email', 'scraby2016@yandex.ru'], { cwd: fixture });
-  for (const path of ['.agents', '.codex/agents', '.codex/model-policy.json', 'scripts/codex']) copyTree(join(root, path), join(fixture, path));
+  for (const path of ['.agents', '.codex/agents', '.codex/model-policy.json', 'scripts/codex', 'AGENTS.md', 'src/AGENTS.md', 'design/AGENTS.md', 'docs/AGENTS.md', 'studio-tests/AGENTS.md', 'docs/codex/generation-manifest.json', 'docs/codex/upstream-inventory.json', 'docs/codex/migration-manifest.json']) copyTree(join(root, path), join(fixture, path));
   // Hook registration is deliberately absent: hook behavior has a separate trusted test.
   // Clone may contain it once the hook task is committed, so refuse rather than silently disable.
   if (existsSync(join(fixture, '.codex/hooks.json'))) throw new Error('Use a fixture baseline without active hooks for skill-only smoke');
@@ -68,9 +95,18 @@ export function runNativeSmoke(spec, { model, output, timeout = 300000 } = {}) {
   if (!spec.id || !spec.prompt || !Array.isArray(spec.components)) throw new Error('Case needs id, prompt and components');
   const fixture = createNativeFixture(spec), before = snapshot(fixture);
   const prompt = `This is an isolated Codex Game Studios acceptance fixture. Work only inside this fixture. Do not install software, commit, push, access credentials, contact other people, publish, or modify external state. Any permissions and scripted answers below apply only to this fixture. Report actual PASS/FAIL/PENDING and do not invent engine execution.\n\n${spec.prompt}`;
-  const args = ['exec', '--ignore-user-config', '--ephemeral', '--strict-config', '--sandbox', spec.read_only ? 'read-only' : 'workspace-write', '--cd', fixture, '--model', model, '--json', '-'];
+  if (spec.auto_review && spec.read_only) throw new Error('Automatic review uses workspace-write; use no_writes assertions for a read-only task intent.');
+  const permissions = spec.auto_review ? ['--approve-for-me'] : ['--sandbox', spec.read_only ? 'read-only' : 'workspace-write'];
+  const args = ['exec', '--ignore-user-config', '--ephemeral', '--strict-config', ...permissions, '--cd', fixture, '--model', model, '--json', '-'];
+  if (process.platform === 'win32' && spec.windows_sandbox) {
+    if (!['elevated', 'unelevated', 'mxc'].includes(spec.windows_sandbox)) throw new Error('Invalid requested Windows sandbox');
+    args.splice(1, 0, '-c', `windows.sandbox="${spec.windows_sandbox}"`);
+  }
   const start = new Date().toISOString();
-  const run = spawnSync(process.env.CGS_CODEX_BINARY || 'codex', args, { input: prompt, encoding: 'utf8', timeout, maxBuffer: 32 * 1024 * 1024, windowsHide: true });
+  const unlock = nativeCliLock();
+  let run;
+  try { run = spawnSync(process.env.CGS_CODEX_BINARY || 'codex', args, { input: prompt, encoding: 'utf8', timeout, maxBuffer: 32 * 1024 * 1024, windowsHide: true }); }
+  finally { unlock(); }
   const end = new Date().toISOString(), events = [];
   for (const line of (run.stdout || '').split(/\r?\n/)) {
     try { events.push(JSON.parse(line)); } catch { /* CLI warnings remain in the private raw trace. */ }
@@ -79,6 +115,8 @@ export function runNativeSmoke(spec, { model, output, timeout = 300000 } = {}) {
   const changed = [...new Set([...Object.keys(before), ...Object.keys(after)])].filter(path => before[path] !== after[path]).sort();
   const messages = events.filter(e => e.type === 'item.completed' && e.item?.type === 'agent_message').map(e => e.item.text).join('\n');
   const assertions = [{ name: 'CLI completed', passed: run.status === 0 && events.some(e => e.type === 'turn.completed') }];
+  const completedCommands = events.filter(e => e.type === 'item.completed' && e.item?.type === 'command_execution');
+  for (const pattern of spec.expect_commands || []) assertions.push({ name: `Successful command observed: ${pattern}`, passed: completedCommands.some(e => e.item.exit_code === 0 && new RegExp(pattern, 'i').test(e.item.command || '')) });
   if (spec.no_writes || spec.read_only) assertions.push({ name: 'No fixture writes', passed: changed.length === 0, changed });
   for (const path of spec.expect_files || []) assertions.push({ name: `Artifact exists: ${path}`, passed: existsSync(inside(fixture, path)) });
   for (const [path, pattern] of Object.entries(spec.expect_content || {})) {

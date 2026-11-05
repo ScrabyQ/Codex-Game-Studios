@@ -1,0 +1,146 @@
+{
+  "schema": 1,
+  "case_sensitive": true,
+  "match_semantics": "Repository-relative paths; slash normalized; * and ? never cross a slash; **/ matches zero or more directories; {...} is alternation. All matching rules apply.",
+  "enforcement": "On-demand selection only; this is not a host hook or a permission boundary.",
+  "rules": [
+    {
+      "id": "agent-memory",
+      "source": ".claude/rules/agent-memory.md",
+      "target": ".agents/rules/agent-memory.md",
+      "patterns": [
+        ".claude/agent-memory/**",
+        ".agents/agent-memory/**"
+      ]
+    },
+    {
+      "id": "ai-code",
+      "source": ".claude/rules/ai-code.md",
+      "target": ".agents/rules/ai-code.md",
+      "patterns": [
+        "src/ai/**",
+        "Assets/**/{AI,Ai,ai}/**/*.cs",
+        "Source/**/{AI,Ai,ai}/**/*.{h,cpp}"
+      ]
+    },
+    {
+      "id": "data-files",
+      "source": ".claude/rules/data-files.md",
+      "target": ".agents/rules/data-files.md",
+      "patterns": [
+        "assets/data/**/*.json",
+        "Assets/**/{Data,data}/**/*.json",
+        "Content/**/{Data,data}/**/*.json"
+      ]
+    },
+    {
+      "id": "design-docs",
+      "source": ".claude/rules/design-docs.md",
+      "target": ".agents/rules/design-docs.md",
+      "patterns": [
+        "design/gdd/**"
+      ]
+    },
+    {
+      "id": "engine-code",
+      "source": ".claude/rules/engine-code.md",
+      "target": ".agents/rules/engine-code.md",
+      "patterns": [
+        "src/core/**",
+        "Assets/**/{Core,core}/**/*.cs",
+        "Source/**/{Core,core}/**/*.{h,cpp}"
+      ]
+    },
+    {
+      "id": "gameplay-code",
+      "source": ".claude/rules/gameplay-code.md",
+      "target": ".agents/rules/gameplay-code.md",
+      "patterns": [
+        "src/gameplay/**",
+        "Assets/**/{Gameplay,gameplay}/**/*.cs",
+        "Source/**/{Gameplay,gameplay}/**/*.{h,cpp}"
+      ]
+    },
+    {
+      "id": "narrative",
+      "source": ".claude/rules/narrative.md",
+      "target": ".agents/rules/narrative.md",
+      "patterns": [
+        "design/narrative/**"
+      ]
+    },
+    {
+      "id": "network-code",
+      "source": ".claude/rules/network-code.md",
+      "target": ".agents/rules/network-code.md",
+      "patterns": [
+        "src/networking/**",
+        "Assets/**/{Networking,networking,Network,network}/**/*.cs",
+        "Source/**/{Networking,networking,Network,network}/**/*.{h,cpp}"
+      ]
+    },
+    {
+      "id": "prototype-code",
+      "source": ".claude/rules/prototype-code.md",
+      "target": ".agents/rules/prototype-code.md",
+      "patterns": [
+        "prototypes/**"
+      ]
+    },
+    {
+      "id": "scene-files",
+      "source": ".claude/rules/scene-files.md",
+      "target": ".agents/rules/scene-files.md",
+      "patterns": [
+        "**/*.tscn",
+        "**/*.tres",
+        "**/*.unity",
+        "**/*.prefab",
+        "Assets/**/*.asset"
+      ]
+    },
+    {
+      "id": "shader-code",
+      "source": ".claude/rules/shader-code.md",
+      "target": ".agents/rules/shader-code.md",
+      "patterns": [
+        "assets/shaders/**",
+        "**/*.gdshader",
+        "Assets/**/*.{shader,hlsl,cginc,compute,shadergraph}",
+        "Shaders/**",
+        "**/*.{usf,ush}"
+      ]
+    },
+    {
+      "id": "skill-authoring",
+      "source": ".claude/rules/skill-authoring.md",
+      "target": ".agents/rules/skill-authoring.md",
+      "patterns": [
+        ".claude/skills/**",
+        ".claude/agents/**",
+        ".agents/skills/**",
+        ".codex/agents/**"
+      ]
+    },
+    {
+      "id": "test-standards",
+      "source": ".claude/rules/test-standards.md",
+      "target": ".agents/rules/test-standards.md",
+      "patterns": [
+        "tests/**",
+        "Assets/Tests/**/*.cs",
+        "Source/**/Tests/**/*.{h,cpp}"
+      ]
+    },
+    {
+      "id": "ui-code",
+      "source": ".claude/rules/ui-code.md",
+      "target": ".agents/rules/ui-code.md",
+      "patterns": [
+        "src/ui/**",
+        "Assets/**/{UI,Ui,ui}/**/*.cs",
+        "Source/**/{UI,Ui,ui}/**/*.{h,cpp}"
+      ]
+    }
+  ]
+}

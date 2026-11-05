@@ -1,0 +1,199 @@
+{
+  "schema": 1,
+  "task": "CGS-23",
+  "head": "5ee871b152c6faa3cc61390fc8ce7183eb67ccb8",
+  "upstream": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
+  "checks": [
+    {
+      "command": "node scripts/codex/rule-tests.mjs",
+      "exit_code": 0,
+      "result": "PASS: all 14 rules positive and negative, scope overlap, globstar, braces, Windows separators, case policy, invalid paths and generation fidelity"
+    },
+    {
+      "command": "node scripts/codex/rules.mjs --path Source/Game/Tests/UI/Menu.cpp --json",
+      "exit_code": 0,
+      "result": "PASS: test-standards and ui-code returned"
+    },
+    {
+      "command": "node scripts/codex/rules.mjs --path scenes/main.tscn --content",
+      "exit_code": 0,
+      "result": "PASS: scene rule content returned"
+    }
+  ],
+  "mappings": [
+    {
+      "source": ".claude/rules/agent-memory.md",
+      "source_sha256": "6f5b9f8db55f057d3f6c2a824347fa27ecf46947eb04812224001a87dad45c14",
+      "target": ".agents/rules/agent-memory.md",
+      "target_sha256": "ae8ad87e5f73d65f62521ac1ed60ad94d309349a44368d6eb68d90d28c853994",
+      "transform_ids": [
+        "normalize-lf",
+        "scope-to-index",
+        "adapt-reference-paths",
+        "codex-permission-context"
+      ]
+    },
+    {
+      "source": ".claude/rules/ai-code.md",
+      "source_sha256": "23719730e64627bfd5f07dd75a8b1dcfc7f1b35543c24bed78e518430542b1b5",
+      "target": ".agents/rules/ai-code.md",
+      "target_sha256": "1a695926f417deba671998ab0f6014f69b2a4897465a047e68ca4a135d4bd2b7",
+      "transform_ids": [
+        "normalize-lf",
+        "scope-to-index",
+        "adapt-reference-paths",
+        "codex-permission-context"
+      ]
+    },
+    {
+      "source": ".claude/rules/data-files.md",
+      "source_sha256": "d3847d07cb858ee9c8d41fff8750c8d83ca3b54d01f092e96475cf2f041a973e",
+      "target": ".agents/rules/data-files.md",
+      "target_sha256": "95ad987cc96af1db54c51d433ce3603ae9138634e11e39cb79a8fc26dd532428",
+      "transform_ids": [
+        "normalize-lf",
+        "scope-to-index",
+        "adapt-reference-paths",
+        "codex-permission-context"
+      ]
+    },
+    {
+      "source": ".claude/rules/design-docs.md",
+      "source_sha256": "bbd53d0ff0b740d420c1218e4a47cefcc5f1a535c30b0fbcbf3fddaba5eb1b28",
+      "target": ".agents/rules/design-docs.md",
+      "target_sha256": "54701f75458c6ac6f7aeac2d923013cb3072e95000c8d8a12cc34799e846b154",
+      "transform_ids": [
+        "normalize-lf",
+        "scope-to-index",
+        "adapt-reference-paths",
+        "codex-permission-context"
+      ]
+    },
+    {
+      "source": ".claude/rules/engine-code.md",
+      "source_sha256": "0c4d68da1f3ae79619001e1115c054a9e6cdeccf02dee98d16c7fc4f5da757d5",
+      "target": ".agents/rules/engine-code.md",
+      "target_sha256": "46f37305b05744ce221743600c3f9412f890111fbb9aee9e07918f8c4afd1db5",
+      "transform_ids": [
+        "normalize-lf",
+        "scope-to-index",
+        "adapt-reference-paths",
+        "codex-permission-context"
+      ]
+    },
+    {
+      "source": ".claude/rules/gameplay-code.md",
+      "source_sha256": "26deb5b1ea2a443d1bdbcdddb98402cf4ca3b6670b7bc47faae44e0300eb6362",
+      "target": ".agents/rules/gameplay-code.md",
+      "target_sha256": "5ecfb20bf2a349e287e5de72dd0b1888d7be0f513ac17a9b22c149e786c4fc14",
+      "transform_ids": [
+        "normalize-lf",
+        "scope-to-index",
+        "adapt-reference-paths",
+        "codex-permission-context"
+      ]
+    },
+    {
+      "source": ".claude/rules/narrative.md",
+      "source_sha256": "be8925e4d9a6242eb7db40fd918bdc94aa6f40e498f9e3aa8d7ffe27ede4a819",
+      "target": ".agents/rules/narrative.md",
+      "target_sha256": "98bb37091e0c03bf0eca71462a677add90971c81894fc24299a32c562d348cd9",
+      "transform_ids": [
+        "normalize-lf",
+        "scope-to-index",
+        "adapt-reference-paths",
+        "codex-permission-context"
+      ]
+    },
+    {
+      "source": ".claude/rules/network-code.md",
+      "source_sha256": "ff65f01bdaa2e571caca0dd025001fb6e043b3f2e16454eba36e24fbff8d12ca",
+      "target": ".agents/rules/network-code.md",
+      "target_sha256": "8b7e4153c57a4c9e9811bf6d434e8ba18710d5ba6846a8a228acbe454798c945",
+      "transform_ids": [
+        "normalize-lf",
+        "scope-to-index",
+        "adapt-reference-paths",
+        "codex-permission-context"
+      ]
+    },
+    {
+      "source": ".claude/rules/prototype-code.md",
+      "source_sha256": "67cf516d0febcb9829407386b4d16b773ea38cc21012fdeb03a53943cc6ed5bd",
+      "target": ".agents/rules/prototype-code.md",
+      "target_sha256": "ab0efbecac83d6c459545a72bb19843c59e85a2047503c1b4d29ecf75cc1834a",
+      "transform_ids": [
+        "normalize-lf",
+        "scope-to-index",
+        "adapt-reference-paths",
+        "codex-permission-context"
+      ]
+    },
+    {
+      "source": ".claude/rules/scene-files.md",
+      "source_sha256": "c184c693e5f31a21faa66512d305881f446b62209aaabfaf6b78749907ea480c",
+      "target": ".agents/rules/scene-files.md",
+      "target_sha256": "a5b0152048c91799bbe04c7894056b781035c02578967ae2f53aed204ed8e37b",
+      "transform_ids": [
+        "normalize-lf",
+        "scope-to-index",
+        "adapt-reference-paths",
+        "codex-permission-context"
+      ]
+    },
+    {
+      "source": ".claude/rules/shader-code.md",
+      "source_sha256": "e52f3a5fc123771c333038d141fc0053a34cf36495798e352b97e710e1c44e33",
+      "target": ".agents/rules/shader-code.md",
+      "target_sha256": "bf0fd8489af2531ccf8345adf55b04f064447573f11cc7ed0ef07e3862158c82",
+      "transform_ids": [
+        "normalize-lf",
+        "scope-to-index",
+        "adapt-reference-paths",
+        "codex-permission-context"
+      ]
+    },
+    {
+      "source": ".claude/rules/skill-authoring.md",
+      "source_sha256": "2d8f100d9d84b94decd964c6aa97ffea21102e7ea155d8b40f51fcace0f8ccd2",
+      "target": ".agents/rules/skill-authoring.md",
+      "target_sha256": "e27cdc304e843bf4695cb33ce65963daa5b6d52da00fbde7e5be201df9325575",
+      "transform_ids": [
+        "normalize-lf",
+        "scope-to-index",
+        "adapt-reference-paths",
+        "codex-permission-context"
+      ]
+    },
+    {
+      "source": ".claude/rules/test-standards.md",
+      "source_sha256": "21ad3e43b7efa1ee5c1474ed0d68d410c42b1b42fdbb0f236b46488398ebc882",
+      "target": ".agents/rules/test-standards.md",
+      "target_sha256": "658a2ba02baa3983c8b4096dd1829865e1dac763a6376673062a450409b247ef",
+      "transform_ids": [
+        "normalize-lf",
+        "scope-to-index",
+        "adapt-reference-paths",
+        "codex-permission-context"
+      ]
+    },
+    {
+      "source": ".claude/rules/ui-code.md",
+      "source_sha256": "3e956ed2b2995a3e20022f0bba08f6d8074e43c08fe3a1164801201271a9a524",
+      "target": ".agents/rules/ui-code.md",
+      "target_sha256": "102c909cbbaac424a7ad7a18a3a5faae38dc744e06bd542b1e2e36bc1fe73519",
+      "transform_ids": [
+        "normalize-lf",
+        "scope-to-index",
+        "adapt-reference-paths",
+        "codex-permission-context"
+      ]
+    }
+  ],
+  "limitations": [
+    "Selector runs only when explicitly invoked; host automatic rule or permission enforcement is not claimed.",
+    "The 14 source rules do not supply a complete .env/binary read security boundary; complementary read/write protections belong to CGS-24 and native permissions.",
+    "Root AGENTS integration and generator aggregate index registration require parent integration.",
+    "Native model following selector instructions and Linux execution remain unverified."
+  ]
+}

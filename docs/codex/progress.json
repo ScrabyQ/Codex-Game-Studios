@@ -5,9 +5,9 @@
   "upstream_sha": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
   "owner": "ScrabyQ",
   "repository": "Codex-Game-Studios",
-  "last_completed": "CGS-07",
-  "current_task": "CGS-08",
-  "next_safe_step": "11 leadership roles verified with explicit in-session fallback; native custom-role spawning remains PENDING. Proceed with 23 specialist roles.",
+  "last_completed": "CGS-23",
+  "current_task": "CGS-25",
+  "next_safe_step": "14 path rules verified through on-demand selector; native nested CLI execution remains PENDING, no automatic host enforcement claim.",
   "decisions": [
     "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED.",
     "Generated content-preserving .agents mirror retains helper root math; native roles use .codex/agents/*.toml; all generation is hash-guarded; no new agent runtime."
@@ -96,13 +96,13 @@
       "singularity_id": "T-d036622f-1d69-4649-bad1-529b03af14d2",
       "title": "CGS-07 · Перенести 11 директоров и руководителей отделов",
       "status": "COMPLETE",
-      "commit": null,
+      "commit": "dd2ac1d74551792af0b8cdeef8f107ce9037794a",
       "evidence": [
         "docs/codex/evidence/CGS-07/structural.json",
         "docs/codex/evidence/CGS-07/behavior-checks.json"
       ],
       "note": "11 leadership roles verified with explicit in-session fallback; native custom-role spawning remains PENDING. Proceed with 23 specialist roles.",
-      "updated_at": "2026-11-05T10:27:22.579Z"
+      "updated_at": "2026-11-05T10:31:24.183Z"
     },
     {
       "key": "CGS-08",
@@ -228,9 +228,13 @@
       "key": "CGS-23",
       "singularity_id": "T-5028fa8c-67a4-4cee-8df1-540865c072f2",
       "title": "CGS-23 · Перенести все 14 path-scoped rules",
-      "status": "PENDING",
+      "status": "COMPLETE",
       "commit": null,
-      "evidence": []
+      "evidence": [
+        "docs/codex/evidence/CGS-23/rules.json"
+      ],
+      "note": "14 path rules verified through on-demand selector; native nested CLI execution remains PENDING, no automatic host enforcement claim.",
+      "updated_at": "2026-11-05T10:31:24.272Z"
     },
     {
       "key": "CGS-24",
