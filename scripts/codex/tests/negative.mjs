@@ -42,6 +42,7 @@ const escape=path.relative(path.dirname(target),outside).split(path.sep).join('/
 targetMutation('external existing reference',Buffer.concat([oldTarget,Buffer.from('\n[outside]('+escape+')\n')]),/Skill reference escapes project/);
 const policy=path.join(tmp,'corrupt-policy.mjs'), source=readFileSync('scripts/codex/hooks.mjs','utf8'), corrupted=source.replace("return 'Destructive Git command denied'",'return null');
 assert.notEqual(source,corrupted);writeFileSync(policy,corrupted);copyFileSync('scripts/codex/shell.mjs',path.join(tmp,'shell.mjs'));
+copyFileSync('scripts/codex/main-entry.mjs',path.join(tmp,'main-entry.mjs'));
 const p=spawnSync(process.execPath,[path.join(root,'scripts/codex/tests/policy.mjs'),policy],{cwd:root,encoding:'utf8'});assert.notEqual(p.status,0);assert.match(p.stderr,/git reset --hard/);cases.push({name:'dangerous policy corruption',exit:p.status,reason:true});
 assert.equal(run().status,0,'baseline restored');
 console.log(JSON.stringify({baseline:base.status,cases,restored:0},null,2));
