@@ -1,0 +1,9 @@
+{
+  "source_sha256": "9aaa056c533cd0d61af1da5332fd26065fbfa6937db4bd117ac0692f8c65a3f4",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-12 Codex workflow contract:** Use the explicit configuration bootstrap and the current project root. Translate source Agent and specialist calls to authorized available native delegation; otherwise read the role and gate material and perform a clearly labeled in-session assessment, not an independent review. Preserve unavailable mandatory reviews as NOT ASSESSED. Use available question facilities or plain text, preserve existing authorization, and wait for unanswered required decisions. Source tools and automation do not grant permissions. Keep proposed drafts and decisions distinct from approved writes; do not infer approval. Read source templates and linked resources in the active phase.\n\nThis is a read-only diagnostic. Actually measure assets, inspect references and standards; never call missing inputs clean. Keep orphan, missing, naming, format and size findings distinct, and retain NOT ASSESSED when evidence is insufficient.\n\n"
+    }
+  ]
+}

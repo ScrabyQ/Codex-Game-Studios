@@ -1,0 +1,9 @@
+{
+  "source_sha256": "8e9126653dcf25bdd2e197ee9df6587e3ffd7ee67de7103087cf8971c59fe025",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-12 Codex workflow contract:** Use the explicit configuration bootstrap and the current project root. Translate source Agent and specialist calls to authorized available native delegation; otherwise read the role and gate material and perform a clearly labeled in-session assessment, not an independent review. Preserve unavailable mandatory reviews as NOT ASSESSED. Use available question facilities or plain text, preserve existing authorization, and wait for unanswered required decisions. Source tools and automation do not grant permissions. Keep proposed drafts and decisions distinct from approved writes; do not infer approval. Read source templates and linked resources in the active phase.\n\nKeep the inventory and asset ID/manifest/shared-asset pipeline, source-design and art-bible links, type-specific requirements, specialist mode and skipped-review disclosure. A prompt is not a generated asset; invoke an image tool only when available and separately authorized.\n\n"
+    }
+  ]
+}

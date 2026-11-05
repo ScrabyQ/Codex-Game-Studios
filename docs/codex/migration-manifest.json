@@ -4633,8 +4633,17 @@
       ],
       "proposed_target": ".agents/skills/art-bible/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session creative fallback smokes, actual non-headless Godot screenshots and isolated worktree prototype; missing-asset/UX/slice findings retained, independent and human playtests PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-12",
+      "target": ".agents/skills/art-bible/SKILL.md",
+      "target_sha256": "810fb23e9ec690a7ed3d9214eb578c26a227025be8f469138cc1d0ca1f4ea154",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-12/acceptance.md",
+        "docs/codex/evidence/CGS-12/workflows.md",
+        "docs/codex/evidence/CGS-12/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/asset-audit/SKILL.md",
@@ -4648,8 +4657,17 @@
       ],
       "proposed_target": ".agents/skills/asset-audit/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session creative fallback smokes, actual non-headless Godot screenshots and isolated worktree prototype; missing-asset/UX/slice findings retained, independent and human playtests PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-12",
+      "target": ".agents/skills/asset-audit/SKILL.md",
+      "target_sha256": "59f259cbfa69c3b5c7054e5435f0076003e5569ed9b8979c52e0703fbc0ac443",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-12/acceptance.md",
+        "docs/codex/evidence/CGS-12/workflows.md",
+        "docs/codex/evidence/CGS-12/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/asset-spec/SKILL.md",
@@ -4666,8 +4684,17 @@
       ],
       "proposed_target": ".agents/skills/asset-spec/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session creative fallback smokes, actual non-headless Godot screenshots and isolated worktree prototype; missing-asset/UX/slice findings retained, independent and human playtests PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-12",
+      "target": ".agents/skills/asset-spec/SKILL.md",
+      "target_sha256": "472f9992b6935604155c67eed769043cc84fd220af501c902d935033153df4ec",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-12/acceptance.md",
+        "docs/codex/evidence/CGS-12/workflows.md",
+        "docs/codex/evidence/CGS-12/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/balance-check/SKILL.md",
@@ -5893,8 +5920,17 @@
       ],
       "proposed_target": ".agents/skills/prototype/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session creative fallback smokes, actual non-headless Godot screenshots and isolated worktree prototype; missing-asset/UX/slice findings retained, independent and human playtests PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-12",
+      "target": ".agents/skills/prototype/SKILL.md",
+      "target_sha256": "659931e18f2f5ce7b8e6c7e05d667fef339e769389b2f42889e658d1df7a93ad",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-12/acceptance.md",
+        "docs/codex/evidence/CGS-12/workflows.md",
+        "docs/codex/evidence/CGS-12/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/prototype/references/1-question.md",
@@ -5907,8 +5943,17 @@
       ],
       "proposed_target": ".agents/skills/prototype/references/1-question.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session creative fallback smokes, actual non-headless Godot screenshots and isolated worktree prototype; missing-asset/UX/slice findings retained, independent and human playtests PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-12",
+      "target": ".agents/skills/prototype/references/1-question.md",
+      "target_sha256": "e919860b15207ea6856526579b309c0318ba93179c2ff1f41f819b6d1c127485",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-12/acceptance.md",
+        "docs/codex/evidence/CGS-12/workflows.md",
+        "docs/codex/evidence/CGS-12/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/prototype/references/2-load-context.md",
@@ -5921,8 +5966,17 @@
       ],
       "proposed_target": ".agents/skills/prototype/references/2-load-context.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session creative fallback smokes, actual non-headless Godot screenshots and isolated worktree prototype; missing-asset/UX/slice findings retained, independent and human playtests PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-12",
+      "target": ".agents/skills/prototype/references/2-load-context.md",
+      "target_sha256": "58e5dff500f184a495822db9da776ee849e5859598b9ff67086b3713b47c3414",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-12/acceptance.md",
+        "docs/codex/evidence/CGS-12/workflows.md",
+        "docs/codex/evidence/CGS-12/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/prototype/references/3-choose-path.md",
@@ -5935,8 +5989,17 @@
       ],
       "proposed_target": ".agents/skills/prototype/references/3-choose-path.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session creative fallback smokes, actual non-headless Godot screenshots and isolated worktree prototype; missing-asset/UX/slice findings retained, independent and human playtests PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-12",
+      "target": ".agents/skills/prototype/references/3-choose-path.md",
+      "target_sha256": "bf71bca6f957ba483480e95a61b7aa7ead3795b3c05c369c1c7a0a33540654dd",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-12/acceptance.md",
+        "docs/codex/evidence/CGS-12/workflows.md",
+        "docs/codex/evidence/CGS-12/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/prototype/references/4-plan.md",
@@ -5949,8 +6012,17 @@
       ],
       "proposed_target": ".agents/skills/prototype/references/4-plan.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session creative fallback smokes, actual non-headless Godot screenshots and isolated worktree prototype; missing-asset/UX/slice findings retained, independent and human playtests PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-12",
+      "target": ".agents/skills/prototype/references/4-plan.md",
+      "target_sha256": "d63a17b7f7aa399538e3e0e22ad559c36031aa605e5cb82737c14f4c92e6181a",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-12/acceptance.md",
+        "docs/codex/evidence/CGS-12/workflows.md",
+        "docs/codex/evidence/CGS-12/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/prototype/references/5-implement.md",
@@ -5963,8 +6035,17 @@
       ],
       "proposed_target": ".agents/skills/prototype/references/5-implement.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session creative fallback smokes, actual non-headless Godot screenshots and isolated worktree prototype; missing-asset/UX/slice findings retained, independent and human playtests PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-12",
+      "target": ".agents/skills/prototype/references/5-implement.md",
+      "target_sha256": "0c981ea738897e7b62e441f2c70a907c537f3b7b080921438a1b41da13c56a46",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-12/acceptance.md",
+        "docs/codex/evidence/CGS-12/workflows.md",
+        "docs/codex/evidence/CGS-12/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/prototype/references/6-debrief.md",
@@ -5977,8 +6058,17 @@
       ],
       "proposed_target": ".agents/skills/prototype/references/6-debrief.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session creative fallback smokes, actual non-headless Godot screenshots and isolated worktree prototype; missing-asset/UX/slice findings retained, independent and human playtests PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-12",
+      "target": ".agents/skills/prototype/references/6-debrief.md",
+      "target_sha256": "b22e98abda968ff30642b6f359aaa191d2dc00842361e31ff5651dc750ddac1b",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-12/acceptance.md",
+        "docs/codex/evidence/CGS-12/workflows.md",
+        "docs/codex/evidence/CGS-12/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/prototype/references/7-report.md",
@@ -5991,8 +6081,17 @@
       ],
       "proposed_target": ".agents/skills/prototype/references/7-report.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session creative fallback smokes, actual non-headless Godot screenshots and isolated worktree prototype; missing-asset/UX/slice findings retained, independent and human playtests PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-12",
+      "target": ".agents/skills/prototype/references/7-report.md",
+      "target_sha256": "5ea02cfd82a0cf444188fe4ddf113d9d4b1a449b61bbd9664207d37d56f1dc2c",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-12/acceptance.md",
+        "docs/codex/evidence/CGS-12/workflows.md",
+        "docs/codex/evidence/CGS-12/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/prototype/references/8-cd-review.md",
@@ -6005,8 +6104,17 @@
       ],
       "proposed_target": ".agents/skills/prototype/references/8-cd-review.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session creative fallback smokes, actual non-headless Godot screenshots and isolated worktree prototype; missing-asset/UX/slice findings retained, independent and human playtests PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-12",
+      "target": ".agents/skills/prototype/references/8-cd-review.md",
+      "target_sha256": "7ca3e4cc8018b9f76a5106d5173f6efd8aaa56eeb5a48b4e12674a370023f4f1",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-12/acceptance.md",
+        "docs/codex/evidence/CGS-12/workflows.md",
+        "docs/codex/evidence/CGS-12/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/prototype/references/9-summary.md",
@@ -6019,8 +6127,17 @@
       ],
       "proposed_target": ".agents/skills/prototype/references/9-summary.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session creative fallback smokes, actual non-headless Godot screenshots and isolated worktree prototype; missing-asset/UX/slice findings retained, independent and human playtests PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-12",
+      "target": ".agents/skills/prototype/references/9-summary.md",
+      "target_sha256": "ddf99ca939267f33e568c01fe882115317ad5eebc9337b1cf612232224f8caf7",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-12/acceptance.md",
+        "docs/codex/evidence/CGS-12/workflows.md",
+        "docs/codex/evidence/CGS-12/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/prototype/references/spike-mode.md",
@@ -6033,8 +6150,17 @@
       ],
       "proposed_target": ".agents/skills/prototype/references/spike-mode.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session creative fallback smokes, actual non-headless Godot screenshots and isolated worktree prototype; missing-asset/UX/slice findings retained, independent and human playtests PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-12",
+      "target": ".agents/skills/prototype/references/spike-mode.md",
+      "target_sha256": "2900d98731852377f06058d5047e10fab8028e132e9f3ab529c964fb8f6dc594",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-12/acceptance.md",
+        "docs/codex/evidence/CGS-12/workflows.md",
+        "docs/codex/evidence/CGS-12/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/qa-plan/SKILL.md",
@@ -7374,8 +7500,17 @@
       ],
       "proposed_target": ".agents/skills/ux-design/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session creative fallback smokes, actual non-headless Godot screenshots and isolated worktree prototype; missing-asset/UX/slice findings retained, independent and human playtests PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-12",
+      "target": ".agents/skills/ux-design/SKILL.md",
+      "target_sha256": "4f03540ab5bdcf4d0e627d346e554a5bca15244f8463855ca4b4453328f53472",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-12/acceptance.md",
+        "docs/codex/evidence/CGS-12/workflows.md",
+        "docs/codex/evidence/CGS-12/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/ux-design/references/2-gather-context.md",
@@ -7388,8 +7523,17 @@
       ],
       "proposed_target": ".agents/skills/ux-design/references/2-gather-context.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session creative fallback smokes, actual non-headless Godot screenshots and isolated worktree prototype; missing-asset/UX/slice findings retained, independent and human playtests PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-12",
+      "target": ".agents/skills/ux-design/references/2-gather-context.md",
+      "target_sha256": "5b02ca139720808be3412997ab102936442fe00ecf6a3ecae7d197010308d5a0",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-12/acceptance.md",
+        "docs/codex/evidence/CGS-12/workflows.md",
+        "docs/codex/evidence/CGS-12/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/ux-design/references/3-file-skeleton.md",
@@ -7402,8 +7546,17 @@
       ],
       "proposed_target": ".agents/skills/ux-design/references/3-file-skeleton.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session creative fallback smokes, actual non-headless Godot screenshots and isolated worktree prototype; missing-asset/UX/slice findings retained, independent and human playtests PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-12",
+      "target": ".agents/skills/ux-design/references/3-file-skeleton.md",
+      "target_sha256": "a24525849ee01bd5d9d6df9e98d4f9114297d7d595a4a12697c1540d3dfa31c4",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-12/acceptance.md",
+        "docs/codex/evidence/CGS-12/workflows.md",
+        "docs/codex/evidence/CGS-12/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/ux-design/references/4-authoring.md",
@@ -7416,8 +7569,17 @@
       ],
       "proposed_target": ".agents/skills/ux-design/references/4-authoring.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session creative fallback smokes, actual non-headless Godot screenshots and isolated worktree prototype; missing-asset/UX/slice findings retained, independent and human playtests PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-12",
+      "target": ".agents/skills/ux-design/references/4-authoring.md",
+      "target_sha256": "e9cc23bf41550c5934375d1ddfd676ec83fe779be235218f4b7fbbf27034d178",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-12/acceptance.md",
+        "docs/codex/evidence/CGS-12/workflows.md",
+        "docs/codex/evidence/CGS-12/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/ux-design/references/5-crossref-handoff.md",
@@ -7430,8 +7592,17 @@
       ],
       "proposed_target": ".agents/skills/ux-design/references/5-crossref-handoff.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session creative fallback smokes, actual non-headless Godot screenshots and isolated worktree prototype; missing-asset/UX/slice findings retained, independent and human playtests PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-12",
+      "target": ".agents/skills/ux-design/references/5-crossref-handoff.md",
+      "target_sha256": "22bae9c3544752a954e20f18cbc2240b61ec302831a7eac6fc4eacbcd221b1eb",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-12/acceptance.md",
+        "docs/codex/evidence/CGS-12/workflows.md",
+        "docs/codex/evidence/CGS-12/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/ux-design/references/sections-hud.md",
@@ -7444,8 +7615,17 @@
       ],
       "proposed_target": ".agents/skills/ux-design/references/sections-hud.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session creative fallback smokes, actual non-headless Godot screenshots and isolated worktree prototype; missing-asset/UX/slice findings retained, independent and human playtests PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-12",
+      "target": ".agents/skills/ux-design/references/sections-hud.md",
+      "target_sha256": "2e75178291cf7e40a2634483f635b92589309b1c93962226b1175f4259e49ba4",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-12/acceptance.md",
+        "docs/codex/evidence/CGS-12/workflows.md",
+        "docs/codex/evidence/CGS-12/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/ux-design/references/sections-patterns.md",
@@ -7458,8 +7638,17 @@
       ],
       "proposed_target": ".agents/skills/ux-design/references/sections-patterns.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session creative fallback smokes, actual non-headless Godot screenshots and isolated worktree prototype; missing-asset/UX/slice findings retained, independent and human playtests PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-12",
+      "target": ".agents/skills/ux-design/references/sections-patterns.md",
+      "target_sha256": "5bb21133400a7df2cf4576bb0697f7a4748570400ec79960f0cb63053603af8b",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-12/acceptance.md",
+        "docs/codex/evidence/CGS-12/workflows.md",
+        "docs/codex/evidence/CGS-12/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/ux-design/references/sections-ux-spec.md",
@@ -7472,8 +7661,17 @@
       ],
       "proposed_target": ".agents/skills/ux-design/references/sections-ux-spec.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session creative fallback smokes, actual non-headless Godot screenshots and isolated worktree prototype; missing-asset/UX/slice findings retained, independent and human playtests PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-12",
+      "target": ".agents/skills/ux-design/references/sections-ux-spec.md",
+      "target_sha256": "5030490d6e6c99db22db388e472d23a682d4a05d8f1b96d55791c96d3e7d848a",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-12/acceptance.md",
+        "docs/codex/evidence/CGS-12/workflows.md",
+        "docs/codex/evidence/CGS-12/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/ux-review/SKILL.md",
@@ -7489,8 +7687,17 @@
       ],
       "proposed_target": ".agents/skills/ux-review/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session creative fallback smokes, actual non-headless Godot screenshots and isolated worktree prototype; missing-asset/UX/slice findings retained, independent and human playtests PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-12",
+      "target": ".agents/skills/ux-review/SKILL.md",
+      "target_sha256": "110a86348bb5ac264d20cce91ec21ac0b396d2522ce92b0fac983f4292ad62ce",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-12/acceptance.md",
+        "docs/codex/evidence/CGS-12/workflows.md",
+        "docs/codex/evidence/CGS-12/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/vertical-slice/SKILL.md",
@@ -7507,8 +7714,17 @@
       ],
       "proposed_target": ".agents/skills/vertical-slice/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Seven bounded in-session creative fallback smokes, actual non-headless Godot screenshots and isolated worktree prototype; missing-asset/UX/slice findings retained, independent and human playtests PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-12",
+      "target": ".agents/skills/vertical-slice/SKILL.md",
+      "target_sha256": "8ec96fd63c700050720c90d2961541e69c342c782ee84a7398a1ae0867796353",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-12/acceptance.md",
+        "docs/codex/evidence/CGS-12/workflows.md",
+        "docs/codex/evidence/CGS-12/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/statusline.sh",

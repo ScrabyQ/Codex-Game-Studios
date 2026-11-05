@@ -1,0 +1,9 @@
+{
+  "source_sha256": "3fc9e89b027234972d595df6adf2d6b6ed501aae7bd11a24fe3887d0e92f0956",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-12 Codex workflow contract:** Use the explicit configuration bootstrap and the current project root. Translate source Agent and specialist calls to authorized available native delegation; otherwise read the role and gate material and perform a clearly labeled in-session assessment, not an independent review. Preserve unavailable mandatory reviews as NOT ASSESSED. Use available question facilities or plain text, preserve existing authorization, and wait for unanswered required decisions. Source tools and automation do not grant permissions. Keep proposed drafts and decisions distinct from approved writes; do not infer approval. Read source templates and linked resources in the active phase.\n\nThe source prototyper role requires an actual isolated Git worktree, not a fictitious native flag or a mere prototypes directory. Before assigning its implementation, establish a separate worktree and branch with host-authorized Git operations; inspect its root and branch, locate the user checkout with `git worktree list --porcelain`, inspect its status, and stop if needed uncommitted or ignored inputs are unavailable. Check LFS requirements and disclose skipped checks. Do not build against stale inputs. If isolation cannot be established, report the implementation PENDING; do not silently run the prototyper in the main checkout. Hand back the actual worktree path and branch. Preserve the no-production-import boundary, headers, disposable code, and rewrite-from-scratch rule.\n\nPreserve one hypothesis, scope approval, path choice, timeboxes, debrief and report; spike yields YES/NO/PARTIAL, not a concept gate verdict. A playable result and actual observations are required for a substantive verdict.\n\n"
+    }
+  ]
+}

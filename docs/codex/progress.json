@@ -5,9 +5,9 @@
   "upstream_sha": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
   "owner": "ScrabyQ",
   "repository": "Codex-Game-Studios",
-  "last_completed": "CGS-11",
-  "current_task": "CGS-12",
-  "next_safe_step": "CGS11 bounded minimal/standard/impact acceptance reviewed; integrate creative workflows and real isolated Godot prototype next.",
+  "last_completed": "CGS-12",
+  "current_task": "CGS-24",
+  "next_safe_step": "Creative acceptance verified with actual Godot renders; integrate hook backend and selected-root fix before accepting production planning.",
   "decisions": [
     "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED.",
     "Generated content-preserving .agents mirror retains helper root math; native roles use .codex/agents/*.toml; all generation is hash-guarded; no new agent runtime."
@@ -148,22 +148,27 @@
       "singularity_id": "T-e2ba597c-4de6-4b41-9400-f422e76b279f",
       "title": "CGS-11 · Skills · геймдизайн и согласованность систем (6)",
       "status": "COMPLETE",
-      "commit": null,
+      "commit": "e6d06e1ac3aaad795d2ca3439eb5ef66ff010344",
       "evidence": [
         "docs/codex/evidence/CGS-11/acceptance.md",
         "docs/codex/evidence/CGS-11/README.md",
         "docs/codex/evidence/CGS-11/traceability.json"
       ],
       "note": "CGS11 bounded minimal/standard/impact acceptance reviewed; integrate creative workflows and real isolated Godot prototype next.",
-      "updated_at": "2026-11-05T11:46:39.751Z"
+      "updated_at": "2026-11-05T11:49:00.316Z"
     },
     {
       "key": "CGS-12",
       "singularity_id": "T-37ac23d8-127a-4775-a8a0-08217f5dd8e9",
       "title": "CGS-12 · Skills · арт, ресурсы, UX и быстрые прототипы (7)",
-      "status": "PENDING",
+      "status": "COMPLETE",
       "commit": null,
-      "evidence": []
+      "evidence": [
+        "docs/codex/evidence/CGS-12/acceptance.md",
+        "docs/codex/evidence/CGS-12/workflows.md"
+      ],
+      "note": "Creative acceptance verified with actual Godot renders; integrate hook backend and selected-root fix before accepting production planning.",
+      "updated_at": "2026-11-05T11:49:00.483Z"
     },
     {
       "key": "CGS-13",

@@ -1,0 +1,9 @@
+{
+  "source_sha256": "4afc2b07ed5c854906f6a6bebd06f7f10ddc174a80ce30d0df2beddb80cfe101",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-12 Codex workflow contract:** Use the explicit configuration bootstrap and the current project root. Translate source Agent and specialist calls to authorized available native delegation; otherwise read the role and gate material and perform a clearly labeled in-session assessment, not an independent review. Preserve unavailable mandatory reviews as NOT ASSESSED. Use available question facilities or plain text, preserve existing authorization, and wait for unanswered required decisions. Source tools and automation do not grant permissions. Keep proposed drafts and decisions distinct from approved writes; do not infer approval. Read source templates and linked resources in the active phase.\n\nFollow the active mode’s linked phase and section resources; retain per-section questions, review, approved writes, design cross-references, input, focus order, accessibility and recovery. Do not invent player or design decisions.\n\n"
+    }
+  ]
+}

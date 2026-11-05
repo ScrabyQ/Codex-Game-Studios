@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "head": "ee8e3cd49a61e6804ac8dbca1eb14088b46dc735",
+  "entries": [
+    {
+      "source": ".claude/skills/art-bible/SKILL.md",
+      "source_sha256": "7873271f9e19fd6f126f00770c3861a2001afa492350f9232e3609fb4d61518a",
+      "target": ".agents/skills/art-bible/SKILL.md",
+      "prospective_target_sha256": "810fb23e9ec690a7ed3d9214eb578c26a227025be8f469138cc1d0ca1f4ea154",
+      "status": "PENDING behavioral verification",
+      "verification": "Exact source-bound overlay anchor applied by skillTargets; see observations.md"
+    },
+    {
+      "source": ".claude/skills/asset-audit/SKILL.md",
+      "source_sha256": "9aaa056c533cd0d61af1da5332fd26065fbfa6937db4bd117ac0692f8c65a3f4",
+      "target": ".agents/skills/asset-audit/SKILL.md",
+      "prospective_target_sha256": "59f259cbfa69c3b5c7054e5435f0076003e5569ed9b8979c52e0703fbc0ac443",
+      "status": "PENDING behavioral verification",
+      "verification": "Exact source-bound overlay anchor applied by skillTargets; see observations.md"
+    },
+    {
+      "source": ".claude/skills/asset-spec/SKILL.md",
+      "source_sha256": "8e9126653dcf25bdd2e197ee9df6587e3ffd7ee67de7103087cf8971c59fe025",
+      "target": ".agents/skills/asset-spec/SKILL.md",
+      "prospective_target_sha256": "472f9992b6935604155c67eed769043cc84fd220af501c902d935033153df4ec",
+      "status": "PENDING behavioral verification",
+      "verification": "Exact source-bound overlay anchor applied by skillTargets; see observations.md"
+    },
+    {
+      "source": ".claude/skills/prototype/SKILL.md",
+      "source_sha256": "3fc9e89b027234972d595df6adf2d6b6ed501aae7bd11a24fe3887d0e92f0956",
+      "target": ".agents/skills/prototype/SKILL.md",
+      "prospective_target_sha256": "659931e18f2f5ce7b8e6c7e05d667fef339e769389b2f42889e658d1df7a93ad",
+      "status": "PENDING behavioral verification",
+      "verification": "Exact source-bound overlay anchor applied by skillTargets; see observations.md"
+    },
+    {
+      "source": ".claude/skills/ux-design/SKILL.md",
+      "source_sha256": "4afc2b07ed5c854906f6a6bebd06f7f10ddc174a80ce30d0df2beddb80cfe101",
+      "target": ".agents/skills/ux-design/SKILL.md",
+      "prospective_target_sha256": "4f03540ab5bdcf4d0e627d346e554a5bca15244f8463855ca4b4453328f53472",
+      "status": "PENDING behavioral verification",
+      "verification": "Exact source-bound overlay anchor applied by skillTargets; see observations.md"
+    },
+    {
+      "source": ".claude/skills/ux-review/SKILL.md",
+      "source_sha256": "064b9ce2ad6b8dd954448dab6e5130da6c8bfc784e368c852202a71bf5a2c619",
+      "target": ".agents/skills/ux-review/SKILL.md",
+      "prospective_target_sha256": "110a86348bb5ac264d20cce91ec21ac0b396d2522ce92b0fac983f4292ad62ce",
+      "status": "PENDING behavioral verification",
+      "verification": "Exact source-bound overlay anchor applied by skillTargets; see observations.md"
+    },
+    {
+      "source": ".claude/skills/vertical-slice/SKILL.md",
+      "source_sha256": "e7d48f49119cf1ea8c18b13a6cf5857e7d9e11bb91b8c76b12cc322103021aa5",
+      "target": ".agents/skills/vertical-slice/SKILL.md",
+      "prospective_target_sha256": "8ec96fd63c700050720c90d2961541e69c342c782ee84a7398a1ae0867796353",
+      "status": "PENDING behavioral verification",
+      "verification": "Exact source-bound overlay anchor applied by skillTargets; see observations.md"
+    }
+  ]
+}

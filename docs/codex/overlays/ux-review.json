@@ -1,0 +1,9 @@
+{
+  "source_sha256": "064b9ce2ad6b8dd954448dab6e5130da6c8bfc784e368c852202a71bf5a2c619",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-12 Codex workflow contract:** Use the explicit configuration bootstrap and the current project root. Translate source Agent and specialist calls to authorized available native delegation; otherwise read the role and gate material and perform a clearly labeled in-session assessment, not an independent review. Preserve unavailable mandatory reviews as NOT ASSESSED. Use available question facilities or plain text, preserve existing authorization, and wait for unanswered required decisions. Source tools and automation do not grant permissions. Keep proposed drafts and decisions distinct from approved writes; do not infer approval. Read source templates and linked resources in the active phase.\n\nInspect the actual selected UX/HUD/pattern document and its design and accessibility evidence. Preserve required-section denominators and distinguish missing evidence and NOT ASSESSED from compliance; do not claim visual validation from prose alone.\n\n"
+    }
+  ]
+}
