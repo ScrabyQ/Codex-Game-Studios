@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "observed_at_utc": "2026-11-05T14:54:11.503Z",
+  "result": "ACCEPTED_FOR_DRAFT_REVIEW_WITH_DOCUMENTED_LIMITATIONS",
+  "project": "P-e8fd2310-c4c2-4c29-97b3-34439be065fc",
+  "tasks": {
+    "completed": 31,
+    "total": 31,
+    "source": "Fresh Singularity task_list after CGS-31 update"
+  },
+  "historical_and_latest_upstream": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
+  "audited_frozen_candidate": "3670ab803998ce43e2cfd42a627954880206ff5a",
+  "acceptance_evidence_commit": "7499d7d00dda70bd1e5bc8269dc4f3ccccbe46b8",
+  "observation_note": "This receipt is committed after the acceptance evidence commit; its own future Git SHA is not self-referenced. Final pushed head and CI are reported in the task tracker and final response.",
+  "repository": {
+    "url": "https://github.com/ScrabyQ/Codex-Game-Studios",
+    "branch": "codex/adaptation",
+    "default_branch": "main",
+    "default_branch_sha": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
+    "upstream_push_url": "DISABLED",
+    "history_ancestor_verified": true,
+    "license_committed_sha256": "6ecc068715c0edffc4bc21e5dca450803e0a45af145f72221da23d14e7588359",
+    "license_and_donchitos_copyright_retained": true
+  },
+  "identity": {
+    "name": "ScrabyQ",
+    "email": "scraby2016@yandex.ru",
+    "scope": "repository-local",
+    "adaptation_authors_and_committers_verified": true
+  },
+  "draft_pr": {
+    "url": "https://github.com/ScrabyQ/Codex-Game-Studios/pull/1",
+    "number": 1,
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "base": "main",
+    "head": "codex/adaptation",
+    "head_at_creation": "7499d7d00dda70bd1e5bc8269dc4f3ccccbe46b8",
+    "requested_reviewers": []
+  },
+  "counts": {
+    "historical_files": 638,
+    "hook_declarations": 15,
+    "migration_rows": 653,
+    "roles": 49,
+    "skills": 74,
+    "rules": 14,
+    "templates": 62,
+    "generated_targets": 440,
+    "catalog_specs": 123
+  },
+  "source_dispositions": {
+    "PORTED": 12,
+    "EQUIVALENT": 637,
+    "UNSUPPORTED": 4,
+    "PENDING": 0
+  },
+  "ci": {
+    "head": "7499d7d00dda70bd1e5bc8269dc4f3ccccbe46b8",
+    "url": "https://github.com/ScrabyQ/Codex-Game-Studios/actions/runs/42048694970",
+    "status": "completed",
+    "conclusion": "success",
+    "jobs": {
+      "quick": "success",
+      "linux-backend": "success"
+    },
+    "scope": "Static/config/policy/source-target and negative/reconciliation fixtures plus six Linux backend suites; not engine/model certification"
+  },
+  "independent_acceptance": {
+    "checklist": "docs/codex/evidence/CGS-31/release-checklist.md",
+    "artifact_index": "docs/codex/evidence/CGS-31/artifact-index.json",
+    "artifacts_verified_in_worktree_and_git_index": 42,
+    "critical_blockers": 0,
+    "fresh_godot": "4.7.2: import, three-script parse, 8 assertions, rendered ready/empty/reset and 3 viewed PNGs passed",
+    "scenario": "Bounded in-session start returning-user → reused implementation validation → story-done; missing captures first blocked closure; no native end-to-end or fresh implementation claim"
+  },
+  "pending": [
+    {
+      "capability": "Native custom agent types and role permissions",
+      "reason": "Native loader not established; documented in-session fallback verified"
+    },
+    {
+      "capability": "Trusted native hooks and automatic interception",
+      "reason": "Optional example remains inactive; explicit CLI/CI fallback verified"
+    },
+    {
+      "capability": "All native model scenarios and desktop/IDE discovery",
+      "reason": "Scoped help reads and group fixtures do not establish universal client behavior"
+    },
+    {
+      "capability": "Unity runtime/build/render",
+      "reason": "Configured editor missing; no runtime substitution claimed"
+    },
+    {
+      "capability": "Unreal runtime/build/render",
+      "reason": "Installed 5.8.0 differs from requested 5.8.3; required Windows SDK missing, actual UBT exit6 retained"
+    },
+    {
+      "capability": "Exports, physical input, human playtests and broad usability/performance",
+      "reason": "Actual Godot synthetic engine events and viewed captures cover only the bounded fixture"
+    }
+  ],
+  "unsupported_automatic_integrations": [
+    ".claude/hooks/log-instructions.sh",
+    ".claude/settings.json",
+    ".claude/statusline.sh",
+    ".worktreeinclude"
+  ],
+  "next_action": "User review of draft PR1. A main merge or official release requires separate user authorization."
+}

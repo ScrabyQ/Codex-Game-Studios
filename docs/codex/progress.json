@@ -5,9 +5,9 @@
   "upstream_sha": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
   "owner": "ScrabyQ",
   "repository": "Codex-Game-Studios",
-  "last_completed": "CGS-30",
+  "last_completed": "CGS-31",
   "current_task": "CGS-31",
-  "next_safe_step": "Freshindependent31technicalPASSwithwaiversat3670ab8;RootreviewedchecklistandexplicitSubagentStopartifactpresent. All638blobs+15declarations,440targets,historicalancestry/license/authorship,currentupstream,finalpurecloneCI,freshGodot8assertions+3PNG+scopedstoryclosure verified. Remaining: publish31evidence,draftPRtoownmain,finalcheckpoint/latestCIandSingularity31.",
+  "next_safe_step": "All31Singularitytaskschecked1. IndependenttechnicalPASSwithdocumentedwaivers; primaryacceptance7499d7d haspassingquick/LinuxCI42048694970. DraftPRhttps://github.com/ScrabyQ/Codex-Game-Studios/pull/1 open/draft/unmerged; alladaptationauthors/committersScrabyQ<scraby2016@yandex.ru>. Nextsafeaction:userreviewofdraftPR; mainmerge/officialreleaseareseparatelyauthorizedfutureactions. RuntimePENDING/4UNSUPPORTEDremainexplicitinchecklist.",
   "decisions": [
     "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED.",
     "Generated content-preserving .agents mirror retains helper root math; native roles use .codex/agents/*.toml; all generation is hash-guarded; no new agent runtime."
@@ -475,14 +475,15 @@
       "key": "CGS-31",
       "singularity_id": "T-19e97c9c-2fe1-480e-ac23-91d9a4b132c1",
       "title": "CGS-31 · Финальная приёмка parity и подготовка релизного PR",
-      "status": "IN_PROGRESS",
-      "commit": null,
+      "status": "COMPLETE",
+      "commit": "7499d7d00dda70bd1e5bc8269dc4f3ccccbe46b8",
       "evidence": [
         "docs/codex/evidence/CGS-31/release-checklist.md",
-        "docs/codex/evidence/CGS-31/artifact-index.json"
+        "docs/codex/evidence/CGS-31/artifact-index.json",
+        "docs/codex/evidence/CGS-31/final-repository.json"
       ],
-      "note": "Freshindependent31technicalPASSwithwaiversat3670ab8;RootreviewedchecklistandexplicitSubagentStopartifactpresent. All638blobs+15declarations,440targets,historicalancestry/license/authorship,currentupstream,finalpurecloneCI,freshGodot8assertions+3PNG+scopedstoryclosure verified. Remaining: publish31evidence,draftPRtoownmain,finalcheckpoint/latestCIandSingularity31.",
-      "updated_at": "2026-11-05T14:48:00.257Z"
+      "note": "All31Singularitytaskschecked1. IndependenttechnicalPASSwithdocumentedwaivers; primaryacceptance7499d7d haspassingquick/LinuxCI42048694970. DraftPRhttps://github.com/ScrabyQ/Codex-Game-Studios/pull/1 open/draft/unmerged; alladaptationauthors/committersScrabyQ<scraby2016@yandex.ru>. Nextsafeaction:userreviewofdraftPR; mainmerge/officialreleaseareseparatelyauthorizedfutureactions. RuntimePENDING/4UNSUPPORTEDremainexplicitinchecklist.",
+      "updated_at": "2026-11-05T14:54:21.366Z"
     }
   ],
   "git_identity": {
