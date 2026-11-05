@@ -8,11 +8,11 @@ A game development toolkit for OpenAI Codex.<br>
 74 Skills · 49 specialist roles · Godot, Unity & Unreal Engine
 
 [![CI](https://github.com/ScrabyQ/Codex-Game-Studios/actions/workflows/codex-ci.yml/badge.svg?branch=main)](https://github.com/ScrabyQ/Codex-Game-Studios/actions/workflows/codex-ci.yml)
-[![MIT license](https://img.shields.io/badge/license-MIT-3b82f6)](LICENSE)
+[![MIT license](https://img.shields.io/badge/license-MIT-2563eb)](LICENSE)
 [![Built for Codex](.github/badges/codex.svg)](https://learn.chatgpt.com/docs/build-skills)
 [![74 Skills](.github/badges/skills.svg)](.agents/skills)
 [![49 roles](.github/badges/roles.svg)](.codex/agents)
-[![3 engines](https://img.shields.io/badge/engines-Godot_%7C_Unity_%7C_Unreal-0891b2)](#engine-support)
+[![3 engines](https://img.shields.io/badge/engines-Godot_%7C_Unity_%7C_Unreal-0e7490)](#engine-support)
 
 **[Get started](#quick-start) · [Explore the workflow](docs/WORKFLOW-GUIDE.md) · [Contribute](CONTRIBUTING.md)**
 
