@@ -7,7 +7,7 @@ import {baseline} from './baseline.mjs';
 import {safeProjectPath} from './safe-path.mjs';
 const here=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..'), args=process.argv.slice(2);
 const opts=new Map();for(let i=0;i<args.length;i++){const k=args[i];if(opts.has(k)||!['--root','--verify-pending'].includes(k))throw Error('Usage: validate.mjs [--root PATH] [--verify-pending]');if(k==='--root'){if(!args[i+1]||args[i+1].startsWith('--'))throw Error('Missing --root');opts.set(k,args[++i])}else opts.set(k,true)}
-const root=path.resolve(opts.get('--root') || here), read=p=>readFileSync(safeProjectPath(root,p)), json=p=>JSON.parse(read(p).toString('utf8').replace(/^\uFEFF/,''));
+const root=realpathSync(path.resolve(opts.get('--root') || here)), read=p=>readFileSync(safeProjectPath(root,p)), json=p=>JSON.parse(read(p).toString('utf8').replace(/^\uFEFF/,''));
 const hash=b=>createHash('sha256').update(b).digest('hex'), fail=s=>{throw Error(s)};
 const safe=p=>{if(typeof p!=='string'||!p||path.posix.isAbsolute(p)||p.includes('\\')||p.split('/').includes('..')) fail('Unsafe path: '+p);return p};
 const unique=(xs,label)=>{if(new Set(xs).size!==xs.length)fail('Duplicate '+label)};

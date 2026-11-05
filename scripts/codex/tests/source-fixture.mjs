@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
-import { mkdtempSync, mkdirSync, writeFileSync, symlinkSync, realpathSync } from 'node:fs';
+import { mkdtempSync, mkdirSync, writeFileSync, symlinkSync, realpathSync, statSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { openSource } from '../source.mjs';
@@ -17,7 +17,9 @@ git('-c', 'user.name=Fixture', '-c', 'user.email=fixture@example.invalid', 'comm
 const commit = git('rev-parse', 'HEAD');
 const source = openSource({ root: repository, repository, ref: 'HEAD', expectedCommit: commit });
 const nested = openSource({ root: repository, repository: path.join(repository,'.claude','skills'), ref: 'HEAD', expectedCommit: commit });
-assert.equal(nested.repository, repository);
+// Git and Node can spell the same Windows directory with long and 8.3 names.
+assert.equal(statSync(nested.repository).dev, statSync(repository).dev);
+assert.equal(statSync(nested.repository).ino, statSync(repository).ino);
 assert.deepEqual(nested.files, source.files);
 assert.equal(source.commit, commit);
 assert.equal(source.read('.claude/skills/demo/SKILL.md').toString(), 'source body\n');
