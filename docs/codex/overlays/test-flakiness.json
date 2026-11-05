@@ -1,0 +1,9 @@
+{
+  "source_sha256": "382ee117ffbcade9c0b598db075a43087762da6873c5e7c7af67b0472e1d42b3",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-17 QA evidence contract:** Treat task APIs and hooks as optional and disclose when unavailable. A native delegate must actually run to be independent; otherwise use an explicitly labelled in-session fallback. Prior user authorization and host permissions govern all writes. Use actual per-test run records and verify unchanged code before classifying intermittent results as flaky. Fewer than three runs are suspected only, not a quarantine decision. Missing logs remain NOT ASSESSED; do not modify quarantine without authorization.\n\n"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "task": "CGS-17",
+  "fixture": ".scratch/cgs17-qa-118fe97f",
+  "results": [
+    {
+      "id": "regression_buggy",
+      "command": "$env:CGS_QA_IMPL='buggy'; node --test tests/unit/repair_regression_test.mjs; exit $LASTEXITCODE",
+      "exit_code": 1,
+      "output": "TAP version 13\n# Subtest: damage subtracts once and clamps at zero\nnot ok 1 - damage subtracts once and clamps at zero\n  ---\n  duration_ms: 1.7682\n  type: 'test'\n  location: 'D:\\\\MyProjects\\\\codex-game-studios\\\\.scratch\\\\cgs17-qa-118fe97f\\\\tests\\\\unit\\\\repair_regression_test.mjs:5:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    \n    80 !== 90\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 90\n  actual: 80\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///D:/MyProjects/codex-game-studios/.scratch/cgs17-qa-118fe97f/tests/unit/repair_regression_test.mjs:5:65)\n    Test.runInAsyncScope (node:async_hooks:214:14)\n    Test.run (node:internal/test_runner/test:1047:25)\n    Test.start (node:internal/test_runner/test:944:17)\n    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)\n  ...\n1..1\n# tests 1\n# suites 0\n# pass 0\n# fail 1\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 159.4623\n"
+    },
+    {
+      "id": "regression_fixed",
+      "command": "$env:CGS_QA_IMPL='fixed'; node --test tests/unit/repair_regression_test.mjs; exit $LASTEXITCODE",
+      "exit_code": 0,
+      "output": "TAP version 13\n# Subtest: damage subtracts once and clamps at zero\nok 1 - damage subtracts once and clamps at zero\n  ---\n  duration_ms: 1.3934\n  type: 'test'\n  ...\n1..1\n# tests 1\n# suites 0\n# pass 1\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 157.6659\n"
+    },
+    {
+      "id": "seeded_helper",
+      "command": "node --test tests/unit/helpers_test.mjs; exit $LASTEXITCODE",
+      "exit_code": 0,
+      "output": "TAP version 13\n# Subtest: equal seeds reproduce the same sequence\nok 1 - equal seeds reproduce the same sequence\n  ---\n  duration_ms: 3.9649\n  type: 'test'\n  ...\n1..1\n# tests 1\n# suites 0\n# pass 1\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 144.3413\n"
+    },
+    {
+      "id": "history_1",
+      "command": "$env:CGS_TEST_FAIL='0'; node --test tests/unit/intermittent_test.mjs; exit $LASTEXITCODE",
+      "exit_code": 0,
+      "output": "TAP version 13\n# Subtest: controlled outcome for history fixture\nok 1 - controlled outcome for history fixture\n  ---\n  duration_ms: 1.0174\n  type: 'test'\n  ...\n1..1\n# tests 1\n# suites 0\n# pass 1\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 142.0304\n"
+    },
+    {
+      "id": "history_2",
+      "command": "$env:CGS_TEST_FAIL='1'; node --test tests/unit/intermittent_test.mjs; exit $LASTEXITCODE",
+      "exit_code": 1,
+      "output": "TAP version 13\n# Subtest: controlled outcome for history fixture\nnot ok 1 - controlled outcome for history fixture\n  ---\n  duration_ms: 2.2185\n  type: 'test'\n  location: 'D:\\\\MyProjects\\\\codex-game-studios\\\\.scratch\\\\cgs17-qa-118fe97f\\\\tests\\\\unit\\\\intermittent_test.mjs:3:1'\n  failureType: 'testCodeFailure'\n  error: `Expected \"actual\" to be strictly unequal to: '1'`\n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: '1'\n  actual: '1'\n  operator: 'notStrictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///D:/MyProjects/codex-game-studios/.scratch/cgs17-qa-118fe97f/tests/unit/intermittent_test.mjs:3:63)\n    Test.runInAsyncScope (node:async_hooks:214:14)\n    Test.run (node:internal/test_runner/test:1047:25)\n    Test.start (node:internal/test_runner/test:944:17)\n    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)\n  ...\n1..1\n# tests 1\n# suites 0\n# pass 0\n# fail 1\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 144.4276\n"
+    },
+    {
+      "id": "history_3",
+      "command": "$env:CGS_TEST_FAIL='0'; node --test tests/unit/intermittent_test.mjs; exit $LASTEXITCODE",
+      "exit_code": 0,
+      "output": "TAP version 13\n# Subtest: controlled outcome for history fixture\nok 1 - controlled outcome for history fixture\n  ---\n  duration_ms: 1.1223\n  type: 'test'\n  ...\n1..1\n# tests 1\n# suites 0\n# pass 1\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 135.4472\n"
+    },
+    {
+      "id": "tier_minimal",
+      "command": "node scripts/codex/config.mjs resolve --root '.scratch/cgs17-qa-118fe97f/tiers/minimal' --keys rigor,workflow,qa.level,gate_level",
+      "exit_code": 0,
+      "output": "=== CCGS Config (resolved: local->yaml->legacy->default; use as-is) ===\nrigor: minimal (project.yaml)\nworkflow: minimal (rigor:minimal)\nqa.level: minimal (rigor:minimal)\ngate_level: logic=blocking(default) integration=blocking(default) visual=blocking(default) ui=blocking(default) config=advisory(default; /smoke-check: blocking)\n=== end ===\n"
+    },
+    {
+      "id": "tier_standard",
+      "command": "node scripts/codex/config.mjs resolve --root '.scratch/cgs17-qa-118fe97f' --keys rigor,workflow,qa.level,gate_level",
+      "exit_code": 0,
+      "output": "=== CCGS Config (resolved: local->yaml->legacy->default; use as-is) ===\nrigor: standard (project.yaml)\nworkflow: standard (rigor:standard)\nqa.level: standard (rigor:standard)\ngate_level: logic=blocking(default) integration=blocking(default) visual=blocking(default) ui=blocking(default) config=advisory(default; /smoke-check: blocking)\n=== end ===\n"
+    },
+    {
+      "id": "tier_full",
+      "command": "node scripts/codex/config.mjs resolve --root '.scratch/cgs17-qa-118fe97f/tiers/full' --keys rigor,workflow,qa.level,gate_level",
+      "exit_code": 0,
+      "output": "=== CCGS Config (resolved: local->yaml->legacy->default; use as-is) ===\nrigor: full (project.yaml)\nworkflow: full (rigor:full)\nqa.level: full (rigor:full)\ngate_level: logic=blocking(default) integration=blocking(default) visual=blocking(default) ui=blocking(default) config=advisory(default; /smoke-check: blocking)\n=== end ===\n"
+    },
+    {
+      "id": "tier_strict",
+      "command": "node scripts/codex/config.mjs resolve --root '.scratch/cgs17-qa-118fe97f/tiers/strict' --keys qa.level,testing.strict,gate_level",
+      "exit_code": 0,
+      "output": "=== CCGS Config (resolved: local->yaml->legacy->default; use as-is) ===\nqa.level: standard (rigor:standard)\ntesting.strict: logic=false integration=unset visual=unset ui=true config=unset (unset = each skill applies its own default)\ngate_level: logic=advisory(project.local.yaml) integration=blocking(default) visual=blocking(default) ui=blocking(project.yaml) config=advisory(default; /smoke-check: blocking)\n=== end ===\n"
+    },
+    {
+      "id": "missing_runner",
+      "command": "node scripts/codex/helper.mjs test-run --root '.scratch/cgs17-qa-118fe97f' godot --exe 'missing-godot-runner'",
+      "exit_code": 0,
+      "output": "engine\tGodot\nexe\tmissing-godot-runner\t--exe\ncommand\tdefault\t\"missing-godot-runner\" --headless -s -d --remote-debug tcp://127.0.0.1:0 res://addons/gdUnit4/bin/GdUnitCmdTool.gd -a res://tests --ignoreHeadlessMode 2>&1\nimport\t\"missing-godot-runner\" --headless --path . --import\ntimeout\t900\ttimeout\nprecheck\taddons/gdUnit4/bin/GdUnitCmdTool.gd\tabsent\nran\tno\tgdUnit4 is not installed at addons/gdUnit4/\nrule\tgodot:no-gdunit4\tgdUnit4 not installed, so no runner was started\n"
+    },
+    {
+      "id": "flaky_verified",
+      "command": "$before=(Get-FileHash tests/unit/intermittent_test.mjs -Algorithm SHA256).Hash; $codes=@(); foreach($f in @('0','1','0')){$env:CGS_TEST_FAIL=$f; node --test tests/unit/intermittent_test.mjs | Out-Null; $codes+= $LASTEXITCODE};$after=(Get-FileHash tests/unit/intermittent_test.mjs -Algorithm SHA256).Hash;if($before -ne $after){throw 'test file changed'}; if(($codes -join ',') -ne '0,1,0'){throw \"unexpected outcomes $codes\"}; \"test_sha256=$before; outcomes=$($codes -join ','); controlled_failures=1/3\"",
+      "exit_code": 0,
+      "output": "test_sha256=12750AB2B6A13E6AEF294F214FE2DF8E82DDF4E0FB7959E03529B8A2B2293860; outcomes=0,1,0; controlled_failures=1/3\r\n"
+    },
+    {
+      "id": "ordered_regression",
+      "command": "$files=@('src/buggy.mjs','src/fixed.mjs','tests/unit/repair_regression_test.mjs');$before=@{};foreach($f in $files){$before[$f]=(Get-FileHash -Algorithm SHA256 $f).Hash};$env:CGS_QA_IMPL='buggy';$bad=node --test tests/unit/repair_regression_test.mjs 2>&1|Out-String;$badExit=$LASTEXITCODE;if($badExit -ne 1){throw \"unexpected buggy exit $badExit\"};$env:CGS_QA_IMPL='fixed';$good=node --test tests/unit/repair_regression_test.mjs 2>&1|Out-String;$goodExit=$LASTEXITCODE;if($goodExit -ne 0){throw \"unexpected fixed exit $goodExit\"};foreach($f in $files){if((Get-FileHash -Algorithm SHA256 $f).Hash -ne $before[$f]){throw \"changed $f\"}};\"ORDER: buggy=$badExit then fixed=$goodExit; source/test hashes unchanged\";$bad;$good",
+      "exit_code": 0,
+      "output": "ORDER: buggy=1 then fixed=0; source/test hashes unchanged\r\nTAP version 13\r\n# Subtest: damage subtracts once and clamps at zero\r\nnot ok 1 - damage subtracts once and clamps at zero\r\n  ---\r\n  duration_ms: 1.126\r\n  type: 'test'\r\n  location: 'D:\\\\MyProjects\\\\codex-game-studios\\\\.scratch\\\\cgs17-qa-118fe97f\\\\tests\\\\unit\\\\repair_regression_test.mjs:5:1'\r\n  failureType: 'testCodeFailure'\r\n  error: |-\r\n    Expected values to be strictly equal:\r\n    \r\n    80 !== 90\r\n    \r\n  code: 'ERR_ASSERTION'\r\n  name: 'AssertionError'\r\n  expected: 90\r\n  actual: 80\r\n  operator: 'strictEqual'\r\n  stack: |-\r\n    TestContext.<anonymous> (file:///D:/MyProjects/codex-game-studios/.scratch/cgs17-qa-118fe97f/tests/unit/repair_regression_test.mjs:5:65)\r\n    Test.runInAsyncScope (node:async_hooks:214:14)\r\n    Test.run (node:internal/test_runner/test:1047:25)\r\n    Test.start (node:internal/test_runner/test:944:17)\r\n    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)\r\n  ...\r\n1..1\r\n# tests 1\r\n# suites 0\r\n# pass 0\r\n# fail 1\r\n# cancelled 0\r\n# skipped 0\r\n# todo 0\r\n# duration_ms 75.4409\r\n\r\nTAP version 13\r\n# Subtest: damage subtracts once and clamps at zero\r\nok 1 - damage subtracts once and clamps at zero\r\n  ---\r\n  duration_ms: 0.6473\r\n  type: 'test'\r\n  ...\r\n1..1\r\n# tests 1\r\n# suites 0\r\n# pass 1\r\n# fail 0\r\n# cancelled 0\r\n# skipped 0\r\n# todo 0\r\n# duration_ms 78.4747\r\n\r\n"
+    }
+  ],
+  "notes": [
+    "Godot helper exit 0 reports an observation; ran=no is NOT ASSESSED.",
+    "Flakiness test outcomes were intentionally controlled by environment; no natural flake established.",
+    "All runner outputs were collected from actual local commands."
+  ]
+}

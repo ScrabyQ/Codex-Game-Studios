@@ -1,0 +1,9 @@
+{
+  "source_sha256": "7d420f14829ba4062dcaf354a91808e41523c091516160593bac048533679973",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-17 QA evidence contract:** Treat task APIs and hooks as optional and disclose when unavailable. A native delegate must actually run to be independent; otherwise use an explicitly labelled in-session fallback. Prior user authorization and host permissions govern all writes. Resolve the selected engine and installed runner from actual files and tools before planning. Do not overwrite existing setup, claim an install that was not performed, or assume an editor is available. Missing prerequisites are PENDING or NOT ASSESSED; changes require their actual authorization.\n\n"
+    }
+  ]
+}

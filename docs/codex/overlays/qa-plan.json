@@ -1,0 +1,9 @@
+{
+  "source_sha256": "fa3a333c9f0e298979e8e174165bcd58042d686b788327644487644c25c8efa5",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-17 QA evidence contract:** Treat task APIs and hooks as optional and disclose when unavailable. A native delegate must actually run to be independent; otherwise use an explicitly labelled in-session fallback. Prior user authorization and host permissions govern all writes. Resolve the actual workflow and QA levels separately. Minimal may waive automated test requirements but never removes Visual/Feel or UI screenshot evidence; standard retains per-story requirements and full adds coverage targets. Report unavailable inputs as NOT ASSESSED.\n\n"
+    }
+  ]
+}

@@ -6548,8 +6548,17 @@
       ],
       "proposed_target": ".agents/skills/qa-plan/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Eight bounded QA equivalents: actual Node failing/passing/seeded tests, controlled outcome history, three rigor tiers and strictness, missing engine runner and UI screenshot correctly NOT ASSESSED/BLOCKING; soak protocol not executed and not claimed PASS.",
+      "status": "EQUIVALENT",
+      "task": "CGS-17",
+      "target": ".agents/skills/qa-plan/SKILL.md",
+      "target_sha256": "d920e98ac833e8254c86f24bedf66f101ef387d0f29824c5b8d48d61e07382f6",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-17/README.md",
+        "docs/codex/evidence/CGS-17/runner-results.json",
+        "docs/codex/evidence/CGS-17/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/quick-design/SKILL.md",
@@ -6592,8 +6601,17 @@
       ],
       "proposed_target": ".agents/skills/regression-suite/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Eight bounded QA equivalents: actual Node failing/passing/seeded tests, controlled outcome history, three rigor tiers and strictness, missing engine runner and UI screenshot correctly NOT ASSESSED/BLOCKING; soak protocol not executed and not claimed PASS.",
+      "status": "EQUIVALENT",
+      "task": "CGS-17",
+      "target": ".agents/skills/regression-suite/SKILL.md",
+      "target_sha256": "5a33cb49f4b72e579249a3f928f7160e792891d3193fbdaba7086b5c24bd40ae",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-17/README.md",
+        "docs/codex/evidence/CGS-17/runner-results.json",
+        "docs/codex/evidence/CGS-17/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/release-checklist/SKILL.md",
@@ -7254,8 +7272,17 @@
       ],
       "proposed_target": ".agents/skills/smoke-check/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Eight bounded QA equivalents: actual Node failing/passing/seeded tests, controlled outcome history, three rigor tiers and strictness, missing engine runner and UI screenshot correctly NOT ASSESSED/BLOCKING; soak protocol not executed and not claimed PASS.",
+      "status": "EQUIVALENT",
+      "task": "CGS-17",
+      "target": ".agents/skills/smoke-check/SKILL.md",
+      "target_sha256": "86759811a016c7d0ca43e644e323079a604058e42c9e0c8acd806e2f6c46b032",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-17/README.md",
+        "docs/codex/evidence/CGS-17/runner-results.json",
+        "docs/codex/evidence/CGS-17/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/smoke-check/references/1-detect-setup.md",
@@ -7268,8 +7295,17 @@
       ],
       "proposed_target": ".agents/skills/smoke-check/references/1-detect-setup.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Eight bounded QA equivalents: actual Node failing/passing/seeded tests, controlled outcome history, three rigor tiers and strictness, missing engine runner and UI screenshot correctly NOT ASSESSED/BLOCKING; soak protocol not executed and not claimed PASS.",
+      "status": "EQUIVALENT",
+      "task": "CGS-17",
+      "target": ".agents/skills/smoke-check/references/1-detect-setup.md",
+      "target_sha256": "10d2bb2796fbd8b31a787bc73890066a86accc8159be398162f03e948cd71069",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-17/README.md",
+        "docs/codex/evidence/CGS-17/runner-results.json",
+        "docs/codex/evidence/CGS-17/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/smoke-check/references/2-run-tests.md",
@@ -7282,8 +7318,17 @@
       ],
       "proposed_target": ".agents/skills/smoke-check/references/2-run-tests.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Eight bounded QA equivalents: actual Node failing/passing/seeded tests, controlled outcome history, three rigor tiers and strictness, missing engine runner and UI screenshot correctly NOT ASSESSED/BLOCKING; soak protocol not executed and not claimed PASS.",
+      "status": "EQUIVALENT",
+      "task": "CGS-17",
+      "target": ".agents/skills/smoke-check/references/2-run-tests.md",
+      "target_sha256": "c5652468fbcbaa600c192282f6ef949ed6853a3c8c4827af8e4141353d1e4f35",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-17/README.md",
+        "docs/codex/evidence/CGS-17/runner-results.json",
+        "docs/codex/evidence/CGS-17/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/smoke-check/references/3-coverage.md",
@@ -7296,8 +7341,17 @@
       ],
       "proposed_target": ".agents/skills/smoke-check/references/3-coverage.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Eight bounded QA equivalents: actual Node failing/passing/seeded tests, controlled outcome history, three rigor tiers and strictness, missing engine runner and UI screenshot correctly NOT ASSESSED/BLOCKING; soak protocol not executed and not claimed PASS.",
+      "status": "EQUIVALENT",
+      "task": "CGS-17",
+      "target": ".agents/skills/smoke-check/references/3-coverage.md",
+      "target_sha256": "db1d5af002dd3d0661a820abbcaa31b21fdfa499153ef6883abc1116c0654d23",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-17/README.md",
+        "docs/codex/evidence/CGS-17/runner-results.json",
+        "docs/codex/evidence/CGS-17/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/smoke-check/references/4-manual-checks.md",
@@ -7310,8 +7364,17 @@
       ],
       "proposed_target": ".agents/skills/smoke-check/references/4-manual-checks.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Eight bounded QA equivalents: actual Node failing/passing/seeded tests, controlled outcome history, three rigor tiers and strictness, missing engine runner and UI screenshot correctly NOT ASSESSED/BLOCKING; soak protocol not executed and not claimed PASS.",
+      "status": "EQUIVALENT",
+      "task": "CGS-17",
+      "target": ".agents/skills/smoke-check/references/4-manual-checks.md",
+      "target_sha256": "2c4523f555edf77b086267eab1d9e08a2c322368be7aa99c895ec5e5b8395b9c",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-17/README.md",
+        "docs/codex/evidence/CGS-17/runner-results.json",
+        "docs/codex/evidence/CGS-17/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/smoke-check/references/5-report.md",
@@ -7324,8 +7387,17 @@
       ],
       "proposed_target": ".agents/skills/smoke-check/references/5-report.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Eight bounded QA equivalents: actual Node failing/passing/seeded tests, controlled outcome history, three rigor tiers and strictness, missing engine runner and UI screenshot correctly NOT ASSESSED/BLOCKING; soak protocol not executed and not claimed PASS.",
+      "status": "EQUIVALENT",
+      "task": "CGS-17",
+      "target": ".agents/skills/smoke-check/references/5-report.md",
+      "target_sha256": "86dae342c8b405954a98444967676fed509c21077717468eb9b88766381377d8",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-17/README.md",
+        "docs/codex/evidence/CGS-17/runner-results.json",
+        "docs/codex/evidence/CGS-17/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/smoke-check/references/6-write-gate.md",
@@ -7338,8 +7410,17 @@
       ],
       "proposed_target": ".agents/skills/smoke-check/references/6-write-gate.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Eight bounded QA equivalents: actual Node failing/passing/seeded tests, controlled outcome history, three rigor tiers and strictness, missing engine runner and UI screenshot correctly NOT ASSESSED/BLOCKING; soak protocol not executed and not claimed PASS.",
+      "status": "EQUIVALENT",
+      "task": "CGS-17",
+      "target": ".agents/skills/smoke-check/references/6-write-gate.md",
+      "target_sha256": "630e81acd4fb4c8312bfae65afaf83d284a825395c9614d8e49b02a42bc18fec",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-17/README.md",
+        "docs/codex/evidence/CGS-17/runner-results.json",
+        "docs/codex/evidence/CGS-17/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/soak-test/SKILL.md",
@@ -7356,8 +7437,17 @@
       ],
       "proposed_target": ".agents/skills/soak-test/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Eight bounded QA equivalents: actual Node failing/passing/seeded tests, controlled outcome history, three rigor tiers and strictness, missing engine runner and UI screenshot correctly NOT ASSESSED/BLOCKING; soak protocol not executed and not claimed PASS.",
+      "status": "EQUIVALENT",
+      "task": "CGS-17",
+      "target": ".agents/skills/soak-test/SKILL.md",
+      "target_sha256": "6a7cf12edfa1cb88a5b2e97003fa7b60b120210d6958a60847686fdcf0b18811",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-17/README.md",
+        "docs/codex/evidence/CGS-17/runner-results.json",
+        "docs/codex/evidence/CGS-17/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/sprint-plan/SKILL.md",
@@ -7823,8 +7913,17 @@
       ],
       "proposed_target": ".agents/skills/test-evidence-review/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Eight bounded QA equivalents: actual Node failing/passing/seeded tests, controlled outcome history, three rigor tiers and strictness, missing engine runner and UI screenshot correctly NOT ASSESSED/BLOCKING; soak protocol not executed and not claimed PASS.",
+      "status": "EQUIVALENT",
+      "task": "CGS-17",
+      "target": ".agents/skills/test-evidence-review/SKILL.md",
+      "target_sha256": "d384051561ce012904ed9f50212d559aa07a7200d3d40dde3b69fbe47a5a723a",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-17/README.md",
+        "docs/codex/evidence/CGS-17/runner-results.json",
+        "docs/codex/evidence/CGS-17/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/test-flakiness/SKILL.md",
@@ -7841,8 +7940,17 @@
       ],
       "proposed_target": ".agents/skills/test-flakiness/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Eight bounded QA equivalents: actual Node failing/passing/seeded tests, controlled outcome history, three rigor tiers and strictness, missing engine runner and UI screenshot correctly NOT ASSESSED/BLOCKING; soak protocol not executed and not claimed PASS.",
+      "status": "EQUIVALENT",
+      "task": "CGS-17",
+      "target": ".agents/skills/test-flakiness/SKILL.md",
+      "target_sha256": "522c2c8e1c1f72735130e99fb4dc5fc51e04df6a2879431c1c7beda3fef1b4a9",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-17/README.md",
+        "docs/codex/evidence/CGS-17/runner-results.json",
+        "docs/codex/evidence/CGS-17/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/test-helpers/SKILL.md",
@@ -7859,8 +7967,17 @@
       ],
       "proposed_target": ".agents/skills/test-helpers/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Eight bounded QA equivalents: actual Node failing/passing/seeded tests, controlled outcome history, three rigor tiers and strictness, missing engine runner and UI screenshot correctly NOT ASSESSED/BLOCKING; soak protocol not executed and not claimed PASS.",
+      "status": "EQUIVALENT",
+      "task": "CGS-17",
+      "target": ".agents/skills/test-helpers/SKILL.md",
+      "target_sha256": "da75b06ffe8adf75df3f0e289134ac15b9dd07dc1e04f95f028534248a68e3ba",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-17/README.md",
+        "docs/codex/evidence/CGS-17/runner-results.json",
+        "docs/codex/evidence/CGS-17/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/test-setup/SKILL.md",
@@ -7877,8 +7994,17 @@
       ],
       "proposed_target": ".agents/skills/test-setup/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Eight bounded QA equivalents: actual Node failing/passing/seeded tests, controlled outcome history, three rigor tiers and strictness, missing engine runner and UI screenshot correctly NOT ASSESSED/BLOCKING; soak protocol not executed and not claimed PASS.",
+      "status": "EQUIVALENT",
+      "task": "CGS-17",
+      "target": ".agents/skills/test-setup/SKILL.md",
+      "target_sha256": "16e9f1a6e5d3cefe21a09806f85ee29c1fa1d9e73b41182d868dd5e934d83a48",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-17/README.md",
+        "docs/codex/evidence/CGS-17/runner-results.json",
+        "docs/codex/evidence/CGS-17/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/test-setup/references/1-detect.md",
@@ -7891,8 +8017,17 @@
       ],
       "proposed_target": ".agents/skills/test-setup/references/1-detect.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Eight bounded QA equivalents: actual Node failing/passing/seeded tests, controlled outcome history, three rigor tiers and strictness, missing engine runner and UI screenshot correctly NOT ASSESSED/BLOCKING; soak protocol not executed and not claimed PASS.",
+      "status": "EQUIVALENT",
+      "task": "CGS-17",
+      "target": ".agents/skills/test-setup/references/1-detect.md",
+      "target_sha256": "659d52823e71b13d0305cd6274fe6bd18c9f740ab630b2e7cb9d566a57c8cfe4",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-17/README.md",
+        "docs/codex/evidence/CGS-17/runner-results.json",
+        "docs/codex/evidence/CGS-17/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/test-setup/references/2-plan.md",
@@ -7905,8 +8040,17 @@
       ],
       "proposed_target": ".agents/skills/test-setup/references/2-plan.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Eight bounded QA equivalents: actual Node failing/passing/seeded tests, controlled outcome history, three rigor tiers and strictness, missing engine runner and UI screenshot correctly NOT ASSESSED/BLOCKING; soak protocol not executed and not claimed PASS.",
+      "status": "EQUIVALENT",
+      "task": "CGS-17",
+      "target": ".agents/skills/test-setup/references/2-plan.md",
+      "target_sha256": "974f26d0b9f44a7188b4e01105a7f57aa4b6f14c2b6ac12f57bab74d0b670a0a",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-17/README.md",
+        "docs/codex/evidence/CGS-17/runner-results.json",
+        "docs/codex/evidence/CGS-17/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/test-setup/references/3-directories.md",
@@ -7919,8 +8063,17 @@
       ],
       "proposed_target": ".agents/skills/test-setup/references/3-directories.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Eight bounded QA equivalents: actual Node failing/passing/seeded tests, controlled outcome history, three rigor tiers and strictness, missing engine runner and UI screenshot correctly NOT ASSESSED/BLOCKING; soak protocol not executed and not claimed PASS.",
+      "status": "EQUIVALENT",
+      "task": "CGS-17",
+      "target": ".agents/skills/test-setup/references/3-directories.md",
+      "target_sha256": "b37f144502c1b3eadaf73af65a49a8e8584d08685b9a1816dce422c2e41c98aa",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-17/README.md",
+        "docs/codex/evidence/CGS-17/runner-results.json",
+        "docs/codex/evidence/CGS-17/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/test-setup/references/4-ci.md",
@@ -7933,8 +8086,17 @@
       ],
       "proposed_target": ".agents/skills/test-setup/references/4-ci.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Eight bounded QA equivalents: actual Node failing/passing/seeded tests, controlled outcome history, three rigor tiers and strictness, missing engine runner and UI screenshot correctly NOT ASSESSED/BLOCKING; soak protocol not executed and not claimed PASS.",
+      "status": "EQUIVALENT",
+      "task": "CGS-17",
+      "target": ".agents/skills/test-setup/references/4-ci.md",
+      "target_sha256": "408651652ef2f321dd614da2ad0807c8c349bceb8f0158f8ef1f7a6345b86d11",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-17/README.md",
+        "docs/codex/evidence/CGS-17/runner-results.json",
+        "docs/codex/evidence/CGS-17/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/test-setup/references/5-smoke-seed.md",
@@ -7947,8 +8109,17 @@
       ],
       "proposed_target": ".agents/skills/test-setup/references/5-smoke-seed.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Eight bounded QA equivalents: actual Node failing/passing/seeded tests, controlled outcome history, three rigor tiers and strictness, missing engine runner and UI screenshot correctly NOT ASSESSED/BLOCKING; soak protocol not executed and not claimed PASS.",
+      "status": "EQUIVALENT",
+      "task": "CGS-17",
+      "target": ".agents/skills/test-setup/references/5-smoke-seed.md",
+      "target_sha256": "379591347534bd29c5028c8da812113a2e2f6102f969a16cd394fb298979deb1",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-17/README.md",
+        "docs/codex/evidence/CGS-17/runner-results.json",
+        "docs/codex/evidence/CGS-17/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/test-setup/references/6-summary.md",
@@ -7961,8 +8132,17 @@
       ],
       "proposed_target": ".agents/skills/test-setup/references/6-summary.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Eight bounded QA equivalents: actual Node failing/passing/seeded tests, controlled outcome history, three rigor tiers and strictness, missing engine runner and UI screenshot correctly NOT ASSESSED/BLOCKING; soak protocol not executed and not claimed PASS.",
+      "status": "EQUIVALENT",
+      "task": "CGS-17",
+      "target": ".agents/skills/test-setup/references/6-summary.md",
+      "target_sha256": "2b83fbb2ab3e819cee38334e07aa0b867e3ec19bdfef9b95ae5cc54c2a0920e1",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-17/README.md",
+        "docs/codex/evidence/CGS-17/runner-results.json",
+        "docs/codex/evidence/CGS-17/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/ux-design/SKILL.md",

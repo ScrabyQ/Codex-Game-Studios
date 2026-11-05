@@ -1,0 +1,9 @@
+{
+  "source_sha256": "cd1ad9ab08b98b978f7dc5188822597b602e4f8170a811f0ca2ccab2f7f96122",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-17 QA evidence contract:** Treat task APIs and hooks as optional and disclose when unavailable. A native delegate must actually run to be independent; otherwise use an explicitly labelled in-session fallback. Prior user authorization and host permissions govern all writes. Preserve the selected 30m, 1h, 2h or 4h protocol and its real timed checkpoints. A planned or shortened soak is not an executed full-duration pass; missing checkpoints are NOT ASSESSED. Do not claim an observer, build or measurements that did not exist.\n\n"
+    }
+  ]
+}

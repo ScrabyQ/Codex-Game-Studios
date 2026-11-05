@@ -5,15 +5,40 @@
   "upstream_sha": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
   "owner": "ScrabyQ",
   "repository": "Codex-Game-Studios",
-  "last_completed": "CGS-21",
-  "current_task": "CGS-22",
-  "next_safe_step": "Five team-workflow scoped equivalents verified; extend orchestration to narrative/release/live-ops/QA, while implementation and QA groups continue.",
+  "last_completed": "CGS-17",
+  "current_task": "CGS-18",
+  "next_safe_step": "QA runner PASS/FAIL/missing-runner and honest evidence states verified; framework QA, implementation and second team group active.",
   "decisions": [
     "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED.",
     "Generated content-preserving .agents mirror retains helper root math; native roles use .codex/agents/*.toml; all generation is hash-guarded; no new agent runtime."
   ],
   "checks": [],
-  "issues": [],
+  "issues": [
+    {
+      "id": "native-custom-roles",
+      "status": "PENDING",
+      "evidence": "docs/codex/evidence/CGS-07/native-v2-diagnostic.md",
+      "fallback": "Verified scoped in-session role equivalents; no native spawn or shell restriction enforcement claimed"
+    },
+    {
+      "id": "windows-nested-command-startup",
+      "status": "PENDING",
+      "evidence": "docs/codex/evidence/CGS-11/README.md",
+      "fallback": "Authorized host execution works; preserve failed native traces and distinguish unavailable reads from absent inputs"
+    },
+    {
+      "id": "native-hooks-and-linux",
+      "status": "PENDING",
+      "evidence": "docs/codex/evidence/CGS-24/README.md",
+      "fallback": "15/15 explicit CLI fallbacks tested on Windows; Linux CI still to run"
+    },
+    {
+      "id": "human-playtest-and-other-engines",
+      "status": "PENDING",
+      "evidence": "docs/codex/evidence/CGS-12/workflows.md",
+      "fallback": "Actual Godot renders and programmatic transition observed; user input/playtest and CGS27 engine matrix remain separate"
+    }
+  ],
   "tasks": [
     {
       "key": "CGS-01",
@@ -203,9 +228,10 @@
       "key": "CGS-15",
       "singularity_id": "T-c781e5a2-2378-4b46-b7c9-638ebfdb12e7",
       "title": "CGS-15 · Skills · реализация одной story и code-review (5)",
-      "status": "PENDING",
+      "status": "IN_PROGRESS",
       "commit": null,
-      "evidence": []
+      "evidence": [],
+      "updated_at": "2026-11-05T11:59:16.133Z"
     },
     {
       "key": "CGS-16",
@@ -225,9 +251,15 @@
       "key": "CGS-17",
       "singularity_id": "T-7a31b7a2-3a57-4ced-aeac-87de5afc14d1",
       "title": "CGS-17 · Skills · QA-тесты, доказательства, flakiness (8)",
-      "status": "PENDING",
+      "status": "COMPLETE",
       "commit": null,
-      "evidence": []
+      "evidence": [
+        "docs/codex/evidence/CGS-17/README.md",
+        "docs/codex/evidence/CGS-17/runner-results.json",
+        "docs/codex/evidence/CGS-17/traceability.json"
+      ],
+      "updated_at": "2026-11-05T12:00:22.632Z",
+      "note": "QA runner PASS/FAIL/missing-runner and honest evidence states verified; framework QA, implementation and second team group active."
     },
     {
       "key": "CGS-18",
@@ -258,21 +290,23 @@
       "singularity_id": "T-637327b4-b712-47a0-8639-a5b687c51105",
       "title": "CGS-21 · Skills · командные процессы gameplay/visual (5)",
       "status": "COMPLETE",
-      "commit": null,
+      "commit": "5dc247920dfbdac0e2ff722b4823a70af2f2a228",
       "evidence": [
         "docs/codex/evidence/CGS-21/README.md",
         "docs/codex/evidence/CGS-21/checks.json"
       ],
       "note": "Five team-workflow scoped equivalents verified; extend orchestration to narrative/release/live-ops/QA, while implementation and QA groups continue.",
-      "updated_at": "2026-11-05T11:57:13.223Z"
+      "updated_at": "2026-11-05T11:59:16.032Z"
     },
     {
       "key": "CGS-22",
       "singularity_id": "T-fa24c03d-fd42-4baa-9c21-26093d5d611c",
       "title": "CGS-22 · Skills · командные процессы narrative/release/QA (4)",
-      "status": "PENDING",
+      "status": "IN_PROGRESS",
       "commit": null,
-      "evidence": []
+      "evidence": [],
+      "note": "CGS15 story lifecycle, CGS17 actual runner/evidence and CGS22 team decision/release handoffs active with disjoint overlays and evidence; root alone owns generated metadata.",
+      "updated_at": "2026-11-05T11:59:16.276Z"
     },
     {
       "key": "CGS-23",

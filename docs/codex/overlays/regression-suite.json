@@ -1,0 +1,9 @@
+{
+  "source_sha256": "65b91a43cfc319b8f369d31f78686549a84cbfaa32ba2c125b9b3abce7f29717",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-17 QA evidence contract:** Treat task APIs and hooks as optional and disclose when unavailable. A native delegate must actually run to be independent; otherwise use an explicitly labelled in-session fallback. Prior user authorization and host permissions govern all writes. Trace actual fixed bugs and critical paths to real tests and run evidence. A test that has not been observed failing against the unfixed defect does not establish regression sensitivity; report that gap. Preserve risk-based scope, user decisions and quarantine boundaries.\n\n"
+    }
+  ]
+}

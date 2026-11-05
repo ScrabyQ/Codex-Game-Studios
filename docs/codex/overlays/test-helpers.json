@@ -1,0 +1,9 @@
+{
+  "source_sha256": "b368b009a8abd6fd9282ce55b6a88aaccb512535cd9622b405b1f5a3f98053c1",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-17 QA evidence contract:** Treat task APIs and hooks as optional and disclose when unavailable. A native delegate must actually run to be independent; otherwise use an explicitly labelled in-session fallback. Prior user authorization and host permissions govern all writes. Use the actual engine and test framework and verify its documented failure assertion API before generating helpers. FAIL_IF is a placeholder, never a shippable API. Keep seeded, isolated, deterministic helpers and do not present an unrun helper as verified.\n\n"
+    }
+  ]
+}

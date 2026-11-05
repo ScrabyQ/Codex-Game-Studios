@@ -1,0 +1,9 @@
+{
+  "source_sha256": "a7ab49090d3018910d1efc2a43bb16f8239c9150bc3b180bdfdaf8bca208c96f",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-17 QA evidence contract:** Treat task APIs and hooks as optional and disclose when unavailable. A native delegate must actually run to be independent; otherwise use an explicitly labelled in-session fallback. Prior user authorization and host permissions govern all writes. Assess each story type against the resolved QA level and strictness. Logic waivers at minimal do not waive Visual/Feel or UI evidence: required retained screenshots and sign-off are not replaced by passing unit tests. Distinguish missing, incomplete, waived and NOT ASSESSED.\n\n"
+    }
+  ]
+}

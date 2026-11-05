@@ -1,0 +1,9 @@
+{
+  "source_sha256": "8531f6d673bf35704b2a0676594e3ab4d6af0153fe772ab590479247fddee6d0",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-17 QA evidence contract:** Treat task APIs and hooks as optional and disclose when unavailable. A native delegate must actually run to be independent; otherwise use an explicitly labelled in-session fallback. Prior user authorization and host permissions govern all writes. Use actual configured engine, test command, runner, exit codes and test counts; unavailable runners and zero-test success are NOT ASSESSED, not PASS. Keep failures and timeouts visible. A unit or parse result cannot substitute for required visual checks.\n\n"
+    }
+  ]
+}
