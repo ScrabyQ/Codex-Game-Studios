@@ -5,10 +5,12 @@
   "upstream_sha": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
   "owner": "ScrabyQ",
   "repository": "Codex-Game-Studios",
-  "last_completed": "CGS-01",
-  "current_task": "CGS-02",
-  "next_safe_step": "Create actual GitHub fork ScrabyQ/Codex-Game-Studios; verify parent/history/remotes/license.",
-  "decisions": [],
+  "last_completed": "CGS-02",
+  "current_task": "CGS-03",
+  "next_safe_step": "Finalize architecture contract, then implement onboarding and skill/config infrastructure.",
+  "decisions": [
+    "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED."
+  ],
   "checks": [],
   "issues": [],
   "tasks": [
@@ -17,7 +19,7 @@
       "singularity_id": "T-cad35b24-4601-4db1-9385-f9d2274d79df",
       "title": "CGS-01 · Снять baseline upstream и инвентаризировать 49/74/15/14/62",
       "status": "COMPLETE",
-      "commit": null,
+      "commit": "cd47ba773adb128742bfba727dc3323fc8cca7c5",
       "evidence": [
         "docs/codex/audit.md",
         "node scripts/codex/inventory.mjs --check => 0",
@@ -28,9 +30,13 @@
       "key": "CGS-02",
       "singularity_id": "T-81189664-e546-4266-a3a6-85a12d84ecaa",
       "title": "CGS-02 · Создать GitHub fork с историей и upstream; сохранить MIT и атрибуцию",
-      "status": "PENDING",
+      "status": "COMPLETE",
       "commit": null,
-      "evidence": []
+      "evidence": [
+        "docs/codex/fork.json",
+        "gh repo view: isFork=true, parent Donchitos/Claude-Code-Game-Studios, permission ADMIN",
+        "git merge-base --is-ancestor upstream/main HEAD => 0; LICENSE unchanged"
+      ]
     },
     {
       "key": "CGS-03",
@@ -264,5 +270,10 @@
       "commit": null,
       "evidence": []
     }
-  ]
+  ],
+  "git_identity": {
+    "name": "ScrabyQ",
+    "email": "scraby2016@yandex.ru",
+    "scope": "repository-local"
+  }
 }

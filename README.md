@@ -1,3 +1,7 @@
+> **Codex Game Studios** — Adapted from [Claude Code Game Studios by Donchitos](https://github.com/Donchitos/Claude-Code-Game-Studios).
+> This is an independent Codex adaptation. The original [MIT license and copyright](LICENSE) are retained.
+> Migration and verification progress: [Codex progress](docs/codex/progress.json). The upstream documentation below is preserved during migration.
+
 <p align="center">
   <h1 align="center">Claude Code Game Studios</h1>
   <p align="center">

@@ -1,0 +1,19 @@
+{
+  "verified_at": "2026-11-05",
+  "url": "https://github.com/ScrabyQ/Codex-Game-Studios",
+  "is_fork": true,
+  "parent": "Donchitos/Claude-Code-Game-Studios",
+  "viewer_permission": "ADMIN",
+  "default_branch": "main",
+  "base_sha": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
+  "origin": "https://github.com/ScrabyQ/Codex-Game-Studios.git",
+  "upstream": "https://github.com/Donchitos/Claude-Code-Game-Studios.git",
+  "upstream_push": "DISABLED",
+  "history_check": "git merge-base --is-ancestor upstream/main HEAD; exit 0",
+  "license": "MIT; original LICENSE unchanged; Copyright (c) 2026 Donchitos",
+  "git_identity": {
+    "name": "ScrabyQ",
+    "email": "scraby2016@yandex.ru",
+    "scope": "repository-local"
+  }
+}
