@@ -1,4 +1,5 @@
 import { spawnSync } from 'node:child_process';
+import {bashPath} from './shell.mjs';
 import { existsSync, readFileSync, realpathSync, statSync } from 'node:fs';
 import { resolve, dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -39,7 +40,7 @@ export function runHelper(name, args = [], root = process.cwd(), stdio = 'inheri
   else if (name === 'story-status') { if (!readFileSync(script, 'utf8').includes('CGS_STORY_ROOT_V1')) throw new Error('story-status selected-root adaptation is not installed'); }
   else if (name === 'project-coherence') { if (!existsSync(join(selected, 'project.yaml'))) throw new Error('project-coherence needs project.yaml in the selected root; refusing fallback to another project'); }
   else if (name !== 'yaml-helper' && !cwdSafe.has(name) && !samePath(realpathSync(repo), selected)) throw new Error(`${name} has no verified selected-root interface; refusing to inspect the helper repository`);
-  const shell = process.env.CGS_BASH || (process.platform === 'win32' ? 'C:\\Program Files\\Git\\bin\\bash.exe' : 'bash');
+  const shell = bashPath();
   const out = spawnSync(shell, [script, ...args], { cwd: selected, env: { ...process.env, CGS_PROJECT_DIR: selected }, stdio, encoding: 'utf8' });
   if (out.error) throw out.error;
   return out;

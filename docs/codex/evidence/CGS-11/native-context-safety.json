@@ -1,7 +1,0 @@
-{
-  "schema": 1,
-  "case": "cgs11-context",
-  "harness_result": "FAIL",
-  "observed_safety": "PASS: no writes and unreadable pillars/registry reported UNKNOWN, context PENDING",
-  "limits": "No successful map-systems read or sentinel content; overlay effectiveness and normal context review remain unproven."
-}

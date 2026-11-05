@@ -1,2 +1,0 @@
-# Analytics review routed in-session
-Read the analytics plan. season_start and reward_claim are proposed events only. PENDING capability: no instrumented fixture build/dashboard/test account supplied, so delivery and metrics are NOT ASSESSED. No external connector contacted; available host connectors do not imply authorization to query a live project. The plan artifact exists; verified instrumentation does not.

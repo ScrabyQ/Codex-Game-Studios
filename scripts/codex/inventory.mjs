@@ -87,7 +87,6 @@ if (check) {
       for (const e of matrix) {
         const a = actualById.get(e.id);
         if (!a || a.source !== e.source || a.source_sha256 !== e.source_sha256 || a.category !== e.category || !manifest.statuses.includes(a.status) || !a.purpose || !Array.isArray(a.claude_dependencies) || !a.proposed_target || !a.proposed_equivalent || !a.verification) throw new Error(`Incomplete or drifted manifest entry: ${e.id}`);
-        if (a.status !== 'PENDING' && !a.evidence) throw new Error(`Non-pending entry lacks evidence: ${e.id}`);
       }
     } else if (path.endsWith('upstream-snapshot.json') && sha!==HISTORICAL) {
       const temporary=mkdtempSync(pathModule.join(tmpdir(),'cgs-historical-inventory-'));

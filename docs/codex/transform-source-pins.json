@@ -1,0 +1,5 @@
+{
+  ".claude/scripts/skill-lint.sh": "6a66024bd66908915a76a21ad71fe3590278ef1b420b47aad889c99c243d3c8f",
+  ".claude/scripts/agent-check.sh": "b8a1b78415ddc29760f21bb14f0c4502b0d49b8135ff70c7f2377c001cbb24f0",
+  ".claude/scripts/story-status.sh": "9fb510e4164909f4704c141f38ca42f0e1eb02e6476f73ab8dc7e9141d54ff4d"
+}

@@ -1,0 +1,31 @@
+import assert from 'node:assert/strict';
+import {execFileSync} from 'node:child_process';
+import {mkdtempSync, mkdirSync, symlinkSync, writeFileSync} from 'node:fs';
+import {tmpdir} from 'node:os';
+import path from 'node:path';
+import {inspect} from '../scripts/codex/hygiene.mjs';
+
+const root=mkdtempSync(path.join(tmpdir(),'cgs hygiene '));
+execFileSync('git',['init','--quiet',root]);
+const put=(name,text)=>{const p=path.join(root,name);mkdirSync(path.dirname(p),{recursive:true});writeFileSync(p,text)};
+put('readme.md','A neutral example: /home/user/project/\n');
+put('docs/codex/generation-manifest.json','{"schema":1}\n');
+assert.deepEqual(inspect(root),[]);
+put('docs/codex/evidence/result.json','{}');
+put('debug.log','test output');
+put('docs/codex/screenshot.png','fake image bytes');
+put('local.txt','/home/'+'privateperson/project/');
+put('credentials.txt','ghp_'+'a'.repeat(36));
+put('large.txt',' '.repeat(2_100_000)+'sk-'+'proj-'+'b'.repeat(40));
+put('.env.local','contents must never be inspected');
+put('.envrc','contents must never be inspected');
+put('docs/codex/progress.json','{}');
+put('docs/codex/fork.json','{}');
+put('docs/codex/audit.md','old run');
+let linked=false;
+try { symlinkSync(path.join(root,'credentials.txt'),path.join(root,'linked.txt')); linked=true; } catch(e) { if (!['EPERM','EACCES','ENOSYS'].includes(e.code)) throw e; }
+execFileSync('git',['-C',root,'add','-f','debug.log']);
+const findings=inspect(root);
+assert.deepEqual(new Set(findings.map(x=>x[1])),new Set(['generated report','personal path','credential','environment file',...(linked?['symbolic link']:[])]));
+for(const name of ['docs/codex/evidence/result.json','docs/codex/screenshot.png','debug.log','local.txt','credentials.txt','large.txt','.env.local','.envrc','docs/codex/progress.json','docs/codex/fork.json','docs/codex/audit.md',...(linked?['linked.txt']:[])])assert(findings.some(([file])=>file===name),name);
+console.log('PASS hygiene detects reports, personal paths, credentials, and env paths');

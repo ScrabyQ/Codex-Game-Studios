@@ -1,2 +1,0 @@
-# QA strategy, in-session qa-lead
-Scope feature: combat; small team: qa-lead + qa-tester, no director gates. Read BUG-0002 before tests: Closed, excluded; zero pre-existing open bugs. Latest smoke-fixture.md says PASS (supplied input only; not a tested build). story-001 Logic requires automated tests at qa.level full. story-002 UI needs actual manual answer and retained screenshot at every tier. UI capability PENDING: no built HUD, human tester or screenshot supplied. Prior authorization covers this fixture plan and reports.

@@ -54,6 +54,4 @@ execFileSync('git', ['init', '--quiet'], { cwd: scratch });
 writeFileSync(join(scratch, '.claude/agents/technical-director.md'), readFileSync(join(scratch, '.claude/agents/technical-director.md'), 'utf8') + '\nUnauthorized source mutation\n');
 assert.throws(() => roleTargets(scratch, ['technical-director']), /Source drift/);
 const evidence = { schema: 1, task: 'CGS-07', runtime: process.version, generated_roles: rows, negative_tests: ['Unknown role rejected', 'Duplicate role rejected', 'Unknown source metadata rejected', 'Mutated source rejected'], result: 'PASS', scope: 'Deterministic full-body transformation and source integrity checks only; actual native loading/delegation has separate evidence.' };
-mkdirSync(join(root, 'docs/codex/evidence/CGS-07'), { recursive: true });
-writeFileSync(join(root, 'docs/codex/evidence/CGS-07/structural.json'), JSON.stringify(evidence, null, 2) + '\n');
 console.log('PASS: 11 roles, complete transformed bodies/headings, capability restrictions, no model pins; 4 negative guards');

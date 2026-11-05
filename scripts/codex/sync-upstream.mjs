@@ -26,7 +26,7 @@ try {
       catch (e) { mergeExit = e.status ?? 2; mergeOutput = `${e.stdout || ''}${e.stderr || ''}`; }
       const conflicts = git(worktree, 'diff', '--name-only', '--diff-filter=U').split('\n').filter(Boolean);
       const result = { ...report, preparation: mergeExit ? (conflicts.length ? 'CONFLICT_REVIEW_REQUIRED' : 'MERGE_FAILED') : 'MERGED_UNCOMMITTED_REVIEW_REQUIRED', worktree, branch, merge_exit: mergeExit, merge_output: mergeOutput, conflicts, recovery: 'Original checkout was not modified. Keep this worktree for review; git merge --abort in this worktree restores its pre-merge state. No automatic cleanup is performed.' };
-      const proposal = resolve(worktree, 'docs/codex/upstream-proposal.json');
+      const proposal = resolve(worktree, '.scratch/upstream-proposal.json');
       if (existsSync(proposal)) throw new Error(`Proposal already exists; merged worktree retained at ${worktree}`);
       mkdirSync(dirname(proposal), { recursive: true });
       writeFileSync(proposal, JSON.stringify(result, null, 2) + '\n', { flag: 'wx' });

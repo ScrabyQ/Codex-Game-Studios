@@ -43,7 +43,7 @@ if(action==='prepare'){
  if(hookIds.some(id=>!oldHooks.has(id)||!newHooks.has(id)))throw Error('Added/deleted hook declarations require human onboarding/retirement');
  if(new Set(plan.hooks.map(x=>x.id)).size!==plan.hooks.length||JSON.stringify(plan.hooks.map(x=>x.id).sort())!==JSON.stringify(hookIds))throw Error('Plan does not account for affected hook declarations');
  for(const h of plan.hooks)if(h.decision!=='REVIEW'||!Array.isArray(h.evidence)||!h.evidence.length||h.evidence.some(p=>!existsSync(path.join(root,safe(p)))))throw Error('Missing hook review evidence: '+h.id);
- const archive='docs/codex/reconciliation/'+plan.old_sha+'-'+plan.new_sha;mkdirSync(path.join(root,'docs/codex/reconciliation'),{recursive:true});mkdirSync(path.join(root,archive),{recursive:false});
+ const archive='.scratch/reconciliation/'+plan.old_sha+'-'+plan.new_sha;mkdirSync(path.join(root,'.scratch/reconciliation'),{recursive:true});mkdirSync(path.join(root,archive),{recursive:false});
  for(const p of [invPath,migPath,regPath,basePath])write(archive+'/'+path.basename(p),read(p));
  write(archive+'/plan.json',planBytes);
  const oldRows=new Map(mig.entries.map(e=>[e.id,e]));

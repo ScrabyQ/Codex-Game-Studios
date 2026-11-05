@@ -1,2 +1,0 @@
-# Export status
-PENDING — no export preset, SDK certification or publish action authorized by this test. commands.build is not a fictional successful export. Godot import/test/run are distinct from a packaged build. Unity requires a real editor-generated project, scenes/build settings and target-specific player flag; -buildTarget alone builds nothing. Unreal needs a compiled module, map and toolchain before packaging. Blueprint assets belong under Content/ and must be created with editor APIs, never binary text edits.

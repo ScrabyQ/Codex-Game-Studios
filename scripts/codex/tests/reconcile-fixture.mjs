@@ -11,6 +11,8 @@ function checked(dir){assert.equal(path.resolve(git(dir,'rev-parse','--show-topl
 function config(key,fallback){try{return git(root,'config','--get',key)||fallback}catch{return fallback}}
 const identity=['-c','user.name='+config('user.name','CGS Fixture'),'-c','user.email='+config('user.email','fixture@example.invalid')];
 git(root,'clone','--quiet','--no-hardlinks',root,up);git(root,'clone','--quiet','--no-hardlinks',root,work);checked(up);checked(work);
+// Remove obsolete files only inside this disposable checkout of older history.
+for(const p of git(work,'ls-files','--','docs/codex/evidence','docs/codex/fixtures/cgs27').split('\n').filter(Boolean)) { const fs=await import('node:fs'); fs.unlinkSync(path.join(work,p)); }
 git(up,'switch','--detach',sha);
 const sources=['.claude/skills/help/SKILL.md','.claude/hooks/session-start.sh','.claude/rules/ai-code.md'];
 for(const p of sources)writeFileSync(path.join(up,p),readFileSync(path.join(up,p),'utf8')+'\n# CGS29 synthetic upstream change\n');
@@ -22,9 +24,10 @@ const removed=git(up,'rev-parse','HEAD');git(up,'add',sources[1]);writeFileSync(
 const added=git(up,'rev-parse','HEAD');git(work,'fetch','--quiet',up,removed);git(work,'fetch','--quiet',up,added);
 const newBytes=sources.map(p=>execFileSync('git',['show',next+':'+p],{cwd:work}));
 for(const p of ['scripts/codex/upstream-tests.mjs','scripts/codex/upstream-common.mjs','scripts/codex/check-upstream.mjs','scripts/codex/sync-upstream.mjs']){mkdirSync(path.dirname(path.join(work,p)),{recursive:true});copyFileSync(path.join(root,p),path.join(work,p))}
-for(const p of ['scripts/codex/baseline.mjs','scripts/codex/reconcile-upstream.mjs','scripts/codex/inventory.mjs','scripts/codex/generate.mjs','scripts/codex/record-migration.mjs','scripts/codex/validate.mjs','scripts/codex/ci.mjs','scripts/codex/tests/negative.mjs','docs/codex/evidence/CGS-05/negative-tests.mjs','docs/codex/active-baseline.json']){mkdirSync(path.dirname(path.join(work,p)),{recursive:true});copyFileSync(path.join(root,p),path.join(work,p))}
+for(const p of ['scripts/codex/baseline.mjs','scripts/codex/reconcile-upstream.mjs','scripts/codex/inventory.mjs','scripts/codex/generate.mjs','scripts/codex/record-migration.mjs','scripts/codex/validate.mjs','scripts/codex/ci.mjs','scripts/codex/tests/negative.mjs','tests/generator-negative.mjs','tests/hygiene.mjs','scripts/codex/hygiene.mjs','scripts/codex/hooks.mjs','scripts/codex/shell.mjs','scripts/codex/support-generation.mjs','docs/codex/transform-source-pins.json','docs/codex/active-baseline.json']){mkdirSync(path.dirname(path.join(work,p)),{recursive:true});copyFileSync(path.join(root,p),path.join(work,p))}
 const run=(script,...a)=>spawnSync(process.execPath,['scripts/codex/'+script,...a],{cwd:work,encoding:'utf8'}),ok=r=>assert.equal(r.status,0,r.stderr||r.stdout),bad=(r,re)=>{assert.notEqual(r.status,0);assert.match(r.stderr,re)};
 const report='docs/codex/cgs29-review-fixture.md';writeFileSync(path.join(work,report),'Fixture-only recorded review and test evidence.\n');
+copyFileSync(path.join(root,'docs/codex/migration-manifest.json'),path.join(work,'docs/codex/migration-manifest.json'));
 const inv=JSON.parse(readFileSync(path.join(work,'docs/codex/upstream-inventory.json'))),reg=JSON.parse(readFileSync(path.join(work,'docs/codex/generation-manifest.json')));
 const hash=b=>createHash('sha256').update(b).digest('hex');
 const overlayFiles=['docs/codex/overlays/help.json','docs/codex/overlays/helpers/session-start.sh.json'];
@@ -46,7 +49,7 @@ git(work,...identity,'merge','--no-commit','--no-ff',next);
 savePlan({...plan,changes:changes.map((c,i)=>i?c:{...c,new_sha256:'0'.repeat(64)})});bad(run('reconcile-upstream.mjs','prepare','--root',work,'--plan',planFile),/Stale, unreviewed/);
 savePlan(plan);const victim=path.join(work,changes[0].targets[0].target),old=readFileSync(victim);writeFileSync(victim,'manual change');bad(run('reconcile-upstream.mjs','prepare','--root',work,'--plan',planFile),/Manual target drift/);writeFileSync(victim,old);
 ok(run('reconcile-upstream.mjs','prepare','--root',work,'--plan',planFile));bad(run('validate.mjs'),/reconciliation PENDING/);bad(run('reconcile-upstream.mjs','finalize','--root',work),/Fresh valid non-pending/);
-const archived=path.join(work,'docs/codex/reconciliation',sha+'-'+next,'plan.json'),archivedBytes=readFileSync(archived);writeFileSync(archived,'{}');bad(run('generate.mjs','--family','skills','--names','help','--reconcile','--targets',changes[0].targets[0].target),/plan changed/);writeFileSync(archived,archivedBytes);
+const archived=path.join(work,JSON.parse(readFileSync(path.join(work,'docs/codex/active-baseline.json'))).plan),archivedBytes=readFileSync(archived);writeFileSync(archived,'{}');bad(run('generate.mjs','--family','skills','--names','help','--reconcile','--targets',changes[0].targets[0].target),/plan changed/);writeFileSync(archived,archivedBytes);
 const overlayPath=path.join(work,overlayFiles[0]);writeFileSync(overlayPath,rebased[0]);
 writeFileSync(victim,'manual change after prepare');bad(run('generate.mjs','--family','skills','--names','help','--reconcile','--targets',changes[0].targets[0].target),/Manual target drift/);writeFileSync(victim,old);
 bad(run('generate.mjs','--family','skills','--names','help','--reconcile','--targets','.agents/skills/help/not-reviewed.md'),/Unreviewed reconciliation target/);

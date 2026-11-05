@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 
 const root = resolve(fileURLToPath(new URL('../..', import.meta.url)));
+const sourcePins = new Map(Object.entries(JSON.parse(readFileSync(resolve(root, 'docs/codex/transform-source-pins.json'), 'utf8'))));
 function walk(dir) {
   return readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(resolve(dir, e.name)) : e.isFile() ? [resolve(dir, e.name)] : []);
 }
@@ -31,9 +32,9 @@ export function supportTargets() {
       }
       transform_ids.push((patch.edits ? 'helper-overlay-v2:' : 'helper-overlay-v1:') + createHash('sha256').update(readFileSync(overlayPath)).digest('hex'));
     }
-    const nativeChecks = { '.claude/scripts/skill-lint.sh': ['skill', '6a66024bd66908915a76a21ad71fe3590278ef1b420b47aad889c99c243d3c8f'], '.claude/scripts/agent-check.sh': ['role', 'b8a1b78415ddc29760f21bb14f0c4502b0d49b8135ff70c7f2377c001cbb24f0'] };
+    const nativeChecks = { '.claude/scripts/skill-lint.sh': 'skill', '.claude/scripts/agent-check.sh': 'role' };
     if (nativeChecks[source]) {
-      const [kind, expected] = nativeChecks[source];
+      const kind = nativeChecks[source], expected = sourcePins.get(source);
       const actual = createHash('sha256').update(readFileSync(file)).digest('hex');
       if (actual !== expected) throw new Error(`Native validator source drift: ${source}`);
       content = `#!/usr/bin/env bash\n# Native structural observations; source-specific Claude analytics are not implemented.\n# Supports --root DIR.\nHERE="$(cd "$(dirname "$0")" && pwd)"\nexec node "$HERE/../../scripts/codex/native-helper-check.mjs" ${kind} "$@"\n`;
@@ -50,7 +51,7 @@ export function supportTargets() {
     }
     if (source === '.claude/scripts/story-status.sh') {
       const actual = createHash('sha256').update(readFileSync(file)).digest('hex');
-      if (actual !== '9fb510e4164909f4704c141f38ca42f0e1eb02e6476f73ab8dc7e9141d54ff4d') throw new Error('story-status source drift');
+      if (actual !== sourcePins.get(source)) throw new Error('story-status source drift');
       const anchor = 'cd "$(dirname "${BASH_SOURCE[0]}")/../.." 2>/dev/null || { echo "STORIES      none"; exit 0; }';
       if (content.split(anchor).length !== 2) throw new Error('story-status root anchor changed');
       content = content.replace(anchor, '# CGS_STORY_ROOT_V1: explicit selected project or the helper repo.\ncd "${CGS_PROJECT_DIR:-$(dirname "${BASH_SOURCE[0]}")/../..}" 2>/dev/null || { echo "story-status: cannot read selected root" >&2; exit 1; }');

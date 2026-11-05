@@ -1,3 +1,0 @@
-# CGS27 authorized synthetic onboarding
-Initial project-state observation retained centrally; do not interpret unknown code root as zero code. Context is the explicit disposable-engine test assignment, not invented human answers. Choice: clear small concept; minimal rigor; guided automation; Windows rendered QA with 2D UI, web-compatible Godot renderer. Stage Concept saved by helper, not advanced from file counts. Engine Unreal selected by the task. Code root Source/TP_Blank/. No external remote. No six rigor-fronted knobs.
-The start handoff is recorded; the containing CGS27 task separately authorizes subsequent setup/design/story/implementation/QA steps. Returning-user check after brief creation must find engine+brief.

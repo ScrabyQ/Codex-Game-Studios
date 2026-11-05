@@ -1,6 +1,7 @@
 import {readFileSync,existsSync} from 'node:fs';
 import path from 'node:path';
-export const HISTORICAL='05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418';
+import {fileURLToPath} from 'node:url';
+export const HISTORICAL=JSON.parse(readFileSync(fileURLToPath(new URL('../../docs/codex/active-baseline.json',import.meta.url)),'utf8')).historical_source_commit;
 export function baseline(root,{allowPending=false}={}){
  const file=path.join(root,'docs/codex/active-baseline.json');
  // Historical fixtures predating the descriptor retain their pinned baseline.

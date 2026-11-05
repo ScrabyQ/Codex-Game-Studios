@@ -6,7 +6,7 @@ import {createHash} from 'node:crypto';
 import assert from 'node:assert/strict';
 const root=process.cwd(), tmp=mkdtempSync(path.join(tmpdir(),'cgs-ci-')), validator=path.join(root,'scripts/codex/validate.mjs');
 const inv=JSON.parse(readFileSync('docs/codex/upstream-inventory.json')), mig=JSON.parse(readFileSync('docs/codex/migration-manifest.json')), reg=JSON.parse(readFileSync('docs/codex/generation-manifest.json'));
-const files=new Set(['docs/codex/upstream-inventory.json','docs/codex/migration-manifest.json','docs/codex/generation-manifest.json','docs/codex/active-baseline.json','studio-tests/catalog.yaml',...reg.entries.flatMap(e=>[e.target,...(e.sources||[e.source])]),...mig.entries.flatMap(e=>[...(e.evidence||[]),...(e.target_sha256?[e.target]:[]),...(e.related_targets||[]).map(t=>t.target)])]);
+const files=new Set(['docs/codex/upstream-inventory.json','docs/codex/migration-manifest.json','docs/codex/generation-manifest.json','docs/codex/active-baseline.json','studio-tests/catalog.yaml',...reg.entries.flatMap(e=>[e.target,...(e.sources||[e.source])]),...mig.entries.flatMap(e=>[...(e.target_sha256?[e.target]:[]),...(e.related_targets||[]).map(t=>t.target)])]);
 for(const m of readFileSync('studio-tests/catalog.yaml','utf8').matchAll(/^    spec: (\S+)/gm))files.add(m[1]);
 for(const f of files){const from=path.join(root,f),to=path.join(tmp,f);if(!existsSync(from))throw Error('Fixture input missing: '+f);mkdirSync(path.dirname(to),{recursive:true});copyFileSync(from,to)}
 const run=()=>spawnSync(process.execPath,[validator,'--root',tmp],{encoding:'utf8'});
@@ -14,6 +14,8 @@ const base=run();assert.equal(base.status,0,base.stderr);
 const cases=[];
 function changed(name,file,modify,reason){const p=path.join(tmp,file),original=readFileSync(p);try{writeFileSync(p,modify(original));const r=run();assert.notEqual(r.status,0,name);assert.match(r.stderr,reason,name);cases.push({name,exit:r.status,reason:true})}finally{writeFileSync(p,original)}}
 changed('inventory duplicate','docs/codex/upstream-inventory.json',b=>{const x=JSON.parse(b);x.files[1].path=x.files[0].path;return JSON.stringify(x)},/Duplicate inventory/);
+changed('missing source coverage','docs/codex/migration-manifest.json',b=>{const x=JSON.parse(b);x.entries=x.entries.filter(e=>e.id!=='file:'+inv.files[0].path);return JSON.stringify(x)},/Migration inventory mismatch/);
+changed('invalid support status','docs/codex/migration-manifest.json',b=>{const x=JSON.parse(b);x.entries[0].status='CLAIMED';return JSON.stringify(x)},/Invalid migration entry/);
 changed('target corruption',reg.entries[0].target,b=>Buffer.concat([b,Buffer.from('changed')]),/Target drift/);
 changed('source corruption',reg.entries[0].sources?.[0]||reg.entries[0].source,b=>Buffer.concat([b,Buffer.from('changed')]),/Source drift/);
 changed('duplicate target','docs/codex/generation-manifest.json',b=>{const x=JSON.parse(b);x.entries[1].target=x.entries[0].target;return JSON.stringify(x)},/Duplicate generated/);
@@ -27,7 +29,7 @@ const outside=path.join(mkdtempSync(path.join(tmpdir(),'cgs-ci-outside-')),'exis
 const escape=path.relative(path.dirname(target),outside).split(path.sep).join('/');
 targetMutation('external existing reference',Buffer.concat([oldTarget,Buffer.from('\n[outside]('+escape+')\n')]),/Skill reference escapes project/);
 const policy=path.join(tmp,'corrupt-policy.mjs'), source=readFileSync('scripts/codex/hooks.mjs','utf8'), corrupted=source.replace("return 'Destructive Git command denied'",'return null');
-assert.notEqual(source,corrupted);writeFileSync(policy,corrupted);
+assert.notEqual(source,corrupted);writeFileSync(policy,corrupted);copyFileSync('scripts/codex/shell.mjs',path.join(tmp,'shell.mjs'));
 const p=spawnSync(process.execPath,[path.join(root,'scripts/codex/tests/policy.mjs'),policy],{cwd:root,encoding:'utf8'});assert.notEqual(p.status,0);assert.match(p.stderr,/git reset --hard/);cases.push({name:'dangerous policy corruption',exit:p.status,reason:true});
 assert.equal(run().status,0,'baseline restored');
 console.log(JSON.stringify({baseline:base.status,cases,restored:0},null,2));

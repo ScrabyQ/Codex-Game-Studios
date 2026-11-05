@@ -1,13 +1,19 @@
-# Starting Codex in the studio
+# Starting Codex in a studio project
 
-Open a terminal at the repository root and run `codex`. Codex discovers the root `AGENTS.md` and, when working in the corresponding directory, its scoped `AGENTS.md`. For command-line use from a subdirectory, select that directory with `codex --cd <directory>` (or start there). Keep the repository accessible so parent instructions can be discovered. Consult the native CLI's `codex --help` for installed options and authentication setup.
+Open the repository in the Codex client you use. From a terminal, run `codex --cd <project-directory>`; consult `codex --help` for the installed client's options and authentication.
 
-The root instructions load compact policy and point to references as needed; they do not load all 49 agent definitions or 74 skills. Unlike Claude `@` imports, references in `AGENTS.md` are explicit instructions to read a file when relevant, not an automatic inline import. Adapted guidance is under `.agents/docs/`, with preserved `.claude/docs/` as source guidance. Select matching rules explicitly with `node scripts/codex/rules.mjs --path <repository-relative-path> --content`; this is not automatic host enforcement. Adapted Skills are under `.agents/skills/`. See [hook integration](hooks.md): explicit checks are available, while native hook activation remains PENDING.
+Inside Codex, invoke `$start` for onboarding or `$help` for the next step. These are conversation inputs, not PowerShell commands. If automatic discovery or a bootstrap helper is unavailable, ask Codex to read `.agents/skills/help/SKILL.md` and apply its documented factual read-only fallback. It must cite actual project settings and artifacts, report missing inputs and name the next Skill without silently invoking it.
 
-Inside Codex use `$help` or `$start`, not PowerShell. If discovery or bootstrap fails, ask Codex to read `.agents/skills/help/SKILL.md` and apply its read-only fallback, citing actual files and reporting unknown facts. A CLI fixture exercised this fallback ([evidence](evidence/CGS-05/native-help-fallback.json)); it does not prove native discovery in all clients. The desktop and IDE experiences have not been independently verified by these CLI probes.
+Root and scoped `AGENTS.md` files provide compact policy. References are instructions to read relevant guidance; they are not automatic inline imports. Do not load every role or Skill into every prompt. Before relevant edits, select path policies explicitly:
 
-Role definitions under `.codex/agents/` support an in-session fallback when native delegation is unavailable. Native custom `agent_type` loading is PENDING, and an in-session review is not independent. On Windows Git Bash must be able to launch for Bash-backed helpers; `CGS_BASH` selects a nondefault executable. A nested CLI may be blocked separately. Report failures and use documented fallbacks; never change global trust or bypass host permissions to make a check pass.
+```powershell
+node scripts/codex/rules.mjs --path <repository-relative-path> --content
+```
 
-The primary config is `project.yaml`, with allowed personal overrides in `project.local.yaml`; legacy mirrors, rigor expansion and defaults follow the documented resolution chain. Settings and stage may change between sessions. The current template has no engine selected: configure a project before relying on engine-specific references. On recovery read `production/session-state/active.md` if it exists.
+`project.yaml` is shared configuration; allowed `project.local.yaml` values override it. Configure the project and selected engine before relying on engine-specific references. Do not infer a completed phase from an unknown code root or an unavailable helper.
 
-CGS-04 native discovery probes and their limits are recorded in `docs/codex/evidence/CGS-04/`. They check that instructions can be read from root and three subdirectories, not that all workflows, permissions, rules, or engine behavior work end to end.
+If the host cannot load a custom role or delegate work, read the selected role and disclose the in-session fallback. It cannot satisfy an independent-review requirement. Native role loading, client discovery and hook activation must be verified in the actual client; no universal client behavior is promised.
+
+Bash-backed helpers need an available Bash and Python 3. `CGS_BASH` can select an installed Bash executable. On Windows, a nested client may be blocked separately from ordinary terminal commands. Report failures; do not weaken host permissions or change global trust to make a check pass. See [hooks](hooks.md) and [testing](testing.md).
+
+After interruption or compaction, read the project's ignored `production/session-state/active.md` checkpoint when present. Helpers report observations, not quality verdicts. User authorization persists; unanswered required decisions are not consent.

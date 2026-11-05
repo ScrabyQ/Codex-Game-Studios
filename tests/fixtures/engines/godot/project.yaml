@@ -1,0 +1,35 @@
+schema_version: 1
+
+project:
+  stage: Concept
+
+modes:
+  rigor: minimal
+  automation: guided
+
+engine:
+  name: Godot
+  version: "4.7.2"
+  language: "GDScript"
+  rendering: Compatibility
+  physics: Godot Physics 2D
+specialists:
+  primary: godot-specialist
+  code: godot-gdscript-specialist
+  ui: godot-specialist
+  shader: godot-shader-specialist
+  additional: [godot-gdextension-specialist]
+naming:
+  classes: PascalCase
+  variables: snake_case
+  constants: SCREAMING_SNAKE
+  signals: past_tense
+  files: snake_case
+  scenes: snake_case
+commands:
+  build: "[TO BE CONFIGURED]"
+  test: "godot --headless --path . --script res://tests/unit/charge_model_test.gd"
+  run: "godot --path . --windowed --resolution 800x480 res://scenes/charge_beacon.tscn"
+  smoke: "godot --headless --quit-after 5"
+
+# No rigor-fronted knobs are seeded.

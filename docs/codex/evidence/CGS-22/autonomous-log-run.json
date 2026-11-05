@@ -1,6 +1,0 @@
-{
-  "exit_code": 0,
-  "stdout": "",
-  "stderr": "",
-  "mechanism": "Actual sourced upstream-equivalent helper; narrow CLI dispatcher intentionally does not expose log_decision directly."
-}

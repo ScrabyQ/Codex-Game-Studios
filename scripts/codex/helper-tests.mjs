@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import {bashPath} from './shell.mjs';
 import { mkdtempSync, mkdirSync, writeFileSync, readFileSync, copyFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve, relative } from 'node:path';
@@ -7,7 +8,7 @@ import { supportTargets } from './support-generation.mjs';
 const repo = resolve('.'), root = mkdtempSync(join(tmpdir(), 'cgs helper test '));
 const script = join(repo, 'scripts/codex/helper.mjs');
 if (process.argv.includes('--syntax')) {
-  const shell = process.env.CGS_BASH || (process.platform === 'win32' ? 'C:\\Program Files\\Git\\bin\\bash.exe' : 'bash');
+  const shell = bashPath();
   const sh = supportTargets().filter(t => t.target.endsWith('.sh'));
   for (const t of sh) {
     const r = spawnSync(shell, ['-n', resolve(t.target)], { encoding: 'utf8' });
@@ -58,7 +59,7 @@ const skillDir = join(root, '.agents/skills/demo'); mkdirSync(skillDir, { recurs
 mkdirSync(join(root, '.agents/scripts'), { recursive: true }); mkdirSync(join(root, 'scripts/codex'), { recursive: true });
 copyFileSync(join(repo, 'scripts/codex/native-helper-check.mjs'), join(root, 'scripts/codex/native-helper-check.mjs'));
 for (const t of supportTargets().filter(t => ['.agents/scripts/skill-lint.sh', '.agents/scripts/agent-check.sh'].includes(t.target))) writeFileSync(join(root, t.target), t.content);
-const bash = process.env.CGS_BASH || (process.platform === 'win32' ? 'C:\\Program Files\\Git\\bin\\bash.exe' : 'bash');
+const bash = bashPath();
 const wrapper = (name, args) => spawnSync(bash, [join(root, '.agents/scripts', `${name}.sh`), ...args, '--root', root], { cwd: root, encoding: 'utf8' });
 writeFileSync(join(skillDir, 'SKILL.md'), '---\nname: demo\ndescription: "valid"\n---\n# Example\n');
 assert.equal(node('native-helper-check.mjs', ['skill', 'demo', '--root', root]).status, 0);
@@ -81,7 +82,7 @@ const cgs = node('cgs.mjs', ['skills', 'list']); assert.equal(cgs.status, 0); as
 const noBash = spawnSync(process.execPath, [script, 'story-facts', '--root', root], { cwd: repo, env: { ...process.env, CGS_BASH: join(root, 'missing-bash') }, encoding: 'utf8' });
 assert.notEqual(noBash.status, 0); assert.match(noBash.stderr, /ENOENT|spawn/i);
 if (process.platform === 'win32') {
-  const withoutClaude = spawnSync(process.execPath, [script, 'story-facts', '--root', root, 'story with spaces.md'], { cwd: repo, env: { ...process.env, PATH: 'C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Git\\bin' }, encoding: 'utf8' });
+  const withoutClaude = spawnSync(process.execPath, [script, 'story-facts', '--root', root, 'story with spaces.md'], { cwd: repo, env: { ...process.env, CGS_BASH: bash, PATH: [resolve(bash, '../../usr/bin'), resolve(bash, '..')].join(';') }, encoding: 'utf8' });
   assert.equal(withoutClaude.status, 0, withoutClaude.stderr); assert.match(withoutClaude.stdout, /STORY/);
 }
 console.log(`PASS: stage, checkpoint, story/ADR facts, registry, receipt stamp, read/write observations, missing engine, native structural failures, dispatcher; fixture ${root}`);

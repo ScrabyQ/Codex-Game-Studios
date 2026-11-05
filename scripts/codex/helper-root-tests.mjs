@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import {bashPath} from './shell.mjs';
 import { copyFileSync, mkdirSync, mkdtempSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { tmpdir } from 'node:os';
@@ -20,7 +21,7 @@ const aa = ok(call('artifact-check', a, ['--path', 'minimal'])), ab = ok(call('a
 assert.match(aa, /STEP:\s*game-brief\b[^\n]*status=PRESENT/); assert.match(ab, /STEP:\s*game-brief\b[^\n]*status=ABSENT/);
 assert.ok(aa.includes(a.replaceAll('\\', '/')) || aa.includes(a)); assert.ok(ab.includes(b.replaceAll('\\', '/')) || ab.includes(b));
 const missing = call('story-status', join(top, 'missing')); assert.notEqual(missing.status, 0); assert.match(missing.stderr, /root.*missing|root.*not a directory/i); assert.doesNotMatch(missing.stdout, /STORIES\s+none/);
-const shell = process.env.CGS_BASH || (process.platform === 'win32' ? 'C:\\Program Files\\Git\\bin\\bash.exe' : 'bash');
+const shell = bashPath();
 const directMissing = spawnSync(shell, [join(repo, '.agents/scripts/story-status.sh')], { cwd: repo, encoding: 'utf8', env: { ...process.env, CGS_PROJECT_DIR: join(top, 'missing') } });
 assert.notEqual(directMissing.status, 0); assert.match(directMissing.stderr, /cannot read selected root/); assert.doesNotMatch(directMissing.stdout, /STORIES\s+none/);
 const notDir = join(top, 'not-a-directory'); writeFileSync(notDir, 'fixture'); const invalid = call('artifact-check', notDir, ['--path', 'minimal']); assert.notEqual(invalid.status, 0); assert.match(invalid.stderr, /root.*not a directory/i); assert.doesNotMatch(invalid.stdout, /status=ABSENT/);

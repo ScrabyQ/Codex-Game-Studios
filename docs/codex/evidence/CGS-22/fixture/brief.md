@@ -1,2 +1,0 @@
-# Synthetic authorized test brief
-All artifacts are isolated test material. CGS22 authorizes these bounded fixture writes and checks, not canon changes, production fixes, deployments, publication or external tasks. In-session roles are sequential and not independent. Scope: feature: combat, release v0.0.22-fixture, narrative memory-vault, live-ops season 1. No game engine, build, live telemetry or human UI tester is supplied.

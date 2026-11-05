@@ -1,6 +1,6 @@
 > **Codex Game Studios** — Adapted from [Claude Code Game Studios by Donchitos](https://github.com/Donchitos/Claude-Code-Game-Studios).
 > This is an independent Codex adaptation. The original [MIT license and copyright](LICENSE) are retained.
-> Adaptation status and verification: [Codex progress](docs/codex/progress.json). The upstream documentation below is preserved for reference.
+> Start with [onboarding](docs/codex/onboarding.md) and the maintained [test commands](docs/codex/testing.md).
 
 ## Codex quick start
 
@@ -16,7 +16,7 @@ codex --cd .
 
 The default `main` branch is the Codex adaptation. `source/ccgs-main` is a separate mirror of the original Claude Code Game Studios `main`, not the branch to install or develop against. New upstream changes are reviewed and adapted through `codex/sync-*` branches before they reach `main`; do not use GitHub's **Sync fork** button to merge the original directly into `main`. See [upstream synchronization](docs/codex/upstream-sync.md).
 
-A clone does not inherit an `upstream` remote. Add it as shown only when absent; if it already exists, inspect `git remote -v` and preserve your configuration. Inside the Codex conversation, enter `$help` for the next step or `$start` for onboarding; these are not PowerShell commands. If discovery or bootstrap fails, ask Codex: "Read `.agents/skills/help/SKILL.md` and apply its read-only fallback to this project; cite the files and report unknowns." This fallback was exercised with CLI 0.148.0 in a fixture; it does not prove native discovery in every client. See [evidence](docs/codex/evidence/CGS-05/native-help-fallback.json) and [onboarding](docs/codex/onboarding.md).
+A clone does not inherit an `upstream` remote. Add it as shown only when absent; if it already exists, inspect `git remote -v` and preserve your configuration. Inside the Codex conversation, enter `$help` for the next step or `$start` for onboarding; these are not PowerShell commands. If discovery or bootstrap fails, ask Codex: "Read `.agents/skills/help/SKILL.md` and apply its read-only fallback to this project; cite the files and report unknowns." Automatic discovery and bootstrap depend on the client; the explicit-read fallback reports actual facts and unknowns. See [onboarding](docs/codex/onboarding.md).
 
 `project.yaml` is shared configuration; allowed `project.local.yaml` overrides take precedence. Legacy mirrors, rigor expansion and defaults follow. Rigor supports `minimal`, `standard` and `full`; automation is separate. See [config resolution](.agents/docs/config-resolution.md) and [automation](.agents/docs/automation-modes.md). Modes do not grant permissions.
 
@@ -33,7 +33,7 @@ Roles inherit the parent's model and permissions. The [model policy](.codex/mode
 
 From the repository root, run `node scripts/codex/validate.mjs` for structural validation and `node scripts/codex/ci.mjs` for the documented automated suites. These checks do not establish engine execution or human playtest results; see [testing](docs/codex/testing.md) and the engine evidence below.
 
-Godot 4.7.2 passed a scoped import, parse, logic and rendered fixture. Unity's editor was absent from the tested location; Unreal 5.8.0 lacked the required Windows SDK and the fixture requested 5.8.3. Both remain PENDING, as do human playtests. See [engine evidence](docs/codex/evidence/CGS-27/README.md).
+Engine integration is opt-in and requires the actual configured editor/toolchain. Minimal test sources live under `tests/fixtures/engines/`; run output is temporary. Unavailable engines and unperformed human playtests remain PENDING. See [testing](docs/codex/testing.md).
 
 On Windows, verify Git Bash starts and set `CGS_BASH` to its executable if installed elsewhere. The host can block Bash or nested Codex processes even when ordinary commands work. Use the documented fallback and report the failure; do not alter global trust or bypass permission policy. For migration and upstream updates see [UPGRADING.md](UPGRADING.md) and [the reviewed sync procedure](docs/codex/upstream-sync.md).
 
