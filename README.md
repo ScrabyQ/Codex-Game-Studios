@@ -130,7 +130,14 @@ Engine and paid native-client checks are **opt-in**. Ordinary CI covers the tool
 - **Use explicit checks.** The [hook example](.codex/hooks.example.json) is inactive until reviewed and verified in the installed client. Path policies and CLI adapters do not claim automatic host enforcement.
 - **Recover from the checkpoint.** Read ignored `production/session-state/active.md` after interruption when present.
 
-Start with the [workflow guide](docs/WORKFLOW-GUIDE.md), [testing](docs/codex/testing.md) and [hook integration](docs/codex/hooks.md).
+From the repository root, validate the product and run its ordinary CI checks:
+
+```sh
+node scripts/codex/validate.mjs
+node scripts/codex/ci.mjs
+```
+
+Start with the [workflow guide](docs/WORKFLOW-GUIDE.md), [testing](docs/codex/testing.md) and [hook integration](docs/codex/hooks.md) for backend checks, disposable checkouts and opt-in engine/client tests.
 
 ## Make it yours
 
