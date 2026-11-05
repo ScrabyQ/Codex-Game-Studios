@@ -1,0 +1,58 @@
+{
+  "source": ".claude/scripts/compat-inventory.sh",
+  "source_sha256": "4d1f2a7951d8ad54ac5d72a79e4939ec601742792a61d691b87e736e27799cb1",
+  "edits": [
+    {
+      "find": "if [ ! -d \"$ROOT/.claude\" ]; then\n  echo \"compat-inventory: no .claude folder under $ROOT\" >&2",
+      "replace": "if [ ! -d \"$ROOT/.agents\" ]; then\n  echo \"compat-inventory: no .agents folder under $ROOT\" >&2"
+    },
+    {
+      "find": "claude = os.path.join(root, \".claude\")",
+      "replace": "claude = os.path.join(root, \".agents\")"
+    },
+    {
+      "find": "agent_dir = os.path.join(claude, \"agents\")\nagents = {}\nif os.path.isdir(agent_dir):\n    for f in sorted(os.listdir(agent_dir)):\n        if f.endswith(\".md\"):\n            agents[f[:-3]] = os.path.join(agent_dir, f)\n\ninstruction_files = [p for p in (os.path.join(root, \"CLAUDE.md\"), os.path.join(root, \"CLAUDE.local.md\"),\n                                 os.path.join(claude, \"CLAUDE.md\")) if os.path.isfile(p)]\nfor d in sorted(os.listdir(root)):\n    p = os.path.join(root, d, \"CLAUDE.md\")\n    if not d.startswith(\".\") and os.path.isfile(p):\n        instruction_files.append(p)\n",
+      "replace": "agent_dir = os.path.join(root, \".codex\", \"agents\")\nagents = {}\nif os.path.isdir(agent_dir):\n    for f in sorted(os.listdir(agent_dir)):\n        if f.endswith(\".toml\"):\n            agents[f[:-5]] = os.path.join(agent_dir, f)\n\ninstruction_files = [p for p in (os.path.join(root, \"AGENTS.md\"), os.path.join(root, \"CLAUDE.md\")) if os.path.isfile(p)]\nfor d in sorted(os.listdir(root)):\n    for name in (\"AGENTS.md\", \"CLAUDE.md\"):\n        p = os.path.join(root, d, name)\n        if not d.startswith(\".\") and os.path.isfile(p):\n            instruction_files.append(p)\n"
+    },
+    {
+      "find": "settings_file = os.path.join(claude, \"settings.json\")",
+      "replace": "settings_file = os.path.join(root, \".codex\", \"hooks.json\")"
+    },
+    {
+      "find": "notes = []\n\n# --- skills",
+      "replace": "notes = [\"Native TOML is scanned as physical text, not parsed or decoded; line numbers are physical file lines, including escaped developer_instructions. Discovery is not native role activation.\", \"Codex hooks configuration is inspected structurally only; lifecycle activation is not established.\"]\nif skill_filter and skill_filter not in skills:\n    print(\"NOT FOUND: skill %s is not a folder in .agents/skills/\" % skill_filter, file=sys.stderr)\n    sys.exit(1)\nif agent_filter and agent_filter not in agents:\n    print(\"NOT FOUND: agent %s is not a file in .codex/agents/\" % agent_filter, file=sys.stderr)\n    sys.exit(1)\n\n# --- skills"
+    },
+    {
+      "find": "    if depth >= 4:\n        continue",
+      "replace": "    if depth >= 4 or os.path.basename(path) == \"AGENTS.md\":\n        continue"
+    },
+    {
+      "find": "    scan_text(path, lines, imports=True)",
+      "replace": "    scan_text(path, lines, imports=os.path.basename(path).startswith(\"CLAUDE\"))"
+    },
+    {
+      "find": "PATH = re.compile(r\"\\.agents/([A-Za-z0-9_.-]+)\")",
+      "replace": "PATH = re.compile(r\"\\.claude/([A-Za-z0-9_.-]+)\")"
+    },
+    {
+      "find": "\"cc-path:.agents/\" + seg",
+      "replace": "\"cc-path:.claude/\" + seg"
+    },
+    {
+      "find": "\"shared-path:.agents/\" + seg",
+      "replace": "\"shared-path:.claude/\" + seg"
+    },
+    {
+      "find": "STATIC = [\n    (\"questions\", \"AskUserQuestion\"),\n    (\"subagents\", \"Agent-tool\"), (\"subagents\", \"Task-tool\"), (\"subagents\", \"subagent_type\"),\n    (\"subagents\", \"agent-type-list\"),\n    (\"subagents\", \"cc-path:.agents/agents\"), (\"subagents\", \"cc-path:.agents/agent-memory\"),\n    (\"skill-loading\", \"var:CLAUDE_SKILL_DIR\"), (\"skill-loading\", \"var:CLAUDE_SESSION_ID\"),\n    (\"skill-loading\", \"var:CLAUDE_PLUGIN_ROOT\"), (\"skill-loading\", \"var:CLAUDE_PLUGIN_DATA\"),\n    (\"skill-loading\", \"skillOverrides\"),\n    (\"skill-loading\", \"cc-path:.agents/skills\"), (\"skill-loading\", \"cc-path:.agents/commands\"),\n    (\"shell-lines\", \"shell-line\"),\n    (\"arguments\", \"$ARGUMENTS\"), (\"arguments\", \"$N\"),\n    (\"frontmatter\", \"tools-string\"),\n    (\"instructions\", \"CLAUDE.md\"), (\"instructions\", \"@import\"),\n    (\"instructions\", \"rule-file\"), (\"instructions\", \"rule-paths\"),\n    (\"instructions\", \"cc-path:.agents/rules\"), (\"instructions\", \"cc-path:.agents/CLAUDE.md\"),\n    (\"hooks\", \"var:CGS_PROJECT_DIR\"),\n    (\"settings\", \"cc-path:.agents/settings.json\"), (\"settings\", \"cc-path:.agents/settings.local.json\"),\n    (\"settings\", \"cc-path:.agents/output-styles\"),\n    (\"tools\", \"TodoWrite\"), (\"tools\", \"task-tools\"),\n]\n# Families whose members are named by what was found; \"<family>:*\" prints when none was.",
+      "replace": "STATIC = [\n    (\"questions\", \"AskUserQuestion\"),\n    (\"subagents\", \"Agent-tool\"), (\"subagents\", \"Task-tool\"), (\"subagents\", \"subagent_type\"),\n    (\"subagents\", \"agent-type-list\"),\n    (\"subagents\", \"cc-path:.claude/agents\"), (\"subagents\", \"cc-path:.claude/agent-memory\"),\n    (\"skill-loading\", \"var:CLAUDE_SKILL_DIR\"), (\"skill-loading\", \"var:CLAUDE_SESSION_ID\"),\n    (\"skill-loading\", \"var:CLAUDE_PLUGIN_ROOT\"), (\"skill-loading\", \"var:CLAUDE_PLUGIN_DATA\"),\n    (\"skill-loading\", \"skillOverrides\"),\n    (\"skill-loading\", \"cc-path:.claude/skills\"), (\"skill-loading\", \"cc-path:.claude/commands\"),\n    (\"shell-lines\", \"shell-line\"),\n    (\"arguments\", \"$ARGUMENTS\"), (\"arguments\", \"$N\"),\n    (\"frontmatter\", \"tools-string\"),\n    (\"instructions\", \"CLAUDE.md\"), (\"instructions\", \"@import\"),\n    (\"instructions\", \"rule-file\"), (\"instructions\", \"rule-paths\"),\n    (\"instructions\", \"cc-path:.claude/rules\"), (\"instructions\", \"cc-path:.claude/CLAUDE.md\"),\n    (\"hooks\", \"var:CGS_PROJECT_DIR\"),\n    (\"settings\", \"cc-path:.claude/settings.json\"), (\"settings\", \"cc-path:.claude/settings.local.json\"),\n    (\"settings\", \"cc-path:.claude/output-styles\"),\n    (\"tools\", \"TodoWrite\"), (\"tools\", \"task-tools\"),\n]\n# Families whose members are named by what was found; \"<family>:*\" prints when none was."
+    },
+    {
+      "find": "PYEOF\nexit 0",
+      "replace": "PYEOF\nexit $?"
+    },
+    {
+      "find": "#!/usr/bin/env bash\n# compat-inventory.sh — every place the framework depends on something only\n# Claude Code provides, listed per file with the feature it belongs to.\n#\n# A skill, agent, hook or setting can lean on a Claude Code mechanism without\n# saying so: a question tool named in a body, a `!` line, a `${CLAUDE_...}`\n# substitution, a frontmatter key, a hook payload field, an `@` import. Read one\n# file at a time, these are easy to miss. This script finds each one and prints\n# where it is, so a change to any of them can be seen and planned for.\n#\n# OBSERVATIONS, NEVER VERDICTS (CLAUDE.md, \"Helpers emit observations\"). A\n# construct found here is not a defect: Claude Code runs every one of them. It\n# prints what it found, with denominators first, and always exits 0 once it has\n# run. Whether a construct should stay, move to frontmatter or be reworded is the\n# reader's call.\n#\n# Usage: bash .agents/scripts/compat-inventory.sh [--skill <name> | --agent <name>] [project-root]\n#   --skill <name>  one skill's files only (SKILL.md and everything in its folder)\n#   --agent <name>  one agent file only\n#   project-root    defaults to the repo root (the test suite passes fixtures)\n#\n# Files read, in groups:\n#   skills        .agents/skills/<name>/**/*.md\n#   agents        .agents/agents/*.md\n#   instructions  CLAUDE.md, CLAUDE.local.md, .agents/CLAUDE.md, <top-level folder>/CLAUDE.md,\n#                 .agents/rules/*.md\n#   docs          .agents/docs/**/*.md\n#   hooks         .agents/hooks/*.sh and .agents/statusline.sh\n#   settings      .agents/settings.json (settings.local.json is personal and not read)\n#\n# Output:\n#   ROOT: <path>\n#   FILES: skills=<n> skill_files=<n> agents=<n> instructions=<n> docs=<n> hooks=<n> settings=<n>\n#   FOUND_LINES: <n> in <n> of <n> files read\n#   COUNT: <feature> <construct> files=<n> hits=<n>    every catalogued construct, zero included;\n#                                                      a family with nothing found prints <family>:*\n#   FOUND: <feature> <construct> <file>:<line>         one line per construct per source line\n#\n# Features and their constructs:\n#   questions      AskUserQuestion\n#   subagents      Agent-tool (`Agent`, \"Agent tool\", Agent in a tools list), Task-tool (the\n#                  old name, on a line about agents), subagent_type, agent-type-list (Agent(...)\n#                  in an agent's tools), cc-path:.agents/agents, cc-path:.agents/agent-memory\n#   skill-loading  var:CLAUDE_SKILL_DIR and the other skill substitutions, skillOverrides,\n#                  cc-path:.agents/skills, cc-path:.agents/commands\n#   shell-lines    shell-line (!`cmd` or a ```! block), shared-path:.agents/scripts\n#   arguments      $ARGUMENTS, $N (skills only: the text Claude Code substitutes them in)\n#   frontmatter    fm:<key> (a skill key beyond name, description, license, compatibility and\n#                  metadata; an agent key beyond name and description), tools-string (an\n#                  agent's tools written as one comma string)\n#   instructions   CLAUDE.md (each instruction file), @import (outside code), rule-file,\n#                  rule-paths, cc-path:.agents/rules, cc-path:.agents/CLAUDE.md,\n#                  shared-path:.agents/docs and other framework folders under .agents/\n#   hooks          hook:<Event>[<matcher>] (a registration in settings), hook-payload:<field>\n#                  and hook-answer:<token> (in hook scripts), var:CGS_PROJECT_DIR,\n#                  shared-path:.agents/hooks\n#   settings       permission:<allow|deny|ask|...> (one per rule), settings:<key>,\n#                  statusline-payload:<field>, cc-path:.agents/settings*.json, other var:CLAUDE_*\n#   tools          TodoWrite, task-tools (TaskCreate, TaskGet, TaskList, TaskUpdate, ...)\n#\n# cc-path is a folder or file Claude Code itself reads; shared-path is one of the\n# framework's own folders that happens to live under .agents/. Paths are reported\n# where a skill, agent, instruction file, doc or the settings name them, not\n# inside hook scripts.\n\n",
+      "replace": "#!/usr/bin/env bash\n# Codex compatibility inventory: report possible legacy Claude constructs, not verdicts.\n# Usage: bash .agents/scripts/compat-inventory.sh [--skill NAME | --agent NAME] [ROOT]\n# Discovers .agents/skills, .codex/agents/*.toml, root and top-level AGENTS.md\n# plus retained CLAUDE.md, .agents/rules, .agents/docs and .agents/hooks.\n# Optional .codex/hooks.json is inspected structurally; this does not prove activation.\n# Agent TOML is scanned as physical text without decoding escaped body strings.\n# Missing selected Skill or agent and interpreter errors return nonzero.\n# Claude-specific construct counts do not classify normal Codex paths as Claude APIs.\n\n"
+    }
+  ]
+}

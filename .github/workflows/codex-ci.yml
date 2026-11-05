@@ -1,0 +1,39 @@
+name: Codex quick checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  quick:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - run: node scripts/codex/ci.mjs
+      - run: echo "Engine integration tests are PENDING; quick CI does not run engines."
+  linux-backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - run: node scripts/codex/backend-tests.mjs --disposable-checkout
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: linux-backend-results
+          path: |
+            docs/codex/evidence/CGS-28/backend-results.json
+            docs/codex/evidence/CGS-24/checks.json
+            docs/codex/evidence/CGS-24/parity.json

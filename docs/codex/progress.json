@@ -7,7 +7,7 @@
   "repository": "Codex-Game-Studios",
   "last_completed": "CGS-20",
   "current_task": "CGS-27",
-  "next_safe_step": "All74 Skills now have reviewed bounded equivalents; all01–26 tasks complete. Proceed27 actual engine matrix and28 deterministic CI, then29sync,30docs,31independent audit.",
+  "next_safe_step": "QuickCI and Windowsbackend candidateclone PASS;10negativecorruptions and21extendedhelper assertions verified. Sourcecontent audit applied206 dispositions, onlyupdate-check awaits29equivalent. CommitCIcandidate, pushownbranch, observeactualUbuntu jobs before28completion.",
   "decisions": [
     "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED.",
     "Generated content-preserving .agents mirror retains helper root math; native roles use .codex/agents/*.toml; all generation is hash-guarded; no new agent runtime."
@@ -300,14 +300,14 @@
       "singularity_id": "T-706b2c6b-eba5-4a87-a1d7-ee21bd1e9cde",
       "title": "CGS-20 · Skills · релиз, hotfix, заметки об изменениях (6)",
       "status": "COMPLETE",
-      "commit": null,
+      "commit": "6ea5e93e0a27a3130e62b8c784f08975e2e574fa",
       "evidence": [
         "docs/codex/evidence/CGS-20/README.md",
         "docs/codex/evidence/CGS-20/dry-run.json",
         "docs/codex/evidence/CGS-20/traceability.json"
       ],
       "note": "All74 Skills now have reviewed bounded equivalents; all01–26 tasks complete. Proceed27 actual engine matrix and28 deterministic CI, then29sync,30docs,31independent audit.",
-      "updated_at": "2026-11-05T12:17:48.544Z"
+      "updated_at": "2026-11-05T12:19:42.233Z"
     },
     {
       "key": "CGS-21",
@@ -393,17 +393,24 @@
       "key": "CGS-27",
       "singularity_id": "T-490f4c8b-4256-452d-90e6-7a4ceefd574d",
       "title": "CGS-27 · Проверить Godot, Unity, Unreal и run-and-observe",
-      "status": "PENDING",
+      "status": "IN_PROGRESS",
       "commit": null,
-      "evidence": []
+      "evidence": [],
+      "updated_at": "2026-11-05T12:19:42.309Z"
     },
     {
       "key": "CGS-28",
       "singularity_id": "T-0485a7c2-d479-4ec8-ac03-47a1a59bd438",
       "title": "CGS-28 · Внедрить CI, статический аудит и поведенческие регрессии",
-      "status": "PENDING",
+      "status": "IN_PROGRESS",
       "commit": null,
-      "evidence": []
+      "evidence": [
+        "docs/codex/evidence/CGS-28/README.md",
+        "docs/codex/evidence/CGS-28/backend-windows-final.json",
+        "docs/codex/evidence/CGS-28/preservation/helper-extended.md"
+      ],
+      "note": "QuickCI and Windowsbackend candidateclone PASS;10negativecorruptions and21extendedhelper assertions verified. Sourcecontent audit applied206 dispositions, onlyupdate-check awaits29equivalent. CommitCIcandidate, pushownbranch, observeactualUbuntu jobs before28completion.",
+      "updated_at": "2026-11-05T12:44:59.059Z"
     },
     {
       "key": "CGS-29",

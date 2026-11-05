@@ -2191,12 +2191,13 @@
       "source": ".claude/scripts/compat-inventory.sh",
       "source_sha256": "4d1f2a7951d8ad54ac5d72a79e4939ec601742792a61d691b87e736e27799cb1",
       "target": ".agents/scripts/compat-inventory.sh",
-      "target_sha256": "ebb51c096b45739ad59925d058a02a35e3c854ebd6f90f5fd122662fad217eb5",
+      "target_sha256": "9f7eba6149d94be697a9ffa43f86cb374b986e5f4c0ceb094fa319c606ade213",
       "transform_version": 1,
       "transform_ids": [
         "normalize-lf",
         "mirror-claude-paths",
-        "neutral-project-env"
+        "neutral-project-env",
+        "helper-overlay-v2:ecdc3be71e656ad361e32fb51c2e6db3cd9b06ba4bcc4b4449917f4b494317cf"
       ],
       "owner": "CGS-25",
       "ownership": "generated"

@@ -21,9 +21,15 @@ export function supportTargets() {
     if (existsSync(overlayPath)) {
       const patch = JSON.parse(readFileSync(overlayPath, 'utf8'));
       const sourceHash = createHash('sha256').update(readFileSync(file)).digest('hex');
-      if (patch.source !== source || patch.source_sha256 !== sourceHash || !patch.anchor || content.split(patch.anchor).length !== 2) throw new Error('Helper overlay source or anchor mismatch: ' + source);
-      content = content.replace(patch.anchor, patch.replacement);
-      transform_ids.push('helper-overlay-v1:' + createHash('sha256').update(readFileSync(overlayPath)).digest('hex'));
+      if (patch.source !== source || patch.source_sha256 !== sourceHash) throw new Error('Helper overlay source mismatch: ' + source);
+      if (patch.edits && (patch.anchor !== undefined || patch.replacement !== undefined)) throw new Error('Ambiguous helper overlay: ' + source);
+      const edits = patch.edits ?? [{ find: patch.anchor, replace: patch.replacement }];
+      if (!Array.isArray(edits) || !edits.length) throw new Error('Empty helper overlay: ' + source);
+      for (const edit of edits) {
+        if (typeof edit.find !== 'string' || !edit.find || typeof edit.replace !== 'string' || content.split(edit.find).length !== 2) throw new Error('Helper overlay anchor mismatch: ' + source);
+        content = content.replace(edit.find, edit.replace);
+      }
+      transform_ids.push((patch.edits ? 'helper-overlay-v2:' : 'helper-overlay-v1:') + createHash('sha256').update(readFileSync(overlayPath)).digest('hex'));
     }
     const nativeChecks = { '.claude/scripts/skill-lint.sh': ['skill', '6a66024bd66908915a76a21ad71fe3590278ef1b420b47aad889c99c243d3c8f'], '.claude/scripts/agent-check.sh': ['role', 'b8a1b78415ddc29760f21bb14f0c4502b0d49b8135ff70c7f2377c001cbb24f0'] };
     if (nativeChecks[source]) {

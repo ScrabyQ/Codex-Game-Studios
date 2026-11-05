@@ -1,0 +1,396 @@
+{
+  "schema": 1,
+  "fixture": "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ",
+  "limits": "Bounded observations only. Cache notice forced disabled with CI=1; no network, release, root config or Git metadata writes. Fixtures retained; no deletion. Four other helpers have separately linked prior fixture evidence.",
+  "rows": [
+    {
+      "source": ".claude/scripts/adr-dep-graph.sh",
+      "command": [
+        "C:\\Program Files\\Git\\bin\\bash.exe",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ\\.agents\\scripts\\adr-dep-graph.sh",
+        "docs/architecture"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ",
+      "exit": 0,
+      "error": null,
+      "stdout": "ADRS: 1\nEDGES:\n  (none)\nNO_DEPS_SECTION: adr-0001\nORDER: adr-0001\n",
+      "stderr": "",
+      "assertion": "/ADRS:\\s*1/",
+      "fixture_unchanged": true,
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "source": ".claude/scripts/asset-scan.sh",
+      "command": [
+        "C:\\Program Files\\Git\\bin\\bash.exe",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ\\.agents\\scripts\\asset-scan.sh",
+        "--root",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ",
+        "--engine",
+        "godot",
+        "--files",
+        "--max-dim",
+        "100"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ",
+      "exit": 0,
+      "error": null,
+      "stdout": "engine\tgodot\tflag\nroot\tassets\tpresent\nscanned\t1\noutside_scope\t0\tfiles under assets/ outside art, audio, vfx, shaders and data\nexcluded\t.import\t0\nexcluded\t.uid\t0\nexcluded\t.gitkeep\t0\ncategory\tart\t1\ncategory\taudio\t0\ncategory\tvfx\t0\ncategory\tshaders\t0\ncategory\tdata\t0\ncheck\tnaming\tran\tlowercase_underscore\ncheck\tart_pattern\tnot_checkable\t1 files under assets/art; the category and size values are not defined and the examples disagree\ncheck\taudio_pattern\tnot_checkable\t0 files under assets/audio; the category values are not defined and the name may hold any number of words\ncheck\tpot\tran\tPNG width and height from the IHDR bytes\ncheck\tsize\tnot_run\tno --budget flag given\ncheck\tdim\tran\t--max-dim 100\ncheck\trate\tran\tfile -b; no --sample-rates flag given, none compared\ncheck\torphans\tran\t2 files searched for res:// paths\ncheck\tmissing\tran\t2 files searched for res:// paths\ncheck\tdata\tnot_run\tJSON and YAML validity and schemas are not checked here\ncheck\tformat\tnot_run\tfile formats are not checked here: the skill does not say how to tell a UI or 3D texture\ncheck\tlast_modified\tnot_run\tnot read: stat differs between GNU and BSD\nhits\tnaming\t0\nhits\tpot\t1\nhits\tsize\t-\nhits\tdim\t1\nhits\trate\t-\nhits\tnotread\t0\nhits\torphan\t1\nhits\tmissing\t0\nPOT\tassets/art/sample.png\t640x360\tboth\nDIM\tassets/art/sample.png\t640x360\t100\nORPHAN\tassets/art/sample.png\t5703\nFILE\tassets/art/sample.png\tart\ttexture\t5703\t640x360\t-\n",
+      "stderr": "",
+      "assertion": "/DIM\\s+assets\\/art\\/sample\\.png\\s+640x360\\s+100/",
+      "fixture_unchanged": true,
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "source": ".claude/scripts/code-markers.sh",
+      "command": [
+        "C:\\Program Files\\Git\\bin\\bash.exe",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ\\.agents\\scripts\\code-markers.sh",
+        "--root",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ",
+        "src"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ",
+      "exit": 0,
+      "error": null,
+      "stdout": "scanned_files\t1\tsrc\nscanned_lines\t4\ntodo\t1\nfixme\t0\nhack\t0\ndebug\t1\nplaceholder\t0\nlong_files\t0\tmore than 500 lines\nMARK\tTODO\tsrc/example.gd\t1\nDEBUG\tprint\tsrc/example.gd\t4\n",
+      "stderr": "",
+      "assertion": "/TODO/",
+      "fixture_unchanged": true,
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "source": ".claude/scripts/compat-inventory.sh",
+      "command": [
+        "C:\\Program Files\\Git\\bin\\bash.exe",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ\\.agents\\scripts\\compat-inventory.sh",
+        "--agent",
+        "sample",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ",
+      "exit": 0,
+      "error": null,
+      "stdout": "ROOT: D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ\r\nFILES: skills=0 skill_files=0 agents=1 instructions=0 docs=0 hooks=0 settings=0\r\nFOUND_LINES: 1 in 1 of 1 files read\r\nSCOPE: agent sample only; skills, instructions, docs, hooks and settings not read\r\nNOTE: Native TOML is scanned as physical text, not parsed or decoded; line numbers are physical file lines, including escaped developer_instructions. Discovery is not native role activation.\r\nNOTE: Codex hooks configuration is inspected structurally only; lifecycle activation is not established.\r\nCOUNT: arguments $ARGUMENTS files=0 hits=0\r\nCOUNT: arguments $N files=0 hits=0\r\nCOUNT: frontmatter fm:* files=0 hits=0\r\nCOUNT: frontmatter tools-string files=0 hits=0\r\nCOUNT: hooks hook-answer:* files=0 hits=0\r\nCOUNT: hooks hook-payload:* files=0 hits=0\r\nCOUNT: hooks hook:* files=0 hits=0\r\nCOUNT: hooks var:CGS_PROJECT_DIR files=0 hits=0\r\nCOUNT: instructions @import files=0 hits=0\r\nCOUNT: instructions CLAUDE.md files=0 hits=0\r\nCOUNT: instructions cc-path:.claude/CLAUDE.md files=0 hits=0\r\nCOUNT: instructions cc-path:.claude/rules files=0 hits=0\r\nCOUNT: instructions rule-file files=0 hits=0\r\nCOUNT: instructions rule-paths files=0 hits=0\r\nCOUNT: instructions shared-path:* files=0 hits=0\r\nCOUNT: questions AskUserQuestion files=1 hits=1\r\nCOUNT: settings cc-path:.claude/output-styles files=0 hits=0\r\nCOUNT: settings cc-path:.claude/settings.json files=0 hits=0\r\nCOUNT: settings cc-path:.claude/settings.local.json files=0 hits=0\r\nCOUNT: settings permission:* files=0 hits=0\r\nCOUNT: settings settings:* files=0 hits=0\r\nCOUNT: settings statusline-payload:* files=0 hits=0\r\nCOUNT: settings var:* files=0 hits=0\r\nCOUNT: shell-lines shell-line files=0 hits=0\r\nCOUNT: skill-loading cc-path:.claude/commands files=0 hits=0\r\nCOUNT: skill-loading cc-path:.claude/skills files=0 hits=0\r\nCOUNT: skill-loading skillOverrides files=0 hits=0\r\nCOUNT: skill-loading var:CLAUDE_PLUGIN_DATA files=0 hits=0\r\nCOUNT: skill-loading var:CLAUDE_PLUGIN_ROOT files=0 hits=0\r\nCOUNT: skill-loading var:CLAUDE_SESSION_ID files=0 hits=0\r\nCOUNT: skill-loading var:CLAUDE_SKILL_DIR files=0 hits=0\r\nCOUNT: subagents Agent-tool files=0 hits=0\r\nCOUNT: subagents Task-tool files=0 hits=0\r\nCOUNT: subagents agent-type-list files=0 hits=0\r\nCOUNT: subagents cc-path:.claude/agent-memory files=0 hits=0\r\nCOUNT: subagents cc-path:.claude/agents files=0 hits=0\r\nCOUNT: subagents subagent_type files=0 hits=0\r\nCOUNT: tools TodoWrite files=0 hits=0\r\nCOUNT: tools task-tools files=0 hits=0\r\nFOUND: questions AskUserQuestion .codex/agents/sample.toml:2\r\n",
+      "stderr": "",
+      "assertion": "/agents=1[\\s\\S]*NOTE: Native TOML[\\s\\S]*COUNT: questions AskUserQuestion files=1 hits=1/",
+      "fixture_unchanged": true,
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "source": ".claude/scripts/compat-inventory.sh",
+      "command": [
+        "C:\\Program Files\\Git\\bin\\bash.exe",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ\\.agents\\scripts\\compat-inventory.sh",
+        "--agent",
+        "missing",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ",
+      "exit": 1,
+      "error": null,
+      "stdout": "",
+      "stderr": "NOT FOUND: agent missing is not a file in .codex/agents/\r\n",
+      "assertion": "/NOT FOUND/",
+      "fixture_unchanged": true,
+      "expected_exit": 1,
+      "passed": true
+    },
+    {
+      "source": ".claude/scripts/content-count.sh",
+      "command": [
+        "C:\\Program Files\\Git\\bin\\bash.exe",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ\\.agents\\scripts\\content-count.sh",
+        "--root",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ",
+        "band",
+        "1",
+        "2"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ",
+      "exit": 0,
+      "error": null,
+      "stdout": "band\t1/2\tIN PROGRESS\t50.0\t50% <= found/specified < 100%\n",
+      "stderr": "",
+      "assertion": "/50/",
+      "fixture_unchanged": true,
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "source": ".claude/scripts/debt-register.sh",
+      "command": [
+        "C:\\Program Files\\Git\\bin\\bash.exe",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ\\.agents\\scripts\\debt-register.sh",
+        "--root",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ",
+        "score",
+        "High",
+        "M"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ",
+      "exit": 0,
+      "error": null,
+      "stdout": "score\t1.5\tHigh/M\t3/2\n",
+      "stderr": "",
+      "assertion": "/1\\.5/",
+      "fixture_unchanged": true,
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "source": ".claude/scripts/flaky-stats.sh",
+      "command": [
+        "C:\\Program Files\\Git\\bin\\bash.exe",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ\\.agents\\scripts\\flaky-stats.sh",
+        "--root",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ",
+        "--format",
+        "text",
+        "test-results/one.log",
+        "test-results/two.log"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ",
+      "exit": 0,
+      "error": null,
+      "stdout": "runs\t2\t2\ntests\t2\nclean\t0\tno fail in the counted results\nflaky\t1\ta pass and a fail in the counted results\ntier\thigh\t0\tfail_pct > 25\ntier\tmoderate\t0\t5 <= fail_pct <= 25\ntier\tlow\t0\t1 <= fail_pct < 5\ntier\tbelow-low\t0\t0 < fail_pct < 1\ntier\tsuspected\t1\tflaky, fewer than 3 results\nalways_fail\t1\tno pass in the counted results\nno_result\t0\tonly skipped results\ndata_note\tfewer than 5 runs\nno_id\t0\nTEST\tbeta\t2\t0\t2\t0\t100.0\tFF\tno\talways-fail\tno pass in the counted results\nTEST\talpha\t2\t1\t1\t0\t50.0\tPF\tyes\tsuspected\tflaky, fewer than 3 results\n",
+      "stderr": "",
+      "assertion": "/alpha/",
+      "fixture_unchanged": true,
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "source": ".claude/scripts/gdd-structure-check.sh",
+      "command": [
+        "C:\\Program Files\\Git\\bin\\bash.exe",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ\\.agents\\scripts\\gdd-structure-check.sh",
+        "design/gdd/combat.md"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ",
+      "exit": 0,
+      "error": null,
+      "stdout": "combat.md PRESENT: Overview,Edge Cases\ncombat.md ABSENT:  Player Fantasy,Detailed Rules,Formulas,Dependencies,Tuning Knobs,Acceptance Criteria\ncombat.md PLACEHOLDER: Edge Cases\n",
+      "stderr": "",
+      "assertion": "/PLACEHOLDER/",
+      "fixture_unchanged": true,
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "source": ".claude/scripts/inputs-check.sh",
+      "command": [
+        "C:\\Program Files\\Git\\bin\\bash.exe",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ\\.agents\\scripts\\inputs-check.sh",
+        "--root",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ",
+        "design/full.md",
+        "design/empty.md",
+        "design/missing.md"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ",
+      "exit": 0,
+      "error": null,
+      "stdout": "inputs\t3\nfound\t1\nempty\t1\nabsent\t1\nFOUND\tdesign/full.md\t1\tdesign/full.md\nEMPTY\tdesign/empty.md\t1\tdesign/empty.md\nABSENT\tdesign/missing.md\t0\t-\n",
+      "stderr": "",
+      "assertion": "/FOUND[\\s\\S]*EMPTY[\\s\\S]*ABSENT/",
+      "fixture_unchanged": true,
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "source": ".claude/scripts/md-section.sh",
+      "command": [
+        "C:\\Program Files\\Git\\bin\\bash.exe",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ\\.agents\\scripts\\md-section.sh",
+        "status",
+        "design/full.md"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ",
+      "exit": 0,
+      "error": null,
+      "stdout": "sections\t3\ncomplete\t0\nempty\t1\nplaceholder\t2\nnot_found\t0\nPLACEHOLDER\t1-8\tFull\nEMPTY\t5-6\tEmpty\nPLACEHOLDER\t7-8\tDraft\n",
+      "stderr": "",
+      "assertion": "/PLACEHOLDER/",
+      "fixture_unchanged": true,
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "source": ".claude/scripts/migrate-v1-config.sh",
+      "command": [
+        "C:\\Program Files\\Git\\bin\\bash.exe",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ\\.agents\\scripts\\migrate-v1-config.sh",
+        "--dry-run"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ",
+      "exit": 3,
+      "error": null,
+      "stdout": "REFUSED: both project.yaml and legacy files exist, and their values DISAGREE.\n  Resolve which is authoritative before migrating.\n  If you already migrated, the next step is: D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ\\.agents\\scripts\\migrate-v1-config.sh --finalize\n",
+      "stderr": "",
+      "assertion": "/split.brain|diverge|conflict|legacy/i",
+      "fixture_unchanged": true,
+      "expected_exit": 3,
+      "passed": true
+    },
+    {
+      "source": ".claude/scripts/plan-math.sh",
+      "command": [
+        "C:\\Program Files\\Git\\bin\\bash.exe",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ\\.agents\\scripts\\plan-math.sh",
+        "pct",
+        "1",
+        "4",
+        "--root",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ",
+      "exit": 0,
+      "error": null,
+      "stdout": "pct\t25\t1/4\n",
+      "stderr": "",
+      "assertion": "/25/",
+      "fixture_unchanged": true,
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "source": ".claude/scripts/project-coherence.sh",
+      "command": [
+        "C:\\Program Files\\Git\\bin\\bash.exe",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ\\.agents\\scripts\\project-coherence.sh"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ",
+      "exit": 0,
+      "error": null,
+      "stdout": "=== project coherence ===\n[NOT CHECKED] pinned-reference checks — docs/engine-reference/godot/VERSION.md does not exist\n[NOT CHECKED] declared version vs installed binary — no Godot executable found (commands.test, engine.path, PATH). A probe that could not run has not established absence.\n[NOT CHECKED] project-file checks — no project.godot in this repo\n[NOT CHECKED] command checks — project.yaml declares no commands.build or commands.test\n\nchecked 0 · differs 0 · not checked 4\n\nObservations only — no verdict. 'not checked' is not agreement:\neach line above names why that comparison could not be made.\n",
+      "stderr": "",
+      "assertion": "/NOT CHECKED|MATCH|DIFFERS/",
+      "fixture_unchanged": true,
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "source": ".claude/scripts/review-scope.sh",
+      "command": [
+        "C:\\Program Files\\Git\\bin\\bash.exe",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ\\.agents\\scripts\\review-scope.sh"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ",
+      "exit": 0,
+      "error": null,
+      "stdout": "PRIOR_REVIEW: NONE (full review required)\nCHANGED:\n  design/gdd/combat.md\n",
+      "stderr": "",
+      "assertion": "/PRIOR_REVIEW/",
+      "fixture_unchanged": true,
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "source": ".claude/scripts/rotate-session-state.sh",
+      "command": [
+        "C:\\Program Files\\Git\\bin\\bash.exe",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ\\.agents\\scripts\\rotate-session-state.sh",
+        "--dry-run"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ",
+      "exit": 0,
+      "error": null,
+      "stdout": "DRY RUN — no changes written\n  checkpoint kept : lines 1-3\n  narrative moved : lines 4-40 (37 lines)\n  destination     : production/session-logs/session-state-2026-11-05.md\n",
+      "stderr": "",
+      "assertion": "/DRY RUN/",
+      "fixture_unchanged": true,
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "source": ".claude/scripts/test-scaffold.sh",
+      "command": [
+        "C:\\Program Files\\Git\\bin\\bash.exe",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ\\.agents\\scripts\\test-scaffold.sh",
+        "godot",
+        "--dry-run",
+        "--root",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ",
+      "exit": 0,
+      "error": null,
+      "stdout": "engine\tgodot\nmode\tdry-run\nWOULD_CREATE\ttests/README.md\nWOULD_CREATE\tproduction/qa/evidence/.gitkeep\nWOULD_CREATE\ttests/unit/.gitkeep\nWOULD_CREATE\ttests/integration/.gitkeep\nWOULD_CREATE\t.github/workflows/tests.yml\nWOULD_CREATE\ttests/smoke/critical-paths.md\nwould_create\t6\nexists\t0\nskipped\t0\nNEEDS\tgdunit4\taddons/gdUnit4/bin/GdUnitCmdTool.gd\tinstall GdUnit4 (Asset Store, AssetLib before Godot 4.7, then enable the plugin); the folder has a capital U\n",
+      "stderr": "",
+      "assertion": "/WOULD_CREATE/",
+      "fixture_unchanged": true,
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "source": ".claude/hooks/update-check.sh",
+      "command": [
+        "C:\\Program Files\\Git\\bin\\bash.exe",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ\\.agents\\hooks\\update-check.sh",
+        "notice"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ",
+      "exit": 0,
+      "error": null,
+      "stdout": "",
+      "stderr": "",
+      "assertion": "/^$/",
+      "fixture_unchanged": true,
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "source": "migration-apply",
+      "command": [
+        "C:\\Program Files\\Git\\bin\\bash.exe",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ\\migration-apply\\.agents\\scripts\\migrate-v1-config.sh"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ\\migration-apply",
+      "exit": 0,
+      "error": null,
+      "stdout": "wrote project.yaml\nwrote production/migration-report.md\n\nwarnings:\n- modes.rigor is not written — v1.1 defaults it to `minimal`, which is lighter than v1.0 behaved (v1.0 matched `standard`). To keep v1.0's process level, add `modes: { rigor: standard }` to project.yaml or run `/settings modes.rigor=standard`\n\nLegacy files left in place. Review production/migration-report.md, then:\n  bash .agents/scripts/migrate-v1-config.sh --finalize\n",
+      "stderr": "",
+      "expected_exit": 0,
+      "assertion": "actual fixture output files and preservation",
+      "passed": true
+    },
+    {
+      "source": "rotation-apply",
+      "command": [
+        "C:\\Program Files\\Git\\bin\\bash.exe",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ\\rotation-apply\\.agents\\scripts\\rotate-session-state.sh"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ\\rotation-apply",
+      "exit": 0,
+      "error": null,
+      "stdout": "rotated 37 lines -> production/session-logs/session-state-2026-11-05.md\nproduction/session-state/active.md is now 10 lines\n",
+      "stderr": "",
+      "expected_exit": 0,
+      "assertion": "actual fixture output files and preservation",
+      "passed": true
+    },
+    {
+      "source": "scaffold-apply",
+      "command": [
+        "C:\\Program Files\\Git\\bin\\bash.exe",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ\\.agents\\scripts\\test-scaffold.sh",
+        "godot",
+        "--root",
+        "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ\\scaffold-apply"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios\\.scratch\\cgs28-extra-qLcChJ\\scaffold-apply",
+      "exit": 0,
+      "error": null,
+      "stdout": "engine\tgodot\nmode\twrite\nCREATED\ttests/README.md\nCREATED\tproduction/qa/evidence/.gitkeep\nCREATED\ttests/unit/.gitkeep\nCREATED\ttests/integration/.gitkeep\nCREATED\t.github/workflows/tests.yml\nCREATED\ttests/smoke/critical-paths.md\ncreated\t6\nexists\t0\nskipped\t0\nNEEDS\tgdunit4\taddons/gdUnit4/bin/GdUnitCmdTool.gd\tinstall GdUnit4 (Asset Store, AssetLib before Godot 4.7, then enable the plugin); the folder has a capital U\n",
+      "stderr": "",
+      "expected_exit": 0,
+      "assertion": "actual fixture output files and preservation",
+      "passed": true
+    }
+  ]
+}

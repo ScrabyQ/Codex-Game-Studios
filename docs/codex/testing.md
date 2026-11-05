@@ -1,0 +1,13 @@
+# Codex validation
+
+Run `node scripts/codex/ci.mjs` from the repository root with Node 22, Git, and Bash available. Exit 0 means the quick checks completed; nonzero means the named check failed. The runner checks pinned inventory, all five generation families (with all 49 roles explicitly selected), registry and source/target hashes, native skill format and relative links, catalog specs, configuration, model policy, path rule selection, engine-role selection, explicit hook denials, and isolated negative fixtures. It does not establish skill behavior, native hook activation or independent review.
+
+The inventory test needs the pinned upstream commit present in Git history; CI fetches complete history. The generator fixture initializes a separate temporary repository and leaves its disposable files for inspection. The other negative fixture copies only required inputs to another temporary directory, corrupts and restores fixture files, and never edits project artifacts. No recursive deletion is used. Do not interpret a generated target as behavioral parity; consult the migration evidence.
+
+Engine/editor integration is opt-in and is not run by quick CI. Consult `docs/codex/evidence/CGS-27/` for actual engine-specific commands and outcomes; unavailable or unrun engines remain **PENDING**. A green quick CI does not change those outcomes.
+
+For backend helper and event-fallback tests, use a disposable checkout and run `node scripts/codex/backend-tests.mjs --disposable-checkout`. These tests include the extended helper cases and write fixture outputs and update historical evidence in that checkout, so do not run this command against a working tree containing user changes. It records platform, exit codes and output in `docs/codex/evidence/CGS-28/backend-results.json`; the Linux CI job uploads that report and the generated hook reports. A Linux result is established only when that job actually runs. This exercises explicit event fallbacks, not trusted native hook activation.
+
+The current inventory pins the upstream snapshot and counts. Upstream changes require an explicit reviewed reconciliation of source inventory, overlays and generated registry; do not silently change the baseline to make checks green. `studio-tests/` remains the legacy source catalog and written-spec material; `docs/codex/studio-tests/native-criteria.md` documents the native interpretation. Catalog presence is not a behavioral score.
+
+GitHub Actions uses official [checkout releases](https://github.com/actions/checkout/releases) and [setup-node documentation](https://github.com/actions/setup-node). The workflow uses read-only repository permission and does not persist checkout credentials. Remote CI itself is PENDING until an authorized push runs it.

@@ -18,7 +18,7 @@ try {
   const registry = JSON.parse(readFileSync(resolve(root, 'docs/codex/generation-manifest.json'), 'utf8'));
   const names = v.names?.split(',');
   if (v.prefix && !['.claude/docs/', '.claude/hooks/', '.claude/scripts/'].includes(v.prefix)) throw new Error('Unsupported source prefix');
-  if (!v.prefix && (!names?.length || !['skill', 'agent', 'rule'].includes(v.kind))) throw new Error('Select explicit kind/names or a supported source prefix');
+  if (!v.prefix && (!names?.length || !['skill', 'agent', 'rule', 'script'].includes(v.kind))) throw new Error('Select explicit kind/names or a supported source prefix');
   const selected = manifest.entries.filter(e => v.prefix ? e.source.startsWith(v.prefix) : v.kind === 'skill' ? names.some(n => e.source.startsWith(`.claude/skills/${n}/`)) : e.category === v.kind && names.includes(e.source.split('/').pop().replace(/\.md$/, '')));
   if (!selected.length) throw new Error('No source components selected');
   const plans = selected.map(entry => {

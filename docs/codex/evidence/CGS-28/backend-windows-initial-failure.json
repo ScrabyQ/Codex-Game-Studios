@@ -1,0 +1,50 @@
+{
+  "platform": "win32",
+  "node": "v22.19.0",
+  "results": [
+    {
+      "name": "hook-tests",
+      "exit": 0,
+      "error": null,
+      "stdout": "{\n  \"schema\": 1,\n  \"task\": \"CGS-24\",\n  \"timestamp\": \"2026-11-05T12:36:48.847Z\",\n  \"platform\": \"win32\",\n  \"node\": \"v22.19.0\",\n  \"model\": null,\n  \"command\": \"node scripts/codex/hook-tests.mjs\",\n  \"fixture\": \"C:\\\\Users\\\\scrab\\\\AppData\\\\Local\\\\Temp\\\\cgs-clean-clone-Jyp0WI\\\\repo\\\\.codex-tmp\\\\hook fixture 9V1FIq\",\n  \"fixture_recipe_sha256\": \"78ad9d4ff6ae77a33f0d59dcdcec62c52c6c50bf0a427d63238316bdc3ce04f6\",\n  \"hashes\": {\n    \"scripts/codex/hooks.mjs\": \"5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e\",\n    \"scripts/codex/hook-tests.mjs\": \"78ad9d4ff6ae77a33f0d59dcdcec62c52c6c50bf0a427d63238316bdc3ce04f6\",\n    \".codex/hooks.example.json\": \"5058bf25990248015f7b0ffb2b1f8cfa1d5f34a081c491764241cf05589b1334\",\n    \"docs/codex/hooks.md\": \"785b4f04377777f7af4148cc37da03f271759a7a8e7416c0cfa936b846f5295f\",\n    \".claude/settings.json\": \"5294bcacca8019b0b98f4fd191d58a081276534ceaa7e6ec1899a95404e6c560\"\n  },\n  \"tests\": [\n    {\n      \"id\": \"dangerous-sentinel-never-executes\",\n      \"status\": \"PASS\",\n      \"detail\": {\n        \"cases\": [\n          \"rm -rf sentinel\",\n          \"rm -r --force sentinel\",\n          \"Remove-Item sentinel -Recurse -Force\",\n          \"git push origin --force\",\n          \"git -C . push origin -uf\",\n          \"git push origin +HEAD:main\",\n          \"git reset --hard HEAD\",\n          \"git clean -dqxf\",\n          \"git push upstream main\",\n          \"git push https://github.com/Donchitos/Claude-Code-Game-Studios.git main\",\n          \"cat .env.local\",\n          \"Get-Content .env\",\n          \"cat Content/Map.umap\",\n          \"sudo true\",\n          \"chmod 777 file\",\n          \"echo hello; git push --force origin main\",\n          \"bash -c \\\"git reset --hard\\\"\",\n          \"echo \\\"hello\\\"; git push --force; echo \\\"bye\\\"\"\n        ],\n        \"sentinelAbsent\": true,\n        \"execution\": \"guard then harmless stub; dangerous strings never run\"\n      }\n    },\n    {\n      \"id\": \"safe-and-false-positive-commands\",\n      \"status\": \"PASS\",\n      \"detail\": [\n        \"git status --short\",\n        \"git diff --stat\",\n        \"git push origin feature\",\n        \"rm ordinary.tmp\",\n        \"node --version\",\n        \"echo \\\"git push --force is prohibited\\\"\"\n      ]\n    },\n    {\n      \"id\": \"patch-all-paths-protected\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"id\": \"patch-json-reconstruction\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"id\": \"malformed-payloads-and-dependencies\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"id\": \"postwrite-actual-json-and-skill\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"id\": \"read-guard-large-and-bounded\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"id\": \"write-advisory-remains-nonblocking\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"id\": \"registry-removal-advisory\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"id\": \"commit-staged-json-blocks-without-commit\",\n      \"status\": \"PASS\",\n      \"detail\": \"Only git init/add/remote were executed in fixture; commit and push were inspected only.\"\n    },\n    {\n      \"id\": \"session-checkpoint-gap-compaction-stop-audit\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"id\": \"agent-contract-explicit-fallback\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"id\": \"manual-notification\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"id\": \"root-subdir-spaces-nested-project\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"id\": \"actual-cli-run-deny-and-safe\",\n      \"status\": \"PASS\",\n      \"detail\": {\n        \"deniedExit\": 2,\n        \"safeExit\": 0,\n        \"unsafeSentinelAbsent\": true,\n        \"safeSentinel\": \"SAFE_EXECUTED\"\n      }\n    },\n    {\n      \"id\": \"actual-cli-malformed-input\",\n      \"status\": \"PASS\",\n      \"detail\": {\n        \"exit\": 2\n      }\n    },\n    {\n      \"id\": \"registration-supported-fields-and-windows-launcher\",\n      \"status\": \"PASS\",\n      \"detail\": {\n        \"command\": \"node -e \\\"const f=require('node:fs'),p=require('node:path'),c=require('node:child_process');let r=process.cwd();while(!f.existsSync(p.join(r,'scripts/codex/hooks.mjs'))){const n=p.dirname(r);if(n===r)throw Error('CGS hook adapter not found');r=n}const x=c.spawnSync(process.execPath,[p.join(r,'scripts/codex/hooks.mjs'),'PreToolUse'],{stdio:'inherit'});process.exit(x.status===null?2:x.status)\\\"\",\n        \"exit\": 0,\n        \"cwdHasSpaces\": true,\n        \"nativeActivation\": \"not exercised\"\n      }\n    },\n    {\n      \"id\": \"no-config-backend-root-fallback\",\n      \"status\": \"PASS\",\n      \"detail\": {\n        \"selectedRoot\": \"C:\\\\Users\\\\scrab\\\\AppData\\\\Local\\\\Temp\\\\cgs-clean-clone-Jyp0WI\\\\repo\\\\.codex-tmp\\\\unconfigured hook fixture VoKgiU\",\n        \"absentProjectYaml\": true\n      }\n    }\n  ],\n  \"nativeActivation\": \"PENDING: optional reviewed hooks not trusted or activated by this runner\",\n  \"linux\": \"PENDING: Windows Git Bash execution is not Linux\",\n  \"status\": \"PASS\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "helper-tests",
+      "exit": 0,
+      "error": null,
+      "stdout": "PASS: stage, checkpoint, story/ADR facts, registry, receipt stamp, read/write observations, missing engine, native structural failures, dispatcher; fixture C:\\Users\\scrab\\AppData\\Local\\Temp\\cgs helper test 3NWbMM\n",
+      "stderr": ""
+    },
+    {
+      "name": "helper-root-tests",
+      "exit": 0,
+      "error": null,
+      "stdout": "PASS: two sibling roots, status ordering, catalog-specific artifacts, missing root/catalog, unsafe helper and conflicting root; C:\\Users\\scrab\\AppData\\Local\\Temp\\cgs sibling roots hPsfNv\n",
+      "stderr": ""
+    },
+    {
+      "name": "helper-extra-tests",
+      "exit": 1,
+      "error": null,
+      "stdout": "adr-dep-graph exit 0 assert true\nasset-scan exit 0 assert true\ncode-markers exit 0 assert true\ncompat-inventory exit 0 assert true\ncompat-inventory-missing exit 1 assert true\ncontent-count exit 0 assert true\ndebt-register exit 0 assert true\nflaky-stats exit 0 assert true\ngdd-structure-check exit 0 assert true\ninputs-check exit 0 assert true\nmd-section exit 0 assert true\nmigrate-v1-config exit 3 assert true\nplan-math exit 0 assert true\nproject-coherence exit 0 assert true\nreview-scope exit 0 assert true\nrotate-session-state exit 0 assert true\ntest-scaffold exit 0 assert true\nupdate-check exit 0 assert true\nmigration-apply exit 0 assert true\nrotation-apply exit 0 assert true\nscaffold-apply exit 0 assert true\n",
+      "stderr": "node:fs:2425\r\n    return binding.writeFileUtf8(\r\n                   ^\r\n\r\nError: ENOENT: no such file or directory, open 'C:\\Users\\scrab\\AppData\\Local\\Temp\\cgs-clean-clone-Jyp0WI\\repo\\docs\\codex\\evidence\\CGS-28\\preservation\\helper-extended-results.json'\r\n    at Object.writeFileSync (node:fs:2425:20)\r\n    at file:///C:/Users/scrab/AppData/Local/Temp/cgs-clean-clone-Jyp0WI/repo/scripts/codex/helper-extra-tests.mjs:38:747\r\n    at ModuleJob.run (node:internal/modules/esm/module_job:345:25)\r\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:651:26)\r\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {\r\n  errno: -4058,\r\n  code: 'ENOENT',\r\n  syscall: 'open',\r\n  path: 'C:\\\\Users\\\\scrab\\\\AppData\\\\Local\\\\Temp\\\\cgs-clean-clone-Jyp0WI\\\\repo\\\\docs\\\\codex\\\\evidence\\\\CGS-28\\\\preservation\\\\helper-extended-results.json'\r\n}\r\n\r\nNode.js v22.19.0\r\n"
+    },
+    {
+      "name": "role-tests",
+      "exit": 0,
+      "error": null,
+      "stdout": "PASS: 11 roles, complete transformed bodies/headings, capability restrictions, no model pins; 4 negative guards\n",
+      "stderr": ""
+    },
+    {
+      "name": "specialist-tests",
+      "exit": 0,
+      "error": null,
+      "stdout": "PASS: 23 specialist targets, exact adapted bodies, permissions, no model pins, memory, isolation, and 11 unchanged leadership targets.\n",
+      "stderr": ""
+    }
+  ],
+  "native_hook_activation": "PENDING",
+  "engine_integration": "PENDING"
+}

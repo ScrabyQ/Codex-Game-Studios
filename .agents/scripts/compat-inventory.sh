@@ -1,67 +1,12 @@
 #!/usr/bin/env bash
-# compat-inventory.sh — every place the framework depends on something only
-# Claude Code provides, listed per file with the feature it belongs to.
-#
-# A skill, agent, hook or setting can lean on a Claude Code mechanism without
-# saying so: a question tool named in a body, a `!` line, a `${CLAUDE_...}`
-# substitution, a frontmatter key, a hook payload field, an `@` import. Read one
-# file at a time, these are easy to miss. This script finds each one and prints
-# where it is, so a change to any of them can be seen and planned for.
-#
-# OBSERVATIONS, NEVER VERDICTS (CLAUDE.md, "Helpers emit observations"). A
-# construct found here is not a defect: Claude Code runs every one of them. It
-# prints what it found, with denominators first, and always exits 0 once it has
-# run. Whether a construct should stay, move to frontmatter or be reworded is the
-# reader's call.
-#
-# Usage: bash .agents/scripts/compat-inventory.sh [--skill <name> | --agent <name>] [project-root]
-#   --skill <name>  one skill's files only (SKILL.md and everything in its folder)
-#   --agent <name>  one agent file only
-#   project-root    defaults to the repo root (the test suite passes fixtures)
-#
-# Files read, in groups:
-#   skills        .agents/skills/<name>/**/*.md
-#   agents        .agents/agents/*.md
-#   instructions  CLAUDE.md, CLAUDE.local.md, .agents/CLAUDE.md, <top-level folder>/CLAUDE.md,
-#                 .agents/rules/*.md
-#   docs          .agents/docs/**/*.md
-#   hooks         .agents/hooks/*.sh and .agents/statusline.sh
-#   settings      .agents/settings.json (settings.local.json is personal and not read)
-#
-# Output:
-#   ROOT: <path>
-#   FILES: skills=<n> skill_files=<n> agents=<n> instructions=<n> docs=<n> hooks=<n> settings=<n>
-#   FOUND_LINES: <n> in <n> of <n> files read
-#   COUNT: <feature> <construct> files=<n> hits=<n>    every catalogued construct, zero included;
-#                                                      a family with nothing found prints <family>:*
-#   FOUND: <feature> <construct> <file>:<line>         one line per construct per source line
-#
-# Features and their constructs:
-#   questions      AskUserQuestion
-#   subagents      Agent-tool (`Agent`, "Agent tool", Agent in a tools list), Task-tool (the
-#                  old name, on a line about agents), subagent_type, agent-type-list (Agent(...)
-#                  in an agent's tools), cc-path:.agents/agents, cc-path:.agents/agent-memory
-#   skill-loading  var:CLAUDE_SKILL_DIR and the other skill substitutions, skillOverrides,
-#                  cc-path:.agents/skills, cc-path:.agents/commands
-#   shell-lines    shell-line (!`cmd` or a ```! block), shared-path:.agents/scripts
-#   arguments      $ARGUMENTS, $N (skills only: the text Claude Code substitutes them in)
-#   frontmatter    fm:<key> (a skill key beyond name, description, license, compatibility and
-#                  metadata; an agent key beyond name and description), tools-string (an
-#                  agent's tools written as one comma string)
-#   instructions   CLAUDE.md (each instruction file), @import (outside code), rule-file,
-#                  rule-paths, cc-path:.agents/rules, cc-path:.agents/CLAUDE.md,
-#                  shared-path:.agents/docs and other framework folders under .agents/
-#   hooks          hook:<Event>[<matcher>] (a registration in settings), hook-payload:<field>
-#                  and hook-answer:<token> (in hook scripts), var:CGS_PROJECT_DIR,
-#                  shared-path:.agents/hooks
-#   settings       permission:<allow|deny|ask|...> (one per rule), settings:<key>,
-#                  statusline-payload:<field>, cc-path:.agents/settings*.json, other var:CLAUDE_*
-#   tools          TodoWrite, task-tools (TaskCreate, TaskGet, TaskList, TaskUpdate, ...)
-#
-# cc-path is a folder or file Claude Code itself reads; shared-path is one of the
-# framework's own folders that happens to live under .agents/. Paths are reported
-# where a skill, agent, instruction file, doc or the settings name them, not
-# inside hook scripts.
+# Codex compatibility inventory: report possible legacy Claude constructs, not verdicts.
+# Usage: bash .agents/scripts/compat-inventory.sh [--skill NAME | --agent NAME] [ROOT]
+# Discovers .agents/skills, .codex/agents/*.toml, root and top-level AGENTS.md
+# plus retained CLAUDE.md, .agents/rules, .agents/docs and .agents/hooks.
+# Optional .codex/hooks.json is inspected structurally; this does not prove activation.
+# Agent TOML is scanned as physical text without decoding escaped body strings.
+# Missing selected Skill or agent and interpreter errors return nonzero.
+# Claude-specific construct counts do not classify normal Codex paths as Claude APIs.
 
 set -u
 
@@ -94,8 +39,8 @@ else
   ROOT="$(pwd -W 2>/dev/null || pwd)"
 fi
 
-if [ ! -d "$ROOT/.claude" ]; then
-  echo "compat-inventory: no .claude folder under $ROOT" >&2
+if [ ! -d "$ROOT/.agents" ]; then
+  echo "compat-inventory: no .agents folder under $ROOT" >&2
   exit 1
 fi
 
@@ -131,20 +76,20 @@ STATIC = [
     ("questions", "AskUserQuestion"),
     ("subagents", "Agent-tool"), ("subagents", "Task-tool"), ("subagents", "subagent_type"),
     ("subagents", "agent-type-list"),
-    ("subagents", "cc-path:.agents/agents"), ("subagents", "cc-path:.agents/agent-memory"),
+    ("subagents", "cc-path:.claude/agents"), ("subagents", "cc-path:.claude/agent-memory"),
     ("skill-loading", "var:CLAUDE_SKILL_DIR"), ("skill-loading", "var:CLAUDE_SESSION_ID"),
     ("skill-loading", "var:CLAUDE_PLUGIN_ROOT"), ("skill-loading", "var:CLAUDE_PLUGIN_DATA"),
     ("skill-loading", "skillOverrides"),
-    ("skill-loading", "cc-path:.agents/skills"), ("skill-loading", "cc-path:.agents/commands"),
+    ("skill-loading", "cc-path:.claude/skills"), ("skill-loading", "cc-path:.claude/commands"),
     ("shell-lines", "shell-line"),
     ("arguments", "$ARGUMENTS"), ("arguments", "$N"),
     ("frontmatter", "tools-string"),
     ("instructions", "CLAUDE.md"), ("instructions", "@import"),
     ("instructions", "rule-file"), ("instructions", "rule-paths"),
-    ("instructions", "cc-path:.agents/rules"), ("instructions", "cc-path:.agents/CLAUDE.md"),
+    ("instructions", "cc-path:.claude/rules"), ("instructions", "cc-path:.claude/CLAUDE.md"),
     ("hooks", "var:CGS_PROJECT_DIR"),
-    ("settings", "cc-path:.agents/settings.json"), ("settings", "cc-path:.agents/settings.local.json"),
-    ("settings", "cc-path:.agents/output-styles"),
+    ("settings", "cc-path:.claude/settings.json"), ("settings", "cc-path:.claude/settings.local.json"),
+    ("settings", "cc-path:.claude/output-styles"),
     ("tools", "TodoWrite"), ("tools", "task-tools"),
 ]
 # Families whose members are named by what was found; "<family>:*" prints when none was.
@@ -179,7 +124,7 @@ TASK_TOOL = re.compile(r"\bTask tool\b|\bTask\(\s*(?:subagent_type|description|p
 TASK_TICKED = re.compile(r"`Task`")
 TASK_CONTEXT = re.compile(r"(?i)\bsub-?agents?\b|\bagents?\b|\balias\b|\bsubagent_type\b")
 VAR = re.compile(r"\$\{?(CLAUDE_[A-Z][A-Z0-9_]*)\}?")
-PATH = re.compile(r"\.agents/([A-Za-z0-9_.-]+)")
+PATH = re.compile(r"\.claude/([A-Za-z0-9_.-]+)")
 IMPORT = re.compile(r"(?:^|(?<=\s))@([~\w.-]*/[\w./-]+|[\w-]+\.[A-Za-z]{1,5})\b")
 CODE_SPAN = re.compile(r"`[^`]*`")
 HOOK_PAYLOAD = re.compile(
@@ -299,9 +244,9 @@ def scan_text(path, lines, skill=False, paths=True, imports=False):
                 if not seg:
                     continue
                 if seg in CC_PATHS:
-                    add(CC_PATHS[seg], "cc-path:.agents/" + seg, path, n)
+                    add(CC_PATHS[seg], "cc-path:.claude/" + seg, path, n)
                 else:
-                    add(SHARED_FEATURE.get(seg, "instructions"), "shared-path:.agents/" + seg, path, n)
+                    add(SHARED_FEATURE.get(seg, "instructions"), "shared-path:.claude/" + seg, path, n)
 
 
 def var_feature(var):
@@ -322,7 +267,7 @@ def import_targets(path, lines):
     return out
 
 
-claude = os.path.join(root, ".claude")
+claude = os.path.join(root, ".agents")
 
 # --- groups ----------------------------------------------------------------
 skill_dir = os.path.join(claude, "skills")
@@ -331,19 +276,19 @@ if os.path.isdir(skill_dir):
     for d in sorted(os.listdir(skill_dir)):
         if os.path.isfile(os.path.join(skill_dir, d, "SKILL.md")):
             skills[d] = md_files(os.path.join(skill_dir, d))
-agent_dir = os.path.join(claude, "agents")
+agent_dir = os.path.join(root, ".codex", "agents")
 agents = {}
 if os.path.isdir(agent_dir):
     for f in sorted(os.listdir(agent_dir)):
-        if f.endswith(".md"):
-            agents[f[:-3]] = os.path.join(agent_dir, f)
+        if f.endswith(".toml"):
+            agents[f[:-5]] = os.path.join(agent_dir, f)
 
-instruction_files = [p for p in (os.path.join(root, "CLAUDE.md"), os.path.join(root, "CLAUDE.local.md"),
-                                 os.path.join(claude, "CLAUDE.md")) if os.path.isfile(p)]
+instruction_files = [p for p in (os.path.join(root, "AGENTS.md"), os.path.join(root, "CLAUDE.md")) if os.path.isfile(p)]
 for d in sorted(os.listdir(root)):
-    p = os.path.join(root, d, "CLAUDE.md")
-    if not d.startswith(".") and os.path.isfile(p):
-        instruction_files.append(p)
+    for name in ("AGENTS.md", "CLAUDE.md"):
+        p = os.path.join(root, d, name)
+        if not d.startswith(".") and os.path.isfile(p):
+            instruction_files.append(p)
 rules_dir = os.path.join(claude, "rules")
 rule_files = [os.path.join(rules_dir, f) for f in sorted(os.listdir(rules_dir))
               if f.endswith(".md")] if os.path.isdir(rules_dir) else []
@@ -354,7 +299,7 @@ hook_files = [os.path.join(hook_dir, f) for f in sorted(os.listdir(hook_dir))
 statusline = os.path.join(claude, "statusline.sh")
 if os.path.isfile(statusline):
     hook_files.append(statusline)
-settings_file = os.path.join(claude, "settings.json")
+settings_file = os.path.join(root, ".codex", "hooks.json")
 settings_files = [settings_file] if os.path.isfile(settings_file) else []
 
 scope_note = ""
@@ -371,7 +316,13 @@ else:
     read_instr, read_rules, read_docs = instruction_files, rule_files, doc_files
     read_hooks, read_settings = hook_files, settings_files
 
-notes = []
+notes = ["Native TOML is scanned as physical text, not parsed or decoded; line numbers are physical file lines, including escaped developer_instructions. Discovery is not native role activation.", "Codex hooks configuration is inspected structurally only; lifecycle activation is not established."]
+if skill_filter and skill_filter not in skills:
+    print("NOT FOUND: skill %s is not a folder in .agents/skills/" % skill_filter, file=sys.stderr)
+    sys.exit(1)
+if agent_filter and agent_filter not in agents:
+    print("NOT FOUND: agent %s is not a file in .codex/agents/" % agent_filter, file=sys.stderr)
+    sys.exit(1)
 
 # --- skills ----------------------------------------------------------------
 for name, files in picked_skills.items():
@@ -412,7 +363,7 @@ for name, path in picked_agents.items():
 imported, queue = set(), [(p, 0) for p in read_instr]
 while queue:   # Claude Code follows imports four hops deep at most
     path, depth = queue.pop(0)
-    if depth >= 4:
+    if depth >= 4 or os.path.basename(path) == "AGENTS.md":
         continue
     for target in import_targets(path, read_lines(path)):
         if target not in imported and os.path.isfile(target):
@@ -426,7 +377,7 @@ for path in read_instr:
     lines = read_lines(path)
     if os.path.basename(path) in ("CLAUDE.md", "CLAUDE.local.md"):
         add("instructions", "CLAUDE.md", path, 1)
-    scan_text(path, lines, imports=True)
+    scan_text(path, lines, imports=os.path.basename(path).startswith("CLAUDE"))
 for path in read_rules:
     lines = read_lines(path)
     add("instructions", "rule-file", path, 1)
@@ -527,4 +478,4 @@ for (feature, construct), (nf, nh) in sorted(rows.items()):
 for feature, construct, path, line in sorted(found, key=lambda f: (f[2], f[3], f[0], f[1])):
     print("FOUND: %s %s %s:%d" % (feature, construct, path, line))
 PYEOF
-exit 0
+exit $?
