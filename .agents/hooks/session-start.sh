@@ -21,9 +21,9 @@
 # overriding a caller that legitimately means somewhere else.
 #
 # NOT an upward search: that resolves a nested project to its parent's config.
-if [ -f "project.yaml" ] || { [ -d ".claude" ] && [ "${PWD##*/}" != ".claude" ]; }; then
+if [ -f "project.yaml" ] || { [ -d ".agents" ] && [ "${PWD##*/}" != ".agents" ]; }; then
   CCGS_ROOT="$PWD"
-elif [ -n "${CGS_PROJECT_DIR:-}" ] && [ -d "${CGS_PROJECT_DIR}" ] && case "${CGS_PROJECT_DIR%/}" in */.claude|*\\.claude) false ;; *) true ;; esac; then
+elif [ -n "${CGS_PROJECT_DIR:-}" ] && [ -d "${CGS_PROJECT_DIR}" ] && case "${CGS_PROJECT_DIR%/}" in */.agents|*\\.agents) false ;; *) true ;; esac; then
   CCGS_ROOT="$CGS_PROJECT_DIR"
 else
   CCGS_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." 2>/dev/null && pwd)"
@@ -229,24 +229,19 @@ fi
 # An OBSERVATION, never an action (CLAUDE.md): it reports, the user decides.
 # Printed BEFORE the session state: hook output past 10,000 characters is cut
 # to a preview, so a warning below a long checkpoint could be lost.
-if [ -f project.yaml ] && [ -f CLAUDE.md ]; then
-    ERI=$(grep -m1 -E '^@docs/engine-reference/[a-z]+/VERSION\.md' CLAUDE.md 2>/dev/null \
-          | sed -n 's|^@docs/engine-reference/\([a-z]*\)/VERSION\.md.*|\1|p')
-    # engine.name, not the first `name:` line: `project.name: Marrow` above the
-    # engine block read as engine "marrow" and warned on a correct project. The
-    # first word only, so "Unreal Engine 5" is the unreal reference folder.
+# Codex reads engine references on demand; no Claude @import is executed.
+if [ -f project.yaml ]; then
     CFG=$(awk '/^engine:/ { e = 1; next } e && /^[^[:space:]#]/ { exit }
                e && /^[[:space:]]+name:/ { sub(/^[[:space:]]+name:[[:space:]]*/, ""); gsub(/["'"'"']/, "");
                                            split($0, w, /[[:space:]#]/); print w[1]; exit }' \
           project.yaml 2>/dev/null | tr '[:upper:]' '[:lower:]')
-    if [ -n "$ERI" ] && [ -n "$CFG" ] && [ "$ERI" != "$CFG" ]; then
-        echo ""
-        echo "!! ENGINE REFERENCE MISMATCH"
-        echo "   project.yaml engine.name : $CFG"
-        echo "   CLAUDE.md imports        : docs/engine-reference/$ERI/VERSION.md"
-        echo "   Every session is loading the $ERI reference on a $CFG project."
-        echo "   Fix: re-run /setup-engine, or edit the ENGINE-REFERENCE-IMPORT line."
-    fi
+    case "$CFG" in
+      godot|unity|unreal)
+        if [ ! -f "docs/engine-reference/$CFG/VERSION.md" ]; then
+          echo "!! ENGINE REFERENCE MISSING: docs/engine-reference/$CFG/VERSION.md"
+          echo "   Read the pinned engine reference before engine work; run the setup-engine Skill to repair it."
+        fi ;;
+    esac
 fi
 
 # --- Active session state recovery ---

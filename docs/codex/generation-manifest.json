@@ -1542,12 +1542,13 @@
       "source": ".claude/hooks/detect-gaps.sh",
       "source_sha256": "62697c61d72b68d75803f8117709901a8e4ad5a4e27b16de782cfd8d6bd097f1",
       "target": ".agents/hooks/detect-gaps.sh",
-      "target_sha256": "7df9130b5608e9aa51e6a2a18fad5601a42ca0e1ed9306ae076efd57afcda94a",
+      "target_sha256": "572bea4d79391b7de68631e028373d89b89284996a8834cdef2321cdd17a7df5",
       "transform_version": 1,
       "transform_ids": [
         "normalize-lf",
         "mirror-claude-paths",
-        "neutral-project-env"
+        "neutral-project-env",
+        "native-hook-root-markers-v1"
       ],
       "owner": "CGS-25",
       "ownership": "generated"
@@ -1557,12 +1558,13 @@
       "source": ".claude/hooks/log-agent-stop.sh",
       "source_sha256": "4a08f9fb1cfa228037d312b59a473f93d0a3a595cf24998b492a1b76a8803953",
       "target": ".agents/hooks/log-agent-stop.sh",
-      "target_sha256": "e96dc3d3d82010a4e5f1bcb8257b0ed107bad540178d9a4c1b22cfa3ba747db1",
+      "target_sha256": "9e0d50fa752c8caf6708a4da1296b055c493414d957cfd091bd43eb97a4a9052",
       "transform_version": 1,
       "transform_ids": [
         "normalize-lf",
         "mirror-claude-paths",
-        "neutral-project-env"
+        "neutral-project-env",
+        "native-hook-root-markers-v1"
       ],
       "owner": "CGS-25",
       "ownership": "generated"
@@ -1572,12 +1574,13 @@
       "source": ".claude/hooks/log-agent.sh",
       "source_sha256": "332ef30195ccd17850e0c444e26d77f6b1cbee29a2cbdcd65c211524e775317c",
       "target": ".agents/hooks/log-agent.sh",
-      "target_sha256": "cee22e9d67b4c9c8d609cea907dd7c0d6e4c74bd37816397ad7af16caef7d6e0",
+      "target_sha256": "62ce00f90944384a001231c3a107dfc94258a277ffdfbfddd10a6f567ce06e7c",
       "transform_version": 1,
       "transform_ids": [
         "normalize-lf",
         "mirror-claude-paths",
-        "neutral-project-env"
+        "neutral-project-env",
+        "native-hook-root-markers-v1"
       ],
       "owner": "CGS-25",
       "ownership": "generated"
@@ -1587,12 +1590,13 @@
       "source": ".claude/hooks/log-instructions.sh",
       "source_sha256": "997685aabb431126128561cf1dd79002d643e88fa3ef9168c4175bdd025b24b4",
       "target": ".agents/hooks/log-instructions.sh",
-      "target_sha256": "3c385aedc53d734cdda0d13bfb134cfa5cd5441e65558babb565a16d598f8b31",
+      "target_sha256": "2b272e7359ea2386cf46a8f4cf27de1a00a155fb1d53c20499c38b8e6ecec70c",
       "transform_version": 1,
       "transform_ids": [
         "normalize-lf",
         "mirror-claude-paths",
-        "neutral-project-env"
+        "neutral-project-env",
+        "native-hook-root-markers-v1"
       ],
       "owner": "CGS-25",
       "ownership": "generated"
@@ -1602,12 +1606,13 @@
       "source": ".claude/hooks/notify.sh",
       "source_sha256": "99e412a6d761d692195997c2ee7abb3d0051cb630c68ea38357a1397b5dbdf97",
       "target": ".agents/hooks/notify.sh",
-      "target_sha256": "abfed1a99056fad18ae4bf19a605f237d6b405019ff133062dbc7af4ccf40687",
+      "target_sha256": "4cf91ab0faa3e2f0f39e88d1dbe425e372e7fe76b78453366826b129e70841bd",
       "transform_version": 1,
       "transform_ids": [
         "normalize-lf",
         "mirror-claude-paths",
-        "neutral-project-env"
+        "neutral-project-env",
+        "native-hook-root-markers-v1"
       ],
       "owner": "CGS-25",
       "ownership": "generated"
@@ -1617,12 +1622,13 @@
       "source": ".claude/hooks/pre-compact.sh",
       "source_sha256": "6fa5cb8f7a61f179765cf34a52f8678098d67cf25044695ae50d64ea223c4665",
       "target": ".agents/hooks/pre-compact.sh",
-      "target_sha256": "6b06d665cb5a01814d76620f9a29434c0e65e6d47174a1199f22f5c4a1956410",
+      "target_sha256": "87afc8c5cd57065c02bf521f6f7e865c8076357d675ca1c1f82a7bc30b1509e9",
       "transform_version": 1,
       "transform_ids": [
         "normalize-lf",
         "mirror-claude-paths",
-        "neutral-project-env"
+        "neutral-project-env",
+        "native-hook-root-markers-v1"
       ],
       "owner": "CGS-25",
       "ownership": "generated"
@@ -1632,12 +1638,14 @@
       "source": ".claude/hooks/session-start.sh",
       "source_sha256": "a80f60a581bcafa6300d7d2a5937b2dce77a5e36b42d9c89fd0e9153f84c4f1d",
       "target": ".agents/hooks/session-start.sh",
-      "target_sha256": "2f06992732ae29b2291168904e2b9bc2c0d90a47305b726bcd11f63ddec2ee16",
+      "target_sha256": "6a898ea4ac8c2b383d1664c7319f24add9069835c069c7d352d481046b860cc6",
       "transform_version": 1,
       "transform_ids": [
         "normalize-lf",
         "mirror-claude-paths",
-        "neutral-project-env"
+        "neutral-project-env",
+        "native-hook-root-markers-v1",
+        "helper-overlay-v1:14226bc0023409f4a9aa727757f2ee911b209b9d6132cc3261c6e74dfe8a3039"
       ],
       "owner": "CGS-25",
       "ownership": "generated"
@@ -1647,12 +1655,13 @@
       "source": ".claude/hooks/session-stop.sh",
       "source_sha256": "3f5fa6de2a7dc34b16949f89c550cd239bc677b3d2b1e117d8361814f19619dc",
       "target": ".agents/hooks/session-stop.sh",
-      "target_sha256": "93764abb8a2c505b6f27614eef0fdc4198abcf93dbdc37b6f326edec9dcc3da4",
+      "target_sha256": "2c73ff7669c710bf7215666664d7685cf6c3d20792d5c1324c78160355e32472",
       "transform_version": 1,
       "transform_ids": [
         "normalize-lf",
         "mirror-claude-paths",
-        "neutral-project-env"
+        "neutral-project-env",
+        "native-hook-root-markers-v1"
       ],
       "owner": "CGS-25",
       "ownership": "generated"
@@ -1662,12 +1671,13 @@
       "source": ".claude/hooks/update-check.sh",
       "source_sha256": "dee572b3310acc4261822815154c2ab56a77805d31117d26f0db8f29ff845ccb",
       "target": ".agents/hooks/update-check.sh",
-      "target_sha256": "0be5548dc47dfcba4915499b4b7323f9e4c51ee5da4b017a8e8f3a0b264acbb9",
+      "target_sha256": "ddbbd7600d6b06645bedbd5890d102828473d6c5a0b1e4f9b968eddfd21408ff",
       "transform_version": 1,
       "transform_ids": [
         "normalize-lf",
         "mirror-claude-paths",
-        "neutral-project-env"
+        "neutral-project-env",
+        "native-hook-root-markers-v1"
       ],
       "owner": "CGS-25",
       "ownership": "generated"
@@ -1677,12 +1687,13 @@
       "source": ".claude/hooks/validate-agent-artifact.sh",
       "source_sha256": "936660d0f89c03e5d5d5ef1546973f4d5949f65ad6fce0e669d048701888bd1d",
       "target": ".agents/hooks/validate-agent-artifact.sh",
-      "target_sha256": "b7fd0db348dfa8c3cd6e911cf046be5591e275c1e34635a247ca74cee2c4cccf",
+      "target_sha256": "19fa928db08b0e36e73e3a69e29a294ca9cf79a4bfe3223c233206db2b8344cb",
       "transform_version": 1,
       "transform_ids": [
         "normalize-lf",
         "mirror-claude-paths",
-        "neutral-project-env"
+        "neutral-project-env",
+        "native-hook-root-markers-v1"
       ],
       "owner": "CGS-25",
       "ownership": "generated"
@@ -1692,12 +1703,13 @@
       "source": ".claude/hooks/validate-assets.sh",
       "source_sha256": "ad43ca0faaa459bbc0aefddf9a5fa4c5eac28269b515de7cd6d645a4a89f43f3",
       "target": ".agents/hooks/validate-assets.sh",
-      "target_sha256": "54e557e267ddad401dd6857888cc71076f986f5184fb4bf307bdf37122b2534a",
+      "target_sha256": "99f3d1c8e492bbdf05b28d56f0da9cb5e232a0d62eb489f4966cb0f1a85f0e87",
       "transform_version": 1,
       "transform_ids": [
         "normalize-lf",
         "mirror-claude-paths",
-        "neutral-project-env"
+        "neutral-project-env",
+        "native-hook-root-markers-v1"
       ],
       "owner": "CGS-25",
       "ownership": "generated"
@@ -1707,12 +1719,13 @@
       "source": ".claude/hooks/validate-commit.sh",
       "source_sha256": "eb82e5157144d8f43cdae1e7280ab05ea7c65e598d5c339f95dabb7efac1dc84",
       "target": ".agents/hooks/validate-commit.sh",
-      "target_sha256": "ad8b31a1cd95d98e3e4483e4d0e9371395199bcf67e79083b01a96f7e21dd66a",
+      "target_sha256": "064869ec92b96b2f06e68364687cb1dc391b7422ce4591b5358565b6fdb35f97",
       "transform_version": 1,
       "transform_ids": [
         "normalize-lf",
         "mirror-claude-paths",
-        "neutral-project-env"
+        "neutral-project-env",
+        "native-hook-root-markers-v1"
       ],
       "owner": "CGS-25",
       "ownership": "generated"
@@ -1722,12 +1735,13 @@
       "source": ".claude/hooks/validate-push.sh",
       "source_sha256": "c110644f59ba8ce86da5b530d32a84d0e5fbb21d7a924d0f5d745aa31445faba",
       "target": ".agents/hooks/validate-push.sh",
-      "target_sha256": "06e51a5b5d619141df734733b2f7a7189d9b63250676e1fcdb5e7575cc4e2cc1",
+      "target_sha256": "5416e5fe6a114d795c101d993bfec90042f82e361ea17db87a0726cb34cf7330",
       "transform_version": 1,
       "transform_ids": [
         "normalize-lf",
         "mirror-claude-paths",
-        "neutral-project-env"
+        "neutral-project-env",
+        "native-hook-root-markers-v1"
       ],
       "owner": "CGS-25",
       "ownership": "generated"
@@ -1737,12 +1751,13 @@
       "source": ".claude/hooks/validate-read.sh",
       "source_sha256": "3b5aa4b3528558206d2fd85e580d7ba3fdb22be9bafc2d93ed74910f1fcb6103",
       "target": ".agents/hooks/validate-read.sh",
-      "target_sha256": "11cb7a1338d4f32ec8c67fc0c22467752a6558a14ed788df13898a8cb40f1df9",
+      "target_sha256": "ed3cea36f3ccd2e7dbba1b5154d12b8dd472821facf6852491bac215bb04265b",
       "transform_version": 1,
       "transform_ids": [
         "normalize-lf",
         "mirror-claude-paths",
-        "neutral-project-env"
+        "neutral-project-env",
+        "native-hook-root-markers-v1"
       ],
       "owner": "CGS-25",
       "ownership": "generated"
@@ -1752,12 +1767,13 @@
       "source": ".claude/hooks/validate-registry.sh",
       "source_sha256": "883062e2015650986894791026d86c4df49cfee0226a2f4fc043c8b07ecba3af",
       "target": ".agents/hooks/validate-registry.sh",
-      "target_sha256": "57fe47898d28423cf61d557f8350e4c304ede630dcce0cce63da568dc0715e93",
+      "target_sha256": "0caf5217718e88370e64196efbce9fa4effecddd45d567d45b0f2601778dc279",
       "transform_version": 1,
       "transform_ids": [
         "normalize-lf",
         "mirror-claude-paths",
-        "neutral-project-env"
+        "neutral-project-env",
+        "native-hook-root-markers-v1"
       ],
       "owner": "CGS-25",
       "ownership": "generated"
@@ -1767,12 +1783,13 @@
       "source": ".claude/hooks/validate-skill-change.sh",
       "source_sha256": "8773589c26b847f9266ef08813ede31f2b2fb38e5d2e20d6ec85dc69c7455d28",
       "target": ".agents/hooks/validate-skill-change.sh",
-      "target_sha256": "5793518e038d2a4cc5904194ba13fcbf2f0a89af2a099d58f52edb3aa32f139d",
+      "target_sha256": "794ff08276749dd8f0b82d2d14aa0f4cb634e37d5428e0916e80d47160e7be02",
       "transform_version": 1,
       "transform_ids": [
         "normalize-lf",
         "mirror-claude-paths",
-        "neutral-project-env"
+        "neutral-project-env",
+        "native-hook-root-markers-v1"
       ],
       "owner": "CGS-25",
       "ownership": "generated"
@@ -1782,12 +1799,13 @@
       "source": ".claude/hooks/validate-write.sh",
       "source_sha256": "1fbb25825748ad7ff49707217ea8b8f842bcaa6fe14725a6c1d07511124726df",
       "target": ".agents/hooks/validate-write.sh",
-      "target_sha256": "1249cf2a9e6be400d07acaf227e852741f919199726004f0c799ef28a617bcac",
+      "target_sha256": "277474dbcf56bd1ece89dea9d63d1798f88acadcc29066cb48209bd0fc6881cc",
       "transform_version": 1,
       "transform_ids": [
         "normalize-lf",
         "mirror-claude-paths",
-        "neutral-project-env"
+        "neutral-project-env",
+        "native-hook-root-markers-v1"
       ],
       "owner": "CGS-25",
       "ownership": "generated"
@@ -1803,6 +1821,7 @@
         "normalize-lf",
         "mirror-claude-paths",
         "neutral-project-env",
+        "native-hook-root-markers-v1",
         "explicit-project-root"
       ],
       "owner": "CGS-25",
@@ -2518,12 +2537,13 @@
       "source": ".claude/scripts/story-status.sh",
       "source_sha256": "9fb510e4164909f4704c141f38ca42f0e1eb02e6476f73ab8dc7e9141d54ff4d",
       "target": ".agents/scripts/story-status.sh",
-      "target_sha256": "9fb510e4164909f4704c141f38ca42f0e1eb02e6476f73ab8dc7e9141d54ff4d",
+      "target_sha256": "35a61e2496e2ed6fd641268c1fd66939e528e19a639242429fe0417fbf56f433",
       "transform_version": 1,
       "transform_ids": [
         "normalize-lf",
         "mirror-claude-paths",
-        "neutral-project-env"
+        "neutral-project-env",
+        "story-status-selected-root-v1"
       ],
       "owner": "CGS-25",
       "ownership": "generated"

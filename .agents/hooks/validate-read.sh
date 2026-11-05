@@ -3,9 +3,9 @@
 # --- work from the project root ----------------------------------------------
 # Same precedence as validate-write.sh (see there for why): a cwd that is a
 # project root wins, then CGS_PROJECT_DIR, then this script's location.
-if [ -f "project.yaml" ] || { [ -d ".claude" ] && [ "${PWD##*/}" != ".claude" ]; }; then
+if [ -f "project.yaml" ] || { [ -d ".agents" ] && [ "${PWD##*/}" != ".agents" ]; }; then
   CCGS_ROOT="$PWD"
-elif [ -n "${CGS_PROJECT_DIR:-}" ] && [ -d "${CGS_PROJECT_DIR}" ] && case "${CGS_PROJECT_DIR%/}" in */.claude|*\\.claude) false ;; *) true ;; esac; then
+elif [ -n "${CGS_PROJECT_DIR:-}" ] && [ -d "${CGS_PROJECT_DIR}" ] && case "${CGS_PROJECT_DIR%/}" in */.agents|*\\.agents) false ;; *) true ;; esac; then
   CCGS_ROOT="$CGS_PROJECT_DIR"
 else
   CCGS_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." 2>/dev/null && pwd)"

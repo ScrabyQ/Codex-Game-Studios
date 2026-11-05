@@ -2916,8 +2916,16 @@
       ],
       "proposed_target": ".agents/hooks/detect-gaps.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Preserved source-bound backend and tested adapter equivalent; see per-declaration protocol/limits in parity matrix. Native activation and Linux remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-24",
+      "target": ".agents/hooks/detect-gaps.sh",
+      "target_sha256": "572bea4d79391b7de68631e028373d89b89284996a8834cdef2321cdd17a7df5",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "file:.claude/hooks/log-agent-stop.sh",
@@ -2930,8 +2938,16 @@
       ],
       "proposed_target": ".agents/hooks/log-agent-stop.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Preserved source-bound backend and tested adapter equivalent; see per-declaration protocol/limits in parity matrix. Native activation and Linux remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-24",
+      "target": ".agents/hooks/log-agent-stop.sh",
+      "target_sha256": "9e0d50fa752c8caf6708a4da1296b055c493414d957cfd091bd43eb97a4a9052",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "file:.claude/hooks/log-agent.sh",
@@ -2944,8 +2960,16 @@
       ],
       "proposed_target": ".agents/hooks/log-agent.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Preserved source-bound backend and tested adapter equivalent; see per-declaration protocol/limits in parity matrix. Native activation and Linux remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-24",
+      "target": ".agents/hooks/log-agent.sh",
+      "target_sha256": "62ce00f90944384a001231c3a107dfc94258a277ffdfbfddd10a6f567ce06e7c",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "file:.claude/hooks/log-instructions.sh",
@@ -2958,8 +2982,16 @@
       ],
       "proposed_target": ".agents/hooks/log-instructions.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Claude InstructionsLoaded diagnostic is preserved, but no equivalent Codex automatic event is asserted. Explicit rule selector provides tested path-policy selection; automatic rule-load telemetry is unavailable.",
+      "status": "UNSUPPORTED",
+      "task": "CGS-24",
+      "target": ".agents/hooks/log-instructions.sh",
+      "target_sha256": "2b272e7359ea2386cf46a8f4cf27de1a00a155fb1d53c20499c38b8e6ecec70c",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "file:.claude/hooks/notify.sh",
@@ -2972,8 +3004,16 @@
       ],
       "proposed_target": ".agents/hooks/notify.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Preserved source-bound backend and tested adapter equivalent; see per-declaration protocol/limits in parity matrix. Native activation and Linux remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-24",
+      "target": ".agents/hooks/notify.sh",
+      "target_sha256": "4cf91ab0faa3e2f0f39e88d1dbe425e372e7fe76b78453366826b129e70841bd",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "file:.claude/hooks/pre-compact.sh",
@@ -2986,8 +3026,16 @@
       ],
       "proposed_target": ".agents/hooks/pre-compact.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Preserved source-bound backend and tested adapter equivalent; see per-declaration protocol/limits in parity matrix. Native activation and Linux remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-24",
+      "target": ".agents/hooks/pre-compact.sh",
+      "target_sha256": "87afc8c5cd57065c02bf521f6f7e865c8076357d675ca1c1f82a7bc30b1509e9",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "file:.claude/hooks/session-start.sh",
@@ -3001,8 +3049,16 @@
       ],
       "proposed_target": ".agents/hooks/session-start.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Preserved source-bound backend and tested adapter equivalent; see per-declaration protocol/limits in parity matrix. Native activation and Linux remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-24",
+      "target": ".agents/hooks/session-start.sh",
+      "target_sha256": "6a898ea4ac8c2b383d1664c7319f24add9069835c069c7d352d481046b860cc6",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "file:.claude/hooks/session-stop.sh",
@@ -3015,8 +3071,16 @@
       ],
       "proposed_target": ".agents/hooks/session-stop.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Preserved source-bound backend and tested adapter equivalent; see per-declaration protocol/limits in parity matrix. Native activation and Linux remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-24",
+      "target": ".agents/hooks/session-stop.sh",
+      "target_sha256": "2c73ff7669c710bf7215666664d7685cf6c3d20792d5c1324c78160355e32472",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "file:.claude/hooks/update-check.sh",
@@ -3029,8 +3093,16 @@
       ],
       "proposed_target": ".agents/hooks/update-check.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Cached update notice preserved; no background refresh installed. Actual upstream update workflow verification belongs to CGS-29.",
+      "status": "PENDING",
+      "task": "CGS-24",
+      "target": ".agents/hooks/update-check.sh",
+      "target_sha256": "ddbbd7600d6b06645bedbd5890d102828473d6c5a0b1e4f9b968eddfd21408ff",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "file:.claude/hooks/validate-agent-artifact.sh",
@@ -3043,8 +3115,16 @@
       ],
       "proposed_target": ".agents/hooks/validate-agent-artifact.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Preserved source-bound backend and tested adapter equivalent; see per-declaration protocol/limits in parity matrix. Native activation and Linux remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-24",
+      "target": ".agents/hooks/validate-agent-artifact.sh",
+      "target_sha256": "19fa928db08b0e36e73e3a69e29a294ca9cf79a4bfe3223c233206db2b8344cb",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "file:.claude/hooks/validate-assets.sh",
@@ -3058,8 +3138,16 @@
       ],
       "proposed_target": ".agents/hooks/validate-assets.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Preserved source-bound backend and tested adapter equivalent; see per-declaration protocol/limits in parity matrix. Native activation and Linux remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-24",
+      "target": ".agents/hooks/validate-assets.sh",
+      "target_sha256": "99f3d1c8e492bbdf05b28d56f0da9cb5e232a0d62eb489f4966cb0f1a85f0e87",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "file:.claude/hooks/validate-commit.sh",
@@ -3073,8 +3161,16 @@
       ],
       "proposed_target": ".agents/hooks/validate-commit.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Preserved source-bound backend and tested adapter equivalent; see per-declaration protocol/limits in parity matrix. Native activation and Linux remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-24",
+      "target": ".agents/hooks/validate-commit.sh",
+      "target_sha256": "064869ec92b96b2f06e68364687cb1dc391b7422ce4591b5358565b6fdb35f97",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "file:.claude/hooks/validate-push.sh",
@@ -3088,8 +3184,16 @@
       ],
       "proposed_target": ".agents/hooks/validate-push.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Preserved source-bound backend and tested adapter equivalent; see per-declaration protocol/limits in parity matrix. Native activation and Linux remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-24",
+      "target": ".agents/hooks/validate-push.sh",
+      "target_sha256": "5416e5fe6a114d795c101d993bfec90042f82e361ea17db87a0726cb34cf7330",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "file:.claude/hooks/validate-read.sh",
@@ -3103,8 +3207,16 @@
       ],
       "proposed_target": ".agents/hooks/validate-read.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Preserved source-bound backend and tested adapter equivalent; see per-declaration protocol/limits in parity matrix. Native activation and Linux remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-24",
+      "target": ".agents/hooks/validate-read.sh",
+      "target_sha256": "ed3cea36f3ccd2e7dbba1b5154d12b8dd472821facf6852491bac215bb04265b",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "file:.claude/hooks/validate-registry.sh",
@@ -3118,8 +3230,16 @@
       ],
       "proposed_target": ".agents/hooks/validate-registry.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Preserved source-bound backend and tested adapter equivalent; see per-declaration protocol/limits in parity matrix. Native activation and Linux remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-24",
+      "target": ".agents/hooks/validate-registry.sh",
+      "target_sha256": "0caf5217718e88370e64196efbce9fa4effecddd45d567d45b0f2601778dc279",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "file:.claude/hooks/validate-skill-change.sh",
@@ -3133,8 +3253,16 @@
       ],
       "proposed_target": ".agents/hooks/validate-skill-change.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Preserved source-bound backend and tested adapter equivalent; see per-declaration protocol/limits in parity matrix. Native activation and Linux remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-24",
+      "target": ".agents/hooks/validate-skill-change.sh",
+      "target_sha256": "794ff08276749dd8f0b82d2d14aa0f4cb634e37d5428e0916e80d47160e7be02",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "file:.claude/hooks/validate-write.sh",
@@ -3148,8 +3276,16 @@
       ],
       "proposed_target": ".agents/hooks/validate-write.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Preserved source-bound backend and tested adapter equivalent; see per-declaration protocol/limits in parity matrix. Native activation and Linux remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-24",
+      "target": ".agents/hooks/validate-write.sh",
+      "target_sha256": "277474dbcf56bd1ece89dea9d63d1798f88acadcc29066cb48209bd0fc6881cc",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "file:.claude/hooks/yaml-helper.sh",
@@ -3165,14 +3301,18 @@
       ],
       "proposed_target": ".agents/hooks/yaml-helper.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Actual focused helper fixtures and source-preserving adaptations checked. test-run ladder fixtures are synthetic, not engine execution; all other limits are explicit in helper inventory.",
-      "status": "PORTED",
+      "verification": "Preserved source-bound backend and tested adapter equivalent; see per-declaration protocol/limits in parity matrix. Native activation and Linux remain PENDING.",
+      "status": "EQUIVALENT",
       "target": ".agents/hooks/yaml-helper.sh",
       "target_sha256": "8df42ef8e26e1e1ffd8e145800d8e3fb06ca4a8da0fa7a29013721e705c96268",
       "evidence": [
         "docs/codex/evidence/CGS-25/checks.json",
-        "docs/codex/evidence/CGS-25/helper-inventory.json"
-      ]
+        "docs/codex/evidence/CGS-25/helper-inventory.json",
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ],
+      "task": "CGS-24"
     },
     {
       "id": "file:.claude/rules/agent-memory.md",
@@ -3943,8 +4083,14 @@
       ],
       "proposed_target": ".agents/scripts/story-status.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual two-sibling-project regression verifies selected root, status ordering and counts; invalid roots fail rather than reporting another project.",
+      "status": "EQUIVALENT",
+      "task": "CGS-25",
+      "target": ".agents/scripts/story-status.sh",
+      "target_sha256": "35a61e2496e2ed6fd641268c1fd66939e528e19a639242429fe0417fbf56f433",
+      "evidence": [
+        "docs/codex/evidence/CGS-25/helper-root-regression.json"
+      ]
     },
     {
       "id": "file:.claude/scripts/test-run.sh",
@@ -10308,8 +10454,16 @@
       ],
       "proposed_target": "scripts/codex/hooks/ (review SessionStart event availability)",
       "proposed_equivalent": "Use a supported event integration if available; otherwise document and test an explicit manual or CI fallback.",
-      "verification": "Exercise trigger, input and safety behavior or document tested limitation.",
-      "status": "PENDING"
+      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-24",
+      "target": "scripts/codex/hooks.mjs",
+      "target_sha256": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "hook:SessionStart:0:1",
@@ -10323,8 +10477,16 @@
       ],
       "proposed_target": "scripts/codex/hooks/ (review SessionStart event availability)",
       "proposed_equivalent": "Use a supported event integration if available; otherwise document and test an explicit manual or CI fallback.",
-      "verification": "Exercise trigger, input and safety behavior or document tested limitation.",
-      "status": "PENDING"
+      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-24",
+      "target": "scripts/codex/hooks.mjs",
+      "target_sha256": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "hook:PreToolUse:0:0",
@@ -10338,8 +10500,16 @@
       ],
       "proposed_target": "scripts/codex/hooks/ (review PreToolUse event availability)",
       "proposed_equivalent": "Use a supported event integration if available; otherwise document and test an explicit manual or CI fallback.",
-      "verification": "Exercise trigger, input and safety behavior or document tested limitation.",
-      "status": "PENDING"
+      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-24",
+      "target": "scripts/codex/hooks.mjs",
+      "target_sha256": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "hook:PreToolUse:0:1",
@@ -10353,8 +10523,16 @@
       ],
       "proposed_target": "scripts/codex/hooks/ (review PreToolUse event availability)",
       "proposed_equivalent": "Use a supported event integration if available; otherwise document and test an explicit manual or CI fallback.",
-      "verification": "Exercise trigger, input and safety behavior or document tested limitation.",
-      "status": "PENDING"
+      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-24",
+      "target": "scripts/codex/hooks.mjs",
+      "target_sha256": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "hook:PreToolUse:1:0",
@@ -10368,8 +10546,16 @@
       ],
       "proposed_target": "scripts/codex/hooks/ (review PreToolUse event availability)",
       "proposed_equivalent": "Use a supported event integration if available; otherwise document and test an explicit manual or CI fallback.",
-      "verification": "Exercise trigger, input and safety behavior or document tested limitation.",
-      "status": "PENDING"
+      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-24",
+      "target": "scripts/codex/hooks.mjs",
+      "target_sha256": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "hook:PreToolUse:1:1",
@@ -10383,8 +10569,16 @@
       ],
       "proposed_target": "scripts/codex/hooks/ (review PreToolUse event availability)",
       "proposed_equivalent": "Use a supported event integration if available; otherwise document and test an explicit manual or CI fallback.",
-      "verification": "Exercise trigger, input and safety behavior or document tested limitation.",
-      "status": "PENDING"
+      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-24",
+      "target": "scripts/codex/hooks.mjs",
+      "target_sha256": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "hook:PreToolUse:2:0",
@@ -10398,8 +10592,16 @@
       ],
       "proposed_target": "scripts/codex/hooks/ (review PreToolUse event availability)",
       "proposed_equivalent": "Use a supported event integration if available; otherwise document and test an explicit manual or CI fallback.",
-      "verification": "Exercise trigger, input and safety behavior or document tested limitation.",
-      "status": "PENDING"
+      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-24",
+      "target": "scripts/codex/hooks.mjs",
+      "target_sha256": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "hook:PostToolUse:0:0",
@@ -10413,8 +10615,16 @@
       ],
       "proposed_target": "scripts/codex/hooks/ (review PostToolUse event availability)",
       "proposed_equivalent": "Use a supported event integration if available; otherwise document and test an explicit manual or CI fallback.",
-      "verification": "Exercise trigger, input and safety behavior or document tested limitation.",
-      "status": "PENDING"
+      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-24",
+      "target": "scripts/codex/hooks.mjs",
+      "target_sha256": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "hook:PostToolUse:0:1",
@@ -10428,8 +10638,16 @@
       ],
       "proposed_target": "scripts/codex/hooks/ (review PostToolUse event availability)",
       "proposed_equivalent": "Use a supported event integration if available; otherwise document and test an explicit manual or CI fallback.",
-      "verification": "Exercise trigger, input and safety behavior or document tested limitation.",
-      "status": "PENDING"
+      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-24",
+      "target": "scripts/codex/hooks.mjs",
+      "target_sha256": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "hook:Notification:0:0",
@@ -10443,8 +10661,16 @@
       ],
       "proposed_target": "scripts/codex/hooks/ (review Notification event availability)",
       "proposed_equivalent": "Use a supported event integration if available; otherwise document and test an explicit manual or CI fallback.",
-      "verification": "Exercise trigger, input and safety behavior or document tested limitation.",
-      "status": "PENDING"
+      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-24",
+      "target": "scripts/codex/hooks.mjs",
+      "target_sha256": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "hook:PreCompact:0:0",
@@ -10458,8 +10684,16 @@
       ],
       "proposed_target": "scripts/codex/hooks/ (review PreCompact event availability)",
       "proposed_equivalent": "Use a supported event integration if available; otherwise document and test an explicit manual or CI fallback.",
-      "verification": "Exercise trigger, input and safety behavior or document tested limitation.",
-      "status": "PENDING"
+      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-24",
+      "target": "scripts/codex/hooks.mjs",
+      "target_sha256": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "hook:Stop:0:0",
@@ -10473,8 +10707,16 @@
       ],
       "proposed_target": "scripts/codex/hooks/ (review Stop event availability)",
       "proposed_equivalent": "Use a supported event integration if available; otherwise document and test an explicit manual or CI fallback.",
-      "verification": "Exercise trigger, input and safety behavior or document tested limitation.",
-      "status": "PENDING"
+      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-24",
+      "target": "scripts/codex/hooks.mjs",
+      "target_sha256": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "hook:SubagentStart:0:0",
@@ -10488,8 +10730,16 @@
       ],
       "proposed_target": "scripts/codex/hooks/ (review SubagentStart event availability)",
       "proposed_equivalent": "Use a supported event integration if available; otherwise document and test an explicit manual or CI fallback.",
-      "verification": "Exercise trigger, input and safety behavior or document tested limitation.",
-      "status": "PENDING"
+      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-24",
+      "target": "scripts/codex/hooks.mjs",
+      "target_sha256": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "hook:SubagentStop:0:0",
@@ -10503,8 +10753,16 @@
       ],
       "proposed_target": "scripts/codex/hooks/ (review SubagentStop event availability)",
       "proposed_equivalent": "Use a supported event integration if available; otherwise document and test an explicit manual or CI fallback.",
-      "verification": "Exercise trigger, input and safety behavior or document tested limitation.",
-      "status": "PENDING"
+      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-24",
+      "target": "scripts/codex/hooks.mjs",
+      "target_sha256": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     },
     {
       "id": "hook:SubagentStop:0:1",
@@ -10518,8 +10776,16 @@
       ],
       "proposed_target": "scripts/codex/hooks/ (review SubagentStop event availability)",
       "proposed_equivalent": "Use a supported event integration if available; otherwise document and test an explicit manual or CI fallback.",
-      "verification": "Exercise trigger, input and safety behavior or document tested limitation.",
-      "status": "PENDING"
+      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-24",
+      "target": "scripts/codex/hooks.mjs",
+      "target_sha256": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
+      "evidence": [
+        "docs/codex/evidence/CGS-24/checks.json",
+        "docs/codex/evidence/CGS-24/parity.json",
+        "docs/codex/hooks.md"
+      ]
     }
   ]
 }

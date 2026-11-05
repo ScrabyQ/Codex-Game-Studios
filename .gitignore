@@ -25,6 +25,11 @@ production/session-state/
 # repository.
 .claude/worktrees/
 
+# Codex runtime memory, isolated checkouts and disposable adapter fixtures.
+/.agents/agent-memory/
+/.codex/worktrees/
+/.codex-tmp/
+
 
 # === Local sandboxes and scratch work ===
 examples/

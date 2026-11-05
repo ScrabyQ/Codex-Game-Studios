@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "task": "CGS-25 helper root regression",
+  "story_status": {
+    "source": ".claude/scripts/story-status.sh",
+    "source_sha256": "9fb510e4164909f4704c141f38ca42f0e1eb02e6476f73ab8dc7e9141d54ff4d",
+    "target": ".agents/scripts/story-status.sh",
+    "target_sha256": "35a61e2496e2ed6fd641268c1fd66939e528e19a639242429fe0417fbf56f433",
+    "change": "Source-bound root adaptation honors CGS_PROJECT_DIR and fails on an unreadable root; upstream status ranking and output remain intact."
+  },
+  "routing": {
+    "named_root": ["adr-status", "agent-check", "asset-scan", "bug-stats", "code-markers", "config-set", "content-count", "debt-register", "flaky-stats", "hook-input", "inputs-check", "plan-math", "project-state", "read-guard", "registry", "session-state", "set-stage", "skill-lint", "story-facts", "test-run", "test-scaffold", "write-guard"],
+    "positional_project_root": ["artifact-check", "compat-inventory"],
+    "explicit_adr_directory": ["adr-dep-graph"],
+    "selected_cwd": ["md-section", "review-receipts"],
+    "project_environment": ["story-status", "yaml-helper", "project-coherence (requires selected project.yaml)"],
+    "other_helpers": "For a project other than the helper repository, fail before execution unless a safe root interface has been verified; library-root invocation remains available."
+  },
+  "checks": [
+    {"command": "node scripts/codex/helper-root-tests.mjs", "exit_code": 0, "result": "PASS: two sibling roots with different story sets and artifacts, review-before-todo ordering, counts, missing root including direct Bash invocation, file root, missing catalog, unsafe helper and conflicting positional root"},
+    {"command": "node scripts/codex/helper-tests.mjs", "exit_code": 0, "result": "PASS: existing core helper fixtures"},
+    {"command": "node scripts/codex/config-tests.mjs", "exit_code": 0, "result": "PASS: config precedence, nine mode combinations, BOM/CRLF and checkpoint fidelity"},
+    {"command": "node scripts/codex/generate.mjs --family support --check", "exit_code": 0, "result": "PASS: registered support output matches source-bound generation plans"}
+  ],
+  "limitations": ["Windows Node and Git Bash were exercised; Linux remains pending.", "Rejecting an unverified root interface is not proof that the helper's other behavior is correct.", "Native hook payloads and automatic enforcement remain separate verification work."]
+}

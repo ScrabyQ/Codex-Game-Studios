@@ -35,7 +35,8 @@
 
 # The project root is two levels above this file: the injected command runs from
 # wherever the skill's shell starts, which need not be the root.
-cd "$(dirname "${BASH_SOURCE[0]}")/../.." 2>/dev/null || { echo "STORIES      none"; exit 0; }
+# CGS_STORY_ROOT_V1: explicit selected project or the helper repo.
+cd "${CGS_PROJECT_DIR:-$(dirname "${BASH_SOURCE[0]}")/../..}" 2>/dev/null || { echo "story-status: cannot read selected root" >&2; exit 1; }
 
 files=()
 for f in production/epics/*/story-*.md; do
