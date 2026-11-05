@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "source_head": "7d6aaf25482745f0ccb7bee3656596fbdbee539c",
+  "upstream": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
+  "mechanism": "Sequential in-session role execution; not independent review",
+  "files": {
+    "brief.md": {
+      "sha256": "a98205d1e3a6dd7dfaf8bb06255d9166c60fa527e4c8d61917829abd8bd7afb1",
+      "content": "# Synthetic guard HUD and gameplay brief\n\nThis is an isolated coordination and pure JavaScript contract exercise, not a playable game or a runtime UI delivery. No engine is configured. The task operator authorizes the listed fixture artifacts and staged role work; these scripted choices do not approve any real project architecture.\n\nGameplay owns health, initially maxHealth from config. Damage must be finite and nonnegative; clamp to zero. Invalid input leaves state unchanged. A snapshot must be immutable. UI displays a localized value, reads the snapshot, and emits the guard-requested event for either keyboard or gamepad input. UI must never mutate health. Colors alone must not convey critical state. Audio and rendering are out of scope for implementation, but unassessed review streams must remain visible.\n\nAuthorized implementation set: src/gameplay/health.mjs (gameplay-programmer), src/ui/guard-hud.mjs (ui-programmer), tests/contracts.test.mjs (qa-tester). Data file config/health.json is a fixture input. No shared file may have simultaneous writers. Test utilities under this evidence directory are not a new agent runtime.\n\nScripted gates: approve the engine-independent data contract and scoped implementation file set; approve sequential role execution. Keep all creative/runtime/input-device/accessibility validation gaps open. Do not override a missing review. If a role cannot provide its named artifact after a scoped retry, stop dependent integration and write a partial BLOCKED report. The incomplete role response is intentionally injected test input, not evidence that a real child failed.\n"
+    },
+    "config/health.json": {
+      "sha256": "a9231681e3992b5e54fbf833b67c21edc02622e82eaf4124b83fabc9c3167b53",
+      "content": "{\"maxHealth\":100}\n"
+    },
+    "design/accessibility-requirements.md": {
+      "sha256": "01ec341ce7125a4c69c96fdc635f96d28f6948888f820036324fb6104203d9e0",
+      "content": "# Accessibility requirements\nCommitted synthetic tier: Basic. Critical health state must have numeric text, not color alone. Keyboard and gamepad route equivalent action intents. Screen legibility, navigation, device testing and rendered contrast require later runtime observation; the headless fixture cannot assess them.\n"
+    },
+    "design/gdd/game-concept.md": {
+      "sha256": "15cbae0f08ce4685899e62518e7f188f13366cbf27feb1c354a4c7255399e385",
+      "content": "# Guard arena fixture\n## Summary\nPlayers monitor health and request a guard action. Pillar: readable state. This synthetic brief specifies no target platform or playable engine.\n"
+    },
+    "design/gdd/guard.md": {
+      "sha256": "46d311c2094acc43ba0d2d6ecf2db59c7c78ed37c40f56450127719d00dcc300",
+      "content": "# Guard mechanic\n## Summary\nDisplay health and route a guard request; actual blocking combat behavior is not implemented.\n## UI Requirements\nRead-only health snapshot, localized health text, guard-requested event from keyboard or gamepad. Never let the UI own health.\n## Formulas\nnextHealth = max(0, currentHealth - damage); finite nonnegative damage only. Maximum health comes from config.\n## Acceptance Criteria\nDamage changes only gameplay-owned state. Invalid inputs do not change state. UI events do not apply damage or healing. Snapshot mutation fails.\n"
+    },
+    "design/player-journey.md": {
+      "sha256": "2a71bd27617b00847ca2341796669eea15c18b32b73abb7e509930acd4da9ae7",
+      "content": "# Player journey\nDuring combat, read health without pausing and request guard through the current input device. No menu navigation is implemented by this fixture.\n"
+    },
+    "design/ux/interaction-patterns.md": {
+      "sha256": "629263afd770b722bbe42ba20fa952fb370e650e8dc8e504d9d86fe284c2a59e",
+      "content": "# Interaction patterns\nExisting fixture pattern: action intent is emitted to gameplay; read-only projection uses a localization callback. No direct audio calls and no direct game-state writes.\n"
+    },
+    "project.yaml": {
+      "sha256": "173454f93986018ddd0e51a9e6928364a18aa884f50f07a435157e2d9f8c4c4a",
+      "content": "schema_version: 1\nmodes:\n  rigor: standard\n  automation: collaborative\n"
+    },
+    "tests/contracts.test.mjs": {
+      "sha256": "1e135793f4413ce85bf746d3d5aba2188e087ba28317affa6b13eabc7dafc978",
+      "content": "// Fixture-only logic/integration evidence. No rendered UI or engine claim.\nimport assert from 'node:assert/strict';\nimport {readFileSync} from 'node:fs';\nimport {createHealth} from '../src/gameplay/health.mjs';\nimport {projectHealth,requestGuard} from '../src/ui/guard-hud.mjs';\nconst config=JSON.parse(readFileSync(new URL('../config/health.json',import.meta.url)));\nconst health=createHealth(config);\nassert.equal(health.snapshot().health,config.maxHealth);\nhealth.damage(25);assert.equal(health.snapshot().health,75);\nfor(const amount of [-1,NaN,Infinity,'5']){assert.throws(()=>health.damage(amount));assert.equal(health.snapshot().health,75);}\nconst snapshot=health.snapshot();assert.throws(()=>{snapshot.health=999});assert.equal(health.snapshot().health,75);\nlet localizationCall;const view=projectHealth(snapshot,(key,args)=>{localizationCall={key,args};return `${args.current}/${args.maximum}`});\nassert.equal(view.label,'75/100');assert.equal(localizationCall.key,'hud.health');assert.deepEqual(localizationCall.args,{current:75,maximum:100});\nconst events=[];for(const input of ['keyboard','gamepad'])requestGuard(input,e=>events.push(e));\nassert.deepEqual(events.map(e=>e.type),['guard-requested','guard-requested']);assert.equal(health.snapshot().health,75);\nassert.throws(()=>requestGuard('unknown',()=>{}));\nhealth.damage(10000);assert.equal(health.snapshot().health,0);\nassert.equal(snapshot.health,75,'previous snapshots remain stable');\nconsole.log('PASS: health ownership, invalid inputs, clamping, immutable snapshots, localization and action-event routing');\n"
+    }
+  }
+}

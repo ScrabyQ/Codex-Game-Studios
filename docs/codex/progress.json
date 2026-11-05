@@ -5,9 +5,9 @@
   "upstream_sha": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
   "owner": "ScrabyQ",
   "repository": "Codex-Game-Studios",
-  "last_completed": "CGS-16",
-  "current_task": "CGS-15",
-  "next_safe_step": "Native custom-role diagnostics remain PENDING; in-session equivalents are documented. CGS15/17/21 active; continue remaining Skill groups.",
+  "last_completed": "CGS-21",
+  "current_task": "CGS-22",
+  "next_safe_step": "Five team-workflow scoped equivalents verified; extend orchestration to narrative/release/live-ops/QA, while implementation and QA groups continue.",
   "decisions": [
     "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED.",
     "Generated content-preserving .agents mirror retains helper root math; native roles use .codex/agents/*.toml; all generation is hash-guarded; no new agent runtime."
@@ -257,9 +257,14 @@
       "key": "CGS-21",
       "singularity_id": "T-637327b4-b712-47a0-8639-a5b687c51105",
       "title": "CGS-21 · Skills · командные процессы gameplay/visual (5)",
-      "status": "PENDING",
+      "status": "COMPLETE",
       "commit": null,
-      "evidence": []
+      "evidence": [
+        "docs/codex/evidence/CGS-21/README.md",
+        "docs/codex/evidence/CGS-21/checks.json"
+      ],
+      "note": "Five team-workflow scoped equivalents verified; extend orchestration to narrative/release/live-ops/QA, while implementation and QA groups continue.",
+      "updated_at": "2026-11-05T11:57:13.223Z"
     },
     {
       "key": "CGS-22",

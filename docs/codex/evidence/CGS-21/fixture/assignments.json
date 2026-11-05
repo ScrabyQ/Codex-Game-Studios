@@ -1,0 +1,19 @@
+{
+  "mechanism": "Sequential in-session role execution; not independent review",
+  "purpose": "Small contract experiment; no need for parallel children, and native custom loading remains PENDING",
+  "settings": {"team.size":"individual","review_mode":"lean","workflow":"standard","automation":"collaborative","engine":"unset"},
+  "active_sets": {
+    "team-combat": {"active":["gameplay-programmer"],"not_spawned":["game-designer","ai-programmer (no AI work)","technical-artist","sound-designer","engine specialist (engine unset)","qa-tester"],"routing":"Consult through gameplay-programmer; no full hierarchy spawned"},
+    "team-ui": {"active":["ui-programmer","ux-designer"],"not_spawned":["art-director","accessibility-specialist","engine UI specialist"],"routing":"Consult through ui-programmer/ux-designer; no independent review claimed"}
+  },
+  "conflicting_proposal": {"owners":["gameplay-programmer","ui-programmer"],"path":"src/gameplay/health.mjs","decision":"REJECTED before writes: UI has no gameplay-state ownership; no simultaneous writers","resolution":"gameplay-programmer exclusively owns health.mjs; ui-programmer owns guard-hud.mjs and consumes immutable snapshots"},
+  "assignments": [
+    {"id":"ux-contract","role":"ux-designer","phase":"brief/interaction contract","owned_paths":["production/ui/guard-hud/interaction-contract.md"],"inputs":"brief: read health; emit guard request; numeric feedback and localization; no engine/render target","depends_on":[],"status":"assigned","return_contract":"Path, <=5 decisions, BLOCKED/CONCERNS lines. No code or visual-style ownership."},
+    {"id":"gameplay-contract","role":"gameplay-programmer","phase":"architecture + contract implementation","owned_paths":["docs/architecture/guard-sketch.md","src/gameplay/health.mjs","production/combat/guard-return.md"],"inputs":"brief health formula, config maxHealth, invalid-input and immutable-snapshot acceptance criteria","depends_on":["ux-contract"],"status":"assigned","return_contract":"Exact authorized paths, tests/evidence, concerns. No UI writes."},
+    {"id":"ui-contract","role":"ui-programmer","phase":"contract projection + action binding","owned_paths":["src/ui/guard-hud.mjs","production/ui/guard-hud/implementation-return.md"],"inputs":"immutable snapshot interface, hud.health localization callback, guard-requested event; no state mutation","depends_on":["gameplay-contract"],"status":"assigned","return_contract":"Paths, <=5 decisions, concerns. Do not edit health.mjs."},
+    {"id":"ux-review","role":"ux-designer","phase":"scoped contract review","owned_paths":["production/ui/guard-hud/review-ux-designer.md"],"inputs":"interaction contract and completed pure functions; actual tests; no screenshots","depends_on":["ui-contract"],"status":"assigned","return_contract":"Path, scope verdict, missing runtime dimensions; no implementation edits."},
+    {"id":"visual-review","role":"ui-programmer routing art-director consultation","phase":"source visual review stream (not independent)","owned_paths":["production/ui/guard-hud/review-art-director.md"],"inputs":"rendered evidence and art bible required; neither supplied","depends_on":["ui-contract"],"status":"incomplete injection","return_contract":"A named artifact is required; a fluent promise alone is not completion. Retry then stop if missing."}
+  ],
+  "integration_owner":"coordinator after all required return artifacts; not started while visual-review is incomplete",
+  "authorization":"brief.md exact fixture set and scripted gates; no real game approval"
+}

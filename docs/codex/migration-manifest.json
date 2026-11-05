@@ -7598,8 +7598,17 @@
       ],
       "proposed_target": ".agents/skills/team-audio/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual sequential assigned-role fallback with disjoint writes, red-green contract tests, overlap rejection and incomplete-review BLOCKED report; guards preserve unknown/failed audio, polish and level outcomes. No independent/native spawn claim.",
+      "status": "EQUIVALENT",
+      "task": "CGS-21",
+      "target": ".agents/skills/team-audio/SKILL.md",
+      "target_sha256": "d1f2afeb25334876a7791cd789f6b0e70bf19889f16999085c2a70c2621ad6e5",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-21/README.md",
+        "docs/codex/evidence/CGS-21/traceability.json",
+        "docs/codex/evidence/CGS-21/checks.json"
+      ]
     },
     {
       "id": "file:.claude/skills/team-combat/SKILL.md",
@@ -7616,8 +7625,17 @@
       ],
       "proposed_target": ".agents/skills/team-combat/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual sequential assigned-role fallback with disjoint writes, red-green contract tests, overlap rejection and incomplete-review BLOCKED report; guards preserve unknown/failed audio, polish and level outcomes. No independent/native spawn claim.",
+      "status": "EQUIVALENT",
+      "task": "CGS-21",
+      "target": ".agents/skills/team-combat/SKILL.md",
+      "target_sha256": "5330344c23b9a00df483336814e0f9340f0f328439b03bf59f54409dcf5281f4",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-21/README.md",
+        "docs/codex/evidence/CGS-21/traceability.json",
+        "docs/codex/evidence/CGS-21/checks.json"
+      ]
     },
     {
       "id": "file:.claude/skills/team-level/SKILL.md",
@@ -7634,8 +7652,17 @@
       ],
       "proposed_target": ".agents/skills/team-level/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual sequential assigned-role fallback with disjoint writes, red-green contract tests, overlap rejection and incomplete-review BLOCKED report; guards preserve unknown/failed audio, polish and level outcomes. No independent/native spawn claim.",
+      "status": "EQUIVALENT",
+      "task": "CGS-21",
+      "target": ".agents/skills/team-level/SKILL.md",
+      "target_sha256": "fb34ca85ddcb833697a58e15d4b1feacc8ff3c694990a8536eaab2bc0e2f87a9",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-21/README.md",
+        "docs/codex/evidence/CGS-21/traceability.json",
+        "docs/codex/evidence/CGS-21/checks.json"
+      ]
     },
     {
       "id": "file:.claude/skills/team-live-ops/SKILL.md",
@@ -7688,8 +7715,17 @@
       ],
       "proposed_target": ".agents/skills/team-polish/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual sequential assigned-role fallback with disjoint writes, red-green contract tests, overlap rejection and incomplete-review BLOCKED report; guards preserve unknown/failed audio, polish and level outcomes. No independent/native spawn claim.",
+      "status": "EQUIVALENT",
+      "task": "CGS-21",
+      "target": ".agents/skills/team-polish/SKILL.md",
+      "target_sha256": "33a5e7629eee60780b652b9e39e2c4998c77bbae6b97b57f9cb9627013d014f5",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-21/README.md",
+        "docs/codex/evidence/CGS-21/traceability.json",
+        "docs/codex/evidence/CGS-21/checks.json"
+      ]
     },
     {
       "id": "file:.claude/skills/team-qa/SKILL.md",
@@ -7742,8 +7778,17 @@
       ],
       "proposed_target": ".agents/skills/team-ui/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual sequential assigned-role fallback with disjoint writes, red-green contract tests, overlap rejection and incomplete-review BLOCKED report; guards preserve unknown/failed audio, polish and level outcomes. No independent/native spawn claim.",
+      "status": "EQUIVALENT",
+      "task": "CGS-21",
+      "target": ".agents/skills/team-ui/SKILL.md",
+      "target_sha256": "a41fd6331c3c66efb88cba49927ad5fb1597c66a893777661718f0a546dadc5c",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-21/README.md",
+        "docs/codex/evidence/CGS-21/traceability.json",
+        "docs/codex/evidence/CGS-21/checks.json"
+      ]
     },
     {
       "id": "file:.claude/skills/tech-debt/SKILL.md",

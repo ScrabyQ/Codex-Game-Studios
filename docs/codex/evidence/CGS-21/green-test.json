@@ -1,0 +1,10 @@
+{
+  "command": [
+    "node",
+    "docs/codex/evidence/CGS-21/fixture/tests/contracts.test.mjs"
+  ],
+  "exit_code": 0,
+  "stdout": "PASS: health ownership, invalid inputs, clamping, immutable snapshots, localization and action-event routing\n",
+  "stderr": "",
+  "scope": "Actual pure JS contract execution only; not rendered UI/engine/independent review."
+}
