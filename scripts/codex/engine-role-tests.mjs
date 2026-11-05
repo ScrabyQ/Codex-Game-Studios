@@ -1,22 +1,16 @@
 import assert from 'node:assert/strict';
-import { mkdtempSync, mkdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
-import { join, resolve } from 'node:path';
+import { mkdtempSync, mkdirSync, readFileSync, writeFileSync, readdirSync } from 'node:fs';
+import { join } from 'node:path';
 import { tmpdir } from 'node:os';
-import { roleTargets, parseRoleSource, adaptRoleBody } from './roles-generation.mjs';
 import { selectEngineRoles } from './engine-roles.mjs';
-const root = process.cwd(), inv = JSON.parse(readFileSync('docs/codex/upstream-inventory.json', 'utf8'));
-const names = inv.files.filter(f => f.category === 'agent').map(f => f.path.split('/').at(-1).replace(/\.md$/, '')).filter(n => /^(godot-|unity-|unreal-|ue-)/.test(n));
-const skills = inv.files.filter(f => /^\.claude\/skills\/[^/]+\/SKILL\.md$/.test(f.path)).map(f => f.path.split('/')[2]);
-assert.equal(names.length, 15);
-for (const p of roleTargets(root, names)) {
-  assert.equal(p.owner, 'CGS-09');
-  const source = readFileSync(p.source, 'utf8').replace(/\r\n?/g, '\n'), { fields, body } = parseRoleSource(source, p.source);
-  const content = p.content.toString('utf8'), instructions = JSON.parse(content.match(/^developer_instructions = (".*")$/m)[1]);
-  assert.equal(instructions.split('## Adapted source role\n\n')[1], adaptRoleBody(body, skills).body);
-  assert.match(instructions, /in-session role review; not independent/); assert.doesNotMatch(content, /^model\s*=/m);
-  assert.doesNotMatch(instructions, /CLAUDE_PROJECT_DIR|CLAUDE_SKILL_DIR|AskUserQuestion/);
-  if (fields.disallowedTools?.split(/,\s*/).includes('Bash')) assert.match(content, /\[features\]\nshell_tool = false/);
-  if (!process.argv.includes('--plans')) { assert.ok(existsSync(p.target), `Missing target ${p.target}`); assert.ok(readFileSync(p.target).equals(p.content), `Target drift ${p.target}`); }
+const names=readdirSync('.codex/agents').filter(n=>/^(godot-|unity-|unreal-|ue-).*\.toml$/.test(n)).map(n=>n.slice(0,-5));
+assert.ok(names.length>0);
+for(const name of names){
+  const content=readFileSync(join('.codex/agents',name+'.toml'),'utf8');
+  const instructions=JSON.parse(content.match(/^developer_instructions = (".*")$/m)[1]);
+  assert.match(instructions,/in-session role review; not independent/);
+  assert.doesNotMatch(content,/^model\s*=/m);
+  assert.doesNotMatch(instructions,/CLAUDE_PROJECT_DIR|CLAUDE_SKILL_DIR|AskUserQuestion/);
 }
 const dir = mkdtempSync(join(tmpdir(), 'cgs-engine-roles-'));
 const fixture = (name, yaml, local) => { const r = join(dir, name); mkdirSync(r); if (yaml !== null) writeFileSync(join(r, 'project.yaml'), yaml); if (local) writeFileSync(join(r, 'project.local.yaml'), local); return r; };
@@ -51,4 +45,4 @@ const nulls = selectEngineRoles(fixture('nulls', 'engine:\n  name: Unity\nspecia
 assert.equal(nulls.status, 'SELECTED', JSON.stringify(nulls)); assert.deepEqual(nulls.roles, ['unity-specialist']);
 const saved = process.env.CGS_BASH; process.env.CGS_BASH = join(dir, 'missing-bash');
 assert.match(selectEngineRoles(dir).reason, /helper unavailable/i); if (saved === undefined) delete process.env.CGS_BASH; else process.env.CGS_BASH = saved;
-console.log(`PASS: 15 engine ${process.argv.includes('--plans') ? 'plans' : 'targets'}; Godot, Unity, Unreal selectors cover all 15 roles; local lock, missing/invalid engine, cross-engine and wrong-purpose overrides, missing Bash. Fixtures: ${dir}`);
+console.log(`PASS: ${names.length} native engine roles; Godot, Unity and Unreal selectors, local lock, missing/invalid engine, cross-engine and wrong-purpose overrides, missing Bash. Fixtures: ${dir}`);

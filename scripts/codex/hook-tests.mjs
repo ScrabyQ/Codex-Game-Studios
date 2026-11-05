@@ -166,7 +166,7 @@ test('no-config-backend-root-fallback', () => {
   assert.equal(r.status, 0, r.stderr); assert(existsSync(resolve(noConfig, 'production/session-logs/compaction-log.txt')));
   return { selectedRoot: noConfig, absentProjectYaml: !existsSync(resolve(noConfig, 'project.yaml')) };
 });
-const hashes = Object.fromEntries(['scripts/codex/hooks.mjs', 'scripts/codex/hook-tests.mjs', '.codex/hooks.example.json', 'docs/codex/hooks.md', '.claude/settings.json'].map(p => [p, createHash('sha256').update(readFileSync(resolve(repo, p))).digest('hex')]));
+const hashes = Object.fromEntries(['scripts/codex/hooks.mjs', 'scripts/codex/hook-tests.mjs', '.codex/hooks.example.json', 'docs/codex/hooks.md'].map(p => [p, createHash('sha256').update(readFileSync(resolve(repo, p))).digest('hex')]));
 const report = { schema: 1, task: 'CGS-24', timestamp: new Date().toISOString(), platform: process.platform, node: process.version, model: null, command: 'node scripts/codex/hook-tests.mjs', fixture: root, fixture_recipe_sha256: hashes['scripts/codex/hook-tests.mjs'], hashes, tests: rows, nativeActivation: 'PENDING: optional reviewed hooks not trusted or activated by this runner', linux: process.platform === 'linux' ? 'tested here' : 'PENDING: Windows Git Bash execution is not Linux', status: rows.every(r => r.status === 'PASS') ? 'PASS' : 'FAIL' };
 const testMap = {
   'session-start': ['session-checkpoint-gap-compaction-stop-audit', 'no-config-backend-root-fallback'], 'detect-gaps': ['session-checkpoint-gap-compaction-stop-audit'],
@@ -176,23 +176,17 @@ const testMap = {
   notify: ['manual-notification'], 'pre-compact': ['session-checkpoint-gap-compaction-stop-audit', 'no-config-backend-root-fallback'], 'session-stop': ['session-checkpoint-gap-compaction-stop-audit'],
   'log-agent': ['session-checkpoint-gap-compaction-stop-audit'], 'log-agent-stop': ['session-checkpoint-gap-compaction-stop-audit'], 'validate-agent-artifact': ['agent-contract-explicit-fallback']
 };
-const settings = JSON.parse(readFileSync(resolve(repo, '.claude/settings.json'), 'utf8'));
-const declarations = Object.entries(settings.hooks).flatMap(([event, groups]) => groups.flatMap(group => group.hooks.map(h => {
-  const handler = /\/([^/]+)\.sh/.exec(h.command)[1];
-  return { sourceEvent: event, sourceMatcher: group.matcher, sourceHandler: `.claude/hooks/${handler}.sh`, sourceCommand: h.command,
-    codexEvent: event === 'Notification' ? null : event, codexMatcher: event === 'PreToolUse' || event === 'PostToolUse' ? 'all local tool calls; adapter normalizes Bash/exec_command/apply_patch and explicit file payloads' : 'all event occurrences',
-    nativeStatus: event === 'Notification' ? 'UNSUPPORTED: no registered Notification event' : 'PENDING: optional registration reviewed structurally, native trust/activation not exercised',
-    implementation: handler === 'notify' ? 'Node explicit manual status; no automatic toast' : handler === 'validate-agent-artifact' ? 'Node expected_artifact fallback; no unstable transcript parsing' : `.agents/hooks/${handler}.sh through Node adapter`,
-    cli: `node scripts/codex/hooks.mjs ${event} --root PROJECT --input EVENT.json`,
-    ci: 'node scripts/codex/hook-tests.mjs (explicit local suite; repository CI wiring belongs to CGS-28)',
-    protocol: event === 'PreToolUse' ? 'deny JSON plus exit 2/stderr; advisory output remains exit 0' : event === 'PostToolUse' ? 'actual bytes checked after write; exit 2 is feedback, cannot undo tool' : 'systemMessage JSON; no permission grants; lifecycle observations only',
-    tests: testMap[handler], fallbackStatus: testMap[handler].every(id => rows.find(r => r.id === id)?.status === 'PASS') ? 'PASS' : 'FAIL' };
-})));
-assert.equal(declarations.length, Object.values(settings.hooks).flatMap(groups => groups.flatMap(group => group.hooks)).length);
-const scripts = readdirSync(resolve(repo, '.claude/hooks')).filter(x => x.endsWith('.sh')).map(name => {
-  const source = `.claude/hooks/${name}`, target = `.agents/hooks/${name}`;
-  const blob = spawnSync('git', ['show', `HEAD:${source}`], { cwd: repo, encoding: null });
-  const hash = b => createHash('sha256').update(b).digest('hex');
-  return { source, target, source_git_blob_sha256: blob.status === 0 ? hash(blob.stdout) : null, source_checkout_sha256: hash(readFileSync(resolve(repo, source))), target_sha256: hash(readFileSync(resolve(repo, target))), role: name === 'yaml-helper.sh' ? 'shared configuration backend' : name === 'update-check.sh' ? 'cached notice helper; no background refresh installed' : name === 'log-instructions.sh' ? 'undeclared source diagnostic preserved; no fictional Codex InstructionsLoaded event' : 'declared handler; see declaration row' };
-});
+const inventory=JSON.parse(readFileSync(resolve(repo,'docs/codex/upstream-inventory.json'),'utf8'));
+const nativeConfig=JSON.parse(readFileSync(resolve(repo,'.codex/hooks.example.json'),'utf8'));
+for(const item of inventory.hooks){
+  const handler=/\/([^/]+)\.sh/.exec(item.command)?.[1];
+  assert.ok(handler&&testMap[handler], 'Unmapped hook declaration: '+item.id);
+  assert.ok(existsSync(resolve(repo,'.agents/hooks',handler+'.sh')), 'Missing native hook backend: '+handler);
+  for(const id of testMap[handler])assert.equal(rows.find(r=>r.id===id)?.status,'PASS',handler+': '+id);
+  if(item.event!=='Notification')assert.ok(nativeConfig.hooks[item.event], 'Missing native binding: '+item.event);
+}
+for(const item of inventory.files.filter(x=>x.path.startsWith('.claude/hooks/')&&x.path.endsWith('.sh'))){
+  const target=resolve(repo,'.agents/hooks',item.path.split('/').at(-1));
+  assert.ok(existsSync(target),'Missing native hook backend: '+item.path);
+}
 console.log(JSON.stringify(report, null, 2)); process.exitCode = report.status === 'PASS' ? 0 : 1;

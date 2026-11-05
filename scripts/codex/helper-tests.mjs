@@ -1,18 +1,17 @@
 import assert from 'node:assert/strict';
 import {bashPath} from './shell.mjs';
-import { mkdtempSync, mkdirSync, writeFileSync, readFileSync, copyFileSync } from 'node:fs';
+import { mkdtempSync, mkdirSync, writeFileSync, readFileSync, copyFileSync, readdirSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve, relative } from 'node:path';
 import { spawnSync } from 'node:child_process';
-import { supportTargets } from './support-generation.mjs';
 const repo = resolve('.'), root = mkdtempSync(join(tmpdir(), 'cgs helper test '));
 const script = join(repo, 'scripts/codex/helper.mjs');
 if (process.argv.includes('--syntax')) {
   const shell = bashPath();
-  const sh = supportTargets().filter(t => t.target.endsWith('.sh'));
+  const sh = ['scripts','hooks'].flatMap(group=>readdirSync(join(repo,'.agents',group)).filter(n=>n.endsWith('.sh')).map(n=>join(repo,'.agents',group,n)));
   for (const t of sh) {
-    const r = spawnSync(shell, ['-n', resolve(t.target)], { encoding: 'utf8' });
-    assert.equal(r.status, 0, `${t.target}: ${r.stderr || r.error || 'shell syntax check could not run'}`);
+    const r = spawnSync(shell, ['-n', t], { encoding: 'utf8' });
+    assert.equal(r.status, 0, `${t}: ${r.stderr || r.error || 'shell syntax check could not run'}`);
   }
   console.log(`PASS: Bash syntax for ${sh.length} helper scripts; behavioral execution is not established.`);
   process.exit(0);
@@ -86,7 +85,7 @@ const syntheticFailure = ok(helper('test-run', ['godot', '--cmd', 'exit 100']));
 const skillDir = join(root, '.agents/skills/demo'); mkdirSync(skillDir, { recursive: true });
 mkdirSync(join(root, '.agents/scripts'), { recursive: true }); mkdirSync(join(root, 'scripts/codex'), { recursive: true });
 copyFileSync(join(repo, 'scripts/codex/native-helper-check.mjs'), join(root, 'scripts/codex/native-helper-check.mjs'));
-for (const t of supportTargets().filter(t => ['.agents/scripts/skill-lint.sh', '.agents/scripts/agent-check.sh'].includes(t.target))) writeFileSync(join(root, t.target), t.content);
+for (const t of ['.agents/scripts/skill-lint.sh', '.agents/scripts/agent-check.sh']) copyFileSync(join(repo,t),join(root,t));
 const bash = bashPath();
 const wrapper = (name, args) => spawnSync(bash, [join(root, '.agents/scripts', `${name}.sh`), ...args, '--root', root], { cwd: root, encoding: 'utf8' });
 writeFileSync(join(skillDir, 'SKILL.md'), '---\nname: demo\ndescription: "valid"\n---\n# Example\n');

@@ -3395,15 +3395,15 @@
       "related_targets": [
         {
           "target": "scripts/codex/upstream-common.mjs",
-          "sha256": "675bb971e09844fd601ebc360c1f28d3bd236417345cdbc7e94650c4029a9a57"
+          "sha256": "761f9d13ca8f6b1d8015e924b36dcc8c749af6b12acbb0ab007581d6b94f4e6e"
         },
         {
           "target": "scripts/codex/sync-upstream.mjs",
-          "sha256": "87975402ce7a4dd863430aeb933c4b75194a02cf40cc2365bb7cf042c45e96c0"
+          "sha256": "b49c962cd66cecbd30bddae1bc768def80595dd01b49f042c964c1d03ee328b6"
         },
         {
           "target": "scripts/codex/baseline.mjs",
-          "sha256": "da934f75979fcaa8d45b6743011ed765ff284524d8abb925193e1d293b75c80d"
+          "sha256": "1cfc499c9b73f7ef620c0c932cf851ae14ccf5c105a3a96e5d1ec59aa60c6736"
         },
         {
           "target": ".agents/hooks/update-check.sh",
@@ -9400,7 +9400,7 @@
       "verification": "Preserved legacy written specification, not an executed behavioral test or PASS. Native interpretation is scoped to documented criteria.",
       "status": "EQUIVALENT",
       "task": "CGS-28",
-      "target": "studio-tests/CLAUDE.md",
+      "target": "studio-tests/AGENTS.md",
       "verification_scope": "Reference/specification/project content retention; no runtime or model-behavior claim",
       "preservation_source_commit": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
       "preservation_git_blob": "e769923a726f8a84270ab5fe5e5d594a1eafe1e6"

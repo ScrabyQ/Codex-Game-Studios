@@ -22,7 +22,7 @@ Tests write transient results outside the tracked product. Confirm `git status -
 
 ## Generation and upstream checks
 
-`node scripts/codex/generate.mjs --check --complete` verifies the selected generation family. The full CI runner selects all applicable families and roles. See [maintenance](upstream-sync.md) before accepting source updates or recording changed targets; do not change hashes merely to make a check green.
+`node scripts/codex/generate.mjs --check --complete` validates the maintained native product offline. It does not regenerate bodies from an original checkout. Explicit importer fixtures exercise source reads, transformation families, source and overlay guards, and reviewed upstream changes separately. See [maintenance](upstream-sync.md) before accepting source updates or recording changed targets; do not change hashes merely to make a check green.
 
 `tests/generator-negative.mjs` and the fixtures under `tests/fixtures/` are maintained test inputs. Negative tests must assert the refusal reason and preservation of unrelated content, rather than only a nonzero exit.
 

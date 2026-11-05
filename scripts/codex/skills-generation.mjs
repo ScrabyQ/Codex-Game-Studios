@@ -2,27 +2,29 @@ import {readFileSync,existsSync,readdirSync} from 'node:fs';
 import {execFileSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 import path from 'node:path';
+import {openSource} from './source.mjs';
+import {safeProjectPath} from './safe-path.mjs';
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const utf=b=>new TextDecoder('utf-8',{fatal:true}).decode(b).replace(/\r\n?/g,'\n');
-export function skillSources(root){
- const inventory=JSON.parse(readFileSync(path.join(root,'docs/codex/upstream-inventory.json'),'utf8').replace(/^\uFEFF/,''));
+export function skillSources(root, source, inventory=JSON.parse(readFileSync(safeProjectPath(root,'docs/codex/upstream-inventory.json'),'utf8').replace(/^\uFEFF/,''))){
+ source ||= openSource({root,expectedCommit:inventory.source_commit});
  const expected=inventory.files.filter(f=>f.path.startsWith('.claude/skills/'));
- const paths=execFileSync('git',['ls-files','--cached','--others','--exclude-standard','-z','--','.claude/skills'],{cwd:root}).toString().split('\0').filter(Boolean).sort();
+ const paths=source.list('.claude/skills/').map(f=>f.path).sort();
  if(JSON.stringify(paths)!==JSON.stringify(expected.map(x=>x.path).sort())) throw Error('Skill source set differs from pinned inventory (new, deleted, or untracked source)');
- for(const e of expected){let b;try{b=readFileSync(path.join(root,e.path))}catch{throw Error(`Missing source ${e.path}`)};if(sha(b)!==e.sha256) throw Error(`Source drift ${e.path}`)}
+ for(const e of expected){let b;try{b=source.read(e.path)}catch{throw Error(`Missing source ${e.path}`)};if(sha(b)!==e.sha256 && sha(Buffer.from(utf(b)))!==e.sha256) throw Error(`Source drift ${e.path}`)}
  return expected;
 }
-export function skillTargets(root,names){
- const sources=skillSources(root), available=sources.filter(s=>/\/SKILL\.md$/.test(s.path)).map(s=>s.path.split('/')[2]);
- const inventory=JSON.parse(readFileSync(path.join(root,'docs/codex/upstream-inventory.json'),'utf8').replace(/^\uFEFF/,''));
+export function skillTargets(root,names,source,inventory=JSON.parse(readFileSync(safeProjectPath(root,'docs/codex/upstream-inventory.json'),'utf8').replace(/^\uFEFF/,'')),overlayRoot=root){
+ source ||= openSource({root,expectedCommit:inventory.source_commit});
+ const sources=skillSources(root,source,inventory), available=sources.filter(s=>/\/SKILL\.md$/.test(s.path)).map(s=>s.path.split('/')[2]);
  const roles=new Set(inventory.files.filter(x=>x.category==='agent').map(x=>path.posix.basename(x.path,'.md')));
  const adaptPaths=value=>value.replace(/\.claude\/agents\/([a-z0-9-]+)\.md/g,(all,n)=>roles.has(n)?`.codex/agents/${n}.toml`:all).replace(/\.claude\/(scripts|hooks|docs|skills)\//g,'.agents/$1/');
- const overlayDir=path.join(root,'docs/codex/overlays');
+ const overlayDir=safeProjectPath(overlayRoot,'docs/codex/overlays');
  if(existsSync(overlayDir))for(const n of readdirSync(overlayDir).filter(n=>n.endsWith('.json')))if(!available.includes(n.slice(0,-5)))throw Error(`Unknown skill overlay ${n}`);
  const selected=names||available; for(const name of selected) if(!available.includes(name)) throw Error(`Unknown skill: ${name}`);
  const plans=[];
  for(const src of sources.filter(s=>selected.includes(s.path.split('/')[2]))){
-  let bytes=readFileSync(path.join(root,src.path)); const target=src.path.replace(/^\.claude\/skills\//,'.agents/skills/');let ids=[], explicitInvocation=false;
+  let bytes=source.read(src.path); const target=src.path.replace(/^\.claude\/skills\//,'.agents/skills/');let ids=[], explicitInvocation=false;
   if(src.path.endsWith('/SKILL.md')){
    const text=utf(bytes), m=/^---\n([\s\S]*?)\n---\n/.exec(text);if(!m)throw Error(`Malformed frontmatter ${src.path}`);
    const fields={};for(const line of m[1].split('\n')){if(/^\s*#/.test(line))continue;let x=/^([\w-]+):\s*(.*)$/.exec(line);if(!x || x[1] in fields)throw Error(`Malformed frontmatter ${src.path}: ${line}`);fields[x[1]]=x[2]}
@@ -52,7 +54,7 @@ export function skillTargets(root,names){
    body=adaptPaths(body);
    bytes=Buffer.from(body,'utf8');ids=['resource-runtime-adaptation-v1'];
   }
-  const skill=src.path.split('/')[2], overlayPath=path.join(overlayDir,skill+'.json');
+  const skill=src.path.split('/')[2], overlayPath=safeProjectPath(overlayRoot,`docs/codex/overlays/${skill}.json`);
   if(existsSync(overlayPath)){
    const raw=readFileSync(overlayPath), overlay=JSON.parse(raw.toString('utf8').replace(/^\uFEFF/,''));
    const skillSource=sources.find(x=>x.path===`.claude/skills/${skill}/SKILL.md`);

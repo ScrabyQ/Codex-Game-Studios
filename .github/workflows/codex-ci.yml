@@ -35,4 +35,6 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.13'
+      - if: runner.os != 'Linux'
+        run: node scripts/codex/ci.mjs
       - run: node scripts/codex/backend-tests.mjs --disposable-checkout

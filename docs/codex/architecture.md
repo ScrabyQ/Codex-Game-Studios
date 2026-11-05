@@ -22,7 +22,11 @@ Authorization persists across steps. Ask only for decisions that remain required
 
 ## Integrity and maintenance
 
-The generation registry records target hashes and source provenance. Generation refuses unreviewed drift; a changed source or transform requires deliberate reconciliation. Component coverage is derived from the inventory, rather than fixed totals in algorithms.
+The maintained native files in `.agents/` and `.codex/` are the product source of truth. Normal validation and generation checks inspect these files and versioned metadata without opening a source repository, fetching a remote or requiring historical Git objects.
+
+The generation registry records target hashes and source provenance. Deliberately authored changes can be registered with `generate.mjs --record-native --targets <comma-separated-paths>` after review; unrelated drift is refused and failed validation restores metadata. This records integrity, not a new behavioral acceptance.
+
+The separate importer reads an explicitly selected repository and ref through Git objects. Its five transformation families produce review candidates outside the product; they do not overwrite canonical native files. Upstream synchronization compares source commits and prepares a product branch for reviewed adaptation, without merging the original tree. Component coverage is derived from current metadata and discovered files, rather than fixed totals in algorithms.
 
 The [upstream guide](upstream-sync.md) describes source inspection and review. Source provenance is separate from runtime behavior: preserving a file or matching a hash does not establish a successful model or engine run.
 

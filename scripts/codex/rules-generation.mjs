@@ -1,12 +1,13 @@
 import { readdirSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { openSource } from './source.mjs';
 
 const defaultRoot = resolve(fileURLToPath(new URL('../..', import.meta.url)));
-function metadata(root) {
-  return readdirSync(resolve(root, '.claude/rules')).filter(n => n.endsWith('.md')).sort().map(name => {
+function metadata(root, gitSource = openSource({root})) {
+  return gitSource.list('.claude/rules/').map(f=>f.path.slice('.claude/rules/'.length)).filter(n => n.endsWith('.md')&&!n.includes('/')).sort().map(name => {
     const source = `.claude/rules/${name}`;
-    const text = readFileSync(resolve(root, source), 'utf8').replace(/\r\n/g, '\n');
+    const text = gitSource.read(source).toString('utf8').replace(/\r\n/g, '\n');
     const match = text.match(/^---\npaths:\n((?:  - "[^"\n]+"\n)+)---\n/);
     if (!match) throw new Error(`Unsupported rule frontmatter: ${source}`);
     const original = [...match[1].matchAll(/^  - "([^"\n]+)"$/gm)].map(m => m[1]);
@@ -21,10 +22,10 @@ function metadata(root) {
     return { id: name.slice(0, -3), source, target, patterns, content: note + body };
   });
 }
-export function ruleTargets(root = defaultRoot) {
-  return metadata(root).map(({ source, target, content }) => ({ source, target, content, transform_ids: ['normalize-lf', 'scope-to-index', 'adapt-reference-paths', 'codex-permission-context'], owner: 'CGS-23' }));
+export function ruleTargets(root = defaultRoot, gitSource) {
+  return metadata(root, gitSource).map(({ source, target, content }) => ({ source, target, content, transform_ids: ['normalize-lf', 'scope-to-index', 'adapt-reference-paths', 'codex-permission-context'], owner: 'CGS-23' }));
 }
-export function ruleIndex(root = defaultRoot) {
-  const rules = metadata(root).map(({ id, source, target, patterns }) => ({ id, source, target, patterns }));
+export function ruleIndex(root = defaultRoot, gitSource) {
+  const rules = metadata(root, gitSource).map(({ id, source, target, patterns }) => ({ id, source, target, patterns }));
   return { schema: 1, case_sensitive: true, match_semantics: 'Repository-relative paths; slash normalized; * and ? never cross a slash; **/ matches zero or more directories; {...} is alternation. All matching rules apply.', enforcement: 'On-demand selection only; this is not a host hook or a permission boundary.', rules };
 }

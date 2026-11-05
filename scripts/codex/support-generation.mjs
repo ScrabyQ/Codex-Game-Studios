@@ -2,26 +2,29 @@ import { readdirSync, readFileSync, existsSync } from 'node:fs';
 import { resolve, relative, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
+import { openSource } from './source.mjs';
+import { safeProjectPath } from './safe-path.mjs';
 
 const root = resolve(fileURLToPath(new URL('../..', import.meta.url)));
-const sourcePins = new Map(Object.entries(JSON.parse(readFileSync(resolve(root, 'docs/codex/transform-source-pins.json'), 'utf8'))));
+const sourcePins = new Map(Object.entries(JSON.parse(readFileSync(safeProjectPath(root, 'docs/codex/transform-source-pins.json'), 'utf8'))));
 function walk(dir) {
   return readdirSync(dir, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(resolve(dir, e.name)) : e.isFile() ? [resolve(dir, e.name)] : []);
 }
-export function supportTargets() {
-  return ['scripts', 'hooks'].flatMap(group => walk(resolve(root, '.claude', group))).map(file => {
-    const source = relative(root, file).replaceAll('\\', '/');
+export function supportTargets(selectedRoot = root, gitSource = openSource({root:selectedRoot}), overlayRoot = selectedRoot) {
+  return ['scripts', 'hooks'].flatMap(group => gitSource.list(`.claude/${group}/`)).map(file => {
+    const source = file.path;
     const target = source.replace(/^\.claude\//, '.agents/');
-    let content = readFileSync(file, 'utf8').replace(/\r\n/g, '\n').replaceAll('.claude/', '.agents/').replaceAll('CLAUDE_PROJECT_DIR', 'CGS_PROJECT_DIR');
+    const bytes = gitSource.read(source);
+    let content = bytes.toString('utf8').replace(/\r\n/g, '\n').replaceAll('.claude/', '.agents/').replaceAll('CLAUDE_PROJECT_DIR', 'CGS_PROJECT_DIR');
     const transform_ids = ['normalize-lf', 'mirror-claude-paths', 'neutral-project-env'];
     if (source.startsWith('.claude/hooks/')) {
       content = content.replaceAll('".claude"', '".agents"').replaceAll('*/.claude|*\\\\.claude)', '*/.agents|*\\\\.agents)');
       transform_ids.push('native-hook-root-markers-v1');
     }
-    const overlayPath = resolve(root, 'docs/codex/overlays/helpers', basename(source) + '.json');
+    const overlayPath = safeProjectPath(overlayRoot, 'docs/codex/overlays/helpers/'+basename(source)+'.json');
     if (existsSync(overlayPath)) {
       const patch = JSON.parse(readFileSync(overlayPath, 'utf8'));
-      const sourceHash = createHash('sha256').update(readFileSync(file)).digest('hex');
+      const sourceHash = createHash('sha256').update(bytes).digest('hex');
       if (patch.source !== source || patch.source_sha256 !== sourceHash) throw new Error('Helper overlay source mismatch: ' + source);
       if (patch.edits && (patch.anchor !== undefined || patch.replacement !== undefined)) throw new Error('Ambiguous helper overlay: ' + source);
       const edits = patch.edits ?? [{ find: patch.anchor, replace: patch.replacement }];
@@ -35,7 +38,7 @@ export function supportTargets() {
     const nativeChecks = { '.claude/scripts/skill-lint.sh': 'skill', '.claude/scripts/agent-check.sh': 'role' };
     if (nativeChecks[source]) {
       const kind = nativeChecks[source], expected = sourcePins.get(source);
-      const actual = createHash('sha256').update(readFileSync(file)).digest('hex');
+      const actual = createHash('sha256').update(bytes).digest('hex');
       if (actual !== expected) throw new Error(`Native validator source drift: ${source}`);
       content = `#!/usr/bin/env bash\n# Native structural observations; source-specific Claude analytics are not implemented.\n# Supports --root DIR.\nHERE="$(cd "$(dirname "$0")" && pwd)"\nexec node "$HERE/../../scripts/codex/native-helper-check.mjs" ${kind} "$@"\n`;
       transform_ids.push('native-structural-check-source-bound');
@@ -50,7 +53,7 @@ export function supportTargets() {
       transform_ids.push('explicit-project-root');
     }
     if (source === '.claude/scripts/story-status.sh') {
-      const actual = createHash('sha256').update(readFileSync(file)).digest('hex');
+      const actual = createHash('sha256').update(bytes).digest('hex');
       if (actual !== sourcePins.get(source)) throw new Error('story-status source drift');
       const anchor = 'cd "$(dirname "${BASH_SOURCE[0]}")/../.." 2>/dev/null || { echo "STORIES      none"; exit 0; }';
       if (content.split(anchor).length !== 2) throw new Error('story-status root anchor changed');
