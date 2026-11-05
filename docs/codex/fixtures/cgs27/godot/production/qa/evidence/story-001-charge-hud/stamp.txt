@@ -1,0 +1,10 @@
+Reviewed-Content-Hash: src/charge_model.gd 483074188b1152285e6b153fb0f719a25eda2d21
+Reviewed-Content-Hash: src/charge_beacon.gd 72233b5bdcd53ef9e3e3fbf08135569da18dd886
+Reviewed-Content-Hash: tests/unit/charge_model_test.gd 5e6d06360e2cef6a7ae976c3cae2074f7fd17e4a
+Reviewed-Content-Hash: assets/data/charge.json 5e91b1e889c91f555ec4aded3ac8b79904ed7164
+Reviewed-Content-Hash: localization/en.json fe8a0f22732ab5a3ff9dcf9ae2bdc596bfbbdeaa
+Reviewed-Content-Hash: scenes/charge_beacon.tscn 4c4b8d778c4bf30686cd46a7ab5d84eb4331235b
+Reviewed-Content-Hash: project.godot f5440c7afd6465e3543dbf50b977ed02642a1401
+Reviewed-Content-Hash: src/charge_model.gd.uid c25aa682c70fe7bde28f9579b6034f21eca0bc5e
+Reviewed-Content-Hash: src/charge_beacon.gd.uid ab92ae58c24d02b9fa3c9272b4403390c418b48b
+Reviewed-Content-Hash: tests/unit/charge_model_test.gd.uid de1924dfa989d2550cd4d49c75ec4f8536474926

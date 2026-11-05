@@ -1,0 +1,45 @@
+{
+  "godot": {
+    "executable": "C:/Program Files (x86)/Steam/steamapps/common/Godot Engine/godot.windows.opt.tools.64.exe",
+    "args": [
+      "--version"
+    ],
+    "cwd": "D:\\MyProjects\\codex-game-studios\\docs\\codex\\fixtures\\cgs27\\godot",
+    "started": "2026-11-05T12:28:27.831Z",
+    "finished": "2026-11-05T12:28:28.140Z",
+    "exit_code": 0,
+    "signal": null,
+    "error": null,
+    "stdout": "4.7.2.stable.steam.ed1daf0bf\r\n",
+    "stderr": ""
+  },
+  "unreal": {
+    "MajorVersion": 5,
+    "MinorVersion": 8,
+    "PatchVersion": 0,
+    "Changelist": 55116800,
+    "CompatibleChangelist": 0,
+    "IsLicenseeVersion": 0,
+    "IsPromotedBuild": 1,
+    "BranchName": "++UE5+Release-5.8"
+  },
+  "unity_editor_directory": {
+    "path": "C:/Program Files/Unity/Hub/Editor",
+    "exists": true,
+    "entries": []
+  },
+  "pin_files": [
+    {
+      "path": "docs/engine-reference/godot/VERSION.md",
+      "sha256": "afa553047294b8725614cba9df94a96f92e158916155cfc9898b4cdcd3ccf2bb"
+    },
+    {
+      "path": "docs/engine-reference/unity/VERSION.md",
+      "sha256": "40a633a191b5b302e21ad3c14087d03272a86ec2d1907d507f057f3306d4a143"
+    },
+    {
+      "path": "docs/engine-reference/unreal/VERSION.md",
+      "sha256": "72986a74be07f4d6379e51b84975eb9f234c8eb176c840ea90ccac58288fb61b"
+    }
+  ]
+}

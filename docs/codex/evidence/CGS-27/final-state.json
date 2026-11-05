@@ -1,0 +1,56 @@
+[
+  {
+    "engine": "godot",
+    "project_state": {
+      "exit_code": 0,
+      "stdout": "root\tD:/MyProjects/codex-game-studios/docs/codex/fixtures/cgs27/godot\t-\nengine\tGodot\tproject.yaml\ncode_root\tsrc\tengine.name\nsource_files\t2\tsrc\nconcept\tdesign/game-brief.md\tfound\nsystems_index\t-\tabsent\ngdd_files\t0\tdesign/gdd/*.md\nadr\t0\tdocs/architecture/adr-*.md\nstory\t1\tproduction/epics/**/story-*.md\nprototype\t0\tprototypes/*/\nsprint\t0\tproduction/sprints/*.md\nmilestone\t0\tproduction/milestones/*.md\norigin_url\t-\tabsent\nstage_yaml\tConcept\tproject.yaml\nstage_txt\tConcept\tproduction/stage.txt\nstage\tConcept\tproject.yaml\nphase\tconcept\tstage\nphase_inferred\tpre-production\tstory>=1\n",
+      "stderr": ""
+    },
+    "story_facts": {
+      "exit_code": 0,
+      "stdout": "stories\t1\tproduction/epics/**/story-*.md\ncomplete\t1\nin_review\t0\nin_progress\t0\ntodo\t0\nblocked\t0\nother\t0\nno_status\t0\nSTORY\tproduction/epics/beacon/story-001-charge-hud.md\tCOMPLETE\tComplete\tUI\tFeature\t-\t-\tn/a\t5\t-\t-\t-\t-\n",
+      "stderr": ""
+    },
+    "config": {
+      "exit_code": 0,
+      "stdout": "=== CCGS Config (resolved: local->yaml->legacy->default; use as-is) ===\nworkflow: minimal (rigor:minimal)\nstory_granularity: coarse (rigor:minimal)\nqa.level: minimal (rigor:minimal)\nreview_gate: skill-gates=skip phase-gates=skip (review_mode solo, rigor:minimal; a --review flag overrides)\n=== end ===\n",
+      "stderr": ""
+    }
+  },
+  {
+    "engine": "unity",
+    "project_state": {
+      "exit_code": 0,
+      "stdout": "root\tD:/MyProjects/codex-game-studios/docs/codex/fixtures/cgs27/unity\t-\nengine\tUnity\tproject.yaml\ncode_root\tAssets\tengine.name\nsource_files\t0\tAssets\nconcept\tdesign/game-brief.md\tfound\nsystems_index\t-\tabsent\ngdd_files\t0\tdesign/gdd/*.md\nadr\t0\tdocs/architecture/adr-*.md\nstory\t1\tproduction/epics/**/story-*.md\nprototype\t0\tprototypes/*/\nsprint\t0\tproduction/sprints/*.md\nmilestone\t0\tproduction/milestones/*.md\norigin_url\t-\tabsent\nstage_yaml\tConcept\tproject.yaml\nstage_txt\tConcept\tproduction/stage.txt\nstage\tConcept\tproject.yaml\nphase\tconcept\tstage\nphase_inferred\tpre-production\tstory>=1\n",
+      "stderr": ""
+    },
+    "story_facts": {
+      "exit_code": 0,
+      "stdout": "stories\t1\tproduction/epics/**/story-*.md\ncomplete\t0\nin_review\t0\nin_progress\t0\ntodo\t0\nblocked\t1\nother\t0\nno_status\t0\nSTORY\tproduction/epics/beacon/story-001-charge-hud.md\tBLOCKED\tBlocked\tUI\tFeature\t-\t-\tn/a\t5\t-\t-\t-\t-\n",
+      "stderr": ""
+    },
+    "config": {
+      "exit_code": 0,
+      "stdout": "=== CCGS Config (resolved: local->yaml->legacy->default; use as-is) ===\nworkflow: minimal (rigor:minimal)\nstory_granularity: coarse (rigor:minimal)\nqa.level: minimal (rigor:minimal)\nreview_gate: skill-gates=skip phase-gates=skip (review_mode solo, rigor:minimal; a --review flag overrides)\n=== end ===\n",
+      "stderr": ""
+    }
+  },
+  {
+    "engine": "unreal",
+    "project_state": {
+      "exit_code": 0,
+      "stdout": "root\tD:/MyProjects/codex-game-studios/docs/codex/fixtures/cgs27/unreal\t-\nengine\tUnreal\tproject.yaml\ncode_root\tSource\tengine.name\nsource_files\t7\tSource\nconcept\tdesign/game-brief.md\tfound\nsystems_index\t-\tabsent\ngdd_files\t0\tdesign/gdd/*.md\nadr\t0\tdocs/architecture/adr-*.md\nstory\t1\tproduction/epics/**/story-*.md\nprototype\t0\tprototypes/*/\nsprint\t0\tproduction/sprints/*.md\nmilestone\t0\tproduction/milestones/*.md\norigin_url\t-\tabsent\nstage_yaml\tConcept\tproject.yaml\nstage_txt\tConcept\tproduction/stage.txt\nstage\tConcept\tproject.yaml\nphase\tconcept\tstage\nphase_inferred\tpre-production\tstory>=1\n",
+      "stderr": ""
+    },
+    "story_facts": {
+      "exit_code": 0,
+      "stdout": "stories\t1\tproduction/epics/**/story-*.md\ncomplete\t0\nin_review\t0\nin_progress\t0\ntodo\t0\nblocked\t1\nother\t0\nno_status\t0\nSTORY\tproduction/epics/beacon/story-001-charge-hud.md\tBLOCKED\tBlocked\tUI\tFeature\t-\t-\tn/a\t5\t-\t-\t-\t-\n",
+      "stderr": ""
+    },
+    "config": {
+      "exit_code": 0,
+      "stdout": "=== CCGS Config (resolved: local->yaml->legacy->default; use as-is) ===\nworkflow: minimal (rigor:minimal)\nstory_granularity: coarse (rigor:minimal)\nqa.level: minimal (rigor:minimal)\nreview_gate: skill-gates=skip phase-gates=skip (review_mode solo, rigor:minimal; a --review flag overrides)\n=== end ===\n",
+      "stderr": ""
+    }
+  }
+]

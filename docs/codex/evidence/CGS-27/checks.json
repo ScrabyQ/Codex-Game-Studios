@@ -1,0 +1,50 @@
+{
+  "checks": [
+    {
+      "name": "Actual Godot import/parse/test/non-headless run exits0 and current source hashes match",
+      "result": "PASS"
+    },
+    {
+      "name": "Test-first failure retained separately",
+      "result": "PASS"
+    },
+    {
+      "name": "Three opened render images remain identical to observation hashes",
+      "result": "PASS"
+    },
+    {
+      "name": "Native helper freshness check still reports no changed/missing inputs",
+      "result": "PASS"
+    },
+    {
+      "name": "Coarse MVP story has five criteria; Godot closed and missing-engine stories remain blocked",
+      "result": "PASS"
+    },
+    {
+      "name": "Missing Unity editor and actual Unreal SDK failure are not converted to engine passes",
+      "result": "PASS"
+    },
+    {
+      "name": "Upstream engine pins preserved; prototype/export scope explicit",
+      "result": "PASS"
+    },
+    {
+      "name": "Strict CLI controls and third-party packaging guards passed without engine launches",
+      "result": "PASS"
+    },
+    {
+      "name": "Fixture baselines are isolated; no embedded Gitlink marker",
+      "result": "PASS"
+    }
+  ],
+  "freshness": {
+    "exit_code": 0,
+    "stdout": "RECEIPT: production/qa/evidence/story-001-charge-hud/stamp.txt\nUNCHANGED: src/charge_model.gd\nUNCHANGED: src/charge_beacon.gd\nUNCHANGED: tests/unit/charge_model_test.gd\nUNCHANGED: assets/data/charge.json\nUNCHANGED: localization/en.json\nUNCHANGED: scenes/charge_beacon.tscn\nUNCHANGED: project.godot\nUNCHANGED: src/charge_model.gd.uid\nUNCHANGED: src/charge_beacon.gd.uid\nUNCHANGED: tests/unit/charge_model_test.gd.uid\n",
+    "stderr": ""
+  },
+  "limits": [
+    "Artifact assertions and actual engine processes, not independent model behavior tests.",
+    "Unity and Unreal build/test/render remain PENDING as named in engine-matrix.json.",
+    "Opened PNG observations are host self review; no human playtest or independent sign-off."
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "source_hashes": {
+    "src/charge_model.gd": "1719be29cce7c759647fde0238bd2e59bfa192663213f9705f67fde42edd201a",
+    "src/charge_beacon.gd": "34146c6bcbd677eab4de19b8d5670180df612de2ca13d4525f937bfd0c314ad3",
+    "tests/unit/charge_model_test.gd": "81dbb0b9cf5cec347bec802b249cfeff5b19d8d5ecd3e918f3cb6bc223301ee4",
+    "assets/data/charge.json": "229e733e40d180f5f9549232fd70f32eb936572214fc8ad37bc8b041bb7a6fd5",
+    "localization/en.json": "026af4d182144b69edef5edbc17c7882687210c552765203cc002742c4f93a57",
+    "scenes/charge_beacon.tscn": "8cc3ee069013bb9837def01fa0c628c7c4b42e76ff5e5b9626e66ff948e2bebf"
+  },
+  "stamp": {
+    "exit_code": 0,
+    "stdout": "Reviewed-Content-Hash: src/charge_model.gd 483074188b1152285e6b153fb0f719a25eda2d21\nReviewed-Content-Hash: src/charge_beacon.gd 72233b5bdcd53ef9e3e3fbf08135569da18dd886\nReviewed-Content-Hash: tests/unit/charge_model_test.gd 5e6d06360e2cef6a7ae976c3cae2074f7fd17e4a\nReviewed-Content-Hash: assets/data/charge.json 5e91b1e889c91f555ec4aded3ac8b79904ed7164\nReviewed-Content-Hash: localization/en.json fe8a0f22732ab5a3ff9dcf9ae2bdc596bfbbdeaa\nReviewed-Content-Hash: scenes/charge_beacon.tscn 4c4b8d778c4bf30686cd46a7ab5d84eb4331235b\nReviewed-Content-Hash: project.godot f5440c7afd6465e3543dbf50b977ed02642a1401\nReviewed-Content-Hash: src/charge_model.gd.uid c25aa682c70fe7bde28f9579b6034f21eca0bc5e\nReviewed-Content-Hash: src/charge_beacon.gd.uid ab92ae58c24d02b9fa3c9272b4403390c418b48b\nReviewed-Content-Hash: tests/unit/charge_model_test.gd.uid de1924dfa989d2550cd4d49c75ec4f8536474926\n",
+    "stderr": ""
+  },
+  "check": {
+    "exit_code": 0,
+    "stdout": "RECEIPT: production/qa/evidence/story-001-charge-hud/stamp.txt\nUNCHANGED: src/charge_model.gd\nUNCHANGED: src/charge_beacon.gd\nUNCHANGED: tests/unit/charge_model_test.gd\nUNCHANGED: assets/data/charge.json\nUNCHANGED: localization/en.json\nUNCHANGED: scenes/charge_beacon.tscn\nUNCHANGED: project.godot\nUNCHANGED: src/charge_model.gd.uid\nUNCHANGED: src/charge_beacon.gd.uid\nUNCHANGED: tests/unit/charge_model_test.gd.uid\n",
+    "stderr": ""
+  },
+  "images": [
+    {
+      "path": "docs/codex/fixtures/cgs27/godot/production/qa/evidence/story-001-charge-hud/01-ready.png",
+      "sha256": "4a1b6814bc0ee64c00725a6a0b98a5f1bd539aa8d5e9239b6d191e2333838c04",
+      "width": 800,
+      "height": 480,
+      "opened_by_host": true
+    },
+    {
+      "path": "docs/codex/fixtures/cgs27/godot/production/qa/evidence/story-001-charge-hud/02-empty.png",
+      "sha256": "0bec8767e7df47c657914bc71d1904d3f30e4f04e2eba258876a13c6290ac1e7",
+      "width": 800,
+      "height": 480,
+      "opened_by_host": true
+    },
+    {
+      "path": "docs/codex/fixtures/cgs27/godot/production/qa/evidence/story-001-charge-hud/03-reset.png",
+      "sha256": "5259e9af8e31a6f9895b40f00b0b5d1fe990b32f0c5ed5b203d490654e363df5",
+      "width": 800,
+      "height": 480,
+      "opened_by_host": true
+    }
+  ]
+}

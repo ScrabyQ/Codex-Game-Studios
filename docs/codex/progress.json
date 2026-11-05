@@ -5,9 +5,9 @@
   "upstream_sha": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
   "owner": "ScrabyQ",
   "repository": "Codex-Game-Studios",
-  "last_completed": "CGS-20",
-  "current_task": "CGS-27",
-  "next_safe_step": "QuickCI and Windowsbackend candidateclone PASS;10negativecorruptions and21extendedhelper assertions verified. Sourcecontent audit applied206 dispositions, onlyupdate-check awaits29equivalent. CommitCIcandidate, pushownbranch, observeactualUbuntu jobs before28completion.",
+  "last_completed": "CGS-27",
+  "current_task": "CGS-29",
+  "next_safe_step": "Engine27accepted:actualGodotimport/parse/test/render+3independentlyviewedPNGs;UnityeditorabsentandUE SDKmissingremainBlocked/PENDING. 28actualLinuxCIpassed. 29centralreviewedreconcileinprogress, then30docs/31freshindependentaudit.",
   "decisions": [
     "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED.",
     "Generated content-preserving .agents mirror retains helper root math; native roles use .codex/agents/*.toml; all generation is hash-guarded; no new agent runtime."
@@ -393,32 +393,42 @@
       "key": "CGS-27",
       "singularity_id": "T-490f4c8b-4256-452d-90e6-7a4ceefd574d",
       "title": "CGS-27 · Проверить Godot, Unity, Unreal и run-and-observe",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "commit": null,
-      "evidence": [],
-      "updated_at": "2026-11-05T12:19:42.309Z"
+      "evidence": [
+        "docs/codex/evidence/CGS-27/README.md",
+        "docs/codex/evidence/CGS-27/engine-matrix.json",
+        "docs/codex/evidence/CGS-27/checks.json",
+        "docs/codex/evidence/CGS-27/integrator-acceptance.md"
+      ],
+      "updated_at": "2026-11-05T13:01:18.109Z",
+      "note": "Engine27accepted:actualGodotimport/parse/test/render+3independentlyviewedPNGs;UnityeditorabsentandUE SDKmissingremainBlocked/PENDING. 28actualLinuxCIpassed. 29centralreviewedreconcileinprogress, then30docs/31freshindependentaudit."
     },
     {
       "key": "CGS-28",
       "singularity_id": "T-0485a7c2-d479-4ec8-ac03-47a1a59bd438",
       "title": "CGS-28 · Внедрить CI, статический аудит и поведенческие регрессии",
-      "status": "IN_PROGRESS",
-      "commit": null,
+      "status": "COMPLETE",
+      "commit": "07459ca8738174167bd0c13444139443a8c40645",
       "evidence": [
         "docs/codex/evidence/CGS-28/README.md",
         "docs/codex/evidence/CGS-28/backend-windows-final.json",
-        "docs/codex/evidence/CGS-28/preservation/helper-extended.md"
+        "docs/codex/evidence/CGS-28/preservation/helper-extended.md",
+        "docs/codex/evidence/CGS-28/remote-ci-initial.json",
+        "docs/codex/evidence/CGS-28/linux/CGS-28/backend-results.json"
       ],
-      "note": "QuickCI and Windowsbackend candidateclone PASS;10negativecorruptions and21extendedhelper assertions verified. Sourcecontent audit applied206 dispositions, onlyupdate-check awaits29equivalent. CommitCIcandidate, pushownbranch, observeactualUbuntu jobs before28completion.",
-      "updated_at": "2026-11-05T12:44:59.059Z"
+      "note": "QuickCI+Ubuntu6backend suites passed on actualcommittedSHA07459ca;Windowscandidatebackendpassed. Nativeactivationseparate. 29safeupstreamsync canproceed;27enginepackaging finalizing,30docs/31freshindependentaudit later.",
+      "updated_at": "2026-11-05T12:49:28.563Z"
     },
     {
       "key": "CGS-29",
       "singularity_id": "T-d875908a-8eed-48c5-963d-9102ee9a8bd4",
       "title": "CGS-29 · Сделать безопасный sync upstream через fetch/merge/PR",
-      "status": "PENDING",
+      "status": "IN_PROGRESS",
       "commit": null,
-      "evidence": []
+      "evidence": [],
+      "note": "Astra29 owns safe sync tools/tests and proposes activebaseline/reconcile interface; rootownscentralmetadata. ActualUbuntu CI28passed; engine27portablepackaging and independent image review pending.",
+      "updated_at": "2026-11-05T12:50:12.571Z"
     },
     {
       "key": "CGS-30",

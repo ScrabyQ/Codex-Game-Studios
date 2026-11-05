@@ -1,0 +1,29 @@
+{
+  "engine": "unreal",
+  "phase": "build",
+  "executable": "C:/Program Files/Epic Games/UE_5.8/Engine/Binaries/DotNET/UnrealBuildTool/UnrealBuildTool.exe",
+  "args": [
+    "TP_BlankEditor",
+    "Win64",
+    "Development",
+    "-Project=D:\\MyProjects\\codex-game-studios\\docs\\codex\\fixtures\\cgs27\\unreal\\TP_Blank.uproject",
+    "-NoEngineChanges",
+    "-NoHotReloadFromIDE",
+    "-Log=D:\\MyProjects\\codex-game-studios\\docs\\codex\\evidence\\CGS-27\\unreal-build-tool.log"
+  ],
+  "cwd": "D:\\MyProjects\\codex-game-studios\\docs\\codex\\fixtures\\cgs27\\unreal",
+  "started": "2026-11-05T12:33:34.699Z",
+  "finished": "2026-11-05T12:33:34.736Z",
+  "exit_code": 2147516547,
+  "signal": null,
+  "error": null,
+  "stdout": "",
+  "stderr": "You must install .NET to run this application.\r\n\r\nApp: C:\\Program Files\\Epic Games\\UE_5.8\\Engine\\Binaries\\DotNET\\UnrealBuildTool\\UnrealBuildTool.exe\r\nArchitecture: x64\r\nApp host version: 10.0.7\r\n.NET location: Not found\r\n\r\nThe following locations were searched:\r\n  Application directory:\r\n    C:\\Program Files\\Epic Games\\UE_5.8\\Engine\\Binaries\\DotNET\\UnrealBuildTool\\\r\n  Environment variable:\r\n    DOTNET_ROOT_X64 = <not set>\r\n    DOTNET_ROOT = <not set>\r\n  Registered location:\r\n    HKLM\\SOFTWARE\\dotnet\\Setup\\InstalledVersions\\x64\\InstallLocation = <not set>\r\n  Default location:\r\n    C:\\Program Files\\dotnet\r\n\r\nLearn more:\r\nhttps://aka.ms/dotnet/app-launch-failed\r\n\r\nDownload the .NET runtime:\r\nhttps://aka.ms/dotnet-core-applaunch?missing_runtime=true&arch=x64&rid=win-x64&os=win10&apphost_version=10.0.7\r\n",
+  "source_hashes": {
+    "Source/TP_Blank/ChargeModel.h": "bdaed6f7592b558d3e21cc606b9cf602a610bdb389def442e01f5c3c6a8c0a40",
+    "Source/TP_Blank/ChargeModelTest.cpp": "7b389576a9872c80343243ca0c9e842914c55118b6c6ad6d7797ed445efc71cd"
+  },
+  "error_lines_detected": false,
+  "status": "FAIL",
+  "scope": "Actual engine/tool process only; no visual claim."
+}

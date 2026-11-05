@@ -1,0 +1,2 @@
+# Bounded UX/layout contract
+Authored in-session as fixture design before implementation; not independent design approval. One 800x480 dark slate surface; centered 560x330 panel. Vertical reading order: title, subtitle, charge count, status, Spend Charge and Reset side-by-side, input hint. Body text at least18px, count52px, buttons46px high. Ready cyan; empty amber, always paired with words. No animation/audio. Native button focus and default ui_accept support keyboard/gamepad; physical device and accessibility usability are not tested here.

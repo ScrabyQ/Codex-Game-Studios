@@ -1,0 +1,25 @@
+schema_version: 1
+
+project:
+  stage: Concept
+
+modes:
+  rigor: minimal
+  automation: guided
+
+engine:
+  name: Unreal
+  version: "5.8.3"
+  language: "C++"
+  path: "C:/Program Files/Epic Games/UE_5.8/Engine/Binaries/Win64/UnrealEditor-Cmd.exe"
+  rendering: Lumen + Nanite (deferred)
+  physics: Chaos
+specialists:
+  code: unreal-specialist
+  shader: unreal-specialist
+  ui: ue-umg-specialist
+  additional: [ue-gas-specialist, ue-blueprint-specialist, ue-replication-specialist]
+commands:
+  build: "UnrealBuildTool.exe TP_BlankEditor Win64 Development -Project=<absolute TP_Blank.uproject> -NoEngineChanges"
+
+# No rigor-fronted knobs seeded. Minimal tests are optional; CGS27 explicitly requests actual tests.

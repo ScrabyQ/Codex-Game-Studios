@@ -1,0 +1,24 @@
+schema_version: 1
+
+project:
+  stage: Concept
+
+modes:
+  rigor: minimal
+  automation: guided
+
+engine:
+  name: Unity
+  version: "6000.3.26f1"
+  language: "C#"
+  rendering: URP
+  physics: PhysX
+specialists:
+  code: unity-specialist
+  shader: unity-shader-specialist
+  ui: unity-ui-specialist
+  additional: [unity-dots-specialist, unity-addressables-specialist]
+commands:
+  build: "[TO BE CONFIGURED: editor and target required]"
+
+# No rigor-fronted knobs seeded. Minimal tests are optional; CGS27 explicitly requests actual tests.

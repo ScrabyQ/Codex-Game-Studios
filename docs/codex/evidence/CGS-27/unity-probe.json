@@ -1,0 +1,23 @@
+{
+  "engine": "unity",
+  "phase": "probe",
+  "executable": "C:/Program Files/Unity/Hub/Editor/6000.3.26f1/Editor/Unity.exe",
+  "args": [
+    "-version"
+  ],
+  "cwd": "D:\\MyProjects\\codex-game-studios\\docs\\codex\\fixtures\\cgs27\\unity",
+  "started": "2026-11-05T12:33:34.072Z",
+  "finished": "2026-11-05T12:33:34.076Z",
+  "exit_code": null,
+  "signal": null,
+  "error": {
+    "code": "ENOENT",
+    "message": "spawnSync C:/Program Files/Unity/Hub/Editor/6000.3.26f1/Editor/Unity.exe ENOENT"
+  },
+  "stdout": "",
+  "stderr": "",
+  "source_hashes": {},
+  "error_lines_detected": false,
+  "status": "PENDING",
+  "scope": "Actual engine/tool process only; no visual claim."
+}

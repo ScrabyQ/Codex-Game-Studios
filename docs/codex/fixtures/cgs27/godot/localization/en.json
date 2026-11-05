@@ -1,0 +1,10 @@
+{
+  "title": "CHARGE BEACON",
+  "subtitle": "A small signal. A clear state.",
+  "charge_format": "%d / %d",
+  "ready": "Ready to send",
+  "empty": "Out of charges",
+  "spend": "Spend charge",
+  "reset": "Reset",
+  "hint": "Select a button to send or restore the signal."
+}

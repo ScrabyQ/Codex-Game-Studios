@@ -1,0 +1,128 @@
+[
+  {
+    "engine": "godot",
+    "baseline": "b36d7da226dbc5a6a55d92e3a21e3552a8b4efb9",
+    "author": "ScrabyQ <scraby2016@yandex.ru>",
+    "metadata_outside_worktree": true,
+    "status": {
+      "executable": "git",
+      "args": [
+        "--git-dir=D:\\MyProjects\\codex-game-studios\\docs\\codex\\evidence\\CGS-27\\.local-git\\godot",
+        "--work-tree=D:\\MyProjects\\codex-game-studios\\docs\\codex\\fixtures\\cgs27\\godot",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios\\docs\\codex\\fixtures\\cgs27\\godot",
+      "started": "2026-11-05T12:42:11.677Z",
+      "finished": "2026-11-05T12:42:11.791Z",
+      "exit_code": 0,
+      "signal": null,
+      "error": null,
+      "stdout": " M production/epics/beacon/story-001-charge-hud.md\n M project.godot\n?? assets/data/charge.json\n?? docs/project/ui-contract.md\n?? localization/en.json\n?? production/qa/evidence/story-001-charge-hud/01-ready.png\n?? production/qa/evidence/story-001-charge-hud/02-empty.png\n?? production/qa/evidence/story-001-charge-hud/03-reset.png\n?? production/qa/evidence/story-001-charge-hud/stamp.txt\n?? production/session-state/active.md\n?? prototypes/.gdignore\n?? scenes/charge_beacon.tscn\n?? src/charge_beacon.gd\n?? src/charge_beacon.gd.uid\n?? src/charge_model.gd\n?? src/charge_model.gd.uid\n?? tests/unit/charge_model_test.gd.uid\n",
+      "stderr": ""
+    },
+    "diff": {
+      "executable": "git",
+      "args": [
+        "--git-dir=D:\\MyProjects\\codex-game-studios\\docs\\codex\\evidence\\CGS-27\\.local-git\\godot",
+        "--work-tree=D:\\MyProjects\\codex-game-studios\\docs\\codex\\fixtures\\cgs27\\godot",
+        "diff",
+        "--stat",
+        "b36d7da226dbc5a6a55d92e3a21e3552a8b4efb9"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios\\docs\\codex\\fixtures\\cgs27\\godot",
+      "started": "2026-11-05T12:42:13.220Z",
+      "finished": "2026-11-05T12:42:13.479Z",
+      "exit_code": 0,
+      "signal": null,
+      "error": null,
+      "stdout": " production/epics/beacon/story-001-charge-hud.md | 13 +++++++++++--\n project.godot                                   |  2 +-\n 2 files changed, 12 insertions(+), 3 deletions(-)\n",
+      "stderr": "warning: in the working copy of 'production/epics/beacon/story-001-charge-hud.md', LF will be replaced by CRLF the next time Git touches it\nwarning: in the working copy of 'project.godot', LF will be replaced by CRLF the next time Git touches it\n"
+    }
+  },
+  {
+    "engine": "unity",
+    "baseline": "2f354351b6af8ac48abd52aa48f74dc10ea3c68f",
+    "author": "ScrabyQ <scraby2016@yandex.ru>",
+    "metadata_outside_worktree": true,
+    "status": {
+      "executable": "git",
+      "args": [
+        "--git-dir=D:\\MyProjects\\codex-game-studios\\docs\\codex\\evidence\\CGS-27\\.local-git\\unity",
+        "--work-tree=D:\\MyProjects\\codex-game-studios\\docs\\codex\\fixtures\\cgs27\\unity",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios\\docs\\codex\\fixtures\\cgs27\\unity",
+      "started": "2026-11-05T12:42:16.663Z",
+      "finished": "2026-11-05T12:42:16.730Z",
+      "exit_code": 0,
+      "signal": null,
+      "error": null,
+      "stdout": "",
+      "stderr": ""
+    },
+    "diff": {
+      "executable": "git",
+      "args": [
+        "--git-dir=D:\\MyProjects\\codex-game-studios\\docs\\codex\\evidence\\CGS-27\\.local-git\\unity",
+        "--work-tree=D:\\MyProjects\\codex-game-studios\\docs\\codex\\fixtures\\cgs27\\unity",
+        "diff",
+        "--stat",
+        "2f354351b6af8ac48abd52aa48f74dc10ea3c68f"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios\\docs\\codex\\fixtures\\cgs27\\unity",
+      "started": "2026-11-05T12:42:17.919Z",
+      "finished": "2026-11-05T12:42:17.976Z",
+      "exit_code": 0,
+      "signal": null,
+      "error": null,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  {
+    "engine": "unreal",
+    "baseline": "a55ac23899ab85e4272bf6e451759f358e995419",
+    "author": "ScrabyQ <scraby2016@yandex.ru>",
+    "metadata_outside_worktree": true,
+    "status": {
+      "executable": "git",
+      "args": [
+        "--git-dir=D:\\MyProjects\\codex-game-studios\\docs\\codex\\evidence\\CGS-27\\.local-git\\unreal",
+        "--work-tree=D:\\MyProjects\\codex-game-studios\\docs\\codex\\fixtures\\cgs27\\unreal",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios\\docs\\codex\\fixtures\\cgs27\\unreal",
+      "started": "2026-11-05T12:42:20.457Z",
+      "finished": "2026-11-05T12:42:20.512Z",
+      "exit_code": 0,
+      "signal": null,
+      "error": null,
+      "stdout": "?? Source/TP_Blank/ChargeModel.h\n?? Source/TP_Blank/ChargeModelTest.cpp\n",
+      "stderr": ""
+    },
+    "diff": {
+      "executable": "git",
+      "args": [
+        "--git-dir=D:\\MyProjects\\codex-game-studios\\docs\\codex\\evidence\\CGS-27\\.local-git\\unreal",
+        "--work-tree=D:\\MyProjects\\codex-game-studios\\docs\\codex\\fixtures\\cgs27\\unreal",
+        "diff",
+        "--stat",
+        "a55ac23899ab85e4272bf6e451759f358e995419"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios\\docs\\codex\\fixtures\\cgs27\\unreal",
+      "started": "2026-11-05T12:42:21.704Z",
+      "finished": "2026-11-05T12:42:21.763Z",
+      "exit_code": 0,
+      "signal": null,
+      "error": null,
+      "stdout": "",
+      "stderr": ""
+    }
+  }
+]

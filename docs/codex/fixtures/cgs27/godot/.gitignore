@@ -1,0 +1,8 @@
+.godot/
+.runtime/
+Binaries/
+Intermediate/
+Saved/
+DerivedDataCache/
+Library/
+Temp/

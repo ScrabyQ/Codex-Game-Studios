@@ -1,0 +1,15 @@
+.godot/
+.runtime/
+Binaries/
+Intermediate/
+Saved/
+DerivedDataCache/
+Library/
+Temp/
+obj/
+# Installed Epic template inputs are local-only, never redistributed with this MIT adaptation.
+cgs27/unreal/TP_Blank.uproject
+cgs27/unreal/Config/
+cgs27/unreal/Source/TP_Blank.Target.cs
+cgs27/unreal/Source/TP_BlankEditor.Target.cs
+cgs27/unreal/Source/TP_Blank/TP_Blank.*

@@ -1,0 +1,20 @@
+[
+  {
+    "engine": "godot",
+    "git_dir": "D:\\MyProjects\\codex-game-studios\\docs\\codex\\evidence\\CGS-27\\.local-git\\godot",
+    "work_tree": "D:\\MyProjects\\codex-game-studios\\docs\\codex\\fixtures\\cgs27\\godot",
+    "baseline": "b36d7da226dbc5a6a55d92e3a21e3552a8b4efb9"
+  },
+  {
+    "engine": "unity",
+    "git_dir": "D:\\MyProjects\\codex-game-studios\\docs\\codex\\evidence\\CGS-27\\.local-git\\unity",
+    "work_tree": "D:\\MyProjects\\codex-game-studios\\docs\\codex\\fixtures\\cgs27\\unity",
+    "baseline": "2f354351b6af8ac48abd52aa48f74dc10ea3c68f"
+  },
+  {
+    "engine": "unreal",
+    "git_dir": "D:\\MyProjects\\codex-game-studios\\docs\\codex\\evidence\\CGS-27\\.local-git\\unreal",
+    "work_tree": "D:\\MyProjects\\codex-game-studios\\docs\\codex\\fixtures\\cgs27\\unreal",
+    "baseline": "a55ac23899ab85e4272bf6e451759f358e995419"
+  }
+]

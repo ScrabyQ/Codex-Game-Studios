@@ -1,0 +1,124 @@
+{
+  "cases": [
+    {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "D:\\MyProjects\\codex-game-studios\\scripts\\codex\\engine-e2e.mjs",
+        "--engine",
+        "godot",
+        "--phase",
+        "run",
+        "--dry-run"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios",
+      "started": "2026-11-05T12:50:33.179Z",
+      "finished": "2026-11-05T12:50:33.284Z",
+      "exit_code": 2,
+      "signal": null,
+      "error": null,
+      "stdout": "",
+      "stderr": "Invalid, duplicate or incomplete argument: --dry-run\nUsage: node scripts/codex/engine-e2e.mjs --engine godot|unity|unreal --phase import|parse|test|run|build|probe [--exe PATH]\n"
+    },
+    {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "D:\\MyProjects\\codex-game-studios\\scripts\\codex\\engine-e2e.mjs",
+        "--engine",
+        "godot",
+        "--phase",
+        "run",
+        "--bogus",
+        "yes"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios",
+      "started": "2026-11-05T12:50:33.546Z",
+      "finished": "2026-11-05T12:50:33.634Z",
+      "exit_code": 2,
+      "signal": null,
+      "error": null,
+      "stdout": "",
+      "stderr": "Invalid, duplicate or incomplete argument: --bogus\nUsage: node scripts/codex/engine-e2e.mjs --engine godot|unity|unreal --phase import|parse|test|run|build|probe [--exe PATH]\n"
+    },
+    {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "D:\\MyProjects\\codex-game-studios\\scripts\\codex\\engine-e2e.mjs",
+        "--engine",
+        "godot",
+        "--engine",
+        "unreal",
+        "--phase",
+        "run"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios",
+      "started": "2026-11-05T12:50:33.863Z",
+      "finished": "2026-11-05T12:50:33.941Z",
+      "exit_code": 2,
+      "signal": null,
+      "error": null,
+      "stdout": "",
+      "stderr": "Invalid, duplicate or incomplete argument: --engine\nUsage: node scripts/codex/engine-e2e.mjs --engine godot|unity|unreal --phase import|parse|test|run|build|probe [--exe PATH]\n"
+    },
+    {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "D:\\MyProjects\\codex-game-studios\\scripts\\codex\\engine-e2e.mjs",
+        "--engine",
+        "godot",
+        "--phase",
+        "run",
+        "--exe"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios",
+      "started": "2026-11-05T12:50:34.187Z",
+      "finished": "2026-11-05T12:50:34.274Z",
+      "exit_code": 2,
+      "signal": null,
+      "error": null,
+      "stdout": "",
+      "stderr": "Invalid, duplicate or incomplete argument: --exe\nUsage: node scripts/codex/engine-e2e.mjs --engine godot|unity|unreal --phase import|parse|test|run|build|probe [--exe PATH]\n"
+    },
+    {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "D:\\MyProjects\\codex-game-studios\\scripts\\codex\\engine-e2e.mjs",
+        "--engine",
+        "godot",
+        "--phase",
+        "probe",
+        "--exe",
+        "D:\\MyProjects\\codex-game-studios\\docs\\codex\\fixtures\\cgs27\\godot\\not-installed\\godot.exe"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios",
+      "started": "2026-11-05T12:50:34.520Z",
+      "finished": "2026-11-05T12:50:35.734Z",
+      "exit_code": 1,
+      "signal": null,
+      "error": null,
+      "stdout": "{\"engine\":\"godot\",\"phase\":\"probe\",\"executable\":\"D:\\\\MyProjects\\\\codex-game-studios\\\\docs\\\\codex\\\\fixtures\\\\cgs27\\\\godot\\\\not-installed\\\\godot.exe\",\"args\":[\"--version\"],\"cwd\":\"D:\\\\MyProjects\\\\codex-game-studios\\\\docs\\\\codex\\\\fixtures\\\\cgs27\\\\godot\",\"started\":\"2026-11-05T12:50:34.842Z\",\"finished\":\"2026-11-05T12:50:34.845Z\",\"exit_code\":null,\"signal\":null,\"error\":{\"code\":\"ENOENT\",\"message\":\"spawnSync D:\\\\MyProjects\\\\codex-game-studios\\\\docs\\\\codex\\\\fixtures\\\\cgs27\\\\godot\\\\not-installed\\\\godot.exe ENOENT\"},\"stdout\":\"\",\"stderr\":\"\",\"executable_selection\":\"--exe\",\"runtime_env\":{},\"source_hashes\":{\"src/charge_model.gd\":\"1719be29cce7c759647fde0238bd2e59bfa192663213f9705f67fde42edd201a\",\"src/charge_beacon.gd\":\"34146c6bcbd677eab4de19b8d5670180df612de2ca13d4525f937bfd0c314ad3\",\"tests/unit/charge_model_test.gd\":\"81dbb0b9cf5cec347bec802b249cfeff5b19d8d5ecd3e918f3cb6bc223301ee4\",\"assets/data/charge.json\":\"229e733e40d180f5f9549232fd70f32eb936572214fc8ad37bc8b041bb7a6fd5\",\"localization/en.json\":\"026af4d182144b69edef5edbc17c7882687210c552765203cc002742c4f93a57\",\"scenes/charge_beacon.tscn\":\"8cc3ee069013bb9837def01fa0c628c7c4b42e76ff5e5b9626e66ff948e2bebf\"},\"error_lines_detected\":false,\"status\":\"PENDING\",\"scope\":\"Actual engine/tool process only; no visual claim.\",\"cache_caveat\":null}\n",
+      "stderr": ""
+    },
+    {
+      "executable": "C:\\nvm4w\\nodejs\\node.exe",
+      "args": [
+        "D:\\MyProjects\\codex-game-studios\\scripts\\codex\\engine-e2e.mjs",
+        "--engine",
+        "godot",
+        "--phase",
+        "probe"
+      ],
+      "cwd": "D:\\MyProjects\\codex-game-studios",
+      "started": "2026-11-05T12:50:37.002Z",
+      "finished": "2026-11-05T12:50:38.321Z",
+      "exit_code": 1,
+      "signal": null,
+      "error": null,
+      "stdout": "{\"engine\":\"godot\",\"phase\":\"probe\",\"executable\":\"D:\\\\MyProjects\\\\codex-game-studios\\\\docs\\\\codex\\\\fixtures\\\\cgs27\\\\godot\\\\not-installed\\\\godot.exe\",\"args\":[\"--version\"],\"cwd\":\"D:\\\\MyProjects\\\\codex-game-studios\\\\docs\\\\codex\\\\fixtures\\\\cgs27\\\\godot\",\"started\":\"2026-11-05T12:50:37.352Z\",\"finished\":\"2026-11-05T12:50:37.354Z\",\"exit_code\":null,\"signal\":null,\"error\":{\"code\":\"ENOENT\",\"message\":\"spawnSync D:\\\\MyProjects\\\\codex-game-studios\\\\docs\\\\codex\\\\fixtures\\\\cgs27\\\\godot\\\\not-installed\\\\godot.exe ENOENT\"},\"stdout\":\"\",\"stderr\":\"\",\"executable_selection\":\"CGS_GODOT_EXE\",\"runtime_env\":{},\"source_hashes\":{\"src/charge_model.gd\":\"1719be29cce7c759647fde0238bd2e59bfa192663213f9705f67fde42edd201a\",\"src/charge_beacon.gd\":\"34146c6bcbd677eab4de19b8d5670180df612de2ca13d4525f937bfd0c314ad3\",\"tests/unit/charge_model_test.gd\":\"81dbb0b9cf5cec347bec802b249cfeff5b19d8d5ecd3e918f3cb6bc223301ee4\",\"assets/data/charge.json\":\"229e733e40d180f5f9549232fd70f32eb936572214fc8ad37bc8b041bb7a6fd5\",\"localization/en.json\":\"026af4d182144b69edef5edbc17c7882687210c552765203cc002742c4f93a57\",\"scenes/charge_beacon.tscn\":\"8cc3ee069013bb9837def01fa0c628c7c4b42e76ff5e5b9626e66ff948e2bebf\"},\"error_lines_detected\":false,\"status\":\"PENDING\",\"scope\":\"Actual engine/tool process only; no visual claim.\",\"cache_caveat\":null}\n",
+      "stderr": ""
+    }
+  ],
+  "render_evidence_unchanged": true,
+  "third_party_files_ignored": 11,
+  "authored_ue_files_not_ignored": true,
+  "no_embedded_git": true
+}
