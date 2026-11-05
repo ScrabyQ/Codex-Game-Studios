@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "id": "cgs13-control-manifest",
+  "components": [
+    "file:.claude/skills/create-control-manifest/SKILL.md"
+  ],
+  "files": {
+    "project.yaml": "schema_version: 1\nengine:\n  name: Godot\n  version: \"4.7\"\n  language: GDScript\nmodes:\n  rigor: standard\n  automation: collaborative\n",
+    "design/gdd/game-concept.md": "# Pocket Arena\n## Summary\nA small 2D arena game. Pillar: readable survival. Players can quit and resume their current health.\n",
+    "design/gdd/systems-index.md": "# Systems Index\n| System | Layer | Domain | Status |\n|---|---|---|---|\n| health | Core | Core | Approved |\n| save | Foundation | Core | Approved |\n| health-hud | Presentation | UI | Approved |\n",
+    "design/gdd/health.md": "# Health\n## Summary\nA clamped health counter notifies the HUD when changed.\n## Detailed Rules\nHealth is clamped between 0 and max_health.\n## Dependencies\nThe HUD reads health notifications; health never references the HUD.\n## Acceptance Criteria\nDamage below zero leaves health unchanged. Lethal damage clamps health to zero.\n",
+    "design/gdd/save.md": "# Save\n## Summary\nResume saved health between sessions.\n## Detailed Rules\nSave must persist current health between sessions with a versioned schema.\n## Dependencies\nSave reads a snapshot from health; health does not call save.\n## Acceptance Criteria\nLoading a valid save restores the recorded current health.\n",
+    "docs/architecture/architecture.md": "# Pocket Arena — Master Architecture\n\n## Document Status\n- Version: 2\n- Last Updated: 2026-11-04\n- Engine: Godot 4.7\n\n## System Layer Map\nHealth: Core. Save: unassigned. HUD: Presentation.\n\n## Module Ownership\nPRESERVE-OWNERSHIP: health alone owns current_health.\n\n## Data Flow\nPRESERVE-DATA-FLOW: health emits a read-only snapshot to save and HUD.\n\n## Required ADRs\nADR-0002 save format (Foundation) is required before save implementation.\n\n## Technical Requirements Baseline\n| Req ID | System | Requirement |\n|---|---|---|\n| TR-health-001 | health | Health is clamped between 0 and max_health. |\n| TR-save-001 (provisional) | save | Save must persist current health between sessions with a versioned schema. |\n",
+    "docs/architecture/adr-0001-health.md": "# ADR-0001: Health ownership\n\n## Status\nAccepted\n\n## Date\n2026-11-01\n\n## Summary\nHealth owns its value and emits change notifications.\n\n## Engine Compatibility\n| Field | Value |\n|---|---|\n| **Engine** | Godot 4.7 |\n| **Domain** | Core |\n| **Layer** | Core |\n| **Post-Cutoff APIs Used** | None; no engine API prescribed |\n\n## ADR Dependencies\n| Field | Value |\n|---|---|\n| **Depends On** | None |\n\n## Decision\nHealth must be the only writer of current_health. Health must never depend on the HUD.\n\n## Alternatives Considered\nDirect HUD writes are rejected because they split state ownership.\n\n## Performance Implications\nNo measured budget provided; no performance claim.\n\n## GDD Requirements Addressed\n| GDD System | Requirement | How |\n|---|---|---|\n| health.md | TR-health-001: Health is clamped between 0 and max_health. | Single owner performs clamping. |\n",
+    "docs/architecture/tr-registry.yaml": "version: 2\nlast_updated: \"2026-11-01\"\nrequirements:\n- id: TR-health-001\n  system: health\n  gdd: design/gdd/health.md\n  requirement: \"Health is clamped between 0 and max_health.\"\n  status: active\n- id: TR-health-002\n  system: health\n  gdd: design/gdd/health.md\n  requirement: \"Old unlimited-health behavior\"\n  status: deprecated\n",
+    "docs/registry/architecture.yaml": "version: 1\nlast_updated: \"2026-11-01\"\nstate_ownership: []\ninterfaces: []\nperformance_budgets: []\napi_decisions: []\nforbidden_patterns: []\n",
+    "production/epics/save/story-001-save.md": "# Story 001: Save health\n> **Status**: Blocked\n> **ADR**: ADR-0002\nBlocked pending ADR-0002 acceptance.\n",
+    "production/epics/save/story-002-unrelated.md": "# Story 002: Add save icon\n**Status:** Blocked\nBlocked pending asset delivery.\n",
+    "production/epics/save/story-003-successor-only.md": "# Story 003: Port old loader\nStatus: Blocked\nADR-0000 is Superseded — point the story at ADR-0002 (edit its ADR field) before implementing.\n",
+    "src/gameplay/inventory_stub.gd": "class_name InventoryStub\nextends Node\nfunc _ready():\n    pass\n",
+    "src/gameplay/health_system.gd": "class_name HealthSystem\nextends RefCounted\nsignal health_changed(value: int)\nvar max_health: int = 100\nvar health: int = 100\n\nfunc take_damage(amount: int) -> void:\n    if amount < 0:\n        return\n    var before: int = health\n    health = clampi(health - amount, 0, max_health)\n    if health != before:\n        health_changed.emit(health)\n\nfunc heal(amount: int) -> void:\n    if amount < 0:\n        return\n    var before: int = health\n    health = clampi(health + amount, 0, max_health)\n    if health != before:\n        health_changed.emit(health)\n\nfunc reset_health() -> void:\n    var before: int = health\n    health = max_health\n    if health != before:\n        health_changed.emit(health)\n\nfunc is_alive() -> bool:\n    return health > 0\n\nfunc snapshot() -> Dictionary:\n    return {\"health\": health, \"max_health\": max_health}\n\nfunc restore_snapshot(data: Dictionary) -> void:\n    if not data.has(\"health\"):\n        return\n    var before: int = health\n    health = clampi(int(data[\"health\"]), 0, max_health)\n    if health != before:\n        health_changed.emit(health)\n",
+    "docs/architecture/architecture-review-2026-11-05.md": "# Architecture Review\nVerdict: CONCERNS\nSave has no Accepted ADR; seeded health ADR lacks context. Required assessments are incomplete.\n"
+  },
+  "scope": "Only this recorded scenario; other cases, independent role execution and engine runs remain PENDING.",
+  "read_only": true,
+  "no_writes": true,
+  "prompt": "Invoke $create-control-manifest. The current architecture review explicitly reports CONCERNS. Inspect actual statuses and explain which Accepted ADR can supply rules. Give a small accepted-only preview in the reply, but do not publish an Active manifest or modify files. Report BLOCKED for publication and identify the missing review prerequisite; the fixture authorization does not waive the review gate.",
+  "expect_report": [
+    "ADR-0001",
+    "CONCERNS",
+    "BLOCKED"
+  ]
+}

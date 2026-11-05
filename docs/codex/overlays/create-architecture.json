@@ -1,0 +1,13 @@
+{
+  "source_sha256": "0613360ba1247bbfc53f840b0f97d15430f38799b4a67498c6efabe53763c23d",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-13 Codex architecture contract:** Resolve configuration with the explicit bootstrap before applying workflow or review gates. Source Read/Glob/Grep/Write/Edit examples describe operations: use available file tools, rg, and approved shell/Node helpers with the same path/range semantics. Source Agent/subagent_type examples are role briefs, not an assumed Codex API. Prefer an available authorized native role; otherwise an actual generic child may receive the complete adapted role and gate brief. If only an in-session role review is possible, read those instructions and label it \"not independent\"; never count it as a fresh independent review. Gate files can be read in-session for that disclosed fallback, despite source wording assigning the read to a child. Report unperformed required assessment as NOT ASSESSED. Do not invent engine execution or an unavailable specialist verdict.\n\nUse available question tools, or present the same numbered options in plain text and wait; source widget-only wording cannot make an unavailable tool mandatory. Previously authorized writes and explicit scripted fixture choices remain authorized. An unanswered required choice, ADR acceptance, registry update, or supersession is never inferred from automation. Show actual effects and preserve authorization scope. Commands and helpers emit observations; missing/failed helpers are not clean results. Direct file-reading fallback is valid only when it establishes the same facts. Dependency graph computation and receipt hashing must actually run, or that subcheck is NOT ASSESSED. Native skill names use $name; merely recommending a skill never runs it.\n\nPreserve engine/design prerequisite stops, all applicable layer boundaries, provisional-versus-registered TR IDs, section approvals, and the single final write. On a chosen-section update preserve every other section and increment Version. At standard use the layer map and critical ADR list; at minimal do not invent a mandatory full architecture. Platform is not a project-owned system layer. Keep real review outcomes and named skips in Document Status, never convert a fallback or rejection into APPROVE.\n\n"
+    },
+    {
+      "find": "— plain text \"May I?\" is not\n   sufficient. Use the structured tool with labeled options [A]/[B]/[C]",
+      "replace": "— when the structured question tool is available, use it; otherwise present numbered options in plain text and wait. Use labeled options [A]/[B]/[C]"
+    }
+  ]
+}

@@ -277,8 +277,16 @@
       ],
       "proposed_target": ".codex/agents/godot-csharp-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "All15 full bodies and role selection checked through actual resolver; three static in-session engine reviews. Compilation/runtime and native custom spawning remain separately PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-09",
+      "target": ".codex/agents/godot-csharp-specialist.toml",
+      "target_sha256": "39803ea17db68b46ee030e4388cc332ec9a9fa7c82fd92b9187295daa6649615",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-09/structural.json",
+        "docs/codex/evidence/CGS-09/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/godot-gdextension-specialist.md",
@@ -292,8 +300,16 @@
       ],
       "proposed_target": ".codex/agents/godot-gdextension-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "All15 full bodies and role selection checked through actual resolver; three static in-session engine reviews. Compilation/runtime and native custom spawning remain separately PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-09",
+      "target": ".codex/agents/godot-gdextension-specialist.toml",
+      "target_sha256": "7ec14ecf18e535f698facf4698de0524dbd7861e6db41ddbdf426c188f7a57e5",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-09/structural.json",
+        "docs/codex/evidence/CGS-09/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/godot-gdscript-specialist.md",
@@ -307,8 +323,16 @@
       ],
       "proposed_target": ".codex/agents/godot-gdscript-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "All15 full bodies and role selection checked through actual resolver; three static in-session engine reviews. Compilation/runtime and native custom spawning remain separately PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-09",
+      "target": ".codex/agents/godot-gdscript-specialist.toml",
+      "target_sha256": "681ffffe394ea2e89ade2290dd96dcccebbdd34959f1ce61c4c0c86b7adc006e",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-09/structural.json",
+        "docs/codex/evidence/CGS-09/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/godot-shader-specialist.md",
@@ -322,8 +346,16 @@
       ],
       "proposed_target": ".codex/agents/godot-shader-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "All15 full bodies and role selection checked through actual resolver; three static in-session engine reviews. Compilation/runtime and native custom spawning remain separately PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-09",
+      "target": ".codex/agents/godot-shader-specialist.toml",
+      "target_sha256": "78c2f6111431ac394934dc28a81ecd82df930cfc6e39c265a091c94c9ed37eb9",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-09/structural.json",
+        "docs/codex/evidence/CGS-09/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/godot-specialist.md",
@@ -337,8 +369,16 @@
       ],
       "proposed_target": ".codex/agents/godot-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "All15 full bodies and role selection checked through actual resolver; three static in-session engine reviews. Compilation/runtime and native custom spawning remain separately PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-09",
+      "target": ".codex/agents/godot-specialist.toml",
+      "target_sha256": "47af614a3e7b95f275f638f226b003e9bd31f20f581bbff43a565d354f6aa581",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-09/structural.json",
+        "docs/codex/evidence/CGS-09/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/lead-programmer.md",
@@ -736,8 +776,16 @@
       ],
       "proposed_target": ".codex/agents/ue-blueprint-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "All15 full bodies and role selection checked through actual resolver; three static in-session engine reviews. Compilation/runtime and native custom spawning remain separately PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-09",
+      "target": ".codex/agents/ue-blueprint-specialist.toml",
+      "target_sha256": "31a1760a2cb0781d7d2c4d7e8d690ae2cad3acfe59a89b9de6cfb39b7e13c71e",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-09/structural.json",
+        "docs/codex/evidence/CGS-09/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/ue-gas-specialist.md",
@@ -751,8 +799,16 @@
       ],
       "proposed_target": ".codex/agents/ue-gas-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "All15 full bodies and role selection checked through actual resolver; three static in-session engine reviews. Compilation/runtime and native custom spawning remain separately PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-09",
+      "target": ".codex/agents/ue-gas-specialist.toml",
+      "target_sha256": "548cfd3a464ba199ae72f8d1e2b2eeced2c25730f086ac830eb1fb48ae34ff4b",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-09/structural.json",
+        "docs/codex/evidence/CGS-09/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/ue-replication-specialist.md",
@@ -766,8 +822,16 @@
       ],
       "proposed_target": ".codex/agents/ue-replication-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "All15 full bodies and role selection checked through actual resolver; three static in-session engine reviews. Compilation/runtime and native custom spawning remain separately PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-09",
+      "target": ".codex/agents/ue-replication-specialist.toml",
+      "target_sha256": "b897f44ebb955f7e6fba8bbba64e306c83ea95027015e86f6024fefb605c9846",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-09/structural.json",
+        "docs/codex/evidence/CGS-09/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/ue-umg-specialist.md",
@@ -781,8 +845,16 @@
       ],
       "proposed_target": ".codex/agents/ue-umg-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "All15 full bodies and role selection checked through actual resolver; three static in-session engine reviews. Compilation/runtime and native custom spawning remain separately PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-09",
+      "target": ".codex/agents/ue-umg-specialist.toml",
+      "target_sha256": "72732400db1d122d02eec259bf124083ffb5d3dd9ee5295831024c9aef297bae",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-09/structural.json",
+        "docs/codex/evidence/CGS-09/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/ui-programmer.md",
@@ -817,8 +889,16 @@
       ],
       "proposed_target": ".codex/agents/unity-addressables-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "All15 full bodies and role selection checked through actual resolver; three static in-session engine reviews. Compilation/runtime and native custom spawning remain separately PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-09",
+      "target": ".codex/agents/unity-addressables-specialist.toml",
+      "target_sha256": "d4d211f33256efc2339ba85d0685fa221a3cacd553509e16daa2b7219c4b1538",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-09/structural.json",
+        "docs/codex/evidence/CGS-09/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/unity-dots-specialist.md",
@@ -832,8 +912,16 @@
       ],
       "proposed_target": ".codex/agents/unity-dots-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "All15 full bodies and role selection checked through actual resolver; three static in-session engine reviews. Compilation/runtime and native custom spawning remain separately PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-09",
+      "target": ".codex/agents/unity-dots-specialist.toml",
+      "target_sha256": "83b7131ece0cd50dc34ad6755fe442fdc4c5e18fbbb4e75b027424e69b275ac0",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-09/structural.json",
+        "docs/codex/evidence/CGS-09/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/unity-shader-specialist.md",
@@ -847,8 +935,16 @@
       ],
       "proposed_target": ".codex/agents/unity-shader-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "All15 full bodies and role selection checked through actual resolver; three static in-session engine reviews. Compilation/runtime and native custom spawning remain separately PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-09",
+      "target": ".codex/agents/unity-shader-specialist.toml",
+      "target_sha256": "053f12beed64ae2ce2b629dbe3a3859d64d44cc0e8815786d01172fdd09bd843",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-09/structural.json",
+        "docs/codex/evidence/CGS-09/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/unity-specialist.md",
@@ -862,8 +958,16 @@
       ],
       "proposed_target": ".codex/agents/unity-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "All15 full bodies and role selection checked through actual resolver; three static in-session engine reviews. Compilation/runtime and native custom spawning remain separately PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-09",
+      "target": ".codex/agents/unity-specialist.toml",
+      "target_sha256": "c9e366de73c27022e5de4faca66fef157d051777dbd3ae84855781f97150dd39",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-09/structural.json",
+        "docs/codex/evidence/CGS-09/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/unity-ui-specialist.md",
@@ -877,8 +981,16 @@
       ],
       "proposed_target": ".codex/agents/unity-ui-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "All15 full bodies and role selection checked through actual resolver; three static in-session engine reviews. Compilation/runtime and native custom spawning remain separately PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-09",
+      "target": ".codex/agents/unity-ui-specialist.toml",
+      "target_sha256": "11524d9dfbc85f4ad0904998b4f9f2c8c48f8dff67937099794400e4741f7213",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-09/structural.json",
+        "docs/codex/evidence/CGS-09/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/unreal-specialist.md",
@@ -892,8 +1004,16 @@
       ],
       "proposed_target": ".codex/agents/unreal-specialist.toml",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "All15 full bodies and role selection checked through actual resolver; three static in-session engine reviews. Compilation/runtime and native custom spawning remain separately PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-09",
+      "target": ".codex/agents/unreal-specialist.toml",
+      "target_sha256": "ad6d9f5bef61682929074cd7bcbaa07343c350815435969776d2d6bd7847f823",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-09/structural.json",
+        "docs/codex/evidence/CGS-09/in-session-reviews.md"
+      ]
     },
     {
       "id": "file:.claude/agents/ux-designer.md",
@@ -4041,8 +4161,16 @@
       ],
       "proposed_target": ".agents/skills/architecture-decision/CONTRACT.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual Codex-host ADR lifecycle, accepted-only draft manifest, dependency guards and reverse-document safeguards exercised. Review CONCERNS correctly prevents Active publication; full native positive matrix and independent reviews remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-13",
+      "target": ".agents/skills/architecture-decision/CONTRACT.md",
+      "target_sha256": "aa95b47f126d074a4db1451ed61c14956a95f4397e8d19bf1d38ec89f0e8e51b",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/architecture-decision/SKILL.md",
@@ -4059,8 +4187,16 @@
       ],
       "proposed_target": ".agents/skills/architecture-decision/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual Codex-host ADR lifecycle, accepted-only draft manifest, dependency guards and reverse-document safeguards exercised. Review CONCERNS correctly prevents Active publication; full native positive matrix and independent reviews remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-13",
+      "target": ".agents/skills/architecture-decision/SKILL.md",
+      "target_sha256": "a3cf719125af8ac94380bb3bfcc1d7a74b20e46df549a61d47844c5483280c0e",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/architecture-decision/references/0-accept.md",
@@ -4073,8 +4209,16 @@
       ],
       "proposed_target": ".agents/skills/architecture-decision/references/0-accept.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual Codex-host ADR lifecycle, accepted-only draft manifest, dependency guards and reverse-document safeguards exercised. Review CONCERNS correctly prevents Active publication; full native positive matrix and independent reviews remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-13",
+      "target": ".agents/skills/architecture-decision/references/0-accept.md",
+      "target_sha256": "02a421828ac029a0d8a08fc8d6bd532716896b5d49c7bf0e591439ff481f123e",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/architecture-decision/references/0-retrofit.md",
@@ -4087,8 +4231,16 @@
       ],
       "proposed_target": ".agents/skills/architecture-decision/references/0-retrofit.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual Codex-host ADR lifecycle, accepted-only draft manifest, dependency guards and reverse-document safeguards exercised. Review CONCERNS correctly prevents Active publication; full native positive matrix and independent reviews remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-13",
+      "target": ".agents/skills/architecture-decision/references/0-retrofit.md",
+      "target_sha256": "9e5bf64176685ae736fd97e41a98a5c93f3636de7341423c6547e5472a0b080d",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/architecture-decision/references/1-engine-context.md",
@@ -4101,8 +4253,16 @@
       ],
       "proposed_target": ".agents/skills/architecture-decision/references/1-engine-context.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual Codex-host ADR lifecycle, accepted-only draft manifest, dependency guards and reverse-document safeguards exercised. Review CONCERNS correctly prevents Active publication; full native positive matrix and independent reviews remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-13",
+      "target": ".agents/skills/architecture-decision/references/1-engine-context.md",
+      "target_sha256": "bd8e78028c62a0b78b68ec481b5f919118119cf51d589e2f9d72a0bb700ebdbf",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/architecture-decision/references/3-gather-context.md",
@@ -4115,8 +4275,16 @@
       ],
       "proposed_target": ".agents/skills/architecture-decision/references/3-gather-context.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual Codex-host ADR lifecycle, accepted-only draft manifest, dependency guards and reverse-document safeguards exercised. Review CONCERNS correctly prevents Active publication; full native positive matrix and independent reviews remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-13",
+      "target": ".agents/skills/architecture-decision/references/3-gather-context.md",
+      "target_sha256": "300038f5dd0c98439dd73d728ccef43cb69080b4299e87239de1ff79bc50b91b",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/architecture-decision/references/4-decide.md",
@@ -4129,8 +4297,16 @@
       ],
       "proposed_target": ".agents/skills/architecture-decision/references/4-decide.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual Codex-host ADR lifecycle, accepted-only draft manifest, dependency guards and reverse-document safeguards exercised. Review CONCERNS correctly prevents Active publication; full native positive matrix and independent reviews remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-13",
+      "target": ".agents/skills/architecture-decision/references/4-decide.md",
+      "target_sha256": "27e3cd4651d13f78608e2ec1f0e598dabb71211359dfcd4814fe1fd96c17e4c6",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/architecture-decision/references/5-generate.md",
@@ -4143,8 +4319,16 @@
       ],
       "proposed_target": ".agents/skills/architecture-decision/references/5-generate.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual Codex-host ADR lifecycle, accepted-only draft manifest, dependency guards and reverse-document safeguards exercised. Review CONCERNS correctly prevents Active publication; full native positive matrix and independent reviews remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-13",
+      "target": ".agents/skills/architecture-decision/references/5-generate.md",
+      "target_sha256": "ac815f9cca32562fadbcd89fa8a1c81844ad20038ba6760f6710ebe1b98e33e2",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/architecture-review/SKILL.md",
@@ -4161,8 +4345,16 @@
       ],
       "proposed_target": ".agents/skills/architecture-review/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual Codex-host ADR lifecycle, accepted-only draft manifest, dependency guards and reverse-document safeguards exercised. Review CONCERNS correctly prevents Active publication; full native positive matrix and independent reviews remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-13",
+      "target": ".agents/skills/architecture-review/SKILL.md",
+      "target_sha256": "0a884ded25c8f5f1b87749e9e1e2d352739f383ad2d57686a90e9f9e026295c6",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/architecture-review/references/1-load.md",
@@ -4175,8 +4367,16 @@
       ],
       "proposed_target": ".agents/skills/architecture-review/references/1-load.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual Codex-host ADR lifecycle, accepted-only draft manifest, dependency guards and reverse-document safeguards exercised. Review CONCERNS correctly prevents Active publication; full native positive matrix and independent reviews remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-13",
+      "target": ".agents/skills/architecture-review/references/1-load.md",
+      "target_sha256": "13f31b89e74156bfaa6406acacbbe69f96d6e21dffc97fc383080fcbe7abffba",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/architecture-review/references/2-extract-requirements.md",
@@ -4189,8 +4389,16 @@
       ],
       "proposed_target": ".agents/skills/architecture-review/references/2-extract-requirements.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual Codex-host ADR lifecycle, accepted-only draft manifest, dependency guards and reverse-document safeguards exercised. Review CONCERNS correctly prevents Active publication; full native positive matrix and independent reviews remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-13",
+      "target": ".agents/skills/architecture-review/references/2-extract-requirements.md",
+      "target_sha256": "8fbec906d05534bfd1255b719476fd819241527a8df076f2857b17b2f2b44e9e",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/architecture-review/references/3-traceability.md",
@@ -4203,8 +4411,16 @@
       ],
       "proposed_target": ".agents/skills/architecture-review/references/3-traceability.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual Codex-host ADR lifecycle, accepted-only draft manifest, dependency guards and reverse-document safeguards exercised. Review CONCERNS correctly prevents Active publication; full native positive matrix and independent reviews remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-13",
+      "target": ".agents/skills/architecture-review/references/3-traceability.md",
+      "target_sha256": "9f560557d9b0564d9555ebdb84097229ee5b3b39b47ced4a8f5a90b9779cecfc",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/architecture-review/references/4-conflicts.md",
@@ -4217,8 +4433,16 @@
       ],
       "proposed_target": ".agents/skills/architecture-review/references/4-conflicts.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual Codex-host ADR lifecycle, accepted-only draft manifest, dependency guards and reverse-document safeguards exercised. Review CONCERNS correctly prevents Active publication; full native positive matrix and independent reviews remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-13",
+      "target": ".agents/skills/architecture-review/references/4-conflicts.md",
+      "target_sha256": "a40a21ac55115ef0e5b0c8cf9df890bd26e754fb0b634408701dd7ff046efbab",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/architecture-review/references/5-engine.md",
@@ -4231,8 +4455,16 @@
       ],
       "proposed_target": ".agents/skills/architecture-review/references/5-engine.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual Codex-host ADR lifecycle, accepted-only draft manifest, dependency guards and reverse-document safeguards exercised. Review CONCERNS correctly prevents Active publication; full native positive matrix and independent reviews remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-13",
+      "target": ".agents/skills/architecture-review/references/5-engine.md",
+      "target_sha256": "58e646605c960a54db5d892cfc3f21937c139c994b672eaa5149c90b7aaac8e8",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/architecture-review/references/6-document-coverage.md",
@@ -4245,8 +4477,16 @@
       ],
       "proposed_target": ".agents/skills/architecture-review/references/6-document-coverage.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual Codex-host ADR lifecycle, accepted-only draft manifest, dependency guards and reverse-document safeguards exercised. Review CONCERNS correctly prevents Active publication; full native positive matrix and independent reviews remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-13",
+      "target": ".agents/skills/architecture-review/references/6-document-coverage.md",
+      "target_sha256": "08094893a0847b96c8b724b6cbefbf84024ac0d3d320ad2d73fe82015c8d1fb4",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/architecture-review/references/7-report.md",
@@ -4259,8 +4499,16 @@
       ],
       "proposed_target": ".agents/skills/architecture-review/references/7-report.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual Codex-host ADR lifecycle, accepted-only draft manifest, dependency guards and reverse-document safeguards exercised. Review CONCERNS correctly prevents Active publication; full native positive matrix and independent reviews remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-13",
+      "target": ".agents/skills/architecture-review/references/7-report.md",
+      "target_sha256": "46f523e65f0e4439850e4f4c0900ed847d1ad8f5d6f342d613aee189d7940820",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/architecture-review/references/8-write.md",
@@ -4273,8 +4521,16 @@
       ],
       "proposed_target": ".agents/skills/architecture-review/references/8-write.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual Codex-host ADR lifecycle, accepted-only draft manifest, dependency guards and reverse-document safeguards exercised. Review CONCERNS correctly prevents Active publication; full native positive matrix and independent reviews remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-13",
+      "target": ".agents/skills/architecture-review/references/8-write.md",
+      "target_sha256": "06d54c90d2f8d56829e588d92853cb301f3d3ca605700f49d4eb713b6dfd089d",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/architecture-review/references/9-handoff.md",
@@ -4287,8 +4543,16 @@
       ],
       "proposed_target": ".agents/skills/architecture-review/references/9-handoff.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual Codex-host ADR lifecycle, accepted-only draft manifest, dependency guards and reverse-document safeguards exercised. Review CONCERNS correctly prevents Active publication; full native positive matrix and independent reviews remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-13",
+      "target": ".agents/skills/architecture-review/references/9-handoff.md",
+      "target_sha256": "76dd91ddb7d92e7c8dbeab60c2a307413a4e1fe920b1219c71e42ce496e0f7ec",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/art-bible/SKILL.md",
@@ -4514,8 +4778,16 @@
       ],
       "proposed_target": ".agents/skills/create-architecture/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual Codex-host ADR lifecycle, accepted-only draft manifest, dependency guards and reverse-document safeguards exercised. Review CONCERNS correctly prevents Active publication; full native positive matrix and independent reviews remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-13",
+      "target": ".agents/skills/create-architecture/SKILL.md",
+      "target_sha256": "a93c64aedfb65ddd18943d8f616f78045a05162934bf05687cf01283861af633",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/create-architecture/references/0-load-context.md",
@@ -4528,8 +4800,16 @@
       ],
       "proposed_target": ".agents/skills/create-architecture/references/0-load-context.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual Codex-host ADR lifecycle, accepted-only draft manifest, dependency guards and reverse-document safeguards exercised. Review CONCERNS correctly prevents Active publication; full native positive matrix and independent reviews remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-13",
+      "target": ".agents/skills/create-architecture/references/0-load-context.md",
+      "target_sha256": "51003555cec7bc63afa589bba940e5538c9e58a9cbf02404c49b2d39931015f4",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/create-architecture/references/1-layers.md",
@@ -4542,8 +4822,16 @@
       ],
       "proposed_target": ".agents/skills/create-architecture/references/1-layers.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual Codex-host ADR lifecycle, accepted-only draft manifest, dependency guards and reverse-document safeguards exercised. Review CONCERNS correctly prevents Active publication; full native positive matrix and independent reviews remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-13",
+      "target": ".agents/skills/create-architecture/references/1-layers.md",
+      "target_sha256": "a24a99e3336f0ec0b8424b85819091301021fd78e1002ac7d39163e26b5a1d30",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/create-architecture/references/2-module-ownership.md",
@@ -4556,8 +4844,16 @@
       ],
       "proposed_target": ".agents/skills/create-architecture/references/2-module-ownership.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual Codex-host ADR lifecycle, accepted-only draft manifest, dependency guards and reverse-document safeguards exercised. Review CONCERNS correctly prevents Active publication; full native positive matrix and independent reviews remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-13",
+      "target": ".agents/skills/create-architecture/references/2-module-ownership.md",
+      "target_sha256": "f5b996ff9afaa173787aea35934fd6975b141b2be5ce5597f8eb45295be3322e",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/create-architecture/references/3-data-flow.md",
@@ -4570,8 +4866,16 @@
       ],
       "proposed_target": ".agents/skills/create-architecture/references/3-data-flow.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual Codex-host ADR lifecycle, accepted-only draft manifest, dependency guards and reverse-document safeguards exercised. Review CONCERNS correctly prevents Active publication; full native positive matrix and independent reviews remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-13",
+      "target": ".agents/skills/create-architecture/references/3-data-flow.md",
+      "target_sha256": "a5e4d63e3c128878cac7f9630fc3482cfbe881a0a0026506a6d3e55f35f6686f",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/create-architecture/references/4-api-boundaries.md",
@@ -4584,8 +4888,16 @@
       ],
       "proposed_target": ".agents/skills/create-architecture/references/4-api-boundaries.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual Codex-host ADR lifecycle, accepted-only draft manifest, dependency guards and reverse-document safeguards exercised. Review CONCERNS correctly prevents Active publication; full native positive matrix and independent reviews remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-13",
+      "target": ".agents/skills/create-architecture/references/4-api-boundaries.md",
+      "target_sha256": "27ea33935e8136e671cd7e8c8413a71d493e537866eac8ff535caca3511419dc",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/create-architecture/references/5-adr-audit.md",
@@ -4598,8 +4910,16 @@
       ],
       "proposed_target": ".agents/skills/create-architecture/references/5-adr-audit.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual Codex-host ADR lifecycle, accepted-only draft manifest, dependency guards and reverse-document safeguards exercised. Review CONCERNS correctly prevents Active publication; full native positive matrix and independent reviews remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-13",
+      "target": ".agents/skills/create-architecture/references/5-adr-audit.md",
+      "target_sha256": "cdcab3c6e0d722a31357d38099d474016f4129b88f02e98378725ab9bc5dc6ec",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/create-architecture/references/6-missing-adrs.md",
@@ -4612,8 +4932,16 @@
       ],
       "proposed_target": ".agents/skills/create-architecture/references/6-missing-adrs.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual Codex-host ADR lifecycle, accepted-only draft manifest, dependency guards and reverse-document safeguards exercised. Review CONCERNS correctly prevents Active publication; full native positive matrix and independent reviews remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-13",
+      "target": ".agents/skills/create-architecture/references/6-missing-adrs.md",
+      "target_sha256": "a09e493f6a8bc0c99c8bc48130f6c773aac0c53c7669706525c99b70f6c6b444",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/create-architecture/references/7-write.md",
@@ -4626,8 +4954,16 @@
       ],
       "proposed_target": ".agents/skills/create-architecture/references/7-write.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual Codex-host ADR lifecycle, accepted-only draft manifest, dependency guards and reverse-document safeguards exercised. Review CONCERNS correctly prevents Active publication; full native positive matrix and independent reviews remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-13",
+      "target": ".agents/skills/create-architecture/references/7-write.md",
+      "target_sha256": "609a790610efc9e13c8d730e75aa89aa6f22481d6d28a61a96aaafaff574ab22",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/create-architecture/references/8-handoff.md",
@@ -4640,8 +4976,16 @@
       ],
       "proposed_target": ".agents/skills/create-architecture/references/8-handoff.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual Codex-host ADR lifecycle, accepted-only draft manifest, dependency guards and reverse-document safeguards exercised. Review CONCERNS correctly prevents Active publication; full native positive matrix and independent reviews remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-13",
+      "target": ".agents/skills/create-architecture/references/8-handoff.md",
+      "target_sha256": "e24c779a96f51ea8289c440c53464f1e9b36fcc2e23b544314c0ad144a583f22",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/create-control-manifest/SKILL.md",
@@ -4658,8 +5002,16 @@
       ],
       "proposed_target": ".agents/skills/create-control-manifest/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual Codex-host ADR lifecycle, accepted-only draft manifest, dependency guards and reverse-document safeguards exercised. Review CONCERNS correctly prevents Active publication; full native positive matrix and independent reviews remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-13",
+      "target": ".agents/skills/create-control-manifest/SKILL.md",
+      "target_sha256": "fc603b4dcd37a5184f65866ad0b4b4982e911573e1a35a02d50722c188b566c4",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/create-epics/CONTRACT.md",
@@ -5629,8 +5981,16 @@
       ],
       "proposed_target": ".agents/skills/reverse-document/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual Codex-host ADR lifecycle, accepted-only draft manifest, dependency guards and reverse-document safeguards exercised. Review CONCERNS correctly prevents Active publication; full native positive matrix and independent reviews remain PENDING.",
+      "status": "EQUIVALENT",
+      "task": "CGS-13",
+      "target": ".agents/skills/reverse-document/SKILL.md",
+      "target_sha256": "7bb02ae8bb7649cda8da26e011be75436fe748d4e013b6f82b9d816856bb4e23",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/review-all-gdds/SKILL.md",

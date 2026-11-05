@@ -9,6 +9,8 @@ import { createHash } from 'node:crypto';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const prefixes = process.argv.slice(2);
 const allowed = ['.agents/docs/', '.agents/skills/', '.agents/scripts/', '.agents/hooks/', '.agents/rules/', '.codex/agents/'];
+const inventory = JSON.parse(readFileSync(resolve(root, 'docs/codex/upstream-inventory.json'), 'utf8'));
+for (const file of inventory.files.filter(f => f.category === 'skill')) allowed.push(`.agents/skills/${file.path.split('/')[2]}/`);
 const git = (args, options = {}) => execFileSync('git', args, { cwd: root, encoding: 'utf8', ...options }).trim();
 try {
   if (!prefixes.length || prefixes.some(p => !allowed.includes(p))) throw new Error('Pass explicit generated-family prefixes, including their trailing slash');

@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "fixture": "D:/MyProjects/codex-game-studios/.scratch/cgs13-host-30205132",
+  "source_head": "f58621dd119b02d1692f0be7a984d3d51ecbad7e",
+  "inputs": {
+    "project.yaml": {
+      "sha256": "0493d34fbd4fe86b5fe3ebdec9d921108e08ba1be9cbe12e851183c915c716c5",
+      "content": "schema_version: 1\nengine:\n  name: Godot\n  version: \"4.7\"\n  language: GDScript\nmodes:\n  rigor: standard\n  automation: collaborative\n"
+    },
+    "design/gdd/game-concept.md": {
+      "sha256": "599da01a7db03f3fa2308f515cc9903c2dc70ce220184c3bfc4f0f7d4bdcaa68",
+      "content": "# Pocket Arena\n## Summary\nA small 2D arena game. Pillar: readable survival. Players can quit and resume their current health.\n"
+    },
+    "design/gdd/systems-index.md": {
+      "sha256": "2000947cc07ed2f868327274b697acd765b34e3e294c1721bafded0f361a1acf",
+      "content": "# Systems Index\n| System | Layer | Domain | Status |\n|---|---|---|---|\n| health | Core | Core | Approved |\n| save | Foundation | Core | Approved |\n| health-hud | Presentation | UI | Approved |\n"
+    },
+    "design/gdd/health.md": {
+      "sha256": "54523763e9adcaceff225ec74b8545be61af70c5a73a15e2e3c284cb03648394",
+      "content": "# Health\n## Summary\nA clamped health counter notifies the HUD when changed.\n## Detailed Rules\nHealth is clamped between 0 and max_health.\n## Dependencies\nThe HUD reads health notifications; health never references the HUD.\n## Acceptance Criteria\nDamage below zero leaves health unchanged. Lethal damage clamps health to zero.\n"
+    },
+    "design/gdd/save.md": {
+      "sha256": "fbdc88d22a17a5648b99b7d77156aaa21dedc795e6cd2bf4b49d835499d585da",
+      "content": "# Save\n## Summary\nResume saved health between sessions.\n## Detailed Rules\nSave must persist current health between sessions with a versioned schema.\n## Dependencies\nSave reads a snapshot from health; health does not call save.\n## Acceptance Criteria\nLoading a valid save restores the recorded current health.\n"
+    },
+    "docs/architecture/architecture.md": {
+      "sha256": "d92b519b0e6b4e9a7bfb5bc12c5f00943926bbdc31c0bda92fdccc244384d9f9",
+      "content": "# Pocket Arena — Master Architecture\n\n## Document Status\n- Version: 2\n- Last Updated: 2026-11-04\n- Engine: Godot 4.7\n\n## System Layer Map\nHealth: Core. Save: unassigned. HUD: Presentation.\n\n## Module Ownership\nPRESERVE-OWNERSHIP: health alone owns current_health.\n\n## Data Flow\nPRESERVE-DATA-FLOW: health emits a read-only snapshot to save and HUD.\n\n## Required ADRs\nADR-0002 save format (Foundation) is required before save implementation.\n\n## Technical Requirements Baseline\n| Req ID | System | Requirement |\n|---|---|---|\n| TR-health-001 | health | Health is clamped between 0 and max_health. |\n| TR-save-001 (provisional) | save | Save must persist current health between sessions with a versioned schema. |\n"
+    },
+    "docs/architecture/adr-0001-health.md": {
+      "sha256": "78a87181f1d2ebadaba1bc2f53acca7b4973354a5ff9d518712c020fb5cd9c8d",
+      "content": "# ADR-0001: Health ownership\n\n## Status\nAccepted\n\n## Date\n2026-11-01\n\n## Summary\nHealth owns its value and emits change notifications.\n\n## Engine Compatibility\n| Field | Value |\n|---|---|\n| **Engine** | Godot 4.7 |\n| **Domain** | Core |\n| **Layer** | Core |\n| **Post-Cutoff APIs Used** | None; no engine API prescribed |\n\n## ADR Dependencies\n| Field | Value |\n|---|---|\n| **Depends On** | None |\n\n## Decision\nHealth must be the only writer of current_health. Health must never depend on the HUD.\n\n## Alternatives Considered\nDirect HUD writes are rejected because they split state ownership.\n\n## Performance Implications\nNo measured budget provided; no performance claim.\n\n## GDD Requirements Addressed\n| GDD System | Requirement | How |\n|---|---|---|\n| health.md | TR-health-001: Health is clamped between 0 and max_health. | Single owner performs clamping. |\n"
+    },
+    "docs/architecture/tr-registry.yaml": {
+      "sha256": "711308f543aa1e261123f053294ef48a76d4fdd492bffd4999ce9d3260da5164",
+      "content": "version: 2\nlast_updated: \"2026-11-01\"\nrequirements:\n- id: TR-health-001\n  system: health\n  gdd: design/gdd/health.md\n  requirement: \"Health is clamped between 0 and max_health.\"\n  status: active\n- id: TR-health-002\n  system: health\n  gdd: design/gdd/health.md\n  requirement: \"Old unlimited-health behavior\"\n  status: deprecated\n"
+    },
+    "docs/registry/architecture.yaml": {
+      "sha256": "fa1ea3fe1cea9231be67210b6eec83946cba0bbd8d6ab0a9a984ffa511850c9e",
+      "content": "version: 1\nlast_updated: \"2026-11-01\"\nstate_ownership: []\ninterfaces: []\nperformance_budgets: []\napi_decisions: []\nforbidden_patterns: []\n"
+    },
+    "production/epics/save/story-001-save.md": {
+      "sha256": "4dffac2fb71b649cc36519082f4edc83fe0d306c13cdf914e4dd77cf523dc7d4",
+      "content": "# Story 001: Save health\n> **Status**: Blocked\n> **ADR**: ADR-0002\nBlocked pending ADR-0002 acceptance.\n"
+    },
+    "production/epics/save/story-002-unrelated.md": {
+      "sha256": "259c4c5eb9a4828dc5e50d4944584542e715dff24e524082350152120474fd1d",
+      "content": "# Story 002: Add save icon\n**Status:** Blocked\nBlocked pending asset delivery.\n"
+    },
+    "production/epics/save/story-003-successor-only.md": {
+      "sha256": "eb569e144fbe97b1daca3fb1f4f92feb60accea9443268f0995a000f45fe6840",
+      "content": "# Story 003: Port old loader\nStatus: Blocked\nADR-0000 is Superseded — point the story at ADR-0002 (edit its ADR field) before implementing.\n"
+    },
+    "src/gameplay/inventory_stub.gd": {
+      "sha256": "947095d8f86c80daf029af670c6d3ec79ba8c1be1a6eb015cf5833c061bd8ef1",
+      "content": "class_name InventoryStub\nextends Node\nfunc _ready():\n    pass\n"
+    },
+    "src/gameplay/health_system.gd": {
+      "sha256": "78c3144a2f4b807a0ff819d09a660f025a3e47aa46015fbc6639e31d64a36734",
+      "content": "class_name HealthSystem\nextends RefCounted\nsignal health_changed(value: int)\nvar max_health: int = 100\nvar health: int = 100\n\nfunc take_damage(amount: int) -> void:\n    if amount < 0:\n        return\n    var before: int = health\n    health = clampi(health - amount, 0, max_health)\n    if health != before:\n        health_changed.emit(health)\n\nfunc heal(amount: int) -> void:\n    if amount < 0:\n        return\n    var before: int = health\n    health = clampi(health + amount, 0, max_health)\n    if health != before:\n        health_changed.emit(health)\n\nfunc reset_health() -> void:\n    var before: int = health\n    health = max_health\n    if health != before:\n        health_changed.emit(health)\n\nfunc is_alive() -> bool:\n    return health > 0\n\nfunc snapshot() -> Dictionary:\n    return {\"health\": health, \"max_health\": max_health}\n\nfunc restore_snapshot(data: Dictionary) -> void:\n    if not data.has(\"health\"):\n        return\n    var before: int = health\n    health = clampi(int(data[\"health\"]), 0, max_health)\n    if health != before:\n        health_changed.emit(health)\n"
+    }
+  },
+  "authorization": "The parent user authorized all isolated fixture writes and explicit test choices. These are synthetic scenario choices, not approval for any real game architecture.",
+  "decisions": [
+    "Update only System Layer Map and Document Status to version 3, assigning Save to Foundation.",
+    "Author versioned JSON save ADR as Proposed; record a dependency-free decision with no engine API claim. Accept after checking story effects; do not unblock unrelated or successor-only stories.",
+    "Author a replacement versioned binary-save ADR as Proposed, then separately accept and supersede the old ADR; preserve old decision body/date and block stale stories.",
+    "Write the accepted-only manifest and a scoped traceability diagnostic; no independent full-review sign-off authorized or claimed.",
+    "Reverse-document observed health into a minimal system brief, keeping unanswered intent unknown; no source edits."
+  ]
+}

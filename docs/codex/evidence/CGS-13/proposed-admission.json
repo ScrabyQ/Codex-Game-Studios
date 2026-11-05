@@ -1,0 +1,24 @@
+{
+  "mechanism": "Actual host in-session interpretation of the generated architecture skill and source dev-story guard; not an automated dev-story run",
+  "adr": "ADR-0002",
+  "status": "Proposed",
+  "coverage": "Covered (Proposed), not Accepted coverage",
+  "implementation_allowed": {
+    "full": false,
+    "standard": false,
+    "minimal": false
+  },
+  "reason": "The story explicitly names this Proposed ADR; all tiers require named ADRs Accepted.",
+  "implementation_created": false,
+  "acceptance_preview": {
+    "adr": "ADR-0002",
+    "stories_become_ready": [
+      "production/epics/save/story-001-save.md"
+    ],
+    "excluded": [
+      "story-002-unrelated.md: blocked by assets",
+      "story-003-successor-only.md: successor mention only"
+    ]
+  },
+  "authorization": "fixture-inputs.json scripted_decisions; explicit synthetic acceptance and matching-story effect authorized"
+}

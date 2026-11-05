@@ -1,0 +1,21 @@
+{
+  "mechanism": "Codex host in-session; scripted fixture owner choices, not independent review",
+  "acceptance": {
+    "adr": "ADR-0003",
+    "dependencies": "None",
+    "stories_become_ready": [],
+    "authorization": "fixture-inputs.json explicit scripted acceptance"
+  },
+  "supersession": {
+    "old": "ADR-0002",
+    "replacement": "ADR-0003",
+    "both_currently": "Accepted",
+    "effects": [
+      "Old ADR Status becomes Superseded by ADR-0003; old body and Date preserved",
+      "Append reciprocal Related links",
+      "Retain old architecture registry stance with superseded_by status; append replacement active stance",
+      "Block story-001 governed by old ADR; do not repoint its ADR field"
+    ],
+    "authorization": "fixture-inputs.json explicitly authorizes old supersession and stale-story blocking"
+  }
+}

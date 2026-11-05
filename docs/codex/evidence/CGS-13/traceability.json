@@ -1,0 +1,350 @@
+{
+  "schema": 1,
+  "files": [
+    {
+      "source": ".claude/skills/architecture-decision/CONTRACT.md",
+      "target": ".agents/skills/architecture-decision/CONTRACT.md",
+      "source_sha256": "f295ec9326ff3050d71219be899bc4a75a97fff28a1221ead0693006c8f8a2be",
+      "target_sha256": "aa95b47f126d074a4db1451ed61c14956a95f4397e8d19bf1d38ec89f0e8e51b",
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:850e58fe7c7ab4459354a9fe082c97769fff05747efa60a13b5aa176827f5257"
+      ],
+      "verification": "Structural exact-plan comparison PASS; behavior scope in README.md; no whole-family behavioral parity claim"
+    },
+    {
+      "source": ".claude/skills/architecture-decision/SKILL.md",
+      "target": ".agents/skills/architecture-decision/SKILL.md",
+      "source_sha256": "b550883ebd9973ad6534c2984a77fdb6229f47eb8d2b2c31e7501d8a89f2cdf5",
+      "target_sha256": "a3cf719125af8ac94380bb3bfcc1d7a74b20e46df549a61d47844c5483280c0e",
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:850e58fe7c7ab4459354a9fe082c97769fff05747efa60a13b5aa176827f5257"
+      ],
+      "verification": "Structural exact-plan comparison PASS; behavior scope in README.md; no whole-family behavioral parity claim"
+    },
+    {
+      "source": ".claude/skills/architecture-decision/references/0-accept.md",
+      "target": ".agents/skills/architecture-decision/references/0-accept.md",
+      "source_sha256": "abc2ab957854d947d7ee01c132cebf9c19c851aef3dfa788e3ee21ce82881016",
+      "target_sha256": "02a421828ac029a0d8a08fc8d6bd532716896b5d49c7bf0e591439ff481f123e",
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:850e58fe7c7ab4459354a9fe082c97769fff05747efa60a13b5aa176827f5257"
+      ],
+      "verification": "Structural exact-plan comparison PASS; behavior scope in README.md; no whole-family behavioral parity claim"
+    },
+    {
+      "source": ".claude/skills/architecture-decision/references/0-retrofit.md",
+      "target": ".agents/skills/architecture-decision/references/0-retrofit.md",
+      "source_sha256": "f41ba65eda577623b3dbcef762495672924bf8ab382e7c2650e61006a378d0ce",
+      "target_sha256": "9e5bf64176685ae736fd97e41a98a5c93f3636de7341423c6547e5472a0b080d",
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:850e58fe7c7ab4459354a9fe082c97769fff05747efa60a13b5aa176827f5257"
+      ],
+      "verification": "Structural exact-plan comparison PASS; behavior scope in README.md; no whole-family behavioral parity claim"
+    },
+    {
+      "source": ".claude/skills/architecture-decision/references/1-engine-context.md",
+      "target": ".agents/skills/architecture-decision/references/1-engine-context.md",
+      "source_sha256": "0e0e4e96781ee752bff34d705c1dc26359fd662b50087ae7780495ddfaea353c",
+      "target_sha256": "bd8e78028c62a0b78b68ec481b5f919118119cf51d589e2f9d72a0bb700ebdbf",
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:850e58fe7c7ab4459354a9fe082c97769fff05747efa60a13b5aa176827f5257"
+      ],
+      "verification": "Structural exact-plan comparison PASS; behavior scope in README.md; no whole-family behavioral parity claim"
+    },
+    {
+      "source": ".claude/skills/architecture-decision/references/3-gather-context.md",
+      "target": ".agents/skills/architecture-decision/references/3-gather-context.md",
+      "source_sha256": "f226269d8c23f6d9fbc784fbc0dbf050d12a860ec20be0a3388b9b9345ff2d55",
+      "target_sha256": "300038f5dd0c98439dd73d728ccef43cb69080b4299e87239de1ff79bc50b91b",
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:850e58fe7c7ab4459354a9fe082c97769fff05747efa60a13b5aa176827f5257"
+      ],
+      "verification": "Structural exact-plan comparison PASS; behavior scope in README.md; no whole-family behavioral parity claim"
+    },
+    {
+      "source": ".claude/skills/architecture-decision/references/4-decide.md",
+      "target": ".agents/skills/architecture-decision/references/4-decide.md",
+      "source_sha256": "14a595f2efc8c0fdbbd9dbf6c0912250b817073db2a1de17ebf1c831d0822f8a",
+      "target_sha256": "27e3cd4651d13f78608e2ec1f0e598dabb71211359dfcd4814fe1fd96c17e4c6",
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:850e58fe7c7ab4459354a9fe082c97769fff05747efa60a13b5aa176827f5257"
+      ],
+      "verification": "Structural exact-plan comparison PASS; behavior scope in README.md; no whole-family behavioral parity claim"
+    },
+    {
+      "source": ".claude/skills/architecture-decision/references/5-generate.md",
+      "target": ".agents/skills/architecture-decision/references/5-generate.md",
+      "source_sha256": "c6862e0d8ce98ad9b0d1c2287f685019d5cb47cb808456d1d164c6dd4deb3138",
+      "target_sha256": "ac815f9cca32562fadbcd89fa8a1c81844ad20038ba6760f6710ebe1b98e33e2",
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:850e58fe7c7ab4459354a9fe082c97769fff05747efa60a13b5aa176827f5257"
+      ],
+      "verification": "Structural exact-plan comparison PASS; behavior scope in README.md; no whole-family behavioral parity claim"
+    },
+    {
+      "source": ".claude/skills/architecture-review/SKILL.md",
+      "target": ".agents/skills/architecture-review/SKILL.md",
+      "source_sha256": "0219e6c2545af2416775bff139d921c1bc3c3e9cc1ffc25a25d6186f8e444f6e",
+      "target_sha256": "0a884ded25c8f5f1b87749e9e1e2d352739f383ad2d57686a90e9f9e026295c6",
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:37d7a2c5dd4dd133733248b5a6f792d842bffe354fa4cd6583e631d615efca7c"
+      ],
+      "verification": "Structural exact-plan comparison PASS; behavior scope in README.md; no whole-family behavioral parity claim"
+    },
+    {
+      "source": ".claude/skills/architecture-review/references/1-load.md",
+      "target": ".agents/skills/architecture-review/references/1-load.md",
+      "source_sha256": "d866809875b0d6499cb9ae243ea28643c6d7a72bb06a0dec0894853c45f807ce",
+      "target_sha256": "13f31b89e74156bfaa6406acacbbe69f96d6e21dffc97fc383080fcbe7abffba",
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:37d7a2c5dd4dd133733248b5a6f792d842bffe354fa4cd6583e631d615efca7c"
+      ],
+      "verification": "Structural exact-plan comparison PASS; behavior scope in README.md; no whole-family behavioral parity claim"
+    },
+    {
+      "source": ".claude/skills/architecture-review/references/2-extract-requirements.md",
+      "target": ".agents/skills/architecture-review/references/2-extract-requirements.md",
+      "source_sha256": "c34e4466059db1c71ccbd42946a91ee62964db38f761f333288cb59db2a84263",
+      "target_sha256": "8fbec906d05534bfd1255b719476fd819241527a8df076f2857b17b2f2b44e9e",
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:37d7a2c5dd4dd133733248b5a6f792d842bffe354fa4cd6583e631d615efca7c"
+      ],
+      "verification": "Structural exact-plan comparison PASS; behavior scope in README.md; no whole-family behavioral parity claim"
+    },
+    {
+      "source": ".claude/skills/architecture-review/references/3-traceability.md",
+      "target": ".agents/skills/architecture-review/references/3-traceability.md",
+      "source_sha256": "dd90c9669632cb844d45ca3a1ce2007fd0f34dbf8b13031f22db100cc8961a75",
+      "target_sha256": "9f560557d9b0564d9555ebdb84097229ee5b3b39b47ced4a8f5a90b9779cecfc",
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:37d7a2c5dd4dd133733248b5a6f792d842bffe354fa4cd6583e631d615efca7c"
+      ],
+      "verification": "Structural exact-plan comparison PASS; behavior scope in README.md; no whole-family behavioral parity claim"
+    },
+    {
+      "source": ".claude/skills/architecture-review/references/4-conflicts.md",
+      "target": ".agents/skills/architecture-review/references/4-conflicts.md",
+      "source_sha256": "b20b53754a69064941366d5ab8ca34cc1aced6f0e40ef09b4d39a0b6d48d2d57",
+      "target_sha256": "a40a21ac55115ef0e5b0c8cf9df890bd26e754fb0b634408701dd7ff046efbab",
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:37d7a2c5dd4dd133733248b5a6f792d842bffe354fa4cd6583e631d615efca7c"
+      ],
+      "verification": "Structural exact-plan comparison PASS; behavior scope in README.md; no whole-family behavioral parity claim"
+    },
+    {
+      "source": ".claude/skills/architecture-review/references/5-engine.md",
+      "target": ".agents/skills/architecture-review/references/5-engine.md",
+      "source_sha256": "6d48c267b83bca7de2fba89e7c57685277d2fa5c728a10dc6d01a6b876cd3939",
+      "target_sha256": "58e646605c960a54db5d892cfc3f21937c139c994b672eaa5149c90b7aaac8e8",
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:37d7a2c5dd4dd133733248b5a6f792d842bffe354fa4cd6583e631d615efca7c"
+      ],
+      "verification": "Structural exact-plan comparison PASS; behavior scope in README.md; no whole-family behavioral parity claim"
+    },
+    {
+      "source": ".claude/skills/architecture-review/references/6-document-coverage.md",
+      "target": ".agents/skills/architecture-review/references/6-document-coverage.md",
+      "source_sha256": "f902dc64c01721cee13fd880a3670704c409cc82b9686eb7c0b7609dbdd5fcb7",
+      "target_sha256": "08094893a0847b96c8b724b6cbefbf84024ac0d3d320ad2d73fe82015c8d1fb4",
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:37d7a2c5dd4dd133733248b5a6f792d842bffe354fa4cd6583e631d615efca7c"
+      ],
+      "verification": "Structural exact-plan comparison PASS; behavior scope in README.md; no whole-family behavioral parity claim"
+    },
+    {
+      "source": ".claude/skills/architecture-review/references/7-report.md",
+      "target": ".agents/skills/architecture-review/references/7-report.md",
+      "source_sha256": "d0d31c337e976a1427a770d5f8d761212de181ad66455963a87900a196b966cc",
+      "target_sha256": "46f523e65f0e4439850e4f4c0900ed847d1ad8f5d6f342d613aee189d7940820",
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:37d7a2c5dd4dd133733248b5a6f792d842bffe354fa4cd6583e631d615efca7c"
+      ],
+      "verification": "Structural exact-plan comparison PASS; behavior scope in README.md; no whole-family behavioral parity claim"
+    },
+    {
+      "source": ".claude/skills/architecture-review/references/8-write.md",
+      "target": ".agents/skills/architecture-review/references/8-write.md",
+      "source_sha256": "f7c34fad5198874728b61cb23faae6555debaa63bed376082ed2da1f24e165bc",
+      "target_sha256": "06d54c90d2f8d56829e588d92853cb301f3d3ca605700f49d4eb713b6dfd089d",
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:37d7a2c5dd4dd133733248b5a6f792d842bffe354fa4cd6583e631d615efca7c"
+      ],
+      "verification": "Structural exact-plan comparison PASS; behavior scope in README.md; no whole-family behavioral parity claim"
+    },
+    {
+      "source": ".claude/skills/architecture-review/references/9-handoff.md",
+      "target": ".agents/skills/architecture-review/references/9-handoff.md",
+      "source_sha256": "5620d237cb8f5c429215ec60921ec1ea83f723b004611217f7ccd11422eb7516",
+      "target_sha256": "76dd91ddb7d92e7c8dbeab60c2a307413a4e1fe920b1219c71e42ce496e0f7ec",
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:37d7a2c5dd4dd133733248b5a6f792d842bffe354fa4cd6583e631d615efca7c"
+      ],
+      "verification": "Structural exact-plan comparison PASS; behavior scope in README.md; no whole-family behavioral parity claim"
+    },
+    {
+      "source": ".claude/skills/create-architecture/SKILL.md",
+      "target": ".agents/skills/create-architecture/SKILL.md",
+      "source_sha256": "0613360ba1247bbfc53f840b0f97d15430f38799b4a67498c6efabe53763c23d",
+      "target_sha256": "a93c64aedfb65ddd18943d8f616f78045a05162934bf05687cf01283861af633",
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:f25f5ed69210ccd08d03a7afea0c437636de1f64d7a07821e411bf7180e7a5a6"
+      ],
+      "verification": "Structural exact-plan comparison PASS; behavior scope in README.md; no whole-family behavioral parity claim"
+    },
+    {
+      "source": ".claude/skills/create-architecture/references/0-load-context.md",
+      "target": ".agents/skills/create-architecture/references/0-load-context.md",
+      "source_sha256": "2083798d7784c597ca8b9c0933f13d3fd2161936c0fc6771a351f98ab0b56481",
+      "target_sha256": "51003555cec7bc63afa589bba940e5538c9e58a9cbf02404c49b2d39931015f4",
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:f25f5ed69210ccd08d03a7afea0c437636de1f64d7a07821e411bf7180e7a5a6"
+      ],
+      "verification": "Structural exact-plan comparison PASS; behavior scope in README.md; no whole-family behavioral parity claim"
+    },
+    {
+      "source": ".claude/skills/create-architecture/references/1-layers.md",
+      "target": ".agents/skills/create-architecture/references/1-layers.md",
+      "source_sha256": "889231d49bd42e96bb0d4cd3bb052434bce83f5567ebf2d1567b82b3712a0f46",
+      "target_sha256": "a24a99e3336f0ec0b8424b85819091301021fd78e1002ac7d39163e26b5a1d30",
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:f25f5ed69210ccd08d03a7afea0c437636de1f64d7a07821e411bf7180e7a5a6"
+      ],
+      "verification": "Structural exact-plan comparison PASS; behavior scope in README.md; no whole-family behavioral parity claim"
+    },
+    {
+      "source": ".claude/skills/create-architecture/references/2-module-ownership.md",
+      "target": ".agents/skills/create-architecture/references/2-module-ownership.md",
+      "source_sha256": "1c373de52748ed4941a223092f6a6d17b251df32cac500f275672f4742ee5dff",
+      "target_sha256": "f5b996ff9afaa173787aea35934fd6975b141b2be5ce5597f8eb45295be3322e",
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:f25f5ed69210ccd08d03a7afea0c437636de1f64d7a07821e411bf7180e7a5a6"
+      ],
+      "verification": "Structural exact-plan comparison PASS; behavior scope in README.md; no whole-family behavioral parity claim"
+    },
+    {
+      "source": ".claude/skills/create-architecture/references/3-data-flow.md",
+      "target": ".agents/skills/create-architecture/references/3-data-flow.md",
+      "source_sha256": "33664f68c24c751182df4a95eda3ae2740a94381d58a7806b1d2a40c2b96506a",
+      "target_sha256": "a5e4d63e3c128878cac7f9630fc3482cfbe881a0a0026506a6d3e55f35f6686f",
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:f25f5ed69210ccd08d03a7afea0c437636de1f64d7a07821e411bf7180e7a5a6"
+      ],
+      "verification": "Structural exact-plan comparison PASS; behavior scope in README.md; no whole-family behavioral parity claim"
+    },
+    {
+      "source": ".claude/skills/create-architecture/references/4-api-boundaries.md",
+      "target": ".agents/skills/create-architecture/references/4-api-boundaries.md",
+      "source_sha256": "dc914d8fa14cb7e80b46fbc4702d327ba473284744425272f854237645f6d0fd",
+      "target_sha256": "27ea33935e8136e671cd7e8c8413a71d493e537866eac8ff535caca3511419dc",
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:f25f5ed69210ccd08d03a7afea0c437636de1f64d7a07821e411bf7180e7a5a6"
+      ],
+      "verification": "Structural exact-plan comparison PASS; behavior scope in README.md; no whole-family behavioral parity claim"
+    },
+    {
+      "source": ".claude/skills/create-architecture/references/5-adr-audit.md",
+      "target": ".agents/skills/create-architecture/references/5-adr-audit.md",
+      "source_sha256": "f2dffe08fe962b555cf87f62141cd82b12928ceb7fa67544f5a6c8f485b58e51",
+      "target_sha256": "cdcab3c6e0d722a31357d38099d474016f4129b88f02e98378725ab9bc5dc6ec",
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:f25f5ed69210ccd08d03a7afea0c437636de1f64d7a07821e411bf7180e7a5a6"
+      ],
+      "verification": "Structural exact-plan comparison PASS; behavior scope in README.md; no whole-family behavioral parity claim"
+    },
+    {
+      "source": ".claude/skills/create-architecture/references/6-missing-adrs.md",
+      "target": ".agents/skills/create-architecture/references/6-missing-adrs.md",
+      "source_sha256": "d88aa82cabb0803e6b8d989664da8b219eed7f8e39de7fe66b9c635aefdf1ade",
+      "target_sha256": "a09e493f6a8bc0c99c8bc48130f6c773aac0c53c7669706525c99b70f6c6b444",
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:f25f5ed69210ccd08d03a7afea0c437636de1f64d7a07821e411bf7180e7a5a6"
+      ],
+      "verification": "Structural exact-plan comparison PASS; behavior scope in README.md; no whole-family behavioral parity claim"
+    },
+    {
+      "source": ".claude/skills/create-architecture/references/7-write.md",
+      "target": ".agents/skills/create-architecture/references/7-write.md",
+      "source_sha256": "e10e9fb89a6b09bd0cd41791d8da83dd79f996a83847982daccf144e0960ee69",
+      "target_sha256": "609a790610efc9e13c8d730e75aa89aa6f22481d6d28a61a96aaafaff574ab22",
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:f25f5ed69210ccd08d03a7afea0c437636de1f64d7a07821e411bf7180e7a5a6"
+      ],
+      "verification": "Structural exact-plan comparison PASS; behavior scope in README.md; no whole-family behavioral parity claim"
+    },
+    {
+      "source": ".claude/skills/create-architecture/references/8-handoff.md",
+      "target": ".agents/skills/create-architecture/references/8-handoff.md",
+      "source_sha256": "dd6f3eb676c4497cf61383cee696d94db1dc7d22c73d5baa574a1f215229bf77",
+      "target_sha256": "e24c779a96f51ea8289c440c53464f1e9b36fcc2e23b544314c0ad144a583f22",
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:f25f5ed69210ccd08d03a7afea0c437636de1f64d7a07821e411bf7180e7a5a6"
+      ],
+      "verification": "Structural exact-plan comparison PASS; behavior scope in README.md; no whole-family behavioral parity claim"
+    },
+    {
+      "source": ".claude/skills/create-control-manifest/SKILL.md",
+      "target": ".agents/skills/create-control-manifest/SKILL.md",
+      "source_sha256": "a487bb167b3154b19fe76ac618625ef0bfeb65a2a90432804e96e0a83271b75a",
+      "target_sha256": "fc603b4dcd37a5184f65866ad0b4b4982e911573e1a35a02d50722c188b566c4",
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:55375147b940c34b9b3e1f289b3b019311a1431bcb2460adda71970ac1956e31"
+      ],
+      "verification": "Structural exact-plan comparison PASS; behavior scope in README.md; no whole-family behavioral parity claim"
+    },
+    {
+      "source": ".claude/skills/reverse-document/SKILL.md",
+      "target": ".agents/skills/reverse-document/SKILL.md",
+      "source_sha256": "c498c673b8f1b8d5634e33839b6117b17a827c2f41207acb115eb276f716189a",
+      "target_sha256": "7bb02ae8bb7649cda8da26e011be75436fe748d4e013b6f82b9d816856bb4e23",
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:1d6920e142bb0bf9caa4ef45c8912da0ffd7f34dce79adef0953b2e606e934f6"
+      ],
+      "verification": "Structural exact-plan comparison PASS; behavior scope in README.md; no whole-family behavioral parity claim"
+    }
+  ]
+}

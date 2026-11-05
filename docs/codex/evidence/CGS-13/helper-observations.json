@@ -1,0 +1,182 @@
+[
+  {
+    "command": [
+      "node",
+      "scripts/codex/helper.mjs",
+      "yaml-helper",
+      "--root",
+      ".scratch/cgs13-host-30205132",
+      "resolve_config",
+      "--keys",
+      "review_mode,automation,workflow,docs.density"
+    ],
+    "exit_code": 0,
+    "stdout": "=== CCGS Config (resolved: local->yaml->legacy->default; use as-is) ===\nreview_mode: lean (rigor:standard)\nautomation: collaborative (project.yaml)\nworkflow: standard (rigor:standard)\ndocs.density: balanced (rigor:standard)\n=== end ===\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "scripts/codex/helper.mjs",
+      "adr-status",
+      "--root",
+      ".scratch/cgs13-host-30205132"
+    ],
+    "exit_code": 0,
+    "stdout": "adrs\t3\tdocs/architecture/adr-*.md\ntemplate_sections\t17\t.agents/docs/templates/architecture-decision-record.md\naccepted\t2\nproposed\t0\ndeprecated\t0\nsuperseded\t1\nunfilled\t0\nother\t0\nno_status\t0\nADR\tadr-0001\tdocs/architecture/adr-0001-health.md\tAccepted\tCore\t2026-11-01\t-\t2026-11-01\tnone\t-\tLast Verified,Decision Makers,Context,Consequences,Risks,Migration Plan,Validation Criteria,Related\t0\nADR\tadr-0002\tdocs/architecture/adr-0002-save-format.md\tSuperseded\tFoundation\t2026-11-05\t2026-11-05\t2026-11-05\tnone\tadr-0003\t-\t0\nADR\tadr-0003\tdocs/architecture/adr-0003-binary-save.md\tAccepted\tFoundation\t2026-11-05\t2026-11-05\t2026-11-05\tnone\t-\t-\t0\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "scripts/codex/helper.mjs",
+      "adr-dep-graph",
+      "--root",
+      ".scratch/cgs13-host-30205132",
+      "docs/architecture"
+    ],
+    "exit_code": 0,
+    "stdout": "ADRS: 3\nEDGES:\n  (none)\nORDER: adr-0001, adr-0002, adr-0003\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "scripts/codex/helper.mjs",
+      "registry",
+      "--root",
+      ".scratch/cgs13-host-30205132",
+      "next-id",
+      "tr",
+      "health"
+    ],
+    "exit_code": 0,
+    "stdout": "next\ttr\thealth\tTR-health-003\tTR-health-002\t2\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "scripts/codex/helper.mjs",
+      "registry",
+      "--root",
+      ".scratch/cgs13-host-30205132",
+      "next-id",
+      "tr",
+      "save"
+    ],
+    "exit_code": 0,
+    "stdout": "next\ttr\tsave\tTR-save-001\t-\t0\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "scripts/codex/helper.mjs",
+      "registry",
+      "--root",
+      ".scratch/cgs13-host-30205132",
+      "validate"
+    ],
+    "exit_code": 0,
+    "stdout": "registry\tentities\tdesign/registry/entities.yaml\tmissing\nregistry\ttr\tdocs/architecture/tr-registry.yaml\t2\nregistry\tarchitecture\tdocs/registry/architecture.yaml\t2\nchecked\tproduction/epics\t3\nduplicate\t0\ntr_unknown\t0\npath_missing\t0\nstatus\t0\nlayout\t0\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "scripts/codex/helper.mjs",
+      "md-section",
+      "--root",
+      ".scratch/cgs13-host-30205132",
+      "extract",
+      "docs/architecture/adr-0001-health.md",
+      "Decision"
+    ],
+    "exit_code": 0,
+    "stdout": "## Decision\nHealth must be the only writer of current_health. Health must never depend on the HUD.\n\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "scripts/codex/helper.mjs",
+      "md-section",
+      "--root",
+      ".scratch/cgs13-host-30205132",
+      "extract",
+      "docs/architecture/adr-0003-binary-save.md",
+      "Decision"
+    ],
+    "exit_code": 0,
+    "stdout": "## Decision\nSave must encode a binary envelope containing schema_version = 2 and current_health. Save must be the sole owner of serialization. Health must never call save or HUD. Invalid or unsupported schemas must be rejected without modifying live health.\n\n### Architecture Diagram\nHealth snapshot -> Save envelope -> storage; validated load -> health restoration boundary.\n### Key Interfaces\nSave consumes a read-only health snapshot and returns either a validated current_health value or a failure. This is an abstract boundary, not a claim about engine signatures.\n### Implementation Guidelines\nSerialization must stay in save. A failed load must leave health unchanged. No performance budget is asserted.\n\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "scripts/codex/helper.mjs",
+      "yaml-helper",
+      "--root",
+      ".scratch/cgs13-host-30205132",
+      "resolve_config",
+      "--keys",
+      "review_mode,automation,workflow,docs.density"
+    ],
+    "exit_code": 0,
+    "stdout": "=== CCGS Config (resolved: local->yaml->legacy->default; use as-is) ===\nreview_mode: solo (rigor:minimal)\nautomation: collaborative (project.yaml)\nworkflow: minimal (rigor:minimal)\ndocs.density: terse (rigor:minimal)\n=== end ===\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "scripts/codex/helper.mjs",
+      "registry",
+      "--root",
+      ".scratch/cgs13-host-30205132",
+      "validate"
+    ],
+    "exit_code": 0,
+    "stdout": "registry\tentities\tdesign/registry/entities.yaml\tmissing\nregistry\ttr\tdocs/architecture/tr-registry.yaml\t3\nregistry\tarchitecture\tdocs/registry/architecture.yaml\t2\nchecked\tproduction/epics\t3\nduplicate\t0\ntr_unknown\t0\npath_missing\t0\nstatus\t0\nlayout\t0\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "scripts/codex/helper.mjs",
+      "review-receipts",
+      "--root",
+      ".scratch/cgs13-host-30205132",
+      "hash",
+      "docs/architecture/architecture.md",
+      "docs/architecture/adr-0001-health.md",
+      "docs/architecture/adr-0002-save-format.md",
+      "docs/architecture/adr-0003-binary-save.md",
+      "docs/architecture/tr-registry.yaml",
+      "docs/registry/architecture.yaml",
+      "design/gdd/health.md",
+      "design/gdd/save.md"
+    ],
+    "exit_code": 0,
+    "stdout": "Reviewed-Content-Hash: docs/architecture/architecture.md a6b14b0147f6736d766bb66ced97dd42fcfaee19\nReviewed-Content-Hash: docs/architecture/adr-0001-health.md 8dcbc890815a3de00e6d8d923896b107ba6172ed\nReviewed-Content-Hash: docs/architecture/adr-0002-save-format.md 6fa5c94dfa9a8552842b677961d792e55e57a33a\nReviewed-Content-Hash: docs/architecture/adr-0003-binary-save.md 60e046b9818fc2dedd3a1755726c66537f0447cc\nReviewed-Content-Hash: docs/architecture/tr-registry.yaml 8fed0c635e22627559e201f5e8e166e507d1a0f1\nReviewed-Content-Hash: docs/registry/architecture.yaml bf1b15f539b1f449d4cc7ac4108fee091f07af3c\nReviewed-Content-Hash: design/gdd/health.md 6d636184426c678f0746dfac39899c12176a5d0e\nReviewed-Content-Hash: design/gdd/save.md 11bf59ed24749d01aaf1ba7a9bd66e332fc3e0ee\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "scripts/codex/helper.mjs",
+      "review-receipts",
+      "--root",
+      ".scratch/cgs13-host-30205132",
+      "hash",
+      "project.yaml",
+      ".agents/docs/technical-preferences.md",
+      "docs/engine-reference/godot/VERSION.md",
+      "design/gdd/game-concept.md",
+      "design/gdd/systems-index.md"
+    ],
+    "exit_code": 0,
+    "stdout": "Reviewed-Content-Hash: project.yaml 0e68f18f9c8656c6c0215fa649e7bdf5f807e670\nReviewed-Content-Hash: .agents/docs/technical-preferences.md 405658044f5eea733789e232808d963416897112\nReviewed-Content-Hash: docs/engine-reference/godot/VERSION.md d3c411aab5bb7b02ab384260e08984a57c8643b6\nReviewed-Content-Hash: design/gdd/game-concept.md 0f10698bb72f4aead06f6dc90e1716474a85d1f0\nReviewed-Content-Hash: design/gdd/systems-index.md bab08d883aeaae41b349cf74f766d18f384d6757\n",
+    "stderr": ""
+  }
+]

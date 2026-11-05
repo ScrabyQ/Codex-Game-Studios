@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "mechanism": "Assertions on actual host-authored artifacts, plus separate structural regeneration comparison; not automated skill invocation",
+  "checks": [
+    {
+      "name": "Scoped architecture edit preserves every unrelated section",
+      "status": "PASS"
+    },
+    {
+      "name": "Authoring remains Proposed and does not unblock a story",
+      "status": "PASS"
+    },
+    {
+      "name": "Explicit acceptance preserves Date and unblocks only a governing match",
+      "status": "PASS"
+    },
+    {
+      "name": "Proposed replacement does not retire predecessor; accepted replacement precedes supersession",
+      "status": "PASS"
+    },
+    {
+      "name": "Supersession preserves old body/date and retains registry history",
+      "status": "PASS"
+    },
+    {
+      "name": "Dependency refusal has byte-identical before/after inputs",
+      "status": "PASS"
+    },
+    {
+      "name": "TR IDs retained and retired IDs never reused",
+      "status": "PASS"
+    },
+    {
+      "name": "Review does not treat Proposed coverage or absent tests as implementation PASS",
+      "status": "PASS"
+    },
+    {
+      "name": "Accepted-only manifest draft excludes old rules and does not bypass review",
+      "status": "PASS"
+    },
+    {
+      "name": "Reverse thin input emits no design; substantive brief retains provenance and unknown intent",
+      "status": "PASS"
+    },
+    {
+      "name": "Actual helpers ran successfully and receipts were produced",
+      "status": "PASS"
+    },
+    {
+      "name": "All 30 generated files equal source-bound transformation plans (structural only)",
+      "status": "PASS"
+    }
+  ],
+  "limits": [
+    "Native custom roles and independent full review not exercised",
+    "Active manifest publication pending resolution of fixture review concerns",
+    "Game engine execution and full upstream spec suites not performed"
+  ]
+}

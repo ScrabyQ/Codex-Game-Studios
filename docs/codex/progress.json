@@ -5,9 +5,9 @@
   "upstream_sha": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
   "owner": "ScrabyQ",
   "repository": "Codex-Game-Studios",
-  "last_completed": "CGS-08",
-  "current_task": "CGS-09",
-  "next_safe_step": "23 specialist roles preserved and verified; code/design/QA fallback exercised. Proceed with 15 engine roles and continue Skills groups.",
+  "last_completed": "CGS-13",
+  "current_task": "CGS-14",
+  "next_safe_step": "Architecture lifecycle and guard scenarios verified; proceed to production planning. Active control-manifest publication remains gated by real review concerns.",
   "decisions": [
     "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED.",
     "Generated content-preserving .agents mirror retains helper root math; native roles use .codex/agents/*.toml; all generation is hash-guarded; no new agent runtime."
@@ -109,13 +109,13 @@
       "singularity_id": "T-fa4315ed-c654-4502-9ed8-d4f0680e1011",
       "title": "CGS-08 · Перенести 23 общих специалиста и domain boundaries",
       "status": "COMPLETE",
-      "commit": null,
+      "commit": "4cd8870fc7fcff0015a1796b2b2c792c19968d7c",
       "evidence": [
         "docs/codex/evidence/CGS-08/structural.json",
         "docs/codex/evidence/CGS-08/in-session-reviews.md"
       ],
       "note": "23 specialist roles preserved and verified; code/design/QA fallback exercised. Proceed with 15 engine roles and continue Skills groups.",
-      "updated_at": "2026-11-05T10:37:46.278Z"
+      "updated_at": "2026-11-05T10:39:45.082Z"
     },
     {
       "key": "CGS-09",
@@ -153,9 +153,14 @@
       "key": "CGS-13",
       "singularity_id": "T-a5a720f9-fef1-410b-8d37-90db9fd113f2",
       "title": "CGS-13 · Skills · архитектура, ADR, manifest и reverse-docs (5)",
-      "status": "PENDING",
+      "status": "COMPLETE",
       "commit": null,
-      "evidence": []
+      "evidence": [
+        "docs/codex/evidence/CGS-13/README.md",
+        "docs/codex/evidence/CGS-13/traceability.json"
+      ],
+      "note": "Architecture lifecycle and guard scenarios verified; proceed to production planning. Active control-manifest publication remains gated by real review concerns.",
+      "updated_at": "2026-11-05T11:16:59.078Z"
     },
     {
       "key": "CGS-14",
@@ -254,14 +259,14 @@
       "singularity_id": "T-3940570d-3bda-42dc-81eb-f32d277f11c5",
       "title": "CGS-25 · Адаптировать project.yaml, config resolution и вспомогательные скрипты",
       "status": "COMPLETE",
-      "commit": null,
+      "commit": "1dc0e40f8ea4d5fe4d24fa2d2f77ed1dae583522",
       "evidence": [
         "docs/codex/evidence/CGS-25/README.md",
         "docs/codex/evidence/CGS-25/checks.json",
         "docs/codex/evidence/CGS-25/helper-inventory.json"
       ],
       "note": "Helpers/config/dispatcher verified on Windows with explicit per-file evidence; real engine, Linux and hook event protocol checks remain separate.",
-      "updated_at": "2026-11-05T10:37:39.041Z"
+      "updated_at": "2026-11-05T10:39:44.978Z"
     },
     {
       "key": "CGS-26",

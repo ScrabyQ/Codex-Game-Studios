@@ -1,0 +1,21 @@
+{
+  "source_sha256": "c498c673b8f1b8d5634e33839b6117b17a827c2f41207acb115eb276f716189a",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-13 Codex architecture contract:** Resolve configuration with the explicit bootstrap before applying workflow or review gates. Source Read/Glob/Grep/Write/Edit examples describe operations: use available file tools, rg, and approved shell/Node helpers with the same path/range semantics. Source Agent/subagent_type examples are role briefs, not an assumed Codex API. Prefer an available authorized native role; otherwise an actual generic child may receive the complete adapted role and gate brief. If only an in-session role review is possible, read those instructions and label it \"not independent\"; never count it as a fresh independent review. Gate files can be read in-session for that disclosed fallback, despite source wording assigning the read to a child. Report unperformed required assessment as NOT ASSESSED. Do not invent engine execution or an unavailable specialist verdict.\n\nUse available question tools, or present the same numbered options in plain text and wait; source widget-only wording cannot make an unavailable tool mandatory. Previously authorized writes and explicit scripted fixture choices remain authorized. An unanswered required choice, ADR acceptance, registry update, or supersession is never inferred from automation. Show actual effects and preserve authorization scope. Commands and helpers emit observations; missing/failed helpers are not clean results. Direct file-reading fallback is valid only when it establishes the same facts. Dependency graph computation and receipt hashing must actually run, or that subcheck is NOT ASSESSED. Native skill names use $name; merely recommending a skill never runs it.\n\nObserve source before drafting; preserve the thin-source stop, all three sufficiency counts, tier-specific paths, unknown-intent questions, and the provenance banner. Preserve code unchanged. A template row is not evidence that a mechanic, rationale, alternative, performance result, or passing test exists. verified-by names a human only when that human actually confirmed it; otherwise record pending review. Architecture reverse-documentation is not ADR acceptance: retain reverse-documented provenance and route missing lifecycle sections through retrofit, with explicit acceptance afterward.\n\n"
+    },
+    {
+      "find": "`templates/design-doc-from-implementation.md`",
+      "replace": "`.agents/docs/templates/design-doc-from-implementation.md`"
+    },
+    {
+      "find": "`templates/architecture-doc-from-code.md`",
+      "replace": "`.agents/docs/templates/architecture-doc-from-code.md`"
+    },
+    {
+      "find": "`templates/concept-doc-from-prototype.md`",
+      "replace": "`.agents/docs/templates/concept-doc-from-prototype.md`"
+    }
+  ]
+}

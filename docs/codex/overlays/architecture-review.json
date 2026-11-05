@@ -1,0 +1,18 @@
+{
+  "source_sha256": "0219e6c2545af2416775bff139d921c1bc3c3e9cc1ffc25a25d6186f8e444f6e",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-13 Codex architecture contract:** Resolve configuration with the explicit bootstrap before applying workflow or review gates. Source Read/Glob/Grep/Write/Edit examples describe operations: use available file tools, rg, and approved shell/Node helpers with the same path/range semantics. Source Agent/subagent_type examples are role briefs, not an assumed Codex API. Prefer an available authorized native role; otherwise an actual generic child may receive the complete adapted role and gate brief. If only an in-session role review is possible, read those instructions and label it \"not independent\"; never count it as a fresh independent review. Gate files can be read in-session for that disclosed fallback, despite source wording assigning the read to a child. Report unperformed required assessment as NOT ASSESSED. Do not invent engine execution or an unavailable specialist verdict.\n\nUse available question tools, or present the same numbered options in plain text and wait; source widget-only wording cannot make an unavailable tool mandatory. Previously authorized writes and explicit scripted fixture choices remain authorized. An unanswered required choice, ADR acceptance, registry update, or supersession is never inferred from automation. Show actual effects and preserve authorization scope. Commands and helpers emit observations; missing/failed helpers are not clean results. Direct file-reading fallback is valid only when it establishes the same facts. Dependency graph computation and receipt hashing must actually run, or that subcheck is NOT ASSESSED. Native skill names use $name; merely recommending a skill never runs it.\n\nPreserve denominators, stable TR IDs, source-derived layer scope, the graph helper, receipt scope/freshness, and PASS < NOT ASSESSED < CONCERNS < FAIL severity. Proposed coverage is never accepted coverage. No mandatory independent or engine assessment may silently pass through an in-session fallback. A file existing in an RTM proves file linkage, not a passing test execution. Single-system updates preserve other systems and never deprecate their unread requirements. A required fresh review after authoring must run in a separate session/context; an in-session diagnostic is explicitly not that release-quality sign-off.\n\n"
+    },
+    {
+      "find": "— plain text \"May I?\" is not\n   sufficient. Use the structured tool with labeled options [A]/[B]/[C]",
+      "replace": "— when the structured question tool is available, use it; otherwise present numbered options in plain text and wait. Use labeled options [A]/[B]/[C]"
+    },
+    {
+      "target": "references/3-traceability.md",
+      "find": "- COVERED: [N] — requirements with ADR + story + passing test",
+      "replace": "- COVERED: [N] — requirements with ADR + story + an existing linked test file; passing execution requires separate observed test evidence"
+    }
+  ]
+}
