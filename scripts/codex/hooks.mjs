@@ -24,6 +24,11 @@ function pathInfo(root, path) {
   if (/\.(uasset|umap)$/i.test(rel)) throw new Error('Binary Unreal asset path denied');
   return { full, rel };
 }
+function disablesUpstreamPush(command) {
+  // Only this complete configuration command is exempt from push classification.
+  // A chained command, alternate URL or extra option must still be inspected.
+  return /^\s*git(?:\.exe)?\s+remote\s+set-url\s+--push\s+upstream\s+(?:DISABLED|"DISABLED"|'DISABLED')\s*$/i.test(command);
+}
 export function commandReason(command) {
   if (typeof command !== 'string' || !command.trim()) return 'Missing shell command';
   // This is a finite conservative detector, not a shell parser/security boundary.
@@ -41,7 +46,7 @@ export function commandReason(command) {
   if (/\bgit(?:\.exe)?\b/i.test(command)) {
     if (/\bpush\b/i.test(command) && /--force(?:-with-lease|-if-includes)?\b|\s-[a-z]*f[a-z]*\b|(?:\s|["'])\+[^\s]+/i.test(command)) return 'Force push denied';
     if (/\breset\b[^\r\n;&|]*--hard\b|\bclean\b[^\r\n;&|]*(?:--force\b|\s-[a-z]*f[a-z]*\b)/i.test(command)) return 'Destructive Git command denied';
-    if (/\bpush\b/i.test(command) && /\bupstream\b|Donchitos[/:\\]Claude-Code-Game-Studios/i.test(command)) return 'Push to upstream denied';
+    if (/\bpush\b/i.test(command) && !disablesUpstreamPush(command) && /\bupstream\b|Donchitos[/:\\]Claude-Code-Game-Studios/i.test(command)) return 'Push to upstream denied';
   }
   return null;
 }
@@ -141,7 +146,7 @@ export function handle(event, payload, options = {}) {
       if (shell && event === 'PreToolUse') {
         const command = payload.tool_input?.command ?? payload.tool_input?.cmd;
         const reason = commandReason(command); if (reason) throw new Error(reason);
-        if (/\bgit(?:\.exe)?\b[\s\S]*\bpush\b/i.test(command)) {
+        if (/\bgit(?:\.exe)?\b[\s\S]*\bpush\b/i.test(command) && !disablesUpstreamPush(command)) {
           const remotes = spawnSync('git', ['remote', '-v'], { cwd: root, encoding: 'utf8' });
           if (remotes.error) throw new Error('Cannot inspect Git push destination: git unavailable');
           for (const line of (remotes.stdout ?? '').split('\n')) {

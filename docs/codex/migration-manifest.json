@@ -14310,15 +14310,16 @@
       ],
       "proposed_target": "scripts/codex/hooks/ (review SessionStart event availability)",
       "proposed_equivalent": "Use a supported event integration if available; otherwise document and test an explicit manual or CI fallback.",
-      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING.",
+      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING. CGS-30 clean-install regression: exact safe upstream push-disable configuration allowed; chained upstream push still denied; all18 explicit hook cases passed with the recorded adapter hash.",
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
+      "target_sha256": "4debea0208e2c02558bf630f3e4685554184030f85cce80d71f5c2f59511975e",
       "evidence": [
         "docs/codex/evidence/CGS-24/checks.json",
         "docs/codex/evidence/CGS-24/parity.json",
-        "docs/codex/hooks.md"
+        "docs/codex/hooks.md",
+        "docs/codex/evidence/CGS-30/hook-fix.md"
       ]
     },
     {
@@ -14333,15 +14334,16 @@
       ],
       "proposed_target": "scripts/codex/hooks/ (review SessionStart event availability)",
       "proposed_equivalent": "Use a supported event integration if available; otherwise document and test an explicit manual or CI fallback.",
-      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING.",
+      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING. CGS-30 clean-install regression: exact safe upstream push-disable configuration allowed; chained upstream push still denied; all18 explicit hook cases passed with the recorded adapter hash.",
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
+      "target_sha256": "4debea0208e2c02558bf630f3e4685554184030f85cce80d71f5c2f59511975e",
       "evidence": [
         "docs/codex/evidence/CGS-24/checks.json",
         "docs/codex/evidence/CGS-24/parity.json",
-        "docs/codex/hooks.md"
+        "docs/codex/hooks.md",
+        "docs/codex/evidence/CGS-30/hook-fix.md"
       ]
     },
     {
@@ -14356,15 +14358,16 @@
       ],
       "proposed_target": "scripts/codex/hooks/ (review PreToolUse event availability)",
       "proposed_equivalent": "Use a supported event integration if available; otherwise document and test an explicit manual or CI fallback.",
-      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING.",
+      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING. CGS-30 clean-install regression: exact safe upstream push-disable configuration allowed; chained upstream push still denied; all18 explicit hook cases passed with the recorded adapter hash.",
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
+      "target_sha256": "4debea0208e2c02558bf630f3e4685554184030f85cce80d71f5c2f59511975e",
       "evidence": [
         "docs/codex/evidence/CGS-24/checks.json",
         "docs/codex/evidence/CGS-24/parity.json",
-        "docs/codex/hooks.md"
+        "docs/codex/hooks.md",
+        "docs/codex/evidence/CGS-30/hook-fix.md"
       ]
     },
     {
@@ -14379,15 +14382,16 @@
       ],
       "proposed_target": "scripts/codex/hooks/ (review PreToolUse event availability)",
       "proposed_equivalent": "Use a supported event integration if available; otherwise document and test an explicit manual or CI fallback.",
-      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING.",
+      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING. CGS-30 clean-install regression: exact safe upstream push-disable configuration allowed; chained upstream push still denied; all18 explicit hook cases passed with the recorded adapter hash.",
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
+      "target_sha256": "4debea0208e2c02558bf630f3e4685554184030f85cce80d71f5c2f59511975e",
       "evidence": [
         "docs/codex/evidence/CGS-24/checks.json",
         "docs/codex/evidence/CGS-24/parity.json",
-        "docs/codex/hooks.md"
+        "docs/codex/hooks.md",
+        "docs/codex/evidence/CGS-30/hook-fix.md"
       ]
     },
     {
@@ -14402,15 +14406,16 @@
       ],
       "proposed_target": "scripts/codex/hooks/ (review PreToolUse event availability)",
       "proposed_equivalent": "Use a supported event integration if available; otherwise document and test an explicit manual or CI fallback.",
-      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING.",
+      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING. CGS-30 clean-install regression: exact safe upstream push-disable configuration allowed; chained upstream push still denied; all18 explicit hook cases passed with the recorded adapter hash.",
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
+      "target_sha256": "4debea0208e2c02558bf630f3e4685554184030f85cce80d71f5c2f59511975e",
       "evidence": [
         "docs/codex/evidence/CGS-24/checks.json",
         "docs/codex/evidence/CGS-24/parity.json",
-        "docs/codex/hooks.md"
+        "docs/codex/hooks.md",
+        "docs/codex/evidence/CGS-30/hook-fix.md"
       ]
     },
     {
@@ -14425,15 +14430,16 @@
       ],
       "proposed_target": "scripts/codex/hooks/ (review PreToolUse event availability)",
       "proposed_equivalent": "Use a supported event integration if available; otherwise document and test an explicit manual or CI fallback.",
-      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING.",
+      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING. CGS-30 clean-install regression: exact safe upstream push-disable configuration allowed; chained upstream push still denied; all18 explicit hook cases passed with the recorded adapter hash.",
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
+      "target_sha256": "4debea0208e2c02558bf630f3e4685554184030f85cce80d71f5c2f59511975e",
       "evidence": [
         "docs/codex/evidence/CGS-24/checks.json",
         "docs/codex/evidence/CGS-24/parity.json",
-        "docs/codex/hooks.md"
+        "docs/codex/hooks.md",
+        "docs/codex/evidence/CGS-30/hook-fix.md"
       ]
     },
     {
@@ -14448,15 +14454,16 @@
       ],
       "proposed_target": "scripts/codex/hooks/ (review PreToolUse event availability)",
       "proposed_equivalent": "Use a supported event integration if available; otherwise document and test an explicit manual or CI fallback.",
-      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING.",
+      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING. CGS-30 clean-install regression: exact safe upstream push-disable configuration allowed; chained upstream push still denied; all18 explicit hook cases passed with the recorded adapter hash.",
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
+      "target_sha256": "4debea0208e2c02558bf630f3e4685554184030f85cce80d71f5c2f59511975e",
       "evidence": [
         "docs/codex/evidence/CGS-24/checks.json",
         "docs/codex/evidence/CGS-24/parity.json",
-        "docs/codex/hooks.md"
+        "docs/codex/hooks.md",
+        "docs/codex/evidence/CGS-30/hook-fix.md"
       ]
     },
     {
@@ -14471,15 +14478,16 @@
       ],
       "proposed_target": "scripts/codex/hooks/ (review PostToolUse event availability)",
       "proposed_equivalent": "Use a supported event integration if available; otherwise document and test an explicit manual or CI fallback.",
-      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING.",
+      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING. CGS-30 clean-install regression: exact safe upstream push-disable configuration allowed; chained upstream push still denied; all18 explicit hook cases passed with the recorded adapter hash.",
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
+      "target_sha256": "4debea0208e2c02558bf630f3e4685554184030f85cce80d71f5c2f59511975e",
       "evidence": [
         "docs/codex/evidence/CGS-24/checks.json",
         "docs/codex/evidence/CGS-24/parity.json",
-        "docs/codex/hooks.md"
+        "docs/codex/hooks.md",
+        "docs/codex/evidence/CGS-30/hook-fix.md"
       ]
     },
     {
@@ -14494,15 +14502,16 @@
       ],
       "proposed_target": "scripts/codex/hooks/ (review PostToolUse event availability)",
       "proposed_equivalent": "Use a supported event integration if available; otherwise document and test an explicit manual or CI fallback.",
-      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING.",
+      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING. CGS-30 clean-install regression: exact safe upstream push-disable configuration allowed; chained upstream push still denied; all18 explicit hook cases passed with the recorded adapter hash.",
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
+      "target_sha256": "4debea0208e2c02558bf630f3e4685554184030f85cce80d71f5c2f59511975e",
       "evidence": [
         "docs/codex/evidence/CGS-24/checks.json",
         "docs/codex/evidence/CGS-24/parity.json",
-        "docs/codex/hooks.md"
+        "docs/codex/hooks.md",
+        "docs/codex/evidence/CGS-30/hook-fix.md"
       ]
     },
     {
@@ -14517,15 +14526,16 @@
       ],
       "proposed_target": "scripts/codex/hooks/ (review Notification event availability)",
       "proposed_equivalent": "Use a supported event integration if available; otherwise document and test an explicit manual or CI fallback.",
-      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING.",
+      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING. CGS-30 clean-install regression: exact safe upstream push-disable configuration allowed; chained upstream push still denied; all18 explicit hook cases passed with the recorded adapter hash.",
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
+      "target_sha256": "4debea0208e2c02558bf630f3e4685554184030f85cce80d71f5c2f59511975e",
       "evidence": [
         "docs/codex/evidence/CGS-24/checks.json",
         "docs/codex/evidence/CGS-24/parity.json",
-        "docs/codex/hooks.md"
+        "docs/codex/hooks.md",
+        "docs/codex/evidence/CGS-30/hook-fix.md"
       ]
     },
     {
@@ -14540,15 +14550,16 @@
       ],
       "proposed_target": "scripts/codex/hooks/ (review PreCompact event availability)",
       "proposed_equivalent": "Use a supported event integration if available; otherwise document and test an explicit manual or CI fallback.",
-      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING.",
+      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING. CGS-30 clean-install regression: exact safe upstream push-disable configuration allowed; chained upstream push still denied; all18 explicit hook cases passed with the recorded adapter hash.",
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
+      "target_sha256": "4debea0208e2c02558bf630f3e4685554184030f85cce80d71f5c2f59511975e",
       "evidence": [
         "docs/codex/evidence/CGS-24/checks.json",
         "docs/codex/evidence/CGS-24/parity.json",
-        "docs/codex/hooks.md"
+        "docs/codex/hooks.md",
+        "docs/codex/evidence/CGS-30/hook-fix.md"
       ]
     },
     {
@@ -14563,15 +14574,16 @@
       ],
       "proposed_target": "scripts/codex/hooks/ (review Stop event availability)",
       "proposed_equivalent": "Use a supported event integration if available; otherwise document and test an explicit manual or CI fallback.",
-      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING.",
+      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING. CGS-30 clean-install regression: exact safe upstream push-disable configuration allowed; chained upstream push still denied; all18 explicit hook cases passed with the recorded adapter hash.",
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
+      "target_sha256": "4debea0208e2c02558bf630f3e4685554184030f85cce80d71f5c2f59511975e",
       "evidence": [
         "docs/codex/evidence/CGS-24/checks.json",
         "docs/codex/evidence/CGS-24/parity.json",
-        "docs/codex/hooks.md"
+        "docs/codex/hooks.md",
+        "docs/codex/evidence/CGS-30/hook-fix.md"
       ]
     },
     {
@@ -14586,15 +14598,16 @@
       ],
       "proposed_target": "scripts/codex/hooks/ (review SubagentStart event availability)",
       "proposed_equivalent": "Use a supported event integration if available; otherwise document and test an explicit manual or CI fallback.",
-      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING.",
+      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING. CGS-30 clean-install regression: exact safe upstream push-disable configuration allowed; chained upstream push still denied; all18 explicit hook cases passed with the recorded adapter hash.",
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
+      "target_sha256": "4debea0208e2c02558bf630f3e4685554184030f85cce80d71f5c2f59511975e",
       "evidence": [
         "docs/codex/evidence/CGS-24/checks.json",
         "docs/codex/evidence/CGS-24/parity.json",
-        "docs/codex/hooks.md"
+        "docs/codex/hooks.md",
+        "docs/codex/evidence/CGS-30/hook-fix.md"
       ]
     },
     {
@@ -14609,15 +14622,16 @@
       ],
       "proposed_target": "scripts/codex/hooks/ (review SubagentStop event availability)",
       "proposed_equivalent": "Use a supported event integration if available; otherwise document and test an explicit manual or CI fallback.",
-      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING.",
+      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING. CGS-30 clean-install regression: exact safe upstream push-disable configuration allowed; chained upstream push still denied; all18 explicit hook cases passed with the recorded adapter hash.",
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
+      "target_sha256": "4debea0208e2c02558bf630f3e4685554184030f85cce80d71f5c2f59511975e",
       "evidence": [
         "docs/codex/evidence/CGS-24/checks.json",
         "docs/codex/evidence/CGS-24/parity.json",
-        "docs/codex/hooks.md"
+        "docs/codex/hooks.md",
+        "docs/codex/evidence/CGS-30/hook-fix.md"
       ]
     },
     {
@@ -14632,15 +14646,16 @@
       ],
       "proposed_target": "scripts/codex/hooks/ (review SubagentStop event availability)",
       "proposed_equivalent": "Use a supported event integration if available; otherwise document and test an explicit manual or CI fallback.",
-      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING.",
+      "verification": "15/15 explicit CLI fallbacks tested; supported native configuration optional and activation PENDING. Notification is manual; missing artifact never certifies quality. Linux execution PENDING. CGS-30 clean-install regression: exact safe upstream push-disable configuration allowed; chained upstream push still denied; all18 explicit hook cases passed with the recorded adapter hash.",
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
+      "target_sha256": "4debea0208e2c02558bf630f3e4685554184030f85cce80d71f5c2f59511975e",
       "evidence": [
         "docs/codex/evidence/CGS-24/checks.json",
         "docs/codex/evidence/CGS-24/parity.json",
-        "docs/codex/hooks.md"
+        "docs/codex/hooks.md",
+        "docs/codex/evidence/CGS-30/hook-fix.md"
       ]
     }
   ]

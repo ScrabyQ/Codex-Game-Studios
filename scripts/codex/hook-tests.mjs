@@ -97,6 +97,9 @@ test('commit-staged-json-blocks-without-commit', () => {
   good(call('PreToolUse', { tool_name: 'Bash', tool_input: { command: 'git commit -m fixture' } }));
   git(['remote', 'add', 'origin', 'https://github.com/Donchitos/Claude-Code-Game-Studios.git']);
   bad(call('PreToolUse', { tool_name: 'Bash', tool_input: { command: 'git push origin main' } }));
+  git(['remote', 'add', 'upstream', 'https://github.com/Donchitos/Claude-Code-Game-Studios.git']);
+  good(call('PreToolUse', { tool_name: 'Bash', tool_input: { command: 'git remote set-url --push upstream DISABLED' } }));
+  bad(call('PreToolUse', { tool_name: 'Bash', tool_input: { command: 'git remote set-url --push upstream DISABLED; git push upstream main' } }));
   return 'Only git init/add/remote were executed in fixture; commit and push were inspected only.';
 });
 test('session-checkpoint-gap-compaction-stop-audit', () => {

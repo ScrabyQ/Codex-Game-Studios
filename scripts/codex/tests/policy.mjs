@@ -4,4 +4,6 @@ import path from 'node:path';
 const mod=await import(pathToFileURL(path.resolve(process.argv[2]||'scripts/codex/hooks.mjs')).href);
 for(const cmd of ['git reset --hard','git push --force origin branch','git push upstream branch','rm -rf important','cat .env.local','edit test.uasset','chmod 777 test']) assert.ok(mod.commandReason(cmd),cmd);
 assert.equal(mod.commandReason("echo 'safe'"),null);
+for(const cmd of ['git remote set-url --push upstream DISABLED','git remote set-url --push upstream "DISABLED"',"git remote set-url --push upstream 'DISABLED'"])assert.equal(mod.commandReason(cmd),null,cmd);
+for(const cmd of ['git remote set-url --push upstream DISABLED; git push upstream main','git remote set-url --push upstream DISABLED && git push upstream main','git remote set-url --push upstream https://github.com/Donchitos/Claude-Code-Game-Studios.git'])assert.ok(mod.commandReason(cmd),cmd);
 console.log('PASS dangerous commands denied; quoted benign display allowed');

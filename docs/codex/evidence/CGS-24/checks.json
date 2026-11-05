@@ -1,16 +1,16 @@
 {
   "schema": 1,
   "task": "CGS-24",
-  "timestamp": "2026-11-05T11:48:51.480Z",
+  "timestamp": "2026-11-05T14:26:52.984Z",
   "platform": "win32",
   "node": "v22.19.0",
   "model": null,
   "command": "node scripts/codex/hook-tests.mjs",
-  "fixture": "D:\\MyProjects\\codex-game-studios\\.codex-tmp\\hook fixture gQYBfJ",
-  "fixture_recipe_sha256": "78ad9d4ff6ae77a33f0d59dcdcec62c52c6c50bf0a427d63238316bdc3ce04f6",
+  "fixture": "D:\\MyProjects\\codex-game-studios\\.codex-tmp\\hook fixture vCo9wR",
+  "fixture_recipe_sha256": "97ccbb5bfb8ea0b610a53ee3f86a3d3568d3b80774c6c3194a68b5951b23348f",
   "hashes": {
-    "scripts/codex/hooks.mjs": "5319fe2ac91d0bd9b5cb9645a8de8062c32c8058bb92ac57d05cf5ae6f9bee5e",
-    "scripts/codex/hook-tests.mjs": "78ad9d4ff6ae77a33f0d59dcdcec62c52c6c50bf0a427d63238316bdc3ce04f6",
+    "scripts/codex/hooks.mjs": "4debea0208e2c02558bf630f3e4685554184030f85cce80d71f5c2f59511975e",
+    "scripts/codex/hook-tests.mjs": "97ccbb5bfb8ea0b610a53ee3f86a3d3568d3b80774c6c3194a68b5951b23348f",
     ".codex/hooks.example.json": "5058bf25990248015f7b0ffb2b1f8cfa1d5f34a081c491764241cf05589b1334",
     "docs/codex/hooks.md": "785b4f04377777f7af4148cc37da03f271759a7a8e7416c0cfa936b846f5295f",
     ".claude/settings.json": "5294bcacca8019b0b98f4fd191d58a081276534ceaa7e6ec1899a95404e6c560"
@@ -136,7 +136,7 @@
       "id": "no-config-backend-root-fallback",
       "status": "PASS",
       "detail": {
-        "selectedRoot": "D:\\MyProjects\\codex-game-studios\\.codex-tmp\\unconfigured hook fixture bdWCwr",
+        "selectedRoot": "D:\\MyProjects\\codex-game-studios\\.codex-tmp\\unconfigured hook fixture doJ18u",
         "absentProjectYaml": true
       }
     }
