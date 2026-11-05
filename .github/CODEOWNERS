@@ -14,3 +14,6 @@ settings.json               @Donchitos
 .claude/skills/             @Donchitos
 .claude/agents/             @Donchitos
 .claude/hooks/              @Donchitos
+
+# Fork ownership: last match wins; upstream entries above are retained for provenance.
+*                           @ScrabyQ

@@ -1,4 +1,26 @@
-# Upgrading Claude Code Game Studios
+# Codex adaptation: migration and upstream updates
+
+The release notes below are retained from the original project for provenance. Their Claude-specific overwrite, deletion, automatic hook and slash-command instructions are historical; use this section for the Codex adaptation.
+
+For a new checkout, follow [README setup](README.md#codex-quick-start) on the `codex/adaptation` branch. To migrate an existing original-based project, preserve its Git history and project content, compare its configuration and customized files with this branch, and merge changes deliberately in a separate branch. Do not replace customized files or delete content based on the historical lists below. Resolve `project.yaml` and allowed `project.local.yaml` overrides as described in [configuration resolution](.agents/docs/config-resolution.md).
+
+Configure `upstream` to fetch from the [original repository](https://github.com/Donchitos/Claude-Code-Game-Studios) if it is not already present, and verify `git remote -v`. Your own fork is `origin`; never push to the original.
+
+```powershell
+node scripts/codex/check-upstream.mjs --fetch
+node scripts/codex/sync-upstream.mjs --dry-run
+node scripts/codex/sync-upstream.mjs --prepare
+```
+
+Fetch updates the local tracking ref. Dry-run reports changed, added and deleted sources and stale/PENDING mappings, using the active baseline; it does not accept them. Preparation creates an isolated `codex/sync-<SHA12>` branch and worktree from committed HEAD and attempts a no-commit merge. Existing branch/worktree paths are refused. Original uncommitted edits stay in the original checkout. Exit 0 indicates preparation, not verified coverage; conflicts remain for explicit resolution and return nonzero. Inspect the worktree and proposal; never automatically accept one side. To abandon only that uncommitted merge, run `git merge --abort` inside the worktree.
+
+Review every change and create the exhaustive, reviewed plan described in the [reconciliation contract](docs/codex/evidence/CGS-29/reconcile/README.md). In the worktree run `node scripts/codex/reconcile-upstream.mjs prepare --root . --plan <relative-plan.json>`; rebase applicable overlays, run `generate.mjs --reconcile` only for reviewed targets, record fresh migration evidence with `record-migration.mjs`, and then run `node scripts/codex/reconcile-upstream.mjs finalize --root .`. The contract gives exact flags, hash guards and hook-declaration requirements. Changed coverage remains PENDING until fresh evidence and finalization; a new upstream SHA or successful structural check is not behavioral verification. Additions and deletions fail closed and require explicit onboarding or retirement; do not omit them from the plan.
+
+Run the inventory, complete generation, validation and affected behavior checks listed in [upstream synchronization](docs/codex/upstream-sync.md). Review the resulting diff and evidence before an authorized commit, push to your fork and draft PR. No command automatically commits, pushes, merges into main, or releases. The historical baseline and earlier evidence remain preserved.
+
+---
+
+## Preserved upstream upgrade history
 
 This guide covers upgrading your existing game project repo from one version
 of the template to the next.

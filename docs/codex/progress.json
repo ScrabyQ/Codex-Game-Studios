@@ -7,7 +7,7 @@
   "repository": "Codex-Game-Studios",
   "last_completed": "CGS-29",
   "current_task": "CGS-30",
-  "next_safe_step": "CGS29 accepted: real GitHub quick and linux-backend SUCCESS at 9baaf056; all653 migration rows accounted,0PENDING,4explicitUNSUPPORTED. Docs30 acceptance and freshindependent31audit remain. Sync additions/deletions require explicit onboarding; nativeactivation/Unity/UE/human checks remain separate PENDING.",
+  "next_safe_step": "CGS30 docs reviewed and local links PASS; publish exact documentation commit then verify README clone/remote/firstSkill from clean checkout. CGS29 accepted with actual Linux CI.31independent audit follows30acceptance.",
   "decisions": [
     "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED.",
     "Generated content-preserving .agents mirror retains helper root math; native roles use .codex/agents/*.toml; all generation is hash-guarded; no new agent runtime."
@@ -460,9 +460,13 @@
       "key": "CGS-30",
       "singularity_id": "T-0d289aac-7d48-4c29-9e7c-17ed3761476d",
       "title": "CGS-30 · Подготовить README, миграционный гайд и корректную атрибуцию",
-      "status": "PENDING",
+      "status": "IN_PROGRESS",
       "commit": null,
-      "evidence": []
+      "evidence": [
+        "docs/codex/evidence/CGS-30/README.md"
+      ],
+      "note": "CGS30 docs reviewed and local links PASS; publish exact documentation commit then verify README clone/remote/firstSkill from clean checkout. CGS29 accepted with actual Linux CI.31independent audit follows30acceptance.",
+      "updated_at": "2026-11-05T14:21:15.154Z"
     },
     {
       "key": "CGS-31",

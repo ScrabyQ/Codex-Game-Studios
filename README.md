@@ -1,8 +1,43 @@
 > **Codex Game Studios** — Adapted from [Claude Code Game Studios by Donchitos](https://github.com/Donchitos/Claude-Code-Game-Studios).
 > This is an independent Codex adaptation. The original [MIT license and copyright](LICENSE) are retained.
-> Migration and verification progress: [Codex progress](docs/codex/progress.json). The upstream documentation below is preserved during migration.
+> Adaptation status and verification: [Codex progress](docs/codex/progress.json). The upstream documentation below is preserved for reference.
 
-**Codex entrypoint:** open this repository root and run `codex`. See [Codex onboarding](docs/codex/onboarding.md) for instruction scopes and current verification limits.
+## Codex quick start
+
+Install Git, Node.js 22 or later, and an authenticated Codex CLI. Git Bash and Python 3 are needed for Bash-backed helpers and explicit hook checks. The desktop app and IDE integration can open the checkout, but their discovery and workflows have not been independently verified by the CLI probes.
+
+```powershell
+git clone --branch codex/adaptation https://github.com/ScrabyQ/Codex-Game-Studios.git
+cd Codex-Game-Studios
+git remote add upstream https://github.com/Donchitos/Claude-Code-Game-Studios.git
+git remote set-url --push upstream DISABLED
+codex --cd .
+```
+
+The fork's `main` retains the original; select the adaptation branch as shown. A clone does not inherit an upstream remote. Add it as shown only when absent; if it already exists, inspect `git remote -v` and preserve your configuration. Inside the Codex conversation, enter `$help` for the next step or `$start` for onboarding; these are not PowerShell commands. If discovery or bootstrap fails, ask Codex: "Read `.agents/skills/help/SKILL.md` and apply its read-only fallback to this project; cite the files and report unknowns." This fallback was exercised with CLI 0.148.0 in a fixture; it does not prove native discovery in every client. See [evidence](docs/codex/evidence/CGS-05/native-help-fallback.json) and [onboarding](docs/codex/onboarding.md).
+
+`project.yaml` is shared configuration; allowed `project.local.yaml` overrides take precedence. Legacy mirrors, rigor expansion and defaults follow. Rigor supports `minimal`, `standard` and `full`; automation is separate. See [config resolution](.agents/docs/config-resolution.md) and [automation](.agents/docs/automation-modes.md). Modes do not grant permissions.
+
+The 74 adapted [Skills](.agents/skills) describe their scopes and fallbacks. The 49 [roles](.codex/agents) are available as instructions; native custom `agent_type` loading is PENDING. If delegation is unavailable, read the relevant role and work in-session, without claiming independent review. Fifteen source hook declarations have an explicit adapter; optional native activation is PENDING. See [hooks](docs/codex/hooks.md). The 14 rules use an explicit selector; no automatic host enforcement is claimed.
+
+Roles inherit the parent's model and permissions. The [model policy](.codex/model-policy.json) maps source guidance through capabilities actually available to the host; it does not pin unsupported model IDs.
+
+| Path | Purpose |
+| --- | --- |
+| [.agents/skills](.agents/skills), [.agents/docs](.agents/docs) | Adapted Skills and guidance, including the 62 preserved templates in [.agents/docs/templates](.agents/docs/templates) |
+| [.agents/rules](.agents/rules), [.agents/scripts](.agents/scripts), [.agents/hooks](.agents/hooks) | Adapted rules, helpers and hook backends |
+| [.codex/agents](.codex/agents), [hooks example](.codex/hooks.example.json) | Role definitions and inactive optional hook configuration |
+| [scripts/codex](scripts/codex), [migration manifest](docs/codex/migration-manifest.json) | Explicit adapters and verification; source-to-target status and evidence |
+
+From the repository root, run `node scripts/codex/validate.mjs` for structural validation and `node scripts/codex/ci.mjs` for the documented automated suites. These checks do not establish engine execution or human playtest results; see [testing](docs/codex/testing.md) and the engine evidence below.
+
+Godot 4.7.2 passed a scoped import, parse, logic and rendered fixture. Unity's editor was absent from the tested location; Unreal 5.8.0 lacked the required Windows SDK and the fixture requested 5.8.3. Both remain PENDING, as do human playtests. See [engine evidence](docs/codex/evidence/CGS-27/README.md).
+
+On Windows, verify Git Bash starts and set `CGS_BASH` to its executable if installed elsewhere. The host can block Bash or nested Codex processes even when ordinary commands work. Use the documented fallback and report the failure; do not alter global trust or bypass permission policy. For migration and upstream updates see [UPGRADING.md](UPGRADING.md) and [the reviewed sync procedure](docs/codex/upstream-sync.md).
+
+## Preserved upstream README (historical)
+
+The material below describes the original Claude Code project. Its slash commands, automatic hooks, setup and platform claims are not Codex claims.
 
 <p align="center">
   <h1 align="center">Claude Code Game Studios</h1>
