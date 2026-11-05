@@ -7,14 +7,16 @@
 Install Git, Node.js 22 or later, and an authenticated Codex CLI. Git Bash and Python 3 are needed for Bash-backed helpers and explicit hook checks. The desktop app and IDE integration can open the checkout, but their discovery and workflows have not been independently verified by the CLI probes.
 
 ```powershell
-git clone --branch codex/adaptation https://github.com/ScrabyQ/Codex-Game-Studios.git
+git clone https://github.com/ScrabyQ/Codex-Game-Studios.git
 cd Codex-Game-Studios
 git remote add upstream https://github.com/Donchitos/Claude-Code-Game-Studios.git
 git remote set-url --push upstream DISABLED
 codex --cd .
 ```
 
-The fork's `main` retains the original; select the adaptation branch as shown. A clone does not inherit an upstream remote. Add it as shown only when absent; if it already exists, inspect `git remote -v` and preserve your configuration. Inside the Codex conversation, enter `$help` for the next step or `$start` for onboarding; these are not PowerShell commands. If discovery or bootstrap fails, ask Codex: "Read `.agents/skills/help/SKILL.md` and apply its read-only fallback to this project; cite the files and report unknowns." This fallback was exercised with CLI 0.148.0 in a fixture; it does not prove native discovery in every client. See [evidence](docs/codex/evidence/CGS-05/native-help-fallback.json) and [onboarding](docs/codex/onboarding.md).
+The default `main` branch is the Codex adaptation. `source/ccgs-main` is a separate mirror of the original Claude Code Game Studios `main`, not the branch to install or develop against. New upstream changes are reviewed and adapted through `codex/sync-*` branches before they reach `main`; do not use GitHub's **Sync fork** button to merge the original directly into `main`. See [upstream synchronization](docs/codex/upstream-sync.md).
+
+A clone does not inherit an `upstream` remote. Add it as shown only when absent; if it already exists, inspect `git remote -v` and preserve your configuration. Inside the Codex conversation, enter `$help` for the next step or `$start` for onboarding; these are not PowerShell commands. If discovery or bootstrap fails, ask Codex: "Read `.agents/skills/help/SKILL.md` and apply its read-only fallback to this project; cite the files and report unknowns." This fallback was exercised with CLI 0.148.0 in a fixture; it does not prove native discovery in every client. See [evidence](docs/codex/evidence/CGS-05/native-help-fallback.json) and [onboarding](docs/codex/onboarding.md).
 
 `project.yaml` is shared configuration; allowed `project.local.yaml` overrides take precedence. Legacy mirrors, rigor expansion and defaults follow. Rigor supports `minimal`, `standard` and `full`; automation is separate. See [config resolution](.agents/docs/config-resolution.md) and [automation](.agents/docs/automation-modes.md). Modes do not grant permissions.
 

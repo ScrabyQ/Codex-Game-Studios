@@ -2,9 +2,9 @@
 
 The release notes below are retained from the original project for provenance. Their Claude-specific overwrite, deletion, automatic hook and slash-command instructions are historical; use this section for the Codex adaptation.
 
-For a new checkout, follow [README setup](README.md#codex-quick-start) on the `codex/adaptation` branch. To migrate an existing original-based project, preserve its Git history and project content, compare its configuration and customized files with this branch, and merge changes deliberately in a separate branch. Do not replace customized files or delete content based on the historical lists below. Resolve `project.yaml` and allowed `project.local.yaml` overrides as described in [configuration resolution](.agents/docs/config-resolution.md).
+For a new checkout, follow [README setup](README.md#codex-quick-start) on the default `main` branch. To migrate an existing original-based project, preserve its Git history and project content, compare its configuration and customized files with the Codex `main` branch, and merge changes deliberately in a separate branch. Do not replace customized files or delete content based on the historical lists below. Resolve `project.yaml` and allowed `project.local.yaml` overrides as described in [configuration resolution](.agents/docs/config-resolution.md).
 
-Configure `upstream` to fetch from the [original repository](https://github.com/Donchitos/Claude-Code-Game-Studios) if it is not already present, and verify `git remote -v`. Your own fork is `origin`; never push to the original.
+Configure `upstream` to fetch from the [original repository](https://github.com/Donchitos/Claude-Code-Game-Studios) if it is not already present, and verify `git remote -v`. Your own fork is `origin`; never push to the original. The fork's `source/ccgs-main` branch mirrors the original's `main` and is maintained independently of the Codex `main`; see the [mirror procedure](docs/codex/upstream-sync.md#source-branch-mirror). Do not use GitHub's **Sync fork** button against the Codex `main`.
 
 ```powershell
 node scripts/codex/check-upstream.mjs --fetch

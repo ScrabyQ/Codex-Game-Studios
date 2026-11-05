@@ -1,5 +1,23 @@
 # Reviewed upstream synchronization
 
+The fork has two long-lived branches: `main` is **Codex Game Studios** (the default branch), while `source/ccgs-main` mirrors the original [Claude Code Game Studios](https://github.com/Donchitos/Claude-Code-Game-Studios) `main`. `upstream` is a Git remote configured separately in each clone; `upstream/main` is its local remote-tracking ref. The mirror is for reference and source comparison, not for development or direct merges into the Codex `main`. Do not use GitHub's **Sync fork** button to merge upstream changes into the default branch.
+
+## Source branch mirror
+
+To update `source/ccgs-main` **manually** from a clean clone with the `upstream` remote configured, run:
+
+```powershell
+git fetch upstream main
+git switch source/ccgs-main
+git merge --ff-only upstream/main
+git push origin source/ccgs-main
+git switch main
+```
+
+For the first local checkout of the mirror, replace `git switch source/ccgs-main` with `git switch --track origin/source/ccgs-main`. The fast-forward-only merge refuses rewritten or divergent upstream history; inspect such cases instead of forcing a push. This updates only the mirror in your fork; it does **not** update the Codex adaptation. No scheduled mirror updater is installed. The Codex sync commands below read `upstream/main` directly, so keeping the mirror current is helpful for GitHub browsing but not required for change detection.
+
+## Review and adapt changes
+
 The on-demand commands replace the background behavior of the preserved `.claude/hooks/update-check.sh` helper. They install no scheduled updater and never push, commit or merge into the current branch. Git and Node are required. Fetch updates only the local remote-tracking ref; remote writes require existing explicit authorization.
 
 ```powershell
