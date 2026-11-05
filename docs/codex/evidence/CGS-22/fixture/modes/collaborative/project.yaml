@@ -1,0 +1,6 @@
+project:
+  name: CGS22 collaborative
+  stage: Polish
+modes:
+  rigor: full
+  automation: collaborative

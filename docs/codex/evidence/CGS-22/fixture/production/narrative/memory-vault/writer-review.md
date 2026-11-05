@@ -1,0 +1,2 @@
+# Writer conflict report
+Sequential in-session role, not independent. Read canon.md and both supplied drafts. Literal restoration conflicts with the established pillar. String memory_vault.promise is under 120 characters and uses named {player_name}; that formatting does not cure the canon contradiction. Keep both drafts unchanged. Shared parent narrative-director should reconcile this explicit pillar conflict.

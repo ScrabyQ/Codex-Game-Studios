@@ -5,9 +5,9 @@
   "upstream_sha": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
   "owner": "ScrabyQ",
   "repository": "Codex-Game-Studios",
-  "last_completed": "CGS-18",
+  "last_completed": "CGS-22",
   "current_task": "CGS-20",
-  "next_safe_step": "Generator regression harness repaired for the installed catalog; no recursive deletion, expected five refusals and valid overlay verified. Remaining20/22 finalacceptance, then27/28/29/30/31.",
+  "next_safe_step": "Narrative/release/live-ops/QA orchestration acceptance verified with10assertiongroups. Final release20 hash refresh pending; then27engine matrix and28CI can proceed.",
   "decisions": [
     "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED.",
     "Generated content-preserving .agents mirror retains helper root math; native roles use .codex/agents/*.toml; all generation is hash-guarded; no new agent runtime."
@@ -322,11 +322,15 @@
       "key": "CGS-22",
       "singularity_id": "T-fa24c03d-fd42-4baa-9c21-26093d5d611c",
       "title": "CGS-22 · Skills · командные процессы narrative/release/QA (4)",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "commit": null,
-      "evidence": [],
-      "note": "CGS15 story lifecycle, CGS17 actual runner/evidence and CGS22 team decision/release handoffs active with disjoint overlays and evidence; root alone owns generated metadata.",
-      "updated_at": "2026-11-05T11:59:16.276Z"
+      "evidence": [
+        "docs/codex/evidence/CGS-22/README.md",
+        "docs/codex/evidence/CGS-22/checks.json",
+        "docs/codex/evidence/CGS-22/traceability.json"
+      ],
+      "note": "Narrative/release/live-ops/QA orchestration acceptance verified with10assertiongroups. Final release20 hash refresh pending; then27engine matrix and28CI can proceed.",
+      "updated_at": "2026-11-05T12:16:25.274Z"
     },
     {
       "key": "CGS-23",

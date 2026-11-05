@@ -8895,8 +8895,17 @@
       ],
       "proposed_target": ".agents/skills/team-live-ops/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Four actual sequential scoped equivalents: shared-parent conflict preserves canon, missing capability named PENDING, release stage and S2 full-workflow NO-GO, real failing test and canonical QA-to-owner acknowledged handoff. All3 automation modes preserve user permission and stage guard.",
+      "status": "EQUIVALENT",
+      "task": "CGS-22",
+      "target": ".agents/skills/team-live-ops/SKILL.md",
+      "target_sha256": "89dff1df94fd53b6d8202ad29a1c122b590a5406b2bd5bb3ab6915fff7a275e8",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-22/README.md",
+        "docs/codex/evidence/CGS-22/checks.json",
+        "docs/codex/evidence/CGS-22/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/team-narrative/SKILL.md",
@@ -8913,8 +8922,17 @@
       ],
       "proposed_target": ".agents/skills/team-narrative/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Four actual sequential scoped equivalents: shared-parent conflict preserves canon, missing capability named PENDING, release stage and S2 full-workflow NO-GO, real failing test and canonical QA-to-owner acknowledged handoff. All3 automation modes preserve user permission and stage guard.",
+      "status": "EQUIVALENT",
+      "task": "CGS-22",
+      "target": ".agents/skills/team-narrative/SKILL.md",
+      "target_sha256": "cbb9e9bdc243dd4fb68d94c533e6a322ff932f8a6ff61a95042e645f1d1a301b",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-22/README.md",
+        "docs/codex/evidence/CGS-22/checks.json",
+        "docs/codex/evidence/CGS-22/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/team-polish/SKILL.md",
@@ -8958,8 +8976,17 @@
       ],
       "proposed_target": ".agents/skills/team-qa/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Four actual sequential scoped equivalents: shared-parent conflict preserves canon, missing capability named PENDING, release stage and S2 full-workflow NO-GO, real failing test and canonical QA-to-owner acknowledged handoff. All3 automation modes preserve user permission and stage guard.",
+      "status": "EQUIVALENT",
+      "task": "CGS-22",
+      "target": ".agents/skills/team-qa/SKILL.md",
+      "target_sha256": "0a500cf421c2a76f0562f240095cec25a94d0f9f874594bad3da413997751b01",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-22/README.md",
+        "docs/codex/evidence/CGS-22/checks.json",
+        "docs/codex/evidence/CGS-22/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/team-release/SKILL.md",
@@ -8976,8 +9003,17 @@
       ],
       "proposed_target": ".agents/skills/team-release/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Four actual sequential scoped equivalents: shared-parent conflict preserves canon, missing capability named PENDING, release stage and S2 full-workflow NO-GO, real failing test and canonical QA-to-owner acknowledged handoff. All3 automation modes preserve user permission and stage guard.",
+      "status": "EQUIVALENT",
+      "task": "CGS-22",
+      "target": ".agents/skills/team-release/SKILL.md",
+      "target_sha256": "174fac210b2af118055fe05341b66afadd83c3047b26a94f6064392243968152",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-22/README.md",
+        "docs/codex/evidence/CGS-22/checks.json",
+        "docs/codex/evidence/CGS-22/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/team-ui/SKILL.md",

@@ -1,0 +1,11 @@
+project:
+  name: CGS22 fixture
+  stage: Release
+modes:
+  rigor: full
+  automation: collaborative
+team:
+  size: small
+platform:
+  online: false
+  multiplayer: false

@@ -1,0 +1,7 @@
+{
+  "command": "node docs/codex/evidence/CGS-22/fixture/tests/damage.test.mjs",
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "node:internal/modules/run_main:123\r\n    triggerUncaughtException(\r\n    ^\r\n\r\nAssertionError [ERR_ASSERTION]: negative damage must not increase health\r\n\r\n15 !== 10\r\n\r\n    at file:///D:/MyProjects/codex-game-studios/docs/codex/evidence/CGS-22/fixture/tests/damage.test.mjs:5:8\r\n    at ModuleJob.run (node:internal/modules/esm/module_job:345:25)\r\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:651:26)\r\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {\r\n  generatedMessage: false,\r\n  code: 'ERR_ASSERTION',\r\n  actual: 15,\r\n  expected: 10,\r\n  operator: 'strictEqual',\r\n  diff: 'simple'\r\n}\r\n\r\nNode.js v22.19.0\r\n",
+  "damage_sha256": "741d710fcc7502f36b416d8c3b73d9735c2c93816193e1d032901effec31ddd3"
+}

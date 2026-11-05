@@ -1,0 +1,6 @@
+project:
+  name: CGS22 autonomous
+  stage: Polish
+modes:
+  rigor: full
+  automation: autonomous
