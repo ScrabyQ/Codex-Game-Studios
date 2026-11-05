@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "story": "production/epics/counter/story-001-counter.md",
+  "engine": "Godot 4.7.2.stable.steam.ed1daf0bf",
+  "source_sha256": {
+    "src/score_counter.gd": "239e7f5c9aae1c4e4ee8234d294ede485b06027272157137f14ad6690b4dbc18",
+    "tests/score_counter_test.gd": "dd7a6a341ad72ab6ea6f3cb017259604da78985fdaa272fdaeac037d40b8a726"
+  },
+  "checks": [
+    {
+      "name": "import",
+      "command": "\"C:/Program Files (x86)/Steam/steamapps/common/Godot Engine/godot.windows.opt.tools.64.exe\" \"--headless\" \"--path\" \"D:\\MyProjects\\codex-game-studios\\.scratch\\cgs15-counter-ZAndNQ\" \"--import\"",
+      "exit_code": 0,
+      "error": null,
+      "stdout": "Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org\r\n\r\n[   0% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Started Project initialization (5 steps)\u001b[39m\u001b[0m\r\n[   0% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Scanning file structure...\u001b[39m\u001b[0m\r\n[  16% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Loading global class names...\u001b[39m\u001b[0m\r\n[  33% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Verifying GDExtensions...\u001b[39m\u001b[0m\r\n[  50% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Creating autoload scripts...\u001b[39m\u001b[0m\r\n[  66% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Initializing plugins...\u001b[39m\u001b[0m\r\n[  83% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Starting file scan...\u001b[39m\u001b[0m\r\n\u001b[92m[ DONE ]\u001b[39m \u001b[1mfirst_scan_filesystem\u001b[22m\r\n\u001b[0m\r\n[   0% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Started Loading editor (5 steps)\u001b[39m\u001b[0m\r\n[   0% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Loading editor layout...\u001b[39m\u001b[0m\r\n[  16% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Loading docks...\u001b[39m\u001b[0m\r\n\u001b[92m[ DONE ]\u001b[39m \u001b[1mloading_editor_layout\u001b[22m\r\n\u001b[0m\r\n",
+      "stderr": ""
+    },
+    {
+      "name": "parse",
+      "command": "\"C:/Program Files (x86)/Steam/steamapps/common/Godot Engine/godot.windows.opt.tools.64.exe\" \"--headless\" \"--path\" \"D:\\MyProjects\\codex-game-studios\\.scratch\\cgs15-counter-ZAndNQ\" \"--script\" \"D:\\MyProjects\\codex-game-studios\\.agents\\scripts\\godot-parse-check.gd\" \"--\" \"res://src/score_counter.gd\"",
+      "exit_code": 0,
+      "error": null,
+      "stdout": "Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org\r\n\r\nok: res://src/score_counter.gd\r\n",
+      "stderr": ""
+    },
+    {
+      "name": "test",
+      "command": "\"C:/Program Files (x86)/Steam/steamapps/common/Godot Engine/godot.windows.opt.tools.64.exe\" \"--headless\" \"--path\" \"D:\\MyProjects\\codex-game-studios\\.scratch\\cgs15-counter-ZAndNQ\" \"--script\" \"res://tests/score_counter_test.gd\"",
+      "exit_code": 0,
+      "error": null,
+      "stdout": "Godot Engine v4.7.2.stable.steam.ed1daf0bf - https://godotengine.org\r\n\r\nPASS: initial, increment, repeated increment and reset\r\n",
+      "stderr": ""
+    }
+  ],
+  "run_result": "N/A — nonvisual pure logic has no rendered surface",
+  "note": "Standalone SceneTree fixture runner; gdUnit4 is not claimed installed."
+}

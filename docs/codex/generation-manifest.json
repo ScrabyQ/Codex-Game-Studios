@@ -3081,6 +3081,23 @@
       "ownership": "generated"
     },
     {
+      "id": "file:.claude/skills/code-review/SKILL.md=>.agents/skills/code-review/SKILL.md",
+      "source": ".claude/skills/code-review/SKILL.md",
+      "source_sha256": "3468d605b4627e0568c80d0732d1ab1281652641f3dede555191657c40571b8c",
+      "target": ".agents/skills/code-review/SKILL.md",
+      "target_sha256": "527a4ae1d5f227c9b6a942b7a5c60a5bc92d30155d76e15946e82e2febc0850e",
+      "transform_version": 1,
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:b57f945ae4708a8896693b888a780d4cc40b9a8d55dc6b002b7779825899fc00"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
       "id": "file:.claude/skills/consistency-check/SKILL.md=>.agents/skills/consistency-check/SKILL.md",
       "source": ".claude/skills/consistency-check/SKILL.md",
       "source_sha256": "be7697de6ff3b8b38b0078c7fa9a71eafe87cc04d008db7192a0439e3d000228",
@@ -3469,6 +3486,78 @@
       "ownership": "generated"
     },
     {
+      "id": "file:.claude/skills/dev-story/SKILL.md=>.agents/skills/dev-story/agents/openai.yaml",
+      "source": ".claude/skills/dev-story/SKILL.md",
+      "source_sha256": "ca76457c34ec9a8468c34bcc55664273eff2b077afbebe36f1dda0c8ec8e474d",
+      "target": ".agents/skills/dev-story/agents/openai.yaml",
+      "target_sha256": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94",
+      "transform_version": 1,
+      "transform_ids": [
+        "explicit-invocation-policy-v1"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/dev-story/CONTRACT.md=>.agents/skills/dev-story/CONTRACT.md",
+      "source": ".claude/skills/dev-story/CONTRACT.md",
+      "source_sha256": "95abf80e16dfc28230989db818e6f8afeb05d73cb4600882855f598f5ee77071",
+      "target": ".agents/skills/dev-story/CONTRACT.md",
+      "target_sha256": "b715b2e7cf66ae78ac5a0ac5613b4a17014456a7244698c5db6f044d3b429010",
+      "transform_version": 1,
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:b365510c1a36fbb49302ebc55f7c49ca443feb2e55ac556ad212481699fe52f3"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/dev-story/references/engine-checks.md=>.agents/skills/dev-story/references/engine-checks.md",
+      "source": ".claude/skills/dev-story/references/engine-checks.md",
+      "source_sha256": "c3ec789cc1c424366e5e85ebc56e5df317b5dfdd011f9e944e6242235640fdb4",
+      "target": ".agents/skills/dev-story/references/engine-checks.md",
+      "target_sha256": "c3ec789cc1c424366e5e85ebc56e5df317b5dfdd011f9e944e6242235640fdb4",
+      "transform_version": 1,
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:b365510c1a36fbb49302ebc55f7c49ca443feb2e55ac556ad212481699fe52f3"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/dev-story/references/version-mismatch.md=>.agents/skills/dev-story/references/version-mismatch.md",
+      "source": ".claude/skills/dev-story/references/version-mismatch.md",
+      "source_sha256": "2f38c7964569cba3b22bfbfc0cc702ecb1c4580e7aa294994b3047cae9318a41",
+      "target": ".agents/skills/dev-story/references/version-mismatch.md",
+      "target_sha256": "580aed9de5ab3d43f1d49a9fce8eb13866436131df15eeebfc220feeab3212fb",
+      "transform_version": 1,
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:b365510c1a36fbb49302ebc55f7c49ca443feb2e55ac556ad212481699fe52f3"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/dev-story/SKILL.md=>.agents/skills/dev-story/SKILL.md",
+      "source": ".claude/skills/dev-story/SKILL.md",
+      "source_sha256": "ca76457c34ec9a8468c34bcc55664273eff2b077afbebe36f1dda0c8ec8e474d",
+      "target": ".agents/skills/dev-story/SKILL.md",
+      "target_sha256": "4639688b592a0e9d5f8b0ea83a2dbd1c4cb72b5aab576edca37adbc79ce9da12",
+      "transform_version": 1,
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:b365510c1a36fbb49302ebc55f7c49ca443feb2e55ac556ad212481699fe52f3"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
       "id": "file:.claude/skills/estimate/SKILL.md=>.agents/skills/estimate/SKILL.md",
       "source": ".claude/skills/estimate/SKILL.md",
       "source_sha256": "61d821627b3db4f4038f60b7ce799599a219b864036023ce15d5fc85348874f0",
@@ -3714,6 +3803,23 @@
         "codex-question-delegation-v1",
         "native-skill-invocation-v1",
         "overlay-sha256:4f541fc4ae1043bb046e124ebea9810659328a418478b6beb11ef9b80ba9b742"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/perf-profile/SKILL.md=>.agents/skills/perf-profile/SKILL.md",
+      "source": ".claude/skills/perf-profile/SKILL.md",
+      "source_sha256": "6d9d1967d68f06b2d3f4f4f8b144ea38894612d3cf9885e50c459fcfa8dc6e8b",
+      "target": ".agents/skills/perf-profile/SKILL.md",
+      "target_sha256": "c7534010d0c6842387c4dbacf37f0c18780164fd7e0712e9feda66312d94d9e8",
+      "transform_version": 1,
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:f77c0ba049babd00e4175b352c776615185646ce0cfb164b029a9cc415355322"
       ],
       "owner": "CGS-05",
       "ownership": "generated"
@@ -4498,6 +4604,92 @@
       "ownership": "generated"
     },
     {
+      "id": "file:.claude/skills/story-done/SKILL.md=>.agents/skills/story-done/agents/openai.yaml",
+      "source": ".claude/skills/story-done/SKILL.md",
+      "source_sha256": "3946b6770a8f27fd679a0a2f5d9c8aec6096bba6ee7982827700d1b542c9e74f",
+      "target": ".agents/skills/story-done/agents/openai.yaml",
+      "target_sha256": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94",
+      "transform_version": 1,
+      "transform_ids": [
+        "explicit-invocation-policy-v1"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/story-done/CONTRACT.md=>.agents/skills/story-done/CONTRACT.md",
+      "source": ".claude/skills/story-done/CONTRACT.md",
+      "source_sha256": "b805929ac2ad562172f5ff9d0492268b172cd7db0f3043a94bf35dc7eec9117a",
+      "target": ".agents/skills/story-done/CONTRACT.md",
+      "target_sha256": "6f3e49412eefbf1b83b0427895388fa14417232d3dd1646a514fb671a4f45433",
+      "transform_version": 1,
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:a1b7b03dbfd4f1d614f94949188a4b0f653beafc8236667e6590c40f8c2c7759"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/story-done/references/review-gates.md=>.agents/skills/story-done/references/review-gates.md",
+      "source": ".claude/skills/story-done/references/review-gates.md",
+      "source_sha256": "49618b4e574a5db5dd9b25bc681b92d357b513ef9e05c760a4509d0471913741",
+      "target": ".agents/skills/story-done/references/review-gates.md",
+      "target_sha256": "49618b4e574a5db5dd9b25bc681b92d357b513ef9e05c760a4509d0471913741",
+      "transform_version": 1,
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:a1b7b03dbfd4f1d614f94949188a4b0f653beafc8236667e6590c40f8c2c7759"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/story-done/references/sprint-next.md=>.agents/skills/story-done/references/sprint-next.md",
+      "source": ".claude/skills/story-done/references/sprint-next.md",
+      "source_sha256": "d18331c32a0e15ac6858d60ac4c9b220b81da607c3f5c83f69eaa691cc932c10",
+      "target": ".agents/skills/story-done/references/sprint-next.md",
+      "target_sha256": "7b6ccd2b4abad443b990b28da8ba2db1d861e28c3005d08e1abc5f00d8eef116",
+      "transform_version": 1,
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:a1b7b03dbfd4f1d614f94949188a4b0f653beafc8236667e6590c40f8c2c7759"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/story-done/references/tech-debt-row.md=>.agents/skills/story-done/references/tech-debt-row.md",
+      "source": ".claude/skills/story-done/references/tech-debt-row.md",
+      "source_sha256": "9bc9090f96ee6b1e3e03a99fee382dcd5029647f07ce1bcdb6d730a492f8c31e",
+      "target": ".agents/skills/story-done/references/tech-debt-row.md",
+      "target_sha256": "876c7b10231b65a2c7883a4dd8a36eefdba529a2dee5e56bcbef2aa675cf1b21",
+      "transform_version": 1,
+      "transform_ids": [
+        "resource-runtime-adaptation-v1",
+        "overlay-sha256:a1b7b03dbfd4f1d614f94949188a4b0f653beafc8236667e6590c40f8c2c7759"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/story-done/SKILL.md=>.agents/skills/story-done/SKILL.md",
+      "source": ".claude/skills/story-done/SKILL.md",
+      "source_sha256": "3946b6770a8f27fd679a0a2f5d9c8aec6096bba6ee7982827700d1b542c9e74f",
+      "target": ".agents/skills/story-done/SKILL.md",
+      "target_sha256": "4f456077f5ab026be4e236a5b1f1fa21b470c479e1e0c02787a0a94ac51af97a",
+      "transform_version": 1,
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:a1b7b03dbfd4f1d614f94949188a4b0f653beafc8236667e6590c40f8c2c7759"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
       "id": "file:.claude/skills/story-readiness/CONTRACT.md=>.agents/skills/story-readiness/CONTRACT.md",
       "source": ".claude/skills/story-readiness/CONTRACT.md",
       "source_sha256": "9f72e5fad1591d91ddb19f295ef392ac31d227908c248354b7584327ebd73891",
@@ -4623,6 +4815,23 @@
         "codex-question-delegation-v1",
         "native-skill-invocation-v1",
         "overlay-sha256:d18961337194f1f5fbaff825a042e6b4f88600be4b77a8a47a9119da023958fc"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/tech-debt/SKILL.md=>.agents/skills/tech-debt/SKILL.md",
+      "source": ".claude/skills/tech-debt/SKILL.md",
+      "source_sha256": "11299c8a170286b24a040e965fc19d74d9d631b32a021678286e4480a24d1408",
+      "target": ".agents/skills/tech-debt/SKILL.md",
+      "target_sha256": "ca504b7aaac0e29434d04cd03f7a2a7718fd44312c690a68797ac88ca12786d2",
+      "transform_version": 1,
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:ab001fbd0cc03a031b3a8b50dd34558ba7f3779d897197603afeb032205a72db"
       ],
       "owner": "CGS-05",
       "ownership": "generated"

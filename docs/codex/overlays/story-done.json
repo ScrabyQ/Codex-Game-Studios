@@ -1,0 +1,14 @@
+{
+  "source_sha256": "3946b6770a8f27fd679a0a2f5d9c8aec6096bba6ee7982827700d1b542c9e74f",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-15 execution and evidence contract:** Resolve the selected project root, workflow, QA and engine settings with provenance; use native tooling and actual supported events. Read each source and target artifact before assessing it; an unavailable check or missing/unreadable input is NOT ASSESSED, never a pass. Respect existing user authorization and host permissions, and run the explicit hook proposal/post-write checks when applicable. Use native delegation only when available and authorized; otherwise disclose an in-session review is not independent and leave any required independent review NOT ASSESSED. No next skill runs automatically.\n\nRun only when explicitly invoked. Close only after every required criterion and evidence item is actually verified and current; a failed, missing, unreadable or stale required test/capture remains BLOCKED or NOT ASSESSED, never Complete even if a source-runtime shortcut offers an override. Check scope against actual changed paths, and preserve unrelated edits. A failed or interrupted close does not set Complete. No independent review is claimed for in-session work; minimal QA waivers never waive visible evidence.\n\n"
+    },
+    {
+      "target": "CONTRACT.md",
+      "find": "# $story-done — Handoff Contract\n",
+      "replace": "# $story-done — Handoff Contract\n\n**CGS-15 Codex closure constraint:** The source-runtime override and existence-only statements below are retained for provenance. This adaptation does not close a story with a failed or unassessed criterion, or with missing/unreadable/stale required evidence; check real current evidence and leave the story open until resolved. Tier-specific QA waivers remain applicable, and visible evidence is never waived.\n"
+    }
+  ]
+}

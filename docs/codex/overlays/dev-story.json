@@ -1,0 +1,9 @@
+{
+  "source_sha256": "ca76457c34ec9a8468c34bcc55664273eff2b077afbebe36f1dda0c8ec8e474d",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-15 execution and evidence contract:** Resolve the selected project root, workflow, QA and engine settings with provenance; use native tooling and actual supported events. Read each source and target artifact before assessing it; an unavailable check or missing/unreadable input is NOT ASSESSED, never a pass. Respect existing user authorization and host permissions, and run the explicit hook proposal/post-write checks when applicable. Use native delegation only when available and authorized; otherwise disclose an in-session review is not independent and leave any required independent review NOT ASSESSED. No next skill runs automatically.\n\nRun only when explicitly invoked for a named story. Check ADRs and dependency statuses before implementation, preserve story boundaries and explicit decisions. A stopped or interrupted implementation remains INCOMPLETE/In Progress; preserve a checkpoint naming the blocker, do not declare completion. Confirm written files actually exist and stay within scope. Execute the engine-specific parse check; for any player-visible change actually launch, retain and open a screenshot and compare criteria. Missing capture is NOT VERIFIED, not a pass.\n\n"
+    }
+  ]
+}

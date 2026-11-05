@@ -4986,8 +4986,18 @@
       ],
       "proposed_target": ".agents/skills/code-review/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual minimal/solo nonvisual Godot story, import/parse/tests exit0, current hashes and3AC verified; stale/missing/out-of-scope controls prevent closure, interruption remains In Progress. Independent reviews/perf/native policy enforcement unassessed; explicit-only policy metadata generated.",
+      "status": "EQUIVALENT",
+      "task": "CGS-15",
+      "target": ".agents/skills/code-review/SKILL.md",
+      "target_sha256": "527a4ae1d5f227c9b6a942b7a5c60a5bc92d30155d76e15946e82e2febc0850e",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-15/README.md",
+        "docs/codex/evidence/CGS-15/godot-test-run.json",
+        "docs/codex/evidence/CGS-15/guards.json",
+        "docs/codex/evidence/CGS-15/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/consistency-check/SKILL.md",
@@ -5631,8 +5641,18 @@
       ],
       "proposed_target": ".agents/skills/dev-story/CONTRACT.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual minimal/solo nonvisual Godot story, import/parse/tests exit0, current hashes and3AC verified; stale/missing/out-of-scope controls prevent closure, interruption remains In Progress. Independent reviews/perf/native policy enforcement unassessed; explicit-only policy metadata generated.",
+      "status": "EQUIVALENT",
+      "task": "CGS-15",
+      "target": ".agents/skills/dev-story/CONTRACT.md",
+      "target_sha256": "b715b2e7cf66ae78ac5a0ac5613b4a17014456a7244698c5db6f044d3b429010",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-15/README.md",
+        "docs/codex/evidence/CGS-15/godot-test-run.json",
+        "docs/codex/evidence/CGS-15/guards.json",
+        "docs/codex/evidence/CGS-15/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/dev-story/SKILL.md",
@@ -5649,8 +5669,23 @@
       ],
       "proposed_target": ".agents/skills/dev-story/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual minimal/solo nonvisual Godot story, import/parse/tests exit0, current hashes and3AC verified; stale/missing/out-of-scope controls prevent closure, interruption remains In Progress. Independent reviews/perf/native policy enforcement unassessed; explicit-only policy metadata generated.",
+      "status": "EQUIVALENT",
+      "task": "CGS-15",
+      "target": ".agents/skills/dev-story/agents/openai.yaml",
+      "target_sha256": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94",
+      "related_targets": [
+        {
+          "target": ".agents/skills/dev-story/SKILL.md",
+          "sha256": "4639688b592a0e9d5f8b0ea83a2dbd1c4cb72b5aab576edca37adbc79ce9da12"
+        }
+      ],
+      "evidence": [
+        "docs/codex/evidence/CGS-15/README.md",
+        "docs/codex/evidence/CGS-15/godot-test-run.json",
+        "docs/codex/evidence/CGS-15/guards.json",
+        "docs/codex/evidence/CGS-15/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/dev-story/references/engine-checks.md",
@@ -5663,8 +5698,18 @@
       ],
       "proposed_target": ".agents/skills/dev-story/references/engine-checks.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual minimal/solo nonvisual Godot story, import/parse/tests exit0, current hashes and3AC verified; stale/missing/out-of-scope controls prevent closure, interruption remains In Progress. Independent reviews/perf/native policy enforcement unassessed; explicit-only policy metadata generated.",
+      "status": "EQUIVALENT",
+      "task": "CGS-15",
+      "target": ".agents/skills/dev-story/references/engine-checks.md",
+      "target_sha256": "c3ec789cc1c424366e5e85ebc56e5df317b5dfdd011f9e944e6242235640fdb4",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-15/README.md",
+        "docs/codex/evidence/CGS-15/godot-test-run.json",
+        "docs/codex/evidence/CGS-15/guards.json",
+        "docs/codex/evidence/CGS-15/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/dev-story/references/version-mismatch.md",
@@ -5677,8 +5722,18 @@
       ],
       "proposed_target": ".agents/skills/dev-story/references/version-mismatch.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual minimal/solo nonvisual Godot story, import/parse/tests exit0, current hashes and3AC verified; stale/missing/out-of-scope controls prevent closure, interruption remains In Progress. Independent reviews/perf/native policy enforcement unassessed; explicit-only policy metadata generated.",
+      "status": "EQUIVALENT",
+      "task": "CGS-15",
+      "target": ".agents/skills/dev-story/references/version-mismatch.md",
+      "target_sha256": "580aed9de5ab3d43f1d49a9fce8eb13866436131df15eeebfc220feeab3212fb",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-15/README.md",
+        "docs/codex/evidence/CGS-15/godot-test-run.json",
+        "docs/codex/evidence/CGS-15/guards.json",
+        "docs/codex/evidence/CGS-15/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/estimate/SKILL.md",
@@ -6203,8 +6258,18 @@
       ],
       "proposed_target": ".agents/skills/perf-profile/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual minimal/solo nonvisual Godot story, import/parse/tests exit0, current hashes and3AC verified; stale/missing/out-of-scope controls prevent closure, interruption remains In Progress. Independent reviews/perf/native policy enforcement unassessed; explicit-only policy metadata generated.",
+      "status": "EQUIVALENT",
+      "task": "CGS-15",
+      "target": ".agents/skills/perf-profile/SKILL.md",
+      "target_sha256": "c7534010d0c6842387c4dbacf37f0c18780164fd7e0712e9feda66312d94d9e8",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-15/README.md",
+        "docs/codex/evidence/CGS-15/godot-test-run.json",
+        "docs/codex/evidence/CGS-15/guards.json",
+        "docs/codex/evidence/CGS-15/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/playtest-report/SKILL.md",
@@ -7537,8 +7602,18 @@
       ],
       "proposed_target": ".agents/skills/story-done/CONTRACT.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual minimal/solo nonvisual Godot story, import/parse/tests exit0, current hashes and3AC verified; stale/missing/out-of-scope controls prevent closure, interruption remains In Progress. Independent reviews/perf/native policy enforcement unassessed; explicit-only policy metadata generated.",
+      "status": "EQUIVALENT",
+      "task": "CGS-15",
+      "target": ".agents/skills/story-done/CONTRACT.md",
+      "target_sha256": "6f3e49412eefbf1b83b0427895388fa14417232d3dd1646a514fb671a4f45433",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-15/README.md",
+        "docs/codex/evidence/CGS-15/godot-test-run.json",
+        "docs/codex/evidence/CGS-15/guards.json",
+        "docs/codex/evidence/CGS-15/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/story-done/SKILL.md",
@@ -7555,8 +7630,23 @@
       ],
       "proposed_target": ".agents/skills/story-done/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual minimal/solo nonvisual Godot story, import/parse/tests exit0, current hashes and3AC verified; stale/missing/out-of-scope controls prevent closure, interruption remains In Progress. Independent reviews/perf/native policy enforcement unassessed; explicit-only policy metadata generated.",
+      "status": "EQUIVALENT",
+      "task": "CGS-15",
+      "target": ".agents/skills/story-done/agents/openai.yaml",
+      "target_sha256": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94",
+      "related_targets": [
+        {
+          "target": ".agents/skills/story-done/SKILL.md",
+          "sha256": "4f456077f5ab026be4e236a5b1f1fa21b470c479e1e0c02787a0a94ac51af97a"
+        }
+      ],
+      "evidence": [
+        "docs/codex/evidence/CGS-15/README.md",
+        "docs/codex/evidence/CGS-15/godot-test-run.json",
+        "docs/codex/evidence/CGS-15/guards.json",
+        "docs/codex/evidence/CGS-15/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/story-done/references/review-gates.md",
@@ -7569,8 +7659,18 @@
       ],
       "proposed_target": ".agents/skills/story-done/references/review-gates.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual minimal/solo nonvisual Godot story, import/parse/tests exit0, current hashes and3AC verified; stale/missing/out-of-scope controls prevent closure, interruption remains In Progress. Independent reviews/perf/native policy enforcement unassessed; explicit-only policy metadata generated.",
+      "status": "EQUIVALENT",
+      "task": "CGS-15",
+      "target": ".agents/skills/story-done/references/review-gates.md",
+      "target_sha256": "49618b4e574a5db5dd9b25bc681b92d357b513ef9e05c760a4509d0471913741",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-15/README.md",
+        "docs/codex/evidence/CGS-15/godot-test-run.json",
+        "docs/codex/evidence/CGS-15/guards.json",
+        "docs/codex/evidence/CGS-15/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/story-done/references/sprint-next.md",
@@ -7583,8 +7683,18 @@
       ],
       "proposed_target": ".agents/skills/story-done/references/sprint-next.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual minimal/solo nonvisual Godot story, import/parse/tests exit0, current hashes and3AC verified; stale/missing/out-of-scope controls prevent closure, interruption remains In Progress. Independent reviews/perf/native policy enforcement unassessed; explicit-only policy metadata generated.",
+      "status": "EQUIVALENT",
+      "task": "CGS-15",
+      "target": ".agents/skills/story-done/references/sprint-next.md",
+      "target_sha256": "7b6ccd2b4abad443b990b28da8ba2db1d861e28c3005d08e1abc5f00d8eef116",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-15/README.md",
+        "docs/codex/evidence/CGS-15/godot-test-run.json",
+        "docs/codex/evidence/CGS-15/guards.json",
+        "docs/codex/evidence/CGS-15/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/story-done/references/tech-debt-row.md",
@@ -7597,8 +7707,18 @@
       ],
       "proposed_target": ".agents/skills/story-done/references/tech-debt-row.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual minimal/solo nonvisual Godot story, import/parse/tests exit0, current hashes and3AC verified; stale/missing/out-of-scope controls prevent closure, interruption remains In Progress. Independent reviews/perf/native policy enforcement unassessed; explicit-only policy metadata generated.",
+      "status": "EQUIVALENT",
+      "task": "CGS-15",
+      "target": ".agents/skills/story-done/references/tech-debt-row.md",
+      "target_sha256": "876c7b10231b65a2c7883a4dd8a36eefdba529a2dee5e56bcbef2aa675cf1b21",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-15/README.md",
+        "docs/codex/evidence/CGS-15/godot-test-run.json",
+        "docs/codex/evidence/CGS-15/guards.json",
+        "docs/codex/evidence/CGS-15/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/story-readiness/CONTRACT.md",
@@ -7895,8 +8015,18 @@
       ],
       "proposed_target": ".agents/skills/tech-debt/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Actual minimal/solo nonvisual Godot story, import/parse/tests exit0, current hashes and3AC verified; stale/missing/out-of-scope controls prevent closure, interruption remains In Progress. Independent reviews/perf/native policy enforcement unassessed; explicit-only policy metadata generated.",
+      "status": "EQUIVALENT",
+      "task": "CGS-15",
+      "target": ".agents/skills/tech-debt/SKILL.md",
+      "target_sha256": "ca504b7aaac0e29434d04cd03f7a2a7718fd44312c690a68797ac88ca12786d2",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-15/README.md",
+        "docs/codex/evidence/CGS-15/godot-test-run.json",
+        "docs/codex/evidence/CGS-15/guards.json",
+        "docs/codex/evidence/CGS-15/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/test-evidence-review/SKILL.md",

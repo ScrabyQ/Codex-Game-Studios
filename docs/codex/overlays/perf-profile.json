@@ -1,0 +1,25 @@
+{
+  "source_sha256": "6d9d1967d68f06b2d3f4f4f8b144ea38894612d3cf9885e50c459fcfa8dc6e8b",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-15 execution and evidence contract:** Resolve the selected project root, workflow, QA and engine settings with provenance; use native tooling and actual supported events. Read each source and target artifact before assessing it; an unavailable check or missing/unreadable input is NOT ASSESSED, never a pass. Respect existing user authorization and host permissions, and run the explicit hook proposal/post-write checks when applicable. Use native delegation only when available and authorized; otherwise disclose an in-session review is not independent and leave any required independent review NOT ASSESSED. No next skill runs automatically.\n\nDistinguish static hotspot candidates from actual runtime measurements. No measured sample or no applicable committed budget means the affected metric and headroom are NOT ASSESSED. Do not fabricate frame time, profiler data, budgets, speedups or target-hardware results. Only produce a measured verdict from actual profiling evidence.\n\n"
+    },
+    {
+      "find": "bash \"${resolved skill directory}/../../hooks/yaml-helper.sh\" get_effective_yaml_key performance.target_framerate",
+      "replace": "node scripts/codex/helper.mjs yaml-helper --root <absolute-project-root> get_effective_yaml_key performance.target_framerate"
+    },
+    {
+      "find": "bash \"${resolved skill directory}/../../hooks/yaml-helper.sh\" get_effective_yaml_key performance.frame_budget_ms",
+      "replace": "node scripts/codex/helper.mjs yaml-helper --root <absolute-project-root> get_effective_yaml_key performance.frame_budget_ms"
+    },
+    {
+      "find": "bash \"${resolved skill directory}/../../hooks/yaml-helper.sh\" get_effective_yaml_key performance.draw_call_limit",
+      "replace": "node scripts/codex/helper.mjs yaml-helper --root <absolute-project-root> get_effective_yaml_key performance.draw_call_limit"
+    },
+    {
+      "find": "bash \"${resolved skill directory}/../../hooks/yaml-helper.sh\" get_effective_yaml_key performance.memory_ceiling_mb",
+      "replace": "node scripts/codex/helper.mjs yaml-helper --root <absolute-project-root> get_effective_yaml_key performance.memory_ceiling_mb"
+    }
+  ]
+}

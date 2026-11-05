@@ -5,9 +5,9 @@
   "upstream_sha": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
   "owner": "ScrabyQ",
   "repository": "Codex-Game-Studios",
-  "last_completed": "CGS-17",
-  "current_task": "CGS-18",
-  "next_safe_step": "QA runner PASS/FAIL/missing-runner and honest evidence states verified; framework QA, implementation and second team group active.",
+  "last_completed": "CGS-15",
+  "current_task": "CGS-19",
+  "next_safe_step": "Single-story Godot lifecycle verified, including interruption and stale-evidence guards. Continue framework QA, production content and orchestration; release group20 remains.",
   "decisions": [
     "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED.",
     "Generated content-preserving .agents mirror retains helper root math; native roles use .codex/agents/*.toml; all generation is hash-guarded; no new agent runtime."
@@ -228,10 +228,16 @@
       "key": "CGS-15",
       "singularity_id": "T-c781e5a2-2378-4b46-b7c9-638ebfdb12e7",
       "title": "CGS-15 · Skills · реализация одной story и code-review (5)",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "commit": null,
-      "evidence": [],
-      "updated_at": "2026-11-05T11:59:16.133Z"
+      "evidence": [
+        "docs/codex/evidence/CGS-15/README.md",
+        "docs/codex/evidence/CGS-15/godot-test-run.json",
+        "docs/codex/evidence/CGS-15/guards.json",
+        "docs/codex/evidence/CGS-15/traceability.json"
+      ],
+      "updated_at": "2026-11-05T12:02:49.972Z",
+      "note": "Single-story Godot lifecycle verified, including interruption and stale-evidence guards. Continue framework QA, production content and orchestration; release group20 remains."
     },
     {
       "key": "CGS-16",
@@ -252,22 +258,24 @@
       "singularity_id": "T-7a31b7a2-3a57-4ced-aeac-87de5afc14d1",
       "title": "CGS-17 · Skills · QA-тесты, доказательства, flakiness (8)",
       "status": "COMPLETE",
-      "commit": null,
+      "commit": "71eb15c86466beb514a234115790a1457e7fda72",
       "evidence": [
         "docs/codex/evidence/CGS-17/README.md",
         "docs/codex/evidence/CGS-17/runner-results.json",
         "docs/codex/evidence/CGS-17/traceability.json"
       ],
-      "updated_at": "2026-11-05T12:00:22.632Z",
+      "updated_at": "2026-11-05T12:01:59.219Z",
       "note": "QA runner PASS/FAIL/missing-runner and honest evidence states verified; framework QA, implementation and second team group active."
     },
     {
       "key": "CGS-18",
       "singularity_id": "T-0250fa16-61df-4ddb-bb40-b21f03250b8d",
       "title": "CGS-18 · Skills · тестирование самой студии, playtest, bugs (5)",
-      "status": "PENDING",
+      "status": "IN_PROGRESS",
       "commit": null,
-      "evidence": []
+      "evidence": [],
+      "note": "Framework QA overlays generated; run native structural negatives and grounded bug/human-playtest evidence. Remaining core groups15,19,20,22 plus final engine/CI/sync/docs/audit.",
+      "updated_at": "2026-11-05T12:01:59.286Z"
     },
     {
       "key": "CGS-19",

@@ -1,0 +1,13 @@
+schema_version: 1
+project:
+  stage: Production
+modes:
+  rigor: minimal
+  automation: collaborative
+engine:
+  name: Godot
+  version: 4.7.2
+  language: GDScript
+  path: C:/Program Files (x86)/Steam/steamapps/common/Godot Engine/godot.windows.opt.tools.64.exe
+specialists:
+  code: godot-gdscript-specialist

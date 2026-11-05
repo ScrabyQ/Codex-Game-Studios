@@ -1,0 +1,9 @@
+{
+  "source_sha256": "11299c8a170286b24a040e965fc19d74d9d631b32a021678286e4480a24d1408",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-15 execution and evidence contract:** Resolve the selected project root, workflow, QA and engine settings with provenance; use native tooling and actual supported events. Read each source and target artifact before assessing it; an unavailable check or missing/unreadable input is NOT ASSESSED, never a pass. Respect existing user authorization and host permissions, and run the explicit hook proposal/post-write checks when applicable. Use native delegation only when available and authorized; otherwise disclose an in-session review is not independent and leave any required independent review NOT ASSESSED. No next skill runs automatically.\n\nScan only the resolved code root and report the number of source files actually inspected. Missing/unresolved/empty inputs are NOT ASSESSED, not a clean debt finding. Preserve matching/ID rules and existing register entries; write or update only with applicable authorization.\n\n"
+    }
+  ]
+}

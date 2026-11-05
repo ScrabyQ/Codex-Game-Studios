@@ -22,12 +22,14 @@ export function skillTargets(root,names){
  const selected=names||available; for(const name of selected) if(!available.includes(name)) throw Error(`Unknown skill: ${name}`);
  const plans=[];
  for(const src of sources.filter(s=>selected.includes(s.path.split('/')[2]))){
-  let bytes=readFileSync(path.join(root,src.path)); const target=src.path.replace(/^\.claude\/skills\//,'.agents/skills/');let ids=[];
+  let bytes=readFileSync(path.join(root,src.path)); const target=src.path.replace(/^\.claude\/skills\//,'.agents/skills/');let ids=[], explicitInvocation=false;
   if(src.path.endsWith('/SKILL.md')){
    const text=utf(bytes), m=/^---\n([\s\S]*?)\n---\n/.exec(text);if(!m)throw Error(`Malformed frontmatter ${src.path}`);
    const fields={};for(const line of m[1].split('\n')){if(/^\s*#/.test(line))continue;let x=/^([\w-]+):\s*(.*)$/.exec(line);if(!x || x[1] in fields)throw Error(`Malformed frontmatter ${src.path}: ${line}`);fields[x[1]]=x[2]}
    const permitted=['name','description','argument-hint','user-invocable','allowed-tools','model','disable-model-invocation'];for(const k of Object.keys(fields))if(!permitted.includes(k))throw Error(`Unknown source frontmatter ${k} in ${src.path}`);
    if(fields.name!==src.path.split('/')[2]||!fields.description||!fields['allowed-tools'])throw Error(`Invalid frontmatter ${src.path}`);
+   if(fields['disable-model-invocation'] && !['true','false'].includes(fields['disable-model-invocation']))throw Error(`Invalid invocation policy ${src.path}`);
+   explicitInvocation=fields['disable-model-invocation']==='true';
    let body=text.slice(m[0].length);
    body=body.replace(/!`([^`\n]+)`/g,(_,command)=>`**Explicit bootstrap (execute before using this output, from the resolved project root):** \`${command.replaceAll('${CLAUDE_SKILL_DIR}/../../','.agents/')}\`. If unavailable, report the missing dependency and do not invent results.`);
    body=body.replace(/\bAskUserQuestion\b/g,'available user-question tool (or ask in plain text and wait)');
@@ -67,6 +69,7 @@ export function skillTargets(root,names){
    bytes=Buffer.from(out,'utf8');ids.push(`overlay-sha256:${sha(raw)}`);
   }
   plans.push({source:src.path,source_sha256:src.sha256,target,content:bytes,transform_ids:ids,owner:'CGS-05',ownership:'generated'});
+  if(explicitInvocation)plans.push({source:src.path,source_sha256:src.sha256,target:`.agents/skills/${skill}/agents/openai.yaml`,content:Buffer.from('policy:\n  allow_implicit_invocation: false\n'),transform_ids:['explicit-invocation-policy-v1'],owner:'CGS-05',ownership:'generated'});
  }
  return plans;
 }

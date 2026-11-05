@@ -1,0 +1,13 @@
+{
+  "source_sha256": "3468d605b4627e0568c80d0732d1ab1281652641f3dede555191657c40571b8c",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-15 execution and evidence contract:** Resolve the selected project root, workflow, QA and engine settings with provenance; use native tooling and actual supported events. Read each source and target artifact before assessing it; an unavailable check or missing/unreadable input is NOT ASSESSED, never a pass. Respect existing user authorization and host permissions, and run the explicit hook proposal/post-write checks when applicable. Use native delegation only when available and authorized; otherwise disclose an in-session review is not independent and leave any required independent review NOT ASSESSED. No next skill runs automatically.\n\nRead actual target code and applicable path rules; resolve engine/specialists from project.yaml. Missing code, cited ADR, engine review, or other required input is NOT ASSESSED. Cite concrete file/line evidence for findings; disclose in-session review is not independent. This review is read-only.\n\n"
+    },
+    {
+      "find": "Read the target file(s) in full. Read CLAUDE.md for project coding standards.",
+      "replace": "Read the target file(s) in full. Read AGENTS.md and select applicable path-scoped rules for project coding standards."
+    }
+  ]
+}
