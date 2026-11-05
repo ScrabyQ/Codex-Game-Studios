@@ -3,6 +3,16 @@ import {lstatSync, readFileSync} from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 
+function activeLegacyInstruction(name, content) {
+  const instructions = /^(?:\.agents\/(?:skills|docs|rules)\/|\.codex\/agents\/|studio-tests\/|docs\/|\.github\/)/.test(name) || /(?:^|\/)(?:AGENTS|README|UPGRADING|CONTRIBUTING|CHANGELOG)\.md$/.test(name);
+  if (!instructions || !/\.(?:md|toml|ya?ml)$/.test(name)) return false;
+  return content.split(/\r?\n/).some(line => {
+    // Attribution, provenance headers and explicit negative examples are allowed.
+    if (/^\s*#\s*Generated from\b/i.test(line) || /\b(?:never|do not|must not|reject|forbidden|unsupported|negative example|source provenance|skip|skipping|exclude)\b/i.test(line)) return false;
+    return /\.claude[\\/]|\bCLAUDE(?:\.local)?\.md\b|@\.claude\b|\bAskUserQuestion\s*[:(]|\bsubagent_type\s*[:=]|\bCLAUDE_CODE_[A-Z_]+\b/.test(line) || /\b(?:use|invoke|call|required|must)\b.{0,80}\bAskUserQuestion\b/i.test(line);
+  });
+}
+
 export function inspect(root) {
   const names = execFileSync('git', ['ls-files', '-z', '--cached', '--others', '--exclude-standard'], {cwd:root}).toString().split('\0').filter(Boolean);
   const findings = [];
@@ -16,6 +26,9 @@ export function inspect(root) {
     }
     if (unsafe) continue;
     if (/(^|\/)\.env[^/]*$/i.test(name)) { findings.push([name, 'environment file']); continue; }
+    if (/(^|\/)\.claude(?:\/|$)|(^|\/)CLAUDE(?:\.local)?\.md$/i.test(name)) {
+      findings.push([name, 'legacy client file']); continue;
+    }
     if (/^docs\/codex\/(?:evidence\/|progress\.json$|fork\.json$|audit\.md$)/i.test(name) || /(^|\/)progress\.md$/i.test(name) || /\.(?:log|jsonl)$/i.test(name) || /^docs\/codex\/.*\.(?:png|jpe?g)$/i.test(name)) {
       findings.push([name, 'generated report']); continue;
     }
@@ -23,6 +36,7 @@ export function inspect(root) {
     try { bytes = readFileSync(path.join(root,name)); } catch (e) { if (e.code === 'ENOENT') continue; throw e; }
     if (bytes.includes(0)) continue;
     const content = bytes.toString('utf8');
+    if (activeLegacyInstruction(name, content)) findings.push([name, 'active legacy instruction']);
     if (/(?:[A-Za-z]:[\\/]+Users[\\/]+|\/Users\/|\/home\/)(?!(?:example|user|username|runner|me|shared)(?:[\\/]|$)|\$|\{|<)[\w.-]+[\\/]/i.test(content)) findings.push([name, 'personal path']);
     if (/-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|\bghp_[A-Za-z0-9]{36}\b|\bgithub_pat_[A-Za-z0-9_]{40,}\b|\bsk-(?:proj-)?[A-Za-z0-9_-]{20,}\b/.test(content)) findings.push([name, 'credential']);
   }

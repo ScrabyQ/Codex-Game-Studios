@@ -31,7 +31,7 @@ director gates apply.
 
 Checked against the SKILL.md by `/skill-test spec` — no fixture needed.
 
-- [ ] Has required frontmatter fields: `name`, `description`, `argument-hint`, `user-invocable`, `allowed-tools`
+- [ ] Skill frontmatter has nonempty `name` and `description`; optional invocation policy is checked in `agents/openai.yaml` when present, without assuming source-only fields
 - [ ] Has ≥2 phase headings
 - [ ] Contains verdict keywords: COMPLETE, BLOCKED, NOT ASSESSED
 - [ ] Contains "May I write" language before writing `tests/regression-suite.md`
@@ -41,8 +41,7 @@ Checked against the SKILL.md by `/skill-test spec` — no fixture needed.
 
 ## Director Gate Checks
 
-None. `/regression-suite` is a QA utility. It spawns no agents (`Agent` is not
-in its allowed tools) and no director gates apply.
+None. `/regression-suite` is a QA utility. It spawns no agents (its procedure requests no delegation) and no director gates apply.
 
 ---
 
@@ -50,7 +49,7 @@ in its allowed tools) and no director gates apply.
 
 Every case's `project.yaml` sets `modes.rigor: minimal` and
 `modes.automation: collaborative`, with no `project.local.yaml`, unless its own
-Fixture says otherwise. Rules: `studio-tests/CLAUDE.md` §
+Fixture says otherwise. Rules: `studio-tests/AGENTS.md` §
 Fixture defaults.
 
 ---
@@ -233,7 +232,7 @@ Fixture defaults.
 - [ ] At `workflow: minimal` the follow-up lines say "next story" in place of "next sprint"
 - [ ] Stops before scanning at `qa.level: minimal`
 - [ ] Reports `NOT ASSESSED` instead of a percentage when GDDs or tests are absent
-- [ ] Asks "May I write/update `tests/regression-suite.md`" before any write
+- [ ] Asks "May I write/update `tests/regression-suite.md`" before any write that still needs authorization
 - [ ] `update` only appends; existing manifest entries are never removed without approval
 - [ ] `report` writes nothing
 - [ ] Verdict, first match: NOT ASSESSED at the `qa.level: minimal` stop or when coverage was not computed (even after a write); else BLOCKED if the user declines the write; else COMPLETE

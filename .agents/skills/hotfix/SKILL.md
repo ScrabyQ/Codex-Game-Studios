@@ -116,11 +116,11 @@ Update the hotfix record with root cause, fix details, and test results.
 
 ## Phase 5: Collect Approvals
 
-Use the `Agent` tool to request sign-off in parallel:
+When authorized native delegation is available, request sign-off in parallel; otherwise report the non-independent in-session fallback or PENDING:
 
-- `subagent_type: lead-programmer` — Review the fix for correctness and side effects
-- `subagent_type: qa-tester` — Run targeted regression tests on the affected system
-- `subagent_type: producer` — Approve deployment timing and communication plan
+- `lead-programmer` — Review the fix for correctness and side effects
+- `qa-tester` — Run targeted regression tests on the affected system
+- `producer` — Approve deployment timing and communication plan
 
 All three must return APPROVE before proceeding. If any returns CONCERNS or REJECT, do not deploy — surface the issue and resolve it first.
 
@@ -128,7 +128,7 @@ All three must return APPROVE before proceeding. If any returns CONCERNS or REJE
 
 ## Phase 5b: QA Re-Entry Gate
 
-After approvals, determine the QA scope required before deploying the hotfix. Spawn `qa-lead` via `Agent` with:
+After approvals, determine the QA scope required before deploying the hotfix. Spawn `qa-lead` using available authorized native delegation with:
 - The hotfix description and affected system
 - The regression test results from Phase 5
 - A list of all systems that touch the changed files (use Grep to find callers)

@@ -1,8 +1,8 @@
-> Gate definition. The spawning skill passes this file's path to the director agent; the AGENT reads it — the parent session should not.
+> Gate definition. For authorized native delegation, pass this path so the assigned reviewer reads it first. An in-session reviewer reads it explicitly and labels the review nonindependent; unavailable required independent execution remains PENDING.
 
 # AD-ART-BIBLE — Art Bible Sign-Off
 
-Agent: `art-director` | Model tier: session (inherit) | Domain: Visual identity, art bible, visual production readiness
+Agent: `art-director` | Model: native session policy | Domain: Visual identity, art bible, visual production readiness
 
 **Trigger**: After the art bible is drafted (`/art-bible`), before asset production begins
 

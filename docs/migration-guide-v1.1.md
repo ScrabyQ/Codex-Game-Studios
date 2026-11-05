@@ -1,135 +1,108 @@
-# Migration Guide: v1.0 → v1.1 project.yaml
+# Migrating legacy configuration to project.yaml
 
-This guide covers converting an **existing project's config files** to
-`project.yaml`. It is distinct from the template-diff instructions in
-[UPGRADING.md](../UPGRADING.md) — that file tells you which *skill and agent
-files* changed between releases and whether they're safe to overwrite. This
-guide covers your *project's own data*: the values you configured in
-`production/stage.txt`, `production/review-mode.txt`, and
-`.claude/docs/technical-preferences.md`.
+This guide concerns a project's configuration data, not replacing studio
+skills or roles. See [UPGRADING.md](../UPGRADING.md) for product upgrades.
+New projects use `$start` and `project.yaml`; they need no legacy migration
+and no upstream source checkout.
 
-If you're setting up a **brand-new** project on v1.1, you don't need this —
-`/start` writes `project.yaml` directly and none of the legacy files apply.
+## Determine whether migration is needed
 
----
-
-## Do you need to migrate?
-
-You have a v1.0 project needing migration if `project.yaml` does **not**
-exist at your repo root, and at least one of these does:
+The adapted converter is `.agents/scripts/migrate-v1-config.sh`. It reads:
 
 - `production/stage.txt`
 - `production/review-mode.txt`
-- `.claude/docs/technical-preferences.md` with real values (a copy still
-  full of `[TO BE CONFIGURED]` placeholders is the untouched template
-  default, not migratable data, and doesn't count)
+- `.agents/docs/technical-preferences.md`, when migrated keys contain real
+  values rather than untouched template placeholders
 
-Run `/adopt` and it will detect this automatically (Phase 2g) and walk you
-through the steps below. You can also run the converter directly.
+It does not search other historical directories or automatically translate
+arbitrary old layouts. If your data lives elsewhere, first identify and review
+the mapping in a disposable copy. Do not overwrite an existing adapted file.
 
----
+If both `project.yaml` and migratable legacy data exist, the converter
+distinguishes three cases. Disagreeing values refuse migration. Agreeing values
+with a migration report also refuse a repeated conversion and point to
+finalization. Agreeing values without a migration report are treated as mirrors:
+the command reports nothing to do and leaves them in place. Do not finalize
+ordinary current-project mirrors merely because they exist. Reconcile genuine
+conflicts explicitly; a refusal does not authorize replacing either side.
+`$adopt` can help audit the project and its gaps.
 
-## What gets preserved
+## Preview, then convert
 
-| From | To (`project.yaml`) |
-|---|---|
-| `production/stage.txt` | `project.stage` |
-| `production/review-mode.txt` | `modes.review_mode` |
-| `technical-preferences.md` → Engine & Language | `engine.name`, `engine.version`, `engine.language`, `engine.rendering`, `engine.physics` |
-| `technical-preferences.md` → Input & Platform | `platform.targets`, `platform.primary_input`, `platform.gamepad_support`, `platform.touch_support` |
-| `technical-preferences.md` → Naming Conventions | `naming.classes`, `naming.variables`, `naming.constants`, `naming.signals`, `naming.files`, `naming.scenes` |
-| `technical-preferences.md` → Performance Budgets | `performance.target_framerate`, `performance.frame_budget_ms`, `performance.draw_call_limit`, `performance.memory_ceiling_mb` |
-| `technical-preferences.md` → Testing | `testing.framework`, `qa.coverage_minimum` |
-| `technical-preferences.md` → Engine Specialists | `specialists.code`, `specialists.shader`, `specialists.ui`, `specialists.additional` |
-
-Settings that don't exist in v1.0 at all (`modes.rigor`, `qa.level`,
-`docs.density`, `team.size`, `modes.story_granularity`, and the rest of the
-v1.1 modes system) get their hardcoded v1.1 defaults — there's nothing to
-preserve for them.
-
-**One value was renamed:** v1.0's `review-mode.txt: none` ("no director
-reviews") becomes `modes.review_mode: solo` in v1.1, which is the same tier
-under its new name. The converter maps it and calls it out in the migration
-report's Warnings, so you'll see the rename rather than have it happen silently.
-
-**Not migrated, on purpose:** `technical-preferences.md`'s Forbidden Patterns
-and Allowed Libraries sections have no `project.yaml` equivalent. The
-converter never deletes this file for that reason — see "Finalizing," below.
-
----
-
-## Running the migration
-
-The conversion is a tested script, not something the AI hand-edits — the
-v1.1 plan rated data loss during migration as its highest-severity risk, and
-prose migration can't be unit-tested the way a script can. `/adopt` drives
-it for you, or you can run it yourself:
+Use Bash from the repository root. The script resolves its own repository
+location; inspect it before applying it to valuable data. Keep a backup or
+reviewable working copy of your actual project configuration.
 
 ```bash
-# 1. Preview — writes nothing, just reports what it would do
-bash .claude/scripts/migrate-v1-config.sh --dry-run
-
-# 2. Migrate — writes project.yaml + production/migration-report.md
-#    Every legacy file is left in place, untouched.
-bash .claude/scripts/migrate-v1-config.sh
-
-# 3. Read the report before finalizing
-cat production/migration-report.md
-
-# 4. Finalize — deletes legacy files, ONLY after re-verifying each one's
-#    value made it into project.yaml. Refuses (exit 4) and deletes nothing
-#    on any mismatch.
-bash .claude/scripts/migrate-v1-config.sh --finalize
+bash .agents/scripts/migrate-v1-config.sh --dry-run
 ```
 
-Step 4 is optional and separate on purpose. Skipping it is completely fine —
-every skill and hook falls back to the legacy files for any key
-`project.yaml` doesn't have, so the two can coexist indefinitely. Run it when
-you're confident `project.yaml` is correct and want one config file instead
-of three.
+Dry run previews the mapping and writes nothing. Review warnings, raw invalid
+values, missing values, and custom sections before the write:
 
-**`technical-preferences.md` is never deleted**, even with `--finalize` —
-Forbidden Patterns and Allowed Libraries still live there and always will,
-since v1.1 has no equivalent structure for them yet.
+```bash
+bash .agents/scripts/migrate-v1-config.sh
+```
 
-### Reading `production/migration-report.md`
+The default mode writes `project.yaml` and
+`production/migration-report.md`, leaving legacy inputs in place. Review both
+outputs. This guide documents the command; running it still requires the
+applicable authorization and explicit proposal/post-write checks in the
+[hook guide](codex/hooks.md).
 
-The report has five sections:
+## What is carried over
 
-- **Source files detected** — which legacy files the converter found
-- **Values preserved** — per source file, per setting, what was written to
-  `project.yaml`
-- **Defaults applied** — new v1.1 settings that had nothing to migrate from
-- **Warnings** — anything the converter couldn't parse cleanly (see below)
-- **Manual review** — content it found but declined to guess at (e.g. custom
-  sections in a forked `technical-preferences.md`)
-
----
-
-## What can go wrong (and what the script does about it)
-
-| Situation | Behavior |
+| Legacy value | Destination |
 |---|---|
-| A legacy file is malformed / unparsable | Warns per-file, leaves it alone, continues migrating everything else it *can* parse. `project.yaml` gets the values it could read plus defaults for the rest. |
-| A parsed value doesn't match a v1.1 enum (e.g. a custom fork's `stage: Alpha`) | Written as-is with a warning comment, flagged for manual resolution — the converter does not silently coerce or drop it. |
-| Both `project.yaml` **and** legacy files already exist | Refuses to run (exit code 3). Two sources of truth with no way to know which you last edited is not something the script will guess at — resolve it yourself first (decide which is authoritative, delete or rename the other). |
-| Custom sections in a forked `technical-preferences.md` | Logged to the migration report as "not migrated — integrate manually." Nothing is silently dropped. |
+| Stage marker | `project.stage` |
+| Review marker | `modes.review_mode` |
+| Engine/language/rendering/physics | `engine.*` |
+| Platforms/input/gamepad/touch | `platform.*` |
+| Naming conventions | `naming.*` |
+| Framerate/frame budget/draw calls/memory | `performance.*` |
+| Test framework and minimum coverage | `testing.framework`, `qa.coverage_minimum` |
+| Engine specialist choices | `specialists.*` |
 
-If you hit the split-brain case (both present), that usually means you
-either ran `/start` on a project that also had old legacy files lying
-around, or partially migrated by hand. Pick the one with your real values,
-remove or back up the other, then re-run `--dry-run`.
+Legacy review mode `none` becomes `solo`; the report calls out that rename.
+Unknown enum values can be preserved raw for manual resolution, so successful
+conversion does not prove that all settings are valid.
 
----
+The converter does not invent rigor settings absent from legacy data.
+Unspecified rigor defaults to `minimal`, a lighter process than the historical
+fixed workflow. Decide whether to retain that default or explicitly choose
+`modes.rigor: standard` after reviewing the report. Do not seed workflow,
+review mode, QA level, document density, team size, or story granularity merely
+to repeat rigor expansion.
 
-## After migrating
+A genuine migrated review choice is preserved as an explicit override and
+therefore outranks rigor. To have rigor control review depth later, review and
+remove that explicit setting within the authorized scope. With no legacy
+review choice, the converter leaves review mode unset.
 
-1. Spot-check `project.yaml` against your old `technical-preferences.md` —
-   engine, naming, and performance values in particular.
-2. Run `/settings` to see the effective config the way skills will read it.
-3. Everything else in the framework works identically whether or not you've
-   run `--finalize` — there's no rush.
+Forbidden Patterns and Allowed Libraries have no equivalent YAML fields.
+Preserve their useful guidance in the technical preferences record; do not
+assume conversion captured every custom section.
 
-For the new settings that didn't exist in v1.0 (`modes.rigor` above all),
-see the [Configuration section of the README](../README.md#configuration)
-and the full spec in `.claude/docs/effects-map.md`.
+## Finalize deliberately
+
+Only after comparing the inputs, report, and effective configuration, consider:
+
+```bash
+bash .agents/scripts/migrate-v1-config.sh --finalize
+```
+
+Finalize deletes the two legacy stage/review marker files after checking that
+their values are represented in `project.yaml` (including `none` → `solo`).
+It also checks the configured engine name when technical preferences exist.
+These checks are narrow: they do not independently verify every migrated field.
+Manually compare all fields and custom content before authorizing cleanup.
+
+The technical preferences file is retained, including its Forbidden Patterns
+and Allowed Libraries guidance. If verification fails, finalize refuses
+cleanup; investigate the discrepancy rather than bypassing the refusal.
+
+After migration, resolve effective configuration using allowed local
+overrides, `project.yaml`, legacy mirrors, rigor expansion, and defaults as
+documented in [configuration resolution](../.agents/docs/config-resolution.md).
+Use `$settings` to inspect provenance and `$project-stage-detect`/`$adopt`
+to assess the next work. A migrated stage marker is not a quality verdict.

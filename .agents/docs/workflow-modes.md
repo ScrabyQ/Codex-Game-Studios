@@ -1,4 +1,3 @@
-> **Codex path bridge (CGS-26):** Paths below that begin with .claude/skills/, .claude/scripts/, or .claude/hooks/ describe the preserved upstream source layout. For Codex runtime use, resolve corresponding adapted resources under .agents/skills/, .agents/scripts/, and .agents/hooks/. Hook paths are helper files only; Codex hook registration remains separate, opt-in, and subject to payload verification. Explicit legacy examples remain useful for upstream comparison.
 
 # Workflow Modes — Shared Skill Pattern
 
@@ -12,7 +11,7 @@ sections `modes.workflow` and `workflow_overrides` are the source of
 truth for behavior. This document is the implementation pattern.
 
 > **Do not read `effects-map.md` during a skill run.** It is many times the
-> size of everything CLAUDE.md loads per session combined — and it is a
+> size of everything AGENTS.md loads per session combined — and it is a
 > reference for *authoring and changing the spec*, not a runtime input.
 > **This document is self-sufficient** for resolving
 > the tier and applying it: the resolution chain, the three tiers, the required
@@ -78,7 +77,7 @@ Silently ignoring it would leave an override that does nothing, unnoticed.
 
 > **Checked where GDDs are expected to already exist — not by the skill that
 > writes them.** `/gate-check` is the single implementing site (see
-> `.claude/skills/gate-check/SKILL.md` §"Per-system overrides"), and it runs at a
+> `.agents/skills/gate-check/SKILL.md` §"Per-system overrides"), and it runs at a
 > phase boundary, by which point every in-scope GDD should be on disk. An
 > unmatched key there is genuinely suspicious.
 >
@@ -131,7 +130,7 @@ the expansion.) Per-system overrides read via
 | `minimal` | Low | One-page `design/game-brief.md` + engine choice (its build-order field is the plan — no separate sprint plan) | **Default.** Jam projects, small scope, design already in your head |
 
 **Default**: `minimal` (the rationale block above `_yaml_helper_defaults` in
-`.claude/hooks/yaml-helper.sh` carries the reasoning and the ordering
+`.agents/hooks/yaml-helper.sh` carries the reasoning and the ordering
 constraint). **Set by**: `/start` (via `modes.rigor`), `/settings`. **Locked to
 `project.yaml`** (not locally overridable — divergence would change which
 artifacts must exist on disk).
@@ -258,7 +257,7 @@ Project has `modes.workflow: standard`, `workflow_overrides.system_overrides.com
 
 **Gate enforcement** — `gate-check` uses a different artifact checklist per
 stage per tier (the highest-visibility impact). Each gate's own checklist and
-tier reductions live in `.claude/skills/gate-check/references/gate-<phase>.md`,
+tier reductions live in `.agents/skills/gate-check/references/gate-<phase>.md`,
 and `/gate-check` loads only the one gate it is running — that is the right
 place to look, not `effects-map.md`.
 

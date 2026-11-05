@@ -32,12 +32,6 @@ production/qa/
 Estimated time: ~5 minutes to create all files.
 ```
 
-Ask: "May I create these files? I will not overwrite any test files that
-already exist at these paths."
-
-**At `collaborative` and `guided`** — do not proceed without approval. These are
-**new** files, and `automation-modes.md:81` gates new-file writes in `guided` too,
-so the answer is the same in both modes. **At `autonomous`** — create them and log
-the decision; do not block.
+Present the proposed files, preserving existing files without overwriting them. Proceed when this work is already authorized and allowed by the host. If an action or material choice remains unauthorized or unresolved, present the reviewable plan and wait for the answer. Automation modes may guide routine decisions and logging but do not grant or revoke authorization.
 
 ---

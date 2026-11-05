@@ -64,8 +64,7 @@ helper moves to the project root itself, so those `project.yaml` and
 `project.local.yaml` arguments resolve when the session was started in a
 subfolder, and it keeps the function's exit status. `is_locally_overridable`
 also prints its `0` or `1`. Run the call exactly as shown: do not `source` the
-file, wrap it in `cd ... &&` or append `; echo $?`. This skill pre-approves the
-plain form only, and a compound command asks the user every time.
+file, wrap it in `cd ... &&` or append `; echo $?`. Use the plain form and respect existing authorization and host permissions.
 
 If `.agents/hooks/yaml-helper.sh` is missing, this is not a CCGS project.
 Report the error and exit.
@@ -80,7 +79,7 @@ motivates this. (The key is not named here on purpose; see the note below.)
 The banner exists only in
 `.agents/docs/effects-map.md`, which someone
 configuring their project will never open. A setting that does nothing must never look
-exactly like one that works — `.claude/rules/skill-authoring.md` obligation 3.
+exactly like one that works — `.agents/rules/skill-authoring.md` obligation 3.
 
 Derive the set; do not hardcode it (obligation 5):
 

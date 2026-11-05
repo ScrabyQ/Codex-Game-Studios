@@ -20,7 +20,7 @@ every file write follows `.agents/docs/automation-modes.md`
 
 # Skill Test
 
-Validates skills (`.agents/skills/*/SKILL.md`) and agents (`.claude/agents/*.md`)
+Validates skills (`.agents/skills/*/SKILL.md`) and agents (`.codex/agents/*.toml`)
 for structural compliance and behavioral correctness. No external dependencies —
 runs entirely within the existing skill/hook/template architecture.
 
@@ -35,7 +35,7 @@ runs entirely within the existing skill/hook/template architecture.
 
 **What a pass proves.** Every mode reads files; none runs the skill. `static`:
 the file has the structure a skill needs, not that it behaves. `spec`: read
-closely, the instructions cover each case, not that Claude follows them when it
+closely, the instructions cover each case, not that a model follows them when it
 runs. `category`: the skill meets its category's rubric as written. `audit`:
 which skills and agents have specs, and when each was last checked. What a skill
 does shows only when it runs: a real request in a throwaway copy of the project,
@@ -66,9 +66,9 @@ Then go on with `studio-tests/`.
 **Resolve the name before `spec` or `category`.** Look it up in
 `studio-tests/catalog.yaml`: an entry under `skills:` is a skill
 (`.agents/skills/[name]/SKILL.md`); an entry under `agents:` is an agent
-(`.claude/agents/[name].md`). With no catalog entry, use whichever of those two
+(`.codex/agents/[name].toml`). With no catalog entry, use whichever of those two
 files exists. Only when neither exists, report "'[name]' is neither a skill in
-`.agents/skills/` nor an agent in `.claude/agents/`." and stop. A name that is
+`.agents/skills/` nor an agent in `.codex/agents/`." and stop. A name that is
 also an ordinary word is still a name: `$skill-test spec help` tests the `$help`
 skill, never a request for this skill's usage.
 
@@ -82,19 +82,10 @@ phases or verdict keywords to lint. Never report the agent as missing.
 
 For each skill being tested, read its `SKILL.md` and every file in its `references/` folder
 fully, and run all 7 checks on them as one skill — the longest skills keep each
-phase in `references/`. The frontmatter checks (1, 6 and 7) read `SKILL.md`.
+phase in `references/`. The frontmatter check 1 reads `SKILL.md`.
 
-### Check 1 — Required Frontmatter Fields
-The file must contain all of these in the YAML frontmatter block:
-- `name:`
-- `description:`
-- `argument-hint:`
-- `user-invocable:`
-- `allowed-tools:`
-
-**FAIL** if any are absent. A file whose frontmatter does not parse fails Check 1
-too — malformed YAML is a structural defect this check exists to catch, not an
-unassessable file; see the per-skill result rule below.
+### Check 1 — Native Frontmatter
+Require parseable native frontmatter with a name matching the directory and a nonempty description. Missing or malformed required fields FAIL. Legacy argument-hint, user-invocable and allowed-tools are not required native fields.
 
 ### Check 2 — Multiple Phases
 The skill must have ≥2 numbered phase headings. Look for patterns like:
@@ -130,14 +121,8 @@ satisfy this check.
 > by design. A linter that produces false failures on legitimate patterns stops
 > being trusted.
 
-### Check 4 — Collaborative Protocol Language
-The skill must contain ask-before-write language. Look for:
-- `"May I write"` (canonical form)
-- `"before writing"` or `"approval"` near file-write instructions
-- `"ask"` + `"write"` in close proximity (within same section)
-
-**WARN** if absent (some read-only skills legitimately skip this).
-**FAIL** if `allowed-tools` includes `Write` or `Edit` but no ask-before-write language is found.
+### Check 4 — Authorization and Decisions
+Assess whether executable writes and decisions respect prior user authorization and active host permissions. Required unanswered decisions are not consent. Do not require unconditional per-write questions. Report a concrete conflict as FAIL; read-only or inapplicable work is N/A.
 
 ### Check 5 — Next-Step Handoff
 The skill must end with a recommended next action or follow-up path. Look for:
@@ -147,58 +132,23 @@ The skill must end with a recommended next action or follow-up path. Look for:
 
 **WARN** if absent.
 
-### Check 6 — Fork Context Complexity
-If frontmatter contains `context: fork`, the skill should have ≥5 phase headings
-(`##` level or numbered Phase N headers). Fork context is for complex multi-phase
-skills; simple skills should not use it.
+### Check 6 — Branch Complexity and Delegation
+If the native body requires separate delegated or isolated phases, WARN when fewer than five phase headings are present; otherwise this complexity criterion is N/A. Where delegation is used, check for justified authorized native delegation, bounded assignments and an honest non-independent fallback or PENDING. No legacy fork metadata is required.
 
-**WARN** if `context: fork` is set but fewer than 5 phases found.
+### Check 7 — Invocation Behavior
+Check that documented modes and arguments are understandable and handled consistently. Legacy argument-hint is not required; report unclear invocation as WARN.
 
-### Check 7 — Argument Hint Plausibility
-`argument-hint` must be non-empty. If the skill body mentions multiple modes
-(e.g., "Mode A | Mode B"), the hint should reflect them. Cross-reference the
-hint against the first phase's "Parse Arguments" section.
+### Native Format and Delegation Observations (not scored)
 
-**WARN** if hint is `""` or if documented modes don't match hint.
+Run `node scripts/codex/native-helper-check.mjs skill [name] --root <project-root>` for one skill or use `skill all` for all skills. For a role use `node scripts/codex/native-helper-check.mjs role --agent [name] --root <project-root>`, or `role --root <project-root>` for all roles. These check a documented structural subset only; they do not execute behavior or establish a verdict. Report failures or unavailable checks explicitly.
 
-### Agent and Delegation Observations (not scored)
-
-Run `bash .agents/scripts/agent-check.sh --skill [name]` for a skill,
-`bash .agents/scripts/agent-check.sh --agent [name]` for an agent, or
-`bash .agents/scripts/agent-check.sh` once for `static all`. It prints
-observations, never a verdict, and nothing here changes a skill's verdict. Report
-them under `Observations:`, judging each:
-
-- **`DELEGATION:`** a part of the skill that hands work to an agent. Read it and
-  say whether the brief gives an objective, an output format, the tools and
-  sources, and boundaries, and whether it hands the agent a job of only a few
-  tool calls or a re-check of the skill's own work. Its `markers:` are word
-  counts that show where to look, not a grade.
-- **`AGENT:`** the model, effort and turn limit as set, and the tools beside the
-  description: name any tool the job in the description does not need.
-- **`NOTE:`** frontmatter that does not parse; `asks-user` (an agent has no
-  question tool, so its questions belong at the end of its report); a setting
-  that is ignored or does more than it says (`agent-type-list`, `preload-off`,
-  `disallowed-specifier`, `memory-grants`).
-- **`OVERLAP:`** two descriptions that share distinctive words: say whether each
-  still singles out its agent, or which request would reach the wrong one.
-
-If the script cannot run, write `Observations: not run (<reason>)`. Never leave
-the section out: a missing section reads the same as a clean one.
+Manually inspect actual delegation instructions for objective, inputs, owned paths, permission boundaries, output and evidence, and whether the work requires independent review. Distinguish an actual native role from an in-session non-independent fallback. For roles, inspect the declared capability ceiling and relevant native fields rather than assuming source tool controls or model aliases are native settings. Report any uninspected observations as NOT ASSESSED.
 
 ### Compatibility Observations (not scored)
 
 Run `bash .agents/scripts/compat-inventory.sh --skill [name]` for a skill,
 `bash .agents/scripts/compat-inventory.sh --agent [name]` for an agent, or
-`bash .agents/scripts/compat-inventory.sh` once for `static all`. Each `FOUND:`
-line is a place the file depends on something only Claude Code provides, with
-its feature: questions, subagents, skill-loading, shell-lines, arguments,
-frontmatter, instructions, hooks, settings or tools. Claude Code runs all of
-them, so none is a defect and none changes a verdict. Report them under
-`Compatibility:`, one line per feature with its constructs and line numbers;
-for `static all`, give the `COUNT:` totals by feature instead. A `NOT FOUND:`
-line means the name matched no file: say so. If the script cannot run, write
-`Compatibility: not run (<reason>)`.
+`bash .agents/scripts/compat-inventory.sh` once for `static all`. Each FOUND line is a lexical observation of a possible legacy construct, not a verdict or proof of runtime dependency; inspect context and report it under Compatibility. The helper scans role TOML as physical text without decoding the body. A NOT FOUND line means the name matched no file. If the script cannot run, write Compatibility: not run (reason).
 
 ---
 
@@ -211,10 +161,10 @@ For a single skill:
 Check 1 — Frontmatter Fields:    PASS
 Check 2 — Multiple Phases:       PASS (7 phases found)
 Check 3 — Verdict Keywords:      PASS (PASS, FAIL, CONCERNS)
-Check 4 — Collaborative Protocol: PASS ("May I write" found)
+Check 4 — Authorization:          PASS
 Check 5 — Next-Step Handoff:     WARN (no follow-up section found)
-Check 6 — Fork Context Complexity: PASS (8 phases, context: fork set)
-Check 7 — Argument Hint:         PASS
+Check 6 — Branch Complexity:      PASS
+Check 7 — Invocation Behavior:    PASS
 
 Observations (not scored):
   Delegation, "Phase 3: Implementation" (line 202): ux-designer, ui-programmer.
@@ -232,13 +182,13 @@ For a single agent there is no verdict, only observations:
 ```
 === Agent Static Check: qa-lead ===
 
-Model: inherit · Effort: unset · Turn limit: 20
-Tools: Read, Glob, Grep, Write, Edit, Bash. Fits the job (it writes test plans).
+Model: resolved through active policy and host capabilities
+Capability ceiling: Read, Glob, Grep, Write, Edit, Bash; shell flag checked.
 Observations (not scored):
-  asks-user (lines 31, 52): tells the agent to get approval before writing.
+  Authorization: prior user approval persists; unresolved decisions are surfaced.
   overlap with qa-tester (creation, regression, test): each still singled out.
 Compatibility (not scored):
-  frontmatter: tools, tools-string, model, maxTurns (lines 4-6)
+  Runtime dependencies: assessed from actual native instructions; source metadata is not a native setting.
 ```
 
 A WARN or FAIL line names its cause in parentheses, and any verdict other than
@@ -312,21 +262,12 @@ the agent file, and the test spec file, completely.
 ### Step 3 — Evaluate Assertions
 
 **Evaluate against what the model running it can see.** A skill runs in a
-session, and a spawned agent in its own context, and both have the project's
-`CLAUDE.md` loaded along with every file it imports on an `@path` line (a
-spawned agent quotes `coordination-rules.md` word for word without reading it).
-Read those files too. A rule stated there counts for every skill and agent —
-cite the file it came from. Where the skill's or agent's own file contradicts
-it, the own file wins: it is the more specific instruction.
+session, and a delegated role in its own context. Read AGENTS.md, selected applicable .agents rules and guidance explicitly; count only instructions actually supplied or read. Cite their source and apply the active instruction hierarchy; do not assume Claude @imports or automatic role preload.
 
 **For an agent**, the spec's sections are evaluated against the agent file —
-and against every skill its frontmatter lists under `skills:`, which Claude
-Code loads into the agent at launch:
+and only against skills actually available and supplied to the role:
 
-- **Static Assertions** — check each against the agent's frontmatter and body.
-  An assertion that names a literal value (a `model:` alias, a frontmatter key,
-  a tool name) is an exact comparison with the file: `model: inherit` does not
-  satisfy "Model tier is `sonnet`", and a near match is FAIL, never PARTIAL.
+- **Static Assertions** — evaluate the native TOML fields, decoded instructions, capability ceiling and active host limits against the native criteria in docs/codex/studio-tests/native-criteria.md. Map historical source aliases and frontmatter assertions to their documented native equivalents; do not demand a source model pin or tool allowlist. A runtime-only claim or unmappable assertion is NOT ASSESSED, with its reason.
 - **Test Cases** — evaluate each case's expected behavior against the agent's
   written instructions, the same way a skill's are evaluated below. A case
   that names a gate ID (`LP-FEASIBILITY`, `CD-PILLARS`, …) is that gate's
@@ -349,7 +290,7 @@ Code loads into the agent at launch:
 skill's frontmatter and body (`SKILL.md` and its `references/` files) the same
 way; a literal value is an exact
 comparison. `$skill-test static` runs only its 7 fixed checks, so a spec's own
-static lines — a verdict keyword, a phase, "May I write" before a named file —
+static lines — a verdict keyword, a phase, or a contextual authorization rule —
 are evaluated here or nowhere.
 
 The rest of this step applies to skills and agents alike.
@@ -367,7 +308,7 @@ just because it has no separate checklist.
 
 For each assertion, evaluate whether the skill's written instructions, if
 followed correctly given the fixture state, would satisfy it. This is a
-Claude-evaluated reasoning check, not code execution.
+written-instruction reasoning check, not code execution.
 
 Mark each assertion:
 - **PASS** — skill instructions clearly satisfy this assertion
@@ -389,10 +330,10 @@ assertion — PASS, PARTIAL, FAIL or NOT ASSESSED. Specs put rules there that no
 case repeats ("covered by the protocol compliance assertions above"), so a
 list that is not evaluated is a set of rules nobody checks. These four checks are
 the floor, added when the list does not already cover them:
-- Check whether the skill requires "May I write" before file writes
-- Check whether the skill presents findings before requesting approval
-- Check whether the skill ends with a recommended next step
-- Check whether the skill avoids auto-creating files without approval
+- Check that writes respect prior user authorization and active host permissions; a named path or mode does not create permission.
+- Check that unresolved decisions or actions outside authorization have a reviewable draft and wait for an actual answer.
+- Check whether the skill ends with an appropriate recommended next step.
+- Check that no unanswered required question is treated as consent.
 
 ### Step 4 — Build Report
 
@@ -419,8 +360,8 @@ Case 2: [Edge Case — name]
   Case Verdict: PASS
 
 Protocol Compliance:
-  [PASS] Uses "May I write" before file writes
-  [PASS] Presents findings before asking approval
+  [PASS] Respects existing authorization for file writes
+  [PASS] Presents a reviewable draft for an unresolved decision
   [PARTIAL] No explicit next-step handoff at end
 
 Overall Verdict: FAIL (1 case failed, 1 protocol line partial)
@@ -436,16 +377,9 @@ For an agent, the header is `=== Agent Spec Test: [name] ===`, `Spec:` is its
 path under `studio-tests/agents/`, and a `Static Assertions:`
 block comes before Case 1.
 
-### Step 5 — Offer to Write Results
+### Step 5 — Record Results
 
-"May I write these results to `studio-tests/results/skill-test-spec-[name]-[date].md`
-and update `studio-tests/catalog.yaml`?"
-
-If yes:
-- Write results file to `studio-tests/results/`
-- Update the skill's or agent's entry in `studio-tests/catalog.yaml`:
-  - `last_spec: [date]`
-  - `last_spec_result: PASS|PARTIAL|FAIL|NOT ASSESSED` — the Overall Verdict
+Report results in conversation. When a persistent run record is authorized and useful, write it to ignored production/session-logs/studio-tests/ or host temporary storage and record last_spec and last_spec_result in an ignored catalog-results.yaml overlay there. Do not write execution results or tracking updates to the tracked studio-tests catalog. Preserve NOT ASSESSED and the actual evidence limits.
 
 ---
 
@@ -465,7 +399,7 @@ For `category all`: collect every skill and every agent with a `category:` field
 and process each, reporting skills and agents in separate tables.
 `category: utility` skills are evaluated against U1 (static checks pass) and U2
 (gate mode correct if applicable) only — skip to the static mode for U1.
-Cross-check against `.agents/skills/*/SKILL.md` and `.claude/agents/*.md`
+Cross-check against `.agents/skills/*/SKILL.md` and `.codex/agents/*.toml`
 (Audit mode's Step 2 glob): list any skill or agent missing from the catalog, or
 catalogued with no `category:`, by name as **NOT ASSESSED** — never silently
 excluded from the run.
@@ -481,9 +415,9 @@ name the missing section, and never borrow another category's metrics.
 ### Step 3 — Read Skill
 
 Read the skill's `SKILL.md` and every file in its `references/` folder, or the
-agent's `.claude/agents/[name].md`, fully,
+agent's `.codex/agents/[name].toml`, fully,
 and the project context Phase 2B Step 3 describes — a metric met by a rule in
-`CLAUDE.md` or a file it imports is met, citing that file. Its rule for
+AGENTS.md or explicitly read applicable guidance is met, citing that file. Its rule for
 redirect and escalation cases decides the domain, deferral and escalation
 metrics too (D2, D3, L2, S1–S3, O2).
 
@@ -518,12 +452,11 @@ The category verdict, first match wins: **FAIL** when any metric fails; else
 **WARNINGS** when any metric warns; else **NOT ASSESSED** when any metric could
 not be evaluated (a rubric section missing, a file unreadable); else **PASS**
 when every metric passes — the same ranking as static and spec mode. It is
-`last_category_result` in the catalog.
+last_category_result in the ignored runtime overlay when recorded.
 
-### Step 6 — Offer to Update Catalog
+### Step 6 — Record Category Results
 
-"May I update `studio-tests/catalog.yaml` to record this category check
-(`last_category`, `last_category_result`) for [name]?"
+Report results in conversation. When authorized, record last_category and last_category_result in the ignored production/session-logs/studio-tests/catalog-results.yaml overlay or host temporary storage; do not update the tracked catalog for execution history.
 
 ---
 
@@ -531,16 +464,15 @@ when every metric passes — the same ranking as static and spec mode. It is
 
 ### Step 1 — Read Catalog
 
-Read `studio-tests/catalog.yaml`. If missing, note that catalog doesn't exist
-yet (first-run state).
+Read the functional studio-tests/catalog.yaml and, if present, the ignored production/session-logs/studio-tests/catalog-results.yaml runtime overlay. Report missing files accurately.
 
 ### Step 2 — Enumerate All Skills and Agents
 
 Glob `.agents/skills/*/SKILL.md` to get the complete list of skills.
 Extract skill name from each path (directory name).
 
-Glob `.claude/agents/*.md` for the complete list of agents — the repo itself,
-not the catalog, is the covered set (`.claude/rules/skill-authoring.md` §5:
+Glob `.codex/agents/*.toml` for the complete list of agents — the repo itself,
+not the catalog, is the covered set (`.agents/rules/skill-authoring.md` §5:
 gates derive their covered set, they do not enumerate it). Compare both globs
 against the catalog's `skills:`/`agents:` entries and report any skill or agent
 missing from the catalog by name, so an uncatalogued one cannot drop out silently.
@@ -550,8 +482,7 @@ missing from the catalog by name, so an uncatalogued one cannot drop out silentl
 For each skill:
 - Check if a spec file exists (use the `spec:` path from catalog, or glob `studio-tests/skills/*/[name].md`)
 - Look up `last_static`, `last_static_result`, `last_spec`, `last_spec_result`,
-  `last_category`, `last_category_result`, `category` from catalog (or mark as
-  "never" / "—" if not in catalog)
+  `last_category` and `last_category_result` from the ignored runtime overlay; absent history is unknown / not recorded. Read `category` from the catalog.
 - Priority comes from catalog `priority:` field (critical/high/medium/low)
 
 ### Step 3b — Build Agent Coverage Table
@@ -559,7 +490,7 @@ For each skill:
 For each agent in catalog's `agents:` section:
 - Check if a spec file exists (use the `spec:` path from catalog, or glob `studio-tests/agents/*/[name].md`)
 - Look up `last_spec`, `last_spec_result`, `last_category`,
-  `last_category_result`, `category` from catalog
+  last_category_result from the runtime overlay and category from the catalog
 
 ### Step 4 — Output Report
 
@@ -608,8 +539,7 @@ After any mode completes, offer contextual follow-up:
   correctness if a test spec exists."
 - After `static all` with failures: "Address NON-COMPLIANT skills first. Run
   `$skill-test static [name]` individually for detailed remediation guidance."
-- After `spec [name]` PASS: "Update `studio-tests/catalog.yaml` to record this
-  pass date. Consider running `$skill-test audit` to find the next spec gap."
+- After spec PASS: "Record this pass date in the ignored runtime overlay if authorized. Consider running `$skill-test audit` to find the next spec gap."
 - After `spec [name]` FAIL: "Review the failing assertions and update the skill
   or agent, or the test spec, to resolve the mismatch."
 - After `audit`: "Start with the critical-priority gaps. Use the spec template

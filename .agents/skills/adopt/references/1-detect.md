@@ -42,7 +42,7 @@ If the project appears fresh (no artifacts at all), use `available user-question
 **If they pick "help me find them"**, search before asking anything else:
 
 1. Search the folder they named, if they named one; otherwise the whole
-   project, skipping `.claude/`, `.git/`, `docs/engine-reference/`,
+   project, skipping native toolkit directories `.agents/` and `.codex/`, any legacy `.claude/` directory, `.git/`, `docs/engine-reference/`,
    `studio-tests/`, `node_modules/` and the engine's build and
    cache folders.
 2. Glob `**/*.md` there, then Grep the matches for the headings each artifact

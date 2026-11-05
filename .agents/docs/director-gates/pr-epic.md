@@ -1,8 +1,8 @@
-> Gate definition. The spawning skill passes this file's path to the director agent; the AGENT reads it — the parent session should not.
+> Gate definition. For authorized native delegation, pass this path so the assigned reviewer reads it first. An in-session reviewer reads it explicitly and labels the review nonindependent; unavailable required independent execution remains PENDING.
 
 # PR-EPIC — Epic Structure Feasibility Review
 
-Agent: `producer` | Model tier: Opus | Domain: Scope, timeline, dependencies, production risk
+Agent: `producer` | Model: native session policy | Domain: Scope, timeline, dependencies, production risk
 
 **Trigger**: After epics are defined by `/create-epics`, before stories are
 broken out — validates the epic structure is producible before `/create-stories`

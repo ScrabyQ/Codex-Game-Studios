@@ -43,7 +43,9 @@ node scripts/codex/reconcile-upstream.mjs apply --root <worktree>
 node scripts/codex/reconcile-upstream.mjs finalize --root <worktree>
 ```
 
-Replace placeholders with real paths and refs. Preparation guards source and target inputs, stores recovery material and leaves a PENDING baseline without editing native bodies. Make reviewed target edits before apply. Apply verifies their exact bytes and updates coverage/provenance; failed validation restores metadata. Retained targets without a current source become explicitly native-owned with retired provenance. New or affected source entries and declarations remain PENDING.
+Replace placeholders with real paths and refs. Preparation guards source and target inputs, stores recovery material and leaves a PENDING baseline without editing native bodies. Make reviewed target edits before apply. Apply verifies their exact bytes and updates coverage/provenance; failed validation restores metadata. Retained generated targets without a current source become explicitly native-owned with retired provenance. New or affected source entries and declarations remain PENDING.
+
+Existing source mappings to maintained Markdown or Node wrappers can appear as `ownership: "manual"` targets. Repeat that ownership and the exact old/new hashes in each reviewed retain, update or retire action. These targets must already be explicitly mapped; unknown manual additions require separate onboarding and are refused rather than silently accepted. Source renames preserve reviewed mappings. A retained manual target whose source was deleted is recorded in `retired_manual_mappings` with source commit/hash and a guarded target hash. Native validation and selected hash recording continue to protect it without requiring the historical source object.
 
 Review those support dispositions using `record-migration.mjs --id <entry> --status <status> --review <review-summary> --root <worktree>`. A matching hash does not establish PORTED or EQUIVALENT behavior. An unsupported disposition needs a reason and impact. Finalize requires recorded review and native structural validation; run affected behavioral suites before it and full CI afterward.
 
@@ -57,6 +59,8 @@ node scripts/codex/generate.mjs --root <worktree> --source-repo <source-reposito
 The selected commit must match the candidate inventory. Source reads, inventory hashes, existing product target hashes and overlay anchors remain guarded. Skill and role selections require `--names`. A separate `--overlay-root <staging-root>` may contain deliberately rebased overlays at their normal relative paths; it is allowed only with isolated candidate output. Review all outputs before adapting product files. Never repin an overlay merely to silence a refusal.
 
 For deliberate ordinary native edits, `generate.mjs --record-native --targets <comma-separated-paths>` records selected hashes after review, refuses unrelated drift and restores metadata if validation fails. It preserves support status and provenance.
+
+New native-authored Skills and roles use the separate `--register-native --targets <paths> --review <summary>` action after preparing coherent model policy, catalog, specs and references. Select all new Skill resources or role TOMLs explicitly. It records authored provenance without a source repository, historical object or migration row, and restores the registry if full native validation fails. See [contributing](../../CONTRIBUTING.md). Unknown targets remain refused by ordinary hash recording.
 
 From the finalized worktree, run:
 

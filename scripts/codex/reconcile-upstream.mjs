@@ -5,7 +5,7 @@ import {tmpdir} from 'node:os';
 import path from 'node:path';
 import {baseline} from './baseline.mjs';
 import {inspect,git} from './upstream-common.mjs';
-import {safeProjectPath,safeExternalFile} from './safe-path.mjs';
+import {safeProjectPath,safeExternalFile,readManualTarget} from './safe-path.mjs';
 
 const args=process.argv.slice(2), action=args.shift(), opts={};
 if(!['prepare','apply','finalize'].includes(action))throw Error('Usage: reconcile-upstream.mjs prepare|apply|finalize --root DIR [--plan FILE --source-repo DIR --source-ref REF]');
@@ -42,9 +42,9 @@ if(action==='prepare'){
   for(const target of expected)if(!c.targets.some(t=>t.target===target))throw Error('Missing affected target: '+target);
   for(const t of c.targets){
    if(!['retain','update','retire','add'].includes(t.action)||!/^([a-f0-9]{64})$/.test(t.new_sha256||'')&&t.action!=='retire')throw Error('Invalid target action: '+t.target);
-   const existing=reg.entries.find(e=>e.target===t.target),p=safeProjectPath(root,t.target,{roots:['.agents/','.codex/']});
-   if(t.action==='add'){if(existing||existsSync(p)||t.old_sha256!==null||!t.registration||!(t.registration.source||t.registration.sources?.length))throw Error('Invalid new target: '+t.target)}
-   else if(!existing||t.old_sha256!==existing.target_sha256||hash(readFileSync(p))!==t.old_sha256)throw Error('Target old hash mismatch: '+t.target);
+   const existing=reg.entries.find(e=>e.target===t.target),reported=actual.targets.find(x=>x.target===t.target),manual=t.ownership==='manual';
+   if(manual){if(existing||reported?.ownership!=='manual'||t.action==='add'||t.old_sha256!==reported.recorded_sha256||hash(readManualTarget(root,t.target))!==t.old_sha256)throw Error('Manual target old hash mismatch: '+t.target)}
+   else{const p=safeProjectPath(root,t.target,{roots:['.agents/','.codex/']});if(t.action==='add'){if(existing||existsSync(p)||t.old_sha256!==null||!t.registration||!(t.registration.source||t.registration.sources?.length))throw Error('Invalid new target: '+t.target)}else if(!existing||t.old_sha256!==existing.target_sha256||hash(readFileSync(p))!==t.old_sha256)throw Error('Target old hash mismatch: '+t.target)}
    if(t.action==='retire'&&t.new_sha256!==null)throw Error('Retired target must have null new hash');
    if((c.decision==='retain'||t.action==='retain')&&t.new_sha256!==t.old_sha256)throw Error('Retained target content cannot change: '+t.target);
    const prior=targets.get(t.target);if(prior&&JSON.stringify(prior)!==JSON.stringify(t))throw Error('Conflicting shared target plan: '+t.target);targets.set(t.target,t);
@@ -67,11 +67,12 @@ if(action==='prepare'){
  const inv=JSON.parse(inventoryBytes),candidate=JSON.parse(candidateBytes),old=json(paths.migration),reg=json(paths.registry);
  for(const c of plan.changes)for(const o of c.overlays){const bytes=read(o.path);if(hash(bytes)!==o.new_sha256)throw Error('Reviewed overlay hash mismatch: '+o.path);const overlay=JSON.parse(bytes),skill=/^\.claude\/skills\/([^/]+)\//.exec(c.new_path||''),pinSource=skill?`.claude/skills/${skill[1]}/SKILL.md`:c.new_path;const pin=inv.files.find(f=>f.path===pinSource)?.sha256;if(pin&&overlay.source_sha256!==pin)throw Error('Overlay source pin mismatch: '+o.path)}
  const targetActions=new Map(plan.changes.flatMap(c=>c.targets).map(t=>[t.target,t]));
- for(const [target,t] of targetActions){const p=safeProjectPath(root,target,{roots:['.agents/','.codex/']});const actual=existsSync(p)?hash(readFileSync(p)):null;if(actual!==t.new_sha256)throw Error('Reviewed target hash mismatch: '+target)}
+ for(const [target,t] of targetActions){const p=t.ownership==='manual'?safeProjectPath(root,target):safeProjectPath(root,target,{roots:['.agents/','.codex/']});const actual=existsSync(p)?hash(t.ownership==='manual'?readManualTarget(root,target):readFileSync(p)):null;if(actual!==t.new_sha256)throw Error('Reviewed target hash mismatch: '+target)}
  const inventory=new Map(inv.files.map(f=>[f.path,f]));
  const rename=new Map(plan.changes.filter(c=>c.old_path&&c.new_path&&c.old_path!==c.new_path).map(c=>[c.old_path,c.new_path]));
  const digest=inputs=>inputs.length===1?inventory.get(inputs[0]).sha256:hash(Buffer.from(JSON.stringify(inputs.map(p=>[p,inventory.get(p).sha256]))));
  for(const [target,t] of targetActions){
+  if(t.ownership==='manual')continue;
   const index=reg.entries.findIndex(e=>e.target===target),existing=reg.entries[index];
   if(t.action==='retire'){if(index<0)throw Error('Unknown retired target: '+target);reg.entries.splice(index,1);continue}
   const entry=existing||{id:'native:'+target,target,ownership:'generated',transform_version:1,transform_ids:t.registration?.transform_ids||['reviewed-native-import'],owner:'reviewed'};
@@ -84,7 +85,8 @@ if(action==='prepare'){
  reg.entries.sort((a,b)=>a.target.localeCompare(b.target));reg.source_commit=plan.new_sha;
  const oldRows=new Map(old.entries.map(e=>[e.id,e])),changed=new Set(plan.changes.map(c=>c.new_path).filter(Boolean));
  const hookChange=plan.changes.some(c=>c.old_path==='.claude/settings.json'||c.new_path==='.claude/settings.json');
- candidate.entries=candidate.entries.map(e=>{const previous=oldRows.get(e.id),affected=changed.has(e.source)||(hookChange&&e.category==='hook-declaration');const merged=previous?{...previous,...e,status:affected?'PENDING':previous.status,verification:affected?'Explicit review and checks required.':previous.verification}:{...e,status:'PENDING'};const matches=mapped(reg,e.source);if(matches.length){merged.target=matches[0].target;merged.target_sha256=matches[0].target_sha256;merged.related_targets=matches.slice(1).map(t=>({target:t.target,sha256:t.target_sha256}))}else if(affected||!previous){delete merged.target;delete merged.target_sha256;delete merged.related_targets}return merged});
+ candidate.entries=candidate.entries.map(e=>{const change=plan.changes.find(c=>c.new_path===e.source),previous=oldRows.get(e.id)||(change?.old_path?oldRows.get('file:'+change.old_path):null),affected=changed.has(e.source)||(hookChange&&e.category==='hook-declaration');const merged=previous?{...previous,...e,status:affected?'PENDING':previous.status,verification:affected?'Explicit review and checks required.':previous.verification}:{...e,status:'PENDING'};const matches=[...mapped(reg,e.source).map(t=>({target:t.target,sha256:t.target_sha256})),...(change?.targets||[]).filter(t=>t.ownership==='manual'&&t.action!=='retire').map(t=>({target:t.target,sha256:t.new_sha256}))];if(matches.length){merged.target=matches[0].target;merged.target_sha256=matches[0].sha256;merged.related_targets=matches.slice(1)}else if(affected||!previous){delete merged.target;delete merged.target_sha256;delete merged.related_targets}return merged});
+ candidate.retired_manual_mappings=[...(old.retired_manual_mappings||[]),...plan.changes.filter(c=>!c.new_path).flatMap(c=>c.targets.filter(t=>t.ownership==='manual'&&t.action!=='retire').map(t=>({source:c.old_path,source_sha256:c.old_sha256,target:t.target,target_sha256:t.new_sha256,source_commit:plan.old_sha,decision:'retained'})))];
  const next={...active,source_commit:plan.new_sha,reconciliation_phase:'applied'};
  const outputs=[[paths.inventory,inv],[paths.migration,candidate],[paths.registry,reg],[paths.baseline,next]],before=outputs.map(([p])=>read(p));
  try{for(const [p,v] of outputs)write(p,encode(v));execFileSync(process.execPath,[path.join(root,'scripts/codex/validate.mjs'),'--root',root,'--verify-pending'],{cwd:root,stdio:'pipe'})}catch(e){outputs.forEach(([p],i)=>write(p,before[i]));throw Error('Reconciliation apply failed validation; metadata restored: '+(e.stderr||e.message))}

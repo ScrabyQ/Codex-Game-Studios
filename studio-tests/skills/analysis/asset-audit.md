@@ -26,10 +26,10 @@ COMPLIANT only when at least one asset was scanned and every section assessed.
 
 Checked against the SKILL.md by `/skill-test spec` — no fixture needed.
 
-- [ ] Has required frontmatter fields: `name`, `description`, `argument-hint`, `user-invocable`, `allowed-tools`
+- [ ] Skill frontmatter has nonempty `name` and `description`; optional invocation policy is checked in `agents/openai.yaml` when present, without assuming source-only fields
 - [ ] Has ≥2 phase headings
 - [ ] Contains verdict keywords: COMPLIANT, WARNINGS, NON-COMPLIANT, NOT ASSESSED
-- [ ] Does NOT require "May I write" language (read-only: `allowed-tools` has no Write/Edit and the skill states it does not write files)
+- [ ] Native Skill instructions preserve scope, authorized write boundaries and argument handling; unsupported metadata is not treated as a runtime control
 - [ ] Has a next-step handoff (what to do after audit results)
 
 ---
@@ -44,7 +44,7 @@ None. Asset auditing is a read-only analysis skill; no gates are invoked.
 
 Every case's `project.yaml` sets `modes.rigor: minimal` and
 `modes.automation: collaborative`, with no `project.local.yaml`, unless its own
-Fixture says otherwise. Rules: `studio-tests/CLAUDE.md` §
+Fixture says otherwise. Rules: `studio-tests/AGENTS.md` §
 Fixture defaults.
 
 ---
@@ -260,14 +260,14 @@ Fixture defaults.
 ### Case 9: Engine Unresolved — Stop before scanning
 
 **Fixture:**
-- `project.yaml` has no `engine.name`; `.claude/docs/technical-preferences.md` reads `[TO BE CONFIGURED]`
+- `project.yaml` has no `engine.name`; `.agents/docs/technical-preferences.md` reads `[TO BE CONFIGURED]`
 - Both `src/` and `Source/` exist, so the tree does not decide the engine
 - `design/art/art-bible.md` has asset standards; `assets/art/` holds PNG files
 
 **Input:** `/asset-audit`
 
 **Expected behavior:**
-1. Phase 2 cannot resolve the engine or its code root per `.claude/docs/code-root-resolution.md`
+1. Phase 2 cannot resolve the engine or its code root per `.agents/docs/code-root-resolution.md`
 2. The skill stops with `NOT ASSESSED — engine unresolved`, naming `/setup-engine`
 3. No asset root is guessed, so the Godot naming patterns are not applied and no section is reported clean
 

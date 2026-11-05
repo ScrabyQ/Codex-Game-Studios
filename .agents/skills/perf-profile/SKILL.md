@@ -94,16 +94,14 @@ node scripts/codex/helper.mjs yaml-helper --root <absolute-project-root> get_eff
 ```
 
 Run each line as its own plain command, one key per call: the helper moves to
-the project root itself, so it works when the session was started in a
-subfolder, and this skill pre-approves that form only (a `source` or `cd ... &&`
-wrapper asks the user every time). Empty output means that budget is not set.
+the project root itself, so it works when the session was started in a subfolder. Commands remain subject to existing authorization and host permissions. Empty output means that budget is not set.
 
 > **Resolve these budgets from `project.yaml`, not from prose.** Phase 0 above
 > states these four budgets "are profiled the same way at every level". A user
 > who set `performance.target_framerate: 60` in `project.yaml` has it ignored if
-> the budget is read from design docs or CLAUDE.md instead.
+> the budget is read from design docs or applicable project guidance instead.
 
-Then fall back to design docs or CLAUDE.md for anything config does not carry:
+Then fall back to design docs or applicable project guidance for anything config does not carry:
 
 - Target FPS (e.g., 60fps = 16.67ms frame budget)
 - Memory budget (total and per-system)

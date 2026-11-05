@@ -9,13 +9,13 @@ and A3.
 
 **In this file:**
 
-- A1. CLAUDE.md Technology Stack Templates
+- A1. Language configuration examples
 - A2. Naming Conventions
 - A3. Engine Specialists Routing
 
 ---
 
-### A1. CLAUDE.md Technology Stack Templates
+### A1. Language configuration examples
 
 **GDScript:**
 ```markdown

@@ -9,11 +9,7 @@ ID in lowercase.
 **Scope**: All 7 production stages (Concept → Release), all 3 Tier 1 directors,
 all key Tier 2 leads. Any skill, team orchestrator, or workflow may invoke these gates.
 
-**When a skill spawns a director for a gate, it must NOT read the gate definition
-file itself. Include the gate definition file path in the `Agent` prompt and instruct
-the director agent to read it first, then pass only the context fields that gate's
-row requires. Gate definitions are read by the spawned agent, in the agent's own
-context window.**
+For authorized native delegation, pass the definition path and the required context fields; the assigned reviewer reads the definition first. The parent avoids duplicating the full prompt in the brief. If the work runs in-session, read the definition explicitly and label the review nonindependent. If independent execution is required but unavailable, report PENDING; no gate definition creates a native role or grants permission.
 
 ---
 
@@ -22,7 +18,7 @@ context window.**
 Agent by prefix: `CD-` creative-director · `TD-` technical-director ·
 `PR-` producer · `AD-` art-director · `LP-` lead-programmer · `QL-` qa-lead ·
 `ND-` narrative-director. Definition files below are in
-`.agents/docs/director-gates/`; each one's header names its agent's model tier.
+`.agents/docs/director-gates/`; each header identifies its role and domain; model selection follows native session policy.
 
 | Gate ID | Purpose | Definition file |
 |---------|---------|-----------------|
@@ -87,13 +83,7 @@ narrative consistency check, not an optional review.
 
 **MANDATORY: apply the review mode before every gate spawn.**
 
-The value is already resolved — skills call
-`` !`bash "${CLAUDE_SKILL_DIR}/../../hooks/yaml-helper.sh" resolve_config --keys review_mode` ``
-(with the matching `allowed-tools` grant — see `config-resolution.md`)
-and read `review_mode` from the emitted block. Do **not** re-derive it here. The
-full chain (`project.local.yaml` → `project.yaml` → `production/review-mode.txt`
-→ `modes.rigor` expansion, `standard`→`lean`), its defaults and its failure modes are specified in
-`.agents/docs/config-resolution.md`, and covered by the config test suite.
+Resolve mode explicitly with `node scripts/codex/helper.mjs yaml-helper --root . resolve_config --keys review_mode`. Use its emitted provenance. The full chain (allowed local → shared → legacy mirror → rigor → defaults), diagnostics and overrides are in [config-resolution.md](config-resolution.md).
 
 An inline `--review [mode]` argument, if the skill accepts one, overrides the
 resolved value for that run.
@@ -113,16 +103,15 @@ Apply the resolved mode:
 
 ```
 # Apply mode check, then:
-Spawn `[agent-name]` via `Agent`:
-- Gate: [GATE-ID] — `Agent` prompt instructs the agent to read
+Invoke the role through available, authorized native delegation:
+- Gate: [GATE-ID] — The brief instructs the agent to read
   `.agents/docs/director-gates/[gate-id].md` FIRST (parent must not read it)
 - Context: [fields under that gate's **Context to pass**]
 - Await the verdict before proceeding.
 ```
 
 For parallel spawning (multiple directors at one gate point): apply the mode
-check per gate, then spawn all surviving agents simultaneously — issue all `Agent`
-calls before waiting for any result; collect all verdicts before proceeding.
+check per gate, then spawn all surviving agents simultaneously — issue independent native calls before waiting where supported; collect all verdicts before proceeding.
 
 ---
 
@@ -138,7 +127,7 @@ every gate, so no Verdicts line lists it:
 | Verdict | Meaning | Default action |
 |---------|---------|----------------|
 | **APPROVE / READY** | No issues. Proceed. | Continue the workflow |
-| **CONCERNS [list]** | Issues present but not blocking. | Surface to user via `AskUserQuestion` — options: `Revise flagged items` / `Accept and proceed` / `Discuss further`. Revise flagged items: the specialist who drafted the section re-drafts it; the revision goes through the skill's normal approve-then-write step, and the header records `REVISED [date]`. |
+| **CONCERNS [list]** | Issues present but not blocking. | Surface to user via `user question` — options: `Revise flagged items` / `Accept and proceed` / `Discuss further`. Revise flagged items: the specialist who drafted the section re-drafts it; the revision goes through the skill's normal approve-then-write step, and the header records `REVISED [date]`. |
 | **REJECT / NOT READY [blockers]** | Blocking issues. Do not proceed. | Surface blockers to user. Do not write files or advance stage until resolved. |
 | **NOT ASSESSED [what was missing]** | An input the gate names was missing or unreadable, so no judgement was made. | Name what was missing. Never treat it as APPROVE/READY: supply the input and re-run the gate, or record NOT ASSESSED and let the skill's own verdict reflect it. |
 
@@ -177,7 +166,7 @@ For phase gates, record in `docs/architecture/architecture.md` or
 At checkpoints needing multiple directors (most common at `/gate-check`):
 
 ```
-Spawn in parallel (issue all `Agent` calls before waiting for any result):
+Spawn in parallel (issue all independent native delegation calls before waiting for any result):
 creative-director → CD-PHASE-GATE, technical-director → TD-PHASE-GATE,
 producer → PR-PHASE-GATE, art-director → AD-PHASE-GATE
 

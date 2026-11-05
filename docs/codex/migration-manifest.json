@@ -23,7 +23,7 @@
       "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/accessibility-specialist.toml",
-      "target_sha256": "99bd1ff1a519672da63d969f1977b7c9225b9b0f2a1f9e7d92492515bb5994b7"
+      "target_sha256": "7fe96525b7b805ecf0354892a73eabf4f9dac23cee3061cdcfcbfddec8da1736"
     },
     {
       "id": "file:.claude/agents/ai-programmer.md",
@@ -40,7 +40,7 @@
       "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/ai-programmer.toml",
-      "target_sha256": "16cea4f2bee0cb025544f4d5fbdfb711960e9ddb08d19469e638ee89025c91f0"
+      "target_sha256": "8b279403c7cdd7b82a53d7452411a97b488308acaed404e7e162c27998555716"
     },
     {
       "id": "file:.claude/agents/analytics-engineer.md",
@@ -57,7 +57,7 @@
       "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/analytics-engineer.toml",
-      "target_sha256": "242766f8e15273b9522013858b55af428e0c8508524ad4bb28282194c1b79c56"
+      "target_sha256": "ddb8c6f26b0cd86535d3714462e89d56e643a0c69c79d66fcf4dcba83ee9c3b6"
     },
     {
       "id": "file:.claude/agents/art-director.md",
@@ -75,7 +75,7 @@
       "verification": "Full body and native TOML integrity verified for 11 roles; actual two-role and small-task in-session fallback checked. Custom-type spawning and per-role full behavioral catalog remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/art-director.toml",
-      "target_sha256": "e4547b2cb93e5ec6ff5345683638197a4baca4f7e40c0da5ebcfa032a2b449bb"
+      "target_sha256": "9154c2d745d58acf93fa4af2b4a9f276f4b4af5da719ccd56ad3d32d476438b0"
     },
     {
       "id": "file:.claude/agents/audio-director.md",
@@ -93,7 +93,7 @@
       "verification": "Full body and native TOML integrity verified for 11 roles; actual two-role and small-task in-session fallback checked. Custom-type spawning and per-role full behavioral catalog remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/audio-director.toml",
-      "target_sha256": "593324c6410970a965e968af42f82fb2c3e2bafdd9b3359795d0cd25964cd27a"
+      "target_sha256": "860990e83a1e887435c4cf244025ad84c6feccd35de6f5d27c5a48d74ad1de2d"
     },
     {
       "id": "file:.claude/agents/community-manager.md",
@@ -110,7 +110,7 @@
       "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/community-manager.toml",
-      "target_sha256": "846b6ba02f71cf9f15dcb0b9fc164fc7605a4347d74bb97cf651d48efb90e727"
+      "target_sha256": "8047407d8a130fe4135e194764f033209a0c57b2be592702d365081337b65ad8"
     },
     {
       "id": "file:.claude/agents/creative-director.md",
@@ -128,7 +128,7 @@
       "verification": "Full body and native TOML integrity verified for 11 roles; actual two-role and small-task in-session fallback checked. Custom-type spawning and per-role full behavioral catalog remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/creative-director.toml",
-      "target_sha256": "a3bd142f7a13c56e8160f35c5e36fc06e8b2ab94f184c384dd2f37ae9496d2c9"
+      "target_sha256": "aca6f02b20f29f74dd5e8979d0a2925d86e531a52e20ddd474e8ccadac2d5ae2"
     },
     {
       "id": "file:.claude/agents/devops-engineer.md",
@@ -145,7 +145,7 @@
       "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/devops-engineer.toml",
-      "target_sha256": "85f0678690d9d7cd97e8f5f5005d6491755c753bf5872adcab508196472637a7"
+      "target_sha256": "29314b27d8151469feb4f6afd241a0c0b5057fadcb8ebf7a161b699097deb4d5"
     },
     {
       "id": "file:.claude/agents/economy-designer.md",
@@ -163,7 +163,7 @@
       "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/economy-designer.toml",
-      "target_sha256": "1cddc82f22dbda52265746407a8003b3ccdc7589fa4e139e4fa9b2e08f11d571"
+      "target_sha256": "b7d153767311d27b338df9d1fa241714cb9e4438479e07aaef554e4ebef0812c"
     },
     {
       "id": "file:.claude/agents/engine-programmer.md",
@@ -180,7 +180,7 @@
       "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/engine-programmer.toml",
-      "target_sha256": "59f4071a3b800776917ed2989ad8e3f2afc83d5210102791fb683348e3ea1f34"
+      "target_sha256": "64546ef0572c2b7be66ef49fb0dba06cee9878fdda3ba31400f1e4b4735ad15c"
     },
     {
       "id": "file:.claude/agents/game-designer.md",
@@ -198,7 +198,7 @@
       "verification": "Full body and native TOML integrity verified for 11 roles; actual two-role and small-task in-session fallback checked. Custom-type spawning and per-role full behavioral catalog remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/game-designer.toml",
-      "target_sha256": "33c1f680acd87781a02554f86469509a20ff3605616b6149b3a9440ef7eb018d"
+      "target_sha256": "597aaff8e3f4762a36c24d4ccc36d1f521f15e89cec4602d3272ea44a6aa8000"
     },
     {
       "id": "file:.claude/agents/gameplay-programmer.md",
@@ -215,7 +215,7 @@
       "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/gameplay-programmer.toml",
-      "target_sha256": "cd3299e61edb68b082b5d60565012a6226f5fba3dbb8b993eba5c94da61e3b47"
+      "target_sha256": "c212421f7264f52a604f158af17f7318c6c90c46ea6b6ea4895327c96781906c"
     },
     {
       "id": "file:.claude/agents/godot-csharp-specialist.md",
@@ -233,7 +233,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-09",
       "target": ".codex/agents/godot-csharp-specialist.toml",
-      "target_sha256": "39803ea17db68b46ee030e4388cc332ec9a9fa7c82fd92b9187295daa6649615",
+      "target_sha256": "db816a027bcdf376ca624b63801f8d8dabd8728e58f0457b911059a89689316a",
       "related_targets": []
     },
     {
@@ -252,7 +252,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-09",
       "target": ".codex/agents/godot-gdextension-specialist.toml",
-      "target_sha256": "7ec14ecf18e535f698facf4698de0524dbd7861e6db41ddbdf426c188f7a57e5",
+      "target_sha256": "df6b9437b0c988dd994392670a32b599a4f04315e2eaa67b2081129c26e69aeb",
       "related_targets": []
     },
     {
@@ -271,7 +271,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-09",
       "target": ".codex/agents/godot-gdscript-specialist.toml",
-      "target_sha256": "681ffffe394ea2e89ade2290dd96dcccebbdd34959f1ce61c4c0c86b7adc006e",
+      "target_sha256": "b1c5a38a2ede7dda48371a10a628f57a41283ec4120cacb6f38b693db2384316",
       "related_targets": []
     },
     {
@@ -290,7 +290,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-09",
       "target": ".codex/agents/godot-shader-specialist.toml",
-      "target_sha256": "78c2f6111431ac394934dc28a81ecd82df930cfc6e39c265a091c94c9ed37eb9",
+      "target_sha256": "ffa40171a669c0574f971252e8106952b984990c2e6d6aef442d09927b75765b",
       "related_targets": []
     },
     {
@@ -309,7 +309,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-09",
       "target": ".codex/agents/godot-specialist.toml",
-      "target_sha256": "47af614a3e7b95f275f638f226b003e9bd31f20f581bbff43a565d354f6aa581",
+      "target_sha256": "ad47ca4e9e40d3a356647fb6f2380796e3528d43f466281b7ba091f649c988ac",
       "related_targets": []
     },
     {
@@ -327,7 +327,7 @@
       "verification": "Full body and native TOML integrity verified for 11 roles; actual two-role and small-task in-session fallback checked. Custom-type spawning and per-role full behavioral catalog remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/lead-programmer.toml",
-      "target_sha256": "b173249c2ee8527d8e9758ce568db7398d2d6378cd036de7f1f0d70ed520e50f"
+      "target_sha256": "f265e7e36c9e550a0d803cc61b4bfe8ad449655f618104339235c6c6956e9442"
     },
     {
       "id": "file:.claude/agents/level-designer.md",
@@ -345,7 +345,7 @@
       "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/level-designer.toml",
-      "target_sha256": "7f19132ebb9b526d4491fea7c55f957d76511b4a176965817def3c63c47e849a"
+      "target_sha256": "2f4e0cc0d6614f8ef0754e431039f76e7c53e3f1f677f3f1f43c2212980b3870"
     },
     {
       "id": "file:.claude/agents/live-ops-designer.md",
@@ -363,7 +363,7 @@
       "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/live-ops-designer.toml",
-      "target_sha256": "1d406c262b8d94901939a14729ffdcfdfc519321f8cfe0f2eed1967d51a9da02"
+      "target_sha256": "7c149ea9d5a46ef1e26c53d4afb9e1d722695e8960b84f60170333f4f92be327"
     },
     {
       "id": "file:.claude/agents/localization-lead.md",
@@ -380,7 +380,7 @@
       "verification": "Full body and native TOML integrity verified for 11 roles; actual two-role and small-task in-session fallback checked. Custom-type spawning and per-role full behavioral catalog remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/localization-lead.toml",
-      "target_sha256": "83c3d4878ec0bbaa3c925dda6ffdb42233964fb4895db5b207077843d1f9ddac"
+      "target_sha256": "382b2e05561806a9376313174739edd07614cdaefd2d3e6e4fc2cd6eb6e71d2d"
     },
     {
       "id": "file:.claude/agents/narrative-director.md",
@@ -398,7 +398,7 @@
       "verification": "Full body and native TOML integrity verified for 11 roles; actual two-role and small-task in-session fallback checked. Custom-type spawning and per-role full behavioral catalog remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/narrative-director.toml",
-      "target_sha256": "bdf4d2a472f1353b3ac034574c321c207ec245e2edae9e7e55412f569380f447"
+      "target_sha256": "f1f49c855fe51099282fb87b97472e3e5a38e6d69951092e066d587d3bb8b424"
     },
     {
       "id": "file:.claude/agents/network-programmer.md",
@@ -415,7 +415,7 @@
       "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/network-programmer.toml",
-      "target_sha256": "6a28815842cb8cc90c09d1e76aa56df870d143afc5ac1d527e910a6fcf2893a5"
+      "target_sha256": "61697b90fbc55c9d925e638e021f2be56a47d8e9c593462833cbbd86b187eb20"
     },
     {
       "id": "file:.claude/agents/performance-analyst.md",
@@ -432,7 +432,7 @@
       "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/performance-analyst.toml",
-      "target_sha256": "279e34df7269997b4e2837d41a692a7ba7814a03b06b9891058859ac9fd9e392"
+      "target_sha256": "36361847e296c3336b25af9bebe95b2536cdb21c9935e55e960a5e33aac6fb9b"
     },
     {
       "id": "file:.claude/agents/producer.md",
@@ -450,7 +450,7 @@
       "verification": "Full body and native TOML integrity verified for 11 roles; actual two-role and small-task in-session fallback checked. Custom-type spawning and per-role full behavioral catalog remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/producer.toml",
-      "target_sha256": "fc06cd1084e35bef0b05d4fd6d901a162e040a22be5654f049aad3a7038496fe"
+      "target_sha256": "3d70a32f939c2d601468ebe897cee821d425009c7407e456c091af2e9b707dd2"
     },
     {
       "id": "file:.claude/agents/prototyper.md",
@@ -467,7 +467,7 @@
       "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/prototyper.toml",
-      "target_sha256": "ce2b02be5809738a7af68734fd3ed142dce6acc94296711aa46629290abb2e5b"
+      "target_sha256": "f6200dc37def8b6cc736e48671b533e1acafaeb110ced84ea6792185152c4cc4"
     },
     {
       "id": "file:.claude/agents/qa-lead.md",
@@ -484,7 +484,7 @@
       "verification": "Full body and native TOML integrity verified for 11 roles; actual two-role and small-task in-session fallback checked. Custom-type spawning and per-role full behavioral catalog remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/qa-lead.toml",
-      "target_sha256": "690d048f760e977b7a151e2af0730a60664474dfaa3577dffd153c117b000a80"
+      "target_sha256": "c28766b2a06bcf2d12d3a595b4fa6875dfe59f0287165c7f43dac63b13d38b2f"
     },
     {
       "id": "file:.claude/agents/qa-tester.md",
@@ -501,7 +501,7 @@
       "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/qa-tester.toml",
-      "target_sha256": "4bccaf67232a57da7a8db0d0abebe009026255b5a3086bd729203dbaf4681a9d"
+      "target_sha256": "81d949abd7fb0ce5aabd502fce8fb5de0cbda5fb31b60a5ab7183aef136305ff"
     },
     {
       "id": "file:.claude/agents/release-manager.md",
@@ -518,7 +518,7 @@
       "verification": "Full body and native TOML integrity verified for 11 roles; actual two-role and small-task in-session fallback checked. Custom-type spawning and per-role full behavioral catalog remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/release-manager.toml",
-      "target_sha256": "68c4aea011488146adff319c0bdfd697db679a91429855cd8505a79f19628ff4"
+      "target_sha256": "eaab9762f4ec00cad81703fa3a95a2fc8633a2fab887d3a1767c731de212c4fc"
     },
     {
       "id": "file:.claude/agents/security-engineer.md",
@@ -535,7 +535,7 @@
       "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/security-engineer.toml",
-      "target_sha256": "7fc4c46832fc481c7d30fe5c76e3fde288a18900be6da863083d489154a1d597"
+      "target_sha256": "1297c9aeea72aaea61aee4da4aa09866532144b7cc7c1b66f87c715cf27cf493"
     },
     {
       "id": "file:.claude/agents/sound-designer.md",
@@ -552,7 +552,7 @@
       "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/sound-designer.toml",
-      "target_sha256": "bcd715ee8aa6d0c6620a2c743c01ccf769af2d9924ffa5407cb739da07c62161"
+      "target_sha256": "070afd7793ce1d5ab16aa541b1ac7f0f7bb5540ec4b4895e8fbac89660ba3b73"
     },
     {
       "id": "file:.claude/agents/systems-designer.md",
@@ -570,7 +570,7 @@
       "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/systems-designer.toml",
-      "target_sha256": "4f1e6d1517c83888420e80700bd31b8ce471c541e15fb1df526848aa150a575e"
+      "target_sha256": "99ab57698dc0607906acbb7e8452ae25808863a12c5575692aed074adbc1fd25"
     },
     {
       "id": "file:.claude/agents/technical-artist.md",
@@ -587,7 +587,7 @@
       "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/technical-artist.toml",
-      "target_sha256": "557554a2f7eca279fffed4f42d4e97c6061142a8d2144bdfb24d407f72382559"
+      "target_sha256": "59f07965b0d565da03fdfbb6c5172cd7456b614c61e460bbfb0b9bfcc6bca648"
     },
     {
       "id": "file:.claude/agents/technical-director.md",
@@ -605,7 +605,7 @@
       "verification": "Full body and native TOML integrity verified for 11 roles; actual two-role and small-task in-session fallback checked. Custom-type spawning and per-role full behavioral catalog remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/technical-director.toml",
-      "target_sha256": "2222e61da86b360e85914b34bd323e8023af2dfe528a66cfa526894a7f5b4080"
+      "target_sha256": "f6103e93dfdc6e25c638bb82c13c4c15078058c16f7936c35074051dd52a5677"
     },
     {
       "id": "file:.claude/agents/tools-programmer.md",
@@ -622,7 +622,7 @@
       "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/tools-programmer.toml",
-      "target_sha256": "27dad13dccc47e69866ebf06df9af9c2f6dfac0fe418c319ad453e55f1331e5d"
+      "target_sha256": "f35d5b8c2472e6420072221487c709a280f311b30967f9f65e194944c99390e6"
     },
     {
       "id": "file:.claude/agents/ue-blueprint-specialist.md",
@@ -640,7 +640,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-09",
       "target": ".codex/agents/ue-blueprint-specialist.toml",
-      "target_sha256": "31a1760a2cb0781d7d2c4d7e8d690ae2cad3acfe59a89b9de6cfb39b7e13c71e",
+      "target_sha256": "93a18e8b803627a3055151c2fd617a464d2b4d7854b010ad1fa53393016ab89c",
       "related_targets": []
     },
     {
@@ -659,7 +659,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-09",
       "target": ".codex/agents/ue-gas-specialist.toml",
-      "target_sha256": "548cfd3a464ba199ae72f8d1e2b2eeced2c25730f086ac830eb1fb48ae34ff4b",
+      "target_sha256": "443b930b138ca181db60bf7b7cc34a615d72cc0527772deefc9e769886e3b18d",
       "related_targets": []
     },
     {
@@ -678,7 +678,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-09",
       "target": ".codex/agents/ue-replication-specialist.toml",
-      "target_sha256": "b897f44ebb955f7e6fba8bbba64e306c83ea95027015e86f6024fefb605c9846",
+      "target_sha256": "548f6728af766e0665e2af0e1f96a33aade46443768b9a69f2f01acc7dbb77ad",
       "related_targets": []
     },
     {
@@ -697,7 +697,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-09",
       "target": ".codex/agents/ue-umg-specialist.toml",
-      "target_sha256": "72732400db1d122d02eec259bf124083ffb5d3dd9ee5295831024c9aef297bae",
+      "target_sha256": "13ee824ea88be494ed8b2b8405fd995a612a34288e573934ba4b8b47d0a6378b",
       "related_targets": []
     },
     {
@@ -715,7 +715,7 @@
       "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/ui-programmer.toml",
-      "target_sha256": "5f4c815439e49d941658d8c03111e6db39681ba1e72fde3d8e5caf268c74b735"
+      "target_sha256": "b4ebbe1b6a0eb17719c3762614ff667b5f3c2abb14c4f05e678a0bf612737431"
     },
     {
       "id": "file:.claude/agents/unity-addressables-specialist.md",
@@ -733,7 +733,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-09",
       "target": ".codex/agents/unity-addressables-specialist.toml",
-      "target_sha256": "d4d211f33256efc2339ba85d0685fa221a3cacd553509e16daa2b7219c4b1538",
+      "target_sha256": "b62451aa54335c87af692ec11485b4f0e5bf55328868882b95145db32330b1cf",
       "related_targets": []
     },
     {
@@ -752,7 +752,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-09",
       "target": ".codex/agents/unity-dots-specialist.toml",
-      "target_sha256": "83b7131ece0cd50dc34ad6755fe442fdc4c5e18fbbb4e75b027424e69b275ac0",
+      "target_sha256": "081f692320abf28e3b7cd9ce304ee287b5e78f7c0f55fd28871474a34b09e622",
       "related_targets": []
     },
     {
@@ -771,7 +771,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-09",
       "target": ".codex/agents/unity-shader-specialist.toml",
-      "target_sha256": "053f12beed64ae2ce2b629dbe3a3859d64d44cc0e8815786d01172fdd09bd843",
+      "target_sha256": "a7b170c7b336b488d8a5ac37193a33981819d1a523217532127ba6b89f1f67c6",
       "related_targets": []
     },
     {
@@ -790,7 +790,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-09",
       "target": ".codex/agents/unity-specialist.toml",
-      "target_sha256": "c9e366de73c27022e5de4faca66fef157d051777dbd3ae84855781f97150dd39",
+      "target_sha256": "3f77393aabeb941cdfcbb8055d29e2e23c4f05f58c6c1f2796c9e9de0af1ad02",
       "related_targets": []
     },
     {
@@ -809,7 +809,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-09",
       "target": ".codex/agents/unity-ui-specialist.toml",
-      "target_sha256": "11524d9dfbc85f4ad0904998b4f9f2c8c48f8dff67937099794400e4741f7213",
+      "target_sha256": "6f289ad138d12efa677768fdf8e08bfff4a5007f523ebee633d72cf8b29a3a1f",
       "related_targets": []
     },
     {
@@ -828,7 +828,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-09",
       "target": ".codex/agents/unreal-specialist.toml",
-      "target_sha256": "ad6d9f5bef61682929074cd7bcbaa07343c350815435969776d2d6bd7847f823",
+      "target_sha256": "646cc5014f004c514fa0e1759a1461325b4a9b0b17a2e3907eb4812c267b7f89",
       "related_targets": []
     },
     {
@@ -847,7 +847,7 @@
       "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/ux-designer.toml",
-      "target_sha256": "6dcc74b46020c5d8b21fb437b1d0f9b73fa8edf0c405b7f59152bd9a08dc6e6c"
+      "target_sha256": "a9bed300715aeff33317774c9e251cbdc7f66df96b52007b2e43e14e91b55c91"
     },
     {
       "id": "file:.claude/agents/world-builder.md",
@@ -865,7 +865,7 @@
       "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/world-builder.toml",
-      "target_sha256": "bf4d64ea2253e06b3f91a476b74fe0e604d7d1b7693fb9194072b83893b403ae"
+      "target_sha256": "acf0c22308cbccd1cb8475b1e9e506bf8924f68965686f92bda9f2d91f73292b"
     },
     {
       "id": "file:.claude/agents/writer.md",
@@ -883,7 +883,7 @@
       "verification": "23 full adapted bodies and target bytes verified; actual code/design/QA in-session fixture reviews. Native custom-type spawning and complete role behavioral catalogs remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".codex/agents/writer.toml",
-      "target_sha256": "388733d64b93b97efd50b01d137a0a5d8d080e58054fb4207a780e64e316ea09"
+      "target_sha256": "dc11475650b1252d015fa1e8db39e65f7ceecdaa1e859868c1d5ff7bd3cae49e"
     },
     {
       "id": "file:.claude/docs/CLAUDE-local-template.md",
@@ -896,11 +896,11 @@
       ],
       "proposed_target": ".agents/docs/CLAUDE-local-template.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "All130 source reference docs preserved through132 source-bound targets,62 templates+8 guidance and native authoring contract;25 distinct Skill template refs resolve, internal file links checked. Content/reference verification does not claim runtime/engine execution.",
+      "verification": "Native local configuration and optional host setup are maintained in the mapped guidance; existing authorization persists and native activation is assessed separately.",
       "status": "EQUIVALENT",
       "task": "CGS-26",
-      "target": ".agents/docs/CLAUDE-local-template.md",
-      "target_sha256": "c8b4b6406ccb3dc5c5926c7000ce1075d7e0a74c6c8840326756944b6680ad18",
+      "target": ".agents/docs/config-resolution.md",
+      "target_sha256": "150ba8a2b9b5c03a20720f0a837f07da458ab53cf80ecbb8d77c2451ca74358c",
       "related_targets": []
     },
     {
@@ -918,7 +918,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/agent-roster.md",
-      "target_sha256": "d1625dbd35a2d57936cc818d31989bbf6bd22398bfd8b43993181fd18cf75a2d",
+      "target_sha256": "f9b7c2a61b703464736f135d5b18ed856b9901cd30345c84ec7237ab1ebf744d",
       "related_targets": []
     },
     {
@@ -936,7 +936,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/agent-teams.md",
-      "target_sha256": "c009059d9b36a0047998675d5c1b838329020d88164554220a04590324394fd8",
+      "target_sha256": "5333ca4aa82b6881c820922a3fb3f2cd7aa0bc257283e1c01cd7dc57897419ee",
       "related_targets": []
     },
     {
@@ -954,7 +954,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/automation-modes.md",
-      "target_sha256": "426363a2452b6829657e15f9efc6b0c3d4f99c615c4dcdc3f99b0afe9658abcb",
+      "target_sha256": "8f0aa412b878b3911c582fc070dbaea16bada9bfd3c95df9e3457dbc859edc31",
       "related_targets": []
     },
     {
@@ -972,7 +972,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/code-root-resolution.md",
-      "target_sha256": "6b4412f26631463a701012f83889d62bf1d1fc96c1c331503d214fc033715aaf",
+      "target_sha256": "9504dc8104b3aee7bb580f5036fffd6ac3320f3c4110b57072e4b769cf8f528e",
       "related_targets": []
     },
     {
@@ -990,7 +990,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/coding-standards.md",
-      "target_sha256": "e42660048fb896cf186e9fdfdaad87239e44147ad60dbd114e26798bf30fd6bd",
+      "target_sha256": "822c75ee868c4bd81eb534fb3dbd6b97606aaefd84caf6178bbf9ad1e8f23af4",
       "related_targets": []
     },
     {
@@ -1010,7 +1010,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/config-resolution.md",
-      "target_sha256": "b01a536b95996b924efaf28da069b90f5412ed8760299bebdea45ecc7b2433b0",
+      "target_sha256": "150ba8a2b9b5c03a20720f0a837f07da458ab53cf80ecbb8d77c2451ca74358c",
       "related_targets": []
     },
     {
@@ -1028,7 +1028,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/context-management.md",
-      "target_sha256": "2a1444b38a318b1479f4c3df360ecb83a6a9ab90a7ba08770386d7da75c047df",
+      "target_sha256": "d47b8b687052a2e17478361d525a0bdb9539190cf71c19a95259b33e492acc2f",
       "related_targets": []
     },
     {
@@ -1046,7 +1046,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/coordination-rules.md",
-      "target_sha256": "e6a99fed89a225e207ee0754c8cac10e6c1bf1f84d4a776982169de6e8e53b68",
+      "target_sha256": "f7c6b6d43203302765532df24d9bb83ee9543ec860f184a5d6b8f8fac5e772ab",
       "related_targets": []
     },
     {
@@ -1066,7 +1066,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates.md",
-      "target_sha256": "e6e63c645cbf0158c7408a37432832765a02de6b42bda959f2731a5c72f7a128",
+      "target_sha256": "efac0fb95ab54efcd61cb55faede6a3226bcb67a74c69c9e09e7af17d66c1758",
       "related_targets": []
     },
     {
@@ -1084,7 +1084,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/ad-art-bible.md",
-      "target_sha256": "ad78114979aec8cc2fa491d4bcc4e5c0ffbfbece2716e77d9c2da6c3aec36186",
+      "target_sha256": "a85f0d17daf86f92c938cec04b69d397241ab97f97a730ca493b4b982657e325",
       "related_targets": []
     },
     {
@@ -1102,7 +1102,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/ad-concept-visual.md",
-      "target_sha256": "cc27b36bf0b0d4592c39873f18d04bfe8ca92fabc0c2642887bbfe8389e6ec2c",
+      "target_sha256": "6fcb2db4f86c24745296dcf351ccfbbfffddcf29a6b153fc75b2bed0eed463ab",
       "related_targets": []
     },
     {
@@ -1120,7 +1120,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/ad-phase-gate.md",
-      "target_sha256": "8427a273639a1b732821706fcbeba2d0206bbd791304720551344313c3b61919",
+      "target_sha256": "cbb4d9fd0098bf92688b223cfbf00d0737df0ef661429f3cc2dc4c8bc41098e6",
       "related_targets": []
     },
     {
@@ -1138,7 +1138,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/ad-visual.md",
-      "target_sha256": "09801e2ed6b23576fb7aa4f256ee30abf922386011a40ddaf61171a796e43205",
+      "target_sha256": "06a3084983456274d93edd9bec7239b6f2fee57d8cd00057245380871620ac7f",
       "related_targets": []
     },
     {
@@ -1156,7 +1156,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/cd-gdd-align.md",
-      "target_sha256": "04dca340d431770dcafa3849f5a4acf0852de70aa462d6b52780614ca9aff3f0",
+      "target_sha256": "fb08f8e901cb6dc68cf1ccb9015d5dc42e1c211abf8c7c873e1c3ca424ddd5eb",
       "related_targets": []
     },
     {
@@ -1174,7 +1174,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/cd-narrative.md",
-      "target_sha256": "2b3653b0dad85f750547be363bd7f04b48041cd6e52918be7603c559662791c7",
+      "target_sha256": "f1f613c8ae6e47ef1368c08f7e4596b8244fb99bd57dba35b6b95f6417cc295a",
       "related_targets": []
     },
     {
@@ -1192,7 +1192,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/cd-phase-gate.md",
-      "target_sha256": "e5643d6838cb0169b38dfafdfbdd025ca7f87723b03c1922daa1c1e5b993d345",
+      "target_sha256": "259966a166d14f4b6fdc923a9c3dc985c3ba4ade4faa7ac149fe1d26cbc922e6",
       "related_targets": []
     },
     {
@@ -1210,7 +1210,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/cd-pillars.md",
-      "target_sha256": "c3d89c7639b51d947845d202fb73f2a6d5d9dc0b1f2494c8a59e479d9167d7d4",
+      "target_sha256": "2220326d819d4bcaa2c3593237d1832ba7ccd30cd5627811005661de6a647edb",
       "related_targets": []
     },
     {
@@ -1228,7 +1228,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/cd-playtest.md",
-      "target_sha256": "c06460005440c2659dc7615bb9b408f240ec80d4415e0f6e90631d532d548cdc",
+      "target_sha256": "3bd0853b707740299d2d8a31e36d48a5d2099388cd07c4b8c5fb7c5a80b3a4c9",
       "related_targets": []
     },
     {
@@ -1246,7 +1246,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/cd-systems.md",
-      "target_sha256": "6ffe572cf8269854e9cdc13c3154107eaa05fe0f2b6b89c08f5ebb5b0a33c89a",
+      "target_sha256": "6a90bdda5a2f690f2fe56c286b373e2022691594fcc84df1bfe6f38a43d39b64",
       "related_targets": []
     },
     {
@@ -1264,7 +1264,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/lp-code-review.md",
-      "target_sha256": "015e05c374db311f4c97d1bf9c5745aa09e7cb66bb3da076ec975f7444a0c3bb",
+      "target_sha256": "c5d2b3277af27c7e63e78a6dec94496c6edf5a560983c82f093fdfedc26567f1",
       "related_targets": []
     },
     {
@@ -1282,7 +1282,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/lp-feasibility.md",
-      "target_sha256": "a4d67c7e79087eceed0375e7c4c3fc8794515da0acbc6faf45305238c3f78684",
+      "target_sha256": "f2f95cc2a38264c1efe20a0b12c874252b9c5264a8fa308765173a2bf812b918",
       "related_targets": []
     },
     {
@@ -1300,7 +1300,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/nd-consistency.md",
-      "target_sha256": "b2fcbfbf66a392d3c8fc2d89391b0f00e8ed02830a5e80a37c706d2739cb8bf7",
+      "target_sha256": "555844f5f21723a0fff1df76b9bef75f2181503a800bcb3a7501157ebe21b803",
       "related_targets": []
     },
     {
@@ -1318,7 +1318,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/pr-epic.md",
-      "target_sha256": "250bf9fb1d22c119c9f90716ffee6774d1a1f97c9128239448c438213686a02f",
+      "target_sha256": "59bff2be7adf0aa3ec6e554933404435dab887af4b29c52030b6a6d4d57d8885",
       "related_targets": []
     },
     {
@@ -1336,7 +1336,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/pr-milestone.md",
-      "target_sha256": "6951266c747f8991ab053dd083ed8bceb4ae759d5ecb5c8451d37d69d6754dc6",
+      "target_sha256": "ab2d1ad247f8770efd8c7a612e63a288433590452f24ea8d5818fb7bcc40cd62",
       "related_targets": []
     },
     {
@@ -1354,7 +1354,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/pr-phase-gate.md",
-      "target_sha256": "799ad36dcc4e37eb230f82ec8ae38468da8116737c12783322d823b7a36deb7a",
+      "target_sha256": "ec519515fc02fd323f35cc22a22b87469b443f4a67ee63d2bb32692977ab2ec0",
       "related_targets": []
     },
     {
@@ -1372,7 +1372,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/pr-scope.md",
-      "target_sha256": "8c48f9903804ef1a1eba266aa68da69804752045c2d3b1b60525a07db5ee2a5a",
+      "target_sha256": "518a82f5a8825c901e5412d6fef396ce964f5f3ece80baf0cba592d64a9a1f7d",
       "related_targets": []
     },
     {
@@ -1390,7 +1390,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/pr-sprint.md",
-      "target_sha256": "855c719828f92d3788a22761b5cd2a9b2d008ffd0645e81b64fd78da6e374bf1",
+      "target_sha256": "a94e8706c18a917f209b1d004c7759cd5e2382eb921713cc3245bc88721ad778",
       "related_targets": []
     },
     {
@@ -1408,7 +1408,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/ql-story-ready.md",
-      "target_sha256": "80d9b1c0de13915c4107beb32bb2cf21357bda01fefbf43f8ddbde9622846f11",
+      "target_sha256": "82b9bb06ca879524f55b3420c8a777c4fe620357d0080ec70d06fdb688f82e00",
       "related_targets": []
     },
     {
@@ -1426,7 +1426,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/ql-test-coverage.md",
-      "target_sha256": "70f04f2cccfb96d698b5f9e94c855ed08dd4a28e978ced3d26a901a5d9afe75f",
+      "target_sha256": "6dd697186e2fd6b428042c8da2eeef791891e9b7b8fd7a9a926879d2a20227c7",
       "related_targets": []
     },
     {
@@ -1444,7 +1444,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/td-adr.md",
-      "target_sha256": "a793f3b29a82e3ac7c11254456125f66c181161b762c18e80bc6c793597ebc34",
+      "target_sha256": "24d47096d64602d9d1e86789d7d3b42e2335630a10b8e378731fe5ee9d0f67c1",
       "related_targets": []
     },
     {
@@ -1462,7 +1462,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/td-architecture.md",
-      "target_sha256": "059bdb845813471e397e65d95722a848628339870fe5e7174ece44b530918da8",
+      "target_sha256": "63bed280dd558d9481a7835e2c648e52c89de2ea70eab1cd8c9dd2f5c5651dd8",
       "related_targets": []
     },
     {
@@ -1480,7 +1480,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/td-change-impact.md",
-      "target_sha256": "f5cd7a8bc3c03dd024a8e2480347f78f3d7947ab9083e8c1cc095562202691e3",
+      "target_sha256": "e6b104b56f29c09cdb9092db0d794d6b7b4a341521e635aea976e3724330f3d3",
       "related_targets": []
     },
     {
@@ -1498,7 +1498,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/td-engine-risk.md",
-      "target_sha256": "f529389fe90cf5c2dc19bb8647266fef3dc0d2c86f2b983ac58eada37e3afb66",
+      "target_sha256": "e697e96573ba93222595038be96aa9ea29cfe7e306d0e54aed00437c880f6405",
       "related_targets": []
     },
     {
@@ -1516,7 +1516,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/td-feasibility.md",
-      "target_sha256": "a9fc59b79406daa233c5e03acc4731569441cccf9310e3184ed162e484154070",
+      "target_sha256": "ace75bef5521f6b13caf3a7c99b083891384f8d3d4b3a7cd86d0065b29e4d1aa",
       "related_targets": []
     },
     {
@@ -1534,7 +1534,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/td-manifest.md",
-      "target_sha256": "4f5415bdbefa53e615ae233e02a125a9133c1c926d839dad6dad02070f0fd97d",
+      "target_sha256": "9f4dbfdaeb93062441e06b1d4e3c2a600d420893803d6a2640246635ec8343d7",
       "related_targets": []
     },
     {
@@ -1552,7 +1552,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/td-phase-gate.md",
-      "target_sha256": "564aaecfc69f5265a4eabf4da52a55425a2abf6495f89677169e74f5f9437cdb",
+      "target_sha256": "eb6eefb72c982a2d6a2688d13e7311e144c29c31d7f3b8ded33c9b3232e73c58",
       "related_targets": []
     },
     {
@@ -1570,7 +1570,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/director-gates/td-system-boundary.md",
-      "target_sha256": "1829a37b6eb780ca64b842708c50f0ed24628c5eec6bac23151c9916129663f5",
+      "target_sha256": "675078b4e5bfe20bb227f74dd7111821b4bdad78c4f8f289008d9fb8e1e0292a",
       "related_targets": []
     },
     {
@@ -1588,7 +1588,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/directory-structure.md",
-      "target_sha256": "b7a84db3f2ee1ef57ea2a0ef1adfa53bb7b88b024c621a3661237e2ca4a2c31c",
+      "target_sha256": "55c6ce61ce9135b375904ee26d96c61f55498706fa7ec99f5822622c04ee4711",
       "related_targets": []
     },
     {
@@ -1606,7 +1606,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/effects-map.md",
-      "target_sha256": "f61f2577b81a39cb0753f97fb2e1ea305ec5df2b5fc2176ff46a8f92807af59d",
+      "target_sha256": "0a9f26daa12ec61940a337c1e223a98e06dc284239b4e7c4c9d3ac89aa8f1d1c",
       "related_targets": []
     },
     {
@@ -1624,7 +1624,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/error-recovery-protocol.md",
-      "target_sha256": "3bcb9a16fd300dcd2c7919202f1f7f2c595273f2770bd11b2a5c2ee864184963",
+      "target_sha256": "95a7cd48632266c3d46c06396768731342c60e6968f2e5407d02ea80174dbde7",
       "related_targets": []
     },
     {
@@ -1642,7 +1642,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/hooks-reference.md",
-      "target_sha256": "4b4c7d6ee95e952bd0211d85d5f9546f708ab75cc8775bfadd146828743e9dde",
+      "target_sha256": "dc0146d05b80f5a1087a2fba2f61e12cb714df3bef35e90ec37601d52e9d05f1",
       "related_targets": []
     },
     {
@@ -1660,7 +1660,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/hooks-reference/hook-input-schemas.md",
-      "target_sha256": "2c467f821ffe130ce66eb09c756ef2ee2967ddb9a420831512bfaf0322ea81e2",
+      "target_sha256": "240ab7d130c666bce30bcf5776031941e7f2b2d7e1a2bac367652661d59fa43e",
       "related_targets": []
     },
     {
@@ -1678,7 +1678,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/hooks-reference/post-merge-asset-validation.md",
-      "target_sha256": "ccf0caa75339ec1b9a1b0528adfb0a5dc04f08ae045cef3a3b903e439973fcd2",
+      "target_sha256": "201ada6e1e30086c01940bce96beb39c1b76216ee377bf440aa4d5412030e5c7",
       "related_targets": []
     },
     {
@@ -1696,7 +1696,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/hooks-reference/post-sprint-retrospective.md",
-      "target_sha256": "022cecf8189033ea3b1c3b9e7518ad26a89ea2791b7c91186300536497afd14a",
+      "target_sha256": "c5de6d82b0e24600bf6f87a2d4eb8dcc1981c3f077f3649bbd41ab28131b8d3c",
       "related_targets": []
     },
     {
@@ -1714,7 +1714,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/hooks-reference/pre-commit-code-quality.md",
-      "target_sha256": "3fc480e1a57b4de698dea58df5d8a6a715c589fcc5c5aecaf640292782ea624b",
+      "target_sha256": "cebf2f832cbf6aa26bd04c74aa833602a1c6dbf51b47d183b9aebb996f6e6f9e",
       "related_targets": []
     },
     {
@@ -1732,7 +1732,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/hooks-reference/pre-commit-design-check.md",
-      "target_sha256": "6b1e955cf730fec7790e1f0e90c364f92903a58bf1cc9236f34256113235cb84",
+      "target_sha256": "79bf0befb296322934ed70e1ef568761394cdf8ceed4c4c89f137d87d79df8e4",
       "related_targets": []
     },
     {
@@ -1750,7 +1750,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/hooks-reference/pre-push-test-gate.md",
-      "target_sha256": "d38d29a7267c3bd2eda3e3a5c2f7d8581ed8cb916e629ac0c59e47fb1d6b4d1a",
+      "target_sha256": "ac064e887311b49c85ab2c0930f840773d0d3d0aaebcb2ce301bb5bff9222051",
       "related_targets": []
     },
     {
@@ -1768,7 +1768,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/model-tiers.md",
-      "target_sha256": "39562e274450d32539dc83fa6c2f1ecfd49ee0d7f65a786e785729b096f2d0de",
+      "target_sha256": "737fd9efb365511c000ab991bc925c86c5fa23fa49a6cbc416a662d684ba54cf",
       "related_targets": []
     },
     {
@@ -1786,7 +1786,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/quick-start.md",
-      "target_sha256": "f4d043774e510ea0f4e5973b30853b5ad7f35cbdf899842b6a35728592abfe17",
+      "target_sha256": "b1c9dac685c8683ef06b78d4b28b120436cc9c3a66b1e38681daf267f8251890",
       "related_targets": []
     },
     {
@@ -1804,7 +1804,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/rules-reference.md",
-      "target_sha256": "6ecacc6fbf826f161cf422d68da8570b9af94f62f256d51760bb483b48193087",
+      "target_sha256": "58f64da024a6fc6e645ebbe8043b79b5c206adf0d87c8a83855a71d26a2b04e8",
       "related_targets": []
     },
     {
@@ -1822,7 +1822,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/run-and-observe.md",
-      "target_sha256": "1343fe1d38cef6d6c20321707f52f3134e1d026a60654ebb00aa3d632b1973c0",
+      "target_sha256": "066da3b361e1a38b29ed2a4a1d807276b299cd373918abadf0ec2fa3bef14578",
       "related_targets": []
     },
     {
@@ -1840,7 +1840,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/settings-guidance.md",
-      "target_sha256": "6b6b030f555e5512b6717ae7cfd1acd42a7c48e4794c7335f829c27d344d9fc4",
+      "target_sha256": "41dc64c8ce74d59a8b6327aa868534a4731339c768ac7e5050f70fff660bd52a",
       "related_targets": []
     },
     {
@@ -1854,11 +1854,11 @@
       ],
       "proposed_target": ".agents/docs/settings-local-template.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "All130 source reference docs preserved through132 source-bound targets,62 templates+8 guidance and native authoring contract;25 distinct Skill template refs resolve, internal file links checked. Content/reference verification does not claim runtime/engine execution.",
+      "verification": "Native local configuration and optional host setup are maintained in the mapped guidance; existing authorization persists and native activation is assessed separately.",
       "status": "EQUIVALENT",
       "task": "CGS-26",
-      "target": ".agents/docs/settings-local-template.md",
-      "target_sha256": "d2301fed67b7443f10426306fa4523c7d66f5fdbf685a3d731ec67108ad2d72b",
+      "target": ".agents/docs/setup-requirements.md",
+      "target_sha256": "95fa250344003c93d3b685efe672fe9ea22f1c455e5b2dd4d4a2e8651d62cd44",
       "related_targets": []
     },
     {
@@ -1876,7 +1876,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/setup-requirements.md",
-      "target_sha256": "e165413efed83119c130da96d43d16d6be99d55b91b2c9f66bbfbdddb3ca2905",
+      "target_sha256": "95fa250344003c93d3b685efe672fe9ea22f1c455e5b2dd4d4a2e8651d62cd44",
       "related_targets": []
     },
     {
@@ -1894,7 +1894,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/skills-reference.md",
-      "target_sha256": "3ec77ab2e7b06f86c7f4585f3cd123fb12b562480cef854c0364cee615bc4ed6",
+      "target_sha256": "8219c4e1af638fb79799ba10dc785cc6cce834eb145a4547afdd4ea6e3215d2a",
       "related_targets": []
     },
     {
@@ -1930,11 +1930,11 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/SKILL-CONTRACT-TEMPLATE-codex.md",
-      "target_sha256": "4a1bba4a29001c0ede5cf31e41f85d8c86d46a4b7e0c1e3391456137a8f37bd4",
+      "target_sha256": "3c4e4f1b06f7859fdae5471e29f28024626fa9d53d32d25c2573666d70612a97",
       "related_targets": [
         {
           "target": ".agents/docs/templates/SKILL-CONTRACT-TEMPLATE.md",
-          "sha256": "c55eccd5fa1ab9b5fea9404546de6b3b748fed1dadec072355e45ebee0018f97"
+          "sha256": "a234f38239e325d2edd10188b5e13b42144450871564a3943e638a0a9b190448"
         }
       ]
     },
@@ -2025,7 +2025,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/architecture-doc-from-code.md",
-      "target_sha256": "120a052b06f0f687fd3e5d2fb9fbe796cae81626dd0d6bcfc3fd341f67abf982",
+      "target_sha256": "c74e26bb76c7dd0e4744699f88f48282bbb82bce4d3c22fd67c768f2f0e76400",
       "related_targets": []
     },
     {
@@ -2043,7 +2043,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/architecture-traceability.md",
-      "target_sha256": "ab11b121a108af6c9f4e5cd232189318fafb2105fd00589c7ea695e79f02b00e",
+      "target_sha256": "060c6a11cbd543acd384e327f83940bc87d00620bc5a5b88c2816bbe0170d6ac",
       "related_targets": []
     },
     {
@@ -2241,7 +2241,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/concept-doc-from-prototype.md",
-      "target_sha256": "f42d764e92891b1f98774a1501a5368c7fcf46b1c4ad4e87757ef2101633f135",
+      "target_sha256": "19e60f42e72ca20e929cfca09e47f539828c3cae50a624ee83cac4801600e68b",
       "related_targets": []
     },
     {
@@ -2259,7 +2259,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/design-doc-from-implementation.md",
-      "target_sha256": "cdb12f8909534e8491cbe8d7920a8d54e6df49685df39c1dda0c8731a8993c7a",
+      "target_sha256": "8df5b9c2ab5ad5b9709d209dc9996699f432ae0b8fa4dc3f83e5c681b8db2363",
       "related_targets": []
     },
     {
@@ -2349,7 +2349,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/game-concept.md",
-      "target_sha256": "fa94f05c71decac7183be449c87767acd99db822f05701121f45f5a5e2251156",
+      "target_sha256": "d200bc1fa047ffa68a2df53bb6d1bdec3fd80631d0ce2fce0978de0047fec91d",
       "related_targets": []
     },
     {
@@ -2984,7 +2984,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/templates/session-state.md",
-      "target_sha256": "68b8d7ccd6a09f600facc73607bcffd449277633f3a956149b7122419c47487a",
+      "target_sha256": "40e22efa8bb7d61921c94cc496904590a6b985a1819c02763fcc567249a28cbf",
       "related_targets": []
     },
     {
@@ -3236,7 +3236,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/workflow-modes.md",
-      "target_sha256": "df68d25bd8297523e85039e68a77d854148c043e9776ca8587ec9a80b7983f59",
+      "target_sha256": "bc74c5e996b518f41de2c7e4aef1972ca5be0f095f6b8fe7aaaf12c77753ed5e",
       "related_targets": []
     },
     {
@@ -3305,7 +3305,7 @@
       "status": "UNSUPPORTED",
       "task": "CGS-24",
       "target": ".agents/hooks/log-instructions.sh",
-      "target_sha256": "2b272e7359ea2386cf46a8f4cf27de1a00a155fb1d53c20499c38b8e6ecec70c"
+      "target_sha256": "50b46399b07c5f57026a0a407cf1ae1a62a490af250089e097d906487e919857"
     },
     {
       "id": "file:.claude/hooks/notify.sh",
@@ -3357,7 +3357,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": ".agents/hooks/session-start.sh",
-      "target_sha256": "6a898ea4ac8c2b383d1664c7319f24add9069835c069c7d352d481046b860cc6"
+      "target_sha256": "146df6b0e8794263b76be48fedd5dfcbcb8ae5eb0537bf6e16c2b30d84c544a6"
     },
     {
       "id": "file:.claude/hooks/session-stop.sh",
@@ -3387,27 +3387,27 @@
       ],
       "proposed_target": ".agents/hooks/update-check.sh",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Tested explicit on-demand upstream detection and safe isolated sync replace the cached/background update notice; real fetch has no drift, synthetic Skill/hook changes and conflict recovery pass. No automatic updater or native activation is claimed.",
+      "verification": "Explicit reviewed Git-source CLI replaces the background source-release poller; real source/sync/reconciliation fixtures verify behavior. Packaged version metadata preserves new-project initialization. No background network fetch or original-client cache is used.",
       "status": "EQUIVALENT",
       "task": "CGS-29",
       "target": "scripts/codex/check-upstream.mjs",
       "target_sha256": "7c1a8bc2fc49ec881ed407d5bd3f669c2a680be23b73071ea5391ba56d0b9ce8",
       "related_targets": [
         {
-          "target": "scripts/codex/upstream-common.mjs",
-          "sha256": "761f9d13ca8f6b1d8015e924b36dcc8c749af6b12acbb0ab007581d6b94f4e6e"
-        },
-        {
-          "target": "scripts/codex/sync-upstream.mjs",
-          "sha256": "f857ba117527e8e6f2db2aa9fe0ecb1c23d403e8276b69a471bdca416b09144b"
+          "target": ".agents/framework-version",
+          "sha256": "1e5b51cde515396a9fa762909cf8ca6584ccc564b325d2eebeea76175fe95c4d"
         },
         {
           "target": "scripts/codex/baseline.mjs",
           "sha256": "1cfc499c9b73f7ef620c0c932cf851ae14ccf5c105a3a96e5d1ec59aa60c6736"
         },
         {
-          "target": ".agents/hooks/update-check.sh",
-          "sha256": "ddbbd7600d6b06645bedbd5890d102828473d6c5a0b1e4f9b968eddfd21408ff"
+          "target": "scripts/codex/sync-upstream.mjs",
+          "sha256": "40565ef115894ba95c2aa31c12ab03c1fe7f85c41042070bdb8ea3cd46a16312"
+        },
+        {
+          "target": "scripts/codex/upstream-common.mjs",
+          "sha256": "9d064c0646416e75a51f550b56e8790f673fcfd564ab19ed41d848cf68ca1576"
         }
       ]
     },
@@ -3571,7 +3571,7 @@
       "verification": "Preserved source-bound backend and tested adapter equivalent; see per-declaration protocol/limits in parity matrix. Native activation and Linux remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".agents/hooks/yaml-helper.sh",
-      "target_sha256": "8df42ef8e26e1e1ffd8e145800d8e3fb06ca4a8da0fa7a29013721e705c96268",
+      "target_sha256": "25fdaa330cbb94fe99365d54793f838b5fb412eac86abc4ffffad8a775cb00fe",
       "task": "CGS-24"
     },
     {
@@ -3588,7 +3588,7 @@
       "verification": "14 positive and negative path cases, overlaps, globstar, braces, Windows normalization and traversal guards verified. On-demand CLI selection; native automatic enforcement is not claimed.",
       "status": "EQUIVALENT",
       "target": ".agents/rules/agent-memory.md",
-      "target_sha256": "ae8ad87e5f73d65f62521ac1ed60ad94d309349a44368d6eb68d90d28c853994"
+      "target_sha256": "95726d362f96327cc3be7b8eaff358d8f6962af979cfb643c1a2a9045da02c88"
     },
     {
       "id": "file:.claude/rules/ai-code.md",
@@ -4287,7 +4287,7 @@
       "verification": "Actual focused helper fixtures and source-preserving adaptations checked. test-run ladder fixtures are synthetic, not engine execution; all other limits are explicit in helper inventory.",
       "status": "PORTED",
       "target": ".agents/scripts/set-stage.sh",
-      "target_sha256": "16db0a6076a2382b90506a883a575bce6d01d1d7a7e388008fea3453b5792e58"
+      "target_sha256": "c424ec0e046a839f7fb78b7e5ced166dee906da5401ffd1b84bf6daa96b6ae0a"
     },
     {
       "id": "file:.claude/scripts/skill-lint.sh",
@@ -4461,7 +4461,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-10",
       "target": ".agents/skills/adopt/references/1-detect.md",
-      "target_sha256": "e34a45e6e94d542b22abc3e980cd7af535150a28a10a52a7ea0cd46a088fc346",
+      "target_sha256": "7197df311b1403ea31401281055e8b7b51216602dfa2189fa33c744a1b16da9b",
       "related_targets": []
     },
     {
@@ -4717,7 +4717,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-13",
       "target": ".agents/skills/architecture-decision/references/5-generate.md",
-      "target_sha256": "ac815f9cca32562fadbcd89fa8a1c81844ad20038ba6760f6710ebe1b98e33e2",
+      "target_sha256": "238c77d24731b5c5c5e5b8e70a99dc844a8a840be48dd6333bb6ddd86015dd13",
       "related_targets": []
     },
     {
@@ -4829,7 +4829,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-13",
       "target": ".agents/skills/architecture-review/references/5-engine.md",
-      "target_sha256": "58e646605c960a54db5d892cfc3f21937c139c994b672eaa5149c90b7aaac8e8",
+      "target_sha256": "fe73c5c23470a53e6abdd6335e9db12a42863c0193aeb9c8e64245ab912c9695",
       "related_targets": []
     },
     {
@@ -4923,7 +4923,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-12",
       "target": ".agents/skills/art-bible/SKILL.md",
-      "target_sha256": "810fb23e9ec690a7ed3d9214eb578c26a227025be8f469138cc1d0ca1f4ea154",
+      "target_sha256": "a06c0968c1be041f0b33a43c975256f48088d1ca0ed1366867f39edde18b9f00",
       "related_targets": []
     },
     {
@@ -4942,7 +4942,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-12",
       "target": ".agents/skills/asset-audit/SKILL.md",
-      "target_sha256": "59f259cbfa69c3b5c7054e5435f0076003e5569ed9b8979c52e0703fbc0ac443",
+      "target_sha256": "5b9a95759288efa210ba206ff3b4c7ca3bdba9e1d732abca5a6c1696fec6bb31",
       "related_targets": []
     },
     {
@@ -4964,7 +4964,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-12",
       "target": ".agents/skills/asset-spec/SKILL.md",
-      "target_sha256": "472f9992b6935604155c67eed769043cc84fd220af501c902d935033153df4ec",
+      "target_sha256": "64b0f844c6cc6c2dc4dd155149c20fe41937f2f33322cb4c3cef6bccd2ed94a9",
       "related_targets": []
     },
     {
@@ -5114,7 +5114,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-15",
       "target": ".agents/skills/code-review/SKILL.md",
-      "target_sha256": "527a4ae1d5f227c9b6a942b7a5c60a5bc92d30155d76e15946e82e2febc0850e",
+      "target_sha256": "0a22d7c219b7d4ed6b8d259a5724a8fc28c1ac81eddbf57e9e517e98c6a877f2",
       "related_targets": []
     },
     {
@@ -5324,7 +5324,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-13",
       "target": ".agents/skills/create-architecture/references/7-write.md",
-      "target_sha256": "609a790610efc9e13c8d730e75aa89aa6f22481d6d28a61a96aaafaff574ab22",
+      "target_sha256": "9e626414b9245114ea6d169868566287dcb5b0a70ec02c6ad03e85bcc30c5867",
       "related_targets": []
     },
     {
@@ -5504,7 +5504,7 @@
       "related_targets": [
         {
           "target": ".agents/skills/day-one-patch/SKILL.md",
-          "sha256": "e48eb9d923bc393a1ebbad613dc695de164066b87cc41df43a4ebb0d481a603e"
+          "sha256": "6bb1d2c230e2d23f68833ed91cda25f977cf12bb127ecc3b284d7f3e5a4419a4"
         }
       ]
     },
@@ -5527,7 +5527,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-16",
       "target": ".agents/skills/design-review/SKILL.md",
-      "target_sha256": "6611f2c2c13e70581e738a45b9c46c1d39a33759fc848a80be76c6ef8e7f344a",
+      "target_sha256": "d5f81751d8de56bf6a5f501a9589b30c12172e26d45fab182f3482bd6f19f2cb",
       "related_targets": []
     },
     {
@@ -5550,7 +5550,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-11",
       "target": ".agents/skills/design-system/SKILL.md",
-      "target_sha256": "9ccbb7478091b9b7ab4b25aca60d7bd1cf99d4110e067368649f3425acc6d98b",
+      "target_sha256": "5ccee432359f6fa07fe79b9f0c657fe94db2260dbe5c56bccd3cd7efaa66d7a8",
       "related_targets": []
     },
     {
@@ -5586,7 +5586,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-11",
       "target": ".agents/skills/design-system/references/2-gather-context.md",
-      "target_sha256": "1b9d1d121693abc1a92203650ee8ab136ec77df1e1a84dcc2df507b8fd960786",
+      "target_sha256": "47ef5d58e26158a6ca14bb156c1eed5d26746b5e9826d75942aa65e1ec82966d",
       "related_targets": []
     },
     {
@@ -5623,7 +5623,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-11",
       "target": ".agents/skills/design-system/references/4-section-design.md",
-      "target_sha256": "b0c1513eede573517693047ee1ad91238f564a138c7b2a65b642e95e6b6c09b9",
+      "target_sha256": "30f659f12387a9191f9721fd6653bb4d130c58e9fce2e5a43cc05e90bc26b273",
       "related_targets": []
     },
     {
@@ -5641,7 +5641,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-11",
       "target": ".agents/skills/design-system/references/5-post-design.md",
-      "target_sha256": "38073e46a994dab6919bc47ecf7763bd453c049f70208138bc4c735d1572fd81",
+      "target_sha256": "6aa6980a501eb3ff79686c67c9bc5d2ef92d858aaf2acef0e16b6bf80ce3bd64",
       "related_targets": []
     },
     {
@@ -5659,7 +5659,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-15",
       "target": ".agents/skills/dev-story/CONTRACT.md",
-      "target_sha256": "b715b2e7cf66ae78ac5a0ac5613b4a17014456a7244698c5db6f044d3b429010",
+      "target_sha256": "97b4c23547dda891106caf495d9e1bfefb30f282022ff5bcbebfc1461415f23d",
       "related_targets": []
     },
     {
@@ -5685,7 +5685,7 @@
       "related_targets": [
         {
           "target": ".agents/skills/dev-story/SKILL.md",
-          "sha256": "4639688b592a0e9d5f8b0ea83a2dbd1c4cb72b5aab576edca37adbc79ce9da12"
+          "sha256": "129521b30a2227617e447581c67e04b73aeaca3b2b7d69231f9f23c974089337"
         }
       ]
     },
@@ -5799,7 +5799,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-14",
       "target": ".agents/skills/gate-check/references/2b-workflow-tier.md",
-      "target_sha256": "c119efbc1474cb060a1a03a48a36b58d46628d0d748a19d6d2f58e16615be0a1",
+      "target_sha256": "02216887f7636f438cfd4ba961d68cf5cc5fcfc11ca1926bbd6169b3e05e4114",
       "related_targets": []
     },
     {
@@ -5835,7 +5835,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-14",
       "target": ".agents/skills/gate-check/references/4-assessment.md",
-      "target_sha256": "e27a5d305c0d13805e931b8bbefd918dc257da2bd18980f88c1849fe7a78be5e",
+      "target_sha256": "d82388b3e7c1eb5667a569468931e0114f5460ce6bcd293ae271b19e1aed4b48",
       "related_targets": []
     },
     {
@@ -5871,7 +5871,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-14",
       "target": ".agents/skills/gate-check/references/6-update-stage.md",
-      "target_sha256": "211a556d46ed5a9bb98be5aba3b966b4e0974c8305854a60c479c2b55634bfea",
+      "target_sha256": "b3fb7e84f159edf108e7031cf3d2c97dbd67a234c4656b856d19ad3b672d9915",
       "related_targets": []
     },
     {
@@ -6042,7 +6042,7 @@
       "related_targets": [
         {
           "target": ".agents/skills/hotfix/SKILL.md",
-          "sha256": "0d563ed6699d8f1e1d3c1d7515cd12818598859955a48621bc9c3f2668eaaccd"
+          "sha256": "050aae86160562f5ba2935d67d3df8295dfde1b9b8e06b0a9a5e8b3154994552"
         }
       ]
     },
@@ -6092,7 +6092,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-19",
       "target": ".agents/skills/localize/SKILL.md",
-      "target_sha256": "f17b300b72005550d31c0182b712247afd969589165be9ff2897158021202778",
+      "target_sha256": "54dbfaa352f72d82838a584fd8d1e70fb27e7efbceed154ffba81618e85718af",
       "related_targets": []
     },
     {
@@ -6115,7 +6115,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-11",
       "target": ".agents/skills/map-systems/SKILL.md",
-      "target_sha256": "b3dda9a296c15b12ca02ade61343a82b1c1a3aa42d8c54c3ef2b7f528329e8a1",
+      "target_sha256": "43db08814ac165baa6cac0dec799f9eea3e0448cc69a9566621b166ea89b9aa8",
       "related_targets": []
     },
     {
@@ -6137,7 +6137,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-19",
       "target": ".agents/skills/milestone-review/SKILL.md",
-      "target_sha256": "0d77921fccd827d53f1f51c7f2cded67d660784528d91476d08b503ac2d7b80a",
+      "target_sha256": "ece9c2d0eac2d60119e218e590dbcc2b7dd7c72dab8b2f63d2976bc3cb2ab7a8",
       "related_targets": []
     },
     {
@@ -6159,7 +6159,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-19",
       "target": ".agents/skills/onboard/SKILL.md",
-      "target_sha256": "577f947de855cf5cede29f03bf9332bb11d712488a1dcfdc4b9c54085ea331bd",
+      "target_sha256": "c9ea2f791a285d2579b27cb86d991365590c405053df19f706b7bbf8e1bed956",
       "related_targets": []
     },
     {
@@ -6203,7 +6203,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-15",
       "target": ".agents/skills/perf-profile/SKILL.md",
-      "target_sha256": "c7534010d0c6842387c4dbacf37f0c18780164fd7e0712e9feda66312d94d9e8",
+      "target_sha256": "02867e6a13f15b2c7b2ba929d074a6cbb23057060436afd71b31d04eaf169c52",
       "related_targets": []
     },
     {
@@ -6225,7 +6225,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-18",
       "target": ".agents/skills/playtest-report/SKILL.md",
-      "target_sha256": "13517ad261f6e389e897691830a552aba7edc18be2dce1af6361274259c734af",
+      "target_sha256": "e2a359127f36bd46ce54318c72218747a1fd4502184b43f30e97902a9278aea7",
       "related_targets": []
     },
     {
@@ -6327,7 +6327,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-12",
       "target": ".agents/skills/prototype/references/2-load-context.md",
-      "target_sha256": "58e5dff500f184a495822db9da776ee849e5859598b9ff67086b3713b47c3414",
+      "target_sha256": "73c2d7138db5102b45d9a04476c444af8f680798f542a0d2efb992bfd202a4c4",
       "related_targets": []
     },
     {
@@ -6435,7 +6435,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-12",
       "target": ".agents/skills/prototype/references/8-cd-review.md",
-      "target_sha256": "7ca3e4cc8018b9f76a5106d5173f6efd8aaa56eeb5a48b4e12674a370023f4f1",
+      "target_sha256": "86b03d330cde6893e7a8a55579ea34631b2d5367cf3dbb63321c380ad70659f9",
       "related_targets": []
     },
     {
@@ -6625,7 +6625,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-11",
       "target": ".agents/skills/review-all-gdds/SKILL.md",
-      "target_sha256": "cb846b8478dcd9401af60f2b8b711e893b1e9590a61491d7c5fe34b6fb2c7a48",
+      "target_sha256": "b7f7cbf9ea76c31088df0ab75b6e30bf2d004aeebd1f7e4dbff84d3cc3bae78b",
       "related_targets": []
     },
     {
@@ -6792,7 +6792,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-16",
       "target": ".agents/skills/security-audit/SKILL.md",
-      "target_sha256": "e145387ccfd15db3a6b98dc6f33c30f8190e88260b3ab4e448c4dfe01a27234c",
+      "target_sha256": "078c20dbfecffcf943ae15be4b2636f11a9bb719d208f7c7723cee27d0be569b",
       "related_targets": []
     },
     {
@@ -6813,7 +6813,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-10",
       "target": ".agents/skills/settings/SKILL.md",
-      "target_sha256": "a82d72efa7c147debd27328f6b4287eb95f4ba76a7999ab247c8869474e1a1b2",
+      "target_sha256": "325cef8436e3665afd8b605078fbe42356a3b4da3b2edff8a617822caff06624",
       "related_targets": []
     },
     {
@@ -6835,7 +6835,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-10",
       "target": ".agents/skills/setup-engine/SKILL.md",
-      "target_sha256": "b35af4435c31400fc6cdb64e7dcfaf7576b9337de736cfb8345beff9654cda34",
+      "target_sha256": "7df74dc6adc963eacca9120226cafa4f408322c9b423810f8128706dbe47273d",
       "related_targets": []
     },
     {
@@ -6871,7 +6871,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-10",
       "target": ".agents/skills/setup-engine/references/12-output-summary.md",
-      "target_sha256": "2591cb77bc440bb1a973868b8d55752edb6573b848c26b02bdc1b9eb8645c49d",
+      "target_sha256": "72b09972d921f9bbc3ff11656b864b0d99ff757dff57613975ce3a9f8be55723",
       "related_targets": []
     },
     {
@@ -6925,7 +6925,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-10",
       "target": ".agents/skills/setup-engine/references/4-claude-md-stack.md",
-      "target_sha256": "37b0cfc9757c5490c6c5c18d287c0f6425d10695aa857c6d9897691a3ef83f67",
+      "target_sha256": "0075a61ae08aeb3b4839da804ed19de15f02e7d4f43750f9e0f18ca0ee9bfb2a",
       "related_targets": []
     },
     {
@@ -6943,7 +6943,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-10",
       "target": ".agents/skills/setup-engine/references/5-technical-preferences.md",
-      "target_sha256": "ce4126528cc6a5a13e34e61b73a89a6c7c670c6d9a0129a373c2b039532dead5",
+      "target_sha256": "6504f8f5ac7cc55489102bdc2398bdb061acf9114e7c0f16511dd3f659577aea",
       "related_targets": []
     },
     {
@@ -6961,7 +6961,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-10",
       "target": ".agents/skills/setup-engine/references/5.5-project-yaml.md",
-      "target_sha256": "19992651e8f12a3d70575b8869d7269c88ddeab40bd5018527c0048e2471b366",
+      "target_sha256": "8b687df0673017f6309a0bfedbc0b2f2dee56d5035ba1ad722f166197e4d076b",
       "related_targets": []
     },
     {
@@ -6997,7 +6997,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-10",
       "target": ".agents/skills/setup-engine/references/7-reference-docs.md",
-      "target_sha256": "bd5086867333cafe26d6dc4c6f595c58f383b0c40b1394ab4db2e006984959cc",
+      "target_sha256": "24394739745fa3758ecdbce71d5918fb3d15a5bcea6637efbb4bc71d341fed19",
       "related_targets": []
     },
     {
@@ -7033,7 +7033,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-10",
       "target": ".agents/skills/setup-engine/references/8-verify.md",
-      "target_sha256": "5746434b12525b23b014396f07784cfa81fd090be94f73497215997d8c7a1790",
+      "target_sha256": "1438532305ac1d6560e4e18bb3dd125b11b1244eb845623e83e642e9366b4aee",
       "related_targets": []
     },
     {
@@ -7051,7 +7051,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-10",
       "target": ".agents/skills/setup-engine/references/godot-language-config.md",
-      "target_sha256": "a6e89fa50a2cb1422723e0ba8d99e80674a3c4cfea4b64c0e9b376a00d5ea128",
+      "target_sha256": "2c9e28d091d1916e2c57e66f70297249421af0ab88ac35b6df50388a34f13771",
       "related_targets": []
     },
     {
@@ -7073,7 +7073,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-18",
       "target": ".agents/skills/skill-improve/SKILL.md",
-      "target_sha256": "7661120401c4afe1b3868aff7876d0ef50bc34df4d8bbb6421ee3ee31bf87b5a",
+      "target_sha256": "990201c9d504587fd1fa25256aac8821c8de35eef4ea8c4928297243adb5b876",
       "related_targets": []
     },
     {
@@ -7095,7 +7095,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-18",
       "target": ".agents/skills/skill-test/SKILL.md",
-      "target_sha256": "552bb4bdf276bc79d14256b6be69acc1ae0f3922f1147acfdd6b486350898ba4",
+      "target_sha256": "06e1fc8681063b79adf5740eeaa5e99a37eef1f1ca5083a442ab7ab187119918",
       "related_targets": []
     },
     {
@@ -7269,7 +7269,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-14",
       "target": ".agents/skills/sprint-plan/SKILL.md",
-      "target_sha256": "7362be5e17fcfeba53cfb585ac70d9e9eaa7618ef735cc1d945e3919d144c914",
+      "target_sha256": "14abb0987e494cb90edc587ae22fa47479fb4ff6cff54f709780f2395993400d",
       "related_targets": []
     },
     {
@@ -7310,7 +7310,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-10",
       "target": ".agents/skills/start/SKILL.md",
-      "target_sha256": "8c405fa3d73737309352c5f4a22e3e27067c681a9047ff051e19ad6c49293b20",
+      "target_sha256": "e8900db4172f3a57fdf7bcec88eae8c01df5b3b5b8991f37bd926b5c6722dcac",
       "related_targets": []
     },
     {
@@ -7489,7 +7489,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-21",
       "target": ".agents/skills/team-audio/SKILL.md",
-      "target_sha256": "d1f2afeb25334876a7791cd789f6b0e70bf19889f16999085c2a70c2621ad6e5",
+      "target_sha256": "58304f8db07b15f7fc415beeb7a4319e8d104764e07b665b7ccb66129080474c",
       "related_targets": []
     },
     {
@@ -7511,7 +7511,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-21",
       "target": ".agents/skills/team-combat/SKILL.md",
-      "target_sha256": "5330344c23b9a00df483336814e0f9340f0f328439b03bf59f54409dcf5281f4",
+      "target_sha256": "ec649ae345ec90238dea991b26055d0cbe3e8f908afcee2c510d66b1bee8d2a2",
       "related_targets": []
     },
     {
@@ -7533,7 +7533,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-21",
       "target": ".agents/skills/team-level/SKILL.md",
-      "target_sha256": "fb34ca85ddcb833697a58e15d4b1feacc8ff3c694990a8536eaab2bc0e2f87a9",
+      "target_sha256": "396e01fd9bc161110237e2ffceb6846798a9db98c7690107967039a5daf0bf64",
       "related_targets": []
     },
     {
@@ -7555,7 +7555,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-22",
       "target": ".agents/skills/team-live-ops/SKILL.md",
-      "target_sha256": "89dff1df94fd53b6d8202ad29a1c122b590a5406b2bd5bb3ab6915fff7a275e8",
+      "target_sha256": "0c1d48aff891d00ebe030c4691c74adc044d27a4d8a1fb41d76aeeb496880943",
       "related_targets": []
     },
     {
@@ -7577,7 +7577,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-22",
       "target": ".agents/skills/team-narrative/SKILL.md",
-      "target_sha256": "cbb9e9bdc243dd4fb68d94c533e6a322ff932f8a6ff61a95042e645f1d1a301b",
+      "target_sha256": "27e700399b0b2fea62f7177c3538cfc78dd7c363d976b450e9227081188a0fa5",
       "related_targets": []
     },
     {
@@ -7599,7 +7599,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-21",
       "target": ".agents/skills/team-polish/SKILL.md",
-      "target_sha256": "33a5e7629eee60780b652b9e39e2c4998c77bbae6b97b57f9cb9627013d014f5",
+      "target_sha256": "c9ce23b53e0f474454fe41bbb6a8c6164c112da7369c23f868f02c27db32c68d",
       "related_targets": []
     },
     {
@@ -7621,7 +7621,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-22",
       "target": ".agents/skills/team-qa/SKILL.md",
-      "target_sha256": "0a500cf421c2a76f0562f240095cec25a94d0f9f874594bad3da413997751b01",
+      "target_sha256": "b72d82aa5ae6dc6c10cfa5d862e9c727eed43a6599c5dda7d85088f7c0e01edc",
       "related_targets": []
     },
     {
@@ -7643,7 +7643,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-22",
       "target": ".agents/skills/team-release/SKILL.md",
-      "target_sha256": "174fac210b2af118055fe05341b66afadd83c3047b26a94f6064392243968152",
+      "target_sha256": "a0d57a470cdedbed5f821e1c0db634cb695f7efbcc66b393a155c070b97a657e",
       "related_targets": []
     },
     {
@@ -7665,7 +7665,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-21",
       "target": ".agents/skills/team-ui/SKILL.md",
-      "target_sha256": "a41fd6331c3c66efb88cba49927ad5fb1597c66a893777661718f0a546dadc5c",
+      "target_sha256": "c4991afeaf2907f09d4e834199a0c403287f4d83306c2a35be0e18cdd3dad89a",
       "related_targets": []
     },
     {
@@ -7709,7 +7709,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-17",
       "target": ".agents/skills/test-evidence-review/SKILL.md",
-      "target_sha256": "d384051561ce012904ed9f50212d559aa07a7200d3d40dde3b69fbe47a5a723a",
+      "target_sha256": "860a876b5a5ea2666cf6a1253f75cfba64a06ff828b537aaec1b75ebfc23aba9",
       "related_targets": []
     },
     {
@@ -7811,7 +7811,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-17",
       "target": ".agents/skills/test-setup/references/2-plan.md",
-      "target_sha256": "974f26d0b9f44a7188b4e01105a7f57aa4b6f14c2b6ac12f57bab74d0b670a0a",
+      "target_sha256": "93ef48452badc5f68805b8f209dbdb2672fcb30af71ff5f97c47cde8978ebfa9",
       "related_targets": []
     },
     {
@@ -7829,7 +7829,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-17",
       "target": ".agents/skills/test-setup/references/3-directories.md",
-      "target_sha256": "b37f144502c1b3eadaf73af65a49a8e8584d08685b9a1816dce422c2e41c98aa",
+      "target_sha256": "039354dc15388703e94a11ed027046ca1cfa4018789e51c71a93c65344c8a43b",
       "related_targets": []
     },
     {
@@ -7905,7 +7905,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-12",
       "target": ".agents/skills/ux-design/SKILL.md",
-      "target_sha256": "4f03540ab5bdcf4d0e627d346e554a5bca15244f8463855ca4b4453328f53472",
+      "target_sha256": "e3e21550270f692e65227c750d5e45b5976c5380e772584384a0710ad27fbc48",
       "related_targets": []
     },
     {
@@ -8074,7 +8074,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-12",
       "target": ".agents/skills/vertical-slice/SKILL.md",
-      "target_sha256": "8ec96fd63c700050720c90d2961541e69c342c782ee84a7398a1ae0867796353",
+      "target_sha256": "29e1a627b6e8e638fb391a1f077c6306d206116802572771f7814fb90ee8d943",
       "related_targets": []
     },
     {
@@ -8139,10 +8139,9 @@
       "claude_dependencies": [],
       "proposed_target": ".github/FUNDING.yml (preserve/review)",
       "proposed_equivalent": "Preserve content and verify in Codex workflow.",
-      "verification": "Preserved source material; runtime equivalence is a separate claim.",
-      "status": "EQUIVALENT",
+      "verification": "Original-author sponsorship configuration is intentionally not installed in the independent product, as requested; original attribution and MIT copyright remain.",
+      "status": "UNSUPPORTED",
       "task": "CGS-28",
-      "target": ".github/FUNDING.yml",
       "verification_scope": "Reference/specification/project content retention; no runtime or model-behavior claim",
       "preservation_source_commit": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
       "preservation_git_blob": "550583bee4283002a22da29aa41edac7ae0e999f"

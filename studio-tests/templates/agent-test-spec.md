@@ -13,9 +13,9 @@ delegates vs. handles directly. Include which gates it triggers (if any).]
 
 ## Static Assertions (Structural)
 
-- [ ] Agent file exists at `.claude/agents/[name].md`
-- [ ] Frontmatter has `name`, `description`, `model`, `tools` fields
-- [ ] Model tier is `[opus | sonnet | haiku | inherit]` — frontmatter `model:` reads exactly that alias (tiers: `.claude/docs/model-tiers.md`)
+- [ ] Agent file exists at `.codex/agents/[name].toml`
+- [ ] Developer instructions preserve the intended capability ceiling, ownership and escalation; these are not permission grants
+- [ ] Native role TOML has nonempty `name`, domain-specific `description` and `developer_instructions`; its capability ceiling, domain boundaries and escalation rules remain intact
 - [ ] Domain clearly stated
 - [ ] Escalation path documented
 - [ ] Does not make decisions outside its domain
@@ -35,7 +35,7 @@ delegates vs. handles directly. Include which gates it triggers (if any).]
 **Expected behavior**:
 1. Agent accepts the request
 2. Agent produces [specific output type]
-3. Agent asks before writing files (if applicable)
+3. Agent obtains any still-required authorization before writing (if applicable)
 
 **Assertions**:
 - [ ] Agent handles request within its domain without escalating

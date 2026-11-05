@@ -1,40 +1,8 @@
-> **Codex path bridge (CGS-26):** Paths below that begin with .claude/skills/, .claude/scripts/, or .claude/hooks/ describe the preserved upstream source layout. For Codex runtime use, resolve corresponding adapted resources under .agents/skills/, .agents/scripts/, and .agents/hooks/. Hook paths are helper files only; Codex hook registration remains separate, opt-in, and subject to payload verification. Explicit legacy examples remain useful for upstream comparison.
+# Path-specific rules
 
-# Path-Specific Rules
+Before editing run `node scripts/codex/rules.mjs --path <repository-relative-path> --content`. The selector reads `.agents/rules/index.json` and returns matching bodies. Consult applicable directory `AGENTS.md` too. This is explicit selection, not automatic loading or enforcement.
 
-Rules in `.claude/rules/` carry `paths:` frontmatter. Claude Code loads a
-path-scoped rule **when it READS a file matching one of those globs** — not on
-every tool use, and not when it creates one.
-
-Three consequences, and none of them are optional reading:
-
-1. **Reading, not editing.** A rule scoped to a gameplay folder reaches the
-   model when a file there is opened. An agent that writes a brand-new file in that
-   directory without opening an existing one never sees it. Most work in this
-   framework creates files rather than reads them, so this is the common case,
-   not the corner case.
-2. **Context, not enforcement.** A loaded rule is guidance the model weighs, the
-   same as `CLAUDE.md`. Anything that must hold regardless of what the model
-   decides belongs in a hook — `.claude/hooks/` already enforces JSON validity
-   and commit shape that way.
-3. **A rule with no `paths:` loads every session**, at the same priority as
-   `.claude/CLAUDE.md`. That is the lever for a rule that must always apply; it
-   costs context in every session, so it is a deliberate trade, not a default.
-
-Where a rule duplicates guidance an agent definition already carries, the two
-must agree. Contradicting instructions are resolved arbitrarily, so a rule and
-an agent stating different versions of the same standard is worse than either
-alone.
-
-To see which rules actually load, and why, wire the `InstructionsLoaded` hook —
-`.claude/hooks/log-instructions.sh` records every instruction file and its load
-reason (`session_start`, `path_glob_match`, `nested_traversal`, `include`,
-`compact`) to `production/session-logs/instructions-loaded.log`.
-
-**Globs match regardless of case.** Claude Code 2.1.282 matches `paths:`
-gitignore-style and case-insensitively (observed; the docs do not say), so
-`Assets/**/UI/**` also matches a Godot project's `assets/ui/` art. That is why
-the Unity and Unreal code globs below name their file types.
+Rules are guidance. Hook checks have separate finite/advisory limits; neither rules nor checks grant authorization. Verify native activation independently. Resolve rule/role contradictions explicitly.
 
 Paths are listed Godot · Unity · Unreal. Folder names are shown in one case;
 each rule's own globs list the case variants (`{AI,Ai,ai}`).
@@ -52,11 +20,11 @@ each rule's own globs list the case variants (`{AI,Ai,ai}`).
 | `test-standards.md` | `tests/**` · `Assets/Tests/**/*.cs` · `Source/**/Tests/**/*.{h,cpp}` | Test naming, coverage requirements, fixture patterns |
 | `prototype-code.md` | `prototypes/**` | Relaxed standards, README required, hypothesis documented |
 | `shader-code.md` | `assets/shaders/**`, `**/*.gdshader` · `Assets/**/*.{shader,hlsl,cginc,compute,shadergraph}` · `Shaders/**`, `**/*.{usf,ush}` | Naming conventions, performance targets, cross-platform rules |
-| `scene-files.md` | `**/*.tscn`, `**/*.tres` · `**/*.unity`, `**/*.prefab`, `Assets/**/*.asset` · — | Hand-edit limits for editor-written scene and asset files; Unreal `.uasset`/`.umap` are binary, and `settings.json` denies edits to them |
-| `agent-memory.md` | `.claude/agent-memory/**` | The one place an agent may write unasked — and why a temporary absence must never be recorded as a durable fact |
-| `skill-authoring.md` | `.claude/skills/**`, `.claude/agents/**` | A check must be able to report that it did not run — the five obligations for verdicts, defaults, skips, sourcing and derived coverage |
+| `scene-files.md` | `**/*.tscn`, `**/*.tres` · `**/*.unity`, `**/*.prefab`, `Assets/**/*.asset` · — | Hand-edit limits for editor-written scene and asset files; Unreal `.uasset`/`.umap` are binary, and host/adapter safety restrictions prohibit direct edits |
+| `agent-memory.md` | `.agents/agent-memory/**` | Optional ignored memory within authorized scope — and why a temporary absence must never be recorded as a durable fact |
+| `skill-authoring.md` | `.agents/skills/**`, `.codex/agents/**` | A check must be able to report that it did not run — the five obligations for verdicts, defaults, skips, sourcing and derived coverage |
 
-Each engine-facing rule loads on all three engines:
+The selector can match engine-facing rules for all three engines:
 
 - **Code rules** (`gameplay`, `engine`, `ai`, `network`, `ui`) match
   `Assets/**/<System>/**/*.cs` and `Source/**/<System>/**/*.{h,cpp}` (`Core`,

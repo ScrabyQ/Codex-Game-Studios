@@ -1,40 +1,38 @@
 ---
 name: Feature Request
-about: Suggest a new agent, skill, hook, or improvement
+about: Suggest a native skill, role, adapter, or workflow improvement
 title: "[Feature] "
 labels: enhancement
 assignees: ''
 ---
 
-## Summary
+## Problem and motivation
 
-A brief description of what you'd like added or changed.
+What task is difficult, who encounters it, and what existing workflow falls short?
 
-## Type
+## Proposed behavior
 
-- [ ] New agent
-- [ ] New skill (slash command)
-- [ ] New hook
-- [ ] New rule
-- [ ] New template
-- [ ] Improvement to existing component
+Describe the desired input, output, and acceptance criteria.
+
+## Affected component
+
+- [ ] Native skill
+- [ ] Role definition
+- [ ] Hook adapter or host integration
+- [ ] Rule or configuration
+- [ ] Template or documentation
 - [ ] Other:
 
-## Problem / Motivation
+## Execution and authority
 
-What problem does this solve? What workflow does it improve?
+For roles, describe domain ownership and needed capabilities. For skills,
+describe artifact handoffs. For integration, name the actual client/event
+support and any explicit fallback. Explain any new permission or approval need.
 
-## Proposed Solution
+## Alternatives
 
-How do you think this should work? Include details like:
-- For agents: what domain, what tier, what tools
-- For skills: what the workflow looks like, what it outputs
-- For hooks: what event triggers it, what it validates
+Which existing skills or other approaches did you consider?
 
-## Alternatives Considered
+## Additional context
 
-Any other approaches you've thought about.
-
-## Additional Context
-
-Examples, references, or screenshots that help explain the request.
+Examples, references, or screenshots with private data removed.

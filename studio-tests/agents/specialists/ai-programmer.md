@@ -9,9 +9,9 @@ No gate IDs assigned.
 
 ## Static Assertions (Structural)
 
-- [ ] `description:` field is present and domain-specific (references NPC behavior / AI systems)
+- [ ] `description` field is present and domain-specific (references NPC behavior / AI systems)
 - [ ] `tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is `inherit` — frontmatter `model:` reads exactly `inherit` (tiers: `.claude/docs/model-tiers.md`)
+- [ ] Native role TOML has nonempty `name`, domain-specific `description` and `developer_instructions`; its capability ceiling, domain boundaries and escalation rules remain intact
 - [ ] Agent definition does not claim authority over player mechanics or engine rendering
 
 ---
@@ -47,7 +47,7 @@ No gate IDs assigned.
 **Input:** "The pathfinding priority queue is the bottleneck; I need a custom binary heap implementation for performance."
 **Expected behavior:**
 - Treats the heap as its own work: "Implement and optimize pathfinding" is its Key Responsibility, and the priority queue is part of the pathfinding code — it does not hand the heap to engine-programmer
-- Proposes the heap (interface, expected operations and their cost) and asks before writing it
+- Proposes the heap (interface, expected operations and their cost) and checks existing authorization before writing and asks if unresolved it
 - Keeps the pathfinding update inside its 2ms-per-frame AI budget
 - Involves `engine-programmer` only if the fix needs a change to a core engine system (its "must not" line), not for the heap itself
 

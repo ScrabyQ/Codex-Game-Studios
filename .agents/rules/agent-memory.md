@@ -3,32 +3,16 @@
 
 # Agent Memory Rules
 
-**Agent memory is one of three writes that need no "May I write?"** The other two
-are named in `CLAUDE.md`:
+Memory under `.agents/agent-memory/<role>/` is optional ignored persistence, not automatic native memory. Write only within authorization; read-only tasks write no memory or checkpoints. Roles, modes and persistence paths do not grant permission.
 
-- **Appends to `production/session-state/active.md`** — the session checkpoint
-  the hooks and the next session rely on. An append, never a rewrite of what is
-  already there.
-- **A subagent's new file at the path its orchestrating skill named.** Only a
-  new file under `production/`, `docs/` or `tests/`, only at a path the skill's
-  prompt names (never one you chose), and only inside a phase the user approved.
-
-`.agents/agent-memory/` is gitignored, per-agent, and never ships. Its exemption
-exists because the memory is the agent's own working notes about how to do its
-job, not a project artifact.
-
-None of the three extends anywhere else. The Collaboration Protocol still governs
-every other write under the code root (`src/`, `Assets/` or `Source/`),
-`design/`, `docs/`, `production/` and `assets/`: ask first, naming the path.
-Writing a memory is never a substitute for asking, and a memory must never be
-used to record something the user declined to have written.
+Overwrite the checkpoint's named region; detailed narrative can append outside it. Delegated outputs stay within assigned paths and inherited permissions. Existing authorization persists; unresolved write permission needs a reviewable draft and decision.
 
 ## Never record a temporary absence as a durable fact
 
 This is the failure this file exists to prevent, and this repo is unusually
 exposed to it.
 
-**CCGS ships as a template the user clones *as their game*.** So on day one every
+**Codex Game Studios ships as a template the user clones *as their game*.** So on day one every
 agent observes the same things — no game code, no GDDs, no engine configured, no
 `tests/performance/` — and every one of those observations is **guaranteed to
 stop being true**. A memory reading *"this repo is the framework, not a game;
@@ -46,7 +30,7 @@ So:
   A reader with no other context must be able to tell whether the note still
   holds.
 - **Never record absence of a game, of assets, of tests or of config as a
-  settled property of the project.** Those are the states CCGS exists to move a
+  settled property of the project.** Those are the states Codex Game Studios exists to move a
   user out of.
 
 ## Disclose the write

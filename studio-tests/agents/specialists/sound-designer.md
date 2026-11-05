@@ -9,9 +9,9 @@ No gate IDs assigned.
 
 ## Static Assertions (Structural)
 
-- [ ] `description:` field is present and domain-specific (references SFX / audio events / mixing)
+- [ ] `description` field is present and domain-specific (references SFX / audio events / mixing)
 - [ ] `tools:` list includes Read, Write, Edit, Glob, Grep — does NOT include engine code execution tools
-- [ ] Model tier is `inherit` — frontmatter `model:` reads exactly `inherit` (tiers: `.claude/docs/model-tiers.md`)
+- [ ] Native role TOML has nonempty `name`, domain-specific `description` and `developer_instructions`; its capability ceiling, domain boundaries and escalation rules remain intact
 - [ ] Agent definition does not claim authority over music direction or audio code implementation, and names `audio-director` as the owner of music direction and composition
 
 ---
@@ -28,7 +28,7 @@ No gate IDs assigned.
   - Audio event entry: what triggers it, priority, concurrency limit, and cooldown
   - Bus assignment for mixing (e.g., the combat SFX bus)
 - Event name follows the project audio naming convention if one is established (e.g., `sfx_combat_sword_swing`)
-- Does NOT create the audio files or write engine code; asks before writing the spec to a file
+- Does NOT create the audio files or write engine code; checks existing authorization before writing and asks if unresolved the spec to a file
 
 ### Case 2: Out-of-domain request — redirects correctly
 **Input:** "Compose a looping ambient music track for the forest level."

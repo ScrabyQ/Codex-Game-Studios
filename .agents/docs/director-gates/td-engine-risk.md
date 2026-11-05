@@ -1,8 +1,8 @@
-> Gate definition. The spawning skill passes this file's path to the director agent; the AGENT reads it — the parent session should not.
+> Gate definition. For authorized native delegation, pass this path so the assigned reviewer reads it first. An in-session reviewer reads it explicitly and labels the review nonindependent; unavailable required independent execution remains PENDING.
 
 # TD-ENGINE-RISK — Engine Version Risk Review
 
-Agent: `technical-director` | Model tier: Opus | Domain: Architecture, engine risk, performance
+Agent: `technical-director` | Model: native session policy | Domain: Architecture, engine risk, performance
 
 **Trigger**: When making architecture decisions that touch post-cutoff engine APIs,
 or before finalizing any engine-specific implementation approach

@@ -121,18 +121,9 @@ if [ -f ".agents/hooks/yaml-helper.sh" ]; then
     fi
 fi
 
-# --- Update alert ---
-# One line when a newer release is out. It reads a cache that a background job
-# refreshes at most once a day, so this hook makes no network call and never
-# waits for one. `updates.check: false` turns it off (effects-map.md).
-if [ -f .agents/hooks/update-check.sh ]; then
-    . .agents/hooks/update-check.sh
-    UPDATE_LINE=$(update_check_notice 2>/dev/null)
-    if [ -n "$UPDATE_LINE" ]; then
-        echo ""
-        echo "$UPDATE_LINE"
-    fi
-fi
+# Original-source update review is an explicit maintainer command:
+# node scripts/codex/check-upstream.mjs (fetch only when authorized).
+# Session startup performs no background release fetch or cache write.
 
 # --- Stage source agreement ---
 # `project.stage` in project.yaml is authoritative; production/stage.txt is a
@@ -223,13 +214,10 @@ if [ -n "$CODE_ROOT" ] && [ -d "$CODE_ROOT" ]; then
 fi
 
 # --- engine reference vs configured engine -----------------------------------
-# /setup-engine is the only thing that rewrites CLAUDE.md's ENGINE-REFERENCE-IMPORT
-# line. Edit engine.name in project.yaml by hand and the import keeps loading the
-# previous engine's reference as project instructions -- every session, silently.
-# An OBSERVATION, never an action (CLAUDE.md): it reports, the user decides.
-# Printed BEFORE the session state: hook output past 10,000 characters is cut
-# to a preview, so a warning below a long checkpoint could be lost.
-# Codex reads engine references on demand; no Claude @import is executed.
+# Observe the configured engine and its native reference; setup selects routing.
+# References are read on demand, without implicit instruction imports.
+# Put critical observations before optional checkpoint output; host delivery and
+# truncation behavior must be verified separately. This helper never decides a gate.
 if [ -f project.yaml ]; then
     CFG=$(awk '/^engine:/ { e = 1; next } e && /^[^[:space:]#]/ { exit }
                e && /^[[:space:]]+name:/ { sub(/^[[:space:]]+name:[[:space:]]*/, ""); gsub(/["'"'"']/, "");

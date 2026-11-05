@@ -19,9 +19,7 @@ Resolve the intended project root before executing relative paths: prefer the ne
 This skill's report asks for **file sizes against budgets**, **texture dimensions**
 (power-of-two), **audio sample rates**, and **last-modified times** for orphan
 detection. None of those are obtainable from `Read`/`Glob`/`Grep` — they need
-`stat` or a binary header read, so the read-only measuring commands (`stat`,
-`file`, `od`, `wc`, `du`) are pre-approved above; list files with Glob. Anything
-else asks first.
+`stat` or a binary header read, so the read-only measuring commands (stat, file, od, wc, du) may be used within existing authorization and host permissions; list files with available search tools.
 
 **If you cannot take a measurement, the cell is `NOT ASSESSED`, never an
 estimate.** A size budget table filled from guesses is worse than an empty one:
@@ -111,7 +109,7 @@ none, Naming is `NOT ASSESSED — no naming rule for <engine>` (name `$art-bible
 - Textures: Power-of-two dimensions, correct format (PNG for UI, compressed for 3D), within size budget
 - Audio: Correct sample rate, format (OGG for SFX, OGG/MP3 for music), within duration limits.
   `file` reports an audio file's format and sample rate but not its length, and no
-  pre-approved tool here does; a duration budget is therefore
+  available measuring tool here does; a duration budget is therefore
   `NOT ASSESSED — duration not measurable here`, naming the files it covers.
 - Data: Valid JSON/YAML, schema-compliant
 

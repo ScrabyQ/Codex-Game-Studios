@@ -7,6 +7,8 @@ const root=process.cwd(),fixture=mkdtempSync(path.join(tmpdir(),'cgs-native-gene
 const registry=JSON.parse(readFileSync('docs/codex/generation-manifest.json'));
 const migration=JSON.parse(readFileSync('docs/codex/migration-manifest.json'));
 const files=new Set(['docs/codex/upstream-inventory.json','docs/codex/migration-manifest.json','docs/codex/generation-manifest.json','docs/codex/active-baseline.json','.codex/model-policy.json','.agents/rules/index.json','studio-tests/catalog.yaml',...registry.entries.map(e=>e.target),...migration.entries.flatMap(e=>[...(e.target&&(e.target_sha256||['PORTED','EQUIVALENT'].includes(e.status))?[e.target]:[]),...(e.related_targets||[]).map(t=>t.target)])]);
+for(const e of migration.retired_manual_mappings||[])files.add(e.target);
+files.add('.agents/framework-version');
 for(const m of readFileSync('studio-tests/catalog.yaml','utf8').matchAll(/^    spec: (\S+)/gm))files.add(m[1]);
 for(const p of files){mkdirSync(path.dirname(path.join(fixture,p)),{recursive:true});copyFileSync(path.join(root,p),path.join(fixture,p))}
 const script=path.join(root,'scripts/codex/generate.mjs');

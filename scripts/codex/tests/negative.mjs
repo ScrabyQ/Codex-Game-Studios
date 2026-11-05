@@ -7,6 +7,8 @@ import assert from 'node:assert/strict';
 const root=process.cwd(), tmp=mkdtempSync(path.join(tmpdir(),'cgs-ci-')), validator=path.join(root,'scripts/codex/validate.mjs');
 const inv=JSON.parse(readFileSync('docs/codex/upstream-inventory.json')), mig=JSON.parse(readFileSync('docs/codex/migration-manifest.json')), reg=JSON.parse(readFileSync('docs/codex/generation-manifest.json'));
 const files=new Set(['docs/codex/upstream-inventory.json','docs/codex/migration-manifest.json','docs/codex/generation-manifest.json','docs/codex/active-baseline.json','.codex/model-policy.json','.agents/rules/index.json','studio-tests/catalog.yaml',...reg.entries.map(e=>e.target),...mig.entries.flatMap(e=>[...(e.target&&(e.target_sha256||['PORTED','EQUIVALENT'].includes(e.status))?[e.target]:[]),...(e.related_targets||[]).map(t=>t.target)])]);
+for(const e of mig.retired_manual_mappings||[])files.add(e.target);
+files.add('.agents/framework-version');
 for(const m of readFileSync('studio-tests/catalog.yaml','utf8').matchAll(/^    spec: (\S+)/gm))files.add(m[1]);
 for(const f of files){const from=path.join(root,f),to=path.join(tmp,f);if(!existsSync(from))throw Error('Fixture input missing: '+f);mkdirSync(path.dirname(to),{recursive:true});copyFileSync(from,to)}
 const run=()=>spawnSync(process.execPath,[validator,'--root',tmp],{encoding:'utf8'});

@@ -1,8 +1,8 @@
-> Gate definition. The spawning skill passes this file's path to the director agent; the AGENT reads it — the parent session should not.
+> Gate definition. For authorized native delegation, pass this path so the assigned reviewer reads it first. An in-session reviewer reads it explicitly and labels the review nonindependent; unavailable required independent execution remains PENDING.
 
 # TD-FEASIBILITY — Technical Feasibility Assessment
 
-Agent: `technical-director` | Model tier: Opus | Domain: Architecture, engine risk, performance
+Agent: `technical-director` | Model: native session policy | Domain: Architecture, engine risk, performance
 
 **Trigger**: After biggest technical risks are identified during scope/feasibility
 (brainstorm Phase 6, or any early-stage concept with technical unknowns)

@@ -1,8 +1,8 @@
-> Gate definition. The spawning skill passes this file's path to the director agent; the AGENT reads it — the parent session should not.
+> Gate definition. For authorized native delegation, pass this path so the assigned reviewer reads it first. An in-session reviewer reads it explicitly and labels the review nonindependent; unavailable required independent execution remains PENDING.
 
 # PR-SCOPE — Scope and Timeline Validation
 
-Agent: `producer` | Model tier: Opus | Domain: Scope, timeline, dependencies, production risk
+Agent: `producer` | Model: native session policy | Domain: Scope, timeline, dependencies, production risk
 
 **Trigger**: After scope tiers are defined (brainstorm Phase 6, map-systems Phase
 4, or any workflow that produces an MVP definition and timeline estimate)

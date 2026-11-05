@@ -1,15 +1,17 @@
-> **Codex bridge (CGS-26):** AskUserQuestion is a Claude client feature. A Codex adaptation may use a question tool only when the active client actually exposes one; otherwise ask the same decision in plain text and wait for the user's answer. Mode policy can reduce routine questions, but it never supplies user consent or overrides Codex permissions and approvals. Preserve every mode's decision categories and write/approval boundaries.
+# Automation modes
 
-# Automation Modes — Shared Skill Pattern
+Use an exposed question facility when appropriate; otherwise ask in plain text and wait for required answers. Question sites below are not guaranteed widgets. Prior authorization persists. Modes never grant permission or revoke authorization. Prepare reviewable work before asking for an unresolved decision. Optional questions may follow a stated fallback; unanswered required questions never imply consent.
+
+
 
 This document defines the standard `modes.automation` pattern for every skill
-that uses `AskUserQuestion` or writes files. Skills reference this document
+that uses `user question` or writes files. Skills reference this document
 instead of embedding the full mode-handling rules inline — eliminating drift
 when the pattern needs updating.
 
-**Scope**: 68 skills across authoring, review, team orchestration,
+**Scope**: Skills across authoring, review, team orchestration,
 implementation, and utility categories. Any skill that gates a decision
-through `AskUserQuestion` or writes files should follow this pattern.
+through `user question` or writes files should follow this pattern.
 
 **Companion spec**: `.agents/docs/effects-map.md`
 section `modes.automation` is the source of truth for behavior. This document
@@ -26,7 +28,7 @@ is the implementation pattern.
 ## How to Use This Document
 
 In any skill, add a single resolution step at startup and reference the
-mode-aware AskUserQuestion pattern below at each gated site.
+mode-aware user question pattern below at each gated site.
 
 **Startup prelude** (add near Phase 0 / Phase 1):
 
@@ -39,10 +41,10 @@ Resolve automation mode (once, store for the run):
 Pattern reference: `.agents/docs/automation-modes.md`.
 ```
 
-This resolution is automatic via `get_effective_yaml_key modes.automation` —
+The explicitly invoked backend resolves this via `get_effective_yaml_key modes.automation` —
 the helper deep-merges project.local.yaml on top of project.yaml.
 
-**At each AskUserQuestion site**, follow the pattern table in §Universal
+**At each user question site**, follow the pattern table in §Universal
 Rules below. The skill author labels each decision as **major** or **minor**
 (per the classification matrix in §Major vs Minor) so the pattern can apply
 the right rule.
@@ -53,9 +55,9 @@ the right rule.
 
 | Mode | Speed | Control | What changes |
 |------|-------|---------|--------------|
-| `collaborative` | Slowest | Full — every decision is the user's | Default. Q→O→D→Draft→Approval strictly followed. |
-| `guided` | Balanced | High — major decisions are the user's, minor ones proceed automatically | AI states recommendation and proceeds for minor decisions. AskUserQuestion reserved for major decisions. |
-| `autonomous` | Fastest | Low — AI decides, logs, and proceeds | No AskUserQuestion (except `automation_always_ask` categories). All decisions logged. |
+| `collaborative` | Slowest | Full — every decision is the user's | Default. Discuss unresolved choices and obtain any still-required decision. |
+| `guided` | Balanced | High — major decisions are the user's, minor ones proceed automatically | AI states recommendation and proceeds for minor decisions. user question reserved for major decisions. |
+| `autonomous` | Fastest | Low — AI decides, logs, and proceeds | No user question (except `automation_always_ask` categories). All decisions logged. |
 
 **Default**: `collaborative`. New projects start here.
 
@@ -65,38 +67,38 @@ the right rule.
 
 ## Universal Rules per Mode
 
-### Collaborative (current v1.0 behavior — no change)
+### Collaborative
 
-- `AskUserQuestion` called for every multi-option decision
+- `user question` used for unresolved multi-option decisions
 - 2–4 options presented with pros/cons for every design choice
-- Full draft shown and approved before every file write
-- "May I write this to [filepath]?" asked before every write
-- Section-by-section approval in multi-section authoring skills
-- Multi-file changes require explicit approval
+- Prepare a reviewable draft and obtain authorization for writes that still require it
+- Do not repeat confirmation for a write the user already authorized
+- Section-by-section discussion for unresolved content choices; authorized writing proceeds
+- Multi-file work stays within authorized scope; ask for unresolved scope changes
 
 ### Guided
 
-- `AskUserQuestion` called for **major decisions only** (see classification below)
+- `user question` called for **major decisions only** (see classification below)
 - Minor decisions: AI states recommendation inline and proceeds — e.g.
   > *"Going with a static utility pattern here — it fits the existing architecture. Continuing unless you want to change direction."*
 - Updates to existing files: draft shown briefly before writing — proceeds after a short summary, does not wait for explicit "yes"
-- "May I write?" asked for **new files only**, and a new file waits for the answer — updates to existing files proceed directly
+- New and existing files follow the same authorization boundary; mode is not permission to write
 - Still presents options for major decisions but caps at 2 choices with a clear recommendation
 - Multi-section authoring: writes each approved section immediately, no per-section confirmation
 
 ### Autonomous
 
-- No `AskUserQuestion` calls **except** for categories listed in `modes.automation_always_ask`
-- No draft review
-- No "May I write?" prompts — writes directly
+- No `user question` calls **except** for categories listed in `modes.automation_always_ask`
+- Routine authorized implementation proceeds; unresolved strategic choices need a reviewable draft
+- Proceed with authorized writes; ask for unresolved permission or scope
 - Picks the recommended option for every decision without presenting alternatives
 - All decisions logged via `log_decision` (helper in yaml-helper.sh) to
   `production/session-logs/decision-log.md`
 - User reviews decision log post-session to audit choices made
 
-### Every mode: a question with no answer
+### Every mode: a required question with no answer
 
-A question that comes back **skipped, dismissed or empty is not an answer**, in
+A required question that comes back **skipped, dismissed or empty is not an answer**, in
 every mode and on every tool: the user closing the question, a headless run that
 returns every question as skipped, a reply that picks nothing.
 
@@ -116,7 +118,7 @@ returns every question as skipped, a reply that picks nothing.
 Skills label each gated decision as **major** or **minor** before applying
 the mode rules.
 
-### Major — always use AskUserQuestion in guided mode
+### Major — always use user question in guided mode
 
 | Decision type | Example |
 |---------------|---------|
@@ -141,7 +143,7 @@ the mode rules.
 ## `automation_always_ask` Categories
 
 Even in `autonomous` mode, certain decision categories ALWAYS trigger
-`AskUserQuestion`. The configured list lives at
+`user question`. The configured list lives at
 `modes.automation_always_ask` in `project.yaml`.
 
 **Default** (when unset): `[scope_changes, file_deletions, schema_changes]`.
@@ -188,14 +190,13 @@ These skills always behave as `collaborative` regardless of the setting:
 | `day-one-patch` | Release-critical — every action needs explicit sign-off |
 | `setup-engine` | One-time irreversible choice that affects the entire project |
 
-These skills do NOT add the automation prelude described above. They keep
-the v1.0 Q→O→D→Draft→Approval protocol exactly.
+These Skills keep explicit decision gates while honoring prior authorization; never request the same permission again.
 
 ---
 
 ## Decision Log Format (Autonomous Mode)
 
-When `autonomous` mode skips an `AskUserQuestion`, the skill calls
+When `autonomous` mode skips an `user question`, the skill calls
 `log_decision` to write a structured entry. Format per entry:
 
 ```markdown
@@ -226,7 +227,7 @@ the recommended default (so the audit trail is complete).
 
 These rules keep autonomous logs consistent across runs:
 
-- **Log every decision that would have shown an `AskUserQuestion` widget** —
+- **Log every decision that would have shown an `user question` widget** —
   including option/framing choices, not only final approvals. The
   framing/options decisions (which approach, which formula, which edge
   cases) are usually the most informative entries; do not log only the
@@ -256,7 +257,7 @@ The most common categorization mistake is treating a data-file append as a
 
 ---
 
-## The Pattern Skills Apply at Each AskUserQuestion Site
+## The Pattern Skills Apply at Each user question Site
 
 ```
 At each decision point in this skill:
@@ -265,12 +266,12 @@ At each decision point in this skill:
 2. Check whether the decision falls into an `automation_always_ask`
    category: scope_changes, file_deletions, schema_changes,
    architecture_decisions, version_bumps, external_calls.
-3. Apply the mode rule:
+3. First honor existing authorization and host permissions. Do not repeat answered decisions. For unresolved decisions apply the mode rule:
 
-   collaborative:           AskUserQuestion always.
-   guided + major:          AskUserQuestion with capped options + recommendation.
+   collaborative:           ask unresolved choices; honor prior authorization.
+   guided + major:          user question with capped options + recommendation.
    guided + minor:          State recommendation inline, proceed.
-   autonomous + always_ask: AskUserQuestion (regardless of mode).
+   autonomous + always_ask: user question (regardless of mode).
    autonomous + other:      Pick recommended, log via log_decision, proceed.
 4. If the question comes back skipped, dismissed or empty, it is not an
    answer: see §Every mode: a question with no answer.

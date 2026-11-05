@@ -2,15 +2,11 @@
 
 ## Skill Summary
 
-`/help` tells the user where they are in the pipeline and the one thing to do
-next. It is read-only and declares the Haiku tier (`model: haiku`), which is
-used only when the user types `/help` in Manual mode — in auto mode, or when
-Claude starts the skill itself, the session model runs it
-(`.claude/docs/model-tiers.md`). Before it runs, it is handed the resolved
+`/help` is a read-only routing Skill using session model policy. At startup it explicitly obtains resolved
 config block (`project.stage`, `workflow`) and the output of
-`.claude/scripts/story-status.sh`; it reads the session checkpoint itself (Step 3). It then reads
-`.claude/docs/workflow-catalog.yaml`, resolves step completion for the current
-phase with one call to `bash .claude/scripts/artifact-check.sh --phase [phase]`,
+`.agents/scripts/story-status.sh`; it reads the session checkpoint itself (Step 3). It then reads
+`.agents/docs/workflow-catalog.yaml`, resolves step completion for the current
+phase with one call to `bash .agents/scripts/artifact-check.sh --phase [phase]`,
 and in Production reads `production/sprint-status.yaml`.
 
 When `workflow` resolves to `minimal` (the default, because `modes.rigor`
@@ -32,11 +28,11 @@ director gates are invoked.
 
 Checked against the SKILL.md by `/skill-test spec` — no fixture needed.
 
-- [ ] Has required frontmatter fields: `name`, `description`, `argument-hint`, `user-invocable`, `allowed-tools`
-- [ ] Frontmatter sets `model: haiku`
+- [ ] Read-only routing performs no writes, memory updates or checkpoints
+- [ ] Skill frontmatter has nonempty `name` and `description`; optional invocation policy is checked in `agents/openai.yaml` when present, without assuming source-only fields
 - [ ] Has ≥2 phase headings
 - [ ] Contains verdict keyword: COMPLETE
-- [ ] Does NOT contain "May I write" language, and `allowed-tools` has no Write or Edit (skill is read-only)
+- [ ] Native Skill instructions preserve scope, authorized write boundaries and argument handling; unsupported metadata is not treated as a runtime control
 - [ ] Has a next-step handoff (one `→ Next up` recommendation plus escalation paths)
 
 ---
@@ -51,7 +47,7 @@ None. `/help` is a read-only navigation skill. No director gates apply.
 
 Every case's `project.yaml` sets `modes.rigor: minimal` and
 `modes.automation: collaborative`, with no `project.local.yaml`, unless its own
-Fixture says otherwise. Rules: `studio-tests/CLAUDE.md` §
+Fixture says otherwise. Rules: `studio-tests/AGENTS.md` §
 Fixture defaults.
 
 ---
@@ -73,8 +69,8 @@ Fixture defaults.
 
 **Expected behavior:**
 1. Skill takes `project.stage: Production` and `workflow: standard` from the config block
-2. Skill reads `.claude/docs/workflow-catalog.yaml` and runs
-   `bash .claude/scripts/artifact-check.sh --phase production`
+2. Skill reads `.agents/docs/workflow-catalog.yaml` and runs
+   `bash .agents/scripts/artifact-check.sh --phase production`
 3. Skill reads `production/sprint-status.yaml`: the in-progress story is
    "currently active", ready-for-dev stories are "next up", done stories count as
    complete, the blocked story is named with its `blocker` text
@@ -100,7 +96,7 @@ Fixture defaults.
 **Fixture:**
 - `project.yaml` sets `project.stage: Concept`, `modes.rigor: full`, and
   `engine.name: "Godot"` (`full`, because at `standard` the art bible is
-  required only when visual-asset stories exist — `.claude/docs/workflow-modes.md`
+  required only when visual-asset stories exist — `.agents/docs/workflow-modes.md`
   — and a Concept-stage project has no stories to decide it by)
 - No `design/gdd/game-concept.md`, no `design/art/art-bible.md`, no
   `design/gdd/systems-index.md`, no sprint files
@@ -207,7 +203,7 @@ Fixture defaults.
    is not mapped
 2. Skill reads `active.md`'s STATUS and CHECKPOINT blocks (Step 3), then goes to
    Step 4m
-3. Skill runs `bash .claude/scripts/artifact-check.sh --path minimal`
+3. Skill runs `bash .agents/scripts/artifact-check.sh --path minimal`
 4. The injected `story-status.sh` list has story-002 on the first `IN_PROGRESS`
    line; the skill does not re-run the script or re-rank the stories
 5. Output uses the minimal shape: `## Where You Are: Minimal path — 1 of 3 stories complete`,

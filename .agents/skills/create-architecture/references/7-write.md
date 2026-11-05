@@ -75,11 +75,11 @@ After writing the master architecture document, perform an explicit sign-off bef
 - `lean` → skip both (neither is a PHASE-GATE). Note: "TD-ARCHITECTURE and LP-FEASIBILITY skipped — Lean mode." Go to Step 4 and record both as skipped, then Phase 8.
 - `full` → spawn both, in parallel.
 
-**Step 1 — Spawn `technical-director` via `Agent` using gate TD-ARCHITECTURE (`.agents/docs/director-gates/td-architecture.md`):**
+**Step 1 — Spawn `technical-director` using available authorized native delegation using gate TD-ARCHITECTURE (`.agents/docs/director-gates/td-architecture.md`):**
 
 Pass: the architecture document path (`docs/architecture/architecture.md`), the Technical Requirements Baseline (TR-IDs and count), the ADR list with statuses, and the Engine Knowledge Gap Inventory from Phase 0d. Issue this call and Step 2's before waiting for either result.
 
-**Step 2 — Spawn `lead-programmer` via `Agent` using gate LP-FEASIBILITY (`.agents/docs/director-gates/lp-feasibility.md`):**
+**Step 2 — Spawn `lead-programmer` using available authorized native delegation using gate LP-FEASIBILITY (`.agents/docs/director-gates/lp-feasibility.md`):**
 
 Pass: architecture document path, technical requirements baseline summary, ADR list.
 

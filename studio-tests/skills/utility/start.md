@@ -36,7 +36,7 @@ brief present) skips onboarding. No director gates apply. Verdict: COMPLETE.
 
 Checked against the SKILL.md by `/skill-test spec`, no fixture needed.
 
-- [ ] Has required frontmatter fields: `name`, `description`, `argument-hint`, `user-invocable`, `allowed-tools`
+- [ ] Skill frontmatter has nonempty `name` and `description`; optional invocation policy is checked in `agents/openai.yaml` when present, without assuming source-only fields
 - [ ] Has ≥2 phase headings
 - [ ] Contains verdict keyword: COMPLETE
 - [ ] States the write rule for every write: the stage and an inferred rigor only after an explicit yes to the save question that names `project.yaml` and `production/stage.txt`; `modes.automation` from the user's pick, and never when the save was declined
@@ -55,7 +55,7 @@ point this skill runs.
 
 Every case's `project.yaml` sets `modes.rigor: minimal` and
 `modes.automation: collaborative`, with no `project.local.yaml`, unless its own
-Fixture says otherwise. Rules: `studio-tests/CLAUDE.md` §
+Fixture says otherwise. Rules: `studio-tests/AGENTS.md` §
 Fixture defaults.
 
 ---
@@ -158,7 +158,7 @@ Fixture defaults.
 **Fixture:**
 - Fresh project as in Case 1
 - `.git/config` has `[remote "origin"]` with url
-  `https://github.com/Donchitos/Claude-Code-Game-Studios.git`
+  `https://github.com/ScrabyQ/Codex-Game-Studios.git`
 - The user picks `B) Vague idea` with the hint "a small weekend puzzler", then `Save them`
 
 **Input:** `/start`
@@ -168,7 +168,7 @@ Fixture defaults.
 2. Path B names `/brainstorm a small weekend puzzler` as the immediate step
 3. The card infers rigor `minimal` from "weekend" and "small"
 4. After the Phase 6 path, the skill adds once that `origin` still points at the
-   CCGS template repo, suggests `git remote rename origin template` then
+   Codex Game Studios template repo, suggests `git remote rename origin template` then
    `git remote add origin <your repo URL>`, and says to skip `UPGRADING.md`'s own
    `git remote add template` step since that remote now exists
 5. The commands are suggested only; no git command is run

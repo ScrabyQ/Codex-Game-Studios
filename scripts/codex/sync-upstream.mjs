@@ -1,7 +1,7 @@
 import { existsSync, mkdirSync, writeFileSync, realpathSync, statSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { git, inspect, options } from './upstream-common.mjs';
-function sameDirectory(a,b){const x=statSync(a,{bigint:true}),y=statSync(b,{bigint:true});return x.dev===y.dev&&x.ino===y.ino}
+function sameDirectory(a,b){const x=statSync(a,{bigint:true}),y=statSync(b,{bigint:true});if(x.ino===0n||y.ino===0n)throw Error('Filesystem directory identity unavailable; refusing worktree preparation');return x.dev===y.dev&&x.ino===y.ino}
 function physicallyInside(root, existingParent){
   let current=realpathSync.native(existingParent);
   while(true){if(sameDirectory(root,current))return true;const next=dirname(current);if(next===current)return false;current=next}

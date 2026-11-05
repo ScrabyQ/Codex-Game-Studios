@@ -1,29 +1,9 @@
-> **Codex bridge (CGS-26):** Claude Agent Teams are not implied by this reference mirror. Use native Codex subagents only when available; otherwise execute sequentially in-session and state that no independent team review occurred. The source's ownership, coordination, and escalation requirements still apply.
+# Coordinating multiple agents
 
-# Agent Teams (experimental — opt-in)
+Use independent agents when the active host exposes delegation, the user or invoked workflow authorizes it, and separate perspectives or independent work improve the result. A role file alone does not spawn an agent. This product requires no experimental environment variable or external shared task service.
 
-> On-demand reference. Demoted out of `coordination-rules.md` (an always-loaded
-> CLAUDE.md import) in v1.1 — read this when actually considering a team, not
-> on every turn.
+Good candidates are independent subsystems with disjoint paths, parallel specialist reviews of shared read-only inputs, or long workstreams returning bounded artifacts. Keep dependent work sequential. For a small bounded task, work directly.
 
-Multiple independent Claude Code *sessions* running simultaneously, coordinated
-via a shared task list. Each session has its own context window and token budget.
-Requires the `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` environment variable.
+Give each agent an objective, input sections, owned paths, non-goals, inherited authorization, expected output, evidence criteria and escalation conditions. Tell writers they share the repository and must preserve others' edits. Collect independent results before dependent work. Surface blocked work immediately and return a partial report when only some tasks complete.
 
-## Use agent teams when
-
-- Work spans multiple subsystems that will not touch the same files
-- Each workstream would take >30 minutes and benefits from true parallelism
-- A senior agent (technical-director, producer) needs to coordinate 3+ specialist
-  sessions working on different epics simultaneously
-
-## Do not use agent teams when
-
-- One session's output is required as input for another (use sequential subagents)
-- The task fits in a single session's context (use subagents instead)
-- Cost is a concern — each team member burns tokens independently
-
-## Current status
-
-Opt-in via `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1`. Document first usage here
-when adopted.
+Use the host's actual collaboration API; verify native custom-role loading separately. If delegation or a requested role is unavailable, read its TOML instructions and label an **in-session role review; not independent**. If independence is required, report PENDING. Agents inherit caller permission limits; models and modes never grant authorization.

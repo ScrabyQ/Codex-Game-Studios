@@ -4,6 +4,7 @@ import {cpSync,existsSync,mkdtempSync,mkdirSync,readFileSync,realpathSync,writeF
 import {createHash} from 'node:crypto';
 import {tmpdir} from 'node:os';
 import path from 'node:path';
+import {readManualTarget} from '../safe-path.mjs';
 
 // Both Git histories are new, disposable, unrelated to the product checkout.
 const repo=process.cwd(),base=mkdtempSync(path.join(realpathSync(tmpdir()),'cgs reconcile native '));
@@ -26,6 +27,7 @@ git(source,'init','--quiet');
 put(source,'LICENSE','MIT fixture license\n');
 const settings=handler=>JSON.stringify({hooks:{SessionStart:[{matcher:'',hooks:[{type:'command',command:'bash .claude/hooks/'+handler+'.sh',timeout:10}]}]}});
 put(source,'.claude/settings.json',settings('hook-delete'));
+for(const [p,s] of [['README.md','# Source README\n'],['.claude/hooks/update-check.sh','#!/bin/sh\necho old\n'],['GUIDE-OLD.md','# Renamed source\n'],['OLD.md','# Removed source\n']])put(source,p,s);
 for(const [kind,make] of Object.entries(sourcePaths))for(const state of ['change','delete','rename'])put(source,make(kind+'-'+state),content(kind,kind+'-'+state));
 const old=commit(source,'Initial synthetic source');
 for(const [kind,make] of Object.entries(sourcePaths)){
@@ -34,6 +36,7 @@ for(const [kind,make] of Object.entries(sourcePaths)){
   const renamed=make(kind+'-rename'),replacement=make(kind+'-renamed');mkdirSync(path.dirname(path.join(source,replacement)),{recursive:true});git(source,'mv',renamed,replacement);
   put(source,make(kind+'-added'),content(kind,kind+'-added')+Array.from({length:30},(_,i)=>`Added ${kind} distinct content ${i}\n`).join(''));
 }
+put(source,'README.md','# Updated source README\n');put(source,'.claude/hooks/update-check.sh','#!/bin/sh\necho new\n');git(source,'mv','GUIDE-OLD.md','GUIDE-NEW.md');git(source,'rm','--quiet','OLD.md');
 put(source,'.claude/settings.json',settings('hook-change'));
 const next=commit(source,'Synthetic source changes');
 cpSync(path.join(repo,'scripts/codex'),path.join(product,'scripts/codex'),{recursive:true});
@@ -69,6 +72,10 @@ const retiredTarget='.agents/hooks/retired.sh',retiredSource=sourcePaths.hook('h
 put(product,retiredTarget,retiredContent);
 entries.push({source:retiredSource,source_sha256:retiredInfo.sha256,target:retiredTarget,target_sha256:sha(retiredContent),ownership:'generated',transform_ids:['synthetic-test']});
 const retiredRow=matrix.entries.find(e=>e.source===retiredSource);retiredRow.target=retiredTarget;retiredRow.target_sha256=sha(retiredContent);
+const manuals=[['README.md','README.md','# Native README\n'],['.claude/hooks/update-check.sh','scripts/codex/manual-check.mjs','// Native check\n'],['GUIDE-OLD.md','docs/manual-guide.md','# Native guide\n'],['OLD.md','docs/retained.md','# Retained native document\n']];
+for(const [sourcePath,target,bytes] of manuals){put(product,target,bytes);const row=matrix.entries.find(e=>e.source===sourcePath);row.target=target;row.target_sha256=sha(bytes)}
+delete matrix.entries.find(e=>e.source==='README.md').target_sha256;
+for(const target of ['.git/config','.env.local','Content/test.uasset','../outside.md'])assert.throws(()=>readManualTarget(product,target));
 for(const e of matrix.entries){e.status=e.target?'EQUIVALENT':'UNSUPPORTED';e.verification=e.target?'Synthetic reviewed baseline':'Synthetic source intentionally unsupported';}
 put(product,'docs/codex/upstream-inventory.json',JSON.stringify(inv));
 put(product,'docs/codex/migration-manifest.json',JSON.stringify(matrix));
@@ -89,6 +96,7 @@ const inspect=cli('check-upstream','--root',product,'--source-repo',source,'--so
 assert.equal(inspect.status,0,inspect.stderr);
 const report=JSON.parse(inspect.stdout);
 for(const kind of Object.keys(sourcePaths))for(const change of ['added','deleted','renamed','modified'])assert(report.changes.some(c=>c.category===kind&&c.change===change),kind+' '+change);
+for(const [sourcePath,target] of manuals)assert(report.changes.find(c=>c.old_path===sourcePath)?.targets.some(t=>t.target===target&&t.ownership==='manual'),`missing manual target ${target}`);
 const declarationChange=report.changes.find(c=>c.new_path==='.claude/settings.json');
 assert.equal(declarationChange.declarations.length,1);
 assert.match(declarationChange.declarations[0].old.command,/hook-delete\.sh/);
@@ -112,6 +120,7 @@ assert.equal(existsSync(path.join(product,addedSkill)),false);
 assert.equal(git(product,'status','--porcelain=v1'),before,'candidate generation changed the native product');
 const onboardSkill=root=>{const policy=json(root,'.codex/model-policy.json');policy.skills['skill-added']={family:'inherit'};put(root,'.codex/model-policy.json',JSON.stringify(policy));put(root,'studio-tests/catalog.yaml','skills:\n  - name: demo\n    spec: studio-tests/demo.md\n  - name: skill-added\n    spec: studio-tests/skill-added.md\nroles:\n  - name: demo-agent\n    spec: studio-tests/demo-agent.md\n');put(root,'studio-tests/skill-added.md','# Fixture\n');};
 const updated=new Map(Object.entries(targets).map(([kind,target])=>[target,native[kind]+'\n# Reviewed update\n']));
+for(const [sourcePath,target,bytes] of manuals)updated.set(target,sourcePath==='README.md'||sourcePath.endsWith('update-check.sh')?bytes+'\nReviewed change\n':bytes);
 updated.set(ruleIndex,index);
 const addedTarget='.agents/docs/templates/added.md',addedContent='# Reviewed new template\n';
 updated.set(addedTarget,addedContent);
@@ -119,7 +128,7 @@ updated.set(addedSkill,addedSkillContent);
 const newOverlay=JSON.stringify({source_sha256:report.changes.find(c=>c.new_path===overlaySource).new_sha256,edits:[{find:'Fixture',replace:'Adapted'}]})+'\n';
 const changes=report.changes.map(c=>{
  const fields=Object.fromEntries(['old_path','new_path','old_blob','new_blob','old_sha256','new_sha256','old_mode','new_mode'].map(k=>[k,c[k]]));
- const mapped=c.targets.map(t=>({target:t.target,old_sha256:t.recorded_sha256,new_sha256:t.target===retiredTarget?null:sha(updated.get(t.target)),action:t.target===retiredTarget?'retire':t.target===ruleIndex?'retain':'update'}));
+ const mapped=c.targets.map(t=>({target:t.target,old_sha256:t.recorded_sha256,new_sha256:t.target===retiredTarget?null:sha(updated.get(t.target)),action:t.target===retiredTarget?'retire':t.target===ruleIndex||t.ownership==='manual'&&sha(updated.get(t.target))===t.recorded_sha256?'retain':'update',...(t.ownership==='manual'?{ownership:'manual'}:{})}));
  if(c.new_path===sourcePaths.template('template-added'))mapped.push({target:addedTarget,old_sha256:null,new_sha256:sha(addedContent),action:'add',registration:{source:c.new_path,transform_ids:['reviewed-test']}});
  if(c.new_path===sourcePaths.skill('skill-added'))mapped.push({target:addedSkill,old_sha256:null,new_sha256:sha(addedSkillContent),action:'add',registration:{source:c.new_path,transform_ids:['reviewed-test']}});
  const overlays=c.old_path===overlaySource?[{path:overlayPath,old_sha256:sha(oldOverlay),new_sha256:sha(newOverlay)}]:c.new_path===sourcePaths.skill('skill-added')?[{path:stagedOverlayPath,old_sha256:null,new_sha256:sha(addedOverlay)}]:[];
@@ -167,6 +176,7 @@ const prior=metadata.map(p=>readFileSync(path.join(invalidProduct,p)));
 const invalidApply=invalidCli('apply','--root',invalidProduct);denied(invalidApply,/apply failed validation; metadata restored/i);assert.match(invalidApply.stderr,/Invalid native skill format/);
 for(let i=0;i<metadata.length;i++)assert.deepEqual(readFileSync(path.join(invalidProduct,metadata[i])),prior[i],metadata[i]);
 save(plan);const driftTarget=targets.skill,driftFile=path.join(product,driftTarget),driftBefore=readFileSync(driftFile);writeFileSync(driftFile,'manual edit');denied(prepare(),/Dirty product or target drift/);assert.equal(readFileSync(driftFile,'utf8'),'manual edit');writeFileSync(driftFile,driftBefore);
+const manualTarget=path.join(product,'README.md'),manualBefore=readFileSync(manualTarget);writeFileSync(manualTarget,'unreviewed manual edit');denied(prepare(),/Dirty product or target drift/);assert.equal(readFileSync(manualTarget,'utf8'),'unreviewed manual edit');writeFileSync(manualTarget,manualBefore);
 put(product,'untracked-work.txt','local user work\n');denied(prepare(),/Dirty product or target drift/);unlinkSync(path.join(product,'untracked-work.txt'));
 assert.deepEqual(readFileSync(path.join(product,descriptor)),baselineBytes);
 const ready=prepare();assert.equal(ready.status,0,ready.stderr||ready.stdout);
@@ -196,6 +206,8 @@ for(const sourcePath of [overlaySource,sourcePaths.skill('skill-added')]){
  assert.equal(recorded.status,0,recorded.stderr||recorded.stdout);
  assert.equal(json(product,matrixFile).entries.find(e=>e.source===sourcePath).status,'EQUIVALENT');
 }
+for(const sourcePath of ['README.md','.claude/hooks/update-check.sh','GUIDE-NEW.md']){const recorded=cli('record-migration','--root',product,'--source',sourcePath,'--status','EQUIVALENT','--review','Reviewed manually maintained target');assert.equal(recorded.status,0,recorded.stderr||recorded.stdout);assert.equal(json(product,matrixFile).entries.find(e=>e.source===sourcePath).status,'EQUIVALENT')}
+assert.ok(json(product,matrixFile).retired_manual_mappings.some(e=>e.source==='OLD.md'&&e.target==='docs/retained.md'));
 const declarationId=declarationChange.declarations[0].id;
 const declarationReview=cli('record-migration','--root',product,'--id',declarationId,'--status','UNSUPPORTED','--review','Synthetic hook declaration explicitly reviewed as unsupported');
 assert.equal(declarationReview.status,0,declarationReview.stderr||declarationReview.stdout);
@@ -210,6 +222,17 @@ writeFileSync(reviewedTarget,reviewedBytes);
 const finished=cli('reconcile-upstream','finalize','--root',product);assert.equal(finished.status,0,finished.stderr||finished.stdout);
 assert.equal(json(product,descriptor).state,'active');
 const finalCheck=cli('validate','--root',product);assert.equal(finalCheck.status,0,finalCheck.stderr||finalCheck.stdout);
+const retainedPath='docs/retained.md',retiredBefore=json(product,matrixFile).retired_manual_mappings.find(e=>e.target===retainedPath),retainedFile=path.join(product,retainedPath);
+writeFileSync(retainedFile,'# Reviewed native revision\n');
+denied(cli('validate','--root',product),/retired manual target drift/i);
+denied(cli('generate','--root',product,'--record-native','--targets','README.md'),/Unselected target drift/);
+const recordRetired=cli('generate','--root',product,'--record-native','--targets',retainedPath);assert.equal(recordRetired.status,0,recordRetired.stderr||recordRetired.stdout);
+const retiredAfter=json(product,matrixFile).retired_manual_mappings.find(e=>e.target===retainedPath);
+assert.equal(retiredAfter.source,retiredBefore.source);assert.equal(retiredAfter.source_commit,retiredBefore.source_commit);assert.equal(retiredAfter.source_sha256,retiredBefore.source_sha256);assert.equal(retiredAfter.target_sha256,sha('# Reviewed native revision\n'));
+assert.equal(cli('validate','--root',product).status,0);
+const intactMatrix=readFileSync(path.join(product,matrixFile));
+const duplicateRetired=json(product,matrixFile);duplicateRetired.retired_manual_mappings.push(structuredClone(duplicateRetired.retired_manual_mappings[0]));put(product,matrixFile,JSON.stringify(duplicateRetired));denied(cli('validate','--root',product),/Duplicate retired manual mappings/);
+const invalidRetired=json(product,matrixFile);invalidRetired.retired_manual_mappings=[{...retiredAfter,source_commit:'invalid'}];put(product,matrixFile,JSON.stringify(invalidRetired));denied(cli('validate','--root',product),/Invalid retired manual provenance/);writeFileSync(path.join(product,matrixFile),intactMatrix);
 assert.equal(existsSync(path.join(product,'.claude')),false);
 const finalReg=json(product,'docs/codex/generation-manifest.json');assert(finalReg.entries.some(e=>e.target===addedTarget));assert(!finalReg.entries.some(e=>e.target===retiredTarget));
 console.log('PASS synthetic five-family change detection, guarded prepare/apply/finalize, explicit review, addition and retirement');

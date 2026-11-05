@@ -1,10 +1,9 @@
-> **Codex bridge (CGS-26):** This document describes the original Claude Code studio. In Codex, follow the repository AGENTS.md entrypoint and invoke installed Skills through the current client's supported discovery mechanism. Role delegation uses native subagents where available or an explicit in-session fallback. Claude-specific tools, settings, and model aliases in the source guide are not Codex capabilities.
 
 # Game Studio Agent Architecture -- Quick Start Guide
 
 ## What Is This?
 
-This is a complete Claude Code agent architecture for game development. It
+This is a Codex game-development workflow for game development. It
 organizes 49 specialized AI agents into a studio hierarchy that mirrors
 real game development teams, with defined responsibilities, delegation
 rules, and coordination protocols. It includes engine-specialist agents
@@ -39,7 +38,7 @@ before code. Raise rigor with `/settings` when the game outgrows the brief;
 
 There are three tiers of agents:
 
-- **Tier 1 — Directors** who make high-level decisions (they run on Opus)
+- **Tier 1 — Directors** who make high-level decisions (responsibility, independent of model)
   - `creative-director` -- vision and creative conflict resolution
   - `technical-director` -- architecture and technology decisions
   - `producer` -- scheduling, coordination, and risk management
@@ -51,9 +50,7 @@ There are three tiers of agents:
 - **Tier 3 — Specialists** who execute within their domain
   - Designers, programmers, artists, writers, testers, engineers
 
-The tiers are seniority of role. Most agents run on your session's model; the
-agent file's own `model:` line says which do not
-(`.agents/docs/model-tiers.md`).
+The tiers describe seniority, not models. Native role TOMLs define responsibilities; see `.agents/docs/model-tiers.md` for model-policy limits.
 
 ### 2. Pick the Right Agent for the Job
 
@@ -243,7 +240,7 @@ If you already know what you need, jump directly to the relevant path:
    - Generates 3 concepts, helps you pick one, defines core loop and pillars
    - Produces a game concept document and recommends an engine
 2. **Set up the engine** — Run `/setup-engine` (uses the brainstorm recommendation)
-   - Configures CLAUDE.md, detects knowledge gaps, populates reference docs
+   - Configures AGENTS.md, detects knowledge gaps, populates reference docs
    - Writes engine, naming conventions, and performance budgets to `project.yaml`
      (the source of truth), mirrored to `.agents/docs/technical-preferences.md`
    - If the engine version is newer than the LLM's training data, it fetches
@@ -294,27 +291,21 @@ If you have design docs, prototypes, or code already:
 4. **Validate phase readiness** — Run `/gate-check` to see where you stand
 5. **Plan the next sprint** — Run `/sprint-plan new`
 
-## File Structure Reference
+## File structure reference
 
+```text
+AGENTS.md                 Repository instructions
+project.yaml              Shared engine, mode and stage settings
+project.local.yaml        Ignored allowed personal preferences
+.agents/skills/           Native Skills and supporting references
+.agents/docs/             Workflow guidance and document templates
+.agents/rules/            Explicitly selected path policy
+.agents/hooks/            Adapter backend checks
+.agents/scripts/          Deterministic helper backends
+.codex/agents/            Native role TOMLs
+.codex/model-policy.json  Model selection policy, not runtime guarantee
+scripts/codex/            Explicit adapters and product checks
+studio-tests/             Written behavioral specifications and rubric
 ```
-CLAUDE.md                          -- Master config (read this first, ~80 lines)
-project.yaml                       -- Machine-readable project config (engine, modes, stage) — source of truth
-.claude/
-  settings.json                    -- Claude Code hooks and project settings
-  agents/                          -- 49 agent definitions (YAML frontmatter)
-  skills/                          -- 74 slash command definitions (YAML frontmatter)
-  hooks/                           -- 15 event hooks (.sh, wired by settings.json) + yaml-helper.sh, update-check.sh
-  rules/                           -- 14 path-specific rule files
-  docs/
-    quick-start.md                 -- This file
-    technical-preferences.md       -- Legacy fallback for project.yaml config (mirror; see project.yaml at repo root)
-    coding-standards.md            -- Coding and design doc standards
-    coordination-rules.md          -- Agent coordination rules
-    context-management.md          -- Context budgets and compaction instructions
-    directory-structure.md         -- Project directory layout
-    workflow-catalog.yaml          -- 7-phase pipeline definition (read by /help)
-    setup-requirements.md          -- System prerequisites (Git Bash, jq, Python)
-    settings-local-template.md     -- Personal settings.local.json guide
-    CLAUDE-local-template.md       -- Personal CLAUDE.local.md guide (gitignored overrides)
-    templates/                     -- 62 document templates (+ per-section guidance)
-```
+
+Slash names identify repository Skills. Invoke through supported client discovery, or read the Skill and follow it explicitly, labeling that fallback. Role delegation needs available authorized capability; in-session review is nonindependent. Existing user authorization persists.

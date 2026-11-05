@@ -95,7 +95,7 @@ and check whether the change invalidates any existing ADR. Add to "Superseded
 Requirements" if so.
 
 **When running `/architecture-review`**: The skill will update this document
-automatically with the current state.
+within the authorized scope with the assessed current state; unresolved publication or content decisions require review.
 
 **Gate check**: The Pre-Production gate requires this document to exist and to
 have zero Foundation Layer Gaps.

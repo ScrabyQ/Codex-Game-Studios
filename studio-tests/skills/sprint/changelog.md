@@ -2,7 +2,7 @@
 
 ## Skill Summary
 
-`/changelog` is a Sonnet-tier skill that generates two changelogs — an internal
+`/changelog` is a Skill that generates two changelogs — an internal
 one and a player-facing one — from the git commits since the last release tag.
 Before using the injected history it classifies every commit as Game or
 Framework / maintenance (Unclear counts as Framework), uses only the Game
@@ -25,7 +25,7 @@ BLOCKED when there is no history or none of it is the game's.
 
 Checked against the SKILL.md by `/skill-test spec` — no fixture needed.
 
-- [ ] Has required frontmatter fields: `name`, `description`, `argument-hint`, `user-invocable`, `allowed-tools`
+- [ ] Skill frontmatter has nonempty `name` and `description`; optional invocation policy is checked in `agents/openai.yaml` when present, without assuming source-only fields
 - [ ] Has ≥2 phase headings
 - [ ] Contains verdict keywords: CHANGELOG WRITTEN, COMPLETE, BLOCKED
 - [ ] Contains "May I write" language (skill writes changelog)
@@ -43,7 +43,7 @@ None. Changelog generation is a fast compilation task; no gates are invoked.
 
 Every case's `project.yaml` sets `modes.rigor: minimal` and
 `modes.automation: collaborative`, with no `project.local.yaml`, unless its own
-Fixture says otherwise. Rules: `studio-tests/CLAUDE.md` §
+Fixture says otherwise. Rules: `studio-tests/AGENTS.md` §
 Fixture defaults.
 
 ---
@@ -247,7 +247,7 @@ Fixture defaults.
 - [ ] Always asks "May I write" before writing the changelog
 - [ ] No director gates are invoked
 - [ ] Verdict is CHANGELOG WRITTEN after a write, COMPLETE when the write is declined, and BLOCKED when there is no history or no Game commit
-- [ ] Declares `model: sonnet` — it writes player-facing copy
+- [ ] Uses native session policy without assuming a Skill model switch or unavailable model
 
 ---
 

@@ -106,7 +106,7 @@ Use `available user-question tool (or ask in plain text and wait)` to confirm pr
 
 Before any code is written, define the rollback procedure. This is non-negotiable.
 
-Spawn `release-manager` via `Agent`. Ask them to produce a rollback plan covering:
+Spawn `release-manager` using available authorized native delegation. Ask them to produce a rollback plan covering:
 - How to revert to the gold master build on each target platform
 - Platform-specific rollback constraints (some platforms cannot roll back cert builds)
 - Who is responsible for triggering the rollback
@@ -122,7 +122,7 @@ Do not proceed to Phase 4 until the rollback plan is written.
 
 For each code fix in the approved scope, spawn a focused implementation loop:
 
-1. Spawn `lead-programmer` via `Agent` with:
+1. Spawn `lead-programmer` using available authorized native delegation with:
    - The bug report (exact reproduction steps and root cause if known)
    - The constraint: minimum viable fix only, no cleanup
    - The affected files (from bug report Technical Context section)
@@ -133,13 +133,13 @@ For each code fix in the approved scope, spawn a focused implementation loop:
 2. Ask once, for the whole set: "May I apply these fixes? [BUG-ID → files, one
    line each]". No code changes before this approval.
 
-3. On yes, hand each approved fix back to `lead-programmer` (a new `Agent` call
+3. On yes, hand each approved fix back to `lead-programmer` (a new authorized native assignment
    carrying its plan) to implement it and run targeted tests with `commands.test`
    from `project.yaml`, narrowed to the affected suite where the runner allows —
    never a runner line written from memory. If `commands.test` is unset, say so
    and record `Tests: NOT RUN — commands.test unset` for that bug.
 
-4. Spawn `qa-tester` via `Agent` to verify: does the bug reproduce after the fix?
+4. Spawn `qa-tester` using available authorized native delegation to verify: does the bug reproduce after the fix?
 
 For config/data-only fixes: make the change directly (no programmer agent needed). First ask, naming the file and the change: "May I edit `[config file]` — `[key]`: [old value] → [new value]?" Confirm the value changed and re-run any relevant smoke test.
 
@@ -149,7 +149,7 @@ For config/data-only fixes: make the change directly (no programmer agent needed
 
 This is a lightweight QA pass — not a full `$team-qa`. The patch is already QA-approved from the release gate; we are only re-verifying the changed areas.
 
-Spawn `qa-lead` via `Agent` with:
+Spawn `qa-lead` using available authorized native delegation with:
 - List of all changed files
 - List of bugs fixed (with verification status from Phase 4)
 - The smoke check scope for the affected systems

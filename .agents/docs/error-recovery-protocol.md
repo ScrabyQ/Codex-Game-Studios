@@ -1,8 +1,7 @@
-> **Codex bridge (CGS-26):** Replace source-runtime question widgets with a question facility available in the active Codex client, or ask in plain text and wait. Recovery and retry must retain the original approval boundary; an automation mode or previous partial step is not consent for a new write.
 
 # Error Recovery Protocol
 
-Shared procedure for any skill that spawns agents via the `Agent` tool, used by
+Shared procedure for any skill that uses available authorized native delegation, used by
 the `## Error Recovery Protocol` section of each orchestration and review skill.
 Two imperatives apply to all of them: **surface a blocked agent immediately, and
 produce a partial report.** Each skill's own **Common blockers** list is
@@ -30,8 +29,7 @@ it only has to do the write-and-return step it skipped. So the recovery is
 cheap; the detection is the hard part, and the detection cannot come from
 reading the response.
 
-**A fluent response is not evidence that a phase ran.** The artifact is —
-observe the artifact, not the transcript. The rule applies to sub-agents
+**A fluent response is not evidence that a phase ran.** Artifact presence is necessary but insufficient: inspect content and evidence against the assignment before acceptance. The rule applies to sub-agents
 exactly as it does to skills.
 
 When the path is missing:
@@ -53,7 +51,7 @@ If any spawned agent returns BLOCKED, errors, or cannot complete:
 2. **Assess dependencies** — check whether the blocked agent's output is required
    by subsequent phases. If yes, do not proceed past that dependency point without
    user input.
-3. **Offer options** via `AskUserQuestion`:
+3. **Offer unresolved options** using an exposed question facility or plain text, waiting for required decisions:
    - Skip this agent and note the gap in the final report — never fill the skipped agent's section with content of your own
    - Retry with narrower scope
    - Stop here and resolve the blocker first

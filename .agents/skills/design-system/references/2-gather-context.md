@@ -180,7 +180,7 @@ which you picked.
   under `docs/engine-reference/[engine]/modules/`; feasibility not checked against
   the pinned engine"* — and carry that into §5-pre. A silent skip here is
   indistinguishable from a feasibility check that ran and found nothing wrong,
-  which is the failure `.claude/rules/skill-authoring.md` obligation 3 exists to
+  which is the failure `.agents/rules/skill-authoring.md` obligation 3 exists to
   stop.
 
   > **This is not a rare branch.** The domain table above names `Scripting` and

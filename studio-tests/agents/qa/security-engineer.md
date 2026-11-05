@@ -9,9 +9,9 @@ No gate IDs assigned. Escalates critical vulnerabilities to technical-director.
 
 ## Static Assertions (Structural)
 
-- [ ] `description:` field is present and domain-specific (references anti-cheat / security / vulnerability assessment)
+- [ ] `description` field is present and domain-specific (references anti-cheat / security / vulnerability assessment)
 - [ ] `tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is `inherit` — frontmatter `model:` reads exactly `inherit` (tiers: `.claude/docs/model-tiers.md`)
+- [ ] Native role TOML has nonempty `name`, domain-specific `description` and `developer_instructions`; its capability ceiling, domain boundaries and escalation rules remain intact
 - [ ] Agent definition does not claim authority over game logic design or server deployment
 
 ---

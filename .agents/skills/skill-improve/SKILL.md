@@ -59,7 +59,7 @@ Run `$skill-test static [name]` and record the baseline score:
 Display to the user:
 ```
 Static baseline:   [N] failures, [M] warnings
-Failing: Check 4 (no ask-before-write), Check 5 (no handoff)
+Failing: Check 4 (authorization conflict), Check 5 (no handoff)
 ```
 
 If the static result is **NOT ASSESSED** (the skill file could not be read or
@@ -70,7 +70,7 @@ If baseline is 0 FAILs and 0 WARNs, note it and proceed to Phase 2b.
 
 ### Phase 2b: Category Baseline
 
-Look up the skill's `category:` field in `studio-tests/catalog.yaml`.
+Look up the skill category in the read-only studio-tests/catalog.yaml. Report run results in conversation or, when authorized, use ignored production/session-logs/studio-tests/ or host temporary storage; keep any catalog-results.yaml execution overlay there, never update the tracked catalog as a run log.
 
 If no `category:` field is found, display:
 "Category: not yet assigned — skipping category checks."
@@ -107,10 +107,10 @@ For each failing or warning **static** check, identify the exact gap:
 - **Check 1 fail** → which frontmatter field is missing
 - **Check 2 fail** → how many phases found vs. minimum required
 - **Check 3 fail** → no verdict keywords anywhere in the skill body
-- **Check 4 fail** → Write or Edit in allowed-tools but no ask-before-write language
+- **Check 4 fail** → Correct the specific authorization conflict; preserve prior user authorization and host permissions.
 - **Check 5 warn** → no follow-up or next-step section at the end
-- **Check 6 warn** → `context: fork` set but fewer than 5 phases found
-- **Check 7 warn** → argument-hint is empty or doesn't match documented modes
+- **Check 6 warn** → A skill requiring separate delegated or isolated phases has fewer than five phase headings; clarify its actual phase structure.
+- **Check 7 warn** → Invocation or documented modes are unclear; clarify them without requiring legacy argument-hint metadata.
 
 For each failing or warning **category** check (if category was assigned in Phase 2b),
 identify the exact gap in the skill's text. For example:

@@ -1,4 +1,3 @@
-> **Codex path bridge (CGS-26):** Paths below that begin with .claude/skills/, .claude/scripts/, or .claude/hooks/ describe the preserved upstream source layout. For Codex runtime use, resolve corresponding adapted resources under .agents/skills/, .agents/scripts/, and .agents/hooks/. Hook paths are helper files only; Codex hook registration remains separate, opt-in, and subject to payload verification. Explicit legacy examples remain useful for upstream comparison.
 
 # project.yaml — Effects Map
 
@@ -343,7 +342,7 @@ behavior: strict project defaults for CI, looser developer overrides for local w
 > them: `solo` at `minimal` (the default), `lean` at `standard`.
 
 > **Hotfix / day-one-patch exception:** These skills are emergency or release-critical
-> pipelines. They are never gated by `review_mode` — all agents always run.
+> pipelines. They are never gated by `review_mode` — required perspectives remain in scope; use authorized available delegation or disclose fallback/PENDING.
 
 > **`review_mode` in the nine `team-*` orchestrators.** `review_mode` sets
 > director-gate depth: `full` spawns every director gate a pipeline names, `lean`
@@ -430,10 +429,10 @@ pipeline's own review steps run in every mode.
   gates are the minimum quality bar, not optional extras. **How many directors
   run is a separate axis** — `modes.workflow` sets panel width (`minimal` → PR
   only, `standard` → TD + PR, `full` → all four), because directors are
-  Opus-tier and a small project should not pay for the same four-director panel
+  separate reviews and a small project should not pay for the same four-director panel
   as a large one. Width never softens a verdict: the strictest verdict from
   whoever ran still wins, and `/gate-check` names the perspectives it skipped.
-- **art-bible** always spawns its section specialists regardless of mode — only
+- **art-bible** requires its section-specialist perspectives regardless of mode — only
   the final sign-off gate is controlled by `review_mode`. Specialist delegation is
   mandatory for the authoring output to be useful, and that has not changed.
   **design-system** is different: `lean` keeps the specialists for its high-risk
@@ -449,7 +448,7 @@ pipeline's own review steps run in every mode.
 - **dev-story** core programmer routing (gameplay-programmer, ui-programmer, etc.)
   always runs regardless of mode — only the optional engine-specialist escalation
   for HIGH risk stories is gated.
-- **hotfix** and **day-one-patch** are exempt — all agents always run.
+- **hotfix** and **day-one-patch** are exempt — required perspectives remain in scope; use authorized available delegation or disclose fallback/PENDING.
 - When a gate is skipped, skills emit: `"[GATE-ID] skipped — [mode] mode."` before
   proceeding. This is consistent across all skills.
 
@@ -461,7 +460,7 @@ pipeline's own review steps run in every mode.
 `/start` asks that sets the six knobs below
 **Values:** `minimal` | `standard` | `full`
 **Default:** `minimal` — see the rationale block above `_yaml_helper_defaults`
-in `.claude/hooks/yaml-helper.sh`. Short version: the heavier tier costs more to
+in `.agents/hooks/yaml-helper.sh`. Short version: the heavier tier costs more to
 reach working code without producing a better result.
 **Set by:** `/start` (Phase 4: inferred from the user's description, shown, saved on a yes), `/settings`
 **Read by:** nothing directly — it is read *through* the six knobs it supplies
@@ -648,7 +647,7 @@ checklists differ per phase per mode.
      `minimal`. -->
 
 **Director panel width** (`/gate-check` Section 4b) is workflow's second effect
-here. Directors are Opus-tier, so the panel is sized to the project rather than
+here. Independent director reviews consume separate context, so the panel is sized to the project rather than
 fixed at four:
 
 | `workflow` | Panel | Directors |
@@ -775,12 +774,15 @@ workflow_overrides:
 
 ## modes.automation
 
+Existing authorization persists. These settings control unresolved decision cadence, never permissions. Use an exposed question facility or plain-text question-and-wait for required decisions. Optional questions may use a stated fallback. Automatic event delivery requires separate actual-client verification.
+
+
 **Controls:** Whether skills ask for decisions and approval before acting, or
 recommend and proceed — the tradeoff between user control and speed  
 **Values:** `collaborative` | `guided` | `autonomous`  
 **Default:** `collaborative`  
 **Set by:** `/start`, `/settings`  
-**Read by:** All 68 skills that use `AskUserQuestion` or write files
+**Read by:** Skills that use `user question` or write files
 
 **Priority chain:** `modes.automation` in `project.yaml` → hardcoded default
 
@@ -801,9 +803,9 @@ recommend and proceed — the tradeoff between user control and speed
 
 | Value | Speed | Control | What changes |
 |-------|-------|---------|--------------|
-| `collaborative` | Slowest | Full — every decision is the user's | Current behavior. Q→O→D→Draft→Approval strictly followed. |
-| `guided` | Balanced | High — major decisions are the user's, minor ones proceed automatically | AI states recommendation and proceeds for minor decisions. AskUserQuestion reserved for major/irreversible decisions. |
-| `autonomous` | Fastest | Low — AI decides, logs, and proceeds | No AskUserQuestion (except categories in `automation_always_ask`). No draft review. No write approval. All decisions logged to decision log. |
+| `collaborative` | Slowest | Full — every decision is the user's | Discuss unresolved choices, prepare a draft and obtain any still-required decision. |
+| `guided` | Balanced | High — major decisions are the user's, minor ones proceed automatically | AI states recommendation and proceeds for minor decisions. user question reserved for major/irreversible decisions. |
+| `autonomous` | Fastest | Low — AI decides, logs, and proceeds | No user question (except categories in `automation_always_ask`). Authorized routine work proceeds; unresolved permissions/choices require review. All decisions logged to decision log. |
 
 ---
 
@@ -811,24 +813,23 @@ recommend and proceed — the tradeoff between user control and speed
 
 #### collaborative (current behavior — no change)
 
-- `AskUserQuestion` called for every multi-option decision
+- `user question` used for unresolved multi-option decisions
 - 2–4 options presented with pros/cons for every design choice
-- Full draft shown and approved before every file write
-- "May I write this to [filepath]?" asked before every write
-- "May I create [filepath] with skeleton?" asked before skeleton creation
-- Section-by-section approval in multi-section authoring skills
-- Multi-file changes require explicit approval of the full changeset
+- Prepare a draft and obtain authorization for writes still requiring it
+- Existing authorization covers named writes; do not request it again
+- Create authorized skeletons; ask when outside scope
+- Section-by-section discussion for unresolved content choices; authorized writing proceeds
+- Multi-file work stays within authorization; ask about unresolved scope changes
 
 #### guided
 
-- `AskUserQuestion` called for **major decisions only** (see classification below)
+- `user question` called for **major decisions only** (see classification below)
 - Minor decisions: AI states recommendation inline and proceeds — e.g.
   *"Going with a static utility pattern here — it fits the existing architecture.
   Continuing unless you want to change direction."*
 - Updates to existing files: draft shown briefly before writing — proceeds after a
   short summary, does not wait for explicit "yes"
-- "May I write?" asked for **new files only**, and a new file waits for the answer
-  — updates to existing files proceed directly
+- New and existing files share the authorization boundary; mode never replaces permission
 - Still presents options for major decisions but caps at 2 choices with a clear
   recommendation
 - Multi-section authoring: writes each approved section immediately, no per-section
@@ -836,9 +837,9 @@ recommend and proceed — the tradeoff between user control and speed
 
 #### autonomous
 
-- No `AskUserQuestion` calls **except** for categories listed in `automation_always_ask`
-- No draft review
-- No "May I write?" prompts — writes directly
+- No `user question` calls **except** for categories listed in `automation_always_ask`
+- Routine authorized work proceeds; unresolved choices need drafts
+- Proceed with authorized writes; mode never supplies permission
 - Picks the recommended option for every decision without presenting alternatives
 - All decisions logged immediately to `production/session-logs/decision-log.md`
   with: timestamp, skill, decision point, option chosen, reasoning
@@ -846,7 +847,7 @@ recommend and proceed — the tradeoff between user control and speed
 
 #### every mode — a question with no answer
 
-- A question that comes back skipped, dismissed or empty is **not an answer**, in
+- A required question that comes back skipped, dismissed or empty is **not an answer**, in
   every mode and on every tool (a closed question, a headless run that returns
   every question as skipped, a reply that picks nothing)
 - Nothing is written, no mode or setting changes and no option is picked on its
@@ -860,7 +861,7 @@ recommend and proceed — the tradeoff between user control and speed
 
 ### Major vs minor decision classification (guided mode)
 
-**Major — always use AskUserQuestion in guided mode:**
+**Major — always use user question in guided mode:**
 
 | Decision type | Example |
 |---------------|---------|
@@ -955,7 +956,7 @@ appends to the existing log.
 
 ## modes.automation_always_ask
 
-**Controls:** Decision categories that ALWAYS trigger AskUserQuestion regardless of automation mode
+**Controls:** Decision categories that ALWAYS trigger user question regardless of automation mode
 **Values:** list of category names
 **Default:** `[scope_changes, file_deletions, schema_changes]`
 **Set by:** `/settings`
@@ -1239,7 +1240,7 @@ closing, or produces a warning and lets work continue — per test type
 > - Godot: gdunit4 coverage report (markdown export)
 > - Unity: Unity Test Framework coverage (xml export)
 > - Unreal: gcov-style coverage from clang flags
-> CCGS does not unify these — gate-check reads the engine-appropriate report.
+> Codex Game Studios does not unify these — gate-check reads the engine-appropriate report.
 
 ---
 
@@ -1289,11 +1290,11 @@ closing, or produces a warning and lets work continue — per test type
 **Values:** `individual` | `small` | `studio`
 **Default:** *none* — supplied by `modes.rigor` (`minimal`/`standard` yield `individual`, `full` yields `studio`)
 **Set by:** `/start` (via `modes.rigor`), `/settings`
-**Read by:** All `team-*` skills, `/gate-check`, all skills that spawn agents via `Agent`
+**Read by:** All `team-*` skills, `/gate-check`, all skills that spawn agents through native delegation
 
 **Priority chain:** `team.size` in `project.local.yaml` → `project.yaml` → the `modes.rigor` expansion (`full` → `studio`, else `individual`) → no terminal default. Locally overridable — it is a personal-experience knob, not an on-disk artifact.
 
-> **`individual` at `minimal`/`standard`, `studio` at `full`.** CCGS's audience is
+> **`individual` at `minimal`/`standard`, `studio` at `full`.** Codex Game Studios's audience is
 > overwhelmingly solo indie developers, so the two lighter rigor tiers resolve
 > `team.size` to `individual` — a `minimal` (default) or `standard` project gets one active agent
 > per role, not 15 (directors and leads included). Only `rigor: full` opts into the
@@ -1485,7 +1486,7 @@ must tell them apart)
 
 **Priority chain:** `accessibility.target` in `project.yaml` → hardcoded default of `none`
 
-> **Default is `none`, not `standard`.** Most CCGS users are solo devs and jam-game
+> **Default is `none`, not `standard`.** Most Codex Game Studios users are solo devs and jam-game
 > makers — defaulting to `standard` would auto-spawn the accessibility specialist
 > for projects where it's overhead. `/start` does not ask about it; you set it with
 > `/settings`.
@@ -1576,7 +1577,7 @@ must tell them apart)
 > that was met — `/perf-profile` must report `NOT ASSESSED` for a metric with no
 > committed target rather than measuring against a placeholder. A headroom figure
 > computed against an invented budget, with no profiler data behind it, reads as
-> a pass and is not one; see obligations 1 and 2 in `.claude/rules/skill-authoring.md`.
+> a pass and is not one; see obligations 1 and 2 in `.agents/rules/skill-authoring.md`.
 
 ## performance.enforce
 
@@ -1630,7 +1631,7 @@ validates and what artifacts are expected to exist
 > auto-detection. When `/gate-check` advances the stage it dual-writes BOTH
 > `project.yaml` and `production/stage.txt`, so hooks that have not migrated
 > still resolve correctly. `/start` also dual-writes the initial stage. The
-> legacy `.txt` file is retired at `.claude/scripts/migrate-v1-config.sh --finalize`.
+> legacy `.txt` file is retired at `.agents/scripts/migrate-v1-config.sh --finalize`.
 
 ---
 
@@ -1688,7 +1689,7 @@ required at `standard` and `minimal` levels.
 
 | Value | Meaning | What's deactivated |
 |-------|---------|-------------------|
-| `game` | Default. Full CCGS framework applies. | Nothing |
+| `game` | Default. Full Codex Game Studios framework applies. | Nothing |
 | `tool` | Developer tool, not a game | Skip art bible, narrative, level design, playtesting |
 | `engine` | Custom engine or library underneath games | Skip game-specific concerns entirely (narrative, art, playtest) |
 | `mod` | Mod for an existing game | Skip engine setup; assume parent engine; reduce architecture scope |
@@ -1769,7 +1770,7 @@ implementation, review, and architecture validation
 
 **Priority chain:** `commands.*` in `project.yaml` → engine-typical default → no command available
 
-> **Why explicit:** Without this block, CCGS has to guess engine-typical conventions
+> **Why explicit:** Without this block, Codex Game Studios has to guess engine-typical conventions
 > for invoking the project. Better to be explicit per-project — covers cases where
 > projects customize their build (e.g., a Godot project using gdunit4 for tests but
 > a custom export script for builds).
@@ -1866,7 +1867,7 @@ Users override per-project as needed via `/settings commands.<field>=<value>` or
 | **smoke-check** | Runs `commands.test`, or the engine's default when it is unset; on Unreal it builds the editor target first. Critical path for QA hand-off. |
 | **launch-checklist** | Emits a checklist **item** asking whether the build produces a valid artifact. It does **not** run `commands.build`; the verification is a human step. |
 | **validate-push.sh** | Does **not** read `commands.*`. It warns on pushes to protected branches (`main`/`master`/`release/*`) and runs no build or smoke command — the block path in it is commented out, so it never fails a push. |
-| **dev-story** | Phase 6 step 2 is the parse check: `.claude/scripts/godot-parse-check.gd` on Godot, `commands.smoke` on Unity, the editor-target build on Unreal. Phase 6 step 4 runs `commands.run` — the windowed game launch — to observe the feature and retain a screenshot (`.agents/docs/run-and-observe.md`). |
+| **dev-story** | Phase 6 step 2 is the parse check: `.agents/scripts/godot-parse-check.gd` on Godot, `commands.smoke` on Unity, the editor-target build on Unreal. Phase 6 step 4 runs `commands.run` — the windowed game launch — to observe the feature and retain a screenshot (`.agents/docs/run-and-observe.md`). |
 | **regression-suite** | Maps coverage by **globbing test filenames**. It does **not** invoke `commands.test`, so coverage here means "a test file exists", never "a test passed". |
 
 ---
@@ -1941,7 +1942,7 @@ No skill or hook validates code *against* these conventions — see the note abo
 
 ## features.session_state
 
-**Controls:** Whether the harness runs a full session tracking pipeline (hooks,
+**Controls:** Whether explicitly invoked lifecycle backends maintain tracking (checks,
 log files, `active.md` checkpoint) or relies on
 skeleton-first output files for recovery  
 **Values:** `off` | `on`  
@@ -1982,7 +1983,7 @@ skeleton-first output files for recovery
 | Value | Intent |
 |-------|--------|
 | `off` | Recovery via skeleton-first output files. Long-form skills write a complete skeleton (all section headers, empty bodies) before starting. If context clears or compacts, the agent reads the skeleton + relevant docs and resumes. The five session-state hooks do nothing, so no logs; skills still update the checkpoint in `active.md`, but session start does not show it. Saves at most ~750 tokens per session start. |
-| `on` | Full session tracking. Session-stop archival, compaction log and agent audit log all active. Adds the checkpoint preview to each session start, capped at 25 lines or 3,000 characters (at most ~750 tokens). Compaction hooks log to disk and add nothing to Claude's context. |
+| `on` | Full session tracking. Session-stop archival, compaction log and agent audit log enabled on explicit invocation. Adds the checkpoint preview to each session start, capped at 25 lines or 3,000 characters (at most ~750 tokens). Compaction hooks log to disk and add nothing to the model's context. |
 
 ---
 
@@ -1994,13 +1995,13 @@ skeleton-first output files for recovery
 > `project.local.yaml`, then `project.yaml`) and exits silently with no output if
 > the value is `off` — except `session-start.sh`, which skips only its recovery
 > preview. This ensures
-> the harness always fires the hook — the hook decides whether to act.
+> the explicit adapter dispatches the requested backend, which applies the feature flag; automatic delivery requires actual-client verification.
 
 | Hook | session_state: off | session_state: on |
 |------|--------------------|-------------------|
 | **session-start.sh** | Runs normally (git/sprint context) — skips the `active.md` checkpoint preview | Runs fully, including the `active.md` checkpoint preview |
 | **detect-gaps.sh** | Runs unchanged — gap detection is independent of session state | Runs unchanged |
-| **pre-compact.sh** | No-op — exits silently (no compaction-log append) | Appends one line to `compaction-log.txt` and prints nothing (PreCompact output never reaches Claude; `session-start.sh` restores context) |
+| **pre-compact.sh** | No-op — exits silently (no compaction-log append) | Appends one line to `compaction-log.txt` and prints nothing (explicit checkpoint execution logs state; recovery requires explicit reading) |
 | **session-stop.sh** | No-op — exits silently | Archives `active.md` to `session-log.md` when it has changed, appends commits and uncommitted file names, writes the spawn tally to `session-cost.md`; prints nothing |
 | **log-agent.sh** | No-op — exits silently | Appends to agent-audit.log |
 | **log-agent-stop.sh** | No-op — exits silently | Appends to agent-audit.log |
@@ -2124,7 +2125,7 @@ the `<!-- CHECKPOINT -->` block; the others append a SESSION EXTRACT.
 | Scenario | session_state: off | session_state: on |
 |----------|--------------------|-------------------|
 | Per session start | ~500 tokens (git/sprint context only) | ~500–1,250 tokens (+ checkpoint preview, at most ~750) |
-| Per compaction event | 0 (compaction hook output never reaches Claude) | 0 (logged to disk only) |
+| Per compaction event | 0 (checkpoint execution does not establish automatic context delivery) | 0 (logged to disk only) |
 | Per session end | 0 | File I/O only (no conversation tokens) |
 | Recovery after /clear | Read skeleton + 2–3 docs (~1,000–3,000 tokens) | Read `active.md` (~200–500 tokens) |
 
@@ -2174,7 +2175,7 @@ the `<!-- CHECKPOINT -->` block; the others append a SESSION EXTRACT.
 **Values:** `on` | `off`; `true` and `false` also work  
 **Default:** `on`  
 **Set by:** `/settings`  
-**Read by:** `validate-read.sh` (PreToolUse Read), through `.claude/scripts/read-guard.sh check`
+**Read by:** `validate-read.sh` (PreToolUse Read), through `.agents/scripts/read-guard.sh check`
 
 > **Priority chain:** `features.read_guard` in `project.local.yaml` →
 > `project.yaml` → default **`on`**.
@@ -2195,7 +2196,7 @@ read is the cost.
 **Values:** a whole number of KB (1 KB = 1,024 bytes)  
 **Default:** `40`  
 **Set by:** `/settings`  
-**Read by:** `validate-read.sh`, through `.claude/scripts/read-guard.sh check`
+**Read by:** `validate-read.sh`, through `.agents/scripts/read-guard.sh check`
 
 > **Priority chain:** `features.read_guard_kb` in `project.local.yaml` →
 > `project.yaml` → default **`40`**. A value that is not a whole number is
@@ -2209,44 +2210,10 @@ By file size, not lines: token cost follows bytes, and one table row can be 2 KB
 
 ## updates.check
 
-**Controls:** Whether session start tells you that a newer Claude Code Game
-Studios release is out  
-**Values:** `true` | `false`  
-**Default:** `true`  
-**Set by:** `/settings` (`/settings --local updates.check=false` turns it off
-for you only)  
-**Read by:** `session-start.sh`, through `update-check.sh`
+**Values:** `true` | `false`. **Legacy default:** `true`.
+This retained legacy preference has **no current automatic effect**. The copied upstream release poller is retired. No background product/source release lookup or cache is promised by SessionStart.
 
-> When a newer release is out, session start shows one line: *"Update: Claude
-> Code Game Studios 1.3.0 is out (this project has 1.2.0). What changed and how
-> to upgrade: <release page> — to stop this notice: /settings --local
-> updates.check=false"*. Nothing is downloaded or changed; upgrading stays your
-> call (`UPGRADING.md`).
-
-> **Priority chain:** `updates.check` in `project.local.yaml` → `project.yaml` →
-> default **`true`**. A value other than `true` or `false` is skipped and named
-> in the session-start schema errors. The check is also off whenever the `CI`
-> environment variable is set: nobody reads session start there.
-
----
-
-### How it checks
-
-- At most once a day, a background job asks GitHub for the latest release
-  (`api.github.com/repos/Donchitos/Claude-Code-Game-Studios/releases/latest`)
-  and stores the answer in `~/.cache/claude-code-game-studios/latest-release`
-  (under `$XDG_CACHE_HOME` when that is set). The file is per user and outside
-  every project, so `git status` stays clean and one check covers every project
-  on the machine.
-- Session start only reads that file. It makes no network call and never waits;
-  a new answer shows from the next session on.
-- Offline, or with neither `curl` nor `wget`, it stays silent. The cache keeps
-  the last answer, plus an `error=` line saying why the last check failed.
-- Pre-releases are never offered.
-- The version compared is the one the framework's own hook files carry, not
-  `framework.version`: an upgrade that keeps your `project.yaml` leaves that
-  number behind, and the line would announce the release you already have.
-- With `false`, nothing is read and nothing is requested.
+Explicit user-invoked source checking remains independent of this preference. Follow [UPGRADING.md](../../UPGRADING.md) and the native `check-upstream` / `sync-upstream` / reconciliation workflow. Fetch, planning and application are separate actions with source/hash guards; no source changes apply automatically. Normal native generation/validation works offline without an external checkout.
 
 ---
 
@@ -2254,30 +2221,30 @@ for you only)
 
 **Controls:** Which version of the project.yaml schema this file conforms to
 **Values:** integer
-**Default:** `1` (for v1.1 of CCGS)
+**Default:** `1` (for v1.1 of Codex Game Studios)
 **Set by:** `/start`, `/adopt`
 **Read by:** All skills and hooks that parse project.yaml (for migration safety)
 
-> Lets future CCGS versions detect and migrate old project.yaml files. The
+> Lets future Codex Game Studios versions detect and migrate old project.yaml files. The
 > migration logic compares `schema_version` in the file against the current
-> CCGS's expected version. If newer, warn. If older, run migrations.
+> Codex Game Studios's expected version. If newer, warn. If older, run migrations.
 
 ---
 
 ### Migration behavior
 
-| project.yaml schema_version | Current CCGS expects | Behavior |
+| project.yaml schema_version | Current Codex Game Studios expects | Behavior |
 |----------------------------|---------------------|----------|
 | Matches expected | — | Normal operation |
 | Lower than expected | — | `/adopt` warns and offers migration; skills run with deprecation warnings |
-| Higher than expected | — | All skills warn: "This project.yaml was created by a newer CCGS version. Some settings may be ignored." |
+| Higher than expected | — | All skills warn: "This project.yaml was created by a newer Codex Game Studios version. Some settings may be ignored." |
 | Missing | — | Treated as legacy (pre-v1.1); migration prompted on next `/start` or `/adopt` |
 
 ---
 
 ## framework
 
-**Controls:** Tracks which CCGS version created or last touched this project
+**Controls:** Tracks which Codex Game Studios version created or last touched this project
 **Values:** `framework.version` (semver string) + `framework.last_upgraded` (ISO date)
 **Default:** stamped in the template's `project.yaml` at each release
 **Set by:** the template; `/start` (through `set-stage.sh`), `/setup-engine` and `/gate-check` write the block into a `project.yaml` they create, and `migrate-v1-config.sh` (which `/adopt` runs) writes `framework.version` into the one it builds
@@ -2296,7 +2263,7 @@ framework:
 
 | Field | Purpose |
 |-------|---------|
-| `version` | The CCGS version that created the project (or was last updated to — see `UPGRADING.md`). |
+| `version` | The Codex Game Studios version that created the project (or was last updated to — see `UPGRADING.md`). |
 | `last_upgraded` | ISO date of the most recent template update. |
 
 ---
@@ -2311,7 +2278,7 @@ version the project came from; `UPGRADING.md` is the upgrade path.
 
 ## Migration from v1.0 → v1.1
 
-When a v1.0 CCGS project upgrades to v1.1, migration tooling (run via `/adopt`)
+When a v1.0 Codex Game Studios project upgrades to v1.1, migration tooling (run via `/adopt`)
 converts legacy files to `project.yaml`. This section specifies the intended
 behavior.
 
@@ -2360,7 +2327,7 @@ and skills read `project.yaml` first; they fall back to the legacy file if a
 specific key is missing.
 
 Legacy files are deleted only when the user runs
-`.claude/scripts/migrate-v1-config.sh --finalize` (driven by `/adopt`, which
+`.agents/scripts/migrate-v1-config.sh --finalize` (driven by `/adopt`, which
 detects a v1.0 project automatically at Phase 2g). The cleanup step verifies
 that every legacy file's content has been preserved in `project.yaml` before
 deleting.

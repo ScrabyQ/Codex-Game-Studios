@@ -1,4 +1,4 @@
-import { lstatSync, realpathSync } from 'node:fs';
+import { lstatSync, realpathSync, readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
 
 // Refuse secret paths, Windows drive syntax and symlinks before any file read.
@@ -13,6 +13,13 @@ export function safeProjectPath(root, relative, { roots } = {}) {
   const result=path.resolve(base,...relative.split('/')), rel=path.relative(base,result);
   if(!rel||rel==='..'||rel.startsWith('..'+path.sep)||path.isAbsolute(rel))throw Error(`Project path escapes root: ${relative}`);
   return result;
+}
+export function readManualTarget(root, relative) {
+  if(typeof relative!=='string'||relative.split('/').some(p=>/^\.git$/i.test(p))||!(/\.md$/i.test(relative)||/^scripts\/codex\/[a-z0-9._/-]+\.mjs$/i.test(relative)))throw Error(`Unsupported manual target: ${relative}`);
+  const file=safeProjectPath(root,relative);
+  if(!statSync(file).isFile())throw Error(`Manual target is not a regular file: ${relative}`);
+  const bytes=readFileSync(file);if(bytes.includes(0))throw Error(`Binary manual target: ${relative}`);
+  new TextDecoder('utf-8',{fatal:true}).decode(bytes);return bytes;
 }
 export function safeExternalFile(file, {allowMissing = false} = {}) {
   const absolute=path.resolve(file),parsed=path.parse(absolute);let current=parsed.root;

@@ -9,11 +9,11 @@
 
 ## Static Assertions (Structural)
 
-Verified by reading the agent's `.claude/agents/lead-programmer.md` frontmatter:
+Verified by reading the agent's `.codex/agents/lead-programmer.toml` metadata:
 
-- [ ] `description:` field is present and domain-specific (references code architecture, feasibility, code review, coding standards — not generic)
+- [ ] `description` field is present and domain-specific (references code architecture, feasibility, code review, coding standards — not generic)
 - [ ] `tools:` includes Read for source files and Bash for static analysis or test runs; Write/Edit are gated in the body — every write waits for the user's "yes", and the orchestrated-run exception covers only new artifacts under `production/`, `docs/` or `tests/`
-- [ ] Model tier is `sonnet` — frontmatter `model:` reads exactly `sonnet` (tiers: `.claude/docs/model-tiers.md`)
+- [ ] Native role TOML has nonempty `name`, domain-specific `description` and `developer_instructions`; its capability ceiling, domain boundaries and escalation rules remain intact
 - [ ] Agent definition does not claim authority over game design, creative direction, or production scheduling
 
 ---

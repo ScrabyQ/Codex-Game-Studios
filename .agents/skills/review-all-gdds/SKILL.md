@@ -61,11 +61,9 @@ surfaced as advisory only. At `minimal`, this skill is not applicable (no GDDs).
 ### Parallel Execution
 
 Phase 2 (Consistency) and Phase 3 (Design Theory) are independent — they read
-the same GDD inputs but produce separate reports. Spawn both as parallel `Agent`
-agents simultaneously rather than waiting for Phase 2 to complete before
-starting Phase 3. Collect both results before writing the combined report.
+the same GDD inputs but produce separate reports. Run the Phase 2 and Phase 3 reviews in parallel only when native delegation is available and authorized. Otherwise conduct sequential in-session reviews and disclose they are not independent, or report PENDING. Collect both results before the combined report.
 
-Spawn both as `game-designer` sub-agents (`subagent_type: game-designer`) — GDD
+Assign both reviews to the `game-designer` role — GDD
 consistency and design-theory review is its domain.
 
 **When spawning the Phase 2 and Phase 3 agents, always pass:**
@@ -80,7 +78,7 @@ consistency and design-theory review is its domain.
 - The specific checklist items assigned to that agent's phase (Phase 2 gets 2a–2f; Phase 3 gets 3a–3g)
 - The engine name and version — `engine.name` and `engine.version` from `project.yaml`, resolving each field independently (if its key is absent or empty, use `.agents/docs/technical-preferences.md`) — plus `docs/engine-reference/[engine]/VERSION.md`
 
-Do not rely on the subagent to re-read these files — it has its own context window and cannot access Phase 1 results unless they are explicitly passed in the `Agent` prompt.
+Do not rely on the subagent to re-read these files — it has its own context window and cannot access Phase 1 results unless they are explicitly passed in the delegation brief.
 
 ---
 

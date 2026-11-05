@@ -3,7 +3,7 @@ import { resolve, dirname, relative, isAbsolute } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import { parseArgs } from 'node:util';
-import { safeProjectPath } from './safe-path.mjs';
+import { safeProjectPath, readManualTarget } from './safe-path.mjs';
 
 // Records an integrator-reviewed result. File existence is never a test verdict.
 const defaultRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
@@ -26,18 +26,20 @@ try {
   if (!selected.length) throw new Error('No source components selected');
   const plans = selected.map(entry => {
     const targets = registry.entries.filter(t => t.source === entry.source || t.sources?.includes(entry.source)).sort((a,b) => Number(b.source === entry.source) - Number(a.source === entry.source) || a.target.localeCompare(b.target));
-    if (!targets.length && v.status!=='UNSUPPORTED' && v.status!=='PENDING') throw new Error(`Source has no registered generated target: ${entry.source}`);
+    const manual=[...(entry.target?[{target:entry.target,sha256:entry.target_sha256}]:[]),...(entry.related_targets||[])].filter(t=>!targets.some(r=>r.target===t.target));
+    for(const t of manual){if(!/^[a-f0-9]{64}$/.test(t.sha256||'')||sha(readManualTarget(root,t.target))!==t.sha256)throw Error(`Unreconciled manual target: ${t.target}`)}
+    if (!targets.length && !manual.length && v.status!=='UNSUPPORTED' && v.status!=='PENDING') throw new Error(`Source has no reviewed target: ${entry.source}`);
     for (const target of targets) {
       const inputs = target.sources || [target.source];
       for (const p of inputs) if(!bySource.has(p)) throw new Error(`Unknown source: ${p}`);
       const expected=target.sources ? sha(Buffer.from(JSON.stringify(inputs.map(p=>[p,bySource.get(p).sha256])))) : entry.source_sha256;
       if (sha(readFileSync(safeProjectPath(root, target.target,{roots:['.agents/','.codex/']}))) !== target.target_sha256 || target.source_sha256 !== expected) throw new Error(`Unreconciled source/target: ${entry.source}`);
     }
-    return { entry, targets };
+    return { entry, targets, manual };
   });
-  for (const { entry, targets } of plans) {
+  for (const { entry, targets, manual } of plans) {
     entry.status = v.status;
-    if(targets.length){entry.target = targets[0].target;entry.target_sha256 = targets[0].target_sha256;entry.related_targets = targets.slice(1).map(t => ({ target: t.target, sha256: t.target_sha256 }))}
+    const all=[...targets.map(t=>({target:t.target,sha256:t.target_sha256})),...manual];if(all.length){entry.target=all[0].target;entry.target_sha256=all[0].sha256;entry.related_targets=all.slice(1)}
     entry.verification = v.review;
   }
   writeFileSync(manifestPath, JSON.stringify(manifest, null, 2) + '\n');

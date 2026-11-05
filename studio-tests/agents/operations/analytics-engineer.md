@@ -9,9 +9,9 @@
 
 ## Static Assertions (Structural)
 
-- [ ] `description:` field is present and domain-specific (references telemetry, A/B testing, event tracking, analytics)
-- [ ] `tools:` reads `Read, Glob, Grep, Write, Edit, Bash, WebSearch` — Bash serves the data-pipeline work `description:` names; tracking in game code is excluded by the body's "What This Agent Must NOT Do" list, not by the tool list
-- [ ] Model tier is `inherit` — frontmatter `model:` reads exactly `inherit` (tiers: `.claude/docs/model-tiers.md`)
+- [ ] `description` field is present and domain-specific (references telemetry, A/B testing, event tracking, analytics)
+- [ ] Developer instructions preserve capability ceiling (Read, Glob, Grep, Write, Edit, Bash, WebSearch, Agent); responsibility limits are not native grants or assumed client capabilities
+- [ ] Native TOML has nonempty `name`, domain-specific `description` and `developer_instructions`; model selection follows supported session policy, with runtime verification separate
 - [ ] Agent definition does not claim authority over game implementation, economy design, or live ops scheduling
 
 ---
@@ -34,7 +34,7 @@
 - Does not produce GDScript or any implementation code — "Implement tracking in game code (write specs for programmers)" is on its Must-NOT list
 - Says implementation belongs to the programmers (e.g. `gameplay-programmer`) and that its part is the specification
 - Produces the integration spec the programmer needs: event names, properties, when each event fires, and any privacy or opt-out constraint — the spec is its deliverable here, not an optional extra
-- Asks before writing the spec to a file
+- Checks existing authorization before writing and asks if unresolved the spec to a file
 
 ### Case 3: Domain boundary — A/B test design for a UI change
 **Input**: "We want to A/B test two versions of our HUD: the current version and a minimal version with only a health bar. Design the test."

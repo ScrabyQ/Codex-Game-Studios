@@ -1,6 +1,6 @@
 # $setup-engine — Section 12: Output Summary
 
-**Codex substitution:** Do not claim CLAUDE.md, generated agent files, or the legacy mirror were updated when they were not. Report project.yaml, pinned references, scaffold and verification accurately; present the next skill using native $skill syntax and do not invoke it.
+Report the actual project settings, pinned references, scaffold and verification results. Name unperformed checks as NOT ASSESSED and recommend, but do not invoke, the next skill.
 
 
 > Part of `$setup-engine`. `SKILL.md` names when to read this file; the settings it
@@ -17,10 +17,10 @@ Engine:          [name] [version]
 Language:        [GDScript | C# | GDScript + C# | C# | C++ + Blueprint | Blueprint + C++]
 Knowledge Risk:  [LOW/MEDIUM/HIGH]
 Reference Docs:  [created/skipped]
-CLAUDE.md:       [updated]
-Tech Prefs:      [created/updated]
+Selected reference: [verified/not checked]
+Legacy fallback: [checked/not applicable/not checked]
 project.yaml:    [created/updated]
-Agent Config:    [verified]
+Specialist routing: [verified/not assessed]
 
 Next Steps:
 1. Review docs/engine-reference/<engine>/VERSION.md
@@ -48,4 +48,4 @@ Then print **one** Next-Steps list, matching the resolved `workflow` tier:
 
 ---
 
-Verdict: **COMPLETE** — engine configured and reference docs populated.
+Verdict: **COMPLETE** only when required configuration and reference work actually completed; otherwise report BLOCKED or NOT ASSESSED with the missing checks.

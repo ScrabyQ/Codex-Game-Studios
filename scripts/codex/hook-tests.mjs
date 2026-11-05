@@ -11,6 +11,7 @@ const repo = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const temp = resolve(repo, '.codex-tmp'); mkdirSync(temp, { recursive: true });
 const root = mkdtempSync(resolve(temp, 'hook fixture '));
 for (const dir of ['hooks', 'scripts']) cpSync(resolve(repo, '.agents', dir), resolve(root, '.agents', dir), { recursive: true });
+cpSync(resolve(repo, '.agents/framework-version'), resolve(root, '.agents/framework-version'));
 function put(path, value) { const p = resolve(root, path); mkdirSync(dirname(p), { recursive: true }); writeFileSync(p, value); }
 put('project.yaml', 'project:\n  name: Hook fixture\nengine:\n  name: godot\nmodes:\n  rigor: standard\nupdates:\n  check: false\n');
 put('production/session-state/active.md', '# State\n<!-- CHECKPOINT -->\nRecovery marker CGS24\n<!-- /CHECKPOINT -->\n');
@@ -156,6 +157,7 @@ test('no-config-backend-root-fallback', () => {
   const noConfig = mkdtempSync(resolve(temp, 'unconfigured hook fixture '));
   cpSync(resolve(repo, '.agents/hooks'), resolve(noConfig, '.agents/hooks'), { recursive: true });
   cpSync(resolve(repo, '.agents/scripts'), resolve(noConfig, '.agents/scripts'), { recursive: true });
+  cpSync(resolve(repo, '.agents/framework-version'), resolve(noConfig, '.agents/framework-version'));
   assert.equal(projectRoot(noConfig), noConfig);
   // Competing explicit root: a cwd with .agents must win even without project.yaml.
   // Both candidates are disposable; an old backend cannot write the working repository.
@@ -178,6 +180,7 @@ const testMap = {
 };
 const inventory=JSON.parse(readFileSync(resolve(repo,'docs/codex/upstream-inventory.json'),'utf8'));
 const nativeConfig=JSON.parse(readFileSync(resolve(repo,'.codex/hooks.example.json'),'utf8'));
+assert.equal(inventory.hooks.length,15,'Expected 15 reviewed hook declarations');
 for(const item of inventory.hooks){
   const handler=/\/([^/]+)\.sh/.exec(item.command)?.[1];
   assert.ok(handler&&testMap[handler], 'Unmapped hook declaration: '+item.id);
@@ -185,8 +188,12 @@ for(const item of inventory.hooks){
   for(const id of testMap[handler])assert.equal(rows.find(r=>r.id===id)?.status,'PASS',handler+': '+id);
   if(item.event!=='Notification')assert.ok(nativeConfig.hooks[item.event], 'Missing native binding: '+item.event);
 }
-for(const item of inventory.files.filter(x=>x.path.startsWith('.claude/hooks/')&&x.path.endsWith('.sh'))){
-  const target=resolve(repo,'.agents/hooks',item.path.split('/').at(-1));
-  assert.ok(existsSync(target),'Missing native hook backend: '+item.path);
+const hookFiles=inventory.files.filter(x=>x.path.startsWith('.claude/hooks/')&&x.path.endsWith('.sh'));
+assert.equal(hookFiles.length,18,'Expected 18 reviewed source hook mechanisms');
+const registry=JSON.parse(readFileSync(resolve(repo,'docs/codex/generation-manifest.json'),'utf8'));
+for(const item of hookFiles){
+  const entries=registry.entries.filter(x=>x.source===item.path);
+  assert.equal(entries.length,1,'Expected one reviewed native mapping: '+item.path);
+  assert.ok(entries[0].target && existsSync(resolve(repo,entries[0].target)),'Missing native equivalent for '+item.path+': '+entries[0].target);
 }
 console.log(JSON.stringify(report, null, 2)); process.exitCode = report.status === 'PASS' ? 0 : 1;

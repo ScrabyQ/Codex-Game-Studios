@@ -26,6 +26,8 @@ Tests write transient results outside the tracked product. Confirm `git status -
 
 `tests/generator-negative.mjs` and the fixtures under `tests/fixtures/` are maintained test inputs. Negative tests must assert the refusal reason and preservation of unrelated content, rather than only a nonzero exit.
 
+`tests/native-registration.mjs` exercises registration of newly authored Skills and roles without Git objects or source files, including invalid input, unrelated drift, structural rollback and later reviewed edits. These are authoring/integrity tests, not model-behavior tests.
+
 The `studio-tests/` catalog contains written behavior specifications and review rubrics. Its existence is not a set of executed model tests. [Native criteria](studio-tests/native-criteria.md) describe the distinction.
 
 ## Optional engine and native-client runs

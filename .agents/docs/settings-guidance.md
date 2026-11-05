@@ -15,7 +15,7 @@ other doc does:
 | **`settings-guidance.md`** (this file) | Which value to *recommend*, and *when* | Prescriptive |
 
 Skills reference this doc **on demand**, only at a "recommend a setting" moment.
-It is **not** a CLAUDE.md import — advisory content must not ride in per-turn
+It is **not** a AGENTS.md import — advisory content must not ride in per-turn
 context.
 
 ---

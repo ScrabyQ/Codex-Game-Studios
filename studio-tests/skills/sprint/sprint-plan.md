@@ -27,7 +27,7 @@ files written) or BLOCKED (no stories found, or write declined).
 
 Checked against the SKILL.md by `/skill-test spec` — no fixture needed.
 
-- [ ] Has required frontmatter fields: `name`, `description`, `argument-hint`, `user-invocable`, `allowed-tools`
+- [ ] Skill frontmatter has nonempty `name` and `description`; optional invocation policy is checked in `agents/openai.yaml` when present, without assuming source-only fields
 - [ ] Has ≥2 phase headings
 - [ ] Contains verdict keywords: COMPLETE, BLOCKED
 - [ ] Contains "May I write" language (skill writes sprint file)
@@ -42,7 +42,7 @@ Checked against the SKILL.md by `/skill-test spec` — no fixture needed.
 | PR-SPRINT | After the draft is presented, before write approval | full only (not lean/solo) |
 
 PR-SPRINT verdicts: REALISTIC / CONCERNS / UNREALISTIC — or NOT ASSESSED
-[missing input] (`.claude/docs/director-gates.md`), which is never treated as
+[missing input] (`.agents/docs/director-gates.md`), which is never treated as
 REALISTIC.
 
 ---
@@ -51,7 +51,7 @@ REALISTIC.
 
 Every case's `project.yaml` sets `modes.rigor: minimal` and
 `modes.automation: collaborative`, with no `project.local.yaml`, unless its own
-Fixture says otherwise. Rules: `studio-tests/CLAUDE.md` §
+Fixture says otherwise. Rules: `studio-tests/AGENTS.md` §
 Fixture defaults.
 
 ---
@@ -88,7 +88,7 @@ Fixture defaults.
 **Assertions:**
 - [ ] Stories come from `production/epics/**/story-*.md` via the status grep, and only `Ready` stories are planned
 - [ ] All 5 `Ready` stories are planned — `balanced` allows 6–10, so none is held back
-- [ ] Sprint draft is shown before any write prompt or gate invocation
+- [ ] Sprint draft is shown before any write that still needs authorization prompt or gate invocation
 - [ ] PR-SPRINT gate is invoked in full mode after the draft is presented
 - [ ] "May I write" prompt names both `production/sprints/sprint-003.md` (next after sprint-002) and `production/sprint-status.yaml`
 - [ ] Verdict is COMPLETE after both files are written
@@ -134,14 +134,14 @@ Fixture defaults.
 **Expected behavior:**
 1. Skill drafts the sprint with all 8 stories and presents it
 2. PR-SPRINT runs; producer returns CONCERNS
-3. Skill asks via `AskUserQuestion`: "Producer flagged concerns with this sprint
+3. Skill asks via `user question`: "Producer flagged concerns with this sprint
    plan. How do you want to proceed?" with [A] Proceed as planned,
    [B] Adjust scope, [C] Extend the sprint timeline
 4. User selects [B]; skill revises the story list and re-presents the plan
 5. Skill asks "May I write" for the revised plan; writes on approval
 
 **Assertions:**
-- [ ] CONCERNS from PR-SPRINT surfaces through `AskUserQuestion` ([A] Proceed / [B] Adjust scope / [C] Extend timeline) before any write
+- [ ] CONCERNS from PR-SPRINT surfaces through `user question` ([A] Proceed / [B] Adjust scope / [C] Extend timeline) before any write that still needs authorization
 - [ ] On [B], the revised plan is re-presented before write approval
 - [ ] The revised sprint (not the original) is written, and `production/sprint-status.yaml` lists the revised stories
 - [ ] Verdict is COMPLETE after revision and write
@@ -165,7 +165,7 @@ Fixture defaults.
 2. Skill drafts the sprint and presents it
 3. PR-SPRINT is skipped; output notes "PR-SPRINT skipped — Lean mode."
 4. The QA plan check still runs: skill states "This sprint has no QA plan …" and
-   asks via `AskUserQuestion` with [A] Run /qa-plan sprint now and
+   asks via `user question` with [A] Run /qa-plan sprint now and
    [B] Skip for now
 5. User selects [A]; skill asks for direct approval of the write
 6. User approves; both files are written; verdict COMPLETE

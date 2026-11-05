@@ -1,4 +1,4 @@
-import {existsSync,readFileSync,readdirSync,mkdirSync,writeFileSync,realpathSync} from 'node:fs';
+import {existsSync,readFileSync,readdirSync,mkdirSync,writeFileSync,realpathSync,statSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -9,10 +9,28 @@ import {openSource} from './source.mjs';
 import {safeProjectPath,safeExternalFile} from './safe-path.mjs';
 const here=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
 const args=process.argv.slice(2);
-for(let i=0;i<args.length;i++){if(['--check','--reconcile','--verify-pending','--complete','--record-native'].includes(args[i]))continue;if(['--root','--family','--names','--targets','--source-repo','--source-ref','--source-inventory','--overlay-root','--candidate-dir'].includes(args[i])&&args[i+1]&&!args[i+1].startsWith('--')){i++;continue}throw Error(`Unknown or incomplete argument: ${args[i]}`)}
+for(let i=0;i<args.length;i++){if(['--check','--reconcile','--verify-pending','--complete','--record-native','--register-native'].includes(args[i]))continue;if(['--root','--family','--names','--targets','--review','--source-repo','--source-ref','--source-inventory','--overlay-root','--candidate-dir'].includes(args[i])&&args[i+1]&&!args[i+1].startsWith('--')){i++;continue}throw Error(`Unknown or incomplete argument: ${args[i]}`)}
 const val=k=>{let i=args.indexOf(k);return i<0?null:args[i+1]};const root=path.resolve(val('--root')||here), family=val('--family')||'skills', names=val('--names')?.split(',').filter(Boolean), check=args.includes('--check');
 const reconcile=args.includes('--reconcile'), verifyPending=args.includes('--verify-pending'), active=baseline(root,{allowPending:reconcile||verifyPending});
 const complete=args.includes('--complete');if(complete&&!check)throw Error('--complete requires --check');
+if(args.includes('--register-native')){
+ if(args.some(a=>['--check','--record-native','--reconcile','--verify-pending','--complete','--family','--names','--source-repo','--source-ref','--source-inventory','--overlay-root','--candidate-dir'].includes(a))||!val('--targets')||!val('--review')?.trim())throw Error('--register-native requires --targets and a review note; it cannot be combined with other operations');
+ const selected=val('--targets').split(','),review=val('--review').trim();
+ if(review.length>2000||new Set(selected).size!==selected.length||selected.some(p=>!/^\.agents\/skills\/[a-z0-9][a-z0-9-]*\/.+/.test(p)&&!/^\.codex\/agents\/[a-z0-9][a-z0-9-]*\.toml$/.test(p)))throw Error('Invalid native registration selection or review');
+ const regPath=safeProjectPath(root,'docs/codex/generation-manifest.json'),original=readFileSync(regPath),registry=JSON.parse(original),migration=JSON.parse(readFileSync(safeProjectPath(root,'docs/codex/migration-manifest.json'))),hash=b=>createHash('sha256').update(b).digest('hex');
+ if(registry.schema!==1||registry.source_commit!==active.source_commit||!Array.isArray(registry.entries)||!Array.isArray(migration.entries))throw Error('Invalid registration metadata');
+ const mappings=[...registry.entries.map(e=>({target:e.target,sha256:e.target_sha256})),...migration.entries.flatMap(e=>[...(e.target_sha256?[{target:e.target,sha256:e.target_sha256}]:[]),...(e.related_targets||[])]),...(migration.retired_manual_mappings||[]).map(e=>({target:e.target,sha256:e.target_sha256}))];
+ for(const m of mappings)if(hash(readFileSync(safeProjectPath(root,m.target)))!==m.sha256)throw Error('Unselected target drift: '+m.target);
+ for(const target of selected){
+  if(mappings.some(m=>m.target===target)||registry.entries.some(e=>e.target===target))throw Error('Target already registered: '+target);
+  const file=safeProjectPath(root,target,{roots:['.agents/skills/','.codex/agents/']});if(!statSync(file).isFile())throw Error('Native target is not a regular file: '+target);
+  registry.entries.push({id:'native:'+target,target,target_sha256:hash(readFileSync(file)),ownership:'native',transform_ids:['native-authored'],authored_provenance:{review}});
+ }
+ registry.entries.sort((a,b)=>a.target.localeCompare(b.target));
+ try{writeFileSync(regPath,JSON.stringify(registry,null,2)+'\n');const result=spawnSync(process.execPath,[path.join(here,'scripts/codex/validate.mjs'),'--root',root],{stdio:'inherit'});if(result.error||result.status!==0)throw Error('Native validation failed; registry restored')}
+ catch(e){writeFileSync(regPath,original);throw e}
+ console.log('Registered reviewed native-authored targets; behavioral review remains separate.');process.exit(0);
+}
 if(args.includes('--record-native')){
  if(check||reconcile||verifyPending||!val('--targets'))throw Error('--record-native requires --targets and cannot be combined with checks or reconciliation');
  const selected=val('--targets').split(',');if(new Set(selected).size!==selected.length||selected.some(p=>!p||path.posix.isAbsolute(p)||p.includes('\\')||p.split('/').includes('..')||p.includes(':')))throw Error('Invalid target selection');
@@ -20,7 +38,7 @@ if(args.includes('--record-native')){
  const original=files.map(p=>readFileSync(safeProjectPath(root,p)));
  const [registry,migration]=original.map(b=>JSON.parse(b.toString('utf8').replace(/^\uFEFF/,'')));
  const hash=b=>createHash('sha256').update(b).digest('hex');
- const mappings=[...registry.entries.map(e=>({target:e.target,entry:e,key:'target_sha256'})),...migration.entries.flatMap(e=>[...(e.target_sha256?[{target:e.target,entry:e,key:'target_sha256'}]:[]),...(e.related_targets||[]).map(t=>({target:t.target,entry:t,key:'sha256'}))])];
+ const mappings=[...registry.entries.map(e=>({target:e.target,entry:e,key:'target_sha256'})),...migration.entries.flatMap(e=>[...(e.target_sha256?[{target:e.target,entry:e,key:'target_sha256'}]:[]),...(e.related_targets||[]).map(t=>({target:t.target,entry:t,key:'sha256'}))]),...(migration.retired_manual_mappings||[]).map(e=>({target:e.target,entry:e,key:'target_sha256'}))];
  for(const target of selected)if(!mappings.some(m=>m.target===target))throw Error('Unregistered target: '+target);
  for(const m of mappings){const actual=hash(readFileSync(safeProjectPath(root,m.target)));if(!selected.includes(m.target)&&actual!==m.entry[m.key])throw Error('Unselected target drift: '+m.target)}
  for(const m of mappings)if(selected.includes(m.target))m.entry[m.key]=hash(readFileSync(safeProjectPath(root,m.target)));
@@ -89,7 +107,7 @@ if(candidateDir){
  console.log(`PENDING review: wrote ${plans.length} isolated candidates from ${source.commit}; native product files and metadata unchanged.`);
 }else if(check){
  for(const p of plans){const text=p.content.toString('utf8');if(p.target.endsWith('/SKILL.md')){const fm=/^---\nname: ([a-z0-9-]+)\ndescription: (.+)\n---\n/.exec(text);if(!fm||fm[1]!==p.target.split('/')[2])throw Error(`Invalid native frontmatter: ${p.target}`);if(/!`|\bCLAUDE_[A-Z_]+\b|\bAskUserQuestion\b|^model:/m.test(text))throw Error(`Untranslated runtime construct: ${p.target}`)}}
- console.log(`${verifyPending?'PENDING verification only':'PASS'}: ${sources.filter(s=>s.path.endsWith('/SKILL.md')).length} source skills accounted; ${registry.entries.filter(e=>e.source.startsWith('.claude/skills/')).length} generated skill files registered; migration status is checked separately`);
+ console.log(`${verifyPending?'PENDING verification only':'PASS'}: ${sources.filter(s=>s.path.endsWith('/SKILL.md')).length} source skills accounted; ${registry.entries.filter(e=>e.source?.startsWith('.claude/skills/')).length} generated skill files registered; migration status is checked separately`);
 }else{
  for(const p of plans){const target=path.join(root,p.target);mkdirSync(path.dirname(target),{recursive:true});if(!existsSync(target)||hash(readFileSync(target))!==hash(p.content))writeFileSync(target,p.content);const entry={id:`file:${p.source}=>${p.target}`,source:p.source,...(p.sources?{sources:p.sources}:{}),source_sha256:p.source_sha256,target:p.target,target_sha256:hash(p.content),transform_version:1,transform_ids:p.transform_ids,owner:p.owner,ownership:p.ownership};existing.set(p.target,entry)}
  registry.entries=[...existing.values()].sort((a,b)=>a.target.localeCompare(b.target));mkdirSync(path.dirname(file),{recursive:true});writeFileSync(file,JSON.stringify(registry,null,2)+'\n');console.log(`Generated ${plans.length} guarded files; generated files do not establish migration status`);

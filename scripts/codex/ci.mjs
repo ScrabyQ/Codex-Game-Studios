@@ -8,6 +8,7 @@ const tasks=[
  ['validator',['scripts/codex/validate.mjs']],
  ['hygiene regression',['tests/hygiene.mjs']],
  ['engine CLI regression',['tests/engine-cli.mjs']],
+ ['code-root configuration regression',['tests/code-root.mjs']],
  ['repository hygiene',['scripts/codex/hygiene.mjs']],
  ['Git source fixture',['scripts/codex/tests/source-fixture.mjs']],
  ['source transform fixture',['scripts/codex/tests/importer-fixture.mjs']],
@@ -17,6 +18,7 @@ const tasks=[
  ['policy',['scripts/codex/tests/policy.mjs']],
  ['negative fixtures',['scripts/codex/tests/negative.mjs']],
  ['generator negative fixtures',['tests/generator-negative.mjs']],
+ ['native authoring registration',['tests/native-registration.mjs']],
  ['upstream synchronization fixture',['scripts/codex/upstream-tests.mjs']],
  ...(args.includes('--skip-reconcile')?[]:[['reviewed reconciliation fixture',['scripts/codex/tests/reconcile-fixture.mjs']]])
 ];

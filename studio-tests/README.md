@@ -1,9 +1,9 @@
 # Studio Tests
 
-Quality assurance infrastructure for the **Claude Code Game Studios** framework.
+Quality assurance infrastructure for the **Codex Game Studios** framework.
 Tests the skills and agents themselves — not any game built with them.
 
-**This ships as part of the template, and it is meant to.** CCGS is a template
+**This ships as part of the template, and it is meant to.** Codex Game Studios is a template
 you are expected to customize — edit a skill, add your own, retune an agent. This
 folder is how you check that what you changed still holds up: `catalog.yaml`
 tracks all 74 skills and 49 agents, `quality-rubric.md` defines per-category
@@ -30,7 +30,7 @@ you write. Driven by `/skill-test` and `/skill-improve`.
 ```
 studio-tests/
 ├── README.md              ← you are here
-├── CLAUDE.md              ← tells Claude how to use this framework
+├── AGENTS.md              ← tells the assistant how to use this framework
 ├── catalog.yaml           ← master registry: all 74 skills + 49 agents, coverage tracking
 ├── quality-rubric.md      ← category-specific pass/fail metrics for /skill-test category
 │
@@ -60,7 +60,7 @@ studio-tests/
 │   ├── skill-test-spec.md ← template for skill behavioral specs
 │   └── agent-test-spec.md ← template for agent behavioral specs
 │
-└── results/               ← test run outputs (written by /skill-test spec; not gitignored — add it to .gitignore to keep them out of commits)
+Run outputs: ignored production/session-logs/studio-tests/ or host temporary storage, outside this maintained tree.
 ```
 
 ---
@@ -112,11 +112,11 @@ All testing is driven by two skills already in the framework:
 |----------|--------|-------------|
 | `gate` | gate-check | Review mode read, full/lean/solo director panel, no auto-advance |
 | `review` | design-review, architecture-review, review-all-gdds | Read-only, 8-section check, correct verdicts |
-| `authoring` | design-system, quick-design, art-bible, create-architecture, … | Section-by-section May-I-write, skeleton-first |
+| `authoring` | design-system, quick-design, art-bible, create-architecture, … | Section-by-section authoring within authorization, skeleton-first |
 | `readiness` | story-readiness, story-done | Blockers surfaced, director gate in full mode |
 | `pipeline` | create-epics, create-stories, dev-story, map-systems, … | Upstream dependency check, handoff path clear |
 | `analysis` | consistency-check, balance-check, code-review, tech-debt, … | Read-only report, verdict keyword, no writes |
-| `team` | team-combat, team-narrative, team-audio, … | All required agents spawned, blocked surfaced |
+| `team` | team-combat, team-narrative, team-audio, … | All required perspectives assessed; delegation or in-session fallback identified, blocked surfaced |
 | `sprint` | sprint-plan, sprint-status, milestone-review, … | Reads sprint data, status keywords present |
 | `utility` | start, adopt, hotfix, localize, setup-engine, … | Passes static checks |
 
@@ -137,13 +137,11 @@ All testing is driven by two skills already in the framework:
 
 ---
 
-## Updating the catalog
+## Recording runtime test history
 
-`catalog.yaml` tracks test coverage for every skill and agent. After running a test:
+`catalog.yaml` is the read-only functional registry of Skill/role spec paths, categories and priorities. Historical result slots remain blank on a fresh product.
 
-- `/skill-test spec [name]` will offer to update `last_spec` and `last_spec_result`
-- `/skill-test category [name]` will offer to update `last_category` and `last_category_result`
-- `last_static` and `last_static_result` are updated manually or via `/skill-improve`
+Record observed assessment history in ignored `production/session-logs/studio-tests/catalog-results.yaml` or host temporary storage. Store reports beside it, not in tracked product files. Audit may join that runtime history to the catalog; missing history means unknown, not successful execution.
 
 ---
 
@@ -160,15 +158,12 @@ set the `spec:` field on its entry under `agents:` in `catalog.yaml`, and run
 
 ---
 
-## Removing this framework
+## Evidence and client execution
 
-No hook or import in the main project depends on this folder, but `/skill-test`
-and `/skill-improve` read it by path. To remove:
+The catalog has 74 Skill specs and 49 role specs. Blank results mean no recorded execution. Written specifications, rubric inspection and structural observations are not behavioral PASS. Record assessed assertions, observed host/model and execution mode. In-session role reviews are nonindependent; unavailable native discovery/loading/model behavior remains PENDING or NOT ASSESSED.
 
-```bash
-rm -rf studio-tests
-```
+Use [native criteria](../docs/codex/studio-tests/native-criteria.md) for the seven native structural checks. Skill identity is `name` + `description`. Role TOML needs `name`, `description` and `developer_instructions`; capability ceilings are not tool permissions. Optional invocation policy is in `agents/openai.yaml`.
 
-Afterwards `/skill-test static` works as before, `spec` and `category` stop
-working, `audit` reports that no catalog exists, and `/skill-improve` skips its
-category checks — the table at the top of this file lists the cost per mode.
+Case fixtures override defaults. Defaults are minimal rigor and collaborative automation unless specified otherwise. Cases without prior write authorization exercise draft-and-decision gates. A prior-authorization fixture must verify proceeding without repeated permission requests. Modes never grant permission; required unanswered decisions remain pending. Use an exposed question facility or plain text.
+
+Keep run artifacts in temporary/ignored storage or CI. Record runtime overlay results only for actual observed assessments within authorization; never mutate catalog tracking fields. Results never establish game/release readiness beyond measured scope.

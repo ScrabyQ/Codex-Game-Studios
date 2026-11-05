@@ -45,7 +45,7 @@ Exit 5 means `project.yaml` has a layout the script will not edit (`project:` as
 a one-line value): nothing was written, so say so and edit `project.yaml` with
 the user's yes. Any other non-zero exit: report the message and stop.
 
-**Always ask before writing**: "Gate passed. May I update `project.stage` in `project.yaml` to 'Production' (and the legacy `production/stage.txt`)?" — on an accepted CONCERNS override, the explicit yes above is that ask.
+Before updating the stage, verify that this action is already authorized. If not, prepare the specific stage changes for a user decision; an accepted CONCERNS override may supply that authorization when it explicitly covers the update.
 
 ### 6.3 Rigor-fit check (advisory — never affects the verdict)
 

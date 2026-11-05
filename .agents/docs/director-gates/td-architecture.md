@@ -1,8 +1,8 @@
-> Gate definition. The spawning skill passes this file's path to the director agent; the AGENT reads it — the parent session should not.
+> Gate definition. For authorized native delegation, pass this path so the assigned reviewer reads it first. An in-session reviewer reads it explicitly and labels the review nonindependent; unavailable required independent execution remains PENDING.
 
 # TD-ARCHITECTURE — Architecture Sign-Off
 
-Agent: `technical-director` | Model tier: Opus | Domain: Architecture, engine risk, performance
+Agent: `technical-director` | Model: native session policy | Domain: Architecture, engine risk, performance
 
 **Trigger**: After the master architecture document is drafted (`/create-architecture`
 Phase 7), and after any major architecture revision
