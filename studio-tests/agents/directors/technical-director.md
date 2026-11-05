@@ -9,11 +9,11 @@
 
 ## Static Assertions (Structural)
 
-Verified by reading the agent's `.claude/agents/technical-director.md` frontmatter:
+Verified by reading the agent's `.codex/agents/technical-director.toml` metadata:
 
-- [ ] `description:` field is present and domain-specific (references architecture, feasibility, ADR — not generic)
-- [ ] `tools:` reads Read, Glob, Grep, Write, Edit, Bash, WebSearch
-- [ ] Model tier is `opus` — frontmatter `model:` reads exactly `opus` (tiers: `.claude/docs/model-tiers.md`)
+- [ ] `description` field is present and domain-specific (references architecture, feasibility, ADR — not generic)
+- [ ] Developer instructions preserve capability ceiling (Read, Glob, Grep, Write, Edit, Bash, WebSearch); responsibility limits are not native grants or assumed client capabilities
+- [ ] Native TOML has nonempty `name`, domain-specific `description` and `developer_instructions`; model selection follows supported session policy, with runtime verification separate
 - [ ] Agent definition does not claim authority over game design decisions or creative direction
 
 ---

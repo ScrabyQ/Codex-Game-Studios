@@ -1,10 +1,8 @@
-> **Codex path bridge (CGS-26):** Paths below that begin with .claude/skills/, .claude/scripts/, or .claude/hooks/ describe the preserved upstream source layout. For Codex runtime use, resolve corresponding adapted resources under .agents/skills/, .agents/scripts/, and .agents/hooks/. Hook paths are helper files only; Codex hook registration remains separate, opt-in, and subject to payload verification. Explicit legacy examples remain useful for upstream comparison.
 
-> **Codex bridge (CGS-26):** Claude-only tools and dynamic skill preprocessing referenced below are not available by implication in Codex. Read the project checkpoint and referenced files explicitly; use an actually available question facility or plain-text question-and-wait for gated decisions. Preserve user approval and write-permission requirements across compaction or recovery.
 
 # Context Management
 
-Context is the most critical resource in a Claude Code session. Manage it actively.
+Context is the most critical resource in a Codex session. Manage it actively.
 
 ## File-Backed State (Primary Strategy)
 
@@ -29,7 +27,7 @@ Two regions, and the distinction is load-bearing:
 | Region | Who reads it | Rule |
 |--------|--------------|------|
 | `<!-- STATUS -->` … `<!-- /STATUS -->` | `statusline.sh` (breadcrumb, Production+ only) | Keep the markers even when empty |
-| `<!-- CHECKPOINT -->` … `<!-- /CHECKPOINT -->` | `session-start.sh` (every start, including after a compaction) | **Overwrite, never append.** Under ~25 lines — shown verbatim |
+| `<!-- CHECKPOINT -->` … `<!-- /CHECKPOINT -->` | explicit `SessionStart` invocation | **Overwrite, never append.** Under ~25 lines — shown verbatim |
 | Everything after `<!-- /CHECKPOINT -->` | humans, and an agent that wants detail | Free-form; no hook injects it |
 
 The checkpoint holds: current task, next step, what it is blocked on, files in
@@ -46,7 +44,7 @@ anything else.
 `production/session-logs/`:
 
 ```bash
-bash .claude/scripts/rotate-session-state.sh            # --dry-run to preview
+bash .agents/scripts/rotate-session-state.sh            # --dry-run to preview
 ```
 
 The checkpoint stays, the narrative is appended to a dated log, nothing is
@@ -78,8 +76,7 @@ After any disruption (compaction, crash, `/clear`), read the state file first.
 
 When creating multi-section documents (design docs, architecture docs, lore entries):
 
-1. Ask to create the file ("May I create [path] with the section skeleton?"), then
-   create it with every section header and empty bodies
+1. Within authorization, create the section skeleton. If creation still needs authorization, show the skeleton and ask first
 2. Discuss and draft one section at a time in conversation
 3. Write each section to the file as soon as it's approved (a skill that writes
    once at the end, such as `/create-architecture`, records approved sections in
@@ -93,12 +90,11 @@ This keeps the context window holding only the *current* section's discussion
 
 ## Proactive Compaction
 
-- **Compact proactively** at ~60-70% context usage, not reactively at the limit
-- **Use `/clear`** between unrelated tasks, or after 2+ failed correction attempts
+- **Checkpoint proactively** before context pressure or a long handoff, not reactively at the limit
+- **Use a supported context reset** between unrelated tasks, or after 2+ failed correction attempts
 - **Natural compaction points:** after writing a section to file, after committing,
   after completing a task, before starting a new topic
-- **Focused compaction:** `/compact Focus on [current task] — sections 1-3 are
-  written to file, working on section 4`
+- **Focused recovery:** preserve current task, completed sections and next step before client-supported compaction
 
 ## Context Budgets by Task Type
 
@@ -106,7 +102,7 @@ This keeps the context window holding only the *current* section's discussion
 - Medium (implement feature): ~8k tokens
 - Heavy (multi-system refactor): ~15k tokens
 
-## Deterministic Helpers — `.claude/scripts/`
+## Deterministic Helpers — `.agents/scripts/`
 
 The cheapest context saving is not summarising a document, it is **not reading it
 at all**. When a question has a deterministic answer, a script should answer it
@@ -116,8 +112,8 @@ Two directories, two purposes — reach for the right one:
 
 | Directory | Purpose | Invoked by |
 |---|---|---|
-| `.claude/hooks/` | Event-driven — wired into `settings.json` and fired by Claude Code | the harness |
-| `.claude/scripts/` | Manually invoked from a skill body | `bash .claude/scripts/<name>.sh` |
+| `.agents/hooks/` | Explicit event backends; verify native registration separately | `scripts/codex/hooks.mjs` |
+| `.agents/scripts/` | Manually invoked from a skill body | `bash .agents/scripts/<name>.sh` |
 
 Current helpers:
 
@@ -129,11 +125,7 @@ Current helpers:
 
 Two rules for helpers:
 
-1. **Grant it the way `.agents/docs/config-resolution.md` shows.** `allowed-tools`
-   pre-approves commands; it does not restrict them — a skill without the grant
-   still runs the script, after a permission prompt. An injected `` !`cmd` `` in
-   the body is stricter: unapproved, it aborts the whole invocation, so it needs
-   the exact grant that doc gives.
+1. **Run explicitly within authorization.** Use `node scripts/codex/helper.mjs <helper> --root <project> [arguments]` for registered helpers. Inspect the selected interface. Markdown neither executes shell nor grants permission.
 2. **Emit observations, not verdicts.** A script that scores or judges will
    eventually contradict a tier, mode, or per-system override it does not know
    about. Report what is on disk and let the caller decide what it means.
@@ -146,7 +138,7 @@ Subagents run in their own context window and return only summaries:
 - **Use subagents** when investigating across multiple files, exploring unfamiliar code,
   or doing research that would consume >5k tokens of file reads
 - **Use direct reads** when you know exactly which 1-2 files to check
-- Subagents do not inherit conversation history — provide full context in the prompt
+- History inheritance depends on the host; provide bounded necessary context explicitly
 
 ## Compaction Instructions
 
@@ -170,7 +162,7 @@ conversation history is secondary.
 
 If a session dies ("prompt too long") or you start a new session to continue work:
 
-1. The `session-start.sh` hook will detect and preview `active.md` automatically
+1. Read `production/session-state/active.md` first when present; explicit SessionStart can preview it
 2. Read the full state file for context
 3. Read the partially-completed file(s) listed in the state
 4. Continue from the next incomplete section or task

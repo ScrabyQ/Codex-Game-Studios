@@ -1,76 +1,31 @@
-# Hook: pre-push-test-gate
+# Validation before an authorized push
 
-## Trigger
+A push remains a separate explicitly authorized external action. This guide defines validation to perform before it; no Git hook is installed by this document. Use actual project commands, engine/version and runner configuration.
 
-Runs before any push to a remote branch. Mandatory for pushes to `main` (the
-trunk) and to `release/*` branches.
+## Scope
 
-## Purpose
+For an ordinary development branch, assess the build, unit tests and critical smoke path. For `main` or `release/*`, include integration tests and applicable performance baselines. A narrower scope must name the omitted checks and its reason; it cannot be reported as full release readiness.
 
-Ensures the build compiles, unit tests pass, and critical smoke tests pass
-before code reaches shared branches. This is the last automated quality gate
-before code affects other developers.
+| Check | Required observation |
+| --- | --- |
+| Build | Actual selected engine/editor-target command, exit code and log; a missing editor/SDK is NOT ASSESSED |
+| Unit tests | Executed runner, test counts, failures and zero-test detection |
+| Integration | Actual integration runner on protected/release branches; missing runner is NOT ASSESSED |
+| Smoke | Critical-path runner and observed output; apply `testing.strict.*` and the smoke gate's blocking default |
+| Performance | Captured profile compared with project budgets/baselines; no invented metrics |
 
-## Implementation
+## Explicit execution
 
-```bash
-#!/bin/bash
-# Pre-push hook: Build and test gate
+Inspect the project's `commands.test` and the test-run adapter interface. For example, after resolving the engine:
 
-REMOTE="$1"
-URL="$2"
-
-# Only enforce the full gate on the trunk and release branches
-CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
-
-FULL_GATE=false
-case "$CURRENT_BRANCH" in
-    main|release/*) FULL_GATE=true ;;
-esac
-
-echo "=== Pre-Push Quality Gate ==="
-
-# Step 1: Build
-echo "Building..."
-# Adapt to your build system:
-# make build || exit 1
-# dotnet build || exit 1
-# cargo build || exit 1
-echo "Build: PASS"
-
-# Step 2: Unit tests
-echo "Running unit tests..."
-# Adapt to your test framework:
-# python -m pytest tests/unit/ -x || exit 1
-# dotnet test tests/unit/ || exit 1
-# cargo test || exit 1
-echo "Unit tests: PASS"
-
-if [ "$FULL_GATE" = true ]; then
-    # Step 3: Integration tests (only for protected branches)
-    echo "Running integration tests..."
-    # python -m pytest tests/integration/ -x || exit 1
-    echo "Integration tests: PASS"
-
-    # Step 4: Smoke tests
-    echo "Running smoke tests..."
-    # python -m pytest tests/playtest/smoke/ -x || exit 1
-    echo "Smoke tests: PASS"
-
-    # Step 5: Performance regression check
-    echo "Checking performance baselines..."
-    # python tools/ci/perf_check.py || exit 1
-    echo "Performance: PASS"
-fi
-
-echo "=== All gates passed ==="
-exit 0
+```powershell
+node scripts/codex/helper.mjs test-run --root . godot --dry-run
 ```
 
-## Agent Integration
+This previews a Godot command; it runs no test and is not PASS. Remove `--dry-run` only for an authorized actual run with its dependencies available. Unity and Unreal use their selected runner and editor/build prerequisites. The helper reports observations: command, timeout, exit code, count/zero-test markers and engine-specific ladder row. `/smoke-check` applies the actual gate verdict.
 
-When this hook fails:
-1. Build failure: invoke `lead-programmer` to diagnose
-2. Unit test failure: invoke `qa-tester` to identify the failing test and
-   `gameplay-programmer` or relevant programmer to fix
-3. Performance regression: invoke `performance-analyst` to analyze
+Keep logs in ignored/temporary storage or CI artifacts. Report failed, skipped and unassessed checks by name. Never print “all gates passed” when a command is only a placeholder.
+
+## Handoff
+
+Build failures go to lead-programmer; test failures to qa-tester and the owning programmer; measured performance regressions to performance-analyst. Use authorized available delegation or a disclosed in-session review; independent checks remain PENDING if unavailable.

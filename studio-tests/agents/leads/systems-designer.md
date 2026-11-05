@@ -9,11 +9,11 @@
 
 ## Static Assertions (Structural)
 
-Verified by reading the agent's `.claude/agents/systems-designer.md` frontmatter:
+Verified by reading the agent's `.codex/agents/systems-designer.toml` metadata:
 
-- [ ] `description:` field is present and domain-specific (references formulas, progression curves, balance math, economy — not generic)
+- [ ] `description` field is present and domain-specific (references formulas, progression curves, balance math, economy — not generic)
 - [ ] `tools:` list is read/write-focused with Bash excluded (`disallowedTools:` lists Bash); every Write/Edit is gated by its "May I write" step or the orchestrator named-path exception
-- [ ] Model tier is `inherit` — frontmatter `model:` reads exactly `inherit` (tiers: `.claude/docs/model-tiers.md`)
+- [ ] Native role TOML has nonempty `name`, domain-specific `description` and `developer_instructions`; its capability ceiling, domain boundaries and escalation rules remain intact
 - [ ] Agent definition does not claim authority over narrative, visual design, or conceptual mechanic rule ownership
 
 ---

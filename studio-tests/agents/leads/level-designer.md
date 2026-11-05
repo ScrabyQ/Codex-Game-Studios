@@ -9,11 +9,11 @@
 
 ## Static Assertions (Structural)
 
-Verified by reading the agent's `.claude/agents/level-designer.md` frontmatter:
+Verified by reading the agent's `.codex/agents/level-designer.toml` metadata:
 
-- [ ] `description:` field is present and domain-specific (references level layout, encounter design, pacing, environmental storytelling — not generic)
-- [ ] `tools:` reads Read, Glob, Grep, Write, Edit and `disallowedTools:` lists Bash
-- [ ] Model tier is `inherit` — frontmatter `model:` reads exactly `inherit` (tiers: `.claude/docs/model-tiers.md`)
+- [ ] `description` field is present and domain-specific (references level layout, encounter design, pacing, environmental storytelling — not generic)
+- [ ] Developer instructions preserve capability ceiling (Read, Glob, Grep, Write, Edit, Bash); responsibility limits are not native grants or assumed client capabilities
+- [ ] Native TOML has nonempty `name`, domain-specific `description` and `developer_instructions`; model selection follows supported session policy, with runtime verification separate
 - [ ] Agent definition does not claim authority over narrative dialogue, AI behavior code, or visual art style
 
 ---
@@ -22,7 +22,7 @@ Verified by reading the agent's `.claude/agents/level-designer.md` frontmatter:
 
 ### Case 1: In-domain request — appropriate output format
 **Scenario:** The user has agreed the outline for "The Flooded Tunnels": a low-intensity exploration opening, two mid-intensity encounters with visible escape routes, a tension-building narrow passage with environmental hazards, and a high-intensity final encounter room followed by a release/reward area. The user asks level-designer to draft the level document.
-**Expected:** Drafts the level document in the Level Document Standard, with a pacing chart that follows the agreed tension arc and an encounter list that gives each encounter's type, difficulty, and position. Shows each section and asks before writing it.
+**Expected:** Drafts the level document in the Level Document Standard, with a pacing chart that follows the agreed tension arc and an encounter list that gives each encounter's type, difficulty, and position. Shows each section and checks existing authorization before writing and asks if unresolved it.
 **Assertions:**
 - [ ] The document has all nine Level Document Standard sections: Level Name and Theme, Estimated Play Time, Layout Diagram, Critical Path, Optional Paths, Encounter List, Pacing Chart, Narrative Beats, Music/Audio Cues
 - [ ] The Pacing Chart follows the outline's intensity curve — low opening, mid encounters, rising passage, high final encounter, release — with its rest points marked

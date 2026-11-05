@@ -12,10 +12,6 @@ ranges with offset and limit. Extract:
 - Core fantasy (what the player is supposed to feel)
 - Core loop (the moment-to-moment action being tested)
 
-Determine the engine and language in use: read `engine.name` and
-`engine.language` from `project.yaml`. For each field, if its key is absent or
-empty (including when `project.yaml` has no `engine:` block), fall back to
-`CLAUDE.md` and `.agents/docs/technical-preferences.md`. Treat a
-`[TO BE CONFIGURED]` value as not set.
+Resolve engine.name and engine.language using .agents/docs/config-resolution.md: permitted local overrides, project.yaml, applicable legacy fallback and defaults. Treat [TO BE CONFIGURED] as unset; report missing or unresolvable fields and ask only when the choice is needed and unresolved.
 
 ---

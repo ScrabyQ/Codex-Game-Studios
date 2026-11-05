@@ -9,9 +9,9 @@ No gate IDs assigned.
 
 ## Static Assertions (Structural)
 
-- [ ] `description:` field is present and domain-specific (references GDExtension / godot-cpp / native bindings)
+- [ ] `description` field is present and domain-specific (references GDExtension / godot-cpp / native bindings)
 - [ ] `tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is `sonnet` — frontmatter `model:` reads exactly `sonnet` (tiers: `.claude/docs/model-tiers.md`)
+- [ ] Native role TOML has nonempty `name`, domain-specific `description` and `developer_instructions`; its capability ceiling, domain boundaries and escalation rules remain intact
 - [ ] Agent definition does not claim authority over GDScript or shader authoring
 
 ---

@@ -18,8 +18,12 @@ jobs:
           node-version: '22'
       - run: node scripts/codex/ci.mjs
       - run: echo "Engine integration tests are PENDING; quick CI does not run engines."
-  linux-backend:
-    runs-on: ubuntu-latest
+  backend:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-15-intel]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -28,12 +32,9 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: '22'
-      - run: node scripts/codex/backend-tests.mjs --disposable-checkout
-      - uses: actions/upload-artifact@v7
-        if: always()
+      - uses: actions/setup-python@v7
         with:
-          name: linux-backend-results
-          path: |
-            docs/codex/evidence/CGS-28/backend-results.json
-            docs/codex/evidence/CGS-24/checks.json
-            docs/codex/evidence/CGS-24/parity.json
+          python-version: '3.13'
+      - if: runner.os != 'Linux'
+        run: node scripts/codex/ci.mjs
+      - run: node scripts/codex/backend-tests.mjs --disposable-checkout

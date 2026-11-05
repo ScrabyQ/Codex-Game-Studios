@@ -7,17 +7,19 @@ agent or the human developer).
 
 ## Purpose
 
-Automatically generates a retrospective starting point by analyzing the sprint
+Produces a retrospective starting point by analyzing the sprint
 data: what was planned vs completed, velocity changes, bug trends, and common
 blockers. This is not a git hook but a workflow hook invoked through the
 `producer` agent.
 
-## Implementation
+## Implementation design
+
+This is a customization example, not an installed Git hook. Adapt commands to the engine and inputs. Record actual execution; omitted runners are NOT ASSESSED. Native activation is separate.
 
 This is a workflow hook, not a git hook. It is invoked by running:
 
 ```
-@producer Generate sprint retrospective for Sprint [N]
+Invoke /retrospective sprint [N] or an authorized producer role
 ```
 
 The producer agent should:

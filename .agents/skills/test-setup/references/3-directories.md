@@ -51,7 +51,7 @@ production/qa/
 
 ## Test Naming
 
-Names follow the engine's language (`.claude/rules/test-standards.md`):
+Names follow the engine's language (`.agents/rules/test-standards.md`):
 - **Godot**: file `[system]_[feature]_test.gd`, function `test_[scenario]_[expected]`
   — `combat_damage_test.gd` → `test_base_attack_returns_expected_damage()`
 - **Unity**: class `[System]Tests` in `[System]Tests.cs`, method `[Scenario]_[Expected]`

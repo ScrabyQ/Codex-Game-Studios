@@ -1,6 +1,0 @@
-project:
-  name: CGS22 guided
-  stage: Polish
-modes:
-  rigor: full
-  automation: guided

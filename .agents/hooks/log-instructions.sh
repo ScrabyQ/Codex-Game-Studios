@@ -43,15 +43,12 @@ fi
 # while agents follow another, and nothing surfaces the disagreement. A log of
 # the load events replaces the inference with a record.
 #
-# WHAT IT RECORDS
-#   session_start     CLAUDE.md
-#   include           its @-imports, each carrying parent_file_path
-#   path_glob_match   a path-scoped rule, after READING a file that matches one
-#                     of its declared paths
-#   (nothing)         after CREATING a file that matches a declared path
-# Read fires, create does not. Keep this hook wired: the behaviour is upstream
-# and can change in either direction, and this is the only thing here that would
-# notice.
+# EXPLICIT RECORD TYPES
+#   session_start     native AGENTS.md context supplied by the caller
+#   include           an explicitly observed guidance read and parent_file_path
+#   path_glob_match   a selected native rule read supplied by the caller
+# These records do not prove automatic instruction loads or native host events.
+# A file creation is not evidence that the matching rule was read.
 #
 # SCHEMA CONFIRMED, NOT ASSUMED
 # The common fields are documented; the event-specific ones are not. `pick()`

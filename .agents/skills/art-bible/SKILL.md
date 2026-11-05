@@ -177,7 +177,7 @@ If a visual anchor exists from game-concept.md: present it and ask:
 - "Revise it before expanding?"
 - "Start fresh with new options?"
 
-**Agent delegation (MANDATORY)**: Spawn `art-director` via `Agent`:
+**Agent delegation (MANDATORY)**: Spawn `art-director` using available authorized native delegation:
 - Provide: game concept (elevator pitch, core fantasy), full pillar set, platform target, any reference games/art from Phase 1 framing, the visual anchor if it exists
 - Ask: "Draft a Visual Identity Statement for this game. Provide: (1) a one-line visual rule that could resolve any visual decision ambiguity, (2) 2–3 supporting visual principles, each with a one-sentence design test ('when X is ambiguous, this principle says choose Y'). Anchor all principles directly in the stated pillars — each principle must serve a specific pillar. (From a one-page brief, which has no pillars, anchor them in its pitch and "what they feel" line.)"
 
@@ -197,7 +197,7 @@ For each major game state (e.g., exploration, combat, victory, defeat, menus —
 - Energy level (frenetic / measured / contemplative / etc.)
 
 **Agent delegation for Sections 2–4 — one call, issued here.** Spawn
-`art-director` via `Agent` with the locked Visual Identity Statement and pillar set,
+`art-director` using available authorized native delegation with the locked Visual Identity Statement and pillar set,
 and ask for all three sections in a single brief:
 
 1. **Mood & atmosphere** — "Define mood and atmosphere targets for each major game state in this game. Be specific — 'dark and foreboding' is not enough. Name the exact emotional target, the lighting character (warm/cool, high/low contrast, time of day direction), and at least one visual element that carries the mood. Each game state must feel visually distinct from the others."
@@ -298,7 +298,7 @@ Write the approved section to file.
 
 **Goal**: A curated reference set that is specific about what to take and what to avoid from each source.
 
-**Agent delegation**: Spawn `art-director` via `Agent` with the completed sections 1–8. Ask: "Compile a reference direction for this game. Provide 3–5 reference sources (games, films, art styles, or specific artists). For each: name it, specify exactly what visual element to draw from it (not 'the general aesthetic' — a specific technique, color choice, or compositional rule), and specify what to explicitly avoid or diverge from (to prevent the 'trying to copy X' reading). References should be additive — no two references should be pointing in exactly the same direction."
+**Agent delegation**: Spawn `art-director` using available authorized native delegation with the completed sections 1–8. Ask: "Compile a reference direction for this game. Provide 3–5 reference sources (games, films, art styles, or specific artists). For each: name it, specify exactly what visual element to draw from it (not 'the general aesthetic' — a specific technique, color choice, or compositional rule), and specify what to explicitly avoid or diverge from (to prevent the 'trying to copy X' reading). References should be additive — no two references should be pointing in exactly the same direction."
 
 Write the approved section to file.
 
@@ -319,7 +319,7 @@ On either skip, ask "May I record the skipped sign-off in
 `> **Art Director Sign-Off (AD-ART-BIBLE)**: SKIPPED [date] — [solo|lean] mode`
 — the gate accepts either form as a recorded sign-off.
 
-After all sections are complete (or the scoped set from Phase 1 is complete), spawn `art-director` via `Agent` using gate **AD-ART-BIBLE** (`.agents/docs/director-gates/ad-art-bible.md`).
+After all sections are complete (or the scoped set from Phase 1 is complete), spawn `art-director` using available authorized native delegation using gate **AD-ART-BIBLE** (`.agents/docs/director-gates/ad-art-bible.md`).
 
 Pass: the art bible path (`design/art/art-bible.md`); the game pillars and core
 fantasy; the platform and performance constraints (`platform.*` and

@@ -1,4 +1,5 @@
 import { chmodSync, cpSync, existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
+import {bashPath} from './shell.mjs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
@@ -7,11 +8,10 @@ import assert from 'node:assert/strict';
 import { handle, commandReason, patchFiles, projectRoot } from './hooks.mjs';
 
 const repo = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
-const evidence = resolve(repo, 'docs/codex/evidence/CGS-24');
-mkdirSync(evidence, { recursive: true });
 const temp = resolve(repo, '.codex-tmp'); mkdirSync(temp, { recursive: true });
 const root = mkdtempSync(resolve(temp, 'hook fixture '));
 for (const dir of ['hooks', 'scripts']) cpSync(resolve(repo, '.agents', dir), resolve(root, '.agents', dir), { recursive: true });
+cpSync(resolve(repo, '.agents/framework-version'), resolve(root, '.agents/framework-version'));
 function put(path, value) { const p = resolve(root, path); mkdirSync(dirname(p), { recursive: true }); writeFileSync(p, value); }
 put('project.yaml', 'project:\n  name: Hook fixture\nengine:\n  name: godot\nmodes:\n  rigor: standard\nupdates:\n  check: false\n');
 put('production/session-state/active.md', '# State\n<!-- CHECKPOINT -->\nRecovery marker CGS24\n<!-- /CHECKPOINT -->\n');
@@ -24,7 +24,7 @@ function bad(result) { assert.equal(result.code, 2); return result; }
 const dangerous = [
   'rm -rf sentinel', 'rm -r --force sentinel', 'Remove-Item sentinel -Recurse -Force',
   'git push origin --force', 'git -C . push origin -uf', 'git push origin +HEAD:main',
-  'git reset --hard HEAD', 'git clean -dqxf', 'git push upstream main',
+  'git reset --hard HEAD', 'git clean -dqxf', 'git push upstream main', 'git push --set-upstream upstream feature',
   'git push https://github.com/Donchitos/Claude-Code-Game-Studios.git main',
   'cat .env.local', 'Get-Content .env', 'cat Content/Map.umap', 'sudo true', 'chmod 777 file',
   'echo hello; git push --force origin main', 'bash -c "git reset --hard"', 'echo "hello"; git push --force; echo "bye"'
@@ -43,6 +43,7 @@ test('dangerous-sentinel-never-executes', () => {
 test('safe-and-false-positive-commands', () => {
   const safe = ['git status --short', 'git diff --stat', 'git push origin feature', 'rm ordinary.tmp', 'node --version', 'echo "git push --force is prohibited"'];
   for (const c of safe) assert.equal(commandReason(c), null, c);
+  good(call('PreToolUse', { tool_name: 'Bash', tool_input: { command: 'git push --set-upstream origin feature' } }));
   good(call('PreToolUse', { tool_name: 'Bash', tool_input: { command: 'printf safe' } }));
   return safe;
 });
@@ -146,6 +147,8 @@ test('registration-supported-fields-and-windows-launcher', () => {
     assert.equal(h.type, 'command'); assert.equal(typeof h.commandWindows, 'string'); assert(h.timeout > 0);
   }
   put('scripts/codex/hooks.mjs', readFileSync(resolve(repo, 'scripts/codex/hooks.mjs')));
+  put('scripts/codex/main-entry.mjs', readFileSync(resolve(repo, 'scripts/codex/main-entry.mjs')));
+  put('scripts/codex/shell.mjs', readFileSync(resolve(repo, 'scripts/codex/shell.mjs')));
   const command = config.hooks.PreToolUse[0].hooks[0][process.platform === 'win32' ? 'commandWindows' : 'command'];
   // This is the static reviewed hook command, intentionally executed by a shell.
   const r = spawnSync(command, { shell: process.platform === 'win32' ? 'cmd.exe' : 'bash', cwd: resolve(root, 'deep/path'), input: JSON.stringify({ cwd: resolve(root, 'deep/path'), tool_name: 'Bash', tool_input: { command: 'echo launcher-safe' } }), encoding: 'utf8' });
@@ -155,19 +158,19 @@ test('no-config-backend-root-fallback', () => {
   const noConfig = mkdtempSync(resolve(temp, 'unconfigured hook fixture '));
   cpSync(resolve(repo, '.agents/hooks'), resolve(noConfig, '.agents/hooks'), { recursive: true });
   cpSync(resolve(repo, '.agents/scripts'), resolve(noConfig, '.agents/scripts'), { recursive: true });
+  cpSync(resolve(repo, '.agents/framework-version'), resolve(noConfig, '.agents/framework-version'));
   assert.equal(projectRoot(noConfig), noConfig);
   // Competing explicit root: a cwd with .agents must win even without project.yaml.
   // Both candidates are disposable; an old backend cannot write the working repository.
   const alternate = mkdtempSync(resolve(temp, 'alternate hook fixture '));
   const env = { ...process.env, CGS_PROJECT_DIR: alternate };
-  const shell = process.env.CGS_BASH ?? (process.platform === 'win32' ? 'C:\\Program Files\\Git\\bin\\bash.exe' : 'bash');
+  const shell = bashPath();
   const r = spawnSync(shell, [resolve(noConfig, '.agents/hooks/pre-compact.sh')], { cwd: noConfig, input: '{}', env, encoding: 'utf8' });
   assert.equal(r.status, 0, r.stderr); assert(existsSync(resolve(noConfig, 'production/session-logs/compaction-log.txt')));
   return { selectedRoot: noConfig, absentProjectYaml: !existsSync(resolve(noConfig, 'project.yaml')) };
 });
-const hashes = Object.fromEntries(['scripts/codex/hooks.mjs', 'scripts/codex/hook-tests.mjs', '.codex/hooks.example.json', 'docs/codex/hooks.md', '.claude/settings.json'].map(p => [p, createHash('sha256').update(readFileSync(resolve(repo, p))).digest('hex')]));
+const hashes = Object.fromEntries(['scripts/codex/hooks.mjs', 'scripts/codex/hook-tests.mjs', '.codex/hooks.example.json', 'docs/codex/hooks.md'].map(p => [p, createHash('sha256').update(readFileSync(resolve(repo, p))).digest('hex')]));
 const report = { schema: 1, task: 'CGS-24', timestamp: new Date().toISOString(), platform: process.platform, node: process.version, model: null, command: 'node scripts/codex/hook-tests.mjs', fixture: root, fixture_recipe_sha256: hashes['scripts/codex/hook-tests.mjs'], hashes, tests: rows, nativeActivation: 'PENDING: optional reviewed hooks not trusted or activated by this runner', linux: process.platform === 'linux' ? 'tested here' : 'PENDING: Windows Git Bash execution is not Linux', status: rows.every(r => r.status === 'PASS') ? 'PASS' : 'FAIL' };
-writeFileSync(resolve(evidence, 'checks.json'), JSON.stringify(report, null, 2) + '\n');
 const testMap = {
   'session-start': ['session-checkpoint-gap-compaction-stop-audit', 'no-config-backend-root-fallback'], 'detect-gaps': ['session-checkpoint-gap-compaction-stop-audit'],
   'validate-commit': ['commit-staged-json-blocks-without-commit', 'dangerous-sentinel-never-executes'], 'validate-push': ['safe-and-false-positive-commands', 'commit-staged-json-blocks-without-commit'],
@@ -176,25 +179,22 @@ const testMap = {
   notify: ['manual-notification'], 'pre-compact': ['session-checkpoint-gap-compaction-stop-audit', 'no-config-backend-root-fallback'], 'session-stop': ['session-checkpoint-gap-compaction-stop-audit'],
   'log-agent': ['session-checkpoint-gap-compaction-stop-audit'], 'log-agent-stop': ['session-checkpoint-gap-compaction-stop-audit'], 'validate-agent-artifact': ['agent-contract-explicit-fallback']
 };
-const settings = JSON.parse(readFileSync(resolve(repo, '.claude/settings.json'), 'utf8'));
-const declarations = Object.entries(settings.hooks).flatMap(([event, groups]) => groups.flatMap(group => group.hooks.map(h => {
-  const handler = /\/([^/]+)\.sh/.exec(h.command)[1];
-  return { sourceEvent: event, sourceMatcher: group.matcher, sourceHandler: `.claude/hooks/${handler}.sh`, sourceCommand: h.command,
-    codexEvent: event === 'Notification' ? null : event, codexMatcher: event === 'PreToolUse' || event === 'PostToolUse' ? 'all local tool calls; adapter normalizes Bash/exec_command/apply_patch and explicit file payloads' : 'all event occurrences',
-    nativeStatus: event === 'Notification' ? 'UNSUPPORTED: no registered Notification event' : 'PENDING: optional registration reviewed structurally, native trust/activation not exercised',
-    implementation: handler === 'notify' ? 'Node explicit manual status; no automatic toast' : handler === 'validate-agent-artifact' ? 'Node expected_artifact fallback; no unstable transcript parsing' : `.agents/hooks/${handler}.sh through Node adapter`,
-    cli: `node scripts/codex/hooks.mjs ${event} --root PROJECT --input EVENT.json`,
-    ci: 'node scripts/codex/hook-tests.mjs (explicit local suite; repository CI wiring belongs to CGS-28)',
-    protocol: event === 'PreToolUse' ? 'deny JSON plus exit 2/stderr; advisory output remains exit 0' : event === 'PostToolUse' ? 'actual bytes checked after write; exit 2 is feedback, cannot undo tool' : 'systemMessage JSON; no permission grants; lifecycle observations only',
-    tests: testMap[handler], fallbackStatus: testMap[handler].every(id => rows.find(r => r.id === id)?.status === 'PASS') ? 'PASS' : 'FAIL' };
-})));
-assert.equal(declarations.length, 15);
-const scripts = readdirSync(resolve(repo, '.claude/hooks')).filter(x => x.endsWith('.sh')).map(name => {
-  const source = `.claude/hooks/${name}`, target = `.agents/hooks/${name}`;
-  const blob = spawnSync('git', ['show', `HEAD:${source}`], { cwd: repo, encoding: null });
-  const hash = b => createHash('sha256').update(b).digest('hex');
-  return { source, target, source_git_blob_sha256: blob.status === 0 ? hash(blob.stdout) : null, source_checkout_sha256: hash(readFileSync(resolve(repo, source))), target_sha256: hash(readFileSync(resolve(repo, target))), role: name === 'yaml-helper.sh' ? 'shared configuration backend' : name === 'update-check.sh' ? 'cached notice helper; no background refresh installed' : name === 'log-instructions.sh' ? 'undeclared source diagnostic preserved; no fictional Codex InstructionsLoaded event' : 'declared handler; see declaration row' };
-});
-assert.equal(scripts.length, 18);
-writeFileSync(resolve(evidence, 'parity.json'), JSON.stringify({ schema: 1, task: 'CGS-24', timestamp: report.timestamp, upstream: '05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418', officialReference: 'https://learn.chatgpt.com/docs/hooks', declarations, scripts, adapterHashes: hashes, nativeActivation: report.nativeActivation, linux: report.linux }, null, 2) + '\n');
+const inventory=JSON.parse(readFileSync(resolve(repo,'docs/codex/upstream-inventory.json'),'utf8'));
+const nativeConfig=JSON.parse(readFileSync(resolve(repo,'.codex/hooks.example.json'),'utf8'));
+assert.equal(inventory.hooks.length,15,'Expected 15 reviewed hook declarations');
+for(const item of inventory.hooks){
+  const handler=/\/([^/]+)\.sh/.exec(item.command)?.[1];
+  assert.ok(handler&&testMap[handler], 'Unmapped hook declaration: '+item.id);
+  assert.ok(existsSync(resolve(repo,'.agents/hooks',handler+'.sh')), 'Missing native hook backend: '+handler);
+  for(const id of testMap[handler])assert.equal(rows.find(r=>r.id===id)?.status,'PASS',handler+': '+id);
+  if(item.event!=='Notification')assert.ok(nativeConfig.hooks[item.event], 'Missing native binding: '+item.event);
+}
+const hookFiles=inventory.files.filter(x=>x.path.startsWith('.claude/hooks/')&&x.path.endsWith('.sh'));
+assert.equal(hookFiles.length,18,'Expected 18 reviewed source hook mechanisms');
+const registry=JSON.parse(readFileSync(resolve(repo,'docs/codex/generation-manifest.json'),'utf8'));
+for(const item of hookFiles){
+  const entries=registry.entries.filter(x=>x.source===item.path);
+  assert.equal(entries.length,1,'Expected one reviewed native mapping: '+item.path);
+  assert.ok(entries[0].target && existsSync(resolve(repo,entries[0].target)),'Missing native equivalent for '+item.path+': '+entries[0].target);
+}
 console.log(JSON.stringify(report, null, 2)); process.exitCode = report.status === 'PASS' ? 0 : 1;

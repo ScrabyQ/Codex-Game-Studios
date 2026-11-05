@@ -1,70 +1,18 @@
-# Hook: pre-commit-design-check
+# Design and data checks before an authorized commit
 
-## Trigger
+Use the explicit `PreToolUse` adapter with the exact proposed commit command. No Git hook is installed by this guide; a passing check is not authorization to commit.
 
-Runs before any commit that modifies files in `design/` or `assets/data/`.
+The `validate-commit.sh` backend inspects staged data, including bytes a combined add/commit proposal would stage. It checks design completeness and data syntax without claiming substantive design approval.
 
-## Purpose
+## Checks
 
-Ensures design documents and game data files maintain consistency and
-completeness before they enter version control. Catches missing sections,
-broken cross-references, and invalid data before they propagate.
+- Resolve workflow before checking `design/gdd/`. Full workflow requires Overview, Player Fantasy, Detailed (including its documented alias), Formulas, Edge Cases, Dependencies, Tuning Knobs and Acceptance Criteria. Standard checks the five-section core: Overview, Detailed, Edge Cases, Dependencies and Acceptance Criteria. Apply the backend's minimal/per-system handling; do not impose the full template on unrelated design documents.
+- Validate affected JSON using an available Python 3 parser. Name malformed files and the staged/working source checked. An absent interpreter or unavailable staged input is a skipped/unassessed check, never clean syntax.
+- Preserve registry identifiers and cross-references. Section presence is only structural evidence; meaningful dependencies, formulas and design consistency require the corresponding review Skills.
+- Capture actual diagnostics and exit code. Some backend findings are advisory warnings returning zero; do not describe those warnings as enforced prohibitions.
 
-## Implementation
+See [hook payloads](hook-input-schemas.md) and [workflow modes](../workflow-modes.md). Keep execution output outside tracked product files.
 
-```bash
-#!/bin/bash
-# Pre-commit hook: Design document and game data validation
-# Place in .git/hooks/pre-commit or configure via your hook manager
+## Handoff
 
-DESIGN_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -E '^design/')
-DATA_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -E '^assets/data/')
-
-EXIT_CODE=0
-
-# Check design documents for required sections
-if [ -n "$DESIGN_FILES" ]; then
-    for file in $DESIGN_FILES; do
-        if [[ "$file" == *.md ]]; then
-            # Check for required sections in GDD documents
-            if [[ "$file" == design/gdd/* ]]; then
-                for section in "Overview" "Detailed" "Edge Cases" "Dependencies" "Acceptance Criteria"; do
-                    if ! grep -qi "$section" "$file"; then
-                        echo "ERROR: $file missing required section: $section"
-                        EXIT_CODE=1
-                    fi
-                done
-            fi
-        fi
-    done
-fi
-
-# Validate JSON data files
-if [ -n "$DATA_FILES" ]; then
-    for file in $DATA_FILES; do
-        if [[ "$file" == *.json ]]; then
-            # Find a working Python command
-            PYTHON_CMD=""
-            for cmd in python python3 py; do
-                if command -v "$cmd" >/dev/null 2>&1; then
-                    PYTHON_CMD="$cmd"
-                    break
-                fi
-            done
-            if [ -n "$PYTHON_CMD" ] && ! "$PYTHON_CMD" -m json.tool "$file" > /dev/null 2>&1; then
-                echo "ERROR: $file is not valid JSON"
-                EXIT_CODE=1
-            fi
-        fi
-    done
-fi
-
-exit $EXIT_CODE
-```
-
-## Agent Integration
-
-When this hook fails, the committer should:
-1. For missing design sections: invoke the `game-designer` agent to complete
-   the document
-2. For invalid JSON: invoke the `tools-programmer` agent or fix manually
+Missing GDD sections need the owning designer; invalid data needs its author/tools-programmer. Review a concrete correction within authorization, then repeat the relevant check. No absent artifact, skipped interpreter or fluent response establishes completion.

@@ -176,7 +176,7 @@ paste whole documents into it.
     to the agent.
   - `standard`: "Write the test at [path] with the code. Each acceptance criterion
     needs at least one test function." Naming per engine from
-    `.claude/rules/test-standards.md`. No random seeds, no time-dependent
+    `.agents/rules/test-standards.md`. No random seeds, no time-dependent
     assertions, no external I/O.
   - `full`: the same, and "every criterion must be covered: `$story-done` blocks on
     any untested one."
@@ -255,9 +255,7 @@ minimal`. Report exactly one line, plain text starting `Run result:` (no bold:
 Only the feel half of a Visual/Feel criterion (timing, weight) is DEFERRED to
 `$team-qa`: a still cannot show it.
 
-This skill pre-approves `godot` on PATH. An engine run through `engine.path` or
-the executable `commands.test` names asks first: the user approves it once, or
-adds `Bash(<that executable> *)` to `.claude/settings.local.json`.
+Run the configured engine or test executable only within existing user authorization and host permissions. A skill cannot grant shell permissions; if authorization remains unresolved, prepare the exact command for review.
 
 ## Phase 7: Summary, files, checkpoint
 

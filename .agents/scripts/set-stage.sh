@@ -102,10 +102,10 @@ replace_file() {
 Y_ACTION=""; Y_LINE="-"; Y_NEW=""
 if [ ! -f project.yaml ]; then
   Y_ACTION="created"
-  # The framework version these scripts ship with; update-check.sh holds the
-  # one copy a release bumps.
-  VERSION=$(sed -n 's/^UPDATE_CHECK_VERSION="\([^"]*\)".*/\1/p' "$HERE/../hooks/update-check.sh" 2>/dev/null | head -1)
-  [ -n "$VERSION" ] || { echo "set-stage: no framework version in $HERE/../hooks/update-check.sh; project.yaml not created" >&2; exit 1; }
+  # Distribution/config-template version, stored beside the installed scripts.
+  VERSION_FILE="$HERE/../framework-version"
+  [ -r "$VERSION_FILE" ] || { echo "set-stage: framework version file missing or unreadable: $VERSION_FILE; project.yaml not created" >&2; exit 1; }
+  VERSION=$(awk 'NR == 1 && /^[0-9]+\.[0-9]+\.[0-9]+$/ { version = $0; next } { invalid = 1 } END { if (NR == 1 && !invalid && version != "") print version; else exit 1 }' "$VERSION_FILE") || { echo "set-stage: invalid framework version in $VERSION_FILE; expected one X.Y.Z line; project.yaml not created" >&2; exit 1; }
   Y_NEW=$(mktemp "./.ccgs-stage-XXXXXX" 2>/dev/null) || { echo "set-stage: cannot create a temporary file in $(pwd)" >&2; exit 1; }
   # /gate-check's minimal template (references/6-update-stage.md, 6.1).
   {

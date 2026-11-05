@@ -51,7 +51,7 @@ across all of them:
 > **NOT ASSESSED** naming both reducers and the gate — *"Production → Polish at
 > `workflow: minimal` + `qa.level: minimal` leaves no required artifact; this
 > gate verified nothing"* — rather than a PASS earned by having nothing to check.
-> Per `.claude/rules/skill-authoring.md` obligation 1, a run that could not
+> Per `.agents/rules/skill-authoring.md` obligation 1, a run that could not
 > assess its scope has not established that the scope is good, and obligation 3
 > requires the emptiness to be visible in the output rather than inferable from
 > a silent green.

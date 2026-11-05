@@ -1,4 +1,3 @@
-> **Codex path bridge (CGS-26):** Paths below that begin with .claude/skills/, .claude/scripts/, or .claude/hooks/ describe the preserved upstream source layout. For Codex runtime use, resolve corresponding adapted resources under .agents/skills/, .agents/scripts/, and .agents/hooks/. Hook paths are helper files only; Codex hook registration remains separate, opt-in, and subject to payload verification. Explicit legacy examples remain useful for upstream comparison.
 
 # Code Root Resolution
 
@@ -21,7 +20,7 @@ code. This file is the procedure for applying it.
 
 ## Resolution order
 
-1. `engine.name` from `project.local.yaml`, then `project.yaml`.
+1. Resolve `engine.name` through the normal setting resolver. The engine is a shared setting: `project.local.yaml` cannot override it. A locked local value is ignored; invalid shared enum values fall through with diagnostics.
 2. The legacy mirror: an `Engine:` line in
    `.agents/docs/technical-preferences.md`. A value of `[TO BE CONFIGURED]`
    does not count.
@@ -34,14 +33,14 @@ code. This file is the procedure for applying it.
    like Unity.
 4. Otherwise: **unresolved.**
 
-The hooks already implement exactly this as `resolve_code_root()` in
-`.claude/hooks/yaml-helper.sh`. Skills must match its semantics so that a hook
+The backend implements this as `resolve_code_root()` in
+`.agents/hooks/yaml-helper.sh`. Skills must match its semantics so that a hook
 and a skill never disagree about where the code lives.
 
 ## Unresolved does not default to `src/`
 
 This is the rule the whole file exists for, and it is obligation 2 of
-`.claude/rules/skill-authoring.md`: an absent value may not default to the
+`.agents/rules/skill-authoring.md`: an absent value may not default to the
 permissive one.
 
 **For a read or scan:** report `NOT ASSESSED — code root unresolved` and say

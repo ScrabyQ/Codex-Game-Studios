@@ -1,4 +1,3 @@
-> **Codex bridge (CGS-26):** The Agent tool and Claude Agent Teams behavior below describe the source runtime. In Codex, delegate through native subagents when that capability is available and appropriate; otherwise read the role instructions and perform the work in-session, disclosing that this is not an independent review. Do not claim independent parallel review without separate agents. Retain the coordination, ownership, escalation, and conflict rules in this document.
 
 # Agent Coordination Rules
 
@@ -14,51 +13,20 @@
 5. **No Unilateral Cross-Domain Changes**: An agent must never modify files
    outside its designated directories without explicit delegation.
 6. **Read Design Docs by Section**: A brief names the sections an agent needs
-   by heading. Find a heading in a GDD, ADR or the art bible with the Grep
-   tool (`^#`, content mode) and Read that range with offset and limit; read a doc
-   whole only when the task needs all of it, and say why. `validate-read.sh`
-   refuses a whole-file read of a doc over 40 KB.
-7. **Nothing Goes Upstream**: Never file, open or comment on an issue or pull
-   request in an engine, plugin or vendor repository, even when asked. Write a
-   draft (`/bug-report` drafts only) and the user submits it.
+   by heading. Find a heading in a GDD, ADR or the art bible with `rg -n "^#"` and read the required range; read a doc
+   whole only when the task needs all of it, and say why. The explicit `read-guard` helper can refuse a whole-file read of a doc over 40 KB.
+7. **External changes**: Preserve upstream history. Draft issues, pull requests or messages when authorization is unresolved; external writes require explicit user authorization.
 
-## Model Tier Assignment
+## Model and delegation policy
 
-Read `.agents/docs/model-tiers.md` on demand. It carries the tier table, the
-per-skill assignments and the authoring rule.
+Role tiers define domain responsibility. Consult [model-tiers.md](model-tiers.md) and `.codex/model-policy.json` when relevant; inherit the session unless a supported authorized override exists.
 
-**Key point:** whether a skill's `model:` is used
-depends on how the skill starts. Typed as `/skill-name`: yes, except a `haiku`
-pin in auto mode. Started by Claude through the Skill tool: no. Never tell a
-user a `haiku` skill saves money; an `opus` skill typed in a Sonnet session
-costs more. The agent-side `model:` is a different mechanism, and is applied.
+Delegate only when exposed by the host and authorized by the user or invoked workflow. No agent is always active and no complete hierarchy is spawned by default. Native role `developer_instructions` define responsibilities and capability ceilings, not permissions.
 
-## Subagents vs Agent Teams
+Give bounded briefs with objective, named input sections, owned paths, non-goals, inherited authorization, expected output, evidence criteria and escalation conditions. Preserve others' edits. Issue independent work before waiting where supported; keep dependencies sequential. Collect all results before dependent phases, surface BLOCKED immediately and return partial reports.
 
-This project uses two distinct multi-agent patterns:
+If delegation or role loading is unavailable, label an **in-session role review; not independent**. Required independent review remains PENDING. See [agent-teams.md](agent-teams.md).
 
-### Subagents (current, always active)
-Spawned via the `Agent` tool within a single Claude Code session. Used by all
-`team-*` skills and orchestration skills. Subagents share the session's
-permission context, run sequentially or in parallel within the session, and
-return results to the parent.
+## Authorization and decisions
 
-**When to spawn in parallel**: If two subagents' inputs are independent (neither
-needs the other's output to begin), spawn both `Agent` calls simultaneously
-rather than waiting. Example: `/review-all-gdds` **Phase 2** (consistency) and
-**Phase 3** (design theory) are independent — spawn both at the same time.
-Phase 1 loads the GDDs and both depend on it, so it is the one phase here that
-must NOT be parallelised.
-
-### Agent Teams (experimental — opt-in)
-Multiple independent Claude Code *sessions* coordinated via a shared task list.
-Opt-in only — read `.agents/docs/agent-teams.md` on demand before proposing one.
-
-## Parallel Task Protocol
-
-When an orchestration skill spawns multiple independent agents:
-
-1. Issue all independent `Agent` calls before waiting for any result
-2. Collect all results before proceeding to dependent phases
-3. If any agent is BLOCKED, surface it immediately — do not silently skip
-4. Always produce a partial report if some agents complete and others block
+Prior user authorization persists. Prepare a reviewable draft and ask when a decision or action still needs authorization. Use an exposed question facility when appropriate; otherwise ask in plain text and wait. Skipped, dismissed and empty required answers are not consent. Modes do not grant or revoke permission. External writes require explicit authorization.

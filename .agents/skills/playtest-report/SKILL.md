@@ -145,7 +145,7 @@ Present the categorized list, then route:
 - `lean` → skip (not a PHASE-GATE). Note: "CD-PLAYTEST skipped — Lean mode." Proceed to Phase 4 (save the report).
 - `full` → spawn as normal.
 
-After categorising findings, spawn `creative-director` via `Agent` using gate **CD-PLAYTEST** (`.agents/docs/director-gates/cd-playtest.md`).
+After categorising findings, spawn `creative-director` using available authorized native delegation using gate **CD-PLAYTEST** (`.agents/docs/director-gates/cd-playtest.md`).
 
 Pass: the structured report content, game pillars and core fantasy (from
 `design/gdd/game-concept.md`), the specific hypothesis being tested. **If

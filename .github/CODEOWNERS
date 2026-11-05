@@ -1,19 +1,9 @@
-# CODEOWNERS — auto-assigns reviewers to PRs by path
-# Format: <pattern> <@github-username or @org/team>
-# Last match wins. Docs: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
-
-# Default owner for everything
-*                           @Donchitos
-
-# Core configuration — owner review required
-CLAUDE.md                   @Donchitos
-.claude/                    @Donchitos
-settings.json               @Donchitos
-
-# Skills and agents — high-impact, review carefully
-.claude/skills/             @Donchitos
-.claude/agents/             @Donchitos
-.claude/hooks/              @Donchitos
-
-# Fork ownership: last match wins; upstream entries above are retained for provenance.
+# Review ownership for the maintained fork.
+# GitHub repository settings determine whether code-owner approval is required.
 *                           @ScrabyQ
+/AGENTS.md                  @ScrabyQ
+/.agents/                   @ScrabyQ
+/.codex/                    @ScrabyQ
+/scripts/codex/             @ScrabyQ
+/project.yaml               @ScrabyQ
+/.github/                   @ScrabyQ

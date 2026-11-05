@@ -1,6 +1,7 @@
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { runHelper } from './helper.mjs';
+import { isMainEntry } from './main-entry.mjs';
 
 const families = {
   Godot: { primary: 'godot-specialist', code: ['godot-specialist', 'godot-gdscript-specialist', 'godot-csharp-specialist', 'godot-gdextension-specialist'], shader: ['godot-specialist', 'godot-shader-specialist'], ui: ['godot-specialist'], all: ['godot-specialist', 'godot-gdscript-specialist', 'godot-csharp-specialist', 'godot-gdextension-specialist', 'godot-shader-specialist'] },
@@ -35,7 +36,7 @@ export function selectEngineRoles(root = process.cwd()) {
   const roles = [...new Set([primary, values.code, values.shader, values.ui, ...values.additional].filter(Boolean))];
   return { status: 'SELECTED', engine, version: untag(e[2]), language, primary, ...values, roles, observations: text, note: 'Selection does not establish editor, SDK, role spawning, or engine availability.' };
 }
-if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+if (isMainEntry(import.meta.url)) {
   try { const a = process.argv.slice(2); let root = process.cwd(); while (a.length) { const x = a.shift(); if (x === '--root' && a.length) root = resolve(a.shift()); else if (x !== '--json') throw Error(`Usage: engine-roles.mjs [--root DIR] [--json]; invalid ${x}`); } console.log(JSON.stringify(selectEngineRoles(root), null, 2)); }
   catch (e) { console.error(e.message); process.exitCode = 2; }
 }

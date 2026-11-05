@@ -1,49 +1,73 @@
-# Reviewed upstream synchronization
+# Maintaining upstream imports
 
-The fork has two long-lived branches: `main` is **Codex Game Studios** (the default branch), while `source/ccgs-main` mirrors the original [Claude Code Game Studios](https://github.com/Donchitos/Claude-Code-Game-Studios) `main`. `upstream` is a Git remote configured separately in each clone; `upstream/main` is its local remote-tracking ref. The mirror is for reference and source comparison, not for development or direct merges into the Codex `main`. Do not use GitHub's **Sync fork** button to merge upstream changes into the default branch.
+Normal use needs no upstream remote, source checkout, mirror branch or historical Git objects. Native files in `.agents/` and `.codex/` are maintained product sources. `validate.mjs` and `generate.mjs --check --complete` inspect them offline.
 
-## Source branch mirror
+The original [Claude Code Game Studios](https://github.com/Donchitos/Claude-Code-Game-Studios) is an optional maintainer source. `source/ccgs-main` is a reference mirror. Do not merge its tree into the product or use Sync fork on the product branch. Updating that mirror is a separate authorized operation; the tools below do not write it.
 
-To update `source/ccgs-main` **manually** from a clean clone with the `upstream` remote configured, run:
+## Inspect changes
 
-```powershell
-git fetch upstream main
-git switch source/ccgs-main
-git merge --ff-only upstream/main
-git push origin source/ccgs-main
-git switch main
-```
-
-For the first local checkout of the mirror, replace `git switch source/ccgs-main` with `git switch --track origin/source/ccgs-main`. The fast-forward-only merge refuses rewritten or divergent upstream history; inspect such cases instead of forcing a push. This updates only the mirror in your fork; it does **not** update the Codex adaptation. No scheduled mirror updater is installed. The Codex sync commands below read `upstream/main` directly, so keeping the mirror current is helpful for GitHub browsing but not required for change detection.
-
-## Review and adapt changes
-
-The on-demand commands replace the background behavior of the preserved `.claude/hooks/update-check.sh` helper. They install no scheduled updater and never push, commit or merge into the current branch. Git and Node are required. Fetch updates only the local remote-tracking ref; remote writes require existing explicit authorization.
+Git and Node.js are required. Add a missing remote once; inspect existing configuration instead of replacing it.
 
 ```powershell
+git remote add upstream https://github.com/Donchitos/Claude-Code-Game-Studios.git
+git remote set-url --push upstream DISABLED
 node scripts/codex/check-upstream.mjs --fetch
-node scripts/codex/sync-upstream.mjs --dry-run
-node scripts/codex/sync-upstream.mjs --prepare
+node scripts/codex/sync-upstream.mjs --dry-run --source-ref refs/remotes/upstream/main
 ```
 
-`check-upstream` and `--dry-run` print deterministic JSON for the currently fetched ref; `--fetch` is optional on either command. A fixed ref and unchanged checkout produce identical reports. Reports classify changed, added and deleted agents, Skills and their resources, hooks, rules, templates, declarations and other files. They include exact baseline/upstream commits, old/new Git blob hashes and modes, registered source-to-target mappings, affected migration entries marked PENDING and generated target drift. New files without mappings remain visibly PENDING; deletion never silently removes a target. Changes to `.claude/settings.json` invalidate the associated declaration entries. Renames are deliberately represented as deletion plus addition.
+Fetch updates local tracking refs only. Select its remote and branch with `--remote` and `--ref`. Fetch separately: sync refuses `--fetch`. An external local source repository, including a bare repository, can be selected with `--source-repo <path> --source-ref <ref>`; it is read through Git objects without a checkout or remote writes.
 
-The baseline comes from `docs/codex/active-baseline.json` (`source_commit`) when present, otherwise the migration manifest. Reports include that descriptor's state, reconciliation metadata and PENDING migration IDs. An unchanged upstream with reconciliation in progress reports `RECONCILIATION_PENDING`; `NO_UPSTREAM_CHANGES` alone never means every adaptation is accepted. `--baseline <full-SHA>` permits explicit comparison, not acceptance or promotion. Rewritten upstream history is refused. `--remote` and `--ref` default to `upstream` and `main`. Duplicate or malformed options are refused before fetch or preparation. Derived targets whose `sources` include a changed path are included alongside direct mappings.
+Ref precedence is an explicit source ref, `source_ref` in `docs/codex/active-baseline.json`, then an available source mirror. A pinned baseline alone reports `SOURCE_UNAVAILABLE` because it cannot establish that upstream is current. The baseline commit is versioned configuration. Rewritten history is refused.
 
-Preparation creates a **new** branch `codex/sync-<SHA12>` and checkout `.codex/worktrees/sync-<SHA12>` from committed HEAD. It performs `git merge --no-commit --no-ff <exact-SHA>` there and honors the user's Git hook configuration. It writes `docs/codex/upstream-proposal.json` exclusively in that checkout. Existing branch/worktree/proposal paths are refused rather than replaced. Custom `--branch` and `--worktree` are available; nested paths must be Git-ignored, including case variants on Windows. Dirty edits in the original checkout are reported and remain there; they are not included in the new checkout or copied over generated files.
+Output accounts for modified, added, deleted and renamed Skills, agents, rules, hooks, templates, declarations and other files. Each change is PENDING, including unknown transforms. Source file modes, blob/content hashes, mappings and target drift are reported. Settings changes also contain explicit old/new hook declaration data. An unchanged source does not accept an unfinished reconciliation.
 
-Exit 0 means the check or preparation succeeded, **not that adaptation passed**. Conflicts remain staged as conflicts, are listed in the report and return Git's nonzero exit (normally 1). Other refusal returns 2. Inspect the retained worktree, resolve each conflict explicitly and review the diff. To abandon only its uncommitted merge, run `git merge --abort` **inside that worktree**. The original checkout is unaffected; the proposal remains as an untracked review artifact. No cleanup or recursive deletion is automatic. A repeat preparation whose upstream commit is already in HEAD reports `NO_OP_ALREADY_IN_HISTORY`; stale adaptation status can still require reconciliation.
+## Prepare a product worktree
 
-## Reconcile before approval
+Start from a clean committed product whose target hashes match. Select a new branch and path:
 
-1. Review the proposal and every source change, including deleted components and declaration changes. Retain the initial snapshot as historical evidence; a new SHA is not a successful migration.
-2. Reconcile the active inventory and manifest through the reviewed baseline workflow. Changed/new entries and affected declarations start PENDING. Carry forward acceptance only for byte-identical source; retain previous evidence as history and explicit retirement records for deleted entries.
-3. Inspect each source-bound overlay. Rebase its transformations against the new source deliberately; never merely change its expected hash. Keep existing generated-target hashes as overwrite guards. Manual drift requires explicit review; neither sync command invokes generation or overwrites targets.
-4. Run `node scripts/codex/inventory.mjs --check`, `node scripts/codex/generate.mjs --check --complete`, `node scripts/codex/validate.mjs` and affected behavioral suites after finalization. During pending reconciliation the finalizer uses its explicit pending preflight; ordinary CI refuses pending state. Review count changes against the new inventory instead of editing historical counts to make validation green. Do not claim new components supported until their tests and evidence exist.
-5. Review all source, overlay, manifest and evidence diffs. Commit and push only within the user's authorization, to the user's fork, then open a draft PR for review. Never force-push, automatically choose `theirs`, merge into main automatically or publish a release.
+```powershell
+node scripts/codex/sync-upstream.mjs --prepare --source-ref refs/remotes/upstream/main --branch codex/source-review --worktree ../cgs-source-review
+```
 
-The central reconciliation CLI is `node scripts/codex/reconcile-upstream.mjs prepare --root <worktree> --plan <relative-plan.json>`, followed after reviewed regeneration and fresh evidence by the same command with `finalize`. The separate plan requires `schema: 1`, `reviewed: true`, exact `old_sha`/`new_sha`, and exhaustive `changes` with source path, old/new content SHA256, `decision: "REBASE"`, evidence paths and targets with their old content SHA256. Hook declaration changes also require exhaustive `hooks` entries with ID, `decision: "REVIEW"` and evidence. Git blob hashes in the detection proposal are not content SHA256; candidate inventory supplies those independently. Prepare archives the prior inventory, migration matrix and generation registry, marks affected entries PENDING and stages the active descriptor. `generate.mjs --reconcile --targets ...` is limited to explicitly reviewed targets and preserves their existing hash guards. Ordinary validation cannot accept a pending reconciliation. Additions/deletions currently require explicit human onboarding/retirement; central preparation refuses them with guidance while check/sync retain their full proposal. Do not bypass that refusal by dropping changed entries from a plan.
+The worktree starts at product HEAD, with no source-tree merge. Protected main/mirror branch names, existing paths, dirty input, target drift and worktrees inside an external source repository are refused. Nested product worktrees must be ignored. The proposal goes only to the worktree's ignored `.scratch/upstream-proposal.json`. Exit 0 means preparation completed, not that adaptation passed.
 
-`node scripts/codex/upstream-tests.mjs` exercises local fixture repositories, including actual fetch, a changed Skill and hook, addition/deletion, dirty target preservation, an uncommitted isolated merge, deterministic dry-runs, a no-op repeat and an explicit recoverable conflict. Fixtures are retained under `.codex-tmp`. See [evidence](evidence/CGS-29/README.md).
+## Reviewed reconciliation
 
-The active descriptor uses exactly `state: "active"` or `state: "pending"`. Reconciliation plan change rows also require `old_mode` and `new_mode`; source-bound overlays require `overlay: {path, sha256}` for the explicitly reviewed rebased bytes. Preparation requires the candidate commit already merged into HEAD or present as the current exact MERGE_HEAD. Finalization checks complete generation coverage and recorded target/related hashes. Record a single changed source with `record-migration.mjs --source <exact-path> --task CGS-29 --status ... --evidence ... --note ...`; hook declarations require separate review. The [central reconciliation evidence and contract](evidence/CGS-29/reconcile/README.md) documents the tested promotion and refusal cases.
+Keep plans, rollback inputs and generated candidates in temporary or ignored storage. Do not track execution reports.
+
+The schema 2 plan has `reviewed: true`, exact `old_sha`/`new_sha` and exhaustive `changes`. Each change includes old/new paths, blob/content hashes and modes, an `adapt`, `retain` or `retire` decision, and all affected targets. Each change also lists `overlays: [{path, old_sha256, new_sha256}]` (empty when none); apply checks the reviewed overlay bytes and their embedded source pins. A settings change must copy the proposal's exact `declarations: [{id, old, new, status: "PENDING"}]` for explicit review. Target actions are `retain`, `update`, `retire` or `add`, with exact old/new hashes; a nonexistent side uses `null`. Additions need `registration: {source, transform_ids}` (or explicit shared `sources`) and coherent native discovery, model policy, catalog and rule metadata. Shared targets need consistent decisions. Review must preserve useful local behavior when upstream removes its source.
+
+```powershell
+node scripts/codex/reconcile-upstream.mjs prepare --root <worktree> --plan <absolute-plan-path> --source-repo <source-repository> --source-ref <reviewed-ref>
+node scripts/codex/reconcile-upstream.mjs apply --root <worktree>
+node scripts/codex/reconcile-upstream.mjs finalize --root <worktree>
+```
+
+Replace placeholders with real paths and refs. Preparation guards source and target inputs, stores recovery material and leaves a PENDING baseline without editing native bodies. Make reviewed target edits before apply. Apply verifies their exact bytes and updates coverage/provenance; failed validation restores metadata. Retained generated targets without a current source become explicitly native-owned with retired provenance. New or affected source entries and declarations remain PENDING.
+
+Existing source mappings to maintained Markdown or Node wrappers can appear as `ownership: "manual"` targets. Repeat that ownership and the exact old/new hashes in each reviewed retain, update or retire action. These targets must already be explicitly mapped; unknown manual additions require separate onboarding and are refused rather than silently accepted. Source renames preserve reviewed mappings. A retained manual target whose source was deleted is recorded in `retired_manual_mappings` with source commit/hash and a guarded target hash. Native validation and selected hash recording continue to protect it without requiring the historical source object.
+
+Review those support dispositions using `record-migration.mjs --id <entry> --status <status> --review <review-summary> --root <worktree>`. A matching hash does not establish PORTED or EQUIVALENT behavior. An unsupported disposition needs a reason and impact. Finalize requires recorded review and native structural validation; run affected behavioral suites before it and full CI afterward.
+
+The separate generator supports `skills`, `roles`, `references`, `support` and `rules` transformation families. To prepare candidates from a new tip before applying it, create its isolated inventory and pass that inventory explicitly:
+
+```powershell
+node scripts/codex/inventory.mjs --candidate <full-source-commit> --source-repo <source-repository> --source-ref <reviewed-ref> --output-dir <new-temporary-inventory-directory>
+node scripts/codex/generate.mjs --root <worktree> --source-repo <source-repository> --source-ref <reviewed-ref> --source-inventory <inventory-directory>/upstream-inventory.json --candidate-dir <new-external-candidate-directory> --family skills --names <skill-name>
+```
+
+The selected commit must match the candidate inventory. Source reads, inventory hashes, existing product target hashes and overlay anchors remain guarded. Skill and role selections require `--names`. A separate `--overlay-root <staging-root>` may contain deliberately rebased overlays at their normal relative paths; it is allowed only with isolated candidate output. Review all outputs before adapting product files. Never repin an overlay merely to silence a refusal.
+
+For deliberate ordinary native edits, `generate.mjs --record-native --targets <comma-separated-paths>` records selected hashes after review, refuses unrelated drift and restores metadata if validation fails. It preserves support status and provenance.
+
+New native-authored Skills and roles use the separate `--register-native --targets <paths> --review <summary>` action after preparing coherent model policy, catalog, specs and references. Select all new Skill resources or role TOMLs explicitly. It records authored provenance without a source repository, historical object or migration row, and restores the registry if full native validation fails. See [contributing](../../CONTRIBUTING.md). Unknown targets remain refused by ordinary hash recording.
+
+From the finalized worktree, run:
+
+```powershell
+node scripts/codex/validate.mjs
+node scripts/codex/generate.mjs --check --complete
+node scripts/codex/ci.mjs
+```
+
+Review the diff, license and real test results before an authorized commit, push to your own fork and PR. No automatic merge, force push or release is part of this workflow. Disposable importer, sync and reconciliation fixtures run in CI; [testing](testing.md) distinguishes them from engine or native-client checks.

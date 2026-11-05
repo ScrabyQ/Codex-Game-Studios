@@ -9,9 +9,9 @@ No gate IDs assigned.
 
 ## Static Assertions (Structural)
 
-- [ ] `description:` field is present and domain-specific (references Unity patterns / MonoBehaviour / subsystem decisions)
+- [ ] `description` field is present and domain-specific (references Unity patterns / MonoBehaviour / subsystem decisions)
 - [ ] `tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is `inherit` — frontmatter `model:` reads exactly `inherit` (tiers: `.claude/docs/model-tiers.md`)
+- [ ] Native role TOML has nonempty `name`, domain-specific `description` and `developer_instructions`; its capability ceiling, domain boundaries and escalation rules remain intact
 - [ ] Agent definition acknowledges the sub-specialist routing table (DOTS, UI, Shader, Addressables)
 
 ---
@@ -64,7 +64,7 @@ No gate IDs assigned.
 - Defines actions in an `.inputactions` asset, uses the Player Input component or a generated C# class, and prefers action callbacks (`performed`, `canceled`) over polling in `Update()`
 - Sets up keyboard+mouse and gamepad control schemes with automatic switching
 - Routes UI navigation and input-prompt work to `unity-ui-specialist`
-- Treats adding the package as a dependency decision needing `technical-director` sign-off, and asks before writing any settings or asset
+- Treats adding the package as a dependency decision needing `technical-director` sign-off, and checks existing authorization before writing and asks if unresolved any settings or asset
 
 ---
 

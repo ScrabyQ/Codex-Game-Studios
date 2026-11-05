@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 /** Deterministic, non-destructive Codex mirror for upstream reference documents. */
 import { execFileSync } from 'node:child_process';
+import { isMainEntry } from './main-entry.mjs';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { openSource } from './source.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const OWNER = 'CGS-26';
@@ -40,10 +42,10 @@ function normalizeLf(text) {
  * Return deterministic source-to-target plans for all tracked .claude/docs files.
  * Content adaptations are additive except for links that name the old docs root.
  */
-export async function referenceTargets({ root = ROOT } = {}) {
+export async function referenceTargets({ root = ROOT, source: gitSource = openSource({root}) } = {}) {
   const plans = [];
-  for (const source of listSourcePaths(root)) {
-    const bytes = await readFile(path.join(root, source));
+  for (const source of gitSource.list('.claude/docs/').map(f=>f.path).sort()) {
+    const bytes = gitSource.read(source);
     let content = normalizeLf(new TextDecoder('utf-8', { fatal: true }).decode(bytes));
     const transform_ids = [];
     if (DOC_PATH_RE.test(content)) {
@@ -138,7 +140,7 @@ async function main() {
   process.exitCode = 2;
 }
 
-if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+if (isMainEntry(import.meta.url)) {
   main().catch((error) => {
     process.stderr.write(`${error.message}\n`);
     process.exitCode = 1;

@@ -26,10 +26,10 @@ declined the write).
 
 Checked against the SKILL.md by `/skill-test spec` — no fixture needed.
 
-- [ ] Has required frontmatter fields: `name`, `description`, `argument-hint`, `user-invocable`, `allowed-tools`
+- [ ] Skill frontmatter has nonempty `name` and `description`; optional invocation policy is checked in `agents/openai.yaml` when present, without assuming source-only fields
 - [ ] Has ≥2 phase headings
 - [ ] Contains verdict keywords: COMPLETE, BLOCKED
-- [ ] Contains "May I write" collaborative protocol language before writing the doc
+- [ ] Defines contextual authorization for writes before writing the doc
 - [ ] Has a next-step handoff (Phase 8 follow-up list, e.g. `/balance-check`)
 
 ---
@@ -44,7 +44,7 @@ None. `/reverse-document` is a documentation utility. No director gates apply.
 
 Every case's `project.yaml` sets `modes.rigor: minimal` and
 `modes.automation: collaborative`, with no `project.local.yaml`, unless its own
-Fixture says otherwise. Rules: `studio-tests/CLAUDE.md` §
+Fixture says otherwise. Rules: `studio-tests/AGENTS.md` §
 Fixture defaults.
 
 ---
@@ -211,7 +211,7 @@ Fixture defaults.
 **Expected behavior:**
 1. The tier resolves to `minimal` from the config block, not assumed
 2. Findings are presented and answered before any draft
-3. The draft is a one-page game brief in the `.claude/docs/templates/game-brief.md`
+3. The draft is a one-page game brief in the `.agents/docs/templates/game-brief.md`
    format — not a GDD — for this one system
 4. The provenance banner sits directly under the title
 5. Skill asks "May I write this to `design/health-system-brief.md`?" — not
@@ -239,7 +239,7 @@ Fixture defaults.
 **Expected behavior:**
 1. The tier resolves to `minimal` from the config block; the path is the code root itself, so the target is the whole game, not one system
 2. Findings are presented and answered before any draft
-3. The draft is a one-page game brief in the `.claude/docs/templates/game-brief.md` format covering the whole game (pitch, core loop, what is built), not a GDD and not a brief for one system
+3. The draft is a one-page game brief in the `.agents/docs/templates/game-brief.md` format covering the whole game (pitch, core loop, what is built), not a GDD and not a brief for one system
 4. The provenance banner sits directly under the title
 5. Skill asks "May I write this to `design/game-brief.md`?" — not `design/gdd/`, and not a `design/[system-name]-brief.md` path
 6. File written on approval; verdict COMPLETE

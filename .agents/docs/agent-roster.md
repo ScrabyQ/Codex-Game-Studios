@@ -1,13 +1,6 @@
-# Agent Roster
+# Agent roster
 
-The following agents are available. Each has a dedicated definition file in
-`.claude/agents/`. Use the agent best suited to the task at hand. When a task
-spans multiple domains, the coordinating agent (usually `producer` or the
-domain lead) should delegate to specialists.
-
-Which model an agent runs on is set by the `model:` line in its own file;
-`model-tiers.md` lists the agents that pin one. Every other agent runs on the
-session's model.
+Native role definitions are `.codex/agents/*.toml`. Their `developer_instructions` define domain, escalation and capability ceilings. Use matching roles when authorized delegation and native loading are available; label in-session reviews as nonindependent. Actual loading/model execution require client verification. See `.codex/model-policy.json`; seniority does not pin a model.
 
 ## Tier 1 -- Leadership Agents
 | Agent | Domain | When to Use |

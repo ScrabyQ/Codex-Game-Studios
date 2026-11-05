@@ -11,7 +11,7 @@ Choose actual subagents only when supported, authorized, and justified by indepe
 
 Before any write, make an assignment with phase, role, mechanism, distilled inputs, exact owned paths, dependencies, allowed actions, expected artifact/return contract, and escalation. Resolve each path against the project root and account for aliases/case and ancestor-directory overlap. There is one active writer per file. If assignments overlap, do not launch them simultaneously: appoint one owner or serialize an explicit handoff after the first owner returns and the coordinator verifies the artifact. Reviewers read shared inputs and write separate review-[role] files. All required outputs must exist and be inspected before integration; integrate through one assigned owner. Read shared inputs once, pass relevant content rather than asking each role to reread everything, and preserve the source's summary/concerns return shape.
 
-Existing user authorization persists, including explicit synthetic fixture choices. The bounded exception covers only named new production/docs/tests artifacts from a gated phase; it never expands to existing source/config or design files. For implementation, propose and obtain authorization for the whole exact file set before editing unless that set is already authorized; normal phase approval alone does not supply missing write authorization. Available native questions or the same numbered plain-text choices replace widgets; wait for any required unanswered decision. Automation never grants permission or silently accepts an always-ask risk.
+Existing user authorization persists, including explicit synthetic fixture choices. A named path or phase gate defines scope but does not itself grant permission. For implementation, propose and obtain authorization for the whole exact file set before editing unless that set is already authorized; normal phase approval alone does not supply missing write authorization. Available native questions or the same numbered plain-text choices replace widgets; wait for any required unanswered decision. Automation never grants permission or silently accepts an always-ask risk.
 
 After each role, verify the named artifact, report actual status and evidence, and preserve outputs already completed. Missing artifact or incomplete response is a failed phase: surface it immediately, resume the same child or same sequential role with the unmet contract, then record BLOCKED if it still cannot complete. Offer the source retry/skip/stop choices and halt dependent phases. A chosen skip retains the gap and the source's blocked/unknown verdict precedence. Do not fabricate tests, engine validation, screenshots, profiling, assets, accessibility compliance or independent review. Pipeline parallel directives below mean issue independent calls together only when real delegation is available and paths do not conflict; the disclosed sequential fallback retains the same phase dependencies, artifacts, review criteria and output format.
 
@@ -30,7 +30,7 @@ When this skill is invoked:
 **Decision Points:** At each step transition, use `available user-question tool (or ask in plain text and wait)` to present
 the user with the subagent's proposals as selectable options. Write the agent's
 full analysis in conversation, then capture the decision with concise labels.
-In `collaborative` mode, the user must approve before moving to the next step.
+In collaborative mode, surface unresolved phase decisions and wait for the user; preserve decisions and actions already authorized.
 In `guided` mode the pipeline advances automatically unless a step is BLOCKED;
 in `autonomous` mode it runs end to end, recording each step outcome via
 `log_decision`. Decisions in `automation_always_ask` categories
@@ -98,18 +98,18 @@ enforced.**
 
 ## How to Delegate
 
-Use the `Agent` tool to spawn each team member as a subagent:
-- `subagent_type: narrative-director` — Narrative purpose, characters, emotional arc
-- `subagent_type: world-builder` — Lore context, environmental storytelling, world rules
-- `subagent_type: level-designer` — Spatial layout, pacing, encounters, navigation
-- `subagent_type: systems-designer` — Enemy compositions, loot tables, difficulty balance
-- `subagent_type: art-director` — Visual theme, color palette, lighting, asset requirements
-- `subagent_type: accessibility-specialist` — Navigation clarity, colorblind safety, cognitive load
-- `subagent_type: qa-tester` — Test cases, boundary testing, playtest checklist
+Use authorized native delegation when available for the following roles; otherwise use the disclosed in-session fallback or report PENDING:
+- `narrative-director` — Narrative purpose, characters, emotional arc
+- `world-builder` — Lore context, environmental storytelling, world rules
+- `level-designer` — Spatial layout, pacing, encounters, navigation
+- `systems-designer` — Enemy compositions, loot tables, difficulty balance
+- `art-director` — Visual theme, color palette, lighting, asset requirements
+- `accessibility-specialist` — Navigation clarity, colorblind safety, cognitive load
+- `qa-tester` — Test cases, boundary testing, playtest checklist
 
 **Brief each agent — do not dump context.** Read the shared inputs **once** and pass a distilled brief inline: the lines each agent actually needs, never a file path for a document you have already read (an agent handed a path re-reads the whole file). Pass a path only for a document you have not read and only that agent needs.
 
-**End every agent prompt with a return contract:** "Write your full output to `[path]` — that named path is your write authorisation under the bounded exception below, so write it without a separate approval prompt. Return **only** (1) the path written, (2) a ≤5-bullet summary of decisions, (3) any BLOCKED/CONCERNS items, one line each. Do not restate the documents you read." Without it, an agent returns everything it read back into this session.
+**End every agent prompt with a return contract:** "Write your full output to `[path]` — observe inherited authorization and the assigned path boundary. Return **only** (1) the path written, (2) a ≤5-bullet summary of decisions, (3) any BLOCKED/CONCERNS items, one line each. Do not restate the documents you read." Without it, an agent returns everything it read back into this session.
 
 **Substitute a real path for `[path]`.** Working artifacts go under
 `production/levels/[level-name]/`, slugged as in the "Save to" step below. One
@@ -129,13 +129,13 @@ file per agent, so the parallel steps never share one:
 These are working drafts; the durable record is the level design document you
 compile from them (`design/levels/[level-name].md`).
 
-> **Why this does not violate the Collaboration Protocol.** `CLAUDE.md` requires an agent to ask "May I write this to [filepath]?" before Write/Edit. A subagent spawned here writes **without** asking, and that is a deliberate, bounded exception rather than an oversight — the same call already made for `consistency-check` appending to `active.md`. The exception holds only when all three are true: (1) the path is one **you** named in the prompt, so the user approved the destination when they approved the phase; (2) it is a new artifact under `production/`, `docs/` or `tests/`, never an edit to existing source or config; (3) the phase that produced it is itself gated by an `available user-question tool (or ask in plain text and wait)` before the pipeline advances. Outside those three, the agent must ask. **Do not "fix" this by asking per subagent** — a prompt per agent per phase makes an orchestrator unusable, which is why the exception exists.
+> Named paths define assignment boundaries, not permission. Apply existing user authorization and host permissions; obtain a decision only for an unresolved choice or action outside that authorization.
 
 3. **Orchestrate the level design team** in sequence:
 
 ### Step 1: Narrative + Visual Direction (narrative-director + world-builder + art-director, parallel)
 
-Spawn all three agents simultaneously — issue all three `Agent` calls before waiting for any result.
+When authorized native delegation is available, run independent assignments in parallel and collect all results. Otherwise use the disclosed in-session fallback or report PENDING.
 
 Spawn the `narrative-director` agent to:
 - Define the narrative purpose of this area (what story beats happen here?)
@@ -249,16 +249,7 @@ into the level-design template format, ask the user directly via
 
 ## File Write Protocol
 
-Per-agent artifacts (narrative docs, test checklists) are written by the
-sub-agent that produced them, under the **bounded exception** documented above
-under "Why this does not violate the Collaboration Protocol" — the path is one
-you named, the artifact is new under `production/`, `docs/` or `tests/`, and the
-phase is gated by an `available user-question tool (or ask in plain text and wait)`. A sub-agent does **not** prompt per write
-inside those bounds; outside them it must ask. The **one exception is the final
-compiled level-design document**: the
-orchestrator already holds every input, so it compiles and writes that file
-itself after its own "May I write …?" prompt (Step 4) — re-spawning an agent
-just to write text the orchestrator is already holding is pure overhead.
+Assign each role its bounded work and paths. Existing user authorization and host permissions govern each write; a named path or phase gate does not itself grant permission. Preserve the pipeline’s final compilation ownership. When delegation is unavailable, disclose an in-session fallback or report PENDING. Prepare a reviewable draft only for unresolved decisions or actions outside authorization.
 
 Verdict: **COMPLETE** — level design document produced and all team outputs compiled.
 Verdict: **BLOCKED** — one or more agents blocked, or an agent was skipped (`.agents/docs/error-recovery-protocol.md` step 5); partial report produced with unresolved items listed.

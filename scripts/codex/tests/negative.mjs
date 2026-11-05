@@ -6,7 +6,9 @@ import {createHash} from 'node:crypto';
 import assert from 'node:assert/strict';
 const root=process.cwd(), tmp=mkdtempSync(path.join(tmpdir(),'cgs-ci-')), validator=path.join(root,'scripts/codex/validate.mjs');
 const inv=JSON.parse(readFileSync('docs/codex/upstream-inventory.json')), mig=JSON.parse(readFileSync('docs/codex/migration-manifest.json')), reg=JSON.parse(readFileSync('docs/codex/generation-manifest.json'));
-const files=new Set(['docs/codex/upstream-inventory.json','docs/codex/migration-manifest.json','docs/codex/generation-manifest.json','docs/codex/active-baseline.json','studio-tests/catalog.yaml',...reg.entries.flatMap(e=>[e.target,...(e.sources||[e.source])]),...mig.entries.flatMap(e=>[...(e.evidence||[]),...(e.target_sha256?[e.target]:[]),...(e.related_targets||[]).map(t=>t.target)])]);
+const files=new Set(['docs/codex/upstream-inventory.json','docs/codex/migration-manifest.json','docs/codex/generation-manifest.json','docs/codex/active-baseline.json','.codex/model-policy.json','.agents/rules/index.json','studio-tests/catalog.yaml',...reg.entries.map(e=>e.target),...mig.entries.flatMap(e=>[...(e.target&&(e.target_sha256||['PORTED','EQUIVALENT'].includes(e.status))?[e.target]:[]),...(e.related_targets||[]).map(t=>t.target)])]);
+for(const e of mig.retired_manual_mappings||[])files.add(e.target);
+files.add('.agents/framework-version');
 for(const m of readFileSync('studio-tests/catalog.yaml','utf8').matchAll(/^    spec: (\S+)/gm))files.add(m[1]);
 for(const f of files){const from=path.join(root,f),to=path.join(tmp,f);if(!existsSync(from))throw Error('Fixture input missing: '+f);mkdirSync(path.dirname(to),{recursive:true});copyFileSync(from,to)}
 const run=()=>spawnSync(process.execPath,[validator,'--root',tmp],{encoding:'utf8'});
@@ -14,10 +16,22 @@ const base=run();assert.equal(base.status,0,base.stderr);
 const cases=[];
 function changed(name,file,modify,reason){const p=path.join(tmp,file),original=readFileSync(p);try{writeFileSync(p,modify(original));const r=run();assert.notEqual(r.status,0,name);assert.match(r.stderr,reason,name);cases.push({name,exit:r.status,reason:true})}finally{writeFileSync(p,original)}}
 changed('inventory duplicate','docs/codex/upstream-inventory.json',b=>{const x=JSON.parse(b);x.files[1].path=x.files[0].path;return JSON.stringify(x)},/Duplicate inventory/);
+changed('missing source coverage','docs/codex/migration-manifest.json',b=>{const x=JSON.parse(b);x.entries=x.entries.filter(e=>e.id!=='file:'+inv.files[0].path);return JSON.stringify(x)},/Migration inventory mismatch/);
+changed('invalid support status','docs/codex/migration-manifest.json',b=>{const x=JSON.parse(b);x.entries[0].status='CLAIMED';return JSON.stringify(x)},/Invalid migration entry/);
+changed('active baseline has pending support','docs/codex/migration-manifest.json',b=>{const x=JSON.parse(b);x.entries[0].status='PENDING';return JSON.stringify(x)},/Pending support disposition/);
+changed('extra unknown matrix entry','docs/codex/migration-manifest.json',b=>{const x=JSON.parse(b);x.entries.push({...x.entries.find(e=>e.category!=='hook-declaration'),id:'file:unknown-fixture'});return JSON.stringify(x)},/Migration entry IDs do not match inventory/);
+changed('missing hook declaration','docs/codex/migration-manifest.json',b=>{const x=JSON.parse(b),i=x.entries.findIndex(e=>e.category==='hook-declaration');x.entries.splice(i,1);return JSON.stringify(x)},/Hook declaration count/);
+changed('unknown hook declaration ID','docs/codex/migration-manifest.json',b=>{const x=JSON.parse(b);x.entries.find(e=>e.category==='hook-declaration').id='hook:unknown-fixture';return JSON.stringify(x)},/Migration entry IDs do not match inventory/);
+changed('hook declaration source mismatch','docs/codex/migration-manifest.json',b=>{const x=JSON.parse(b);x.entries.find(e=>e.category==='hook-declaration').source='wrong';return JSON.stringify(x)},/Hook declaration mismatch/);
+changed('hook declaration hash mismatch','docs/codex/migration-manifest.json',b=>{const x=JSON.parse(b);x.entries.find(e=>e.category==='hook-declaration').source_sha256='0'.repeat(64);return JSON.stringify(x)},/Hook declaration mismatch/);
+changed('accepted support missing target','docs/codex/migration-manifest.json',b=>{const x=JSON.parse(b),e=x.entries.find(e=>['PORTED','EQUIVALENT'].includes(e.status));delete e.target;delete e.target_sha256;return JSON.stringify(x)},/Accepted support lacks target mapping/);
 changed('target corruption',reg.entries[0].target,b=>Buffer.concat([b,Buffer.from('changed')]),/Target drift/);
-changed('source corruption',reg.entries[0].sources?.[0]||reg.entries[0].source,b=>Buffer.concat([b,Buffer.from('changed')]),/Source drift/);
+changed('provenance inventory hash mismatch','docs/codex/upstream-inventory.json',b=>{const x=JSON.parse(b);x.files[0].sha256='0'.repeat(64);return JSON.stringify(x)},/Migration inventory mismatch/);
+changed('provenance registry hash mismatch','docs/codex/generation-manifest.json',b=>{const x=JSON.parse(b);x.entries[0].source_sha256='0'.repeat(64);return JSON.stringify(x)},/Registry source hash mismatch/);
+changed('unknown source','docs/codex/generation-manifest.json',b=>{const x=JSON.parse(b);delete x.entries[0].sources;x.entries[0].source='unknown-source';return JSON.stringify(x)},/Unknown registered source/);
 changed('duplicate target','docs/codex/generation-manifest.json',b=>{const x=JSON.parse(b);x.entries[1].target=x.entries[0].target;return JSON.stringify(x)},/Duplicate generated/);
 changed('missing catalog reference','studio-tests/catalog.yaml',b=>b.toString().replace(/spec: (\S+)/,'spec: studio-tests/does-not-exist.md'),/Missing catalog spec/);
+changed('same-size unrelated catalog name','studio-tests/catalog.yaml',b=>b.toString().replace(/^  - name: \S+/m,'  - name: unrelated-fixture'),/Catalog names do not match native components/);
 const entry=reg.entries.find(e=>e.target==='.agents/skills/help/SKILL.md'), target=path.join(tmp,entry.target), manifest=path.join(tmp,'docs/codex/generation-manifest.json'),matrix=path.join(tmp,'docs/codex/migration-manifest.json'), oldTarget=readFileSync(target),oldManifest=readFileSync(manifest),oldMatrix=readFileSync(matrix);
 function targetMutation(name,content,reason){try{writeFileSync(target,content);const digest=createHash('sha256').update(content).digest('hex'),x=JSON.parse(oldManifest),m=JSON.parse(oldMatrix);x.entries.find(e=>e.target===entry.target).target_sha256=digest;for(const e of m.entries){if(e.target===entry.target&&e.target_sha256)e.target_sha256=digest;for(const t of e.related_targets||[])if(t.target===entry.target)t.sha256=digest}writeFileSync(manifest,JSON.stringify(x));writeFileSync(matrix,JSON.stringify(m));const r=run();assert.notEqual(r.status,0,name);assert.match(r.stderr,reason,name);cases.push({name,exit:r.status,reason:true})}finally{writeFileSync(target,oldTarget);writeFileSync(manifest,oldManifest);writeFileSync(matrix,oldMatrix)}}
 targetMutation('wrong native format',Buffer.from('bad frontmatter\n'),/Invalid native skill format/);
@@ -27,7 +41,8 @@ const outside=path.join(mkdtempSync(path.join(tmpdir(),'cgs-ci-outside-')),'exis
 const escape=path.relative(path.dirname(target),outside).split(path.sep).join('/');
 targetMutation('external existing reference',Buffer.concat([oldTarget,Buffer.from('\n[outside]('+escape+')\n')]),/Skill reference escapes project/);
 const policy=path.join(tmp,'corrupt-policy.mjs'), source=readFileSync('scripts/codex/hooks.mjs','utf8'), corrupted=source.replace("return 'Destructive Git command denied'",'return null');
-assert.notEqual(source,corrupted);writeFileSync(policy,corrupted);
+assert.notEqual(source,corrupted);writeFileSync(policy,corrupted);copyFileSync('scripts/codex/shell.mjs',path.join(tmp,'shell.mjs'));
+copyFileSync('scripts/codex/main-entry.mjs',path.join(tmp,'main-entry.mjs'));
 const p=spawnSync(process.execPath,[path.join(root,'scripts/codex/tests/policy.mjs'),policy],{cwd:root,encoding:'utf8'});assert.notEqual(p.status,0);assert.match(p.stderr,/git reset --hard/);cases.push({name:'dangerous policy corruption',exit:p.status,reason:true});
 assert.equal(run().status,0,'baseline restored');
 console.log(JSON.stringify({baseline:base.status,cases,restored:0},null,2));

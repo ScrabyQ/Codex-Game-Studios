@@ -28,7 +28,7 @@ gap. No director gates are invoked.
 
 Checked against the SKILL.md by `/skill-test spec` — no fixture needed.
 
-- [ ] Has required frontmatter fields: `name`, `description`, `argument-hint`, `user-invocable`, `allowed-tools`
+- [ ] Skill frontmatter has nonempty `name` and `description`; optional invocation policy is checked in `agents/openai.yaml` when present, without assuming source-only fields
 - [ ] Has ≥2 phase headings
 - [ ] Contains status and verdict keywords: COMPLETE, IN PROGRESS, EARLY, NOT STARTED, NOT ASSESSED
 - [ ] Contains "May I write" before the optional report write to `docs/content-audit-[YYYY-MM-DD].md`
@@ -46,7 +46,7 @@ None. Content audit is an analysis skill; no gates are invoked.
 
 Every case's `project.yaml` sets `modes.rigor: minimal` and
 `modes.automation: collaborative`, with no `project.local.yaml`, unless its own
-Fixture says otherwise. Rules: `studio-tests/CLAUDE.md` §
+Fixture says otherwise. Rules: `studio-tests/AGENTS.md` §
 Fixture defaults.
 
 ---
@@ -198,7 +198,7 @@ Fixture defaults.
 **Expected behavior:**
 1. Skill reads the design inputs and scans the implementation; produces the gap table
 2. No director gate is invoked regardless of review mode
-3. Skill presents the gap table and summary before any write
+3. Skill presents the gap table and summary before any write that still needs authorization
 4. Skill asks "May I write the full report to `docs/content-audit-[YYYY-MM-DD].md`?"
 5. If the user says no, nothing is written; no asset file is ever modified
 
@@ -256,7 +256,7 @@ Fixture defaults.
 
 **Fixture:**
 - `modes.workflow` resolves to `full`
-- `project.yaml` has no `engine.name`; `.claude/docs/technical-preferences.md` reads `[TO BE CONFIGURED]`; both `src/` and `Source/` exist, so the tree does not decide the root
+- `project.yaml` has no `engine.name`; `.agents/docs/technical-preferences.md` reads `[TO BE CONFIGURED]`; both `src/` and `Source/` exist, so the tree does not decide the root
 - `design/gdd/systems-index.md` lists Levels (MVP) and Enemies (MVP)
 - `design/gdd/levels.md` specifies "6 levels"; `design/gdd/enemies.md` specifies "3 enemy types: Grunt, Sniper, Boss"
 - `assets/data/enemies/` contains 3 enemy files; no scene files exist under `assets/`

@@ -90,7 +90,7 @@ Read `project.yaml` to determine the following, falling back to `.agents/docs/te
 
 ## Phase 2: Spawn Security Engineer
 
-Spawn `security-engineer` via `Agent` — the audit is its job, so do not run the
+Spawn `security-engineer` using available authorized native delegation — the audit is its job, so do not run the
 categories in this session instead. If it cannot be spawned, say why, run the
 scan here, and let the report's **Audited by** line say so.
 

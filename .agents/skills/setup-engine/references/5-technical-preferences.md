@@ -1,6 +1,6 @@
 # $setup-engine — Section 5: Populate Technical Preferences
 
-**Codex substitution:** The mirrored technical-preferences file is generated and upstream sources are preserved. Do not edit either merely to satisfy the historical dual-write; maintain approved project.yaml values and mark legacy mirror synchronization PENDING if no independently user-owned mirror is available.
+Derive project settings and specialist routing from the choices below; project.yaml is the shared source of truth. Consult legacy preferences only where the documented resolution chain calls for them.
 
 
 > Part of `$setup-engine`. `SKILL.md` names when to read this file; the settings it
@@ -17,8 +17,7 @@
 - Engine Specialists Routing
 - Collaborative Step
 
-After updating CLAUDE.md, create or update `.agents/docs/technical-preferences.md` with
-engine-appropriate defaults. Read the existing template first, then fill in:
+Derive engine-appropriate preferences for project configuration. Use the documented configuration resolution chain and do not make a legacy mirror update a prerequisite.
 
 ### Engine & Language Section
 - Fill from the engine choice made in step 4
@@ -44,7 +43,7 @@ engine-appropriate defaults. Read the existing template first, then fill in:
 
 ### Input & Platform Section
 
-Populate `## Input & Platform` using the answers gathered in Section 2 (or extracted
+Derive input and platform preferences using the answers gathered in Section 2 (or extracted
 from the game concept). Derive the values using this mapping:
 
 | Platform target | Gamepad Support | Touch Support |
@@ -110,7 +109,7 @@ Example filled section:
 
 ### Engine Specialists Routing
 
-Also populate the `## Engine Specialists` section in `technical-preferences.md` with the correct routing for the chosen engine:
+Determine specialist routing for the selected engine and record supported project configuration:
 
 **For Godot** — see `references/godot-language-config.md` (**A3**) for the routing table matching the language chosen.
 
@@ -160,11 +159,4 @@ Also populate the `## Engine Specialists` section in `technical-preferences.md` 
 ```
 
 ### Collaborative Step
-Present the filled-in preferences to the user. For Godot, include the chosen language and note where the full naming conventions and routing tables live:
-> "Here are the default technical preferences for [engine] ([language if Godot]). The naming conventions and specialist routing are in this skill's references directory — I'll apply the [GDScript/C#/Both] variant. Want to customize any of these, or may I save them to `.agents/docs/technical-preferences.md`?"
-
-For all other engines, present the defaults directly without referencing the appendix.
-
-Wait for approval before writing the file.
-
----
+Present material unresolved choices and trade-offs. Follow existing user authorization for project configuration; ask only where a decision or authorization remains unresolved. Do not edit shared guidance merely as a project configuration operation.

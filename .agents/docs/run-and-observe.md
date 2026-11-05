@@ -1,4 +1,3 @@
-> **Codex path bridge (CGS-26):** Paths below that begin with .claude/skills/, .claude/scripts/, or .claude/hooks/ describe the preserved upstream source layout. For Codex runtime use, resolve corresponding adapted resources under .agents/skills/, .agents/scripts/, and .agents/hooks/. Hook paths are helper files only; Codex hook registration remains separate, opt-in, and subject to payload verification. Explicit legacy examples remain useful for upstream comparison.
 
 # Run and Observe
 
@@ -17,7 +16,7 @@ before it closes**, and the observation is a **retained screenshot** in
 `production/qa/evidence/`. Compiling proves the code loads. Tests prove the
 logic. Neither proves the text fits in the box.
 
-The agent can see images: Claude Code's `Read` tool renders a PNG. The whole
+Inspect PNGs using an image facility actually exposed by the host. If unavailable, visual assessment remains PENDING. The whole
 problem is getting a picture out of the engine unattended, and every supported
 engine has a native way.
 
@@ -43,7 +42,7 @@ engine has a native way.
    `production/epics/core/story-003-light-pickup.md`. Reference the image from
    the evidence doc. A screenshot that was taken and discarded is an
    assertion, not evidence. Beside it, stamp the files it proves:
-   `bash .claude/scripts/review-receipts.sh hash <each file the story changed> > production/qa/evidence/[story-slug]/stamp.txt`.
+   `bash .agents/scripts/review-receipts.sh hash <each file the story changed> > production/qa/evidence/[story-slug]/stamp.txt`.
    A later edit to one of them then shows the evidence as older than the code.
 6. **Report** one `Run result:` line in the implementation summary — vocabulary
    below.
@@ -152,8 +151,7 @@ the editor or a command you have confirmed (see
 
 `-game` runs standalone without the editor UI. The map is a **positional URL
 immediately after the `.uproject`** — not a console command. **The
-`MSYS_NO_PATHCONV=1` prefix is required on Windows:** Claude Code runs commands
-in Git Bash, which rewrites any argument beginning with `/` as a Windows path, so
+`MSYS_NO_PATHCONV=1` prefix is required when launching through Windows Git Bash:** Git Bash which rewrites any argument beginning with `/` as a Windows path, so
 `/Game/Maps/Shop` reaches the engine as `C:/Program Files/Git/Game/Maps/Shop`
 and the game stops on a "map not found" dialog nobody can see. Alternatively
 pass the map through `-ExecCmds="open /Game/Maps/Shop"`, which is not converted.

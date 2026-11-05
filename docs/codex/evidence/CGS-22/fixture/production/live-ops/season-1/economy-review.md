@@ -1,2 +1,0 @@
-# Economy-designer review
-Sequential in-session, not independent. Reward contents/prices are economy-designer responsibility; cadence belongs to live-ops-designer. The supplied premium +20% ranked damage is pay-to-win and violates economy-rules.md and ethics-policy.md. Recommend cosmetic banner only, retaining no paid combat modifier; do not apply this unapproved design change. No balancing formula or reward rates can make paid competitive damage cosmetic.

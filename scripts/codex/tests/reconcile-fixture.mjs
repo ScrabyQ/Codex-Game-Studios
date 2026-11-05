@@ -1,71 +1,238 @@
-import {mkdtempSync,readFileSync,writeFileSync,copyFileSync,mkdirSync,readdirSync,readlinkSync} from 'node:fs';
+import assert from 'node:assert/strict';
 import {spawnSync,execFileSync} from 'node:child_process';
+import {cpSync,existsSync,mkdtempSync,mkdirSync,readFileSync,realpathSync,writeFileSync,unlinkSync} from 'node:fs';
+import {createHash} from 'node:crypto';
 import {tmpdir} from 'node:os';
 import path from 'node:path';
-import {createHash} from 'node:crypto';
-import assert from 'node:assert/strict';
-import {baseline} from '../baseline.mjs';
-const root=process.cwd(),parent=mkdtempSync(path.join(tmpdir(),'cgs-reconcile-test-')),up=path.join(parent,'upstream'),work=path.join(parent,'work'),sha=baseline(root).source_commit;
-function git(cwd,...args){return execFileSync('git',args,{cwd,encoding:'utf8',stdio:['ignore','pipe','pipe']}).trim()}
-function checked(dir){assert.equal(path.resolve(git(dir,'rev-parse','--show-toplevel')),path.resolve(dir))}
-function config(key,fallback){try{return git(root,'config','--get',key)||fallback}catch{return fallback}}
-const identity=['-c','user.name='+config('user.name','CGS Fixture'),'-c','user.email='+config('user.email','fixture@example.invalid')];
-git(root,'clone','--quiet','--no-hardlinks',root,up);git(root,'clone','--quiet','--no-hardlinks',root,work);checked(up);checked(work);
-git(up,'switch','--detach',sha);
-const sources=['.claude/skills/help/SKILL.md','.claude/hooks/session-start.sh','.claude/rules/ai-code.md'];
-for(const p of sources)writeFileSync(path.join(up,p),readFileSync(path.join(up,p),'utf8')+'\n# CGS29 synthetic upstream change\n');
-git(up,...identity,'commit','-am','synthetic upstream changes');
-const next=git(up,'rev-parse','HEAD');git(work,'fetch','--quiet',up,next);
-// Only alter the fixture Git index for deletion: leave the physical source intact.
-git(up,'update-index','--force-remove',sources[1]);git(up,...identity,'commit','-m','synthetic source retirement');
-const removed=git(up,'rev-parse','HEAD');git(up,'add',sources[1]);writeFileSync(path.join(up,'.claude/skills/help/added-fixture.md'),'Synthetic new source\n');git(up,'add','.claude/skills/help/added-fixture.md');git(up,...identity,'commit','-m','synthetic source addition');
-const added=git(up,'rev-parse','HEAD');git(work,'fetch','--quiet',up,removed);git(work,'fetch','--quiet',up,added);
-const newBytes=sources.map(p=>execFileSync('git',['show',next+':'+p],{cwd:work}));
-for(const p of ['scripts/codex/upstream-tests.mjs','scripts/codex/upstream-common.mjs','scripts/codex/check-upstream.mjs','scripts/codex/sync-upstream.mjs']){mkdirSync(path.dirname(path.join(work,p)),{recursive:true});copyFileSync(path.join(root,p),path.join(work,p))}
-for(const p of ['scripts/codex/baseline.mjs','scripts/codex/reconcile-upstream.mjs','scripts/codex/inventory.mjs','scripts/codex/generate.mjs','scripts/codex/record-migration.mjs','scripts/codex/validate.mjs','scripts/codex/ci.mjs','scripts/codex/tests/negative.mjs','docs/codex/evidence/CGS-05/negative-tests.mjs','docs/codex/active-baseline.json']){mkdirSync(path.dirname(path.join(work,p)),{recursive:true});copyFileSync(path.join(root,p),path.join(work,p))}
-const run=(script,...a)=>spawnSync(process.execPath,['scripts/codex/'+script,...a],{cwd:work,encoding:'utf8'}),ok=r=>assert.equal(r.status,0,r.stderr||r.stdout),bad=(r,re)=>{assert.notEqual(r.status,0);assert.match(r.stderr,re)};
-const report='docs/codex/cgs29-review-fixture.md';writeFileSync(path.join(work,report),'Fixture-only recorded review and test evidence.\n');
-const inv=JSON.parse(readFileSync(path.join(work,'docs/codex/upstream-inventory.json'))),reg=JSON.parse(readFileSync(path.join(work,'docs/codex/generation-manifest.json')));
-const hash=b=>createHash('sha256').update(b).digest('hex');
-const overlayFiles=['docs/codex/overlays/help.json','docs/codex/overlays/helpers/session-start.sh.json'];
-const rebased=overlayFiles.map((p,i)=>{const x=JSON.parse(readFileSync(path.join(work,p)));x.source_sha256=hash(newBytes[i]);return JSON.stringify(x,null,2)+'\n'});
-const changes=sources.map((source,i)=>({source,old_sha256:inv.files.find(x=>x.path===source).sha256,new_sha256:hash(newBytes[i]),old_mode:inv.files.find(x=>x.path===source).mode,new_mode:inv.files.find(x=>x.path===source).mode,decision:'REBASE',evidence:[report],...(overlayFiles[i]?{overlay:{path:overlayFiles[i],sha256:hash(Buffer.from(rebased[i]))}}:{}),targets:reg.entries.filter(e=>(e.sources||[e.source]).includes(source)).map(e=>({target:e.target,old_sha256:e.target_sha256}))}));
-const hooks=inv.hooks.filter(h=>h.command.includes(sources[1])).map(h=>({id:h.id,decision:'REVIEW',evidence:[report]}));
-const plan={schema:1,reviewed:true,old_sha:sha,new_sha:next,changes,hooks},planFile='docs/codex/cgs29-fixture-plan.json',savePlan=x=>writeFileSync(path.join(work,planFile),JSON.stringify(x,null,2)+'\n');
-function fixtureSnapshot(dir,rel=''){const result=[];for(const e of readdirSync(path.join(dir,rel),{withFileTypes:true}).sort((a,b)=>a.name.localeCompare(b.name))){const p=path.join(rel,e.name);if(e.isDirectory())result.push(...fixtureSnapshot(dir,p));else if(e.isSymbolicLink())result.push([p,'link',readlinkSync(path.join(dir,p))]);else if(e.isFile())result.push([p,'file',hash(readFileSync(path.join(dir,p)))]);else throw Error('Unsupported fixture entry: '+p)}return result}
-savePlan(plan);const beforeArguments=fixtureSnapshot(work);
-bad(run('reconcile-upstream.mjs','prepare','--root',work,'--plan',planFile,'--dry-run'),/Unknown, duplicate or incomplete argument/);
-bad(run('reconcile-upstream.mjs','prepare','--root',work,'--root',work,'--plan',planFile),/Unknown, duplicate or incomplete argument/);
-bad(run('reconcile-upstream.mjs','prepare','--root',work,'--plan'),/Unknown, duplicate or incomplete argument/);
-bad(run('inventory.mjs','--dry-run'),/Unknown or duplicate inventory argument/);
-assert.deepEqual(fixtureSnapshot(work),beforeArguments,'invalid arguments must not mutate any fixture file');
-const noop={...plan,new_sha:sha,changes:[],hooks:[]};savePlan(noop);ok(run('reconcile-upstream.mjs','prepare','--root',work,'--plan',planFile));
-for(const candidate of [removed,added]){savePlan({...plan,new_sha:candidate});bad(run('reconcile-upstream.mjs','prepare','--root',work,'--plan',planFile),/Added or deleted sources require explicit human onboarding\/retirement/)}
-savePlan(plan);bad(run('reconcile-upstream.mjs','prepare','--root',work,'--plan',planFile),/not integrated into HEAD/);
-git(work,...identity,'merge','--no-commit','--no-ff',next);
-savePlan({...plan,changes:changes.map((c,i)=>i?c:{...c,new_sha256:'0'.repeat(64)})});bad(run('reconcile-upstream.mjs','prepare','--root',work,'--plan',planFile),/Stale, unreviewed/);
-savePlan(plan);const victim=path.join(work,changes[0].targets[0].target),old=readFileSync(victim);writeFileSync(victim,'manual change');bad(run('reconcile-upstream.mjs','prepare','--root',work,'--plan',planFile),/Manual target drift/);writeFileSync(victim,old);
-ok(run('reconcile-upstream.mjs','prepare','--root',work,'--plan',planFile));bad(run('validate.mjs'),/reconciliation PENDING/);bad(run('reconcile-upstream.mjs','finalize','--root',work),/Fresh valid non-pending/);
-const archived=path.join(work,'docs/codex/reconciliation',sha+'-'+next,'plan.json'),archivedBytes=readFileSync(archived);writeFileSync(archived,'{}');bad(run('generate.mjs','--family','skills','--names','help','--reconcile','--targets',changes[0].targets[0].target),/plan changed/);writeFileSync(archived,archivedBytes);
-const overlayPath=path.join(work,overlayFiles[0]);writeFileSync(overlayPath,rebased[0]);
-writeFileSync(victim,'manual change after prepare');bad(run('generate.mjs','--family','skills','--names','help','--reconcile','--targets',changes[0].targets[0].target),/Manual target drift/);writeFileSync(victim,old);
-bad(run('generate.mjs','--family','skills','--names','help','--reconcile','--targets','.agents/skills/help/not-reviewed.md'),/Unreviewed reconciliation target/);
-const sourcePath=path.join(work,sources[0]),inventoryPath=path.join(work,'docs/codex/upstream-inventory.json'),beforeSource=readFileSync(sourcePath),beforeInventory=readFileSync(inventoryPath),beforeOverlay=readFileSync(overlayPath);
-const auxiliary=beforeSource.toString().replace(/model: haiku\r?\n/,'disable-model-invocation: true\nmodel: haiku\n');assert.notEqual(auxiliary,beforeSource.toString());writeFileSync(sourcePath,auxiliary);const altInv=JSON.parse(beforeInventory);altInv.files.find(x=>x.path===sources[0]).sha256=hash(Buffer.from(auxiliary));writeFileSync(inventoryPath,JSON.stringify(altInv));const altOverlay=JSON.parse(beforeOverlay);altOverlay.source_sha256=hash(Buffer.from(auxiliary));writeFileSync(overlayPath,JSON.stringify(altOverlay));
-bad(run('generate.mjs','--family','skills','--names','help','--check','--verify-pending','--complete'),/Missing registered candidate target: .*openai.yaml/);writeFileSync(sourcePath,beforeSource);writeFileSync(inventoryPath,beforeInventory);writeFileSync(overlayPath,beforeOverlay);
-bad(run('generate.mjs','--family','support','--reconcile','--targets',changes[1].targets.map(t=>t.target).join(',')),/Helper overlay source mismatch/);
-const hookOverlayPath=path.join(work,overlayFiles[1]);writeFileSync(hookOverlayPath,rebased[1]);
-for(const c of changes){const skill=c.source.includes('/skills/'),rule=c.source.includes('/rules/');ok(run('generate.mjs','--family',skill?'skills':rule?'rules':'support',...(skill?['--names','help']:[]),'--reconcile','--targets',c.targets.map(t=>t.target).join(',')))}
-const mp=path.join(work,'docs/codex/migration-manifest.json'),matrix=JSON.parse(readFileSync(mp));for(const id of [...sources.map(x=>'file:'+x),...hooks.map(x=>x.id)]){const e=matrix.entries.find(x=>x.id===id);e.status='EQUIVALENT';e.verification='Fixture review and test recorded';e.evidence=[report]}writeFileSync(mp,JSON.stringify(matrix,null,2)+'\n');
-const hookRow=matrix.entries.find(x=>x.id===hooks[0].id),descriptorPath=path.join(work,'docs/codex/active-baseline.json'),pendingDescriptor=readFileSync(descriptorPath);hookRow.status='ACCEPTED';writeFileSync(mp,JSON.stringify(matrix,null,2)+'\n');bad(run('reconcile-upstream.mjs','finalize','--root',work),/Fresh valid non-pending/);assert.deepEqual(readFileSync(descriptorPath),pendingDescriptor);hookRow.status='EQUIVALENT';writeFileSync(mp,JSON.stringify(matrix,null,2)+'\n');
-bad(run('reconcile-upstream.mjs','finalize','--root',work),/Stale migration target mapping/);
-bad(run('record-migration.mjs','--source','missing','--task','CGS-29','--status','EQUIVALENT','--evidence',report,'--note','Fixture reviewed'),/one known matrix/);
-bad(run('record-migration.mjs','--source',sources[0],'--prefix','.claude/hooks/','--task','CGS-29','--status','EQUIVALENT','--evidence',report,'--note','Fixture reviewed'),/exactly one/);
-for(const source of sources)ok(run('record-migration.mjs','--source',source,'--task','CGS-29','--status','EQUIVALENT','--evidence',report,'--note','Fixture reviewed after regeneration'));
-const recorded=JSON.parse(readFileSync(mp)).entries.find(e=>e.source===sources[2]);assert.equal(recorded.target,'.agents/rules/ai-code.md');assert.ok(recorded.related_targets.some(t=>t.target==='.agents/rules/index.json'));
-const staleMatrix=JSON.parse(readFileSync(mp)),unchangedRule=staleMatrix.entries.find(e=>e.source==='.claude/rules/agent-memory.md');unchangedRule.related_targets=[{target:'.agents/rules/index.json',sha256:'0'.repeat(64)}];writeFileSync(mp,JSON.stringify(staleMatrix,null,2)+'\n');bad(run('reconcile-upstream.mjs','finalize','--root',work),/Stale recorded migration target/);assert.deepEqual(readFileSync(descriptorPath),pendingDescriptor);
-ok(run('record-migration.mjs','--source','.claude/rules/agent-memory.md','--task','CGS-29','--status',unchangedRule.status,'--evidence',report,'--note','Fixture refreshed shared rule index mapping'));
-ok(run('reconcile-upstream.mjs','finalize','--root',work));ok(run('validate.mjs'));ok(run('generate.mjs','--family','skills','--check'));ok(run('generate.mjs','--family','support','--check'));ok(run('inventory.mjs','--check'));
-const snapshotPath=path.join(work,'docs/codex/upstream-snapshot.json'),snapshotBytes=readFileSync(snapshotPath),snapshot=JSON.parse(snapshotBytes);snapshot.ref='tampered';writeFileSync(snapshotPath,JSON.stringify(snapshot));bad(run('inventory.mjs','--check'),/Historical snapshot changed/);writeFileSync(snapshotPath,snapshotBytes);ok(run('inventory.mjs','--check'));
-const post=run('ci.mjs','--skip-reconcile');ok(post);assert.match(post.stdout,/reconciliation fixture explicitly skipped/);
-console.log(JSON.stringify({result:'PASS',fixture:work,old_sha:sha,new_sha:next,changed:sources,hooks:hooks.map(h=>h.id),postpromotion_command:'node scripts/codex/ci.mjs --skip-reconcile',postpromotion_exit:post.status,postpromotion_output:post.stdout,checks:['no-op','added and deleted source fail-closed','unintegrated source refusal and actual no-commit merge','stale-plan refusal','manual-drift refusal before and after prepare','pending-CI refusal','pending-finalize refusal','archived-plan mutation refusal','unreviewed target refusal','missing auxiliary target refusal','stale overlay refusal and reviewed rebase','reviewed selected target regeneration','invalid hook status refusal with pending descriptor preserved','stale migration mapping refusal','exact source recorder includes rule index','fresh-evidence finalize','active validation and inventory','historical snapshot tamper refusal','all nonrecursive quick CI suites after promotion'],engine:'NOT ASSESSED'},null,2));
+import {readManualTarget} from '../safe-path.mjs';
+
+// Both Git histories are new, disposable, unrelated to the product checkout.
+const repo=process.cwd(),base=mkdtempSync(path.join(realpathSync(tmpdir()),'cgs reconcile native '));
+const source=path.join(base,'source'),product=path.join(base,'product'),out=path.join(base,'inventory');
+mkdirSync(source);mkdirSync(product);
+const git=(cwd,...args)=>execFileSync('git',args,{cwd,encoding:'utf8',stdio:['ignore','pipe','pipe']}).trim();
+const commit=(cwd,message)=>{git(cwd,'add','.');git(cwd,'-c','user.name=Fixture','-c','user.email=fixture@example.invalid','commit','--quiet','-m',message);return git(cwd,'rev-parse','HEAD')};
+const put=(root,p,value)=>{const f=path.join(root,p);mkdirSync(path.dirname(f),{recursive:true});writeFileSync(f,value)};
+const json=(root,p)=>JSON.parse(readFileSync(path.join(root,p),'utf8'));
+const sha=value=>createHash('sha256').update(value).digest('hex');
+const sourcePaths={
+  skill:n=>`.claude/skills/${n}/SKILL.md`,
+  agent:n=>`.claude/agents/${n}.md`,
+  rule:n=>`.claude/rules/${n}.md`,
+  hook:n=>`.claude/hooks/${n}.sh`,
+  template:n=>`.claude/docs/templates/${n}.md`
+};
+const content=(kind,name)=>kind==='skill'?`---\nname: ${name}\ndescription: Fixture skill\nallowed-tools: Read\n---\n# Fixture ${name}\n`:kind==='agent'?`---\nname: ${name}\ndescription: Fixture agent\ntools: Read\n---\n# Fixture ${name}\n`:kind==='hook'?`#!/bin/sh\necho ${name}\n`:`# Synthetic fixture ${name}\n`;
+git(source,'init','--quiet');
+put(source,'LICENSE','MIT fixture license\n');
+const settings=handler=>JSON.stringify({hooks:{SessionStart:[{matcher:'',hooks:[{type:'command',command:'bash .claude/hooks/'+handler+'.sh',timeout:10}]}]}});
+put(source,'.claude/settings.json',settings('hook-delete'));
+for(const [p,s] of [['README.md','# Source README\n'],['.claude/hooks/update-check.sh','#!/bin/sh\necho old\n'],['GUIDE-OLD.md','# Renamed source\n'],['OLD.md','# Removed source\n']])put(source,p,s);
+for(const [kind,make] of Object.entries(sourcePaths))for(const state of ['change','delete','rename'])put(source,make(kind+'-'+state),content(kind,kind+'-'+state));
+const old=commit(source,'Initial synthetic source');
+for(const [kind,make] of Object.entries(sourcePaths)){
+  const changed=make(kind+'-change');put(source,changed,content(kind,kind+'-change')+'\n# Updated\n');
+  git(source,'rm','--quiet',make(kind+'-delete'));
+  const renamed=make(kind+'-rename'),replacement=make(kind+'-renamed');mkdirSync(path.dirname(path.join(source,replacement)),{recursive:true});git(source,'mv',renamed,replacement);
+  put(source,make(kind+'-added'),content(kind,kind+'-added')+Array.from({length:30},(_,i)=>`Added ${kind} distinct content ${i}\n`).join(''));
+}
+put(source,'README.md','# Updated source README\n');put(source,'.claude/hooks/update-check.sh','#!/bin/sh\necho new\n');git(source,'mv','GUIDE-OLD.md','GUIDE-NEW.md');git(source,'rm','--quiet','OLD.md');
+put(source,'.claude/settings.json',settings('hook-change'));
+const next=commit(source,'Synthetic source changes');
+cpSync(path.join(repo,'scripts/codex'),path.join(product,'scripts/codex'),{recursive:true});
+const inventory=spawnSync(process.execPath,[path.join(repo,'scripts/codex/inventory.mjs'),'--candidate',old,'--output-dir',out,'--source-repo',source],{cwd:repo,encoding:'utf8'});
+assert.equal(inventory.status,0,inventory.stderr);
+const inv=json(out,'upstream-inventory.json'),matrix=json(out,'migration-manifest.json');
+const targets={
+  skill:'.agents/skills/demo/SKILL.md',
+  agent:'.codex/agents/demo-agent.toml',
+  rule:'.agents/rules/demo.md',
+  hook:'.agents/hooks/demo.sh',
+  template:'.agents/docs/templates/demo.md'
+};
+const native={
+  skill:'---\nname: demo\ndescription: Fixture skill\n---\n# Native skill\n',
+  agent:'name = "demo-agent"\ndescription = "Fixture role"\ndeveloper_instructions = "Fixture instructions"\n',
+  rule:'# Native scoped rule\n',
+  hook:'#!/bin/sh\necho native\n',
+  template:'# Native template\n'
+};
+const entries=[];
+for(const [kind,target] of Object.entries(targets)){
+ const sourcePath=sourcePaths[kind](kind+'-change'),info=inv.files.find(f=>f.path===sourcePath);
+ put(product,target,native[kind]);
+ entries.push({source:sourcePath,source_sha256:info.sha256,target,target_sha256:sha(native[kind]),ownership:'generated',transform_ids:['synthetic-test']});
+ const row=matrix.entries.find(e=>e.source===sourcePath);row.target=target;row.target_sha256=sha(native[kind]);
+}
+const ruleIndex='.agents/rules/index.json',index=JSON.stringify({schema:1,rules:[{id:'demo',target:targets.rule,patterns:['demo/**']}]})+'\n';
+put(product,ruleIndex,index);
+const ruleSource=sourcePaths.rule('rule-change'),ruleInfo=inv.files.find(f=>f.path===ruleSource);
+entries.push({source:ruleSource,source_sha256:ruleInfo.sha256,target:ruleIndex,target_sha256:sha(index),ownership:'generated',transform_ids:['synthetic-index']});
+const retiredTarget='.agents/hooks/retired.sh',retiredSource=sourcePaths.hook('hook-delete'),retiredInfo=inv.files.find(f=>f.path===retiredSource),retiredContent='#!/bin/sh\necho retired\n';
+put(product,retiredTarget,retiredContent);
+entries.push({source:retiredSource,source_sha256:retiredInfo.sha256,target:retiredTarget,target_sha256:sha(retiredContent),ownership:'generated',transform_ids:['synthetic-test']});
+const retiredRow=matrix.entries.find(e=>e.source===retiredSource);retiredRow.target=retiredTarget;retiredRow.target_sha256=sha(retiredContent);
+const manuals=[['README.md','README.md','# Native README\n'],['.claude/hooks/update-check.sh','scripts/codex/manual-check.mjs','// Native check\n'],['GUIDE-OLD.md','docs/manual-guide.md','# Native guide\n'],['OLD.md','docs/retained.md','# Retained native document\n']];
+for(const [sourcePath,target,bytes] of manuals){put(product,target,bytes);const row=matrix.entries.find(e=>e.source===sourcePath);row.target=target;row.target_sha256=sha(bytes)}
+delete matrix.entries.find(e=>e.source==='README.md').target_sha256;
+for(const target of ['.git/config','.env.local','Content/test.uasset','../outside.md'])assert.throws(()=>readManualTarget(product,target));
+for(const e of matrix.entries){e.status=e.target?'EQUIVALENT':'UNSUPPORTED';e.verification=e.target?'Synthetic reviewed baseline':'Synthetic source intentionally unsupported';}
+put(product,'docs/codex/upstream-inventory.json',JSON.stringify(inv));
+put(product,'docs/codex/migration-manifest.json',JSON.stringify(matrix));
+put(product,'docs/codex/generation-manifest.json',JSON.stringify({schema:1,source_commit:old,entries}));
+put(product,'docs/codex/active-baseline.json',JSON.stringify({schema:1,historical_source_commit:old,source_commit:old,reconciliation_evidence:[],state:'active'}));
+put(product,'.codex/model-policy.json',JSON.stringify({families:{},roles:{'demo-agent':{family:'inherit'}},skills:{demo:{family:'inherit'}}}));
+put(product,'studio-tests/catalog.yaml','skills:\n  - name: demo\n    spec: studio-tests/demo.md\nroles:\n  - name: demo-agent\n    spec: studio-tests/demo-agent.md\n');
+put(product,'studio-tests/demo.md','# Fixture\n');put(product,'studio-tests/demo-agent.md','# Fixture\n');
+put(product,'.gitignore','/.scratch/\n');
+const overlayPath='docs/codex/overlays/skill-change.json',overlaySource=sourcePaths.skill('skill-change');
+const oldOverlay=JSON.stringify({source_sha256:inv.files.find(f=>f.path===overlaySource).sha256,edits:[{find:'Fixture',replace:'Adapted'}]})+'\n';
+put(product,overlayPath,oldOverlay);
+const cli=(script,...args)=>spawnSync(process.execPath,[path.join(product,'scripts/codex',script+'.mjs'),...args],{cwd:product,encoding:'utf8',maxBuffer:16*1024*1024});
+const valid=cli('validate','--root',product);assert.equal(valid.status,0,valid.stderr||valid.stdout);
+git(product,'init','--quiet');git(product,'config','core.autocrlf','false');commit(product,'Initial synthetic native product');
+const before=git(product,'status','--porcelain=v1');
+const inspect=cli('check-upstream','--root',product,'--source-repo',source,'--source-ref',next);
+assert.equal(inspect.status,0,inspect.stderr);
+const report=JSON.parse(inspect.stdout);
+for(const kind of Object.keys(sourcePaths))for(const change of ['added','deleted','renamed','modified'])assert(report.changes.some(c=>c.category===kind&&c.change===change),kind+' '+change);
+for(const [sourcePath,target] of manuals)assert(report.changes.find(c=>c.old_path===sourcePath)?.targets.some(t=>t.target===target&&t.ownership==='manual'),`missing manual target ${target}`);
+const declarationChange=report.changes.find(c=>c.new_path==='.claude/settings.json');
+assert.equal(declarationChange.declarations.length,1);
+assert.match(declarationChange.declarations[0].old.command,/hook-delete\.sh/);
+assert.match(declarationChange.declarations[0].new.command,/hook-change\.sh/);
+assert.equal(git(product,'status','--porcelain=v1'),before);
+// Generate a real added-skill candidate directly from the new source commit.
+const candidateInventory=path.join(base,'new-inventory'),staging=path.join(base,'staged-overlays'),candidateDir=path.join(base,'new-candidates');mkdirSync(staging);
+const candidateInv=cli('inventory','--candidate',next,'--source-repo',source,'--source-ref',next,'--output-dir',candidateInventory);
+assert.equal(candidateInv.status,0,candidateInv.stderr||candidateInv.stdout);
+const stagedOverlayPath='docs/codex/overlays/skill-added.json',newSkillHash=json(candidateInventory,'upstream-inventory.json').files.find(f=>f.path===sourcePaths.skill('skill-added')).sha256;
+const candidateOverlay=pin=>JSON.stringify({source_sha256:pin,edits:[{find:'# Fixture skill-added',replace:'# Reviewed added skill'}]})+'\n';
+put(staging,stagedOverlayPath,candidateOverlay('0'.repeat(64)));
+const staleCandidate=cli('generate','--root',product,'--family','skills','--names','skill-added','--source-repo',source,'--source-ref',next,'--source-inventory',path.join(candidateInventory,'upstream-inventory.json'),'--overlay-root',staging,'--candidate-dir',candidateDir);
+assert.notEqual(staleCandidate.status,0);assert.match(staleCandidate.stderr,/Overlay source mismatch/);assert.equal(existsSync(candidateDir),false);
+const addedOverlay=candidateOverlay(newSkillHash);put(staging,stagedOverlayPath,addedOverlay);
+const generated=cli('generate','--root',product,'--family','skills','--names','skill-added','--source-repo',source,'--source-ref',next,'--source-inventory',path.join(candidateInventory,'upstream-inventory.json'),'--overlay-root',staging,'--candidate-dir',candidateDir);
+assert.equal(generated.status,0,generated.stderr||generated.stdout);
+const addedSkill='.agents/skills/skill-added/SKILL.md',addedSkillContent=readFileSync(path.join(candidateDir,addedSkill));
+assert.match(addedSkillContent.toString(),/# Reviewed added skill/);
+assert.equal(existsSync(path.join(product,addedSkill)),false);
+assert.equal(git(product,'status','--porcelain=v1'),before,'candidate generation changed the native product');
+const onboardSkill=root=>{const policy=json(root,'.codex/model-policy.json');policy.skills['skill-added']={family:'inherit'};put(root,'.codex/model-policy.json',JSON.stringify(policy));put(root,'studio-tests/catalog.yaml','skills:\n  - name: demo\n    spec: studio-tests/demo.md\n  - name: skill-added\n    spec: studio-tests/skill-added.md\nroles:\n  - name: demo-agent\n    spec: studio-tests/demo-agent.md\n');put(root,'studio-tests/skill-added.md','# Fixture\n');};
+const updated=new Map(Object.entries(targets).map(([kind,target])=>[target,native[kind]+'\n# Reviewed update\n']));
+for(const [sourcePath,target,bytes] of manuals)updated.set(target,sourcePath==='README.md'||sourcePath.endsWith('update-check.sh')?bytes+'\nReviewed change\n':bytes);
+updated.set(ruleIndex,index);
+const addedTarget='.agents/docs/templates/added.md',addedContent='# Reviewed new template\n';
+updated.set(addedTarget,addedContent);
+updated.set(addedSkill,addedSkillContent);
+const newOverlay=JSON.stringify({source_sha256:report.changes.find(c=>c.new_path===overlaySource).new_sha256,edits:[{find:'Fixture',replace:'Adapted'}]})+'\n';
+const changes=report.changes.map(c=>{
+ const fields=Object.fromEntries(['old_path','new_path','old_blob','new_blob','old_sha256','new_sha256','old_mode','new_mode'].map(k=>[k,c[k]]));
+ const mapped=c.targets.map(t=>({target:t.target,old_sha256:t.recorded_sha256,new_sha256:t.target===retiredTarget?null:sha(updated.get(t.target)),action:t.target===retiredTarget?'retire':t.target===ruleIndex||t.ownership==='manual'&&sha(updated.get(t.target))===t.recorded_sha256?'retain':'update',...(t.ownership==='manual'?{ownership:'manual'}:{})}));
+ if(c.new_path===sourcePaths.template('template-added'))mapped.push({target:addedTarget,old_sha256:null,new_sha256:sha(addedContent),action:'add',registration:{source:c.new_path,transform_ids:['reviewed-test']}});
+ if(c.new_path===sourcePaths.skill('skill-added'))mapped.push({target:addedSkill,old_sha256:null,new_sha256:sha(addedSkillContent),action:'add',registration:{source:c.new_path,transform_ids:['reviewed-test']}});
+ const overlays=c.old_path===overlaySource?[{path:overlayPath,old_sha256:sha(oldOverlay),new_sha256:sha(newOverlay)}]:c.new_path===sourcePaths.skill('skill-added')?[{path:stagedOverlayPath,old_sha256:null,new_sha256:sha(addedOverlay)}]:[];
+ return {...fields,decision:c.change==='deleted'?'retire':c.change==='modified'||mapped.length?'adapt':'retain',targets:mapped,overlays,declarations:c.declarations};
+});
+const plan={schema:2,reviewed:true,old_sha:old,new_sha:next,changes};
+const planPath=path.join(base,'reviewed-plan.json'),save=p=>writeFileSync(planPath,JSON.stringify(p,null,2)+'\n');
+const prepare=()=>cli('reconcile-upstream','prepare','--root',product,'--plan',planPath,'--source-repo',source,'--source-ref',next);
+const denied=(result,pattern)=>{assert.notEqual(result.status,0);assert.match(result.stderr,pattern);};
+const descriptor='docs/codex/active-baseline.json',baselineBytes=readFileSync(path.join(product,descriptor));
+save({...plan,reviewed:false});denied(prepare(),/Invalid reviewed plan/);
+save({...plan,changes:changes.slice(1)});denied(prepare(),/every source change/);
+const missingDeclaration=structuredClone(plan);missingDeclaration.changes.find(c=>c.new_path==='.claude/settings.json').declarations=[];save(missingDeclaration);denied(prepare(),/changed hook declarations/);
+const alteredDeclaration=structuredClone(plan);alteredDeclaration.changes.find(c=>c.new_path==='.claude/settings.json').declarations[0].new.command='wrong';save(alteredDeclaration);denied(prepare(),/changed hook declarations/);
+save(plan);
+denied(cli('reconcile-upstream','prepare','--root',product,'--plan',planPath,'--source-repo',source,'--source-ref',old),/Plan source commit mismatch/);
+const unrelated=path.join(base,'unrelated');mkdirSync(unrelated);git(unrelated,'init','--quiet');put(unrelated,'unrelated.txt','unrelated history\n');const unrelatedHead=commit(unrelated,'Unrelated history');
+const rewritten=cli('reconcile-upstream','prepare','--root',product,'--plan',planPath,'--source-repo',unrelated,'--source-ref',unrelatedHead);assert.notEqual(rewritten.status,0,'unrelated history must fail closed');
+const badSource=structuredClone(plan);badSource.changes[0].new_sha256='0'.repeat(64);save(badSource);denied(prepare(),/Source change guard mismatch/);
+const badTarget=structuredClone(plan),mappedChange=badTarget.changes.find(c=>c.targets.some(t=>t.old_sha256));mappedChange.targets.find(t=>t.old_sha256).old_sha256='0'.repeat(64);save(badTarget);denied(prepare(),/Target old hash mismatch/);
+const missingOverlay=structuredClone(plan);missingOverlay.changes.find(c=>c.old_path===overlaySource).overlays=[];save(missingOverlay);denied(prepare(),/overlay binding/i);
+const wrongOverlay=structuredClone(plan);wrongOverlay.changes.find(c=>c.old_path===overlaySource).overlays[0].old_sha256='0'.repeat(64);save(wrongOverlay);denied(prepare(),/overlay/i);
+const badDecision=structuredClone(plan);badDecision.changes.find(c=>c.old_path===retiredSource).decision='adapt';save(badDecision);denied(prepare(),/Decision does not match/);
+const badRetain=structuredClone(plan);badRetain.changes.find(c=>c.old_path===overlaySource).decision='retain';save(badRetain);denied(prepare(),/Retained target content cannot change/);
+// A reviewed overlay hash is insufficient if its embedded pin names another source.
+const pinProduct=path.join(base,'wrong-pin-product');git(base,'-c','core.autocrlf=false','clone','--quiet','--no-hardlinks',product,pinProduct);
+const pinPlan=structuredClone(plan),wrongPin=JSON.stringify({source_sha256:'0'.repeat(64),edits:[{find:'Fixture',replace:'Adapted'}]})+'\n';
+pinPlan.changes.find(c=>c.old_path===overlaySource).overlays[0].new_sha256=sha(wrongPin);
+const pinPlanPath=path.join(base,'wrong-pin-plan.json');writeFileSync(pinPlanPath,JSON.stringify(pinPlan));
+const pinCli=(...args)=>spawnSync(process.execPath,[path.join(pinProduct,'scripts/codex/reconcile-upstream.mjs'),...args],{cwd:pinProduct,encoding:'utf8'});
+const pinPrepare=pinCli('prepare','--root',pinProduct,'--plan',pinPlanPath,'--source-repo',source,'--source-ref',next);assert.equal(pinPrepare.status,0,pinPrepare.stderr);
+put(pinProduct,overlayPath,wrongPin);put(pinProduct,stagedOverlayPath,addedOverlay);for(const [target,bytes] of updated)put(pinProduct,target,bytes);unlinkSync(path.join(pinProduct,retiredTarget));
+denied(pinCli('apply','--root',pinProduct),/Overlay source pin mismatch/);
+assert.equal(json(pinProduct,descriptor).reconciliation_phase,'prepared');
+// Even a reviewed target hash cannot authorize structurally invalid native content.
+const invalidProduct=path.join(base,'invalid-target-product');git(base,'-c','core.autocrlf=false','clone','--quiet','--no-hardlinks',product,invalidProduct);
+const invalidPlan=structuredClone(plan),invalidBytes='invalid native frontmatter\n';
+invalidPlan.changes.find(c=>c.old_path===overlaySource).targets.find(t=>t.target===targets.skill).new_sha256=sha(invalidBytes);
+const invalidPlanPath=path.join(base,'invalid-target-plan.json');writeFileSync(invalidPlanPath,JSON.stringify(invalidPlan));
+const invalidCli=(...args)=>spawnSync(process.execPath,[path.join(invalidProduct,'scripts/codex/reconcile-upstream.mjs'),...args],{cwd:invalidProduct,encoding:'utf8'});
+const invalidPrepare=invalidCli('prepare','--root',invalidProduct,'--plan',invalidPlanPath,'--source-repo',source,'--source-ref',next);assert.equal(invalidPrepare.status,0,invalidPrepare.stderr);
+put(invalidProduct,overlayPath,newOverlay);put(invalidProduct,stagedOverlayPath,addedOverlay);for(const [target,bytes] of updated)put(invalidProduct,target,bytes);put(invalidProduct,targets.skill,invalidBytes);unlinkSync(path.join(invalidProduct,retiredTarget));onboardSkill(invalidProduct);
+const metadata=['docs/codex/active-baseline.json','docs/codex/upstream-inventory.json','docs/codex/generation-manifest.json','docs/codex/migration-manifest.json'];
+const prior=metadata.map(p=>readFileSync(path.join(invalidProduct,p)));
+const invalidApply=invalidCli('apply','--root',invalidProduct);denied(invalidApply,/apply failed validation; metadata restored/i);assert.match(invalidApply.stderr,/Invalid native skill format/);
+for(let i=0;i<metadata.length;i++)assert.deepEqual(readFileSync(path.join(invalidProduct,metadata[i])),prior[i],metadata[i]);
+save(plan);const driftTarget=targets.skill,driftFile=path.join(product,driftTarget),driftBefore=readFileSync(driftFile);writeFileSync(driftFile,'manual edit');denied(prepare(),/Dirty product or target drift/);assert.equal(readFileSync(driftFile,'utf8'),'manual edit');writeFileSync(driftFile,driftBefore);
+const manualTarget=path.join(product,'README.md'),manualBefore=readFileSync(manualTarget);writeFileSync(manualTarget,'unreviewed manual edit');denied(prepare(),/Dirty product or target drift/);assert.equal(readFileSync(manualTarget,'utf8'),'unreviewed manual edit');writeFileSync(manualTarget,manualBefore);
+put(product,'untracked-work.txt','local user work\n');denied(prepare(),/Dirty product or target drift/);unlinkSync(path.join(product,'untracked-work.txt'));
+assert.deepEqual(readFileSync(path.join(product,descriptor)),baselineBytes);
+const ready=prepare();assert.equal(ready.status,0,ready.stderr||ready.stdout);
+const pending=json(product,descriptor);assert.equal(pending.state,'pending');assert.equal(pending.reconciliation_phase,'prepared');
+assert.ok(pending.plan.startsWith('.scratch/'));assert.equal(existsSync(path.join(product,'.claude')),false);
+denied(cli('reconcile-upstream','finalize','--root',product),/Apply reviewed target changes first/);
+const archivePlan=path.join(product,pending.plan),archived=readFileSync(archivePlan);writeFileSync(archivePlan,'{}');denied(cli('reconcile-upstream','apply','--root',product),/Reviewed plan changed/);writeFileSync(archivePlan,archived);
+put(product,stagedOverlayPath,addedOverlay);
+denied(cli('reconcile-upstream','apply','--root',product),/Reviewed overlay hash mismatch/);
+put(product,overlayPath,newOverlay);
+denied(cli('reconcile-upstream','apply','--root',product),/Reviewed target hash mismatch/);
+assert.equal(json(product,descriptor).reconciliation_phase,'prepared');
+for(const [target,bytes] of updated)put(product,target,bytes);
+unlinkSync(path.join(product,retiredTarget));
+onboardSkill(product);
+const applied=cli('reconcile-upstream','apply','--root',product);assert.equal(applied.status,0,applied.stderr||applied.stdout);
+assert.equal(json(product,descriptor).reconciliation_phase,'applied');
+put(product,'fake-review.txt','file existence is not review\n');
+denied(cli('reconcile-upstream','finalize','--root',product),/Explicit review still pending/);
+unlinkSync(path.join(product,'fake-review.txt'));
+const matrixFile='docs/codex/migration-manifest.json';
+const matrixBefore=readFileSync(path.join(product,matrixFile));
+denied(cli('record-migration','--root',product,'--source',overlaySource,'--status','EQUIVALENT'),/reviewed verification note/i);
+assert.deepEqual(readFileSync(path.join(product,matrixFile)),matrixBefore);
+for(const sourcePath of [overlaySource,sourcePaths.skill('skill-added')]){
+ const recorded=cli('record-migration','--root',product,'--source',sourcePath,'--status','EQUIVALENT','--review','Reviewed synthetic candidate and native checks');
+ assert.equal(recorded.status,0,recorded.stderr||recorded.stdout);
+ assert.equal(json(product,matrixFile).entries.find(e=>e.source===sourcePath).status,'EQUIVALENT');
+}
+for(const sourcePath of ['README.md','.claude/hooks/update-check.sh','GUIDE-NEW.md']){const recorded=cli('record-migration','--root',product,'--source',sourcePath,'--status','EQUIVALENT','--review','Reviewed manually maintained target');assert.equal(recorded.status,0,recorded.stderr||recorded.stdout);assert.equal(json(product,matrixFile).entries.find(e=>e.source===sourcePath).status,'EQUIVALENT')}
+assert.ok(json(product,matrixFile).retired_manual_mappings.some(e=>e.source==='OLD.md'&&e.target==='docs/retained.md'));
+const declarationId=declarationChange.declarations[0].id;
+const declarationReview=cli('record-migration','--root',product,'--id',declarationId,'--status','UNSUPPORTED','--review','Synthetic hook declaration explicitly reviewed as unsupported');
+assert.equal(declarationReview.status,0,declarationReview.stderr||declarationReview.stdout);
+assert.equal(json(product,matrixFile).entries.find(e=>e.id===declarationId).status,'UNSUPPORTED');
+const reviewed=json(product,matrixFile),currentReg=json(product,'docs/codex/generation-manifest.json');
+for(const entry of reviewed.entries)if(entry.status==='PENDING'){const mapped=currentReg.entries.some(e=>e.source===entry.source||e.sources?.includes(entry.source));entry.status=mapped?'EQUIVALENT':'UNSUPPORTED';entry.verification=mapped?'Reviewed synthetic target and native checks':'Synthetic source deliberately unsupported';}
+put(product,matrixFile,JSON.stringify(reviewed));
+const reviewedTarget=path.join(product,targets.skill),reviewedBytes=readFileSync(reviewedTarget);
+writeFileSync(reviewedTarget,Buffer.concat([reviewedBytes,Buffer.from('\nUnreviewed drift\n')]));
+const finalDrift=cli('reconcile-upstream','finalize','--root',product);assert.notEqual(finalDrift.status,0);assert.equal(json(product,descriptor).state,'pending');
+writeFileSync(reviewedTarget,reviewedBytes);
+const finished=cli('reconcile-upstream','finalize','--root',product);assert.equal(finished.status,0,finished.stderr||finished.stdout);
+assert.equal(json(product,descriptor).state,'active');
+const finalCheck=cli('validate','--root',product);assert.equal(finalCheck.status,0,finalCheck.stderr||finalCheck.stdout);
+const retainedPath='docs/retained.md',retiredBefore=json(product,matrixFile).retired_manual_mappings.find(e=>e.target===retainedPath),retainedFile=path.join(product,retainedPath);
+writeFileSync(retainedFile,'# Reviewed native revision\n');
+denied(cli('validate','--root',product),/retired manual target drift/i);
+denied(cli('generate','--root',product,'--record-native','--targets','README.md'),/Unselected target drift/);
+const recordRetired=cli('generate','--root',product,'--record-native','--targets',retainedPath);assert.equal(recordRetired.status,0,recordRetired.stderr||recordRetired.stdout);
+const retiredAfter=json(product,matrixFile).retired_manual_mappings.find(e=>e.target===retainedPath);
+assert.equal(retiredAfter.source,retiredBefore.source);assert.equal(retiredAfter.source_commit,retiredBefore.source_commit);assert.equal(retiredAfter.source_sha256,retiredBefore.source_sha256);assert.equal(retiredAfter.target_sha256,sha('# Reviewed native revision\n'));
+assert.equal(cli('validate','--root',product).status,0);
+const intactMatrix=readFileSync(path.join(product,matrixFile));
+const duplicateRetired=json(product,matrixFile);duplicateRetired.retired_manual_mappings.push(structuredClone(duplicateRetired.retired_manual_mappings[0]));put(product,matrixFile,JSON.stringify(duplicateRetired));denied(cli('validate','--root',product),/Duplicate retired manual mappings/);
+const invalidRetired=json(product,matrixFile);invalidRetired.retired_manual_mappings=[{...retiredAfter,source_commit:'invalid'}];put(product,matrixFile,JSON.stringify(invalidRetired));denied(cli('validate','--root',product),/Invalid retired manual provenance/);writeFileSync(path.join(product,matrixFile),intactMatrix);
+assert.equal(existsSync(path.join(product,'.claude')),false);
+const finalReg=json(product,'docs/codex/generation-manifest.json');assert(finalReg.entries.some(e=>e.target===addedTarget));assert(!finalReg.entries.some(e=>e.target===retiredTarget));
+console.log('PASS synthetic five-family change detection, guarded prepare/apply/finalize, explicit review, addition and retirement');

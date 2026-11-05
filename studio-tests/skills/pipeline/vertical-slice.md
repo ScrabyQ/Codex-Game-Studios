@@ -15,7 +15,7 @@ and begin implementation?". Every slice file starts with a
 
 After a one-question-at-a-time debrief it writes
 `prototypes/[concept-name]-vertical-slice/REPORT.md` (from
-`.claude/docs/templates/vertical-slice-report.md`) and a `prototypes/index.md`
+`.agents/docs/templates/vertical-slice-report.md`) and a `prototypes/index.md`
 row, one ask naming both. Verdicts are **PROCEED / PIVOT / KILL**, plus
 **NOT ASSESSED** when nobody has played the loop through from scratch — ranked
 above PROCEED and below PIVOT and KILL, and never recorded as PROCEED. The verdict
@@ -37,7 +37,7 @@ appends to `prototypes/GRAVEYARD.md`.
 
 Checked against the SKILL.md by `/skill-test spec` — no fixture needed.
 
-- [ ] Has required frontmatter fields: `name`, `description`, `argument-hint`, `user-invocable`, `allowed-tools`
+- [ ] Skill frontmatter has nonempty `name` and `description`; optional invocation policy is checked in `agents/openai.yaml` when present, without assuming source-only fields
 - [ ] Has ≥2 phase headings
 - [ ] Contains verdict keywords: PROCEED, PIVOT, KILL, NOT ASSESSED
 - [ ] Contains "May I" language before creating the slice directory and before writing REPORT.md, PIVOT-NOTE.md and GRAVEYARD.md
@@ -69,7 +69,7 @@ Checked against the SKILL.md by `/skill-test spec` — no fixture needed.
 
 Every case's `project.yaml` sets `modes.rigor: minimal` and
 `modes.automation: collaborative`, with no `project.local.yaml`, unless its own
-Fixture says otherwise. Rules: `studio-tests/CLAUDE.md` §
+Fixture says otherwise. Rules: `studio-tests/AGENTS.md` §
 Fixture defaults.
 
 ---
@@ -102,7 +102,7 @@ Fixture defaults.
    GDScript file it writes starts with `# VERTICAL SLICE - NOT FOR PRODUCTION`
 4. Iterates with the user until the loop is playable, then asks for the
    from-scratch playthrough and puts the six debrief questions one at a time
-5. Drafts the report from `.claude/docs/templates/vertical-slice-report.md` with a
+5. Drafts the report from `.agents/docs/templates/vertical-slice-report.md` with a
    day-by-day velocity log; asks "May I write this report to
    `prototypes/ember-trail-vertical-slice/REPORT.md` and add its row to
    `prototypes/index.md`?"; writes both
@@ -132,7 +132,7 @@ Fixture defaults.
 **Expected behavior:**
 1. The skill does not record PROCEED: `/gate-check production` FAILs a built slice
    with any NO among its Vertical Slice Validation items
-   (`.claude/skills/gate-check/references/gate-production.md`)
+   (`.agents/skills/gate-check/references/gate-production.md`)
 2. It asks the user to choose PIVOT or KILL, naming question 1's answer as the reason
 3. The user picks PIVOT; REPORT.md is written, after its ask, with verdict PIVOT
    and the NO named
@@ -278,7 +278,7 @@ Fixture defaults.
 - [ ] Reads the concept (or the brief at `minimal`) before defining the validation question
 - [ ] Confirms scope before building; asks before recording the plan in `active.md` and before creating `prototypes/[concept-name]-vertical-slice/`
 - [ ] Keeps slice files under `prototypes/`, each with the `VERTICAL SLICE - NOT FOR PRODUCTION` header in its own comment syntax
-- [ ] Asks before writing REPORT.md (with its `prototypes/index.md` row), PIVOT-NOTE.md, GRAVEYARD.md and any post-gate report update
+- [ ] Checks existing authorization before writing and asks if unresolved REPORT.md (with its `prototypes/index.md` row), PIVOT-NOTE.md, GRAVEYARD.md and any post-gate report update
 - [ ] Never records PROCEED after a NO validation item, and never for a slice nobody has played
 - [ ] Applies the review mode before CD-PLAYTEST and prints the skip note when skipped
 - [ ] Ends with the per-verdict next steps

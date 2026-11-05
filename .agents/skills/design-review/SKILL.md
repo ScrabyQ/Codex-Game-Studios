@@ -104,7 +104,7 @@ existed and covers nothing.
   that prior pass was itself complete, and attention narrows to the flagged
   change even under an instruction to scan everything anyway.
 
-Read the target design document in full. This step needs the whole GDD: read it in ranges by its headings (found with the Grep tool: pattern `^#`, content mode), since a whole-file Read over 40 KB is refused. Read CLAUDE.md to understand project context and standards.
+Read the target design document in full. This step needs the whole GDD: read it in ranges by its headings (found with the Grep tool: pattern `^#`, content mode), since a whole-file Read over 40 KB is refused. Read AGENTS.md and selected applicable .agents guidance for project context and standards.
 
 **For cross-document facts, prefer the registry over sibling GDDs.** If
 `design/registry/entities.yaml` exists **and lists entries for this system**,
@@ -249,12 +249,7 @@ These are the most common baselines — but not required for pure UI specs, audi
 
 ### Step 2 — Spawn all relevant specialists in parallel
 
-**CRITICAL: `Agent` in this skill spawns a SUBAGENT — a separate independent Claude session
-with its own context window. It is NOT task tracking. Do NOT simulate specialist
-perspectives internally. Do NOT reason through domain views yourself. You MUST issue
-actual `Agent` calls. A simulated review is not a specialist review.**
-
-Issue all `Agent` calls simultaneously. Do NOT spawn one at a time.
+Use actual native delegation only when available and authorized. Independent role reviews may run in parallel; collect all results before the combined assessment. Otherwise disclose in-session reviews as not independent and report any required independent assessment NOT ASSESSED.
 
 **Prompt each specialist adversarially:**
 > "Here is the GDD for [system] and the main review's structural findings so far.

@@ -1,4 +1,6 @@
 import { existsSync, readFileSync, realpathSync } from 'node:fs';
+import {bashPath} from './shell.mjs';
+import {isMainEntry} from './main-entry.mjs';
 import { dirname, resolve, relative, isAbsolute } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
@@ -46,7 +48,7 @@ export function commandReason(command) {
   if (/\bgit(?:\.exe)?\b/i.test(command)) {
     if (/\bpush\b/i.test(command) && /--force(?:-with-lease|-if-includes)?\b|\s-[a-z]*f[a-z]*\b|(?:\s|["'])\+[^\s]+/i.test(command)) return 'Force push denied';
     if (/\breset\b[^\r\n;&|]*--hard\b|\bclean\b[^\r\n;&|]*(?:--force\b|\s-[a-z]*f[a-z]*\b)/i.test(command)) return 'Destructive Git command denied';
-    if (/\bpush\b/i.test(command) && !disablesUpstreamPush(command) && /\bupstream\b|Donchitos[/:\\]Claude-Code-Game-Studios/i.test(command)) return 'Push to upstream denied';
+    if (/\bpush\b/i.test(command) && !disablesUpstreamPush(command) && /(?:^|[\s"'=])upstream(?=$|[\s"'])|Donchitos[/:\\]Claude-Code-Game-Studios/i.test(command)) return 'Push to upstream denied';
   }
   return null;
 }
@@ -119,7 +121,7 @@ function backend(name, payload, root, options) {
   if (['validate-write', 'validate-push'].includes(name)) required.push('.agents/scripts/write-guard.sh');
   if (name === 'validate-registry') required.push('.agents/scripts/registry.sh');
   for (const file of required) if (!existsSync(resolve(root, file))) throw new Error(`Required project helper missing: ${file}`);
-  const shell = options.bash ?? process.env.CGS_BASH ?? (process.platform === 'win32' ? 'C:\\Program Files\\Git\\bin\\bash.exe' : 'bash');
+  const shell = options.bash ?? bashPath();
   const out = spawnSync(shell, [script], { cwd: root, input: JSON.stringify(payload), encoding: 'utf8', timeout: 30000, maxBuffer: 4 * 1024 * 1024, env: { ...process.env, CGS_PROJECT_DIR: root } });
   if (out.error || out.signal || out.status === null) throw new Error(`Hook ${name} did not run: ${out.error?.message ?? out.signal}`);
   let message = out.stdout.trim();
@@ -187,7 +189,7 @@ export function handle(event, payload, options = {}) {
     return { code: 2, root, observations, calls, reason, output: event === 'PreToolUse' ? { hookSpecificOutput: { hookEventName: event, permissionDecision: 'deny', permissionDecisionReason: reason } } : { systemMessage: reason } };
   }
 }
-if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+if (isMainEntry(import.meta.url)) {
   const args = process.argv.slice(2); let event = args.shift(), root, inputFile;
   const execute = event === 'run'; if (execute) event = 'PreToolUse';
   try {
@@ -198,7 +200,7 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
     if (result.code) { console.error(result.reason); process.exitCode = result.code; }
     else if (execute) {
       if (!['Bash', 'PowerShell', 'exec_command', 'shell_command'].includes(input.tool_name)) throw new Error('run supports shell payloads only');
-      const shell = input.tool_name === 'PowerShell' ? 'powershell.exe' : (process.env.CGS_BASH ?? (process.platform === 'win32' ? 'C:\\Program Files\\Git\\bin\\bash.exe' : 'bash'));
+      const shell = input.tool_name === 'PowerShell' ? 'powershell.exe' : (bashPath());
       const command = input.tool_input.command ?? input.tool_input.cmd;
       const r = spawnSync(shell, input.tool_name === 'PowerShell' ? ['-NoProfile', '-NonInteractive', '-Command', command] : ['-c', command], { cwd: result.root, stdio: 'inherit' });
       if (r.error) throw r.error; process.exitCode = r.status ?? 2;

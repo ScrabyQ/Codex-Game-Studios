@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { isMainEntry } from './main-entry.mjs';
 const policy = JSON.parse(readFileSync(new URL('../../.codex/model-policy.json', import.meta.url), 'utf8'));
 export function resolveModel({ role, skill, family, available, overrideSupported = false } = {}) {
   if (role && skill) throw new Error('Choose a role or a skill, not both.');
@@ -17,7 +18,7 @@ export function resolveModel({ role, skill, family, available, overrideSupported
   if (!selected) return { ...base, selected: null, action: 'inherit', reason: 'No policy model is in the supplied available catalog.' };
   return { ...base, selected, action: 'select', reason: selected === rule.preferred ? 'Preferred model is available.' : 'Preferred model unavailable; selected an available fallback.' };
 }
-if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+if (isMainEntry(import.meta.url)) {
   try {
     const args = process.argv.slice(2); if (args.shift() !== 'resolve') throw new Error('Usage: models.mjs resolve [--role ROLE|--skill SKILL|--family FAMILY] [--available CSV] [--override-supported]');
     const options = {};

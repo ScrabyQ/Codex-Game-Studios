@@ -2,7 +2,7 @@
 
 ## Skill Summary
 
-`/sprint-status` is a Haiku-tier read-only skill that produces a concise sprint
+`/sprint-status` is a read-only Skill that produces a concise sprint
 snapshot. It uses the sprint named by its argument, or the most recently
 modified file in `production/sprints/`, and reads `production/sprint-status.yaml`
 as the source of truth for story status (falling back to markdown scanning with
@@ -25,7 +25,7 @@ recommendation.
 
 Checked against the SKILL.md by `/skill-test spec` — no fixture needed.
 
-- [ ] Has required frontmatter fields: `name`, `description`, `argument-hint`, `user-invocable`, `allowed-tools`
+- [ ] Skill frontmatter has nonempty `name` and `description`; optional invocation policy is checked in `agents/openai.yaml` when present, without assuming source-only fields
 - [ ] Has ≥2 phase headings or numbered check sections
 - [ ] Contains burndown verdict keywords: On Track, At Risk, Behind
 - [ ] Does NOT require "May I write" language (read-only skill)
@@ -43,7 +43,7 @@ None. `/sprint-status` is a read-only reporting skill; no gates are invoked.
 
 Every case's `project.yaml` sets `modes.rigor: minimal` and
 `modes.automation: collaborative`, with no `project.local.yaml`, unless its own
-Fixture says otherwise. Rules: `studio-tests/CLAUDE.md` §
+Fixture says otherwise. Rules: `studio-tests/AGENTS.md` §
 Fixture defaults.
 
 ---
@@ -257,7 +257,7 @@ Fixture defaults.
 - [ ] Presents the story status table before the Burndown verdict
 - [ ] Does not ask for approval
 - [ ] Ends with at most one recommended next step
-- [ ] Declares `model: haiku` (when a declared tier is used: `.claude/docs/model-tiers.md`)
+- [ ] Uses native session policy without assuming a Skill model switch or unavailable model
 
 ---
 

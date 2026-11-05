@@ -9,9 +9,9 @@
 
 ## Static Assertions (Structural)
 
-- [ ] `description:` field is present and domain-specific (references live ops, seasonal events, battle pass, retention)
-- [ ] `tools:` reads `Read, Glob, Grep, Write, Edit` and `disallowedTools:` names `Bash` — design documents only, no shell, code or analytics tooling
-- [ ] Model tier is `inherit` — frontmatter `model:` reads exactly `inherit` (tiers: `.claude/docs/model-tiers.md`)
+- [ ] `description` field is present and domain-specific (references live ops, seasonal events, battle pass, retention)
+- [ ] Developer instructions preserve capability ceiling (Read, Glob, Grep, Write, Edit, Bash); responsibility limits are not native grants or assumed client capabilities
+- [ ] Native TOML has nonempty `name`, domain-specific `description` and `developer_instructions`; model selection follows supported session policy, with runtime verification separate
 - [ ] Agent definition does not claim authority over economy math, analytics pipelines, or narrative direction
 
 ---
@@ -25,7 +25,7 @@
 - The event brief carries every field its Event Design requires: start date, end date, mechanics, rewards, success criteria — plus a fallback plan if the event breaks (disable, extend, compensate)
 - Includes daily login retention hooks (e.g., daily challenges, login streaks, time-limited rewards) — the request's "reasons to log in daily" — paced across the full 3 weeks, not front-loaded into the first days (e.g., weekly milestones, or the weekly challenges its Weekly cadence tier names)
 - Names reward categories (cosmetic, functional, currency) but does NOT assign specific reward values or currency amounts — those are left to economy-designer ("exact values assigned by economy-designer")
-- Asks before writing the brief to `design/live-ops/events/`
+- Checks existing authorization before writing and asks if unresolved the brief to `design/live-ops/events/`
 
 ### Case 2: Out-of-domain request — reward value calculation
 **Input**: "How much premium currency should we give out in this event? What's the fair value of each cosmetic reward tier?"

@@ -24,10 +24,10 @@ when the user declines the write.
 
 Checked against the SKILL.md by `/skill-test spec` — no fixture needed.
 
-- [ ] Has required frontmatter fields: `name`, `description`, `argument-hint`, `user-invocable`, `allowed-tools`
+- [ ] Skill frontmatter has nonempty `name` and `description`; optional invocation policy is checked in `agents/openai.yaml` when present, without assuming source-only fields
 - [ ] Has ≥2 phase headings
 - [ ] Contains verdict keywords: COMPLETE, BLOCKED
-- [ ] Contains "May I write" collaborative protocol language (for the control manifest)
+- [ ] Defines contextual authorization for writes (for the control manifest)
 - [ ] Has a next-step handoff at the end (`/create-epics` then `/create-stories`)
 - [ ] Documents that only Accepted ADRs are included (not Proposed)
 - [ ] Names gate TD-MANIFEST and its solo/lean skip notes
@@ -37,7 +37,7 @@ Checked against the SKILL.md by `/skill-test spec` — no fixture needed.
 ## Director Gate Checks
 
 One gate: **TD-MANIFEST** (`technical-director`,
-`.claude/docs/director-gates/td-manifest.md`), spawned after the user accepts the
+`.agents/docs/director-gates/td-manifest.md`), spawned after the user accepts the
 Phase 4 rule summary and before the Phase 5 write ask.
 
 - `full` → spawned; receives the Control Manifest Preview, the ADRs covered, the
@@ -45,7 +45,7 @@ Phase 4 rule summary and before the Phase 5 write ask.
 - `lean` → skipped; output notes "TD-MANIFEST skipped — Lean mode."
 - `solo` → skipped; output notes "TD-MANIFEST skipped — Solo mode."
 
-Verdict handling: APPROVE → proceed to the write ask; CONCERNS → `AskUserQuestion`
+Verdict handling: APPROVE → proceed to the write ask; CONCERNS → `user question`
 with `Revise flagged rules` / `Accept and proceed` / `Discuss further`; REJECT →
 the manifest is not written, flagged rules are fixed and the summary re-presented;
 NOT ASSESSED [missing input] → never read as APPROVE: the missing input is named,
@@ -58,7 +58,7 @@ then supplied and the gate re-run, or the run goes on with
 
 Every case's `project.yaml` sets `modes.rigor: minimal` and
 `modes.automation: collaborative`, with no `project.local.yaml`, unless its own
-Fixture says otherwise. Rules: `studio-tests/CLAUDE.md` §
+Fixture says otherwise. Rules: `studio-tests/AGENTS.md` §
 Fixture defaults.
 
 ---
@@ -94,7 +94,7 @@ Fixture defaults.
 - [ ] All 4 Accepted ADRs are listed under `ADRs Covered` in the manifest header
 - [ ] Each layer section has `### Required Patterns` and `### Forbidden Approaches`
 - [ ] Every rule carries its source — `— source: [ADR-NNNN]` for a layer rule; a global rule names its `project.yaml` / `technical-preferences.md` key or engine-reference file (e.g. `deprecated-apis.md`)
-- [ ] Preview is shown and "Does this rule summary look complete?" is asked before any write ask
+- [ ] Preview is shown and "Does this rule summary look complete?" is asked before any write that still needs authorization ask
 - [ ] "TD-MANIFEST skipped — Solo mode." appears; no technical-director is spawned
 - [ ] Skill does NOT write before the "May I write the Control Manifest?" approval
 - [ ] Verdict is COMPLETE after writing
@@ -186,7 +186,7 @@ Fixture defaults.
 **Expected behavior:**
 1. Skill shows the Phase 4 preview; user picks
    `[A] Yes — looks good, run the director review and write the manifest`
-2. Spawns `technical-director` via `Agent` with gate TD-MANIFEST, passing the
+2. Spawns `technical-director` through native delegation with gate TD-MANIFEST, passing the
    preview (full rule list), ADRs covered and engine version
 3. On REJECT: does not write the manifest; fixes the flagged rule and re-presents
    the summary
@@ -196,7 +196,7 @@ Fixture defaults.
 - [ ] TD-MANIFEST is spawned only after the Phase 4 summary is accepted
 - [ ] The gate receives the rule list, ADRs covered and engine version
 - [ ] On REJECT no manifest file is written
-- [ ] The flagged rule is revised and the summary re-presented before any write ask
+- [ ] The flagged rule is revised and the summary re-presented before any write that still needs authorization ask
 - [ ] No "TD-MANIFEST skipped" note appears in `full` mode
 
 ---

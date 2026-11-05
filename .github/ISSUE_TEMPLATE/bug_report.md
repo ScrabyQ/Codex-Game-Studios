@@ -1,6 +1,6 @@
 ---
 name: Bug Report
-about: Something isn't working as expected
+about: Report a reproducible studio problem
 title: "[Bug] "
 labels: bug
 assignees: ''
@@ -8,42 +8,36 @@ assignees: ''
 
 ## Description
 
-A clear description of what the bug is.
+What failed, and which workflow were you trying to complete?
 
-## Steps to Reproduce
+## Reproduction
 
-1. Open Claude Code in a project using this template
-2. Run `/<skill>` or trigger `<agent>`
-3. ...
-4. See error
+1. Start from this project state/configuration:
+2. Invoke this skill, role, adapter command, or UI action:
+3. Observe:
 
-## Expected Behavior
+Include the smallest relevant input with private data removed.
 
-What you expected to happen.
+## Expected and actual behavior
 
-## Actual Behavior
-
-What actually happened. Include any error messages or unexpected output.
+Describe both and include the exact sanitized error when available.
 
 ## Environment
 
-- **OS**: (e.g., Windows 10, macOS 14, Ubuntu 24.04)
-- **Shell**: (e.g., Git Bash, zsh, bash)
-- **Claude Code version**: (run `claude --version`)
-- **Node.js version**: (run `node --version`)
-- **jq installed?**: Yes / No
-- **Python installed?**: Yes / No
+- OS and version:
+- Codex client/interface and version:
+- Studio release or commit:
+- Component and path (skill, role, adapter, rule, template, or documentation):
+- Shell and relevant Node/Bash/Python versions:
+- Relevant engine/version, if applicable:
+- Explicit CLI fallback or native integration? If native, how was it verified?
 
-## Affected Component
+## Diagnostics
 
-- [ ] Agent (which one?):
-- [ ] Skill (which one?):
-- [ ] Hook (which one?):
-- [ ] Rule (which one?):
-- [ ] Template
-- [ ] Documentation
-- [ ] Other:
+Include only the relevant sanitized output and reproduction details.
+Remove tokens, credentials, personal paths, private project content, and other
+sensitive data. Do not attach secret files or entire private session logs.
 
-## Additional Context
+## Additional context
 
-Any other context — screenshots, terminal output, or the session log if relevant.
+Relevant screenshots, known workaround, frequency, or regression range.

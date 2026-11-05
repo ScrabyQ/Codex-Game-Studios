@@ -9,7 +9,7 @@ description: "Orchestrate the narrative team — narrative-director, writer, wor
 
 Delegate only when supported, authorized and justified. A supported generic child can receive the complete relevant role brief, but report the actual mechanism and handle. Otherwise use **sequential in-session role execution; not independent review**: read the relevant adapted role and gate criteria, including gate files in-session when needed for this disclosed fallback, and perform the same bounded assignment/output/review contract. Source child-only writes map to the assigned role's authorized work, not permission to skip that role or grant the coordinator unrestricted writes. Keep the source's final compilation ownership and qa-lead reply-only sign-off return. A self-check or in-session opinion is never a fresh independent sign-off. Missing capability remains named PENDING/NOT ASSESSED; do not silently substitute a role or invent an executed review.
 
-Each assignment carries phase, role, exact owned paths, inputs, dependencies, permission scope, expected artifact and return status. One active writer per canonical file; resolve case/alias/directory overlap before scheduling. Independent reviews write separate files and integration waits for every required artifact. A missing artifact or incomplete return fails the phase: resume the same role with the unmet contract, preserve partial outputs, and stop dependent phases if still blocked. Never fill a skipped department's section with invented findings. Keep the source bounded exception for named new production/docs/tests artifacts only; design finals, implementation/existing files and external actions retain their own authorization boundaries.
+Each assignment carries phase, role, exact owned paths, inputs, dependencies, permission scope, expected artifact and return status. One active writer per canonical file; resolve case/alias/directory overlap before scheduling. Independent reviews write separate files and integration waits for every required artifact. A missing artifact or incomplete return fails the phase: resume the same role with the unmet contract, preserve partial outputs, and stop dependent phases if still blocked. Never fill a skipped department's section with invented findings. Named paths define ownership, not permission. All work follows inherited authorization and host permissions.
 
 Preserve the decision hierarchy: peers consult without binding decisions outside their domain; unresolved conflicts go to their shared parent. If none exists, use creative-director for design conflicts or technical-director for technical conflicts. Narrative-director settles writer/world-builder canon disagreements by presenting reconciliation options for the user to confirm; do not automatically escalate a shared-parent canon dispute further. Producer coordinates schedules and propagation. Directors and producer offer domain recommendations/verdicts, **never user permission**. Prior authorization persists; do not ask again for an already authorized exact action. For an unresolved decision use an available native question tool or equivalent plain-text choices and wait; a skipped/empty answer is not consent.
 
@@ -29,7 +29,7 @@ When this skill is invoked with an argument, orchestrate the narrative team thro
 **Decision Points:** At each phase transition, use `available user-question tool (or ask in plain text and wait)` to present
 the user with the subagent's proposals as selectable options. Write the agent's
 full analysis in conversation, then capture the decision with concise labels.
-In `collaborative` mode, the user must approve before moving to the next phase.
+In collaborative mode, surface unresolved phase decisions and wait for the user; preserve decisions and actions already authorized.
 In `guided` mode the pipeline advances automatically unless a phase is BLOCKED;
 in `autonomous` mode it runs end to end, recording each phase outcome via
 `log_decision`. Decisions in `automation_always_ask` categories
@@ -96,22 +96,22 @@ enforced.**
 
 ## How to Delegate
 
-Use the `Agent` tool to spawn each team member as a subagent:
-- `subagent_type: narrative-director` — Story arcs, character design, narrative vision
-- `subagent_type: writer` — Dialogue writing, lore entries, in-game text
-- `subagent_type: world-builder` — World rules, faction design, history, geography
-- `subagent_type: art-director` — Character visual profiles, environmental visual storytelling, cinematic tone
-- `subagent_type: level-designer` — Level layouts that serve the narrative, pacing
-- `subagent_type: localization-lead` — Localization readiness — flags non-localizable strings, cultural assumptions, and i18n gaps
+Use authorized native delegation when available for the following roles; otherwise use the disclosed in-session fallback or report PENDING:
+- `narrative-director` — Story arcs, character design, narrative vision
+- `writer` — Dialogue writing, lore entries, in-game text
+- `world-builder` — World rules, faction design, history, geography
+- `art-director` — Character visual profiles, environmental visual storytelling, cinematic tone
+- `level-designer` — Level layouts that serve the narrative, pacing
+- `localization-lead` — Localization readiness — flags non-localizable strings, cultural assumptions, and i18n gaps
 
 **Read the canon first.** Before Phase 1, read the shared inputs that exist — the narrative bible or tone guide, the character and faction files under `design/narrative/`, and the world rules. Never tell an agent to invent canon: if none exists, say so and ask the user before any drafting.
 
 **Brief each agent — do not dump context.** Read the shared inputs **once** and pass a distilled brief inline: the lines each agent actually needs, never a file path for a document you have already read (an agent handed a path re-reads the whole file). Pass a path only for a document you have not read and only that agent needs.
 
-**End every agent prompt with a return contract:** "Write your full output to `[path]` — that named path is your write authorisation under the bounded exception below, so write it without a separate approval prompt. Return **only** (1) the path written, (2) a ≤5-bullet summary of decisions, (3) any BLOCKED/CONCERNS items, one line each. Do not restate the documents you read." Without it, an agent returns everything it read back into this session.
+**End every agent prompt with a return contract:** "Write your full output to `[path]` — observe inherited authorization and the assigned path boundary. Return **only** (1) the path written, (2) a ≤5-bullet summary of decisions, (3) any BLOCKED/CONCERNS items, one line each. Do not restate the documents you read." Without it, an agent returns everything it read back into this session.
 
 **Substitute a real path for `[path]`.** Agents write drafts under
-`production/narrative/[content-slug]/` — inside the bounded exception below. The
+`production/narrative/[content-slug]/` — within the assigned authorized scope. The
 finished documents belong in `design/narrative/`, which the exception does **not**
 cover, so **you** write those after one approval (see "Write the finals"):
 
@@ -134,7 +134,7 @@ cover, so **you** write those after one approval (see "Write the finals"):
 > run to invent one, which defeats it. `$team-qa` Phase 4 carries the same
 > requirement for the same reason.
 
-> **Why this does not violate the Collaboration Protocol.** `CLAUDE.md` requires an agent to ask "May I write this to [filepath]?" before Write/Edit. A subagent spawned here writes **without** asking, and that is a deliberate, bounded exception rather than an oversight — the same call already made for `consistency-check` appending to `active.md`. The exception holds only when all three are true: (1) the path is one **you** named in the prompt, so the user approved the destination when they approved the phase; (2) it is a new artifact under `production/`, `docs/` or `tests/`, never an edit to existing source or config; (3) the phase that produced it is itself gated by an `available user-question tool (or ask in plain text and wait)` before the pipeline advances. Outside those three, the agent must ask. **Do not "fix" this by asking per subagent** — a prompt per agent per phase makes an orchestrator unusable, which is why the exception exists.
+> Named paths define assignment boundaries, not permission. Apply existing user authorization and host permissions; obtain a decision only for an unresolved choice or action outside that authorization.
 
 Launch independent agents in parallel where the pipeline allows it (e.g., Phase 2 agents can run simultaneously).
 
@@ -149,7 +149,7 @@ Delegate to **narrative-director**:
 - Output: narrative brief with story requirements
 
 ### Phase 2: World Foundation (parallel)
-Delegate in parallel — issue all three `Agent` calls simultaneously before waiting for any result:
+When authorized native delegation is available, delegate independent work in parallel and collect all results; otherwise use the disclosed in-session fallback or report PENDING:
 - **world-builder**: Create or update lore entries for factions, locations, and history relevant to this content. Cross-reference against existing lore for contradictions. Set canon level for new entries.
 - **writer**: Draft character dialogue using voice profiles. Ensure all lines are under 120 characters, use named placeholders for variables, and are localization-ready.
 - **art-director**: Define character visual design direction for key characters appearing in this content (silhouette, visual archetype, distinguishing features). Specify environmental visual storytelling elements for each key space (prop composition, lighting notes, spatial arrangement). Define tone palette and cinematic direction for any cutscenes or scripted sequences.
@@ -168,7 +168,7 @@ Delegate to **level-designer**:
 - Ensure pacing serves both gameplay and story
 
 ### Phase 4: Review and Consistency
-Spawn `narrative-director` via `Agent` using gate **ND-CONSISTENCY**
+Spawn `narrative-director` using available authorized native delegation using gate **ND-CONSISTENCY**
 (`.agents/docs/director-gates/nd-consistency.md`). This phase runs in every review
 mode — it is this pipeline's own review, not an optional director gate. Pass the
 context that gate lists (the Phase 2–3 draft paths, the narrative bible or tone
@@ -192,7 +192,7 @@ active at `team.size: individual`; consistency self-checked by writer." A
 self-check is not the gate's verdict, and the report must not present it as one.
 
 ### Phase 5: Polish (parallel)
-Delegate in parallel — issue every `Agent` call before waiting for any result:
+When authorized native delegation is available, delegate independent work in parallel and collect all results; otherwise use the disclosed in-session fallback or report PENDING:
 - **writer**: Final self-review — verify no line exceeds dialogue box constraints, all text uses string keys (not raw strings), placeholder variable names are consistent
 - **localization-lead**: Validate i18n compliance — check string key naming conventions, flag any strings with hardcoded formatting that won't survive translation, verify character limit headroom for languages that expand (German/Finnish typically +30%), confirm no cultural assumptions in text that would need locale-specific variants
 - **world-builder**: Finalize canon levels for all new lore entries
@@ -225,14 +225,7 @@ Common blockers:
 
 ## File Write Protocol
 
-Sub-agents write their drafts to the `production/narrative/[content-slug]/` paths
-you name, under the **bounded exception** documented above under "Why this does
-not violate the Collaboration Protocol" — the path is one you named, the artifact
-is new under `production/`, `docs/` or `tests/`, and the phase is gated by an
-`available user-question tool (or ask in plain text and wait)`. A sub-agent does **not** prompt per write inside those bounds;
-outside them it must ask. The **one exception is the final documents under
-`design/narrative/`**: you hold every draft, so you write those yourself after
-the single "May I write …?" in "Write the finals".
+Assign each role its bounded work and paths. Existing user authorization and host permissions govern each write; a named path or phase gate does not itself grant permission. Preserve the pipeline’s final compilation ownership. When delegation is unavailable, disclose an in-session fallback or report PENDING. Prepare a reviewable draft only for unresolved decisions or actions outside authorization.
 
 ## Output
 

@@ -1,5 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
+import { openSource } from './source.mjs';
+import { safeProjectPath } from './safe-path.mjs';
 import { createHash } from 'node:crypto';
 import path from 'node:path';
 
@@ -72,18 +74,18 @@ function roleBridge(fields) {
 
 /** Pure plan API for the guarded generator. Default selection is CGS-07's 11
  * leadership roles; later workers must explicitly name their owned roles. */
-export function roleTargets(root, names = LEADERSHIP_ROLES) {
-  const inventory = JSON.parse(readFileSync(path.join(root, 'docs/codex/upstream-inventory.json'), 'utf8').replace(/^\uFEFF/, ''));
+export function roleTargets(root, names = LEADERSHIP_ROLES, source, inventory = JSON.parse(readFileSync(safeProjectPath(root, 'docs/codex/upstream-inventory.json'), 'utf8').replace(/^\uFEFF/, ''))) {
+  source ||= openSource({root, expectedCommit: inventory.source_commit});
   const sources = inventory.files.filter(file => /^\.claude\/agents\/[^/]+\.md$/.test(file.path));
   const available = new Map(sources.map(file => [path.basename(file.path, '.md'), file]));
-  const actual = execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard', '-z', '--', '.claude/agents'], { cwd: root }).toString().split('\0').filter(Boolean).sort();
+  const actual = source.list('.claude/agents/').map(file => file.path).sort();
   if (JSON.stringify(actual) !== JSON.stringify(sources.map(file => file.path).sort())) throw Error('Role source set differs from pinned inventory; reconcile new/deleted sources');
   if (!Array.isArray(names) || new Set(names).size !== names.length) throw Error('Role selection must be an array without duplicates');
   const skillNames = inventory.files.filter(file => /^\.claude\/skills\/[^/]+\/SKILL\.md$/.test(file.path)).map(file => file.path.split('/')[2]);
   return names.map(name => {
     const entry = available.get(name);
     if (!entry) throw Error(`Unknown role: ${name}`);
-    const bytes = readFileSync(path.join(root, entry.path));
+    const bytes = source.read(entry.path);
     const text = utf(bytes);
     if (sha(bytes) !== entry.sha256 && sha(Buffer.from(text)) !== entry.sha256) throw Error(`Source drift: ${entry.path}`);
     const { fields, body } = parseRoleSource(text, entry.path);

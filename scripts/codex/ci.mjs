@@ -6,13 +6,20 @@ const roles=inv.files.filter(x=>x.category==='agent').map(x=>x.path.split('/').a
 if(roles.length!==inv.counts.agent||new Set(roles).size!==roles.length)throw Error('Role count or uniqueness mismatch');
 const tasks=[
  ['validator',['scripts/codex/validate.mjs']],
- ['pinned inventory',['scripts/codex/inventory.mjs','--check']],
+ ['hygiene regression',['tests/hygiene.mjs']],
+ ['engine CLI regression',['tests/engine-cli.mjs']],
+ ['code-root configuration regression',['tests/code-root.mjs']],
+ ['CLI filesystem alias regression',['scripts/codex/tests/cli-alias.mjs']],
+ ['repository hygiene',['scripts/codex/hygiene.mjs']],
+ ['Git source fixture',['scripts/codex/tests/source-fixture.mjs']],
+ ['source transform fixture',['scripts/codex/tests/importer-fixture.mjs']],
  ...['skills','references','support','rules'].map(f=>['generator '+f,['scripts/codex/generate.mjs','--family',f,'--check','--complete']]),
  ['generator all roles',['scripts/codex/generate.mjs','--family','roles','--names',roles.join(','),'--check','--complete']],
  ...['config-tests','model-tests','rule-tests','engine-role-tests'].map(f=>[f,['scripts/codex/'+f+'.mjs']]),
  ['policy',['scripts/codex/tests/policy.mjs']],
  ['negative fixtures',['scripts/codex/tests/negative.mjs']],
- ['generator negative fixtures',['docs/codex/evidence/CGS-05/negative-tests.mjs']],
+ ['generator negative fixtures',['tests/generator-negative.mjs']],
+ ['native authoring registration',['tests/native-registration.mjs']],
  ['upstream synchronization fixture',['scripts/codex/upstream-tests.mjs']],
  ...(args.includes('--skip-reconcile')?[]:[['reviewed reconciliation fixture',['scripts/codex/tests/reconcile-fixture.mjs']]])
 ];

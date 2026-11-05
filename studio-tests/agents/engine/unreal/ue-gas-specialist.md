@@ -9,9 +9,9 @@
 
 ## Static Assertions (Structural)
 
-- [ ] `description:` field is present and domain-specific (references GAS, abilities, GameplayEffects, AttributeSets)
-- [ ] `tools:` reads Read, Glob, Grep, Write, Edit, Bash — no `Agent` tool
-- [ ] Model tier is `sonnet` — frontmatter `model:` reads exactly `sonnet` (tiers: `.claude/docs/model-tiers.md`)
+- [ ] `description` field is present and domain-specific (references GAS, abilities, GameplayEffects, AttributeSets)
+- [ ] Developer instructions preserve capability ceiling (Read, Glob, Grep, Write, Edit, Bash, Agent); responsibility limits are not native grants or assumed client capabilities
+- [ ] Native TOML has nonempty `name`, domain-specific `description` and `developer_instructions`; model selection follows supported session policy, with runtime verification separate
 - [ ] Agent definition does not claim authority over UI implementation or low-level net serialization
 
 ---

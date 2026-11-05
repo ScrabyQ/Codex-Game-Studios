@@ -5,9 +5,9 @@ description: "Configure an engine and version in project settings, verify instal
 
 ## Codex execution contract
 
-**CGS-10 runtime and consent contract:** Treat subsequent Claude-specific tool syntax as source procedure, not automatic execution. Resolve the selected project root explicitly; use the registered helper dispatcher with `--root <project-root>` when available. Observe real files and diagnostics; never turn a failed probe or unknown code root into an empty project. If a required helper cannot run, use an explicitly documented factual fallback only where the needed facts and precedence can be established; otherwise report NOT ASSESSED and stop that dependent step. Use native question support when available or ask in plain text and wait. A skipped or dismissed required decision is not consent; preserve prior explicit user authorization and active host permissions. Never auto-run another skill or phase after a recommendation.
+**Runtime and consent:** Resolve the project root and run the explicit bootstrap. If a required helper fails, use a documented factual fallback only where precedence can be established; otherwise report NOT ASSESSED and stop that dependent step. Use native questions when available or plain text and wait for required decisions. Existing authorization and host permissions govern. Do not auto-run a recommended skill.
 
-This adaptation preserves upstream sources: do not edit CLAUDE.md, .claude files, generated .agents reference mirrors, or generated role files as project configuration. The original CLAUDE stack/import and agent-file steps below are historical Claude procedures: replace them with resolving engine/version/language and specialist routing from project.yaml and reading the appropriate pinned VERSION.md on demand. Record the actual editor version, executable or probe method and time in the user-owned docs/project/engine-version.md when authorized; this record complements the pinned reference and does not assert that its documentation was refreshed. Keep the guided user choices, confirmation, version/installation checks, scoped authorized project.yaml and project artifact writes, reference-update safeguards and coherence reporting. If the original legacy technical-preferences dual-write cannot be performed without modifying a generated/source-owned file, do not modify the legacy mirror; project.yaml and the user-owned version probe record are the Codex equivalent, with legacy mirror parity explicitly PENDING. Do not propose or claim a mirror update unless an independently user-owned writable destination is established. Never overwrite an existing Godot project, never fabricate Unity/Unreal projects, and do not execute a suggested next skill. Verify current release/licensing claims against official sources rather than presenting historical prices as current.
+Resolve engine, version, language and specialist routing from project configuration; read the selected pinned VERSION.md on demand. Record the actual editor version, probe method and time in docs/project/engine-version.md when authorized. Preserve existing project files, scoped configuration changes, reference-update safeguards and coherence reporting. Never overwrite an existing Godot project or fabricate Unity/Unreal projects. Verify current release and licensing claims against official sources. Native Skills, roles and guidance are maintained product sources; project setup configures routing rather than editing those shared definitions.
 
 Resolve the intended project root before executing relative paths: prefer the nearest project containing project.yaml or project.local.yaml, including a nested project; do not silently borrow a parent project. Execute the explicit bootstrap steps in this document before consuming their output. Native Codex does not perform shell preprocessing. Original tool capability scope: `Read, Glob, Grep, Write, Edit, WebSearch, WebFetch, Agent, user-question facility, Bash(bash "*/.agents/skills/setup-engine/../../hooks/yaml-helper.sh" resolve_config *), Bash(godot --version), Bash(godot --headless --path . --import), Bash(command -v godot), Bash(uname -s), Bash(bash .agents/scripts/project-coherence.sh*)`. Treat this as a ceiling for this skill, not a permission grant; preserve any narrower read-only restriction in the body and the active host permissions. Use a user-question facility when available, otherwise ask in plain text and wait; unanswered required decisions are not consent. Use native subagents only when available and authorized; otherwise read the relevant role and work in-session, disclosing lack of independent review. Upstream slash-command references mean invoke the corresponding installed Codex skill using its $name; do not assume all skills have been migrated. Source argument guidance: "[engine] | [engine version] | refresh | upgrade [old-version] [new-version] | no args for guided selection". 
 
@@ -27,7 +27,7 @@ artifact this skill expects and the finish path it recommends in §12:
 - **`standard` / `full`** — the design artifact is `design/gdd/game-concept.md`
   and the finish path is the full pipeline.
 
-If the block did not render (shell preprocessing disabled), assume `minimal` (the default).
+If the bootstrap did not run or its output is unavailable, resolve the workflow through the documented configuration chain; if that cannot be established, report NOT ASSESSED and stop tier-dependent steps. Do not infer a default from a failed bootstrap.
 
 ## 1. Parse Arguments
 
@@ -49,7 +49,7 @@ Four modes:
 
 **Read `references/3-version.md` now and follow it** — this phase's steps are in that file, not here. Read it again if the conversation was compacted or resumed during this phase.
 
-## 4. Update CLAUDE.md Technology Stack
+## 4. Select engine and language
 
 **Read `references/4-claude-md-stack.md` now and follow it** — this phase's steps are in that file, not here. Read it again if the conversation was compacted or resumed during this phase.
 
@@ -73,23 +73,13 @@ Four modes:
 
 **Read `references/7.5-scaffold.md` now and follow it** — this phase's steps are in that file, not here. Read it again if the conversation was compacted or resumed during this phase.
 
-## 8. Verify the CLAUDE.md Import
+## 8. Verify engine and reference
 
 **Read `references/8-verify.md` now and follow it** — this phase's steps are in that file, not here. Read it again if the conversation was compacted or resumed during this phase.
 
-## 9. Update Agent Instructions
+## 9. Verify Specialist Routing and Version Awareness
 
-Ask: "May I add a Version Awareness section to the engine specialist agent files?" before making any edits.
-
-For the chosen engine's specialist agents, verify they have a
-"Version Awareness" section. If not, add one following the pattern in
-the existing Godot specialist agents.
-
-The section should instruct the agent to:
-1. Read `docs/engine-reference/<engine>/VERSION.md`
-2. Check deprecated APIs before suggesting code
-3. Check breaking changes for relevant version transitions
-4. Use WebSearch to verify uncertain APIs
+Resolve specialist routing from project settings and inspect the applicable native role definitions in .codex/agents/. Confirm the relevant role knows to consult the selected VERSION.md, deprecated APIs and relevant breaking changes, and verify uncertain APIs using available official sources. Report missing roles or guidance as NOT ASSESSED. Setup does not edit shared role definitions merely to configure a project; propose separate scoped maintenance if a defect needs correction.
 
 ---
 
@@ -120,14 +110,12 @@ If invoked as `$setup-engine refresh`:
 ## Guardrails
 
 - NEVER guess an engine version — always verify via WebSearch or user confirmation
-- `project.yaml` is the primary config store (v1.1). Always dual-write engine
-  config to BOTH `project.yaml` (primary) and `technical-preferences.md` (legacy
-  mirror). If the two ever diverge, `project.yaml` is authoritative.
+- project.yaml is the shared configuration source. Resolve applicable local overrides and legacy fallbacks using the documented chain; do not change shared guidance merely to configure a project.
 - NEVER overwrite existing reference docs without asking — append or update
 - If reference docs already exist for a different engine, ask before replacing
-- Always show the user what you're about to change before making CLAUDE.md edits
+- Preserve existing authorization; prepare a reviewable draft for unresolved decisions or actions outside it.
 - If WebSearch returns ambiguous results, show the user and let them decide
-- When the user chose **GDScript**: copy the GDScript CLAUDE.md template from **A1** in `references/godot-language-config.md` exactly. NEVER add "C++ via GDExtension" to the Language field. GDScript projects may use GDExtension, but it is not a primary project language. The `godot-gdextension-specialist` in the routing table is available for when native extensions are needed — it does not make C++ a project language.
+- When the user chose **GDScript**: use the GDScript language choices in **A1** in `references/godot-language-config.md` exactly. NEVER add "C++ via GDExtension" to the Language field. GDScript projects may use GDExtension, but it is not a primary project language. The `godot-gdextension-specialist` in the routing table is available for when native extensions are needed — it does not make C++ a project language.
 
 ---
 
@@ -139,7 +127,7 @@ Moved out of this file so it costs nothing on non-Godot runs.
 `references/godot-language-config.md`
 and use the subsection for the chosen language:
 
-- **A1** — CLAUDE.md Technology Stack templates (GDScript / C# / Both)
+- **A1** — language reference examples (GDScript / C# / Both)
 - **A2** — naming conventions
 - **A3** — engine specialist routing and file-extension tables
 

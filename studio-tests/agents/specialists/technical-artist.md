@@ -9,9 +9,9 @@ No gate IDs assigned.
 
 ## Static Assertions (Structural)
 
-- [ ] `description:` field is present and domain-specific (references shaders / VFX / rendering)
+- [ ] `description` field is present and domain-specific (references shaders / VFX / rendering)
 - [ ] `tools:` list includes Read, Write, Edit, Bash, Glob, Grep
-- [ ] Model tier is `inherit` — frontmatter `model:` reads exactly `inherit` (tiers: `.claude/docs/model-tiers.md`)
+- [ ] Native role TOML has nonempty `name`, domain-specific `description` and `developer_instructions`; its capability ceiling, domain boundaries and escalation rules remain intact
 - [ ] Agent definition does not claim authority over art style direction or gameplay logic
 
 ---
@@ -59,7 +59,7 @@ No gate IDs assigned.
 - Treats the 2ms GPU budget and 200 draw call limit from the provided context as the budgets it enforces — no other numbers substituted
 - Proposes rendering optimizations (LOD, occlusion, batching, atlasing), each tied to the budget it targets (e.g., "batching reduces draw calls from 340 to ~180, within the 200 limit")
 - Calls out any optimization that helps one budget at the other's expense (e.g., merged meshes cut draw calls but can defeat occlusion and raise GPU time past 2ms) instead of presenting it as a free win
-- Proposes the approach before implementing and asks before writing files
+- Proposes the approach before implementing and checks existing authorization before writing and asks if unresolved files
 
 ---
 

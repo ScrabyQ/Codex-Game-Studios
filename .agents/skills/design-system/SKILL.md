@@ -80,7 +80,7 @@ If two rows fit, spawn the union of their Primary agents and say why.
 | Visual effects, particles, shaders | `game-designer` | `art-director` (VFX visual direction), `technical-artist` (performance budget, shader complexity), `systems-designer` (trigger/state integration) |
 | Character systems (stats, archetypes) | `game-designer` | `art-director` (character visual archetype), `narrative-director` (character arc alignment), `systems-designer` (stat formulas) |
 
-**When delegating via the `Agent` tool**:
+**When using authorized native delegation**:
 - Provide: system name, game concept summary, dependency GDD excerpts, the specific
   section being worked on, and what question needs expert input
 - The agent returns analysis/proposals to the main session

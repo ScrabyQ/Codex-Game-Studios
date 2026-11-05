@@ -1,8 +1,8 @@
-> Gate definition. The spawning skill passes this file's path to the director agent; the AGENT reads it — the parent session should not.
+> Gate definition. For authorized native delegation, pass this path so the assigned reviewer reads it first. An in-session reviewer reads it explicitly and labels the review nonindependent; unavailable required independent execution remains PENDING.
 
 # LP-FEASIBILITY — Lead Programmer Implementation Feasibility
 
-Agent: `lead-programmer` | Model tier: Sonnet (Tier 2 lead — invoked when a domain specialist's feasibility sign-off is needed)
+Agent: `lead-programmer` | Model: native session policy (Tier 2 lead — invoked when a domain specialist's feasibility sign-off is needed)
 
 **Trigger**: After the master architecture document is written (`/create-architecture`
 Phase 7b), or when a new architectural pattern is proposed

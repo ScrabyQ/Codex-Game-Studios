@@ -1,22 +1,5 @@
-# Codex Skill Authoring Contract
+# Native Skill contract
 
-This compact contract is for a new Codex Skill. Use only frontmatter fields supported by the current Codex Skills specification. The minimal example below uses the required identity fields; add optional fields only after checking that specification. The preserved upstream Claude contract remains alongside this file as a source example.
+Use [SKILL-CONTRACT-TEMPLATE.md](SKILL-CONTRACT-TEMPLATE.md) for the complete shape. Native Skills live at `.agents/skills/<name>/SKILL.md` and require `name` and `description`. Invocation controls in `agents/openai.yaml` are optional and client-specific.
 
-## Minimal supported frontmatter
-
-~~~yaml
----
-name: [skill-name]
-description: [one sentence describing when to use this skill]
----
-~~~
-
-## Authoring contract
-
-- State the skill's purpose, trigger conditions, and boundaries in SKILL.md body text.
-- Preserve its required inputs, outputs, checks, and approval boundaries.
-- Keep referenced resources inside the skill directory or use stable repository paths.
-- Do not assume dynamic shell preprocessing, Claude-specific tools, hooks, or model pins.
-- For questions, use a facility exposed by the active client; otherwise ask in plain text and wait.
-- Request only permissions needed for the documented workflow.
-- Validate the skill with the current Codex tooling and record runtime evidence separately from structural review.
+Reference actual `studio-tests/skills/` specifications, `scripts/codex/` adapters and category metrics. Do not claim shell preprocessing, source model aliases, automatic hooks or independent execution. Required unanswered decisions are never consent; existing authorization persists.

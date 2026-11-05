@@ -1444,17 +1444,12 @@ resolve_setting() {
 # scan half of it and report a pass.
 resolve_code_root() {
   _yaml_helper_set_root
-  local ename="" src="" root="" legacy="" found="" d n=0
+  local ename="" src="" root="" legacy="" found="" resolved="" d n=0
 
   # 1. The configured engine, through the normal chain.
-  if [ -f "$_YH_ROOT/project.local.yaml" ]; then
-    ename=$(get_yaml_key "$_YH_ROOT/project.local.yaml" engine.name 2>/dev/null)
-    [ -n "$ename" ] && src="project.local.yaml"
-  fi
-  if [ -z "$ename" ] && [ -f "$_YH_ROOT/project.yaml" ]; then
-    ename=$(get_yaml_key "$_YH_ROOT/project.yaml" engine.name 2>/dev/null)
-    [ -n "$ename" ] && src="engine.name"
-  fi
+  resolved=$(resolve_setting engine.name)
+  ename=${resolved%%$'\t'*}
+  [ -n "$ename" ] && src="engine.name"
 
   # 2. The legacy mirror. `/setup-engine` wrote an `Engine:` line here before
   #    project.yaml existed, and workflow-catalog's `engine-setup` step still

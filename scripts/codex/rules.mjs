@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { resolve, isAbsolute } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { isMainEntry } from './main-entry.mjs';
 const root = resolve(fileURLToPath(new URL('../..', import.meta.url)));
 const index = JSON.parse(readFileSync(resolve(root, '.agents/rules/index.json'), 'utf8'));
 function alternatives(pattern) {
@@ -24,7 +25,7 @@ export function selectRules(path) {
   if (!normalized || normalized.startsWith('/') || normalized.split('/').some(p => p === '..' || p === '' || p === '.')) throw new Error('Path must be a normalized repository-relative path');
   return index.rules.filter(rule => rule.patterns.some(p => alternatives(p).some(a => regexp(a).test(normalized))));
 }
-if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+if (isMainEntry(import.meta.url)) {
   try {
     const args = process.argv.slice(2); let path, json = false, content = false;
     while (args.length) { const a = args.shift(); if (a === '--path' && args.length) path = args.shift(); else if (a === '--json') json = true; else if (a === '--content') content = true; else throw new Error(`Unknown or incomplete argument: ${a}`); }

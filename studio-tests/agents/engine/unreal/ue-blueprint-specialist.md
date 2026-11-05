@@ -9,9 +9,9 @@
 
 ## Static Assertions (Structural)
 
-- [ ] `description:` field is present and domain-specific (references Blueprint architecture and optimization)
+- [ ] `description` field is present and domain-specific (references Blueprint architecture and optimization)
 - [ ] `tools:` list matches the agent's role (Read/Write/Edit for Blueprint-facing files; no server or deployment tools, and Bash withheld via `disallowedTools:`)
-- [ ] Model tier is `sonnet` — frontmatter `model:` reads exactly `sonnet` (tiers: `.claude/docs/model-tiers.md`)
+- [ ] Native role TOML has nonempty `name`, domain-specific `description` and `developer_instructions`; its capability ceiling, domain boundaries and escalation rules remain intact
 - [ ] Agent definition does not claim authority over C++ implementation decisions
 
 ---

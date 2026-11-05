@@ -1,6 +1,0 @@
-# Scoped QA and source review
-Actual Godot4.7.2 import/explicit parse/test/render exits0. Eight model assertions pass. Synthetic Input.parse_input_event drove empty/disabled/reset states through rendered native buttons; this is not physical input or a human playtest. All three PNGs were opened: labels/buttons fit800x480; ready/empty/reset states agree with AC1–5.
-Data-driven capacity is in assets/data/charge.json; UI copy is in localization/en.json. Model owns gameplay state, UI calls its methods. No new library, native plugin, singleton or export preset. Local Git baseline/status and exact source/test/image hashes retained centrally. Godot-generated UID companions are declared files.
-Reviewed by: self, no independent review. Config resolves workflow minimal, qa.level minimal and solo skill-gates skip; independent QL/LP gates not required here and were not run. Explicit task testing supersedes the usual optional test waiver. No ADR/TR registry/control manifest is expected at this tier.
-Human feel/usability, keyboard/gamepad hardware, accessibility and packaged exports remain NOT ASSESSED and outside these criteria.
-Run result: OBSERVED — ready3/3, empty0/3/disabled Spend, reset3/3; production/qa/evidence/story-001-charge-hud/01-ready.png,02-empty.png,03-reset.png.

@@ -9,9 +9,9 @@
 
 ## Static Assertions (Structural)
 
-- [ ] `description:` field is present and domain-specific (references player communication, patch notes, community management)
-- [ ] `tools:` reads `Read, Glob, Grep, Write, Edit` and `disallowedTools:` names `Bash` — drafts and documents only, no shell or build tools
-- [ ] Model tier is `sonnet` — frontmatter `model:` reads exactly `sonnet` (tiers: `.claude/docs/model-tiers.md`)
+- [ ] `description` field is present and domain-specific (references player communication, patch notes, community management)
+- [ ] Developer instructions preserve capability ceiling (Read, Glob, Grep, Write, Edit, Bash); responsibility limits are not native grants or assumed client capabilities
+- [ ] Native TOML has nonempty `name`, domain-specific `description` and `developer_instructions`; model selection follows supported session policy, with runtime verification separate
 - [ ] Agent definition does not claim authority over technical content, QA strategy, or bug fixing
 - [ ] Tone and Voice states that a brand-voice or style guide the project supplies overrides its defaults (tone, person, glossary terms)
 - [ ] For a release, it works from the patch notes release-manager produces with `/patch-notes` rather than regenerating them
@@ -28,7 +28,7 @@
 - Conveys the player impact without implementation detail: e.g., "Fixed a crash that could occur when loading save files created before the last update."
 - Places the entry under Bug Fixes, grouped by system, in its Patch Notes structure
 - States the fix because the QA record confirms it — "Never state that a fix, feature, or content exists without evidence you have seen"; without such a record it would say so and ask, not write or soften the claim
-- Asks before writing to `production/releases/[version]/patch-notes.md`
+- Checks existing authorization before writing and asks if unresolved to `production/releases/[version]/patch-notes.md`
 
 ### Case 2: Out-of-domain request — fixing a reported bug
 **Input**: "A player reported that their save file is corrupted. Can you fix the save system?"

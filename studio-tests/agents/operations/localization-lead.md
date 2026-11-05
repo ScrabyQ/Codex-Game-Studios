@@ -9,9 +9,9 @@
 
 ## Static Assertions (Structural)
 
-- [ ] `description:` field is present and domain-specific (references i18n, string extraction, locale pipeline, localization)
-- [ ] `tools:` reads `Read, Glob, Grep, Write, Edit, Bash` — Bash for string-extraction tooling; writing translations and narrative content is excluded by the body's "What This Agent Must NOT Do" list, not by the tool list
-- [ ] Model tier is `inherit` — frontmatter `model:` reads exactly `inherit` (tiers: `.claude/docs/model-tiers.md`)
+- [ ] `description` field is present and domain-specific (references i18n, string extraction, locale pipeline, localization)
+- [ ] Developer instructions preserve capability ceiling (Read, Glob, Grep, Write, Edit, Bash, Agent); responsibility limits are not native grants or assumed client capabilities
+- [ ] Native TOML has nonempty `name`, domain-specific `description` and `developer_instructions`; model selection follows supported session policy, with runtime verification separate
 - [ ] Agent definition does not claim authority over narrative content, game code implementation, or translation quality
 
 ---
@@ -25,7 +25,7 @@
 - Scopes extraction to player-facing text from code, UI, and content — "Ensure no hardcoded strings reach production"
 - Specifies structured locale files (JSON, CSV, or a project-appropriate format), one file per language per system or feature area (the `locales/en/ui_menu.json` pattern)
 - Uses hierarchical dot-notation keys that describe context (`menu.settings.audio.volume_label`) — not positional or index-based keys — each with a context comment giving where it appears, its character limit, and its variables
-- Names `tools-programmer` for the extraction automation and `ui-programmer` for text rendering (Delegation Map), and asks before writing any pipeline document
+- Names `tools-programmer` for the extraction automation and `ui-programmer` for text rendering (Delegation Map), and checks existing authorization before writing and asks if unresolved any pipeline document
 
 ### Case 2: Out-of-domain request — translate game dialogue
 **Input**: "Translate the following English dialogue into French: 'Well met, traveler. The road ahead is treacherous.'"

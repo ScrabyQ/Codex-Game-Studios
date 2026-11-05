@@ -1,8 +1,8 @@
-> Gate definition. The spawning skill passes this file's path to the director agent; the AGENT reads it — the parent session should not.
+> Gate definition. For authorized native delegation, pass this path so the assigned reviewer reads it first. An in-session reviewer reads it explicitly and labels the review nonindependent; unavailable required independent execution remains PENDING.
 
 # CD-PHASE-GATE — Creative Readiness at Phase Transition
 
-Agent: `creative-director` | Model tier: Opus | Domain: Vision, pillars, player experience
+Agent: `creative-director` | Model: native session policy | Domain: Vision, pillars, player experience
 
 **Trigger**: At `/gate-check` when `modes.workflow` is `full` — the panel narrows by workflow, and only the full panel includes creative-director; spawn in parallel with TD-PHASE-GATE, PR-PHASE-GATE and AD-PHASE-GATE
 

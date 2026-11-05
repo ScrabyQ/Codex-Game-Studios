@@ -27,10 +27,10 @@ as passed. No director gates apply.
 
 Checked against the SKILL.md by `/skill-test spec` — no fixture needed.
 
-- [ ] Has required frontmatter fields: `name`, `description`, `argument-hint`, `user-invocable`, `allowed-tools`
+- [ ] Skill frontmatter has nonempty `name` and `description`; optional invocation policy is checked in `agents/openai.yaml` when present, without assuming source-only fields
 - [ ] Has ≥2 phase headings
 - [ ] Contains verdict keywords: COMPLETE, FAIL, NOT ASSESSED, PASS WITH CONDITIONS
-- [ ] Contains "May I write" collaborative protocol language before writing the string table or a report
+- [ ] Defines contextual authorization for writes before writing the string table or a report
 - [ ] Has a next-step handoff (the Recommended Workflow chain ending in `/gate-check release`)
 - [ ] The QA gate note is tiered: at `workflow: full` the Polish → Release gate requires PASS or PASS WITH CONDITIONS for every translated locale being shipped (recommended at `standard`, dropped at `minimal`)
 - [ ] The `freeze` question names the file it writes — "This writes `production/localization/freeze-status.md`" — before the user answers
@@ -49,7 +49,7 @@ it spawns is `localization-lead` (an operations-tier agent), and only in the
 
 Every case's `project.yaml` sets `modes.rigor: minimal` and
 `modes.automation: collaborative`, with no `project.local.yaml`, unless its own
-Fixture says otherwise. Rules: `studio-tests/CLAUDE.md` §
+Fixture says otherwise. Rules: `studio-tests/AGENTS.md` §
 Fixture defaults.
 
 ---
@@ -81,7 +81,7 @@ Fixture defaults.
 **Assertions:**
 - [ ] Proposed keys follow `[category].[subcategory].[description]`
 - [ ] Every new entry includes a `context` field
-- [ ] The diff is shown and "May I write" names `assets/data/strings/strings-en.json` before any write
+- [ ] The diff is shown and "May I write" names `assets/data/strings/strings-en.json` before any write that still needs authorization
 - [ ] Only the three new entries are written — existing entries are not rewritten
 - [ ] Verdict is COMPLETE
 
@@ -181,7 +181,7 @@ Fixture defaults.
 ### Case 6: Scan With an Unresolved Code Root — NOT ASSESSED, never "no hardcoded strings"
 
 **Fixture:**
-- `project.yaml` has no `engine.name`; `.claude/docs/technical-preferences.md`
+- `project.yaml` has no `engine.name`; `.agents/docs/technical-preferences.md`
   reads `[TO BE CONFIGURED]`
 - Both `src/` and `Assets/` exist and hold UI code with hardcoded strings
   (ambiguous tree)
@@ -250,7 +250,7 @@ Fixture defaults.
   is not separately tested; Case 6 covers the unresolved root.
 - `extract` while `freeze-status.md` shows Status: ACTIVE (new keys appended to
   `## Post-Freeze Changes` with a freeze-violation warning) is not tested.
-- `freeze` (pre-freeze checklist and `AskUserQuestion` [A]/[B]), `brief`,
+- `freeze` (pre-freeze checklist and `user question` [A]/[B]), `brief`,
   `vo-pipeline` and `rtl-check` are not exercised by a dedicated case; `qa` is
   covered only for its NOT ASSESSED branch (Case 7).
 - The `qa` gate note — a FAIL blocks release for that locale only — needs a live

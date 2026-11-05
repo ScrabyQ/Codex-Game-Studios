@@ -28,10 +28,10 @@ at the gate, or no eligible systems found).
 
 Checked against the SKILL.md by `/skill-test spec` — no fixture needed.
 
-- [ ] Has required frontmatter fields: `name`, `description`, `argument-hint`, `user-invocable`, `allowed-tools`
+- [ ] Skill frontmatter has nonempty `name` and `description`; optional invocation policy is checked in `agents/openai.yaml` when present, without assuming source-only fields
 - [ ] Has ≥2 phase headings
 - [ ] Contains verdict keywords: COMPLETE, BLOCKED
-- [ ] Contains "May I write" collaborative protocol language (per-epic approval)
+- [ ] Defines contextual authorization for writes (per-epic approval)
 - [ ] Has a next-step handoff at the end (`/create-stories [epic-slug]`)
 - [ ] Documents PR-EPIC gate behavior: runs in full mode; skipped in lean/solo
 
@@ -39,10 +39,10 @@ Checked against the SKILL.md by `/skill-test spec` — no fixture needed.
 
 ## Director Gate Checks
 
-In `full` mode: PR-EPIC (`producer`, `.claude/docs/director-gates/pr-epic.md`)
+In `full` mode: PR-EPIC (`producer`, `.agents/docs/director-gates/pr-epic.md`)
 runs once all epics for the current layer are defined and before any epic file is
 written. Verdicts: REALISTIC → proceed to the write asks; CONCERNS →
-`AskUserQuestion` with `[A] Proceed as planned` / `[B] Revise epic boundaries` /
+`user question` with `[A] Proceed as planned` / `[B] Revise epic boundaries` /
 `[C] Stop`; UNREALISTIC → offer to split or merge epics, revise, present the
 revised epics again, and re-run the gate before writing. CONCERNS `[B]` likewise
 re-presents the revised epics before the gate re-runs. NOT ASSESSED [missing
@@ -60,7 +60,7 @@ In `solo` mode: PR-EPIC is skipped. Output notes: "PR-EPIC skipped — Solo mode
 
 Every case's `project.yaml` sets `modes.rigor: minimal` and
 `modes.automation: collaborative`, with no `project.local.yaml`, unless its own
-Fixture says otherwise. Rules: `studio-tests/CLAUDE.md` §
+Fixture says otherwise. Rules: `studio-tests/AGENTS.md` §
 Fixture defaults.
 
 ---
@@ -97,7 +97,7 @@ Fixture defaults.
 7. Verdict: COMPLETE — 2 epic(s) written; next step `/create-stories [epic-slug]`
 
 **Assertions:**
-- [ ] Each epic block is shown and "Shall I create Epic: [name]?" asked before any write ask
+- [ ] Each epic block is shown and "Shall I create Epic: [name]?" asked before any write that still needs authorization ask
 - [ ] "May I write" is asked per epic (not once for both)
 - [ ] Files land at `production/epics/[epic-slug]/EPIC.md`
 - [ ] Each EPIC.md contains Layer, GDD path, Architecture Module, Governing ADRs table, GDD Requirements table, Definition of Done
@@ -145,7 +145,7 @@ Fixture defaults.
 
 **Full mode expected behavior:**
 1. Both epics are presented and accepted via "Shall I create Epic: [name]?"
-2. `producer` is spawned via `Agent` with gate PR-EPIC, receiving the epic
+2. `producer` is spawned through native delegation with gate PR-EPIC, receiving the epic
    structure summary, the layer, milestone timeline and team capacity
 3. On REALISTIC: the per-epic "May I write" asks proceed
 4. Epic files are written after approval
@@ -211,8 +211,8 @@ Fixture defaults.
 
 **Expected behavior:**
 1. PR-EPIC is spawned and returns CONCERNS with specific feedback
-2. Skill presents the producer's assessment before any write ask
-3. `AskUserQuestion`: "Producer raised concerns about the epic structure. How do
+2. Skill presents the producer's assessment before any write that still needs authorization ask
+3. `user question`: "Producer raised concerns about the epic structure. How do
    you want to proceed?" with `[A] Proceed as planned — I accept the producer's
    concerns` / `[B] Revise epic boundaries — split or merge as recommended` /
    `[C] Stop — I want to reconsider the scope`
@@ -223,7 +223,7 @@ Fixture defaults.
 - [ ] The producer's CONCERNS are shown to the user before any "May I write" ask
 - [ ] Skill does NOT write epics while the gate is unresolved
 - [ ] All three options ([A] proceed / [B] revise / [C] stop) are offered
-- [ ] Choosing [B] re-presents the revised epics and re-runs PR-EPIC before any write ask
+- [ ] Choosing [B] re-presents the revised epics and re-runs PR-EPIC before any write that still needs authorization ask
 - [ ] Choosing [C] ends with Verdict: BLOCKED and no files written
 
 ---
@@ -253,7 +253,7 @@ Fixture defaults.
    and gains a row for the second
 
 **Assertions:**
-- [ ] The existing file is detected before any write, and update / skip is offered — it is not overwritten
+- [ ] The existing file is detected before any write that still needs authorization, and update / skip is offered — it is not overwritten
 - [ ] After the update, the `**Stories**` header line and all 3 `## Stories` rows are unchanged
 - [ ] The index has no duplicate row for the first epic and does not reset it to `Not yet created`
 - [ ] The second system's EPIC.md is written only after its own "May I write" ask

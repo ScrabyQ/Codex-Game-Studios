@@ -9,11 +9,11 @@
 
 ## Static Assertions (Structural)
 
-Verified by reading the agent's `.claude/agents/audio-director.md` frontmatter:
+Verified by reading the agent's `.codex/agents/audio-director.toml` metadata:
 
-- [ ] `description:` field is present and domain-specific (references music direction, sound design, mix, audio implementation — not generic)
-- [ ] `tools:` reads Read, Glob, Grep, Write, Edit, WebSearch and `disallowedTools:` lists Bash
-- [ ] Model tier is `inherit` — frontmatter `model:` reads exactly `inherit` (tiers: `.claude/docs/model-tiers.md`)
+- [ ] `description` field is present and domain-specific (references music direction, sound design, mix, audio implementation — not generic)
+- [ ] Developer instructions preserve capability ceiling (Read, Glob, Grep, Write, Edit, WebSearch, Bash); responsibility limits are not native grants or assumed client capabilities
+- [ ] Native TOML has nonempty `name`, domain-specific `description` and `developer_instructions`; model selection follows supported session policy, with runtime verification separate
 - [ ] Agent definition does not claim authority over visual design, code implementation, or narrative content
 
 ---
@@ -22,7 +22,7 @@ Verified by reading the agent's `.claude/agents/audio-director.md` frontmatter:
 
 ### Case 1: In-domain request — appropriate output format
 **Scenario:** The user has approved the direction for the game's "Exploration" music layer: a generative ambient system of layered stems that shift with environmental density, in a sparse, organic, slightly melancholic palette, meant to reinforce the pillar "lived-in world." The user asks audio-director to draft the audio asset specification for this layer.
-**Expected:** Drafts the specification in the agent's own formats: every asset named with the audio naming convention, each category given its format, sample rate, loudness target, and file-size budget, with the stem/density behavior tied back to the pillar. Shows the draft and asks before writing it to a file.
+**Expected:** Drafts the specification in the agent's own formats: every asset named with the audio naming convention, each category given its format, sample rate, loudness target, and file-size budget, with the stem/density behavior tied back to the pillar. Shows the draft and checks existing authorization before writing and asks if unresolved it to a file.
 **Assertions:**
 - [ ] Every asset name follows `[category]_[context]_[name]_[variant].[ext]` (e.g., `mus_explore_forest_calm_loop.ogg`)
 - [ ] Specifies format, sample rate, loudness target (LUFS), and file-size budget for the music assets

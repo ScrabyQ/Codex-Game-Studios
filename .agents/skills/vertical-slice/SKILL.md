@@ -7,7 +7,7 @@ description: "Pre-production validation — end-to-end build to confirm the full
 
 **CGS-12 Codex workflow contract:** Use the explicit configuration bootstrap and the current project root. Translate source Agent and specialist calls to authorized available native delegation; otherwise read the role and gate material and perform a clearly labeled in-session assessment, not an independent review. Preserve unavailable mandatory reviews as NOT ASSESSED. Use available question facilities or plain text, preserve existing authorization, and wait for unanswered required decisions. Source tools and automation do not grant permissions. Keep proposed drafts and decisions distinct from approved writes; do not infer approval. Read source templates and linked resources in the active phase.
 
-The source prototyper role requires an actual isolated Git worktree, not a fictitious native flag or a mere prototypes directory. Before assigning its implementation, establish a separate worktree and branch with host-authorized Git operations; inspect its root and branch, locate the user checkout with `git worktree list --porcelain`, inspect its status, and stop if needed uncommitted or ignored inputs are unavailable. Check LFS requirements and disclose skipped checks. Do not build against stale inputs. If isolation cannot be established, report the implementation PENDING; do not silently run the prototyper in the main checkout. Hand back the actual worktree path and branch. Preserve the no-production-import boundary, headers, disposable code, and rewrite-from-scratch rule.
+Use a separate worktree when isolation is needed and authorized; verify the actual checkout, branch and required inputs. If isolation is unavailable, disclose the limitation and report dependent implementation PENDING when it cannot safely proceed. Preserve the no-production-import boundary, headers, disposable code, and rewrite-from-scratch rule.
 
 Retain prerequisites, production architecture and data-driven values, 3–5 minute representative loop, 1–3 week budget, day-three stop, actual playtest, velocity log and evidence-based director gate. Cut scope rather than quality; no playtest means NOT ASSESSED.
 
@@ -62,7 +62,7 @@ Read the following files to understand the full design intent. Read each GDD, AD
 and the control manifest by section: find the headings you need with
 the Grep tool (pattern `^#`, content mode) and Read those ranges with offset
 and limit.
-- `CLAUDE.md` — tech stack and engine
+- `project.yaml` and applicable local overrides — resolved tech stack and engine
 - `design/gdd/game-concept.md` — core fantasy and game pillars (or
   `design/game-brief.md`, the one-page brief that replaces it at `rigor: minimal` —
   pitch, core loop and "what they feel" line; it has no pillars)
@@ -302,7 +302,7 @@ the project — cross-reference it with sprint estimates.
 **Review mode check:**
 - `solo` → skip. Note: "CD-PLAYTEST skipped — Solo mode."
 - `lean` → skip (not a PHASE-GATE). Note: "CD-PLAYTEST skipped — Lean mode."
-- `full` → spawn `creative-director` via `Agent` using gate **CD-PLAYTEST**
+- `full` → spawn `creative-director` using available authorized native delegation using gate **CD-PLAYTEST**
   (`.agents/docs/director-gates/cd-playtest.md`) — unless the slice's verdict is
   NOT ASSESSED: with no playthrough there is nothing to review, so note
   "CD-PLAYTEST skipped — the slice has not been played yet."

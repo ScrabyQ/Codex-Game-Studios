@@ -1,5 +1,0 @@
-# Live-ops-designer consolidated bounded review
-Sequential in-session, not independent. Main small active set: live-ops-designer, economy-designer, analytics-engineer, community-manager; writer/narrative-director consulted through core. Only economy/analytics review and the ethics gate ran. No skipped content/comms section is claimed complete. Economy and analytics artifacts both collected before any dependent writing; writing not started.
-ETHICS FLAG: premium +20% ranked damage violates the supplied cosmetics-only ethics-policy.md. Approval is blocked until resolved. This is an existing policy violation, not ETHICS REVIEW SKIPPED.
-Creative-director is the source domain escalation for predatory monetization; any domain recommendation does not replace the required user decision. Options remain revise economy / override with documented rationale / cancel; no answer or override is supplied.
-Verdict: BLOCKED. No COMPLETE, final season plan, analytics final or comms final; no publication. Missing-policy variant is not executed in this case.

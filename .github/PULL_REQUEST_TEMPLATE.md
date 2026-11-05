@@ -1,27 +1,23 @@
-## Summary
+## Problem and resulting behavior
 
-Brief description of what this PR does.
+Describe the concrete issue, the final change, and a useful before/after example.
 
-## Type of Change
+## Validation
 
-- [ ] New agent
-- [ ] New skill
-- [ ] New hook or rule
-- [ ] Bug fix
-- [ ] Documentation improvement
-- [ ] Other:
-
-## Changes
-
--
--
--
+List checks actually run and their results. Distinguish static structure,
+helper/backend execution, and an actual model/client run. State missing runtime,
+visual, independent-review, or native-hook evidence.
 
 ## Checklist
 
-- [ ] I've tested this in a Claude Code session
-- [ ] New agents include the Collaboration Protocol section
-- [ ] New skills use the subdirectory format (`.claude/skills/<name>/SKILL.md`)
-- [ ] Reference docs are updated (agent-roster, skills-reference, hooks-reference, rules-reference)
-- [ ] Hooks use `grep -E` (POSIX) and fail gracefully without jq/python
-- [ ] No hardcoded paths or platform-specific assumptions
+- [ ] Scope is focused and unrelated changes are preserved
+- [ ] Native skills use `.agents/skills/<name>/SKILL.md` with `name` and `description`
+- [ ] Role TOML preserves required fields, ownership, and tool ceilings
+- [ ] Configuration precedence, diagnostics, and rigor expansion are preserved
+- [ ] Relevant docs and examples describe actual host capabilities
+- [ ] Explicit proposal and post-write checks were used where applicable
+- [ ] `node scripts/codex/ci.mjs` passes, or failures are explained
+- [ ] Secrets and generated runtime evidence are excluded
+
+Mark items that do not apply as such in the description. A successful helper
+check does not establish model behavior or automatic native hook activation.

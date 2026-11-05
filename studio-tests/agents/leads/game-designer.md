@@ -9,11 +9,11 @@
 
 ## Static Assertions (Structural)
 
-Verified by reading the agent's `.claude/agents/game-designer.md` frontmatter:
+Verified by reading the agent's `.codex/agents/game-designer.toml` metadata:
 
-- [ ] `description:` field is present and domain-specific (references core loop, progression, combat rules, economy, player-facing design — not generic)
-- [ ] `tools:` reads Read, Glob, Grep, Write, Edit, WebSearch and `disallowedTools:` lists Bash
-- [ ] Model tier is `inherit` — frontmatter `model:` reads exactly `inherit` (tiers: `.claude/docs/model-tiers.md`)
+- [ ] `description` field is present and domain-specific (references core loop, progression, combat rules, economy, player-facing design — not generic)
+- [ ] Developer instructions preserve capability ceiling (Read, Glob, Grep, Write, Edit, WebSearch, Bash); responsibility limits are not native grants or assumed client capabilities
+- [ ] Native TOML has nonempty `name`, domain-specific `description` and `developer_instructions`; model selection follows supported session policy, with runtime verification separate
 - [ ] Agent definition does not claim authority over code implementation, visual art style, or standalone narrative lore decisions
 
 ---
@@ -76,7 +76,7 @@ Verified by reading the agent's `.claude/agents/game-designer.md` frontmatter:
 
 ## Protocol Compliance
 
-- [ ] Drafts mechanic documents in the Design Document Standard's sections and asks before writing each to `design/gdd/`
+- [ ] Drafts mechanic documents in the Design Document Standard's sections and checks existing authorization before writing and asks if unresolved each to `design/gdd/`
 - [ ] Stays within declared game design domain
 - [ ] Escalates design-vs-formula conflicts to creative-director when unresolved
 - [ ] Does not make binding code implementation, visual art, or standalone lore decisions

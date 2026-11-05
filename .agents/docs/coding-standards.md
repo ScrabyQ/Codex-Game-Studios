@@ -73,7 +73,7 @@ falling back to the defaults above when it is absent.
 
 ## Automated Test Rules
 
-- **Naming**: per engine — `.claude/rules/test-standards.md`
+- **Naming**: per engine — `.agents/rules/test-standards.md`
 - **Determinism**: Tests must produce the same result every run — no random seeds, no time-dependent assertions
 - **Isolation**: Each test sets up and tears down its own state; tests must not depend on execution order
 - **No hardcoded data**: Test fixtures use constant files or factory functions, not inline magic numbers

@@ -1,8 +1,8 @@
-> Gate definition. The spawning skill passes this file's path to the director agent; the AGENT reads it — the parent session should not.
+> Gate definition. For authorized native delegation, pass this path so the assigned reviewer reads it first. An in-session reviewer reads it explicitly and labels the review nonindependent; unavailable required independent execution remains PENDING.
 
 # CD-PILLARS — Pillar Stress Test
 
-Agent: `creative-director` | Model tier: Opus | Domain: Vision, pillars, player experience
+Agent: `creative-director` | Model: native session policy | Domain: Vision, pillars, player experience
 
 **Trigger**: After game pillars and anti-pillars are defined (brainstorm Phase 4,
 or any time pillars are revised)

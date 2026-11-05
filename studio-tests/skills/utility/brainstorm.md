@@ -29,7 +29,7 @@ Both flows end with `Verdict: **COMPLETE**`.
 
 Checked against the SKILL.md by `/skill-test spec` — no fixture needed.
 
-- [ ] Has required frontmatter fields: `name`, `description`, `argument-hint`, `user-invocable`, `allowed-tools`
+- [ ] Skill frontmatter has nonempty `name` and `description`; optional invocation policy is checked in `agents/openai.yaml` when present, without assuming source-only fields
 - [ ] Has ≥2 phase headings
 - [ ] Contains verdict keyword: COMPLETE (in both the Lean Brief flow and the full flow)
 - [ ] Contains "May I write" language for both `design/game-brief.md` and `design/gdd/game-concept.md`
@@ -59,7 +59,7 @@ Full flow only (`workflow: standard` or `full`):
 
 Every case's `project.yaml` sets `modes.rigor: minimal` and
 `modes.automation: collaborative`, with no `project.local.yaml`, unless its own
-Fixture says otherwise. Rules: `studio-tests/CLAUDE.md` §
+Fixture says otherwise. Rules: `studio-tests/AGENTS.md` §
 Fixture defaults.
 
 ---
@@ -91,7 +91,7 @@ Fixture defaults.
 
 **Assertions:**
 - [ ] Exactly 3 concept options are presented
-- [ ] CD-PILLARS and AD-CONCEPT-VISUAL are issued as simultaneous `Agent` calls
+- [ ] CD-PILLARS and AD-CONCEPT-VISUAL are issued as simultaneous native delegation calls
 - [ ] TD-FEASIBILITY spawns before scope tiers are defined; PR-SCOPE after
 - [ ] "May I write it to `design/gdd/game-concept.md`?" is asked before writing
 - [ ] The concept document includes a Visual Identity Anchor section
@@ -146,7 +146,7 @@ Fixture defaults.
 
 **Assertions:**
 - [ ] All 4 skip notes appear, each naming its gate and "Lean mode"
-- [ ] No `Agent` call is made for any director
+- [ ] No native delegation call is made for any director
 - [ ] "May I write" is still asked before writing
 - [ ] Verdict is COMPLETE
 
@@ -228,7 +228,7 @@ Fixture defaults.
 
 **Assertions:**
 - [ ] All 4 skip notes appear, each naming its gate and "Solo mode" (not "Lean mode")
-- [ ] No `Agent` call is made for any director
+- [ ] No native delegation call is made for any director
 - [ ] The concept is written only after the user's approval
 - [ ] Verdict is COMPLETE
 
@@ -238,7 +238,7 @@ Fixture defaults.
 
 - [ ] Checks `workflow` before anything else and runs exactly one flow
 - [ ] Full flow presents 3 concepts before the user commits; Lean Brief flow presents 2–3 one-liners
-- [ ] Concept selection always asks, regardless of `modes.automation`
+- [ ] Concept selection asks for unresolved decisions, regardless of `modes.automation`
 - [ ] Gates spawn at their own points in full mode (CD-PILLARS + AD-CONCEPT-VISUAL together; TD-FEASIBILITY; PR-SCOPE)
 - [ ] In the full flow (`workflow: standard` / `full`), all 4 gates are skipped in lean and solo modes, each noted by name; the Lean Brief flow spawns no gate at all
 - [ ] Asks "May I write" before writing `design/game-brief.md` or `design/gdd/game-concept.md`

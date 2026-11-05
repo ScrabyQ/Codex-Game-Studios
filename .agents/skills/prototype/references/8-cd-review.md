@@ -8,7 +8,7 @@
 **Review mode check:**
 - `solo` → skip. Note: "CD-PLAYTEST skipped — Solo mode."
 - `lean` → skip. Note: "CD-PLAYTEST skipped — Lean mode."
-- `full` → spawn `creative-director` via `Agent` using gate **CD-PLAYTEST** if
+- `full` → spawn `creative-director` using available authorized native delegation using gate **CD-PLAYTEST** if
   `design/gdd/game-concept.md` exists with game pillars defined, or
   `design/game-brief.md` exists (the `rigor: minimal` brief has no pillars — its
   pitch and "what they feel" line stand in). If neither is available, note:

@@ -150,10 +150,10 @@ user, with the four values as options. Never take it from an epic that
 references the ADR, and never reuse a `Domain` value (the template's note under
 Engine Compatibility says why).
 
-5.5. **Engine Specialist Validation** — Before saving, spawn the **primary engine specialist** via `Agent` to validate the drafted ADR:
+5.5. **Engine Specialist Validation** — Before saving, spawn the **primary engine specialist** using available authorized native delegation to validate the drafted ADR:
    - Resolve the primary specialist: `<engine>-specialist` derived from `engine.name` in `project.yaml` (Godot→`godot-specialist`, Unity→`unity-specialist`, Unreal→`unreal-specialist`); if `engine.name` is absent or empty, read the Primary line of the `## Engine Specialists` section in `.agents/docs/technical-preferences.md`
    - If no engine is configured (neither source yields an engine), skip this step **Record ``Engine validation: NOT ASSESSED — no engine configured (`engine.name` unset in `project.yaml`)`` in this run's output.** A skipped check that says nothing is indistinguishable from a check that passed; the reader cannot tell engine guidance was never sought.
-   - Spawn `subagent_type: [primary specialist]` with: the ADR's Engine Compatibility section, Decision section, Key Interfaces, and the engine reference docs path. Ask them to:
+   - Spawn `[primary specialist]` with: the ADR's Engine Compatibility section, Decision section, Key Interfaces, and the engine reference docs path. Ask them to:
      1. Confirm the proposed approach is idiomatic for the pinned engine version
      2. Flag any APIs or patterns that are deprecated or changed post-training-cutoff
      3. Identify engine-specific risks or gotchas not captured in the current ADR draft
@@ -165,7 +165,7 @@ Engine Compatibility says why).
 - `lean` → skip (not a PHASE-GATE). Note: "TD-ADR skipped — Lean mode." Proceed to Step 5.7 (GDD sync check).
 - `full` → spawn as normal.
 
-5.6. **Technical Director Strategic Review** — After the engine specialist validation, spawn `technical-director` via `Agent` using gate **TD-ADR** (`.agents/docs/director-gates/td-adr.md`):
+5.6. **Technical Director Strategic Review** — After the engine specialist validation, spawn `technical-director` using available authorized native delegation using gate **TD-ADR** (`.agents/docs/director-gates/td-adr.md`):
    - Pass: the ADR file path (or draft content), engine version, domain, any existing ADRs in the same domain
    - The TD validates architectural coherence (is this decision consistent with the whole system?) — distinct from the engine specialist's API-level check
    - On CONCERNS: show them to the user verbatim and ask with the standard options from `director-gates.md` — `Revise flagged items` / `Accept and proceed` / `Discuss further`. Revise the flagged Decision or Alternatives sections only on `Revise flagged items`.

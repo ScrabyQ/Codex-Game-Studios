@@ -60,7 +60,7 @@ Read over 40 KB is refused. Verify:
 - `lean` → skip (not a PHASE-GATE). Note: "CD-GDD-ALIGN skipped — Lean mode." Proceed to Step 5b.
 - `full` → spawn as normal.
 
-Before finalizing the GDD, spawn `creative-director` via `Agent` using gate **CD-GDD-ALIGN** (`.agents/docs/director-gates/cd-gdd-align.md`).
+Before finalizing the GDD, spawn `creative-director` using available authorized native delegation using gate **CD-GDD-ALIGN** (`.agents/docs/director-gates/cd-gdd-align.md`).
 
 Pass: completed GDD file path, game pillars (from `design/gdd/game-concept.md` or `design/gdd/game-pillars.md`; if there is neither, the pitch and "what they feel" line of `design/game-brief.md`), MDA aesthetics target, and the GDD's Player Fantasy section — or, when this tier did not author one, say so.
 

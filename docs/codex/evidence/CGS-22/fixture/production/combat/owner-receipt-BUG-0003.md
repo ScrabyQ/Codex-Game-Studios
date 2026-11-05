@@ -1,4 +1,0 @@
-# Gameplay-programmer receipt
-Mechanism: actual sequential in-session role switch after reading the written QA handoff and src/damage.mjs; not independent delegation.
-Received BUG-0003 from qa-tester for story-001. Diagnosis: health - amount adds magnitude for negative amount, matching actual 15 vs 10. Proposed correction for a future authorized fix: normalize amount before subtraction, preserve zero floor, and extend boundary tests. No design ambiguity is required for this acceptance criterion. Escalate any later spec conflict jointly to lead-programmer and game-designer.
-Current scope is acknowledgment only; src/damage.mjs and tests/damage.test.mjs are unchanged. Bug remains Open, story In Review. Return to QA after implementation for independent verification when available. No external task was created.

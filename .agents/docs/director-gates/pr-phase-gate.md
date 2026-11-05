@@ -1,8 +1,8 @@
-> Gate definition. The spawning skill passes this file's path to the director agent; the AGENT reads it — the parent session should not.
+> Gate definition. For authorized native delegation, pass this path so the assigned reviewer reads it first. An in-session reviewer reads it explicitly and labels the review nonindependent; unavailable required independent execution remains PENDING.
 
 # PR-PHASE-GATE — Production Readiness at Phase Transition
 
-Agent: `producer` | Model tier: Opus | Domain: Scope, timeline, dependencies, production risk
+Agent: `producer` | Model: native session policy | Domain: Scope, timeline, dependencies, production risk
 
 **Trigger**: At every `/gate-check` director panel — producer is on the panel at every `modes.workflow`; spawn in parallel with the rest of it (alone at `minimal`, with TD-PHASE-GATE at `standard`, with TD-PHASE-GATE, CD-PHASE-GATE and AD-PHASE-GATE at `full`)
 

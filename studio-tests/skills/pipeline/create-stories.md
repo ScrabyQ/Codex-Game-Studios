@@ -29,10 +29,10 @@ or BLOCKED (user declined).
 
 Checked against the SKILL.md by `/skill-test spec` — no fixture needed.
 
-- [ ] Has required frontmatter fields: `name`, `description`, `argument-hint`, `user-invocable`, `allowed-tools`
+- [ ] Skill frontmatter has nonempty `name` and `description`; optional invocation policy is checked in `agents/openai.yaml` when present, without assuming source-only fields
 - [ ] Has ≥2 phase headings
 - [ ] Contains verdict keywords: COMPLETE, BLOCKED
-- [ ] Contains "May I write" collaborative protocol language (one approval for the full story set)
+- [ ] Defines contextual authorization for writes (one approval for the full story set)
 - [ ] Has a next-step handoff at the end (`/story-readiness`, `/dev-story`)
 - [ ] Documents story Status: Blocked when governing ADR is Proposed
 - [ ] Documents QL-STORY-READY gate: active in full mode, skipped in lean/solo
@@ -41,11 +41,11 @@ Checked against the SKILL.md by `/skill-test spec` — no fixture needed.
 
 ## Director Gate Checks
 
-In `full` mode: `qa-lead` is spawned once via `Agent` with gate QL-STORY-READY
+In `full` mode: `qa-lead` is spawned once through native delegation with gate QL-STORY-READY
 after all stories are decomposed and before the write ask. It returns a verdict per
 story (ADEQUATE / GAPS / INADEQUATE) plus Given/When/Then specs (Logic,
 Integration) or manual verification steps (Visual/Feel, UI) for ADEQUATE stories.
-GAPS → `AskUserQuestion` with `Revise flagged criteria` / `Accept and proceed` /
+GAPS → `user question` with `Revise flagged criteria` / `Accept and proceed` /
 `Discuss further` — nothing is revised before the user chooses. INADEQUATE →
 blocking: the story is revised with the user (or dropped and named) before the
 write ask. NOT ASSESSED [missing input] → never read as ADEQUATE: the input is
@@ -64,7 +64,7 @@ In `solo` mode: QL-STORY-READY is skipped. Output notes:
 
 Every case's `project.yaml` sets `modes.rigor: minimal` and
 `modes.automation: collaborative`, with no `project.local.yaml`, unless its own
-Fixture says otherwise. Rules: `studio-tests/CLAUDE.md` §
+Fixture says otherwise. Rules: `studio-tests/AGENTS.md` §
 Fixture defaults.
 
 ---
@@ -178,7 +178,7 @@ Fixture defaults.
 **Expected behavior:**
 1. Skill detects no argument at `standard`
 2. Globs `production/epics/*/EPIC.md`
-3. Asks via `AskUserQuestion`: "Which epic would you like to break into stories?"
+3. Asks via `user question`: "Which epic would you like to break into stories?"
    with the 2 epics (and their status) as options
 4. Decomposes only the epic the user picks
 
@@ -222,7 +222,7 @@ Fixture defaults.
 2. `qa-lead` is spawned once with QL-STORY-READY for the whole story list
 3. The assessment is presented: story 1 ADEQUATE with its test-case specs; story 2
    GAPS naming the vague criterion
-4. `AskUserQuestion` for story 2: `Revise flagged criteria` / `Accept and proceed`
+4. `user question` for story 2: `Revise flagged criteria` / `Accept and proceed`
    / `Discuss further`
 5. On Revise: story 2's revised criteria are drafted and shown; specs for story 2
    alone are re-requested in one follow-up call

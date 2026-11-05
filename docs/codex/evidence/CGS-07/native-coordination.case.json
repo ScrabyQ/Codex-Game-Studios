@@ -1,9 +1,0 @@
-{
-  "id": "cgs07-native-coordination",
-  "components": ["file:.claude/agents/technical-director.md", "file:.claude/agents/producer.md"],
-  "read_only": true,
-  "no_writes": true,
-  "prompt": "This user explicitly authorizes a bounded delegation test. Use the native custom technical-director role and native custom producer role if available, exactly two child agents maximum, and wait for their responses. Do not substitute default agents and claim custom roles worked. If those types are unavailable, read .codex/agents/technical-director.toml and producer.toml and perform the explicit in-session role review fallback, labelled not independent. Scenario: a feature estimate is 15 days; the remaining milestone capacity is 10 days; scope reduction would threaten the named pillar 'Discovery'. Engine and implementation details are intentionally unspecified. Request technical-director to assess the quantified feasibility gap and route creative/scheduling decisions to their owners. Request producer to quantify capacity and present scope/schedule options without making architecture or creative decisions. Brief both that this is read-only, no decisions have been approved, no writes or further delegation are authorized, and each must state facts, recommendation, unresolved decision, and next owner. Final report must identify actual native versus fallback mechanism, observed child outcomes, why two perspectives are warranted, the 5-day gap, and who owns the unresolved final decision. Do not claim independent review if no native roles actually ran.",
-  "expect_report": ["technical-director", "producer", "5", "user"],
-  "scope": "Actual bounded coordination invocation; native success must be established by collab tool events naming custom roles, otherwise explicitly labelled in-session fallback. Not all 11 roles or every source spec case."
-}

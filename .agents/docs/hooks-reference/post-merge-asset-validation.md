@@ -1,84 +1,26 @@
-# Hook: post-merge-asset-validation
+# Asset validation after an authorized merge
 
-## Trigger
+This is an explicit workflow, not an installed post-merge Git hook. A merge requires its own authorization. Identify the actual compared revisions and changed asset paths; a missing ref or an ambiguous diff is NOT ASSESSED, not “no assets changed”.
 
-Runs after any merge to `main` (the trunk) or a `release/*` branch that
-includes changes to `assets/`.
+## Observe assets
 
-## Purpose
+Resolve the engine's asset root and the art bible's naming/size policies. Use the registered helper:
 
-Validates that all assets in the merged branch conform to naming conventions,
-size budgets, and format requirements. Prevents non-compliant assets from
-accumulating on the trunk.
-
-## Implementation
-
-```bash
-#!/bin/bash
-# Post-merge hook: Asset validation
-# Checks merged assets against project standards
-
-MERGED_ASSETS=$(git diff --name-only HEAD@{1} HEAD | grep -E '^assets/')
-
-if [ -z "$MERGED_ASSETS" ]; then
-    exit 0
-fi
-
-EXIT_CODE=0
-WARNINGS=""
-
-for file in $MERGED_ASSETS; do
-    filename=$(basename "$file")
-
-    # Check naming convention (lowercase with underscores)
-    if echo "$filename" | grep -qE '[A-Z[:space:]-]'; then
-        WARNINGS="$WARNINGS\nNAMING: $file -- must be lowercase with underscores"
-        EXIT_CODE=1
-    fi
-
-    # Check texture sizes (must be power of 2)
-    if [[ "$file" == *.png || "$file" == *.jpg ]]; then
-        # Requires ImageMagick
-        if command -v identify &> /dev/null; then
-            dims=$(identify -format "%w %h" "$file" 2>/dev/null)
-            if [ -n "$dims" ]; then
-                w=$(echo "$dims" | cut -d' ' -f1)
-                h=$(echo "$dims" | cut -d' ' -f2)
-                if (( (w & (w-1)) != 0 || (h & (h-1)) != 0 )); then
-                    WARNINGS="$WARNINGS\nSIZE: $file -- dimensions ${w}x${h} not power-of-2"
-                fi
-            fi
-        fi
-    fi
-
-    # Check file size budgets
-    size=$(stat -f%z "$file" 2>/dev/null || stat -c%s "$file" 2>/dev/null)
-    if [ -n "$size" ]; then
-        # Textures: max 4MB
-        if [[ "$file" == assets/art/* ]] && [ "$size" -gt 4194304 ]; then
-            WARNINGS="$WARNINGS\nBUDGET: $file -- ${size} bytes exceeds 4MB texture budget"
-            EXIT_CODE=1
-        fi
-        # Audio: max 10MB for music, 512KB for SFX
-        if [[ "$file" == assets/audio/sfx* ]] && [ "$size" -gt 524288 ]; then
-            WARNINGS="$WARNINGS\nBUDGET: $file -- ${size} bytes exceeds 512KB SFX budget"
-        fi
-    fi
-done
-
-if [ -n "$WARNINGS" ]; then
-    echo "=== Asset Validation Report ==="
-    echo -e "$WARNINGS"
-    echo "================================"
-    echo "Run /asset-audit for a full report."
-fi
-
-exit $EXIT_CODE
+```powershell
+node scripts/codex/helper.mjs asset-scan --root . --engine godot --files
 ```
 
-## Agent Integration
+The example selects Godot; use the resolved engine. Supply actual project budgets using supported options such as `--budget texture=4M`, `--max-dim`, `--sample-rates` and `--name-regex`. Budget precedence is extension, then type, then all; a file exactly at the limit remains in budget. Do not invent policy from a filename.
 
-When this hook reports issues:
-1. For naming violations: fix manually or invoke `art-director` for guidance
-2. For size violations: invoke `technical-artist` for optimization advice
-3. For a full audit: run `/asset-audit` skill
+Preserve these dimensions in the review:
+
+- Naming against the configured convention; lowercase/underscores are a Godot default, not a universal Unity/Unreal rule.
+- Texture dimensions and power-of-two requirements when the project actually requires them. Unsupported formats or missing tools remain named unassessed checks.
+- File sizes against the art bible. Example budgets such as 4 MB textures, 10 MB music and 512 KB SFX illustrate category-specific limits; they are not automatic project settings.
+- Audio format/sample rates, orphaned assets and missing source references where the helper supports assessment.
+
+The helper emits observations, check status and hits. An unrun check uses a missing result, never zero hits. `/asset-audit` applies policy and produces its verdict. No changed assets means that scope is N/A, not a claim that all project assets passed.
+
+## Handoff
+
+Naming policy questions go to art-director; size/format optimization to technical-artist. Use available authorized delegation or disclose an in-session review. Store run artifacts in ignored/temporary storage or CI, preserving source assets until a correction is authorized.
