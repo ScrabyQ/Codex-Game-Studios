@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "task": "CGS-06",
+  "source_head": "1e6efab1905c5392d687fc1eed234f58a7165e01",
+  "upstream": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
+  "date": "2026-11-05",
+  "checks": [
+    {"command": "node scripts/codex/config-tests.mjs", "exit_code": 0, "result": "PASS: 9 rigor/automation combinations; local and legacy precedence; invalid enums; locked local key; UTF-8 BOM and CRLF editing; checkpoint narrative; model fallback and inherit behavior"},
+    {"command": "git diff --exit-code HEAD -- project.yaml", "exit_code": 0, "result": "PASS: project.yaml unchanged; no migration-seeded knobs"},
+    {"command": "supportTargets() compared to on-disk output", "exit_code": 0, "result": "PASS: 53 target bytes matched generation recipes"},
+    {"command": "node scripts/codex/models.mjs resolve --family engineering --available gpt-5.6-luna", "exit_code": 0, "result": "PASS: inherits when override support is unknown"},
+    {"command": "node scripts/codex/model-tests.mjs", "exit_code": 0, "result": "PASS: source-model policy mappings for all 49 roles and 74 skills; named role and skill fallback; inherited model and unknown capability"}
+  ],
+  "limitations": [
+    "Checks ran on Windows with Node 22 and Git Bash; Linux remains pending.",
+    "The tests invoke helpers directly without Claude CLI; full CGS-25 helper coverage remains pending.",
+    "Native skill-lint and agent-check semantics require separate adaptation; mirrored upstream validators are not verified for Codex frontmatter or TOML roles.",
+    "Policy catalog is caller-supplied and does not establish model availability, supported effort, or override support. Native CLI and host capabilities must be assessed separately."
+  ]
+}

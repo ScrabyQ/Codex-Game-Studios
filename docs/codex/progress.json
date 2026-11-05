@@ -5,9 +5,9 @@
   "upstream_sha": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
   "owner": "ScrabyQ",
   "repository": "Codex-Game-Studios",
-  "last_completed": "CGS-04",
-  "current_task": "CGS-05",
-  "next_safe_step": "Implement guarded Skill generator, config/model policy, rules and reference mirror with disjoint ownership.",
+  "last_completed": "CGS-06",
+  "current_task": "CGS-07",
+  "next_safe_step": "CGS05 generator nearing completion; CGS07 leadership roles may proceed after verified CGS06. CGS25 all-helper fidelity still pending.",
   "decisions": [
     "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED.",
     "Generated content-preserving .agents mirror retains helper root math; native roles use .codex/agents/*.toml; all generation is hash-guarded; no new agent runtime."
@@ -56,11 +56,13 @@
       "singularity_id": "T-742d5725-0e4c-4085-8db2-9a997503a9af",
       "title": "CGS-04 · Сделать AGENTS.md, scoped instructions и Codex onboarding",
       "status": "COMPLETE",
-      "commit": null,
+      "commit": "1e6efab1905c5392d687fc1eed234f58a7165e01",
       "evidence": [
         "docs/codex/evidence/CGS-04/native-probes.json",
         "Actual Codex CLI0.148.0 gpt-5.6-luna root/src/design/docs read-only probes => exit0; instruction assertions PASS"
-      ]
+      ],
+      "note": "CGS05 guarded generator and CGS06 config policy in parallel; CGS26 references pending cross-family checks. All workers have disjoint ownership.",
+      "updated_at": "2026-11-05T09:53:45.916Z"
     },
     {
       "key": "CGS-05",
@@ -74,9 +76,13 @@
       "key": "CGS-06",
       "singularity_id": "T-d80c6ecd-b5e6-4176-a1ee-58aebf33697b",
       "title": "CGS-06 · Вынести выбор моделей и режимы rigor из Claude frontmatter",
-      "status": "PENDING",
+      "status": "COMPLETE",
       "commit": null,
-      "evidence": []
+      "evidence": [
+        "docs/codex/evidence/CGS-06/config-policy.json"
+      ],
+      "note": "CGS05 generator nearing completion; CGS07 leadership roles may proceed after verified CGS06. CGS25 all-helper fidelity still pending.",
+      "updated_at": "2026-11-05T09:59:35.976Z"
     },
     {
       "key": "CGS-07",

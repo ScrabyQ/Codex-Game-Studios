@@ -1,0 +1,544 @@
+{
+  "schema": 1,
+  "contract": "Capabilities must be supplied for the specific host and account. Fallback never changes role instructions or permissions. Unknown or unsupported override capability inherits the session model.",
+  "families": {
+    "frontier": {
+      "preferred": "gpt-6-astra",
+      "effort": "high",
+      "fallback": [
+        "gpt-6.1-terra",
+        "gpt-6.1-sol",
+        "gpt-5.6-terra",
+        "gpt-5.6-sol",
+        "gpt-5.6-luna"
+      ]
+    },
+    "engineering": {
+      "preferred": "gpt-6.1-terra",
+      "effort": "high",
+      "fallback": [
+        "gpt-6.1-sol",
+        "gpt-5.6-terra",
+        "gpt-5.6-sol",
+        "gpt-5.6-luna"
+      ]
+    },
+    "general": {
+      "preferred": "gpt-6.1-sol",
+      "effort": "medium",
+      "fallback": [
+        "gpt-6.1-terra",
+        "gpt-5.6-sol",
+        "gpt-5.6-terra",
+        "gpt-5.6-luna"
+      ]
+    },
+    "bounded": {
+      "preferred": "gpt-6-luna",
+      "effort": "medium",
+      "fallback": [
+        "gpt-5.6-luna",
+        "gpt-5.6-sol",
+        "gpt-5.6-terra"
+      ]
+    }
+  },
+  "roles": {
+    "accessibility-specialist": {
+      "family": "inherit",
+      "source_model": "inherit"
+    },
+    "ai-programmer": {
+      "family": "inherit",
+      "source_model": "inherit"
+    },
+    "analytics-engineer": {
+      "family": "inherit",
+      "source_model": "inherit"
+    },
+    "art-director": {
+      "family": "inherit",
+      "source_model": "inherit"
+    },
+    "audio-director": {
+      "family": "inherit",
+      "source_model": "inherit"
+    },
+    "community-manager": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "creative-director": {
+      "family": "frontier",
+      "source_model": "opus"
+    },
+    "devops-engineer": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "economy-designer": {
+      "family": "inherit",
+      "source_model": "inherit"
+    },
+    "engine-programmer": {
+      "family": "inherit",
+      "source_model": "inherit"
+    },
+    "game-designer": {
+      "family": "inherit",
+      "source_model": "inherit"
+    },
+    "gameplay-programmer": {
+      "family": "inherit",
+      "source_model": "inherit"
+    },
+    "godot-csharp-specialist": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "godot-gdextension-specialist": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "godot-gdscript-specialist": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "godot-shader-specialist": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "godot-specialist": {
+      "family": "inherit",
+      "source_model": "inherit"
+    },
+    "lead-programmer": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "level-designer": {
+      "family": "inherit",
+      "source_model": "inherit"
+    },
+    "live-ops-designer": {
+      "family": "inherit",
+      "source_model": "inherit"
+    },
+    "localization-lead": {
+      "family": "inherit",
+      "source_model": "inherit"
+    },
+    "narrative-director": {
+      "family": "inherit",
+      "source_model": "inherit"
+    },
+    "network-programmer": {
+      "family": "inherit",
+      "source_model": "inherit"
+    },
+    "performance-analyst": {
+      "family": "inherit",
+      "source_model": "inherit"
+    },
+    "producer": {
+      "family": "frontier",
+      "source_model": "opus"
+    },
+    "prototyper": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "qa-lead": {
+      "family": "inherit",
+      "source_model": "inherit"
+    },
+    "qa-tester": {
+      "family": "inherit",
+      "source_model": "inherit"
+    },
+    "release-manager": {
+      "family": "inherit",
+      "source_model": "inherit"
+    },
+    "security-engineer": {
+      "family": "inherit",
+      "source_model": "inherit"
+    },
+    "sound-designer": {
+      "family": "inherit",
+      "source_model": "inherit"
+    },
+    "systems-designer": {
+      "family": "inherit",
+      "source_model": "inherit"
+    },
+    "technical-artist": {
+      "family": "inherit",
+      "source_model": "inherit"
+    },
+    "technical-director": {
+      "family": "frontier",
+      "source_model": "opus"
+    },
+    "tools-programmer": {
+      "family": "inherit",
+      "source_model": "inherit"
+    },
+    "ue-blueprint-specialist": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "ue-gas-specialist": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "ue-replication-specialist": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "ue-umg-specialist": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "ui-programmer": {
+      "family": "inherit",
+      "source_model": "inherit"
+    },
+    "unity-addressables-specialist": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "unity-dots-specialist": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "unity-shader-specialist": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "unity-specialist": {
+      "family": "inherit",
+      "source_model": "inherit"
+    },
+    "unity-ui-specialist": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "unreal-specialist": {
+      "family": "inherit",
+      "source_model": "inherit"
+    },
+    "ux-designer": {
+      "family": "inherit",
+      "source_model": "inherit"
+    },
+    "world-builder": {
+      "family": "inherit",
+      "source_model": "inherit"
+    },
+    "writer": {
+      "family": "inherit",
+      "source_model": "inherit"
+    }
+  },
+  "default_family": "general",
+  "mapping_policy": "Upstream opus → frontier, sonnet → engineering, haiku → bounded; inherit → session inheritance. These are policy choices, not claims of model equivalence.",
+  "skills": {
+    "adopt": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "architecture-decision": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "architecture-review": {
+      "family": "frontier",
+      "source_model": "opus"
+    },
+    "art-bible": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "asset-audit": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "asset-spec": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "balance-check": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "brainstorm": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "bug-report": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "bug-triage": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "changelog": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "code-review": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "consistency-check": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "content-audit": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "create-architecture": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "create-control-manifest": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "create-epics": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "create-stories": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "day-one-patch": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "design-review": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "design-system": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "dev-story": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "estimate": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "gate-check": {
+      "family": "frontier",
+      "source_model": "opus"
+    },
+    "help": {
+      "family": "bounded",
+      "source_model": "haiku"
+    },
+    "hotfix": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "launch-checklist": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "localize": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "map-systems": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "milestone-review": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "onboard": {
+      "family": "bounded",
+      "source_model": "haiku"
+    },
+    "patch-notes": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "perf-profile": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "playtest-report": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "project-stage-detect": {
+      "family": "bounded",
+      "source_model": "haiku"
+    },
+    "propagate-design-change": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "prototype": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "qa-plan": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "quick-design": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "regression-suite": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "release-checklist": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "retrospective": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "reverse-document": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "review-all-gdds": {
+      "family": "frontier",
+      "source_model": "opus"
+    },
+    "scope-check": {
+      "family": "bounded",
+      "source_model": "haiku"
+    },
+    "security-audit": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "settings": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "setup-engine": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "skill-improve": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "skill-test": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "smoke-check": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "soak-test": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "sprint-plan": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "sprint-status": {
+      "family": "bounded",
+      "source_model": "haiku"
+    },
+    "start": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "story-done": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "story-readiness": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "team-audio": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "team-combat": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "team-level": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "team-live-ops": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "team-narrative": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "team-polish": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "team-qa": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "team-release": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "team-ui": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "tech-debt": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "test-evidence-review": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "test-flakiness": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "test-helpers": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "test-setup": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "ux-design": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "ux-review": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    },
+    "vertical-slice": {
+      "family": "engineering",
+      "source_model": "sonnet"
+    }
+  }
+}
