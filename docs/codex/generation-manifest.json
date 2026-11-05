@@ -3115,6 +3115,23 @@
       "ownership": "generated"
     },
     {
+      "id": "file:.claude/skills/changelog/SKILL.md=>.agents/skills/changelog/SKILL.md",
+      "source": ".claude/skills/changelog/SKILL.md",
+      "source_sha256": "e8ab97b0b07e7cfef09d00b1d273ec7b926fba26c567853a03843243e25874f2",
+      "target": ".agents/skills/changelog/SKILL.md",
+      "target_sha256": "90dc44090be2317312f55480ef71bdd908cb9dca0073656b1b321c142203d10e",
+      "transform_version": 1,
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:4e6cc916b9446e035629e73aa5ae7e2837105f130c9a11cf7fd6793993caa3af"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
       "id": "file:.claude/skills/code-review/SKILL.md=>.agents/skills/code-review/SKILL.md",
       "source": ".claude/skills/code-review/SKILL.md",
       "source_sha256": "3468d605b4627e0568c80d0732d1ab1281652641f3dede555191657c40571b8c",
@@ -3411,6 +3428,36 @@
         "codex-question-delegation-v1",
         "native-skill-invocation-v1",
         "overlay-sha256:e240015874924a9c4bf8a7a075624e07d6585b4981e684d75a067fec52d2a3f2"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/day-one-patch/SKILL.md=>.agents/skills/day-one-patch/agents/openai.yaml",
+      "source": ".claude/skills/day-one-patch/SKILL.md",
+      "source_sha256": "dcd3d710b55dfd9e426965850cb572945d00d5d2d52daf53e83682ad573da971",
+      "target": ".agents/skills/day-one-patch/agents/openai.yaml",
+      "target_sha256": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94",
+      "transform_version": 1,
+      "transform_ids": [
+        "explicit-invocation-policy-v1"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/day-one-patch/SKILL.md=>.agents/skills/day-one-patch/SKILL.md",
+      "source": ".claude/skills/day-one-patch/SKILL.md",
+      "source_sha256": "dcd3d710b55dfd9e426965850cb572945d00d5d2d52daf53e83682ad573da971",
+      "target": ".agents/skills/day-one-patch/SKILL.md",
+      "target_sha256": "e48eb9d923bc393a1ebbad613dc695de164066b87cc41df43a4ebb0d481a603e",
+      "transform_version": 1,
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:b55aa9356f87d9ef911ccf389b56e37c2f0e3d8a7e51ef146cc61168cd60eaa7"
       ],
       "owner": "CGS-05",
       "ownership": "generated"
@@ -3825,6 +3872,66 @@
       "ownership": "generated"
     },
     {
+      "id": "file:.claude/skills/hotfix/SKILL.md=>.agents/skills/hotfix/agents/openai.yaml",
+      "source": ".claude/skills/hotfix/SKILL.md",
+      "source_sha256": "20233b7851f526da3ad80ee9acb9e2ec9b99bd15e861252eddef04c0d7aaee6c",
+      "target": ".agents/skills/hotfix/agents/openai.yaml",
+      "target_sha256": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94",
+      "transform_version": 1,
+      "transform_ids": [
+        "explicit-invocation-policy-v1"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/hotfix/SKILL.md=>.agents/skills/hotfix/SKILL.md",
+      "source": ".claude/skills/hotfix/SKILL.md",
+      "source_sha256": "20233b7851f526da3ad80ee9acb9e2ec9b99bd15e861252eddef04c0d7aaee6c",
+      "target": ".agents/skills/hotfix/SKILL.md",
+      "target_sha256": "0d563ed6699d8f1e1d3c1d7515cd12818598859955a48621bc9c3f2668eaaccd",
+      "transform_version": 1,
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:61081610f8068abba385ca01b899e9e541271ae5e4437fafa6bf0c704ad3c0c1"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/launch-checklist/SKILL.md=>.agents/skills/launch-checklist/agents/openai.yaml",
+      "source": ".claude/skills/launch-checklist/SKILL.md",
+      "source_sha256": "ce8813df00b1b1f513c935fa6fcefd560c293e96fee02040a7705063a6afa7d2",
+      "target": ".agents/skills/launch-checklist/agents/openai.yaml",
+      "target_sha256": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94",
+      "transform_version": 1,
+      "transform_ids": [
+        "explicit-invocation-policy-v1"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/launch-checklist/SKILL.md=>.agents/skills/launch-checklist/SKILL.md",
+      "source": ".claude/skills/launch-checklist/SKILL.md",
+      "source_sha256": "ce8813df00b1b1f513c935fa6fcefd560c293e96fee02040a7705063a6afa7d2",
+      "target": ".agents/skills/launch-checklist/SKILL.md",
+      "target_sha256": "4dfe9b3e3ad5702bc37c7e5e3003f6695e4b29009dda54f70c9b780373670851",
+      "transform_version": 1,
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:82131fb86a26963ae2bd12d74a1a493df7c313bb44d9d907c807c37d60285eb5"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
       "id": "file:.claude/skills/localize/SKILL.md=>.agents/skills/localize/SKILL.md",
       "source": ".claude/skills/localize/SKILL.md",
       "source_sha256": "321672db96810276c52b6630119d38bfeee8010cf6cd4a4f39511737ed450144",
@@ -3888,6 +3995,23 @@
         "codex-question-delegation-v1",
         "native-skill-invocation-v1",
         "overlay-sha256:b24e4490972b94d8e310dcfb72b6514d40c75aed3171e758e0f11ebb6c9dce24"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/patch-notes/SKILL.md=>.agents/skills/patch-notes/SKILL.md",
+      "source": ".claude/skills/patch-notes/SKILL.md",
+      "source_sha256": "41e7a4b4b1d5536dd2957ffa048a80391ddcf2c6cf8eac169b05962d66c5f0e7",
+      "target": ".agents/skills/patch-notes/SKILL.md",
+      "target_sha256": "d6d68839cc5b1d5c4c8b70f1f514f7b615101a615d6c4f0ade3b87c5814b6bd7",
+      "transform_version": 1,
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:8ac6a0f6226a07c888a5bbc1f89573e6d8a7e52ce3fd8a13a93f334995142955"
       ],
       "owner": "CGS-05",
       "ownership": "generated"
@@ -4164,6 +4288,23 @@
         "codex-question-delegation-v1",
         "native-skill-invocation-v1",
         "overlay-sha256:7c9cf197b954b8eb1e5ccbd26cdf78a2292ef86b8a83e783e9218d63ed4b53b5"
+      ],
+      "owner": "CGS-05",
+      "ownership": "generated"
+    },
+    {
+      "id": "file:.claude/skills/release-checklist/SKILL.md=>.agents/skills/release-checklist/SKILL.md",
+      "source": ".claude/skills/release-checklist/SKILL.md",
+      "source_sha256": "a7bd13a309e683c5a2b8a39f18df753d423d9d0b02ccf384802e3882cac4cfd5",
+      "target": ".agents/skills/release-checklist/SKILL.md",
+      "target_sha256": "1e1f6ca9e01a22ea2eb4a6f8b2369bf3ee5fc54298d2319273dc85cae95ef187",
+      "transform_version": 1,
+      "transform_ids": [
+        "frontmatter-scope-v1",
+        "explicit-bootstrap-v1",
+        "codex-question-delegation-v1",
+        "native-skill-invocation-v1",
+        "overlay-sha256:e171f1f534c57a947a9751d556c742d8ec0cb7465ddb099e761b8f27caff80cf"
       ],
       "owner": "CGS-05",
       "ownership": "generated"

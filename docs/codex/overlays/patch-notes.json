@@ -1,0 +1,21 @@
+{
+  "source_sha256": "41e7a4b4b1d5536dd2957ffa048a80391ddcf2c6cf8eac169b05962d66c5f0e7",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-20 authorization and evidence contract:** Resolve the selected project root, stage, target devices and certification tier from actual configuration; unset is unknown, not `none`. Local review and dry-run results do not authorize any external write. Real storefront uploads, steamcmd, butler, deploys, publishing, Git push, tags, merges or release creation require applicable user authorization, including any still-valid explicit authorization already granted. A review or dry-run request does not authorize an official release; honor the user's applicable explicit scope. Do not start unrequested follow-ups; honor explicitly authorized chains. Verify required artifacts, review/QA results and platform-specific rollback evidence; missing or unrun inputs remain NOT ASSESSED or blocking as appropriate. In-session role review is not independent sign-off.\n\nUse only source-backed player-visible changes and clearly label unverified claims; a refactor alone is not evidence of improved gameplay or performance. Preserve actual version, values and known issues; if no supported player-facing changes exist, say so rather than inventing them. Drafts are not published.\n\n"
+    },
+    {
+      "find": "- \"Refactored damage calculation pipeline\" → \"Improved hit detection accuracy\"",
+      "replace": "- A damage-pipeline refactor is internal; omit it unless evidence establishes a specific player-visible result."
+    },
+    {
+      "find": "- \"Fixed null reference in inventory manager\" → \"Fixed a crash when opening inventory\"",
+      "replace": "- Describe an inventory crash fix only when the source evidence establishes that player-visible symptom."
+    },
+    {
+      "find": "- \"Reduced GC allocations in combat loop\" → \"Improved combat performance\"",
+      "replace": "- Describe a performance improvement only when actual measurements establish the relevant gain."
+    }
+  ]
+}

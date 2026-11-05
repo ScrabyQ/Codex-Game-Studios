@@ -1,0 +1,9 @@
+{
+  "source_sha256": "dcd3d710b55dfd9e426965850cb572945d00d5d2d52daf53e83682ad573da971",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-20 authorization and evidence contract:** Resolve the selected project root, stage, target devices and certification tier from actual configuration; unset is unknown, not `none`. Local review and dry-run results do not authorize any external write. Real storefront uploads, steamcmd, butler, deploys, publishing, Git push, tags, merges or release creation require applicable user authorization, including any still-valid explicit authorization already granted. A review or dry-run request does not authorize an official release; honor the user's applicable explicit scope. Do not start unrequested follow-ups; honor explicitly authorized chains. Verify required artifacts, review/QA results and platform-specific rollback evidence; missing or unrun inputs remain NOT ASSESSED or blocking as appropriate. In-session role review is not independent sign-off.\n\nExplicit invocation only. Check stage and an actual release-gate PASS before relying on reduced QA; a missing gate is NOT ASSESSED and a failing/unassessed gate cannot become an approved release. Define a platform-appropriate rollback plan before any fix; an interruption retains open status and no deployment. Required QA and real sign-offs cannot be replaced by in-session assumptions.\n\n"
+    }
+  ]
+}

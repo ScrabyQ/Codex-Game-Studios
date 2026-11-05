@@ -1,0 +1,13 @@
+{
+  "source_sha256": "ce8813df00b1b1f513c935fa6fcefd560c293e96fee02040a7705063a6afa7d2",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-20 authorization and evidence contract:** Resolve the selected project root, stage, target devices and certification tier from actual configuration; unset is unknown, not `none`. Local review and dry-run results do not authorize any external write. Real storefront uploads, steamcmd, butler, deploys, publishing, Git push, tags, merges or release creation require applicable user authorization, including any still-valid explicit authorization already granted. A review or dry-run request does not authorize an official release; honor the user's applicable explicit scope. Do not start unrequested follow-ups; honor explicitly authorized chains. Verify required artifacts, review/QA results and platform-specific rollback evidence; missing or unrun inputs remain NOT ASSESSED or blocking as appropriate. In-session role review is not independent sign-off.\n\nExplicit invocation only. In dry-run create no files, sign-offs, submissions or deployment; report each known blocker and each unconfirmed manual item. Do not conflate device selection with cert_tier, and never infer a sign-off from file presence.\n\n"
+    },
+    {
+      "find": "- Read `CLAUDE.md` for tech stack, target platforms, and team structure",
+      "replace": "- Read `AGENTS.md` and resolve project.yaml for tech stack, target platforms, and team structure"
+    }
+  ]
+}

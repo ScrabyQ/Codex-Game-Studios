@@ -5908,8 +5908,18 @@
       ],
       "proposed_target": ".agents/skills/changelog/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six local-only scoped release smokes: dry-run blockers and matching/wrong artifact hashes verified, grounded non-player release drafts, interrupted hotfix/dayone not closed. No external publication, deployment, tag or merge; real build/platform/independent readiness unassessed.",
+      "status": "EQUIVALENT",
+      "task": "CGS-20",
+      "target": ".agents/skills/changelog/SKILL.md",
+      "target_sha256": "90dc44090be2317312f55480ef71bdd908cb9dca0073656b1b321c142203d10e",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-20/README.md",
+        "docs/codex/evidence/CGS-20/dry-run.json",
+        "docs/codex/evidence/CGS-20/interruption.json",
+        "docs/codex/evidence/CGS-20/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/code-review/SKILL.md",
@@ -6402,8 +6412,23 @@
       ],
       "proposed_target": ".agents/skills/day-one-patch/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six local-only scoped release smokes: dry-run blockers and matching/wrong artifact hashes verified, grounded non-player release drafts, interrupted hotfix/dayone not closed. No external publication, deployment, tag or merge; real build/platform/independent readiness unassessed.",
+      "status": "EQUIVALENT",
+      "task": "CGS-20",
+      "target": ".agents/skills/day-one-patch/agents/openai.yaml",
+      "target_sha256": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94",
+      "related_targets": [
+        {
+          "target": ".agents/skills/day-one-patch/SKILL.md",
+          "sha256": "e48eb9d923bc393a1ebbad613dc695de164066b87cc41df43a4ebb0d481a603e"
+        }
+      ],
+      "evidence": [
+        "docs/codex/evidence/CGS-20/README.md",
+        "docs/codex/evidence/CGS-20/dry-run.json",
+        "docs/codex/evidence/CGS-20/interruption.json",
+        "docs/codex/evidence/CGS-20/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/design-review/SKILL.md",
@@ -7063,8 +7088,23 @@
       ],
       "proposed_target": ".agents/skills/hotfix/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six local-only scoped release smokes: dry-run blockers and matching/wrong artifact hashes verified, grounded non-player release drafts, interrupted hotfix/dayone not closed. No external publication, deployment, tag or merge; real build/platform/independent readiness unassessed.",
+      "status": "EQUIVALENT",
+      "task": "CGS-20",
+      "target": ".agents/skills/hotfix/agents/openai.yaml",
+      "target_sha256": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94",
+      "related_targets": [
+        {
+          "target": ".agents/skills/hotfix/SKILL.md",
+          "sha256": "0d563ed6699d8f1e1d3c1d7515cd12818598859955a48621bc9c3f2668eaaccd"
+        }
+      ],
+      "evidence": [
+        "docs/codex/evidence/CGS-20/README.md",
+        "docs/codex/evidence/CGS-20/dry-run.json",
+        "docs/codex/evidence/CGS-20/interruption.json",
+        "docs/codex/evidence/CGS-20/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/launch-checklist/SKILL.md",
@@ -7081,8 +7121,23 @@
       ],
       "proposed_target": ".agents/skills/launch-checklist/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six local-only scoped release smokes: dry-run blockers and matching/wrong artifact hashes verified, grounded non-player release drafts, interrupted hotfix/dayone not closed. No external publication, deployment, tag or merge; real build/platform/independent readiness unassessed.",
+      "status": "EQUIVALENT",
+      "task": "CGS-20",
+      "target": ".agents/skills/launch-checklist/agents/openai.yaml",
+      "target_sha256": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94",
+      "related_targets": [
+        {
+          "target": ".agents/skills/launch-checklist/SKILL.md",
+          "sha256": "4dfe9b3e3ad5702bc37c7e5e3003f6695e4b29009dda54f70c9b780373670851"
+        }
+      ],
+      "evidence": [
+        "docs/codex/evidence/CGS-20/README.md",
+        "docs/codex/evidence/CGS-20/dry-run.json",
+        "docs/codex/evidence/CGS-20/interruption.json",
+        "docs/codex/evidence/CGS-20/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/localize/SKILL.md",
@@ -7207,8 +7262,18 @@
       ],
       "proposed_target": ".agents/skills/patch-notes/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six local-only scoped release smokes: dry-run blockers and matching/wrong artifact hashes verified, grounded non-player release drafts, interrupted hotfix/dayone not closed. No external publication, deployment, tag or merge; real build/platform/independent readiness unassessed.",
+      "status": "EQUIVALENT",
+      "task": "CGS-20",
+      "target": ".agents/skills/patch-notes/SKILL.md",
+      "target_sha256": "d6d68839cc5b1d5c4c8b70f1f514f7b615101a615d6c4f0ade3b87c5814b6bd7",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-20/README.md",
+        "docs/codex/evidence/CGS-20/dry-run.json",
+        "docs/codex/evidence/CGS-20/interruption.json",
+        "docs/codex/evidence/CGS-20/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/perf-profile/SKILL.md",
@@ -7670,8 +7735,18 @@
       ],
       "proposed_target": ".agents/skills/release-checklist/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six local-only scoped release smokes: dry-run blockers and matching/wrong artifact hashes verified, grounded non-player release drafts, interrupted hotfix/dayone not closed. No external publication, deployment, tag or merge; real build/platform/independent readiness unassessed.",
+      "status": "EQUIVALENT",
+      "task": "CGS-20",
+      "target": ".agents/skills/release-checklist/SKILL.md",
+      "target_sha256": "1e1f6ca9e01a22ea2eb4a6f8b2369bf3ee5fc54298d2319273dc85cae95ef187",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-20/README.md",
+        "docs/codex/evidence/CGS-20/dry-run.json",
+        "docs/codex/evidence/CGS-20/interruption.json",
+        "docs/codex/evidence/CGS-20/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/retrospective/SKILL.md",
