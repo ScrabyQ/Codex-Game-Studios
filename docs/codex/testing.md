@@ -1,6 +1,6 @@
 # Testing
 
-Use Node.js 22 or later and Git. Bash and Python 3 are required for the configuration and backend suites. Missing dependencies must produce a diagnostic; an unexecuted check is PENDING.
+Use Node.js 22 or 24 and Git. CI runs quick and backend checks on both versions, with Windows, Linux and macOS coverage on Node 22. Bash and Python 3 are required for the configuration and backend suites. Missing dependencies must produce a diagnostic; an unexecuted check is PENDING.
 
 From the repository root:
 
