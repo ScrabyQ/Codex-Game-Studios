@@ -6,11 +6,27 @@ import {fileURLToPath} from 'node:url';
 function activeLegacyInstruction(name, content) {
   const instructions = /^(?:\.agents\/(?:skills|docs|rules)\/|\.codex\/agents\/|studio-tests\/|docs\/|\.github\/)/.test(name) || /(?:^|\/)(?:AGENTS|README|UPGRADING|CONTRIBUTING|CHANGELOG)\.md$/.test(name);
   if (!instructions || !/\.(?:md|toml|ya?ml)$/.test(name)) return false;
-  return content.split(/\r?\n/).some(line => {
-    // Attribution, provenance headers and explicit negative examples are allowed.
-    if (/^\s*#\s*Generated from\b/i.test(line) || /\b(?:never|do not|must not|reject|forbidden|unsupported|negative example|source provenance|skip|skipping|exclude)\b/i.test(line)) return false;
-    return /\.claude[\\/]|\bCLAUDE(?:\.local)?\.md\b|@\.claude\b|\bAskUserQuestion\s*[:(]|\bsubagent_type\s*[:=]|\bCLAUDE_CODE_[A-Z_]+\b/.test(line) || /\b(?:use|invoke|call|required|must)\b.{0,80}\bAskUserQuestion\b/i.test(line);
-  });
+  const negated = (clause, index) => {
+    const prefix = clause.slice(0, index);
+    const verbs = [...prefix.matchAll(/\b(?:read|load|open|use|invoke|call|run|execute|write|edit|delete|import|source|follow|consult|set|reject|forbid|skip|skipping|exclude|flag)\b/gi)];
+    const verb = verbs.at(-1);
+    if (verb) {
+      if (/^(?:reject|forbid|skip|skipping|exclude|flag)$/i.test(verb[0])) return true;
+      if (/\b(?:do not|must not|never|don't|avoid)\s+(?:(?:ever|directly|implicitly|automatically)\s+)*$/i.test(prefix.slice(0, verb.index))) return true;
+    }
+    return /\b(?:no|without|never|avoid)\s+(?:(?:any|the|a)\s+)?[`*"'(@\[]*$/i.test(prefix);
+  };
+  // Negation belongs to an occurrence's governing action, not an unrelated
+  // clause elsewhere on the line. Decode escaped TOML body newlines as well.
+  return content.split(/\r?\n|\\n/).some(line => line.split(/;\s*|[.!?]\s+/).some(clause => {
+    if (/^\s*(?:#\s*Generated from\b|(?:[-*>#]\s*)*(?:negative example|source provenance)\s*:)/i.test(clause)) return false;
+    const tokens = /\.claude[\\/]|\bCLAUDE(?:\.local)?\.md\b|@\.claude\b|\bAskUserQuestion\s*[:(]|\bsubagent_type\s*[:=]|\bCLAUDE_CODE_[A-Z_]+\b/g;
+    for (const match of clause.matchAll(tokens)) if (!negated(clause, match.index)) return true;
+    for (const match of clause.matchAll(/\bAskUserQuestion\b/g)) {
+      if (/\b(?:use|invoke|call|required|must)\b.{0,80}$/i.test(clause.slice(0, match.index)) && !negated(clause, match.index)) return true;
+    }
+    return false;
+  }));
 }
 
 export function inspect(root) {
