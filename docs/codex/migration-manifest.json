@@ -4857,8 +4857,17 @@
       ],
       "proposed_target": ".agents/skills/balance-check/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six actual in-session defective-fixture reviews with grounded findings and all14files unchanged; empty inputs NOT ASSESSED, no invented exploitation or independent audit.",
+      "status": "EQUIVALENT",
+      "task": "CGS-16",
+      "target": ".agents/skills/balance-check/SKILL.md",
+      "target_sha256": "867e8972067ca455ab61b5f3877d5f7c496afa302d31afe34af2205e591e3cea",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-16/reviews.md",
+        "docs/codex/evidence/CGS-16/checks.json",
+        "docs/codex/evidence/CGS-16/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/brainstorm/SKILL.md",
@@ -4995,8 +5004,17 @@
       ],
       "proposed_target": ".agents/skills/consistency-check/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six actual in-session defective-fixture reviews with grounded findings and all14files unchanged; empty inputs NOT ASSESSED, no invented exploitation or independent audit.",
+      "status": "EQUIVALENT",
+      "task": "CGS-16",
+      "target": ".agents/skills/consistency-check/SKILL.md",
+      "target_sha256": "4071faf1531ddb48423b53b71219d1f668d564071e71f871c6a8566473babddd",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-16/reviews.md",
+        "docs/codex/evidence/CGS-16/checks.json",
+        "docs/codex/evidence/CGS-16/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/content-audit/SKILL.md",
@@ -5013,8 +5031,17 @@
       ],
       "proposed_target": ".agents/skills/content-audit/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six actual in-session defective-fixture reviews with grounded findings and all14files unchanged; empty inputs NOT ASSESSED, no invented exploitation or independent audit.",
+      "status": "EQUIVALENT",
+      "task": "CGS-16",
+      "target": ".agents/skills/content-audit/SKILL.md",
+      "target_sha256": "e582140c1ad04b77ce376085c23b46089b4e52b416481d1d3c498c8fed848b2e",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-16/reviews.md",
+        "docs/codex/evidence/CGS-16/checks.json",
+        "docs/codex/evidence/CGS-16/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/create-architecture/SKILL.md",
@@ -5443,8 +5470,17 @@
       ],
       "proposed_target": ".agents/skills/design-review/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six actual in-session defective-fixture reviews with grounded findings and all14files unchanged; empty inputs NOT ASSESSED, no invented exploitation or independent audit.",
+      "status": "EQUIVALENT",
+      "task": "CGS-16",
+      "target": ".agents/skills/design-review/SKILL.md",
+      "target_sha256": "6611f2c2c13e70581e738a45b9c46c1d39a33759fc848a80be76c6ef8e7f344a",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-16/reviews.md",
+        "docs/codex/evidence/CGS-16/checks.json",
+        "docs/codex/evidence/CGS-16/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/design-system/SKILL.md",
@@ -6813,8 +6849,17 @@
       ],
       "proposed_target": ".agents/skills/scope-check/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six actual in-session defective-fixture reviews with grounded findings and all14files unchanged; empty inputs NOT ASSESSED, no invented exploitation or independent audit.",
+      "status": "EQUIVALENT",
+      "task": "CGS-16",
+      "target": ".agents/skills/scope-check/SKILL.md",
+      "target_sha256": "6ce67d1e35791f11821a1387b599a7b70df11fb067462be7d9e567707ee69c8d",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-16/reviews.md",
+        "docs/codex/evidence/CGS-16/checks.json",
+        "docs/codex/evidence/CGS-16/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/security-audit/SKILL.md",
@@ -6831,8 +6876,17 @@
       ],
       "proposed_target": ".agents/skills/security-audit/SKILL.md",
       "proposed_equivalent": "Review dependencies and adapt to supported Codex instructions, tools, or documented manual fallback.",
-      "verification": "Compare source content and exercise relevant adapted workflow; record evidence before changing status.",
-      "status": "PENDING"
+      "verification": "Six actual in-session defective-fixture reviews with grounded findings and all14files unchanged; empty inputs NOT ASSESSED, no invented exploitation or independent audit.",
+      "status": "EQUIVALENT",
+      "task": "CGS-16",
+      "target": ".agents/skills/security-audit/SKILL.md",
+      "target_sha256": "e145387ccfd15db3a6b98dc6f33c30f8190e88260b3ab4e448c4dfe01a27234c",
+      "related_targets": [],
+      "evidence": [
+        "docs/codex/evidence/CGS-16/reviews.md",
+        "docs/codex/evidence/CGS-16/checks.json",
+        "docs/codex/evidence/CGS-16/traceability.json"
+      ]
     },
     {
       "id": "file:.claude/skills/settings/SKILL.md",

@@ -1,0 +1,9 @@
+{
+  "source_sha256": "be7697de6ff3b8b38b0078c7fa9a71eafe87cc04d008db7192a0439e3d000228",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-16 review and evidence contract:** Treat task APIs and hooks as optional; when unavailable, report that limit and do not claim they ran. Preserve previous user authorization and the current host permissions. Compare actual scoped GDD facts with the entity registry and report exact source paths and values. An empty/unreadable registry or missing required coverage is NOT ASSESSED, not PASS. Show conflicting authoritative values and propose corrections; do not change registry or GDDs without authorization for each change.\n\n"
+    }
+  ]
+}

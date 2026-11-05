@@ -5,9 +5,9 @@
   "upstream_sha": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
   "owner": "ScrabyQ",
   "repository": "Codex-Game-Studios",
-  "last_completed": "CGS-14",
+  "last_completed": "CGS-16",
   "current_task": "CGS-15",
-  "next_safe_step": "Production planning acceptance verified, including repeat/no-duplicate and BLOCKED dependency; implement single-story lifecycle next. CGS17 and21 active.",
+  "next_safe_step": "Six read-only review smokes accepted; implementation lifecycle, QA and team workflows remain active.",
   "decisions": [
     "Preserve full upstream history; origin is ScrabyQ/Codex-Game-Studios; upstream push URL DISABLED.",
     "Generated content-preserving .agents mirror retains helper root math; native roles use .codex/agents/*.toml; all generation is hash-guarded; no new agent runtime."
@@ -188,14 +188,14 @@
       "singularity_id": "T-dbb36980-ab60-4955-8b32-a1d2c445f233",
       "title": "CGS-14 · Skills · эпики, истории, спринты и готовность (7)",
       "status": "COMPLETE",
-      "commit": null,
+      "commit": "746ad89b2918c6619250fb7eabfed076cf90b306",
       "evidence": [
         "docs/codex/evidence/CGS-14/acceptance.md",
         "docs/codex/evidence/CGS-14/README.md",
         "docs/codex/evidence/CGS-14/traceability.json"
       ],
       "note": "Production planning acceptance verified, including repeat/no-duplicate and BLOCKED dependency; implement single-story lifecycle next. CGS17 and21 active.",
-      "updated_at": "2026-11-05T11:52:01.596Z"
+      "updated_at": "2026-11-05T11:53:10.063Z"
     },
     {
       "key": "CGS-15",
@@ -209,9 +209,15 @@
       "key": "CGS-16",
       "singularity_id": "T-139d68ec-7f90-4768-85c9-669740f38c17",
       "title": "CGS-16 · Skills · качество дизайна, безопасность и аудит (6)",
-      "status": "PENDING",
+      "status": "COMPLETE",
       "commit": null,
-      "evidence": []
+      "evidence": [
+        "docs/codex/evidence/CGS-16/README.md",
+        "docs/codex/evidence/CGS-16/checks.json",
+        "docs/codex/evidence/CGS-16/traceability.json"
+      ],
+      "note": "Six read-only review smokes accepted; implementation lifecycle, QA and team workflows remain active.",
+      "updated_at": "2026-11-05T11:54:28.030Z"
     },
     {
       "key": "CGS-17",

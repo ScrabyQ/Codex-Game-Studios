@@ -1,0 +1,103 @@
+{
+  "schema": 1,
+  "task": "CGS-16",
+  "head_at_start": "c0d5c82d560ed07f807ad557281874ddeaf4fe83",
+  "upstream": "05ad7c8a5b8aa2aa86bbd3439ae7cf7295cac418",
+  "skills": [
+    {
+      "skill": "security-audit",
+      "source": ".claude/skills/security-audit/SKILL.md",
+      "source_sha256": "91d9c01dfed0f6bb2dc977c0e3bfe76d705653c307546b19e1d5fd413033daf4",
+      "target": ".agents/skills/security-audit/SKILL.md",
+      "target_sha256": "e145387ccfd15db3a6b98dc6f33c30f8190e88260b3ab4e448c4dfe01a27234c",
+      "overlay": "docs/codex/overlays/security-audit.json",
+      "overlay_sha256": "a73075a443bd9b023323999734f51475b38c0c1f3f5fbc021087e82a999c37a0",
+      "mapping": "source-bound generated equivalent; native discovery PENDING",
+      "smoke": "In-session fallback, not independent; actual fixture files inspected and compared",
+      "finding": "HIGH candidate: unvalidated any-peer damage; actual exploit and remaining security categories NOT ASSESSED",
+      "substitutions": "Native question facility or plain text; optional task APIs/hooks; in-session role fallback when native delegation unavailable; no invented tool or audit execution."
+    },
+    {
+      "skill": "consistency-check",
+      "source": ".claude/skills/consistency-check/SKILL.md",
+      "source_sha256": "be7697de6ff3b8b38b0078c7fa9a71eafe87cc04d008db7192a0439e3d000228",
+      "target": ".agents/skills/consistency-check/SKILL.md",
+      "target_sha256": "4071faf1531ddb48423b53b71219d1f668d564071e71f871c6a8566473babddd",
+      "overlay": "docs/codex/overlays/consistency-check.json",
+      "overlay_sha256": "eb5c1a6ccd21467b02056df3d1c6307d2bb2e95dd1300d813be3705bf149cfea",
+      "mapping": "source-bound generated equivalent; native discovery PENDING",
+      "smoke": "In-session fallback, not independent; actual fixture files inspected and compared",
+      "finding": "CONFLICTS FOUND: registry 100 versus GDD 140",
+      "substitutions": "Native question facility or plain text; optional task APIs/hooks; in-session role fallback when native delegation unavailable; no invented tool or audit execution."
+    },
+    {
+      "skill": "scope-check",
+      "source": ".claude/skills/scope-check/SKILL.md",
+      "source_sha256": "70af8cd294881a0c1e62852bc5e47a63f142381f008f4f92adc1b0ed03ab5e11",
+      "target": ".agents/skills/scope-check/SKILL.md",
+      "target_sha256": "6ce67d1e35791f11821a1387b599a7b70df11fb067462be7d9e567707ee69c8d",
+      "overlay": "docs/codex/overlays/scope-check.json",
+      "overlay_sha256": "2ffcd6c56939bf615d5981c521c8dd696dfd82e23d3ba041c1445df48d022157",
+      "mapping": "source-bound generated equivalent; native discovery PENDING",
+      "smoke": "In-session fallback, not independent; actual fixture files inspected and compared",
+      "finding": "FAIL: 4 baseline items versus 6 in-progress stories; +50%",
+      "substitutions": "Native question facility or plain text; optional task APIs/hooks; in-session role fallback when native delegation unavailable; no invented tool or audit execution."
+    },
+    {
+      "skill": "balance-check",
+      "source": ".claude/skills/balance-check/SKILL.md",
+      "source_sha256": "1081b0a21d197310c7ea244c8ac1cf1832b95b0235c6288fcf1575fceacdfa44",
+      "target": ".agents/skills/balance-check/SKILL.md",
+      "target_sha256": "867e8972067ca455ab61b5f3877d5f7c496afa302d31afe34af2205e591e3cea",
+      "overlay": "docs/codex/overlays/balance-check.json",
+      "overlay_sha256": "643fe50e286ab6473fca13d223c3364ac8ddca52cdc51f7f0cffae4f43c2fbc5",
+      "mapping": "source-bound generated equivalent; native discovery PENDING",
+      "smoke": "In-session fallback, not independent; actual fixture files inspected and compared",
+      "finding": "Outlier 140 against 90–110; remaining domains NOT ASSESSED",
+      "substitutions": "Native question facility or plain text; optional task APIs/hooks; in-session role fallback when native delegation unavailable; no invented tool or audit execution."
+    },
+    {
+      "skill": "design-review",
+      "source": ".claude/skills/design-review/SKILL.md",
+      "source_sha256": "8ed70a1d109fdd5e1a765ae4b2198730c033fb183ac3e3539fa339c106cebe1f",
+      "target": ".agents/skills/design-review/SKILL.md",
+      "target_sha256": "6611f2c2c13e70581e738a45b9c46c1d39a33759fc848a80be76c6ef8e7f344a",
+      "overlay": "docs/codex/overlays/design-review.json",
+      "overlay_sha256": "d39a1e07dbd08d0a3a9274cdd93a7266ea3cdf3692ca9d44bfff0c1ad628bc28",
+      "mapping": "source-bound generated equivalent; native discovery PENDING",
+      "smoke": "In-session fallback, not independent; actual fixture files inspected and compared",
+      "finding": "NEEDS REVISION: required numeric Formulas absent and acceptance criterion subjective",
+      "substitutions": "Native question facility or plain text; optional task APIs/hooks; in-session role fallback when native delegation unavailable; no invented tool or audit execution."
+    },
+    {
+      "skill": "content-audit",
+      "source": ".claude/skills/content-audit/SKILL.md",
+      "source_sha256": "56f522eabb8c7a8e70f9fd8f9dcdc40563fdbe3586fad18c027579c9dfb49cba",
+      "target": ".agents/skills/content-audit/SKILL.md",
+      "target_sha256": "e582140c1ad04b77ce376085c23b46089b4e52b416481d1d3c498c8fed848b2e",
+      "overlay": "docs/codex/overlays/content-audit.json",
+      "overlay_sha256": "6cdf8366ce6a6813cf6a4e0c5c6ab165058d6ed180deb0062e680f2d7666eb43",
+      "mapping": "source-bound generated equivalent; native discovery PENDING",
+      "smoke": "In-session fallback, not independent; actual fixture files inspected and compared",
+      "finding": "EARLY: 1 definition found versus 3 planned; runtime implementation NOT ASSESSED",
+      "substitutions": "Native question facility or plain text; optional task APIs/hooks; in-session role fallback when native delegation unavailable; no invented tool or audit execution."
+    }
+  ],
+  "checks": [
+    {
+      "command": "node scripts/codex/generate.mjs --family skills --names security-audit,consistency-check,scope-check,balance-check,design-review,content-audit --check",
+      "exit_code": 0,
+      "result": "PASS: generated files match source-bound plans"
+    },
+    {
+      "command": "Compare fixture-before.json and fixture-after.json",
+      "exit_code": 0,
+      "result": "PASS: all 14 fixture files unchanged"
+    }
+  ],
+  "limitations": [
+    "No native skill discovery or independent role spawning was exercised.",
+    "Each review is a targeted in-session smoke, not a complete audit.",
+    "No engine execution, exploitation or external services were used."
+  ]
+}

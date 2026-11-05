@@ -1,0 +1,9 @@
+{
+  "source_sha256": "91d9c01dfed0f6bb2dc977c0e3bfe76d705653c307546b19e1d5fd413033daf4",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-16 review and evidence contract:** Treat task APIs and hooks as optional; when unavailable, report that limit and do not claim they ran. Preserve previous user authorization and the current host permissions. Resolve real engine, source root and online scope. Unknown multiplayer is not false; missing source or unsourceable engine patterns are NOT ASSESSED, not clean. Cite file and line for observed attack surfaces, distinguish hypotheses from verified exploitation, use the source severity rules, and report the in-session fallback as not independent. Do not exploit, alter code or expose secrets; separately authorized report writes remain optional.\n\n"
+    }
+  ]
+}

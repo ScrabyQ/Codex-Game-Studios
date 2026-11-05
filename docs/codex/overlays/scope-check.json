@@ -1,0 +1,9 @@
+{
+  "source_sha256": "70af8cd294881a0c1e62852bc5e47a63f142381f008f4f92adc1b0ed03ab5e11",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-16 review and evidence contract:** Treat task APIs and hooks as optional; when unavailable, report that limit and do not claim they ran. Preserve previous user authorization and the current host permissions. Compare only an identifiable nonempty baseline with actually observed current scope. Calculate the source-specified net percentage and verdict only when both sides and a nonzero denominator are established; otherwise report NOT ASSESSED. This skill is read-only.\n\n"
+    }
+  ]
+}

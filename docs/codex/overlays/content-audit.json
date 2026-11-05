@@ -1,0 +1,9 @@
+{
+  "source_sha256": "56f522eabb8c7a8e70f9fd8f9dcdc40563fdbe3586fad18c027579c9dfb49cba",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-16 review and evidence contract:** Treat task APIs and hooks as optional; when unavailable, report that limit and do not claim they ran. Preserve previous user authorization and the current host permissions. Count only actual in-scope planned and implemented items from verified sources; separate missing or unreadable data from a measured zero, and use the actual workflow tier. If required input is missing, mark the relevant scope NOT ASSESSED rather than inventing completion percentages. Do not change source or content data without separate authorization.\n\n"
+    }
+  ]
+}

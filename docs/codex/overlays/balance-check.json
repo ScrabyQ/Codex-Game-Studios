@@ -1,0 +1,9 @@
+{
+  "source_sha256": "1081b0a21d197310c7ea244c8ac1cf1832b95b0235c6288fcf1575fceacdfa44",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-16 review and evidence contract:** Treat task APIs and hooks as optional; when unavailable, report that limit and do not claim they ran. Preserve previous user authorization and the current host permissions. Use actual data and sourced registry/GDD targets; show each outlier and computation, and leave absent ranges or domains NOT ASSESSED rather than inventing them. Recommendations are not data edits. A report or fix requires separate applicable authorization.\n\n"
+    }
+  ]
+}

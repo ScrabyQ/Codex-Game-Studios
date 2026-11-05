@@ -1,0 +1,9 @@
+{
+  "source_sha256": "8ed70a1d109fdd5e1a765ae4b2198730c033fb183ac3e3539fa339c106cebe1f",
+  "edits": [
+    {
+      "find": "## Codex execution contract\n\n",
+      "replace": "## Codex execution contract\n\n**CGS-16 review and evidence contract:** Treat task APIs and hooks as optional; when unavailable, report that limit and do not claim they ran. Preserve previous user authorization and the current host permissions. Read the target and relevant registered facts; use the actual per-system workflow tier, distinguish required sections and measurable criteria, and cite concrete lines. When required adversarial roles cannot be independently invoked disclose the in-session fallback and keep incomplete gate coverage NOT ASSESSED; do not label it independent or approve missing evidence. Findings and recommendations do not authorize editing the GDD or tracking records.\n\n"
+    }
+  ]
+}
