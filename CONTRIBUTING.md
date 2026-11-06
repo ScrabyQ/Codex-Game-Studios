@@ -127,3 +127,8 @@ obtain explicit approval, record the reason in the maintenance PR, restore the
 ruleset, and verify the API and PR checks again. Agents must not disable rules
 or add bypass actors merely to finish a merge. CI failures should be fixed in
 the branch before merging.
+
+If Actions reports that the repository or account is disabled while its
+permissions remain enabled, follow [GitHub's Actions guidance](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository)
+and contact GitHub Support for review. Keep the required checks in place while
+service access is restored; local results do not replace those server checks.
