@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "scope": "Documentation-only MVP. Godot curated package; no approved Unity/Unreal package yet. No automatic install.",
+  "engine_support": {
+    "godot": "curated documentation package",
+    "unity": "no approved package; listing only",
+    "unreal": "no approved package; listing only"
+  },
+  "entries": [
+    {
+      "id": "godot-gdscript-patterns",
+      "engine": "godot",
+      "engine_versions": {
+        "min": "4.0.0",
+        "max_exclusive": "5.0.0"
+      },
+      "version": "commit-4bde3168b43c",
+      "source": {
+        "repository": "https://github.com/wshobson/agents",
+        "commit": "4bde3168b43c0655c4d00ea2726e631719908a6d",
+        "directory": "plugins/game-development/skills/godot-gdscript-patterns"
+      },
+      "license": {
+        "spdx": "MIT",
+        "source_path": "LICENSE",
+        "sha256": "f89abb55d9f073f38f1703e4518f0613c788c6174be7f13b8dfe48a1c076c746"
+      },
+      "review": {
+        "status": "reviewed",
+        "scope": "Pinned source identity, complete MIT notice, native scalar frontmatter, complete local references and finite operational-instruction screen; not engine execution or security certification.",
+        "limitations": [
+          "Generic Godot4.x examples need verification against selected project/version references.",
+          "The embedded save-passphrase example is illustrative, not secure secret storage or anti-tamper protection.",
+          "Imported documentation never grants permissions or overrides project instructions."
+        ]
+      },
+      "files": [
+        {
+          "path": "LICENSE",
+          "source_path": "LICENSE",
+          "sha256": "f89abb55d9f073f38f1703e4518f0613c788c6174be7f13b8dfe48a1c076c746"
+        },
+        {
+          "path": "SKILL.md",
+          "source_path": "plugins/game-development/skills/godot-gdscript-patterns/SKILL.md",
+          "sha256": "baee8a6df1556a517dcff9df8ebca0b763c3c8275752f12a146fd12eac994b55"
+        },
+        {
+          "path": "references/details.md",
+          "source_path": "plugins/game-development/skills/godot-gdscript-patterns/references/details.md",
+          "sha256": "f5ba3e068b89ff216f7de50862d8c02c7d7d4be02c76ff19c0f63973fa232bbc"
+        },
+        {
+          "path": "references/advanced-patterns.md",
+          "source_path": "plugins/game-development/skills/godot-gdscript-patterns/references/advanced-patterns.md",
+          "sha256": "659531834c96b493caeeba32303eeacafe0ed482439933beb0a1765af7288bec"
+        }
+      ]
+    }
+  ]
+}

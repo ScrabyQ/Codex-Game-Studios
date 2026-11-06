@@ -6835,7 +6835,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-10",
       "target": ".agents/skills/setup-engine/SKILL.md",
-      "target_sha256": "7df74dc6adc963eacca9120226cafa4f408322c9b423810f8128706dbe47273d",
+      "target_sha256": "fe54b384f4fc0edeab3fa7f9b697a28041b138996b741007c415b152ccf597b4",
       "related_targets": []
     },
     {
