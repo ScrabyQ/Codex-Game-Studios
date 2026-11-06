@@ -78,7 +78,7 @@ vmm() { printf '%s' "$1" | grep -oE '[0-9]+\.[0-9]+' | head -1 | sed -E 's/^6000
 say "=== project coherence ==="
 
 if [ ! -f project.yaml ]; then
-  skipped "everything — no project.yaml at the repo root. Run /start."
+  skipped "everything — no project.yaml at the repo root. Run \$start."
   summarise
 fi
 
@@ -88,7 +88,7 @@ RENDERING="$(yaml_block_value engine rendering)"
 PHYSICS="$(yaml_block_value engine physics)"
 
 if [ -z "$ENGINE" ]; then
-  skipped "every engine check — project.yaml has no engine.name. Run /setup-engine."
+  skipped "every engine check — project.yaml has no engine.name. Run \$setup-engine."
   summarise
 fi
 
@@ -105,7 +105,7 @@ else
             | sed -E 's/^\| \*\*Installed at pin time\*\* \| *//; s/ *\|$//')"
 
   if [ -z "$INSTALLED_ROW" ]; then
-    differs "$VERFILE has no 'Installed at pin time' row. /setup-engine is required to write one; its absence means the probe result was never recorded, not that the versions agree."
+    differs "$VERFILE has no 'Installed at pin time' row. \$setup-engine is required to write one; its absence means the probe result was never recorded, not that the versions agree."
   elif printf '%s' "$INSTALLED_ROW" | grep -qE 'NOT DETERMINED'; then
     skipped "pinned-vs-installed — $VERFILE records '$INSTALLED_ROW'. A probe that did not run has not established a match."
   else
@@ -292,7 +292,7 @@ else
     if [ -f export_presets.cfg ]; then
       match "commands.build names an export preset and export_presets.cfg exists"
     else
-      differs "commands.build is '$BUILD_CMD' but there is no export_presets.cfg. Godot cannot resolve the preset, so this command fails the first time CI or /smoke-check runs it."
+      differs "commands.build is '$BUILD_CMD' but there is no export_presets.cfg. Godot cannot resolve the preset, so this command fails the first time CI or \$smoke-check runs it."
     fi
   fi
 
@@ -306,7 +306,7 @@ else
       match "commands.test runner exists ($RUNNER)"
     else
       case "$RUNNER" in
-        addons/gdUnit4/*) HINT=" gdUnit4 is not installed at addons/gdUnit4/ (capital U) — see /test-setup." ;;
+        addons/gdUnit4/*) HINT=" gdUnit4 is not installed at addons/gdUnit4/ (capital U) — see \$test-setup." ;;
         *)                HINT="" ;;
       esac
       differs "commands.test is '$TEST_CMD' but '$RUNNER' does not exist, so this command cannot run as written.$HINT"

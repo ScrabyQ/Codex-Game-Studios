@@ -49,7 +49,7 @@ if [ -z "${MESSAGE:-}" ]; then
             | head -1 | sed 's/"message"[[:space:]]*:[[:space:]]*"//;s/"$//')
 fi
 if [ -z "$MESSAGE" ]; then
-  MESSAGE="Claude Code needs your attention"
+  MESSAGE="Codex Game Studios needs your attention"
 fi
 
 # TRUNCATE FIRST, then escape. Escaping doubles each `'` into `''`, so cutting
@@ -64,7 +64,7 @@ powershell.exe -NonInteractive -WindowStyle Hidden -Command "
   Add-Type -AssemblyName System.Windows.Forms
   \$notify = New-Object System.Windows.Forms.NotifyIcon
   \$notify.Icon = [System.Drawing.SystemIcons]::Information
-  \$notify.BalloonTipTitle = 'Claude Code'
+  \$notify.BalloonTipTitle = 'Codex Game Studios'
   \$notify.BalloonTipText = '$MESSAGE_SAFE'
   \$notify.Visible = \$true
   \$notify.ShowBalloonTip(5000)

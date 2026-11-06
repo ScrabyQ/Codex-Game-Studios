@@ -88,6 +88,6 @@ Verified by reading the agent's `.codex/agents/narrative-director.toml` metadata
 ## Coverage Notes
 - Dialogue quality review (distinct from world-building consistency) is not covered — a dedicated case should be added.
 - The CONCERNS verdict (fixable inconsistencies that do not break the narrative foundation) has no dedicated case.
-- Multi-document consistency check across a full chapter set is not covered — deferred to /review-all-gdds integration.
+- Multi-document consistency check across a full chapter set is not covered — deferred to $review-all-gdds integration.
 - Narrative impact of mechanical changes (e.g., a game mechanic that undermines story tension) requires coordination with game-designer and is not covered here.
 - Character arc review (progression, motivation coherence over time) is not covered.

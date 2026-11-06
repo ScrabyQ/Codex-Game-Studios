@@ -156,7 +156,7 @@ Run `bash .agents/scripts/compat-inventory.sh --skill [name]` for a skill,
 
 For a single skill:
 ```
-=== Skill Static Check: /[name] ===
+=== Skill Static Check: $[name] ===
 
 Check 1 — Frontmatter Fields:    PASS
 Check 2 — Multiple Phases:       PASS (7 phases found)
@@ -338,7 +338,7 @@ the floor, added when the list does not already cover them:
 ### Step 4 — Build Report
 
 ```
-=== Skill Spec Test: /[name] ===
+=== Skill Spec Test: $[name] ===
 Date: [date]
 Spec: studio-tests/skills/[category]/[name].md
 
@@ -434,7 +434,7 @@ For each metric in the category's rubric table:
 For an agent, the header is `=== Agent Category Check: [name] ([category]) ===`.
 
 ```
-=== Skill Category Check: /[name] ([category]) ===
+=== Skill Category Check: $[name] ([category]) ===
 
 Metric G1 — Review mode read:      PASS
 Metric G2 — Director panel width:  FAIL

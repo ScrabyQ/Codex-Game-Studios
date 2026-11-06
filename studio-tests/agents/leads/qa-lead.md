@@ -12,7 +12,7 @@
 Verified by reading the agent's `.codex/agents/qa-lead.toml` metadata:
 
 - [ ] `description` field is present and domain-specific (references test strategy, story readiness, coverage, bug triage — not generic)
-- [ ] `tools:` includes Read for story files, test files, and coding-standards; Bash because it runs `/smoke-check` before every QA hand-off; Write/Edit for the QA plans and sign-off reports it produces, each write gated on the user's approval in its collaboration protocol
+- [ ] `tools:` includes Read for story files, test files, and coding-standards; Bash because it runs `$smoke-check` before every QA hand-off; Write/Edit for the QA plans and sign-off reports it produces, each write gated on the user's approval in its collaboration protocol
 - [ ] Native role TOML has nonempty `name`, domain-specific `description` and `developer_instructions`; its capability ceiling, domain boundaries and escalation rules remain intact
 - [ ] Agent definition does not claim authority over implementation decisions or game design
 
@@ -25,7 +25,7 @@ Verified by reading the agent's `.codex/agents/qa-lead.toml` metadata:
 **Expected:** Returns the verdict ADEQUATE with rationale confirming that all three ACs are specific and each can be verified by an automated test.
 **Assertions:**
 - [ ] Verdict is exactly one of ADEQUATE / GAPS / INADEQUATE (the QL-STORY-READY verdicts) — every input the gate names is supplied, so NOT ASSESSED does not apply
-- [ ] States the verdict word `ADEQUATE` explicitly — `/story-readiness` and `/create-stories` branch on the bare verdict word
+- [ ] States the verdict word `ADEQUATE` explicitly — `$story-readiness` and `$create-stories` branch on the bare verdict word
 - [ ] Rationale addresses each of the three ACs and confirms each can be verified by an automated test (the gate's Logic-story check)
 - [ ] Output stays within QA scope — does not comment on whether the mechanic is designed well
 
@@ -95,6 +95,6 @@ Verified by reading the agent's `.codex/agents/qa-lead.toml` metadata:
 
 ## Coverage Notes
 - QL-TEST-COVERAGE (overall coverage assessment for a sprint or milestone) is not covered — a dedicated case should be added when coverage reports are available.
-- Bug severity triage (S1–S4 classification) is not covered here — deferred to /bug-triage skill integration.
+- Bug severity triage (S1–S4 classification) is not covered here — deferred to $bug-triage skill integration.
 - Release quality gate enforcement (crash rate, critical bug count, performance benchmarks) is not covered.
-- Interaction between QL-STORY-READY and story Done criteria (/story-done skill) is not covered.
+- Interaction between QL-STORY-READY and story Done criteria ($story-done skill) is not covered.

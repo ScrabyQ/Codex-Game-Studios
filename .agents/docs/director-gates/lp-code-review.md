@@ -4,8 +4,8 @@
 
 Agent: `lead-programmer` | Model: native session policy
 
-**Trigger**: After a dev story is implemented (`/dev-story`, `/story-done`), or
-as part of `/code-review`
+**Trigger**: After a dev story is implemented (`$dev-story`, `$story-done`), or
+as part of `$code-review`
 
 **Context to pass**:
 - Implementation file paths

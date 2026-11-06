@@ -75,6 +75,7 @@ test('postwrite-actual-json-and-skill', () => {
   good(call('PostToolUse', { tool_name: 'Write', tool_input: { file_path: 'assets/data/item.json' } }));
   const r = good(call('PostToolUse', { tool_name: 'Write', tool_input: { file_path: '.agents/skills/demo/SKILL.md' } }));
   assert.match(r.observations.join('\n'), /Skill modified: demo/);
+  assert.match(r.observations.join('\n'), /Run \$skill-test static demo/);
 });
 test('read-guard-large-and-bounded', () => {
   put('design/large.md', '# Large\n' + 'detail '.repeat(10000));
@@ -105,6 +106,7 @@ test('commit-staged-json-blocks-without-commit', () => {
 });
 test('session-checkpoint-gap-compaction-stop-audit', () => {
   const r = good(call('SessionStart', { source: 'compact' }));
+  assert.match(r.observations.join('\n'), /Codex Game Studios/);
   assert.match(r.observations.join('\n'), /Recovery marker CGS24/); assert.match(r.observations.join('\n'), /undocumented prototype/);
   good(call('PreCompact', { trigger: 'manual' }));
   assert(existsSync(resolve(root, 'production/session-logs/compaction-log.txt')));

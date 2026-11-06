@@ -1,6 +1,6 @@
 ---
 name: team-ui
-description: "Orchestrate the UI team through the UX pipeline — authoring, visual design, implementation, review, polish. Uses /ux-design, /ux-review, studio templates."
+description: "Orchestrate the UI team through the UX pipeline — authoring, visual design, implementation, review, polish. Uses $ux-design, $ux-review, studio templates."
 ---
 
 ## Codex execution contract

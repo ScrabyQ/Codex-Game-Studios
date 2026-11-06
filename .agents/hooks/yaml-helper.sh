@@ -488,7 +488,7 @@ _yaml_helper_set_root() {
 validate_local_yaml_base() {
   _yaml_helper_set_root
   if [ -f "$_YH_ROOT/project.local.yaml" ] && [ ! -f "$_YH_ROOT/project.yaml" ]; then
-    echo "project.local.yaml exists but project.yaml is missing — run /start to create one. Local overrides require a base." >&2
+    echo "project.local.yaml exists but project.yaml is missing — run \$start to create one. Local overrides require a base." >&2
     return 1
   fi
   return 0
@@ -1668,9 +1668,9 @@ EOF
   if [ "$bare" = "1" ]; then
     :
   elif [ -n "$want" ]; then
-    echo "=== CCGS Config (resolved: local->yaml->legacy->default; use as-is) ==="
+    echo "=== Codex Game Studios Config (resolved: local->yaml->legacy->default; use as-is) ==="
   else
-    echo "=== CCGS Resolved Config ==="
+    echo "=== Codex Game Studios Resolved Config ==="
   fi
   for pair in modes.rigor:rigor \
               modes.review_mode:review_mode \
@@ -1892,7 +1892,7 @@ EOF
         true)  gl_out="$gl_out $gk=blocking($gsrc)" ;;
         false) gl_out="$gl_out $gk=advisory($gsrc)" ;;
         *) if [ "$gk" = "config" ]; then
-             gl_out="$gl_out config=advisory(default; /smoke-check: blocking)"
+             gl_out="$gl_out config=advisory(default; \$smoke-check: blocking)"
            else
              gl_out="$gl_out $gk=blocking(default)"
            fi ;;
@@ -2050,7 +2050,7 @@ EOF
     echo "notes: ${notes:-none}"
     echo "Values above are fully resolved (local -> yaml -> legacy -> default). Use as-is."
     echo "An inline --review flag, if passed, overrides review_mode."
-    echo "=== end CCGS config ==="
+    echo "=== end Codex Game Studios config ==="
   fi
   return 0
 }

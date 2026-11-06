@@ -1,6 +1,6 @@
 # Architecture Traceability Index
 
-<!-- Living document — updated by /architecture-review after each review run.
+<!-- Living document — updated by $architecture-review after each review run.
      Do not edit manually unless correcting an error. -->
 
 ## Document Status
@@ -32,7 +32,7 @@
 | Req ID | GDD | System | Requirement Summary | ADR(s) | Status | Notes |
 |--------|-----|--------|---------------------|--------|--------|-------|
 | TR-[system]-001 | [filename] | [system name] | [one-line summary] | [ADR-NNNN] | ✅ | |
-| TR-[system]-002 | [filename] | [system name] | [one-line summary] | — | ❌ GAP | Needs `/architecture-decision [title]` |
+| TR-[system]-002 | [filename] | [system name] | [one-line summary] | — | ❌ GAP | Needs `$architecture-decision [title]` |
 
 ---
 
@@ -94,7 +94,7 @@ the requirements it satisfies as ✅ in the matrix.
 and check whether the change invalidates any existing ADR. Add to "Superseded
 Requirements" if so.
 
-**When running `/architecture-review`**: The skill will update this document
+**When running `$architecture-review`**: The skill will update this document
 within the authorized scope with the assessed current state; unresolved publication or content decisions require review.
 
 **Gate check**: The Pre-Production gate requires this document to exist and to

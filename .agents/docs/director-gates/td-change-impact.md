@@ -5,7 +5,7 @@
 Agent: `technical-director` | Model: native session policy | Domain: Architecture, engine risk, performance
 
 **Trigger**: After the Design Change Impact Report is produced
-(`/propagate-design-change` Phase 6), before the resolution workflow begins
+(`$propagate-design-change` Phase 6), before the resolution workflow begins
 
 **Context to pass**:
 - The full Design Change Impact Report from Phase 6 — change summary, every

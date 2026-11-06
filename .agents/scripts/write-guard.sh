@@ -180,11 +180,11 @@ applied() { APPLIED="${APPLIED:+$APPLIED,}$1"; }
 # Each never-overwrite rule and the skill that states it.
 overwrite_why() {
   case "$1" in
-    production/epics/*/EPIC.md) echo "/create-epics updates an existing EPIC.md in place and never rewrites it" ;;
-    project.godot) echo "/setup-engine never replaces an existing Godot project file" ;;
-    tests/helpers/*) echo "/test-helpers never overwrites existing helpers, which may hold hand-written code" ;;
-    docs/tech-debt-register.md) echo "/tech-debt appends to the register and never rewrites it" ;;
-    docs/engine-reference/*) echo "/setup-engine never overwrites an engine reference doc without asking" ;;
+    production/epics/*/EPIC.md) echo "\$create-epics updates an existing EPIC.md in place and never rewrites it" ;;
+    project.godot) echo "\$setup-engine never replaces an existing Godot project file" ;;
+    tests/helpers/*) echo "\$test-helpers never overwrites existing helpers, which may hold hand-written code" ;;
+    docs/tech-debt-register.md) echo "\$tech-debt appends to the register and never rewrites it" ;;
+    docs/engine-reference/*) echo "\$setup-engine never overwrites an engine reference doc without asking" ;;
   esac
 }
 rule_overwrite() {
@@ -199,14 +199,14 @@ rule_overwrite() {
   if [ -z "$_w" ]; then
     # The files /test-setup creates, as test-scaffold.sh lists them per engine.
     if [ ! -f "$HERE/test-scaffold.sh" ]; then
-      printf 'SKIPPED\toverwrite\ttest-scaffold.sh is missing, so the files /test-setup creates were not checked\n'
+      printf 'SKIPPED\toverwrite\ttest-scaffold.sh is missing, so the files $test-setup creates were not checked\n'
       return 0
     fi
     _engines="$ENGINE"
     case "$_engines" in godot|unity|unreal) ;; *) _engines="godot unity unreal" ;; esac
     for _e in $_engines; do
       if bash "$HERE/test-scaffold.sh" --root . "$_e" --list 2>/dev/null | grep -qxF "$1"; then
-        _w="/test-setup only creates the files that are missing"; break
+        _w="\$test-setup only creates the files that are missing"; break
       fi
     done
   fi

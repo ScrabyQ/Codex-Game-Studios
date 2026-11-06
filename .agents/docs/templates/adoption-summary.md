@@ -7,7 +7,7 @@ Stories audited: [N]
 
 Gap counts:
   BLOCKING: [N] — template skills will malfunction without these fixes
-  HIGH:     [N] — unsafe to run /create-stories or /story-readiness
+  HIGH:     [N] — unsafe to run $create-stories or $story-readiness
   MEDIUM:   [N] — quality degradation
   LOW:      [N] — optional improvements
 

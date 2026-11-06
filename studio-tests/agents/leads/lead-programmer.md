@@ -25,7 +25,7 @@ Verified by reading the agent's `.codex/agents/lead-programmer.toml` metadata:
 **Expected:** Returns the verdict APPROVE with rationale confirming the ADR boundary match, correctness against the GDD rules, dependency injection usage, doc comment coverage, data-driven configuration, and a testable public API.
 **Assertions:**
 - [ ] Verdict is exactly one of APPROVE / CONCERNS / REJECT (the LP-CODE-REVIEW verdicts)
-- [ ] States the verdict word `APPROVE` explicitly — `/story-done` branches on the gate's verdict words, so a verdict left implicit in prose cannot be acted on
+- [ ] States the verdict word `APPROVE` explicitly — `$story-done` branches on the gate's verdict words, so a verdict left implicit in prose cannot be acted on
 - [ ] Rationale references specific criteria from its Coding Standards Enforcement list and the gate prompt (ADR boundary, GDD rules, DI, doc comments, data-driven values, testable API)
 - [ ] Output stays within code quality scope — does not comment on whether the mechanic is fun or fits creative vision
 
@@ -88,6 +88,6 @@ Verified by reading the agent's `.codex/agents/lead-programmer.toml` metadata:
 
 ## Coverage Notes
 - Multi-file code review spanning several interdependent systems is not covered — deferred to integration tests.
-- Tech debt assessment and prioritization are not covered here — deferred to /tech-debt skill integration.
+- Tech debt assessment and prioritization are not covered here — deferred to $tech-debt skill integration.
 - Coding standards document updates (adding a new forbidden pattern) are not covered.
 - Interaction with qa-lead on what constitutes a testable unit (LP vs QL boundary) is not covered.

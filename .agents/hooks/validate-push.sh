@@ -223,7 +223,7 @@ if [ -n "$ACT_SEGS" ]; then
               w = ($2 == "tag") ? "git tag" : ($2 == "merge") ? "git merge" : ($2 == "release") ? "gh release" \
                 : ($2 == "deploy-itch") ? "butler push" : "steamcmd +run_app_build"
               l = l (l == "" ? "" : ", ") w } END { print l }')
-        [ -n "$ACTIONS" ] && ACT_MSG="This command runs $ACTIONS. Tagging, merging and deploying ask first (/hotfix, /team-release): go ahead only if the user approved this step."
+        [ -n "$ACTIONS" ] && ACT_MSG="This command runs $ACTIONS. Tagging, merging and deploying ask first (\$hotfix, \$team-release): go ahead only if the user approved this step."
     else
         ACT_MSG="Git action check skipped: .agents/scripts/write-guard.sh is missing, so tag, merge and deploy steps were not checked."
     fi

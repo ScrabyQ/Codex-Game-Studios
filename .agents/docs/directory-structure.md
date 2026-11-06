@@ -18,7 +18,7 @@
 ├── production/                  # Production management (sprints, milestones, releases)
 │   ├── session-state/           # Ephemeral session state (active.md — gitignored)
 │   └── session-logs/            # Session audit trail (gitignored)
-└── studio-tests/                # QA for the skills/agents themselves — /skill-test, /skill-improve
+└── studio-tests/                # QA for the skills/agents themselves — $skill-test, $skill-improve
 ```
 
 ## The code root is engine-specific

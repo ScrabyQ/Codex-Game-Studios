@@ -105,3 +105,30 @@ agent. Normal contributors submit changes to this fork; optional provenance
 and maintainer synchronization are documented in
 [upstream sync](docs/codex/upstream-sync.md). A normal contribution needs no
 historical source tree.
+
+## Maintaining branch rules
+
+The active `main` ruleset requires a pull request and passing `quick`,
+`node24`, and the three `backend` checks for Ubuntu, Windows and macOS Intel,
+provided by GitHub Actions. Require the branch to be current with `main`, block
+force pushes and deletion, and resolve review conversations. Zero external
+approvals lets a solo maintainer merge their own reviewed PR; no bypass actor
+is needed. Keeping merge commits preserves the reviewed commit history.
+
+Repository settings need the owner's separate approval. Before enabling or
+changing a ruleset, inspect its exact branch, check names and provider, and save
+the previous JSON outside tracked files. Validate a normal PR after the change.
+If a workflow check is renamed, update the required context alongside the
+workflow; otherwise the old name can leave PRs waiting indefinitely.
+
+For recovery, the owner can open **Settings → Rules → Rulesets → Protect main**
+and correct the specific context or rule. If temporary deactivation is needed,
+obtain explicit approval, record the reason in the maintenance PR, restore the
+ruleset, and verify the API and PR checks again. Agents must not disable rules
+or add bypass actors merely to finish a merge. CI failures should be fixed in
+the branch before merging.
+
+If Actions reports that the repository or account is disabled while its
+permissions remain enabled, follow [GitHub's Actions guidance](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository)
+and contact GitHub Support for review. Keep the required checks in place while
+service access is restored; local results do not replace those server checks.

@@ -1,6 +1,6 @@
 ---
 name: prototype
-description: "Concept prototype before GDDs — throwaway HTML, Engine or Paper build, PROCEED/PIVOT/KILL/NOT ASSESSED. After /brainstorm and /setup-engine."
+description: "Concept prototype before GDDs — throwaway HTML, Engine or Paper build, PROCEED/PIVOT/KILL/NOT ASSESSED. After $brainstorm and $setup-engine."
 ---
 
 ## Codex execution contract

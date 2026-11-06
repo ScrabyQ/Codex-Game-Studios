@@ -93,7 +93,7 @@ fi
 
 # Advisory, so exit 0 -- and therefore hook JSON, not stderr, which on exit 0
 # reaches the debug log only. See hook_warn in yaml-helper.sh.
-_VS_MSG="Skill modified: $SKILL_NAME. Run /skill-test static $SKILL_NAME to validate structural compliance."
+_VS_MSG="Skill modified: $SKILL_NAME. Run \$skill-test static $SKILL_NAME to validate structural compliance."
 [ -f .agents/hooks/yaml-helper.sh ] && . .agents/hooks/yaml-helper.sh 2>/dev/null
 if command -v hook_warn >/dev/null 2>&1; then
     hook_warn PostToolUse "$_VS_MSG"

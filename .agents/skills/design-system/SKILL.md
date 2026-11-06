@@ -139,12 +139,13 @@ This skill follows the collaborative design principle at every step:
 
 ## Context Window Awareness
 
-This is a long-running skill. After writing each section, check if the status line
-shows context at or above 70%. If so, append this notice to the response:
+This is a long-running skill. After writing each section, check a client-provided context
+indicator when available; do not invent a usage percentage. If it reports context at or above
+70%, append this notice to the response:
 
 > **Context is approaching the limit (≥70%).** Your progress is saved — all approved
 > sections are written to `design/gdd/[system-name].md`. When you're ready to continue,
-> open a fresh Claude Code session and run `$design-system [system-name]` — it will
+> open a fresh Codex session and run `$design-system [system-name]` — it will
 > detect which sections are complete and resume from the next one.
 
 ---

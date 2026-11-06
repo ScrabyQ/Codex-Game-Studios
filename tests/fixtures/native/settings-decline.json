@@ -1,0 +1,18 @@
+{
+  "id": "settings-decline",
+  "components": [
+    "settings",
+    "unanswered-write-gate"
+  ],
+  "files": {
+    "project.yaml": "project:\n  name: Signal Garden acceptance\n  stage: Concept\nengine:\n  name: Godot\nmodes:\n  rigor: minimal\n  automation: collaborative\nupdates:\n  check: false\n",
+    "design/game-brief.md": "# Signal Garden\nA disposable acceptance fixture. One room: move a courier, press E near a beacon, receive visible confirmation, repeat. No game implementation exists yet.\n",
+    "production/stage.txt": "Concept\n"
+  },
+  "auto_review": true,
+  "no_writes": true,
+  "prompt": "$settings modes.rigor=full\n\nThis is a change proposal only. I have NOT approved saving this configuration change. Inspect and validate the real current state, prepare the reviewable proposed change, and ask for confirmation. No answer to that confirmation is supplied in this noninteractive acceptance run. Stop and wait without writing any file, even a decision log. Do not delegate or invoke another Skill.",
+  "expect_report": [
+    "full"
+  ]
+}

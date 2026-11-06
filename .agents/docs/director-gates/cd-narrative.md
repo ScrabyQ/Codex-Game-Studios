@@ -5,7 +5,7 @@
 Agent: `creative-director` | Model: native session policy | Domain: Vision, pillars, player experience
 
 **Trigger**: Invoked directly, after narrative GDDs, lore documents, dialogue specs
-or world-building documents are authored — no skill spawns it; `/team-narrative`
+or world-building documents are authored — no skill spawns it; `$team-narrative`
 runs its own review, ND-CONSISTENCY
 
 **Context to pass**:

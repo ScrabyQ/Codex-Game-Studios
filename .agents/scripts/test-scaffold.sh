@@ -195,7 +195,7 @@ tpl_readme_godot() {
 tests/
   unit/           # Isolated unit tests (formulas, state machines, logic)
   integration/    # Cross-system and save/load tests
-  smoke/          # Critical path test list for /smoke-check gate
+  smoke/          # Critical path test list for $smoke-check gate
 ```
 
 ```
@@ -282,7 +282,7 @@ that test root.
 
 ```
 tests/
-  smoke/          # Critical path test list for /smoke-check gate
+  smoke/          # Critical path test list for $smoke-check gate
 ```
 
 ```
@@ -360,7 +360,7 @@ that test root.
 
 ```
 tests/
-  smoke/          # Critical path test list for /smoke-check gate
+  smoke/          # Critical path test list for $smoke-check gate
 ```
 
 ```
@@ -558,7 +558,7 @@ tpl_smoke() {
 # Smoke Test: Critical Paths
 
 **Purpose**: Run these 10-15 checks in under 15 minutes before any QA hand-off.
-**Run via**: `/smoke-check` (which reads this file)
+**Run via**: `$smoke-check` (which reads this file)
 **Update**: Add new entries when new core systems are implemented.
 
 ## Core Stability (always run)
@@ -731,7 +731,7 @@ case "$ENG" in
     fi ;;
   unreal)
     if made "$UNREAL_README"; then
-      need test_root "$UNREAL_README" "$DOCPROJ. is the test root of commands.test: confirm it is the project name, or the distinct root /setup-engine chose"
+      need test_root "$UNREAL_README" "$DOCPROJ. is the test root of commands.test: confirm it is the project name, or the distinct root \$setup-engine chose"
     fi
     if made "$CI" && [ -z "$PROJ_NAME" ]; then
       need project_name "$CI" "replace [ProjectName] with the project name (the .uproject name)"

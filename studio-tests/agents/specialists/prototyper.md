@@ -85,4 +85,4 @@
 - Case 4 (abandonment honesty) tests whether the agent avoids sunk-cost bias — prototypes that fail should be cleanly abandoned
 - Case 5 requires that `project.yaml` has `engine.name` and `engine.language` configured; test is incomplete if not configured. With neither `project.yaml` nor `.agents/docs/technical-preferences.md` naming them, the expected output is a question about the engine and language, not a guess
 - The intentional relaxation of coding standards is a feature, not a gap — do not flag missing tests or doc comments as failures in prototype output
-- No automated runner; review manually or via `/skill-test`
+- No automated runner; review manually or via `$skill-test`

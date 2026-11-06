@@ -1,6 +1,6 @@
 ---
 name: art-bible
-description: "Author the Art Bible — visual identity gating asset production. Run before /map-systems."
+description: "Author the Art Bible — visual identity gating asset production. Run before $map-systems."
 ---
 
 ## Codex execution contract

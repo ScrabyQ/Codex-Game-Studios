@@ -58,8 +58,8 @@ Collect these for the output in Step 7 — show them as a footer block:
 
 ```
 ### Also installed (not in workflow)
-- `/skill-name` — [description from SKILL.md frontmatter]
-- `/skill-name` — [description]
+- `$skill-name` — [description from SKILL.md frontmatter]
+- `$skill-name` — [description]
 ```
 
 Only show this block if at least one uncataloged skill exists. Limit to the 10
@@ -291,15 +291,15 @@ Keep it **short and direct**. This is a quick orientation, not a report.
 
 ### → Next up (REQUIRED)
 **[Step name]** — [description]
-Command: `[/command]`
+Command: `[$command]`
 
 ### ~ Also available (OPTIONAL)
-- **[Step name]** — [description] → `/command`
-- **[Step name]** — [description] → `/command`
+- **[Step name]** — [description] → `$command`
+- **[Step name]** — [description] → `$command`
 
 ### Coming up after that
-- [Next required step name] (`/command`)
-- [Next required step name] (`/command`)
+- [Next required step name] (`$command`)
+- [Next required step name] (`$command`)
 
 ---
 Approaching **[next phase]** gate → run `$gate-check` when ready.

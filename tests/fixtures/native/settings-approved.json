@@ -1,0 +1,23 @@
+{
+  "id": "settings-approved",
+  "components": [
+    "settings",
+    "authorized-config-write"
+  ],
+  "files": {
+    "project.yaml": "project:\n  name: Signal Garden acceptance\n  stage: Concept\nengine:\n  name: Godot\nmodes:\n  rigor: minimal\n  automation: collaborative\nupdates:\n  check: false\n",
+    "design/game-brief.md": "# Signal Garden\nA disposable acceptance fixture. One room: move a courier, press E near a beacon, receive visible confirmation, repeat. No game implementation exists yet.\n",
+    "production/stage.txt": "Concept\n"
+  },
+  "auto_review": true,
+  "prompt": "$settings modes.rigor=full\n\nFor this isolated disposable acceptance fixture only, I explicitly approve changing project.yaml modes.rigor from minimal to full. This is my actual confirmation of this one config write; prior authorization persists. Use the installed settings Skill, validate the value with helpers, save only this key, and read back the effective value/provenance. Preserve other keys and do not persist any rigor-derived knob. Do not delegate, start another Skill, commit, push, install or publish.",
+  "expect_files": [
+    "project.yaml"
+  ],
+  "expect_content": {
+    "project.yaml": "rigor: full"
+  },
+  "expect_commands": [
+    "(?:helper\\.mjs|config-set\\.sh).*config-set|config-set\\.sh"
+  ]
+}

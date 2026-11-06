@@ -1,7 +1,7 @@
 # Technical Requirement ID Registry
 #
 # PURPOSE: Persistent, stable IDs for every GDD technical requirement.
-# Prevents TR-ID renumbering across /architecture-review runs, which would
+# Prevents TR-ID renumbering across $architecture-review runs, which would
 # break story references.
 #
 # RULES:
@@ -14,15 +14,15 @@
 #     status: "superseded-by: TR-[system]-NNN" with the new TR-ID(s), quoted:
 #     unquoted, the second colon makes the file invalid YAML.
 #
-# WRITTEN BY: /architecture-review (appends new entries, never overwrites)
-# READ BY:    /create-stories (embed IDs in stories)
-#             /dev-story (current requirement text before implementing)
-#             /story-done (look up current requirement text at review time)
-#             /story-readiness (validate TR-ID exists and is active)
-#             /create-epics (trace requirements to ADR coverage)
-#             /test-helpers (map requirements to tested systems)
-#             /adopt (brownfield audit: is the registry there)
-#             /create-architecture (reuses registered IDs in its baseline)
+# WRITTEN BY: $architecture-review (appends new entries, never overwrites)
+# READ BY:    $create-stories (embed IDs in stories)
+#             $dev-story (current requirement text before implementing)
+#             $story-done (look up current requirement text at review time)
+#             $story-readiness (validate TR-ID exists and is active)
+#             $create-epics (trace requirements to ADR coverage)
+#             $test-helpers (map requirements to tested systems)
+#             $adopt (brownfield audit: is the registry there)
+#             $create-architecture (reuses registered IDs in its baseline)
 #
 # ID FORMAT: TR-[system]-[NNN]
 #   [system] = a short lowercase slug for the system. It is an alias: the

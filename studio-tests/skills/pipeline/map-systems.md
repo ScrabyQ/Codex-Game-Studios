@@ -1,8 +1,8 @@
-# Skill Test Spec: /map-systems
+# Skill Test Spec: $map-systems
 
 ## Skill Summary
 
-`/map-systems` decomposes a game concept into a systems index. It reads
+`$map-systems` decomposes a game concept into a systems index. It reads
 `design/gdd/game-concept.md` (at `minimal`, `design/game-brief.md`) and the pillars,
 enumerates explicit and implicit systems, maps dependencies into layers
 (Foundation → Core → Feature → Presentation → Polish), assigns priority tiers
@@ -14,7 +14,7 @@ Three director gates run in sequence, each in its own phase:
 TD-SYSTEM-BOUNDARY (technical-director) after the dependency map is approved,
 PR-SCOPE (producer) after priorities are approved and before the write, and
 CD-SYSTEMS (creative-director) after the index is written. In `lean` and `solo`
-each is skipped with a named note. It is required before `/design-system` at
+each is skipped with a named note. It is required before `$design-system` at
 `standard`/`full` and optional at `minimal`. Verdicts: COMPLETE (index written) or
 BLOCKED (user declined the write).
 
@@ -22,13 +22,13 @@ BLOCKED (user declined the write).
 
 ## Static Assertions (Structural)
 
-Checked against the SKILL.md by `/skill-test spec` — no fixture needed.
+Checked against the SKILL.md by `$skill-test spec` — no fixture needed.
 
 - [ ] Skill frontmatter has nonempty `name` and `description`; optional invocation policy is checked in `agents/openai.yaml` when present, without assuming source-only fields
 - [ ] Has ≥2 phase headings
 - [ ] Contains verdict keywords: COMPLETE, BLOCKED
 - [ ] Defines contextual authorization for writes (for `design/gdd/systems-index.md`)
-- [ ] Has a next-step handoff at the end (`/design-system`)
+- [ ] Has a next-step handoff at the end (`$design-system`)
 - [ ] Documents three gates at their phases: TD-SYSTEM-BOUNDARY (Phase 3), PR-SCOPE (Phase 4), CD-SYSTEMS (Phase 5, after the write)
 
 ---
@@ -84,7 +84,7 @@ Fixture defaults.
 - TD-SYSTEM-BOUNDARY returns APPROVE, PR-SCOPE returns REALISTIC, CD-SYSTEMS
   returns APPROVE
 
-**Input:** `/map-systems`
+**Input:** `$map-systems`
 
 **Expected behavior:**
 1. Reads the concept and pillars; globs `design/gdd/*.md`
@@ -105,7 +105,7 @@ Fixture defaults.
    fantasy, every tier's system assignments and the high-risk and bottleneck
    systems
 8. Updates `production/session-state/active.md`; Verdict: COMPLETE; offers
-   `/design-system [first-system-in-order]`
+   `$design-system [first-system-in-order]`
 
 **Assertions:**
 - [ ] Implicit systems are inferred and labelled implicit, with the reason given
@@ -124,17 +124,17 @@ Fixture defaults.
 - `project.yaml`: `modes.workflow: standard`
 - Neither `design/gdd/game-concept.md` nor `design/game-brief.md` exists
 
-**Input:** `/map-systems`
+**Input:** `$map-systems`
 
 **Expected behavior:**
 1. Phase 1 finds no concept
-2. Skill outputs: "No game concept found. Run `/brainstorm` first to create one,
+2. Skill outputs: "No game concept found. Run `$brainstorm` first to create one,
    then come back to decompose it into systems."
 3. Skill stops — no enumeration, no gates, no index
 
 **Assertions:**
 - [ ] The "No game concept found" message is printed
-- [ ] Skill recommends `/brainstorm` as the next action
+- [ ] Skill recommends `$brainstorm` as the next action
 - [ ] No systems enumeration is presented and no gate is spawned
 - [ ] No `design/gdd/systems-index.md` is created and Verdict COMPLETE is not emitted
 
@@ -149,7 +149,7 @@ Fixture defaults.
 - CD-SYSTEMS returns CONCERNS: an MVP system implied by the core fantasy is missing
 - At the CONCERNS question the user picks `Accept — record them in the index`
 
-**Input:** `/map-systems`
+**Input:** `$map-systems`
 
 **Expected behavior:**
 1. The index is written after "May I write" approval
@@ -178,7 +178,7 @@ Fixture defaults.
 - `design/gdd/game-concept.md` exists
 - `design/gdd/systems-index.md` already exists with 8 systems, 3 of them designed
 
-**Input:** `/map-systems`
+**Input:** `$map-systems`
 
 **Expected behavior:**
 1. Skill reads the existing index and presents its current status
@@ -218,7 +218,7 @@ Fixture defaults.
 
 **Fixture (solo mode):**
 - Same concept, `project.yaml`: `modes.workflow: standard`, `modes.review_mode: full`
-- Input: `/map-systems --review solo`
+- Input: `$map-systems --review solo`
 
 **Solo mode expected behavior:**
 1. `--review solo` overrides the resolved `full`
@@ -241,7 +241,7 @@ Fixture defaults.
 - Same, but `design/gdd/systems-index.md` exists and the user chose "Update the
   index with new systems"
 
-**Input (both fixtures):** `/map-systems`
+**Input (both fixtures):** `$map-systems`
 
 **Expected behavior:**
 1. New index: after the summary, asks "May I write the systems index to
@@ -264,7 +264,7 @@ Fixture defaults.
 - TD-SYSTEM-BOUNDARY returns REJECT: two systems share one responsibility and
   must be merged
 
-**Input:** `/map-systems`
+**Input:** `$map-systems`
 
 **Expected behavior:**
 1. The dependency map is approved and TD-SYSTEM-BOUNDARY is spawned
@@ -288,7 +288,7 @@ Fixture defaults.
 - [ ] CD-SYSTEMS's CONCERNS reach the written index only through the user's choice; TD-SYSTEM-BOUNDARY's CONCERNS are noted inline in the index
 - [ ] Gates run sequentially at their own phases in full mode, never before their inputs exist
 - [ ] Skipped gates noted by name and mode in lean/solo output
-- [ ] Ends with next-step handoff: `/design-system [next-system]`
+- [ ] Ends with next-step handoff: `$design-system [next-system]`
 
 ---
 
@@ -300,6 +300,6 @@ Fixture defaults.
   any of the three gates are not given fixtures.
 - `autonomous` (records the enumeration via `log_decision` and writes without
   asking) is not tested.
-- The `next` and `[system-name]` argument modes (handoff to `/design-system`) are
+- The `next` and `[system-name]` argument modes (handoff to `$design-system`) are
   not tested here — they are post-index conveniences.
 - `docs.density` depth (where per-system prose goes) is not fixture-locked.
