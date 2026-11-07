@@ -1,8 +1,8 @@
 <div align="center">
 
-# 🎮 Codex Game Studios
-
-**From an idea to a game you can run, test and inspect.**
+<h1>
+  <img src=".github/assets/readme-hero.png" alt="Codex Game Studios — from idea to playable game" width="100%">
+</h1>
 
 A game development toolkit for OpenAI Codex.<br>
 74 Skills · 49 specialist roles · Godot, Unity & Unreal Engine
