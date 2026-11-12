@@ -20,7 +20,7 @@
 #          [--budget KEY=SIZE ...] [--max-dim N] [--sample-rates LIST]
 #          [--name-regex ERE] [--files]
 #   --root DIR          the project; defaults to the repo this script is in
-#   --engine E          godot, unity or unreal (default: engine.name from
+#   --engine E          godot, unity, unreal or web (default: engine.name from
 #                       project.local.yaml, then project.yaml, as content-count.sh)
 #   --category C        keep one category: on godot a folder of assets/ (art,
 #                       audio, vfx, shaders or data); on unity and unreal the
@@ -238,10 +238,11 @@ case "$LOW" in
   godot) ENG=godot; ROOTDIR=assets ;;
   unity) ENG=unity; ROOTDIR=Assets ;;
   unreal*) ENG=unreal; ROOTDIR=Content ;;
+  web) ENG=web; ROOTDIR=assets ;;
   *)
-    if [ "$ESRC" = flag ]; then usage "--engine takes godot, unity or unreal, got $RAW"; fi
+    if [ "$ESRC" = flag ]; then usage "--engine takes godot, unity, unreal or web, got $RAW"; fi
     printf 'engine\t%s\t%s\n' "$RAW" "$ESRC"
-    echo "asset-scan: engine $RAW has no asset rules here (godot, unity or unreal)" >&2
+    echo "asset-scan: engine $RAW has no asset rules here (godot, unity, unreal or web)" >&2
     exit 3 ;;
 esac
 if [ "$ENG" = godot ] && [ -n "$CATF" ]; then

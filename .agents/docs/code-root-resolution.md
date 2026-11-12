@@ -15,6 +15,7 @@ code. This file is the procedure for applying it.
 | Godot | `src/` | No constraint; Godot loads from `res://` anywhere under the project root |
 | Unity | `Assets/` | Unity compiles **only** `Assets/` and `Packages/` |
 | Unreal | `Source/<Module>/` | UnrealBuildTool discovers modules under `Source/`; content lives in `Content/` |
+| Web | `engine.code_root` or `src/` | Vite projects commonly use `src/`; existing projects may configure their source directory explicitly |
 
 `src/` is the **Godot row of that table, not a universal path.**
 
@@ -32,6 +33,8 @@ code. This file is the procedure for applying it.
    which would make `src/` + `assets/` look ambiguous and a lone `assets/` look
    like Unity.
 4. Otherwise: **unresolved.**
+
+For Web, an explicit `engine.code_root` wins; otherwise `src/` is used when it exists. If neither applies, resolution remains unresolved.
 
 The backend implements this as `resolve_code_root()` in
 `.agents/hooks/yaml-helper.sh`. Skills must match its semantics so that a hook

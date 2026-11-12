@@ -972,7 +972,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/code-root-resolution.md",
-      "target_sha256": "9504dc8104b3aee7bb580f5036fffd6ac3320f3c4110b57072e4b769cf8f528e",
+      "target_sha256": "0b20ce244e3fc68f3dd7a10801377f7757cc48c6cfab8f74ef6f5ffd633f4fb4",
       "related_targets": []
     },
     {
@@ -1588,7 +1588,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/directory-structure.md",
-      "target_sha256": "3606a0a779f68a82bbbd71d068ba6e0ca745e005698459cbf902768ac42823e2",
+      "target_sha256": "e3b0c04578cac2f4fd3d6ab977d11ef829c22196e3d6856787c4c2b7f21e9a45",
       "related_targets": []
     },
     {
@@ -1606,7 +1606,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/effects-map.md",
-      "target_sha256": "abdd82c8ba301a5b5b1e15e260404a60781c16a0f2d62a0d17e6047fcd0d090a",
+      "target_sha256": "c9336b1ef3b711f6f528cafadbb72c6f627a33317d64bb49e40efd48dbdb7c3d",
       "related_targets": []
     },
     {
@@ -3218,7 +3218,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-26",
       "target": ".agents/docs/workflow-catalog.yaml",
-      "target_sha256": "59f4b3da3cd14c48226b5a83916bbb906a9cc2cee894ebda3ad5dabca0a61f4e",
+      "target_sha256": "224b883b664e2c145fc8c4537000e09861419f9723ec2b82c0394b26975813b9",
       "related_targets": []
     },
     {
@@ -3571,7 +3571,7 @@
       "verification": "Preserved source-bound backend and tested adapter equivalent; see per-declaration protocol/limits in parity matrix. Native activation and Linux remain PENDING.",
       "status": "EQUIVALENT",
       "target": ".agents/hooks/yaml-helper.sh",
-      "target_sha256": "0aa911cde4d98fbbbb439ec6e0384734b6c70684deb1a26bc5295660aff0e177",
+      "target_sha256": "738ef7067e99fe08a8feb2e6f86f7a2ee26edaad818c827de6fcb7baeaebcacc",
       "task": "CGS-24"
     },
     {
@@ -3882,7 +3882,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-28",
       "target": ".agents/scripts/asset-scan.sh",
-      "target_sha256": "e43a09cff94fb498e0e0dd1acf695b738cf4510273e418cb9797851a85b3f292",
+      "target_sha256": "d971663702d291cde983e03ff686906b7ce1e9a43397255ed22cbcf66538dce3",
       "related_targets": []
     },
     {
@@ -3974,7 +3974,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-28",
       "target": ".agents/scripts/content-count.sh",
-      "target_sha256": "73a13b3f51992df9a042ec232e32c3cc0d53eb3b30c921a6b23d5fb285f3558f",
+      "target_sha256": "c62cca8f3de7aa6bfc5fb17c5a31c001ea8467c90e3dc82144dd0df0cd5e06a0",
       "related_targets": []
     },
     {
@@ -4353,7 +4353,7 @@
       "verification": "Actual focused helper fixtures and source-preserving adaptations checked. test-run ladder fixtures are synthetic, not engine execution; all other limits are explicit in helper inventory.",
       "status": "PORTED",
       "target": ".agents/scripts/test-run.sh",
-      "target_sha256": "1a0db3af80a8a998733e9f30d7fc599a65a6296e1cf5624f7ccf0caea6053ce4"
+      "target_sha256": "53012def6398cc9f67958ac943d21bd53d2ce43a65912bb6b2df1bc1ea20ac72"
     },
     {
       "id": "file:.claude/scripts/test-scaffold.sh",
@@ -6813,7 +6813,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-10",
       "target": ".agents/skills/settings/SKILL.md",
-      "target_sha256": "325cef8436e3665afd8b605078fbe42356a3b4da3b2edff8a617822caff06624",
+      "target_sha256": "c6cbaddc44dd07614a2f46aa91ff2d5bb50e15084ba58aea54f3ebeceedd9e4c",
       "related_targets": []
     },
     {
@@ -6835,7 +6835,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-10",
       "target": ".agents/skills/setup-engine/SKILL.md",
-      "target_sha256": "fe54b384f4fc0edeab3fa7f9b697a28041b138996b741007c415b152ccf597b4",
+      "target_sha256": "6058321454f52931983317c46c6e467c05a7da590971fd544e472f0057c02c86",
       "related_targets": []
     },
     {
@@ -6889,7 +6889,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-10",
       "target": ".agents/skills/setup-engine/references/2-guided-mode.md",
-      "target_sha256": "be176f2d4f14eef70299b56f9e4245386a26d5af447f038589a139c233a12ba4",
+      "target_sha256": "597954ff10785c76710d9766190be52359dc251ce001ebe75bcd28dc48133e13",
       "related_targets": []
     },
     {
@@ -6961,7 +6961,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-10",
       "target": ".agents/skills/setup-engine/references/5.5-project-yaml.md",
-      "target_sha256": "8b687df0673017f6309a0bfedbc0b2f2dee56d5035ba1ad722f166197e4d076b",
+      "target_sha256": "f4aea2e0c18a51a7e75480b4fabce9cc5ffa9f71c93f8427d2ef488f9286b9ec",
       "related_targets": []
     },
     {
@@ -6997,7 +6997,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-10",
       "target": ".agents/skills/setup-engine/references/7-reference-docs.md",
-      "target_sha256": "24394739745fa3758ecdbce71d5918fb3d15a5bcea6637efbb4bc71d341fed19",
+      "target_sha256": "dfac202ba68d430130a9dd4de87cd769a2692d02c3a2b2f3e8b0046cd7365a3d",
       "related_targets": []
     },
     {
@@ -7015,7 +7015,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-10",
       "target": ".agents/skills/setup-engine/references/7.5-scaffold.md",
-      "target_sha256": "8f9d54e91734aaabc3e61e2eff20a6f55994149965657a0d86b190cd5b2bdd8e",
+      "target_sha256": "d4a918087d69250c915ea4b396fd99160ed65122d4ac3c494ef1f66ac63f9289",
       "related_targets": []
     },
     {
@@ -7135,7 +7135,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-17",
       "target": ".agents/skills/smoke-check/references/1-detect-setup.md",
-      "target_sha256": "10d2bb2796fbd8b31a787bc73890066a86accc8159be398162f03e948cd71069",
+      "target_sha256": "01fc5e8dcf12e59db42a2dc49ec05b7415702f63ff19fd573058eaa80a0a4ec3",
       "related_targets": []
     },
     {
@@ -7153,7 +7153,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-17",
       "target": ".agents/skills/smoke-check/references/2-run-tests.md",
-      "target_sha256": "c5652468fbcbaa600c192282f6ef949ed6853a3c8c4827af8e4141353d1e4f35",
+      "target_sha256": "018f3daffd8d7d397c3e4f736b8147b27486f207bb0e920c4aa2636640971d20",
       "related_targets": []
     },
     {
@@ -7775,7 +7775,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-17",
       "target": ".agents/skills/test-setup/SKILL.md",
-      "target_sha256": "16e9f1a6e5d3cefe21a09806f85ee29c1fa1d9e73b41182d868dd5e934d83a48",
+      "target_sha256": "d1500368b5f7ed1433593e5b9d5efbff2185caea956cfba9523eb6089ea6fdfd",
       "related_targets": []
     },
     {
@@ -7793,7 +7793,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-17",
       "target": ".agents/skills/test-setup/references/1-detect.md",
-      "target_sha256": "659d52823e71b13d0305cd6274fe6bd18c9f740ab630b2e7cb9d566a57c8cfe4",
+      "target_sha256": "50308fbe2251150b496609986c3546eb19872d7b837cd886535f2c490c06d47b",
       "related_targets": []
     },
     {
@@ -11687,7 +11687,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "68874a0750ceb97e896096719480d1540f8bab2bf9b9567b5ee5fefdd4730881"
+      "target_sha256": "3f32cf645ca62c8d3bf9b573914f6922c5ef8375f38996ffcfb33a9e31780df6"
     },
     {
       "id": "hook:SessionStart:0:1",
@@ -11705,7 +11705,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "68874a0750ceb97e896096719480d1540f8bab2bf9b9567b5ee5fefdd4730881"
+      "target_sha256": "3f32cf645ca62c8d3bf9b573914f6922c5ef8375f38996ffcfb33a9e31780df6"
     },
     {
       "id": "hook:PreToolUse:0:0",
@@ -11723,7 +11723,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "68874a0750ceb97e896096719480d1540f8bab2bf9b9567b5ee5fefdd4730881"
+      "target_sha256": "3f32cf645ca62c8d3bf9b573914f6922c5ef8375f38996ffcfb33a9e31780df6"
     },
     {
       "id": "hook:PreToolUse:0:1",
@@ -11741,7 +11741,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "68874a0750ceb97e896096719480d1540f8bab2bf9b9567b5ee5fefdd4730881"
+      "target_sha256": "3f32cf645ca62c8d3bf9b573914f6922c5ef8375f38996ffcfb33a9e31780df6"
     },
     {
       "id": "hook:PreToolUse:1:0",
@@ -11759,7 +11759,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "68874a0750ceb97e896096719480d1540f8bab2bf9b9567b5ee5fefdd4730881"
+      "target_sha256": "3f32cf645ca62c8d3bf9b573914f6922c5ef8375f38996ffcfb33a9e31780df6"
     },
     {
       "id": "hook:PreToolUse:1:1",
@@ -11777,7 +11777,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "68874a0750ceb97e896096719480d1540f8bab2bf9b9567b5ee5fefdd4730881"
+      "target_sha256": "3f32cf645ca62c8d3bf9b573914f6922c5ef8375f38996ffcfb33a9e31780df6"
     },
     {
       "id": "hook:PreToolUse:2:0",
@@ -11795,7 +11795,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "68874a0750ceb97e896096719480d1540f8bab2bf9b9567b5ee5fefdd4730881"
+      "target_sha256": "3f32cf645ca62c8d3bf9b573914f6922c5ef8375f38996ffcfb33a9e31780df6"
     },
     {
       "id": "hook:PostToolUse:0:0",
@@ -11813,7 +11813,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "68874a0750ceb97e896096719480d1540f8bab2bf9b9567b5ee5fefdd4730881"
+      "target_sha256": "3f32cf645ca62c8d3bf9b573914f6922c5ef8375f38996ffcfb33a9e31780df6"
     },
     {
       "id": "hook:PostToolUse:0:1",
@@ -11831,7 +11831,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "68874a0750ceb97e896096719480d1540f8bab2bf9b9567b5ee5fefdd4730881"
+      "target_sha256": "3f32cf645ca62c8d3bf9b573914f6922c5ef8375f38996ffcfb33a9e31780df6"
     },
     {
       "id": "hook:Notification:0:0",
@@ -11849,7 +11849,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "68874a0750ceb97e896096719480d1540f8bab2bf9b9567b5ee5fefdd4730881"
+      "target_sha256": "3f32cf645ca62c8d3bf9b573914f6922c5ef8375f38996ffcfb33a9e31780df6"
     },
     {
       "id": "hook:PreCompact:0:0",
@@ -11867,7 +11867,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "68874a0750ceb97e896096719480d1540f8bab2bf9b9567b5ee5fefdd4730881"
+      "target_sha256": "3f32cf645ca62c8d3bf9b573914f6922c5ef8375f38996ffcfb33a9e31780df6"
     },
     {
       "id": "hook:Stop:0:0",
@@ -11885,7 +11885,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "68874a0750ceb97e896096719480d1540f8bab2bf9b9567b5ee5fefdd4730881"
+      "target_sha256": "3f32cf645ca62c8d3bf9b573914f6922c5ef8375f38996ffcfb33a9e31780df6"
     },
     {
       "id": "hook:SubagentStart:0:0",
@@ -11903,7 +11903,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "68874a0750ceb97e896096719480d1540f8bab2bf9b9567b5ee5fefdd4730881"
+      "target_sha256": "3f32cf645ca62c8d3bf9b573914f6922c5ef8375f38996ffcfb33a9e31780df6"
     },
     {
       "id": "hook:SubagentStop:0:0",
@@ -11921,7 +11921,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "68874a0750ceb97e896096719480d1540f8bab2bf9b9567b5ee5fefdd4730881"
+      "target_sha256": "3f32cf645ca62c8d3bf9b573914f6922c5ef8375f38996ffcfb33a9e31780df6"
     },
     {
       "id": "hook:SubagentStop:0:1",
@@ -11939,7 +11939,7 @@
       "status": "EQUIVALENT",
       "task": "CGS-24",
       "target": "scripts/codex/hooks.mjs",
-      "target_sha256": "68874a0750ceb97e896096719480d1540f8bab2bf9b9567b5ee5fefdd4730881"
+      "target_sha256": "3f32cf645ca62c8d3bf9b573914f6922c5ef8375f38996ffcfb33a9e31780df6"
     }
   ]
 }

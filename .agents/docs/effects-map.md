@@ -1713,7 +1713,7 @@ required at `standard` and `minimal` levels.
 
 **Controls:** Which engine-specific specialist agents are routed to for code
 implementation, review, and architecture validation\
-**Values:** `Godot` | `Unity` | `Unreal`\
+**Values:** `Godot` | `Unity` | `Unreal` | `Web`\
 **Default:** `[UNSET]` — must be configured via `$setup-engine`\
 **Set by:** `$setup-engine`\
 **Read by:** `dev-story`, `code-review`, `architecture-decision`, `create-architecture`, `team-combat`, `team-ui`, `team-audio`
@@ -1736,6 +1736,7 @@ implementation, review, and architecture validation\
 | **Godot** | `godot-gdscript-specialist` (GDScript) or `godot-csharp-specialist` (C#) — driven by `engine.language` | `godot-shader-specialist` | `godot-specialist` | `godot-gdextension-specialist` |
 | **Unity** | `unity-specialist` | `unity-shader-specialist` | `unity-ui-specialist` | `unity-addressables-specialist`, `unity-dots-specialist` |
 | **Unreal** | `unreal-specialist` | `unreal-specialist` | `ue-umg-specialist` | `ue-gas-specialist`, `ue-blueprint-specialist`, `ue-replication-specialist` |
+| **Web** | `lead-programmer` | `lead-programmer` | `lead-programmer` | None; game-library choice belongs to the package manifest |
 | **[UNSET]** | No specialist spawned — warning emitted | No specialist spawned | No specialist spawned | None |
 
 ---
@@ -2425,7 +2426,7 @@ platform:
   cert_tier: none            # none | itch | steam | console
 
 engine:
-  name: "Godot"              # Godot | Unity | Unreal — set by $setup-engine
+  name: "Web"                # Godot | Unity | Unreal | Web — set by $setup-engine
   version: "4.7"
   language: "GDScript"       # GDScript | C# | C++ | Blueprint
   rendering: "Forward+"

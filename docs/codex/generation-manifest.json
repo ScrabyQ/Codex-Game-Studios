@@ -45,7 +45,7 @@
       "source": ".claude/docs/code-root-resolution.md",
       "source_sha256": "c992bb8e40822dbdb638b000c79a9313dca07d492c248072cac967b73351d4fc",
       "target": ".agents/docs/code-root-resolution.md",
-      "target_sha256": "9504dc8104b3aee7bb580f5036fffd6ac3320f3c4110b57072e4b769cf8f528e",
+      "target_sha256": "0b20ce244e3fc68f3dd7a10801377f7757cc48c6cfab8f74ef6f5ffd633f4fb4",
       "transform_version": 1,
       "transform_ids": [
         "codex-doc-reference-paths-v1",
@@ -439,7 +439,7 @@
       "source": ".claude/docs/directory-structure.md",
       "source_sha256": "b7a84db3f2ee1ef57ea2a0ef1adfa53bb7b88b024c621a3661237e2ca4a2c31c",
       "target": ".agents/docs/directory-structure.md",
-      "target_sha256": "3606a0a779f68a82bbbd71d068ba6e0ca745e005698459cbf902768ac42823e2",
+      "target_sha256": "e3b0c04578cac2f4fd3d6ab977d11ef829c22196e3d6856787c4c2b7f21e9a45",
       "transform_version": 1,
       "transform_ids": [],
       "owner": "CGS-26",
@@ -450,7 +450,7 @@
       "source": ".claude/docs/effects-map.md",
       "source_sha256": "18aa505d7decdf16b8d25d07a6c1cb8d41411a89bc5f3a86e0c06d0da730273e",
       "target": ".agents/docs/effects-map.md",
-      "target_sha256": "abdd82c8ba301a5b5b1e15e260404a60781c16a0f2d62a0d17e6047fcd0d090a",
+      "target_sha256": "c9336b1ef3b711f6f528cafadbb72c6f627a33317d64bb49e40efd48dbdb7c3d",
       "transform_version": 1,
       "transform_ids": [
         "codex-doc-reference-paths-v1",
@@ -1491,7 +1491,7 @@
       "source": ".claude/docs/workflow-catalog.yaml",
       "source_sha256": "3e87564320fae7f46f3f5c010b8c9c0b32674b0a8cdd1ab1dc76475020c2739a",
       "target": ".agents/docs/workflow-catalog.yaml",
-      "target_sha256": "59f4b3da3cd14c48226b5a83916bbb906a9cc2cee894ebda3ad5dabca0a61f4e",
+      "target_sha256": "224b883b664e2c145fc8c4537000e09861419f9723ec2b82c0394b26975813b9",
       "transform_version": 1,
       "transform_ids": [
         "codex-doc-reference-paths-v1"
@@ -1788,7 +1788,7 @@
       "source": ".claude/hooks/yaml-helper.sh",
       "source_sha256": "8299e656cb8afc49ec02b2e17e32b61f3df50b13b93a8544226e30e459f68424",
       "target": ".agents/hooks/yaml-helper.sh",
-      "target_sha256": "0aa911cde4d98fbbbb439ec6e0384734b6c70684deb1a26bc5295660aff0e177",
+      "target_sha256": "738ef7067e99fe08a8feb2e6f86f7a2ee26edaad818c827de6fcb7baeaebcacc",
       "transform_version": 1,
       "transform_ids": [
         "normalize-lf",
@@ -2119,7 +2119,7 @@
       "source": ".claude/scripts/asset-scan.sh",
       "source_sha256": "2dd8b5f3f2a29e99c431e7cc1318a3b7ff1fcfc74e4b086583e430ce10fc8e98",
       "target": ".agents/scripts/asset-scan.sh",
-      "target_sha256": "e43a09cff94fb498e0e0dd1acf695b738cf4510273e418cb9797851a85b3f292",
+      "target_sha256": "d971663702d291cde983e03ff686906b7ce1e9a43397255ed22cbcf66538dce3",
       "transform_version": 1,
       "transform_ids": [
         "normalize-lf",
@@ -2195,7 +2195,7 @@
       "source": ".claude/scripts/content-count.sh",
       "source_sha256": "7a13815e90df925a83aea10a8d5db0dc4a82009d93e9753d9bfd9d8a0cd3ce47",
       "target": ".agents/scripts/content-count.sh",
-      "target_sha256": "73a13b3f51992df9a042ec232e32c3cc0d53eb3b30c921a6b23d5fb285f3558f",
+      "target_sha256": "c62cca8f3de7aa6bfc5fb17c5a31c001ea8467c90e3dc82144dd0df0cd5e06a0",
       "transform_version": 1,
       "transform_ids": [
         "normalize-lf",
@@ -2527,7 +2527,7 @@
       "source": ".claude/scripts/test-run.sh",
       "source_sha256": "70d5f44707304f2cba93607f0b52e6747e25d6349d771c928dc1f31884a438b9",
       "target": ".agents/scripts/test-run.sh",
-      "target_sha256": "1a0db3af80a8a998733e9f30d7fc599a65a6296e1cf5624f7ccf0caea6053ce4",
+      "target_sha256": "53012def6398cc9f67958ac943d21bd53d2ce43a65912bb6b2df1bc1ea20ac72",
       "transform_version": 1,
       "transform_ids": [
         "normalize-lf",
@@ -4471,7 +4471,7 @@
       "source": ".claude/skills/settings/SKILL.md",
       "source_sha256": "5741b2ef90d60ee3ee350b908d106c10fcd037ad280d2a9ee4cb8f8a7fcc506e",
       "target": ".agents/skills/settings/SKILL.md",
-      "target_sha256": "325cef8436e3665afd8b605078fbe42356a3b4da3b2edff8a617822caff06624",
+      "target_sha256": "c6cbaddc44dd07614a2f46aa91ff2d5bb50e15084ba58aea54f3ebeceedd9e4c",
       "transform_version": 1,
       "transform_ids": [
         "frontmatter-scope-v1",
@@ -4516,7 +4516,7 @@
       "source": ".claude/skills/setup-engine/references/2-guided-mode.md",
       "source_sha256": "77ef8e043ef536db796f3d32a78d960ecde7a8320caf568f30b7b93036128ffa",
       "target": ".agents/skills/setup-engine/references/2-guided-mode.md",
-      "target_sha256": "be176f2d4f14eef70299b56f9e4245386a26d5af447f038589a139c233a12ba4",
+      "target_sha256": "597954ff10785c76710d9766190be52359dc251ce001ebe75bcd28dc48133e13",
       "transform_version": 1,
       "transform_ids": [
         "resource-runtime-adaptation-v1",
@@ -4572,7 +4572,7 @@
       "source": ".claude/skills/setup-engine/references/5.5-project-yaml.md",
       "source_sha256": "853492f39487b65f8155d8dc972e7861adbd01087068c3c525a2954f45b601bd",
       "target": ".agents/skills/setup-engine/references/5.5-project-yaml.md",
-      "target_sha256": "8b687df0673017f6309a0bfedbc0b2f2dee56d5035ba1ad722f166197e4d076b",
+      "target_sha256": "f4aea2e0c18a51a7e75480b4fabce9cc5ffa9f71c93f8427d2ef488f9286b9ec",
       "transform_version": 1,
       "transform_ids": [
         "resource-runtime-adaptation-v1",
@@ -4600,7 +4600,7 @@
       "source": ".claude/skills/setup-engine/references/7-reference-docs.md",
       "source_sha256": "f072c0a70331e75f7931b5b9ed4d63c9b10b5455e044683616220b4f7846704e",
       "target": ".agents/skills/setup-engine/references/7-reference-docs.md",
-      "target_sha256": "24394739745fa3758ecdbce71d5918fb3d15a5bcea6637efbb4bc71d341fed19",
+      "target_sha256": "dfac202ba68d430130a9dd4de87cd769a2692d02c3a2b2f3e8b0046cd7365a3d",
       "transform_version": 1,
       "transform_ids": [
         "resource-runtime-adaptation-v1",
@@ -4614,7 +4614,7 @@
       "source": ".claude/skills/setup-engine/references/7.5-scaffold.md",
       "source_sha256": "4906f271bd3020520dfe22716f65fb1a8df60554946faf74be810611cb383e22",
       "target": ".agents/skills/setup-engine/references/7.5-scaffold.md",
-      "target_sha256": "8f9d54e91734aaabc3e61e2eff20a6f55994149965657a0d86b190cd5b2bdd8e",
+      "target_sha256": "d4a918087d69250c915ea4b396fd99160ed65122d4ac3c494ef1f66ac63f9289",
       "transform_version": 1,
       "transform_ids": [
         "resource-runtime-adaptation-v1",
@@ -4656,7 +4656,7 @@
       "source": ".claude/skills/setup-engine/SKILL.md",
       "source_sha256": "37c08d68ed58b70e6880e269e711e2617b89f2f165d9bba5d966e326e73e9a17",
       "target": ".agents/skills/setup-engine/SKILL.md",
-      "target_sha256": "fe54b384f4fc0edeab3fa7f9b697a28041b138996b741007c415b152ccf597b4",
+      "target_sha256": "6058321454f52931983317c46c6e467c05a7da590971fd544e472f0057c02c86",
       "transform_version": 1,
       "transform_ids": [
         "frontmatter-scope-v1",
@@ -4707,7 +4707,7 @@
       "source": ".claude/skills/smoke-check/references/1-detect-setup.md",
       "source_sha256": "07af6a1dc13f17fddb6f1877e578969471ffa37e3e5b1845334ca216a36fdff3",
       "target": ".agents/skills/smoke-check/references/1-detect-setup.md",
-      "target_sha256": "10d2bb2796fbd8b31a787bc73890066a86accc8159be398162f03e948cd71069",
+      "target_sha256": "01fc5e8dcf12e59db42a2dc49ec05b7415702f63ff19fd573058eaa80a0a4ec3",
       "transform_version": 1,
       "transform_ids": [
         "resource-runtime-adaptation-v1",
@@ -4721,7 +4721,7 @@
       "source": ".claude/skills/smoke-check/references/2-run-tests.md",
       "source_sha256": "93981f1b4aadeff6d3c8db199de990972e7a7d0540313e3cad4c74aaf52c9f62",
       "target": ".agents/skills/smoke-check/references/2-run-tests.md",
-      "target_sha256": "c5652468fbcbaa600c192282f6ef949ed6853a3c8c4827af8e4141353d1e4f35",
+      "target_sha256": "018f3daffd8d7d397c3e4f736b8147b27486f207bb0e920c4aa2636640971d20",
       "transform_version": 1,
       "transform_ids": [
         "resource-runtime-adaptation-v1",
@@ -5228,7 +5228,7 @@
       "source": ".claude/skills/test-setup/references/1-detect.md",
       "source_sha256": "88e37a991c459ec5021a6be8657e5ca0ef6909354c407cd00364eb36c17c31c2",
       "target": ".agents/skills/test-setup/references/1-detect.md",
-      "target_sha256": "659d52823e71b13d0305cd6274fe6bd18c9f740ab630b2e7cb9d566a57c8cfe4",
+      "target_sha256": "50308fbe2251150b496609986c3546eb19872d7b837cd886535f2c490c06d47b",
       "transform_version": 1,
       "transform_ids": [
         "resource-runtime-adaptation-v1",
@@ -5312,7 +5312,7 @@
       "source": ".claude/skills/test-setup/SKILL.md",
       "source_sha256": "7d420f14829ba4062dcaf354a91808e41523c091516160593bac048533679973",
       "target": ".agents/skills/test-setup/SKILL.md",
-      "target_sha256": "16e9f1a6e5d3cefe21a09806f85ee29c1fa1d9e73b41182d868dd5e934d83a48",
+      "target_sha256": "d1500368b5f7ed1433593e5b9d5efbff2185caea956cfba9523eb6089ea6fdfd",
       "transform_version": 1,
       "transform_ids": [
         "frontmatter-scope-v1",

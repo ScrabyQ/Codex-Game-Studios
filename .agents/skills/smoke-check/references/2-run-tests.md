@@ -26,6 +26,14 @@ Homebrew's `coreutils` (same exit 124), or, with nothing installed,
 a FAILURE the same way. Then read the result for the engine. On every engine
 one outcome looks like success and is not; each is named below.
 
+**Web** — use only the configured `commands.test` from the project's package scripts.
+If it is unset, report `NOT ASSESSED — no web test command is configured`; there is
+no engine-specific default. Run it with `bash .agents/scripts/test-run.sh web`.
+The helper reports the command and exit code but does not interpret runner-specific
+test counts. Read the runner output; if it reports zero tests, report
+`NOT ASSESSED — no tests were found`. A successful package command does not prove
+browser rendering or mobile-device behavior.
+
 **Godot 4** — first check that `addons/gdUnit4/bin/GdUnitCmdTool.gd` exists —
 the folder has a **capital U**. If it does not, report
 `NOT ASSESSED — gdUnit4 not installed at addons/gdUnit4/` instead of running

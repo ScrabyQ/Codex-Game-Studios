@@ -7,6 +7,28 @@ framework:
   version: 1.2.0
   last_upgraded: 2026-10-19
 
+engine:
+  name: Web
+  version: "8.3.8"
+  language: TypeScript
+  code_root: src
+  rendering: "Phaser 4"
+  physics: none
+
+specialists:
+  code: lead-programmer
+  shader: lead-programmer
+  ui: lead-programmer
+  additional: []
+
+naming:
+  classes: PascalCase
+  variables: camelCase
+  constants: SCREAMING_SNAKE
+  signals: on_event_name
+  files: snake_case
+  scenes: PascalCase
+
 # NOTE: this template ships with no `modes:` block, and the six knobs below must
 # never be added to one.
 #

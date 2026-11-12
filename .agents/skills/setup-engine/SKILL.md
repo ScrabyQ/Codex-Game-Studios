@@ -33,6 +33,7 @@ If the bootstrap did not run or its output is unavailable, resolve the workflow 
 
 Four modes:
 
+- **Web**: read `../../docs/web-engine-setup.md` and follow its Web-specific setup path.
 - **Full spec**: `$setup-engine godot 4.7` — engine and version provided
 - **Engine only**: `$setup-engine unity` — engine provided, version will be looked up
 - **No args**: `$setup-engine` — fully guided mode (engine recommendation + version)
@@ -44,6 +45,8 @@ Four modes:
 ## 2. Guided Mode (No Arguments)
 
 **Read `references/2-guided-mode.md` now and follow it** — this phase's steps are in that file, not here. Read it again if the conversation was compacted or resumed during this phase.
+
+When Web is selected or explicitly requested, read `../../docs/web-engine-setup.md`; its project-manifest workflow replaces the engine-specific probe, reference and scaffold steps below.
 
 ## 3. Look Up Current Version
 

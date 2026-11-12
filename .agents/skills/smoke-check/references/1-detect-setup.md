@@ -65,6 +65,9 @@ Before running anything, understand the environment:
    (a `[TO BE CONFIGURED]` value means not configured). Store this for test
    command selection in Phase 2.
 
+   For Web, check `node --version` and read the package manager from `packageManager`
+   and the lockfile. Web has no editor executable to discover.
+
    Then find the **editor executable** — none of the three engines installs
    onto `PATH` by default on Windows or macOS, so a bare `godot` that does not
    resolve says nothing about whether the engine is installed. Take the first

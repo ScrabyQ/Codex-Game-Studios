@@ -24,6 +24,10 @@
      `.agents/docs/directory-structure.md`; tests anywhere else are never compiled
      on Unity or Unreal.
 
+   For Web, inspect `package.json`, its lockfile, test dependencies and
+   `commands.test`. Do not assume a test runner or generate runner-specific
+   files until the project's package manager and runner are known.
+
 3. **Report findings**:
    - "Engine: [engine]. Test directory: [found / not found]. CI workflow: [found / not found]."
    - If everything already exists AND `force` argument was not passed:

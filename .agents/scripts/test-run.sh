@@ -13,7 +13,7 @@
 # /smoke-check, which also decides what an unmatched exit code means.
 #
 # Usage: bash .agents/scripts/test-run.sh <engine> [options]
-#   <engine>            godot, unity or unreal (any case)
+#   <engine>            godot, unity, unreal or web (any case)
 #   --cmd COMMAND       the test command to run, instead of project.yaml's
 #                       commands.test or the engine's default
 #   --exe PATH          the editor executable (default: the one commands.test
@@ -53,7 +53,7 @@
 # nothing they print is read as the tests' output.
 #
 # Output: TSV, in this order (a row that cannot apply is left out).
-#   engine      <Godot|Unity|Unreal>
+#   engine      <Godot|Unity|Unreal|Web>
 #   exe         <path|->  <commands.test|engine.path|path|--exe|->
 #   command     <--cmd|commands.test|default>  <the command>
 #   import      <command> | - <skipped: why>                godot, before the tests
@@ -121,7 +121,8 @@ case "$(printf '%s' "$ENGINE_ARG" | tr 'A-Z' 'a-z')" in
   godot) ENGINE=godot; ENAME=Godot ;;
   unity) ENGINE=unity; ENAME=Unity ;;
   unreal) ENGINE=unreal; ENAME=Unreal ;;
-  *) echo "test-run: '$ENGINE_ARG' is not an engine this knows (godot, unity, unreal)" >&2; exit 3 ;;
+  web) ENGINE=web; ENAME=Web ;;
+  *) echo "test-run: '$ENGINE_ARG' is not an engine this knows (godot, unity, unreal, web)" >&2; exit 3 ;;
 esac
 case "$PLATFORM" in editmode|playmode) ;; *) usage "--platform is editmode or playmode" ;; esac
 case "$OS_ARG" in ""|windows|linux|macos) ;; *) usage "--os is windows, linux or macos" ;; esac
@@ -306,7 +307,10 @@ case "$ENGINE" in
       ran_no unreal:mac-unsourced "no sourced Unreal test command on macOS and no commands.test" "no sourced Unreal test command on macOS: set commands.test"
     fi ;;
 esac
-if [ -z "$EXE" ] && [ "$CMD_SRC" = default ]; then
+if [ "$ENGINE" = web ] && [ -z "$CMD" ]; then
+  ran_no web:no-test-script "commands.test is unset and Web has no default test runner" "no web test command was configured, so no tests ran"
+fi
+if [ "$ENGINE" != web ] && [ -z "$EXE" ] && [ "$CMD_SRC" = default ]; then
   ran_no runner-unavailable "no editor executable (commands.test, engine.path, PATH)" "the engine executable was not found, so the tests could not be run here"
 fi
 if [ "$DRY" = 1 ]; then printf 'ran\tno\tdry run\n'; exit 0; fi
@@ -362,6 +366,14 @@ list_failed() {
 RULE_ID="-"; RULE_TXT="no row of the ladder fits"
 set_rule() { RULE_ID="$1"; RULE_TXT="$2"; }
 case "$ENGINE" in
+  web)
+    printf 'zero_tests\tunknown\trunner-specific test counts are not interpreted by this helper\n'
+    printf 'tests\t-\tnot sourced: use the configured package test runner output\n'
+    case "$CODE" in
+      0) set_rule web:exit-0 "configured Web test command exited 0; runner-specific test counts were not verified" ;;
+      126|127) set_rule runner-unavailable "the configured Web test command did not start" ;;
+      *) set_rule web:nonzero "configured Web test command exited non-zero" ;;
+    esac ;;
   godot)
     marker=$(first_line 'No test cases found')
     if [ -n "$marker" ]; then printf 'zero_tests\tyes\t%s\n' "$marker"; else printf 'zero_tests\tno\t-\n'; fi

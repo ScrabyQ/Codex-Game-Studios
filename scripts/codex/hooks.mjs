@@ -1,7 +1,8 @@
-import { existsSync, readFileSync, realpathSync } from 'node:fs';
+import { closeSync, existsSync, mkdtempSync, openSync, readFileSync, realpathSync, rmSync, writeFileSync } from 'node:fs';
 import {bashPath} from './shell.mjs';
 import {isMainEntry} from './main-entry.mjs';
-import { dirname, resolve, relative, isAbsolute } from 'node:path';
+import { dirname, join, resolve, relative, isAbsolute } from 'node:path';
+import { tmpdir } from 'node:os';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 
@@ -122,7 +123,18 @@ function backend(name, payload, root, options) {
   if (name === 'validate-registry') required.push('.agents/scripts/registry.sh');
   for (const file of required) if (!existsSync(resolve(root, file))) throw new Error(`Required project helper missing: ${file}`);
   const shell = options.bash ?? bashPath();
-  const out = spawnSync(shell, [script], { cwd: root, input: JSON.stringify(payload), encoding: 'utf8', timeout: 30000, maxBuffer: 4 * 1024 * 1024, env: { ...process.env, CGS_PROJECT_DIR: root } });
+  const inputDir = mkdtempSync(join(tmpdir(), 'cgs-hook-'));
+  const inputPath = join(inputDir, 'payload.json');
+  let inputFd;
+  let out;
+  try {
+    writeFileSync(inputPath, JSON.stringify(payload), { encoding: 'utf8', mode: 0o600 });
+    inputFd = openSync(inputPath, 'r');
+    out = spawnSync(shell, [script], { cwd: root, stdio: [inputFd, 'pipe', 'pipe'], encoding: 'utf8', timeout: 30000, maxBuffer: 4 * 1024 * 1024, env: { ...process.env, CGS_PROJECT_DIR: root } });
+  } finally {
+    if (inputFd !== undefined) closeSync(inputFd);
+    rmSync(inputDir, { recursive: true, force: true });
+  }
   if (out.error || out.signal || out.status === null) throw new Error(`Hook ${name} did not run: ${out.error?.message ?? out.signal}`);
   let message = out.stdout.trim();
   try { const obj = JSON.parse(message); message = obj.systemMessage ?? obj.hookSpecificOutput?.additionalContext ?? message; } catch { /* Original lifecycle text is wrapped below. */ }

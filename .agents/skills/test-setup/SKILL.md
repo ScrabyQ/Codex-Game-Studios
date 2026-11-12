@@ -37,6 +37,10 @@ A test framework installed at sprint four costs 3 sprints.
 
 **Read `references/1-detect.md` now and follow it** — this phase's steps are in that file, not here. Read it again if the conversation was compacted or resumed during this phase.
 
+## Web projects
+
+For Web, treat `package.json`, the lockfile and configured package scripts as the test setup. This framework version can run an existing `commands.test` through `.agents/scripts/test-run.sh web`, but its test scaffold does not yet generate Web runner or CI configuration. Do not invoke `test-scaffold.sh` for Web. If a package test command is missing, stop with that setup as NOT ASSESSED and present the runner and CI choices for a later approved change.
+
 ## Phase 2: Present Plan
 
 **Read `references/2-plan.md` now and follow it** — this phase's steps are in that file, not here. Read it again if the conversation was compacted or resumed during this phase.

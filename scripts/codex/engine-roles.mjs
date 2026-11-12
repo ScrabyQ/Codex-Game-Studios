@@ -4,6 +4,7 @@ import { runHelper } from './helper.mjs';
 import { isMainEntry } from './main-entry.mjs';
 
 const families = {
+  Web: { primary: 'lead-programmer', code: ['lead-programmer'], shader: ['lead-programmer'], ui: ['lead-programmer'], all: ['lead-programmer'] },
   Godot: { primary: 'godot-specialist', code: ['godot-specialist', 'godot-gdscript-specialist', 'godot-csharp-specialist', 'godot-gdextension-specialist'], shader: ['godot-specialist', 'godot-shader-specialist'], ui: ['godot-specialist'], all: ['godot-specialist', 'godot-gdscript-specialist', 'godot-csharp-specialist', 'godot-gdextension-specialist', 'godot-shader-specialist'] },
   Unity: { primary: 'unity-specialist', code: ['unity-specialist', 'unity-dots-specialist'], shader: ['unity-specialist', 'unity-shader-specialist'], ui: ['unity-specialist', 'unity-ui-specialist'], all: ['unity-specialist', 'unity-dots-specialist', 'unity-addressables-specialist', 'unity-shader-specialist', 'unity-ui-specialist'] },
   Unreal: { primary: 'unreal-specialist', code: ['unreal-specialist', 'ue-blueprint-specialist', 'ue-gas-specialist', 'ue-replication-specialist'], shader: ['unreal-specialist'], ui: ['unreal-specialist', 'ue-umg-specialist'], all: ['unreal-specialist', 'ue-blueprint-specialist', 'ue-gas-specialist', 'ue-replication-specialist', 'ue-umg-specialist'] }

@@ -298,10 +298,11 @@ case "$LOW" in
   godot) ENG=godot; ROOTS="assets src" ;;
   unity) ENG=unity; ROOTS="assets Assets" ;;
   unreal*) ENG=unreal; ROOTS="assets Content" ;;
+  web) ENG=web; ROOTS="assets public" ;;
   *)
-    if [ "$ESRC" = flag ]; then usage "--engine takes godot, unity or unreal, got $RAW"; fi
+    if [ "$ESRC" = flag ]; then usage "--engine takes godot, unity, unreal or web, got $RAW"; fi
     printf 'engine\t%s\t%s\n' "$RAW" "$ESRC"
-    echo "content-count: engine $RAW has no content rules here (godot, unity or unreal)" >&2
+    echo "content-count: engine $RAW has no content rules here (godot, unity, unreal or web)" >&2
     exit 3 ;;
 esac
 printf 'engine\t%s\t%s\n' "$ENG" "$ESRC"
@@ -360,7 +361,7 @@ printf '%s\n' "$LIST" | ENG="$ENG" SHOWFILES="$SHOWFILES" awk '
     for (gi = 1; gi <= ng; gi++) {
       g = G[gi]; hit = 0; nh = 0
       if (g == "levels") {
-        sceneext = (eng == "godot") ? "tscn" : ((eng == "unity") ? "unity" : "umap")
+        sceneext = (eng == "godot") ? "tscn" : ((eng == "unity") ? "unity" : ((eng == "web") ? "json" : "umap"))
         if (ext != sceneext) continue
         hit = 1
         for (i = 2; i < n; i++) { w = tolower(seg[i]); if (isfolder(g, w) && !(w in hs)) { hs[w] = 1; hn[++nh] = w } }

@@ -544,7 +544,7 @@ team.size::individual|small|studio
 performance.enforce::warn|block|off
 platform.cert_tier::none|itch|steam|console
 accessibility.target::none|standard|aaa
-engine.name::Godot|Unity|Unreal
+engine.name::Godot|Unity|Unreal|Web
 project.stage::Concept|Systems Design|Technical Setup|Pre-Production|Production|Polish|Release
 testing.strict.logic::true|false
 testing.strict.integration::true|false
@@ -1470,6 +1470,15 @@ resolve_code_root() {
     godot)   root="src" ;;
     unity)   root="Assets" ;;
     unreal*) root="Source" ;;
+    web)
+      root=$(get_yaml_key "$_YH_ROOT/project.yaml" engine.code_root 2>/dev/null)
+      if [ -n "$root" ]; then
+        case "$root" in /*|*..*|*\\*) root="" ;; esac
+        [ -d "$_YH_ROOT/$root" ] || root=""
+      else
+        root="src"
+      fi
+      ;;
     *)       root="" ;;
   esac
 
@@ -1478,7 +1487,7 @@ resolve_code_root() {
   #    is also true for Godot's own `assets/` on a case-insensitive filesystem
   #    (Windows, default macOS), which made src/ + assets/ "ambiguous" and a lone
   #    assets/ a Unity project.
-  if [ -z "$root" ]; then
+  if [ -z "$root" ] && [ "$ename" != "Web" ]; then
     for d in "$_YH_ROOT"/*/; do
       d="${d%/}"; d="${d##*/}"
       case "$d" in src|Assets|Source) found="$d"; n=$((n + 1)) ;; esac
